@@ -151,7 +151,7 @@ async function getMarketInfo(marketAddress) {
   const marketView = new ethers.Contract(
     "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
     MarketViewAbi,
-    provider
+    provider,
   );
 
   // Fetch market data from MarketView
@@ -206,9 +206,8 @@ async function addLiquidity({ marketAddress }) {
       "Invalid result",
     ];
 
-    const outcomeTokens = marketInfo.wrappedTokens.slice(0, -1);
-    const availableCollateralPerPool = parseUnits((0.5 / 100 * 20600).toString(), 18);
-    const availableOutcome = parseUnits((0.6 * 20600).toString(), 18);
+    const outcomeTokens = marketInfo.wrappedTokens;
+
     // const routerAddress = "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD";
     // mint outcome tokens
     // await approveBalance(
@@ -233,31 +232,30 @@ async function addLiquidity({ marketAddress }) {
       //OpenZeppelin/openzeppelin-contracts not initialized yet
       const outcome = marketInfo.outcomes[i];
       const wrappedToken = outcomeTokens[i];
-      console.log("Processing outcome ", { outcome, wrappedToken });
+      // console.log("Processing outcome ", { outcome, wrappedToken });
 
-      if (excludeOutcomes.includes(outcome)) {
-        console.log("exclude outcome ", outcome);
+      // if (excludeOutcomes.includes(outcome)) {
+      //   console.log("exclude outcome ", outcome);
+      //   continue;
+      // }
+      if (outcome !== "Invalid result") {
         continue;
       }
-
-      const repo = elo.find((x) => x.item === outcome);
-      if (!repo) {
-        console.log("Cannot find repooooooooooooo");
-        throw new Error("Cannot find repo");
-      }
+      const availableCollateralPerPool = parseUnits('0.1', 18);
+      const availableOutcome = await getTokenBalance(wrappedToken)
       // Sort tokens
       const [token0, token1] = sortTokens(wrappedToken, marketInfo.collateralToken);
       const isToken0Outcome = token0 === wrappedToken;
-      const initialPrice = repo.weight;
+      const initialPrice = 0.000011;
       const initialPriceToken1PerToken0 = isToken0Outcome ? initialPrice : 1 / initialPrice;
       const sqrtPriceX96 = encodeSqrtPriceX96(initialPriceToken1PerToken0);
-      const minPrice = 0.0001;
-      const maxPrice = 0.2;
+      const minPrice = 0.00001;
+      const maxPrice = 0.01;
 
       const poolAddress = Pool.getAddress(
         new Token(CHAIN_ID, token0, 18, "TOKEN0"),
         new Token(CHAIN_ID, token1, 18, "TOKEN1"),
-        feeTier
+        feeTier,
       );
       const poolContract = new ethers.Contract(poolAddress, PoolAbi, provider);
       // // Check if pool exists
@@ -311,7 +309,7 @@ async function addLiquidity({ marketAddress }) {
         feeTier,
         slot0.sqrtPriceX96.toString(),
         liquidity.toString(),
-        Number(slot0.tick)
+        Number(slot0.tick),
       );
       const bounds = calculateTickBounds(minPrice, maxPrice, tickSpacing, isToken0Outcome);
       const { tickLower, tickUpper } = bounds;
@@ -332,7 +330,7 @@ async function addLiquidity({ marketAddress }) {
         amount1: formatUnits(amount1, 18),
         availableAmount0: formatUnits(availableAmount0, 18),
         availableAmount1: formatUnits(availableAmount1, 18),
-        repo,
+        // repo,
       });
       console.log({
         amount0: formatUnits(amount0, 18),
@@ -345,7 +343,7 @@ async function addLiquidity({ marketAddress }) {
         initialPrice *
           Number(isToken0Outcome ? formatUnits(amount0, 18) : formatUnits(amount1, 18));
       totalSUSDSUsed += Number(
-        isToken0Outcome ? formatUnits(amount1, 18) : formatUnits(amount0, 18)
+        isToken0Outcome ? formatUnits(amount1, 18) : formatUnits(amount0, 18),
       );
       // Approve tokens
       console.log(`     Approving tokens...`);

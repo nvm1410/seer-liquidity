@@ -1,0 +1,14 @@
+[
+  {
+    "index": 25,
+    "name": "Invalid result",
+    "outcomeToken": "0x0cFB0a69d3f212D0b033a9CFBeA8A496EE15913F",
+    "price": 0.000011,
+    "tickLower": -115136,
+    "tickUpper": -99040,
+    "amount0": "8759782620551758915523",
+    "amount1": "8452799616975316",
+    "txHash": "0xd232c67ed78ba309ed02204e42cb593e92009266cd3a32f2fa9fbce6663ee6de",
+    "blockNumber": 153421820
+  }
+]

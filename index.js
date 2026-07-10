@@ -6,6 +6,7 @@ import { tokenIds } from "./tokens.js";
 import { positionsToWithdraw } from "./positionsToWithdraw.js";
 import fs from "fs";
 import { wrappedTokens } from "./wrappedTokens.js";
+import { originalityPairs } from "./originality-pairs.js";
 
 // Configuration
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
@@ -35,6 +36,18 @@ const ERC20_ABI = [
   "function name() external view returns (string)",
 ];
 // const positionsToWithdraw = [];
+async function runBatched(items, batchSize, asyncFn) {
+  const results = [];
+
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    const batchResults = await Promise.all(batch.map(asyncFn));
+    results.push(...batchResults);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
+  return results;
+}
 
 async function withdrawAllPositions() {
   // Setup provider and wallet
@@ -45,21 +58,39 @@ async function withdrawAllPositions() {
   const positionManager = new ethers.Contract(
     POSITION_MANAGER_ADDRESS,
     POSITION_MANAGER_ABI,
-    wallet
+    wallet,
   );
+  const BATCH_SIZE = 20;
 
-  // Get all position token IDs owned by wallet
   const balance = await positionManager.balanceOf(wallet.address);
-  console.log(`Found ${balance.toString()} positions\n`);
-  // const tokenIds = await Promise.all(
-  //   Array(Number(balance))
-  //     .fill(null)
-  //     .map((_, i) => positionManager.tokenOfOwnerByIndex(wallet.address, i))
+  const indexes = Array.from({ length: Number(balance) }, (_, i) => i);
+
+  // const tokenIds = await runBatched(indexes, BATCH_SIZE, (i) =>
+  //   positionManager.tokenOfOwnerByIndex(wallet.address, i),
   // );
 
   // fs.writeFileSync("./tokens.json", JSON.stringify(tokenIds.map((x) => x.toString())), null, 4);
   // return;
   // Process each position
+  // const filteredPositions = [];
+  // for (const tokenId of tokenIds) {
+  //   try {
+  //     console.log(`\n--- Processing Position #${tokenId} ---`);
+  //     const isFiltered = await filterPosition(tokenId, wallet);
+  //     if (isFiltered) {
+  //       filteredPositions.push(tokenId);
+  //     }
+  //     // await withdrawPosition(BigInt(tokenId), wallet, provider);
+  //   } catch (error) {
+  //     console.error(`Error processing position #${tokenId}:`, error.message);
+  //   }
+  // }
+  // fs.writeFileSync(
+  //   "./positionsToWithdraw.json",
+  //   JSON.stringify(filteredPositions.map((x) => x.toString())),
+  //   null,
+  //   4,
+  // );
   for (const tokenId of positionsToWithdraw) {
     try {
       console.log(`\n--- Processing Position #${tokenId} ---`);
@@ -68,12 +99,6 @@ async function withdrawAllPositions() {
       console.error(`Error processing position #${tokenId}:`, error.message);
     }
   }
-  // fs.writeFileSync(
-  //   "./positionsToWithdraw.json",
-  //   JSON.stringify(positionsToWithdraw.map((x) => x.toString())),
-  //   null,
-  //   4
-  // );
 }
 
 const erc20Abi = [
@@ -83,6 +108,37 @@ const erc20Abi = [
 function sortTokens(tokenA, tokenB) {
   return tokenA.toLowerCase() < tokenB.toLowerCase() ? [tokenA, tokenB] : [tokenB, tokenA];
 }
+
+async function filterPosition(positionId, wallet) {
+  const positionManager = new ethers.Contract(
+    POSITION_MANAGER_ADDRESS,
+    POSITION_MANAGER_ABI,
+    wallet,
+  );
+
+  // Get position details
+  const position = await positionManager.positions(positionId);
+  const isL1Position = wrappedTokens.some((outcome) => {
+    const sorted = sortTokens(outcome, sUSDS);
+    return (
+      position.token0.toLowerCase() === sorted[0].toLowerCase() &&
+      position.token1.toLowerCase() === sorted[1].toLowerCase()
+    );
+  });
+  return isL1Position;
+  // if (!isL1Position) {
+  //   console.log("Not l1 positionnnnnnnn");
+  //   return;
+  // }
+  // const isOriginalityPosition = originalityPairs.some((pair) => {
+  //   return (
+  //     position.token0.toLowerCase() === pair.token0.toLowerCase() &&
+  //     position.token1.toLowerCase() === pair.token1.toLowerCase()
+  //   );
+  // });
+  // return isOriginalityPosition;
+}
+const arr = [];
 async function getTokenBalance(tokenAddress) {
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   const wallet = new ethers.Wallet(WALLET_PRIVATE_KEY, provider);
@@ -95,36 +151,38 @@ async function withdrawPosition(positionId, wallet, provider) {
   const positionManager = new ethers.Contract(
     POSITION_MANAGER_ADDRESS,
     POSITION_MANAGER_ABI,
-    wallet
+    wallet,
   );
 
   // Get position details
   const position = await positionManager.positions(positionId);
-  const isL1Position = wrappedTokens.some((outcome) => {
-    const sorted = sortTokens(outcome, sUSDS);
-    return position.token0 === sorted[0] && position.token1 === sorted[1];
-  });
-  if (!isL1Position) {
-    console.log("Not l1 positionnnnnnnn");
-    return;
-  }
-  if (position.liquidity.toString() === "0") {
-    console.log("Position has no liquidity, burning...");
-    const burnTx = await positionManager.burn(positionId);
-    console.log("Burn transaction hash:", burnTx.hash);
-    await burnTx.wait();
-    return;
-  }
+
+  // if (position.liquidity.toString() === "0") {
+  //   console.log("Position has no liquidity, burning...");
+  //   const burnTx = await positionManager.burn(positionId);
+  //   console.log("Burn transaction hash:", burnTx.hash);
+  //   await burnTx.wait();
+  //   return;
+  // }
+
   console.log("Token0:", position.token0);
   console.log("Token1:", position.token1);
   console.log("Fee Tier:", position.fee);
   console.log("Liquidity:", position.liquidity.toString());
+
   // Create Token objects
   const token0 = new Token(CHAIN_ID, position.token0, 18, "TOKEN0");
   const token1 = new Token(CHAIN_ID, position.token1, 18, "TOKEN1");
 
   // Get pool data
   const poolAddress = Pool.getAddress(token0, token1, position.fee);
+  arr.push({
+    token0: position.token0,
+    token1: position.token1,
+    liquidity: position.liquidity.toString(),
+    positionId: positionId.toString(),
+    poolAddress,
+  });
   const poolContract = new ethers.Contract(poolAddress, POOL_ABI, provider);
   const [slot0, liquidity] = await Promise.all([poolContract.slot0(), poolContract.liquidity()]);
 
@@ -135,7 +193,7 @@ async function withdrawPosition(positionId, wallet, provider) {
     Number(position.fee),
     slot0.sqrtPriceX96.toString(),
     liquidity.toString(),
-    Number(slot0.tick)
+    Number(slot0.tick),
   );
   // Construct position
   const sdkPosition = new Position({
@@ -152,19 +210,19 @@ async function withdrawPosition(positionId, wallet, provider) {
     expectedCurrencyOwed1: CurrencyAmount.fromRawAmount(token1, 0),
     recipient: wallet.address,
   };
-  // Remove 100% of liquidity
+  // Remove liquidity
   const removeLiquidityOptions = {
     deadline: Math.floor(Date.now() / 1000) + 60 * 20, // 20 minutes
     slippageTolerance: new Percent(10, 10_000), // 0.1%
     tokenId: positionId.toString(),
-    liquidityPercentage: new Percent(1), // 100%
+    liquidityPercentage: new Percent(1, 2), // 50%
     collectOptions,
   };
 
   // Generate transaction
   const { calldata, value } = NonfungiblePositionManager.removeCallParameters(
     sdkPosition,
-    removeLiquidityOptions
+    removeLiquidityOptions,
   );
 
   const transaction = {
@@ -182,15 +240,16 @@ async function withdrawPosition(positionId, wallet, provider) {
   console.log("Waiting for confirmation...");
   const receipt = await tx.wait();
   console.log("Transaction confirmed! Block:", receipt.blockNumber);
-  const burnTx = await positionManager.burn(positionId);
-  console.log("Burn transaction hash:", burnTx.hash);
-  await burnTx.wait();
+  // const burnTx = await positionManager.burn(positionId);
+  // console.log("Burn transaction hash:", burnTx.hash);
+  // await burnTx.wait();
 }
 
 // Run the script
 withdrawAllPositions()
   .then(() => {
     console.log("\n✅ All positions processed successfully!");
+    fs.writeFileSync("./execution.json", JSON.stringify(arr, null, 4));
     process.exit(0);
   })
   .catch((error) => {
