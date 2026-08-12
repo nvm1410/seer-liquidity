@@ -1,0 +1,443 @@
+[
+  {
+    "tokenId": "4849",
+    "name": "wbETH",
+    "token0": "0x776b53F44E769B3F87E6e89Ab033FBF7B0C7697E",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "199705230695849406",
+    "txHash": "0xd1fa4c2d566602ea7988fc9a23244191cbf75085133a6571dd9d1c6df52ab3d2",
+    "blockNumber": 47679680
+  },
+  {
+    "tokenId": "4850",
+    "name": "stETH",
+    "token0": "0x4eFC4D1696d02AF1a431A0D25A988405CE294056",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "64221727813540151",
+    "txHash": "0xb624935422f4eadd54f040aae90a216ebb0f3722e6848415b0860841fe262acb",
+    "blockNumber": 47679681
+  },
+  {
+    "tokenId": "4851",
+    "name": "ETH+",
+    "token0": "0x2140D5CC74d8Eb629bcd106E6c450Fb620741609",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "133314153590584782",
+    "txHash": "0x979de8548445cd48824431bbcf7882ca652d7c5b6249fc40d575e52792ff3f6d",
+    "blockNumber": 47679684
+  },
+  {
+    "tokenId": "4852",
+    "name": "bsdETH",
+    "token0": "0x4e40a0010af984e8cA540587232dC85F11e1307a",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "185331373633554830",
+    "txHash": "0xf019e436ffcb3beb177e829f23e514496f449027c647c30f8ddbd66973e4f4bf",
+    "blockNumber": 47679686
+  },
+  {
+    "tokenId": "4853",
+    "name": "rETH",
+    "token0": "0x7315d62af368C8F7d194E95cD3155d4D9C0ed8a3",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "114351355783796296",
+    "txHash": "0xd6b93db3a0d22d5da196b466f7a22dbba8105aa4c3557cd546f645c5811d39b5",
+    "blockNumber": 47679688
+  },
+  {
+    "tokenId": "4854",
+    "name": "pufETH",
+    "token0": "0x1F270Ad73D959fEFd46e6f1A2CBac8F4f28Ef3AB",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "126756660382139083",
+    "txHash": "0xa35580ce01223988570691131fe15777a1375a5ecb7f56a49f7484f24dd3484e",
+    "blockNumber": 47679690
+  },
+  {
+    "tokenId": "4855",
+    "name": "PYUSD",
+    "token0": "0x0Ec33c72480B183A9A6cE9b1aFa8B4B3ea4a43F1",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "59812948362902493",
+    "txHash": "0x371860dedfcbee0303677dfdd45ba0c64dbeaf25bfe372b2afc8a67584b854f2",
+    "blockNumber": 47679692
+  },
+  {
+    "tokenId": "4856",
+    "name": "RLUSD",
+    "token0": "0x7923EECCd5cE234a38509327D74daE0cbDacF8bB",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "50466776839523293",
+    "txHash": "0xbc9ab4ea14d5c8ad8e98a3f606f3bfc56c4ccaa5a62b57c858568dbdb0dfffe0",
+    "blockNumber": 47679695
+  },
+  {
+    "tokenId": "4857",
+    "name": "USDC",
+    "token0": "0xad78774B5F70E9f3e0E0d41bA4464b9AE388cD2D",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "44992660698120879",
+    "txHash": "0xccc1862f0d7e7000a76842fdde42b49938fe24e93d296929f54cff910f9b8ffe",
+    "blockNumber": 47679697
+  },
+  {
+    "tokenId": "4858",
+    "name": "USD1",
+    "token0": "0x91C8Da948662a182A2de2ABEA4377d42442Ba52f",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "123396553533086239",
+    "txHash": "0xdc293d4e59914b5c9cbcfa33cbe254d18e23b5a25a3a0228750cc4bb9dc6f8d4",
+    "blockNumber": 47679699
+  },
+  {
+    "tokenId": "4859",
+    "name": "USDS",
+    "token0": "0x04144Ae853be94D82eca0d6cc226B8496aAf3cA7",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "162588422723076552",
+    "txHash": "0xe72082e78d4e023cf67bda66e8e1783bbb1640933f24b9538459e07c540bdbf2",
+    "blockNumber": 47679701
+  },
+  {
+    "tokenId": "4860",
+    "name": "USDT",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xF013b8307b9Fc3fe8216e0aF869192E20D48b1e7",
+    "removedLiquidity": "148108108213197177",
+    "txHash": "0x75ea1ee848b1ab05b1f269524060936f88ea83d00e2d871565c5da3d8019a005",
+    "blockNumber": 47679703
+  },
+  {
+    "tokenId": "4861",
+    "name": "BTCB",
+    "token0": "0x80336FF64C3a1DAB0E0e84bF7A0f7513d273537c",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "204386854141994901",
+    "txHash": "0x4a920fa4dec74331e5a703073e30031bfa2f03c82856d4c90cb16c0b7d76d508",
+    "blockNumber": 47679705
+  },
+  {
+    "tokenId": "4862",
+    "name": "solvBTC",
+    "token0": "0x149149C37b6663496D1812bd197abE5A529FDd24",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "355659278291658929",
+    "txHash": "0xdbcc29ef66e980640c1e0b50955294b7d91694671b62064af3a4c0577e4e916a",
+    "blockNumber": 47679707
+  },
+  {
+    "tokenId": "4863",
+    "name": "tBTC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xeAc526779D0268E4a221d18C5ddf2c38828Ae48a",
+    "removedLiquidity": "120179856501660288",
+    "txHash": "0x93c97778602a4e0dcccf99e58b3024b16d3c7072e947bad5286cd5a430c53fb9",
+    "blockNumber": 47679709
+  },
+  {
+    "tokenId": "4864",
+    "name": "cbBTC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xD29E1CB5Fe4A7Ea60850AcF0D0631830dDb7AB25",
+    "removedLiquidity": "43285569491168425",
+    "txHash": "0x357387f86c5854c37e030eadff2c3780898ea54182fc8ec675d202709a17da9c",
+    "blockNumber": 47679711
+  },
+  {
+    "tokenId": "4865",
+    "name": "LBTC",
+    "token0": "0x96429e5da4534cb55bb27F409ee2A962D96322e0",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "162588422723076552",
+    "txHash": "0xf896347384045ba17acc7f82308304833fb645c00960ac7c835499b43c716c89",
+    "blockNumber": 47679713
+  },
+  {
+    "tokenId": "4866",
+    "name": "UBTC",
+    "token0": "0xa315522569d07EbB628272Df07dad32BAc83e93e",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "334803317840799633",
+    "txHash": "0x4d61fcc492fe96e1f09ee397491b1acbad5cd4ea094a9a123e84110343943ddd",
+    "blockNumber": 47679715
+  },
+  {
+    "tokenId": "4867",
+    "name": "GACLO-1",
+    "token0": "0x5c207f84a4f1770C2DC2d37Bc551FA710d94f701",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "205170447098543995",
+    "txHash": "0x2ecdf3794df7c8b1257b79babb860fcd0331a48827858ced71af511d571c48d6",
+    "blockNumber": 47679717
+  },
+  {
+    "tokenId": "4868",
+    "name": "BUIDL-I",
+    "token0": "0x149D11d8bBb1bcc72d2E4331AfACC102f58E5fDF",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "96421055801380419",
+    "txHash": "0x7639ff3bb4331ce01994481ad4ab5902e45ec9478439bbf1a5b12d0afc0409d2",
+    "blockNumber": 47679719
+  },
+  {
+    "tokenId": "4869",
+    "name": "JAAA",
+    "token0": "0x0Dd63dd87744152DE0e86eCc40DFFEF1DE7Eca49",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "134893190597644978",
+    "txHash": "0x77b01ba41a05fbf66a2aadcb67b34adda82e70d47817b5d91e91dd4251e05096",
+    "blockNumber": 47679721
+  },
+  {
+    "tokenId": "4870",
+    "name": "JTRSY",
+    "token0": "0x82fDA544986231140Ff96B081Bfe06807557c827",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "117003405721441168",
+    "txHash": "0x34b627e3b858b74ac47607ec97c2fb5916f59a03649b69375026f6df57e87a0d",
+    "blockNumber": 47679724
+  },
+  {
+    "tokenId": "4871",
+    "name": "mF-ONE",
+    "token0": "0x0ED1bE8f1e35Aa6f989Aa237Fb57a27aCc84c2F0",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "324404580945120193",
+    "txHash": "0xa64ce77f62ac0cee142932256b701dd4d52b335db27d9b92ebdb0dee0cbd5cd1",
+    "blockNumber": 47679725
+  },
+  {
+    "tokenId": "4872",
+    "name": "STAC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xeb5Dd56F62e33681e19Df7f7b0086783e5F9ad0E",
+    "removedLiquidity": "118403818030406133",
+    "txHash": "0xabbca5cced5588e6bd417fc46c20b715572dd0fd9f79122bf392a1363b10855d",
+    "blockNumber": 47679727
+  },
+  {
+    "tokenId": "4873",
+    "name": "No To All",
+    "token0": "0x105ca745Bc12d5b1E67f54a37A5A48653995554f",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "40198266951164720074",
+    "txHash": "0x56b84802e486c536a6ed66a90b348c248e21680d1242cdca16995ba7259b6bc8",
+    "blockNumber": 47679729
+  },
+  {
+    "tokenId": "4874",
+    "name": "wbETH",
+    "token0": "0x776b53F44E769B3F87E6e89Ab033FBF7B0C7697E",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1366683308200788007",
+    "txHash": "0x6fba8299909bb709283a513bad4b9ba270ed4d48a017244c65c54ee0723b5a0e",
+    "blockNumber": 47679732
+  },
+  {
+    "tokenId": "4875",
+    "name": "stETH",
+    "token0": "0x4eFC4D1696d02AF1a431A0D25A988405CE294056",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "439501575000077385",
+    "txHash": "0x8c4377bae0545a1dbb67f6e17ce8698d186008fd31dcb3d565e81d724cf51f29",
+    "blockNumber": 47679734
+  },
+  {
+    "tokenId": "4876",
+    "name": "ETH+",
+    "token0": "0x2140D5CC74d8Eb629bcd106E6c450Fb620741609",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "912335785218644783",
+    "txHash": "0x37dd631e950e654124825d5afefa7c05f01ee4708fd3905e6e33352a30125a8d",
+    "blockNumber": 47679736
+  },
+  {
+    "tokenId": "4877",
+    "name": "bsdETH",
+    "token0": "0x4e40a0010af984e8cA540587232dC85F11e1307a",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1268315776949588313",
+    "txHash": "0xacb3cef7a81cc63a86a55c5ee67d1d0d0f904f727d543c40e25a0f7f45d85f9a",
+    "blockNumber": 47679738
+  },
+  {
+    "tokenId": "4878",
+    "name": "rETH",
+    "token0": "0x7315d62af368C8F7d194E95cD3155d4D9C0ed8a3",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "782563825070066835",
+    "txHash": "0x84a2d6c43f223f429db87069ae58ff96fedfde27ddb16f16c65c1e7cfe19dee7",
+    "blockNumber": 47679740
+  },
+  {
+    "tokenId": "4879",
+    "name": "pufETH",
+    "token0": "0x1F270Ad73D959fEFd46e6f1A2CBac8F4f28Ef3AB",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "867459561995068347",
+    "txHash": "0x1bba43d9591d0cf70dfc515e1b7cbedcc43c5dec74d81a3cc95f2c74441d88a9",
+    "blockNumber": 47679742
+  },
+  {
+    "tokenId": "4880",
+    "name": "PYUSD",
+    "token0": "0x0Ec33c72480B183A9A6cE9b1aFa8B4B3ea4a43F1",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "409330080424145096",
+    "txHash": "0x454a8331f34fc8c2a1f48513e62936f8997106ce9447c6469ba0a6530a3ddf5b",
+    "blockNumber": 47679744
+  },
+  {
+    "tokenId": "4881",
+    "name": "RLUSD",
+    "token0": "0x7923EECCd5cE234a38509327D74daE0cbDacF8bB",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "345369529305494008",
+    "txHash": "0x0c0321d4e93eecffc4038d86f80f03035e38d5f9cd368f5a89ee61eaa9c33aaa",
+    "blockNumber": 47679746
+  },
+  {
+    "tokenId": "4882",
+    "name": "USDC",
+    "token0": "0xad78774B5F70E9f3e0E0d41bA4464b9AE388cD2D",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "307907400088651851",
+    "txHash": "0xd719c3734d9cc261007f3f2459d682b68b267f7cdcc638db07ffe1c32eb9bfc2",
+    "blockNumber": 47679749
+  },
+  {
+    "tokenId": "4883",
+    "name": "USD1",
+    "token0": "0x91C8Da948662a182A2de2ABEA4377d42442Ba52f",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "844464661318853315",
+    "txHash": "0xc61fa7e1c3f53ce964beb3c8b3f45f9b9aebdd94e0fcc0c244565f10758a9263",
+    "blockNumber": 47679751
+  },
+  {
+    "tokenId": "4884",
+    "name": "USDS",
+    "token0": "0x04144Ae853be94D82eca0d6cc226B8496aAf3cA7",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1112674328399254566",
+    "txHash": "0x42fb00423ff64b11742db9a991e478ce35b8243814336a055f0114cf06d607e2",
+    "blockNumber": 47679753
+  },
+  {
+    "tokenId": "4885",
+    "name": "USDT",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xF013b8307b9Fc3fe8216e0aF869192E20D48b1e7",
+    "removedLiquidity": "1013578255305956647",
+    "txHash": "0x35ed0697d53afc6b1c9144ec1c774255879521ed6a621a5f6b23c084eafa7169",
+    "blockNumber": 47679755
+  },
+  {
+    "tokenId": "4886",
+    "name": "BTCB",
+    "token0": "0x80336FF64C3a1DAB0E0e84bF7A0f7513d273537c",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1398722011427710940",
+    "txHash": "0xb52d545cea4a5d9484239cfe8dc764f877ef98a4fbb7477d2e1d784eb5342af8",
+    "blockNumber": 47679756
+  },
+  {
+    "tokenId": "4887",
+    "name": "solvBTC",
+    "token0": "0x149149C37b6663496D1812bd197abE5A529FDd24",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "2433955271748680803",
+    "txHash": "0x7ca16ae31b307eb953e752b55afde2f8c6736a73aaba30a2af529f104b7c10e4",
+    "blockNumber": 47679758
+  },
+  {
+    "tokenId": "4888",
+    "name": "tBTC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xeAc526779D0268E4a221d18C5ddf2c38828Ae48a",
+    "removedLiquidity": "822451186133096737",
+    "txHash": "0xb9620fe6456e1a709d0863f904ab28a5ca1420978d49f810e80791be279863ea",
+    "blockNumber": 47679760
+  },
+  {
+    "tokenId": "4889",
+    "name": "cbBTC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xD29E1CB5Fe4A7Ea60850AcF0D0631830dDb7AB25",
+    "removedLiquidity": "296224916610432444",
+    "txHash": "0x9984dabc2d0d2425e18b118d3ff7f8bfeba328611a8afb3b94ec7eefb942b88a",
+    "blockNumber": 47679762
+  },
+  {
+    "tokenId": "4890",
+    "name": "LBTC",
+    "token0": "0x96429e5da4534cb55bb27F409ee2A962D96322e0",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1112674328399254566",
+    "txHash": "0xd07ae240262d6b56d6a805d54abed530d457920ee8847acc7b92e5b2c433b7cc",
+    "blockNumber": 47679764
+  },
+  {
+    "tokenId": "4891",
+    "name": "UBTC",
+    "token0": "0xa315522569d07EbB628272Df07dad32BAc83e93e",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "2291227447718393215",
+    "txHash": "0x4bb90c362ab207d98d8d0f72cce8b6d50e668337e8d3f7dbcc77cc979dfd0c7d",
+    "blockNumber": 47679766
+  },
+  {
+    "tokenId": "4892",
+    "name": "GACLO-1",
+    "token0": "0x5c207f84a4f1770C2DC2d37Bc551FA710d94f701",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "1404084532030740944",
+    "txHash": "0x875842a40e7c8f5bb48297002dfa0f60324625955f4231cb1da3f1003804bc8c",
+    "blockNumber": 47679768
+  },
+  {
+    "tokenId": "4893",
+    "name": "BUIDL-I",
+    "token0": "0x149D11d8bBb1bcc72d2E4331AfACC102f58E5fDF",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "659857766687841568",
+    "txHash": "0x44715879d260f4d2bee19bf6bf521b61927829b797b430ec7b7b231252da88be",
+    "blockNumber": 47679770
+  },
+  {
+    "tokenId": "4894",
+    "name": "JAAA",
+    "token0": "0x0Dd63dd87744152DE0e86eCc40DFFEF1DE7Eca49",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "923141929419580584",
+    "txHash": "0x01a2106092e6353f25428157e99c7a28b537f425ebe4330573b3228c5f97325c",
+    "blockNumber": 47679772
+  },
+  {
+    "tokenId": "4895",
+    "name": "JTRSY",
+    "token0": "0x82fDA544986231140Ff96B081Bfe06807557c827",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "800713136280719652",
+    "txHash": "0x2ec981f937b68ae4dc5f0a5c8f10ea8cb26dba6251d85ed5768ee12a5c885b7c",
+    "blockNumber": 47679774
+  },
+  {
+    "tokenId": "4896",
+    "name": "mF-ONE",
+    "token0": "0x0ED1bE8f1e35Aa6f989Aa237Fb57a27aCc84c2F0",
+    "token1": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "removedLiquidity": "2220063662512680313",
+    "txHash": "0xd19f288904be1dcd56e3e92e555ac29dd3e3fd912cf153c3a79647061e9d1f38",
+    "blockNumber": 47679776
+  },
+  {
+    "tokenId": "4897",
+    "name": "STAC",
+    "token0": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+    "token1": "0xeb5Dd56F62e33681e19Df7f7b0086783e5F9ad0E",
+    "removedLiquidity": "810296861857623739",
+    "txHash": "0x5c01e7415a5cdd8e3c9bba02fcb69a20f59fa10d11a6c408fd026e52dacc7895",
+    "blockNumber": 47679778
+  }
+]

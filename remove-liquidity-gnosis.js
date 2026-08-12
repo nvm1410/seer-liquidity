@@ -247,7 +247,9 @@ async function main() {
     );
 
     if (!DRY_RUN) {
-      const data = buildRemoveCalldata(p.tokenId, position, amount0Min.quotient.toString(), amount1Min.quotient.toString());
+      // burnAmountsWithSlippage returns raw JSBI amounts (like
+      // mintAmountsWithSlippage), not CurrencyAmounts — there is no .quotient.
+      const data = buildRemoveCalldata(p.tokenId, position, amount0Min.toString(), amount1Min.toString());
       const receipt = await retryTransaction(() => wallet.sendTransaction({ to: SWAPR_NPM_ADDRESS, data, value: 0n }));
       progressLog.push({
         tokenId: p.tokenId.toString(),

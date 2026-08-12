@@ -1,0 +1,272 @@
+{
+  "source": "https://api.staging.credora.io/graphql",
+  "metric": "Metrics.psl (yearly probability of default)",
+  "fetchedAt": "2026-08-12T01:40:34.764Z",
+  "assetCount": 33,
+  "assets": [
+    {
+      "name": "weETH",
+      "credoraName": "weETH",
+      "yearlyPD": 0.00096,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee"
+    },
+    {
+      "name": "stETH",
+      "credoraName": "stETH",
+      "yearlyPD": 0.00084,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+    },
+    {
+      "name": "ETH+",
+      "credoraName": "ETH+",
+      "yearlyPD": 0.00343,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0xe72b141df173b999ae7c1adcbf60cc9833ce56a8"
+    },
+    {
+      "name": "bsdETH",
+      "credoraName": "bsdETH",
+      "yearlyPD": 0.00664,
+      "rating": "A-",
+      "publishDate": "2026-07-23",
+      "address": "0x61d6eaf4e96e69b45240a5b22815b43360e28ce3"
+    },
+    {
+      "name": "rETH",
+      "credoraName": "rETH",
+      "yearlyPD": 0.00253,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0xae78736cd615f374d3085123a210448e74fc6393"
+    },
+    {
+      "name": "pufETH",
+      "credoraName": "pufETH",
+      "yearlyPD": 0.00315,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0xd9a442856c234a39a81a089c06451ebaa4306a72"
+    },
+    {
+      "name": "PYUSD",
+      "credoraName": "PYUSD",
+      "yearlyPD": 0.00066,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8"
+    },
+    {
+      "name": "RLUSD",
+      "credoraName": "RLUSD",
+      "yearlyPD": 0.00052,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0x8292bb45bf1ee4d140127049757c2e0ff06317ed"
+    },
+    {
+      "name": "USDC",
+      "credoraName": "USDC",
+      "yearlyPD": 0.00039,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    },
+    {
+      "name": "USD1",
+      "credoraName": "USD1",
+      "yearlyPD": 0.00295,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d"
+    },
+    {
+      "name": "USDS",
+      "credoraName": "USDS",
+      "yearlyPD": 0.00513,
+      "rating": "A-",
+      "publishDate": "2026-07-23",
+      "address": "0xdC035D45d973E3EC169d2276DDab16f1e407384F"
+    },
+    {
+      "name": "USDT",
+      "credoraName": "USDT",
+      "yearlyPD": 0.00433,
+      "rating": "A-",
+      "publishDate": "2026-07-23",
+      "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    },
+    {
+      "name": "BTCB",
+      "credoraName": "BTCB",
+      "yearlyPD": 0.00821,
+      "rating": "B+",
+      "publishDate": "2026-07-23",
+      "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c"
+    },
+    {
+      "name": "solvBTC",
+      "credoraName": "solvBTC",
+      "yearlyPD": 0.0243,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0x7a56e1c57c7475ccf742a1832b028f0456652f97"
+    },
+    {
+      "name": "tBTC",
+      "credoraName": "tBTC",
+      "yearlyPD": 0.00283,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x18084fba666a33d37592fa2633fd49a74dd93a88"
+    },
+    {
+      "name": "cbBTC",
+      "credoraName": "cbBTC",
+      "yearlyPD": 0.00037,
+      "rating": "A+",
+      "publishDate": "2026-07-23",
+      "address": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+    },
+    {
+      "name": "LBTC",
+      "credoraName": "LBTC",
+      "yearlyPD": 0.0051,
+      "rating": "A-",
+      "publishDate": "2026-07-23",
+      "address": "0x8236a87084f8b84306f72007f36f2618a5634494"
+    },
+    {
+      "name": "UBTC",
+      "credoraName": "UBTC",
+      "yearlyPD": 0.02147,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0xf1143f3a8d76f1ca740d29d5671d365f66c44ed1"
+    },
+    {
+      "name": "GACLO-1",
+      "credoraName": "GACLO-1",
+      "yearlyPD": 0.00821,
+      "rating": "B+",
+      "publishDate": "2026-07-23",
+      "address": "0x2C0aDFF8e114f3cA106051144353aC703D24B901"
+    },
+    {
+      "name": "BUIDL-I",
+      "credoraName": "BUIDL-I",
+      "yearlyPD": 0.00178,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x6a9da2d710Bb9b700aCde7Cb81F10F1ff8C89041"
+    },
+    {
+      "name": "JAAA",
+      "credoraName": "JAAA",
+      "yearlyPD": 0.00348,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x5a0f93d040de44e78f251b03c43be9cf317dcf64"
+    },
+    {
+      "name": "JTRSY",
+      "credoraName": "JTRSY",
+      "yearlyPD": 0.00228,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x8c213ee79581ff4984583c6a801e5263418c4b86"
+    },
+    {
+      "name": "mF-ONE",
+      "credoraName": "mF-ONE",
+      "yearlyPD": 0.02053,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0x238a700eD6165261Cf8b2e544ba797BC11e466Ba"
+    },
+    {
+      "name": "STAC",
+      "credoraName": "STAC",
+      "yearlyPD": 0.00269,
+      "rating": "A",
+      "publishDate": "2026-07-23",
+      "address": "0x9a005c9a89bd72a4bd27721e7a09a3c11d2b03c4"
+    },
+    {
+      "name": "RUSD",
+      "credoraName": "RUSD",
+      "yearlyPD": 0.05884,
+      "rating": "B-",
+      "publishDate": "2026-07-23",
+      "address": "0x09d4214c03d01f49544c0448dbe3a27f768f2b34"
+    },
+    {
+      "name": "USDF",
+      "credoraName": "USDF",
+      "yearlyPD": 0.16814,
+      "rating": "C",
+      "publishDate": "2026-07-23",
+      "address": "0x5a110fc00474038f6c02e89c707d638602ea44b5"
+    },
+    {
+      "name": "avUSD",
+      "credoraName": "avUSD",
+      "yearlyPD": 0.10353,
+      "rating": "C+",
+      "publishDate": "2026-07-23",
+      "address": "0xf4c13D631450De6B12a19829E37c8e2826891dC4"
+    },
+    {
+      "name": "NUSD",
+      "credoraName": "NUSD",
+      "yearlyPD": 0.07594,
+      "rating": "C+",
+      "publishDate": "2026-07-23",
+      "address": "0xE556ABa6fe6036275Ec1f87eda296BE72C811BCE"
+    },
+    {
+      "name": "iUSD",
+      "credoraName": "iUSD",
+      "yearlyPD": 0.03232,
+      "rating": "B-",
+      "publishDate": "2026-07-23",
+      "address": "0x48f9e38f3070ad8945dfeae3fa70987722e3d89c"
+    },
+    {
+      "name": "satUSD+",
+      "credoraName": "satUSD+",
+      "yearlyPD": 0.026,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0xCdaCE5073D9ca7379498Ea8c728302e06D2f4f9b"
+    },
+    {
+      "name": "avETH",
+      "credoraName": "avETH",
+      "yearlyPD": 0.134,
+      "rating": "C",
+      "publishDate": "2026-07-23",
+      "address": "0x9469470C9878bf3d6d0604831d9A3A366156f7EE"
+    },
+    {
+      "name": "U",
+      "credoraName": "U",
+      "yearlyPD": 0.02487,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0xce24439f2d9c6a2289f741120fe202248b666666"
+    },
+    {
+      "name": "USDO",
+      "credoraName": "USDO",
+      "yearlyPD": 0.02216,
+      "rating": "B",
+      "publishDate": "2026-07-23",
+      "address": "0x8238884ec9668ef77b90c6dff4d1a9f4f4823bfe"
+    }
+  ]
+}
