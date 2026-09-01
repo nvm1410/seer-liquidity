@@ -206,3 +206,188 @@ tokens have one tiny NFT each (`1055065`, `1055066`).
 Run it exactly like the add-back: dry run first, review, flip `DRY_RUN = false`, then
 `node verify-20k-l1.js`. If it dies mid-run set `SKIP_SPLITS = true` and re-run — the splits
 already happened and only the missing `increaseLiquidity` calls are retried.
+
+## Unwind: all L1 liquidity back to sUSDS (2026-08-25)
+
+The reverse of everything above. **Status: EXECUTED 2026-08-25 — 198/198 positions
+drained, both merges landed, 0 failures.**
+
+### Result
+
+| Leg | Amount |
+|---|---|
+| Liquidity removed | 158,506.116804064375452412 |
+| sUSDS returned directly by the pools | 12,485.72 |
+| sUSDS from merging Market B → Market A → sUSDS | 20,476.007615049539122226 |
+| **Total sUSDS recovered** | **~32,962** (4,544.01 → 37,505.741498927464627829) |
+| Stranded outcome tokens (market A) | 351,173.309797163442676209 across 67/68 outcomes |
+| Stranded outcome tokens (market B) | 135,954.362503889194683910 across 32/33 outcomes |
+| Txs | 198 removals + 101 approvals + 2 merges = 301 |
+| Gas | ~0.0000178 ETH |
+
+10 transient retries in total (drpc lag); every one recovered on attempt 2.
+
+### Scripts
+
+| File | Purpose |
+|---|---|
+| `withdraw-l1-liquidity.js` | Phase 1 — remove 100% + collect from every L1 position |
+| `merge-l1-positions.js` | Phases 2+3 — merge B → OTHER_TOKEN, then A → sUSDS |
+| `verify-l1-unwind.js` | Read-only: all positions drained, logged txs succeeded, residuals |
+| `withdraw-l1-liquidity-execution.json` | 198 entries (`kind: "remove"`, market A/B label, txHash) |
+| `merge-l1-positions-execution.json` | 2 entries, one per market, resumable per phase |
+
+Run order: `withdraw-l1-liquidity.js` (dry, then `DRY_RUN = false`) →
+`merge-l1-positions.js` (dry, then live) → `verify-l1-unwind.js`.
+
+### Things worth knowing before re-running this
+
+1. **Merge Market B first.** `Router.mergePositions` burns an equal amount of *every*
+   outcome, so each merge is capped at `min(balances)` over the full set incl. Invalid.
+   B's merge *mints* A's outcome #66 (OTHER_TOKEN) — the only A outcome with no pool and
+   therefore the one with almost no standalone balance. Merging A first would have capped
+   the whole unwind at the ~2,749 of OTHER_TOKEN lying around instead of 20,476.
+   After B's merge, A's binding minimum was #66 at 20,476.01; the next-lowest outcome was
+   #58 at 20,839.57 — only ~364 above, so the B→A chain was very nearly the *only*
+   constraint. The ordering is worth roughly 17.7k sUSDS.
+2. **`mergePositions` takes sUSDS (the base collateral) as arg 1 for BOTH markets** — not
+   the parent-outcome token for B. The Router derives the partition from
+   `parentCollectionId`. Same rule as the splits in round 2.
+3. **Scope is discovered from chain, not from `execution.json`.** `withdraw-l1-liquidity.js`
+   enumerates the wallet's 494 position NFTs via `balanceOf` / `tokenOfOwnerByIndex` and
+   matches on `pairKey(token0, token1)` against A's + B's wrapped tokens. It cross-checks
+   against `execution.json`'s 198 IDs and prints any divergence — on this run: 0 missing,
+   0 extra, 100 distinct pools (A: 133 NFTs, B: 65).
+4. **NFTs were kept, not burned** (`BURN_NFT = false`). All 198 are still owned at zero
+   liquidity, so a future round can `increaseLiquidity` the same tokenIds exactly as the
+   two add rounds did. `COLLECT_EMPTY = true` sweeps fees off already-empty positions;
+   nothing qualified on this run.
+5. **~487k outcome tokens are stranded** in the wallet — the trading imbalance across two
+   many-outcome markets. They are not lost: they become redeemable via
+   `Router.redeemPositions` once A and B resolve. Do not try to recover them by selling
+   into the pools; the pools are now empty.
+6. The residual gaps from the July add-back (29-30 partially restored positions) are moot
+   now — everything is drained.
+
+## Resolution: answering Reality + reporting payouts (2026-08-28)
+
+The final act. The unwind left ~487k outcome tokens stranded; they only become redeemable
+once both markets resolve.
+
+### ✅ Step 1 status: EXECUTED 2026-08-28 — 99/99 answers submitted, 0 retries, 0 failures
+
+| Leg | Value |
+|---|---|
+| Market A answers | 67 (66 repos + "Other repositories") |
+| Market B answers | 32 repos |
+| Bonds posted | 0.0495 ETH (99 × 0.0005 min_bond) |
+| Σ market A payouts | `999999999800000000` (0.9999999998) |
+| Σ market B payouts | `168323080700000000` (0.1683230807) |
+| A#66 "Other repositories" | `168323080700000000` — exactly Σ market B |
+| Questions finalize | 2026-08-31 ~16:52 UTC (302400 s after the last submit) |
+
+Verified independently from chain afterwards: all 99 `best_answer` values match the intended
+answers, none pending arbitration, none unanswered.
+
+### Scripts
+
+| File | Purpose |
+|---|---|
+| `l1weightsForResolution.csv` | The juror weights — 98 repos, `repo,parent,weight`, summing to 0.9999999998 |
+| `answer-l1-markets.js` | Step 1 — submits all 99 Reality answers, fail-closed, resumable |
+| `answer-l1-execution.json` | 99 entries with market/outcomeIndex/questionId/answerWei/txHash |
+| `resolve-l1-markets.js` | Step 2 — scans status, calls `Market.resolve()` when finalized |
+| `resolve-l1-execution.json` | Written by step 2, one entry per market — never written here, a third party resolved both markets first |
+| `redeem-l1-positions.js` | Step 3 — redeems every non-zero-payout outcome, B then A, back to sUSDS |
+| `redeem-l1-positions-execution.json` | 8 entries, one per redeem chunk |
+
+Run order: `answer-l1-markets.js` (dry, then `DRY_RUN = false`) → wait 3.5 days →
+`resolve-l1-markets.js` (dry, then live) → `redeem-l1-positions.js` (dry, then live).
+
+### Things worth knowing before doing this again
+
+1. **The answer scale is a FRACTION, not a percent.** The question is *"What will be the juror
+   weight … of [repository]…?"* with `lowerBound = 0`, `upperBound = 1e18`. So `0.0456649495`
+   is submitted as `45664949500000000`. The Octant market (`answer-octant-markets.js`) was a
+   `[percent]` question with `upperBound = 100e18` — copying that scale here would be 100× wrong.
+   Always read `upperBound` off the market rather than assuming.
+
+2. **`elo.js` is NOT the resolution data.** It holds the *seeding* weights used to price the
+   pools (go-ethereum 0.0623, A/B split 0.9313/0.0687). The resolution weights are different
+   numbers with a different split (0.0457, 0.8317/0.1683). Using `elo.js` would have mispriced
+   every outcome.
+
+3. **A#66 "Other repositories" is answered with Σ(market B's 32 weights).** That is what makes
+   the two-level redemption exact: a B token redeems to `w_j/ΣB` of an OTHER token, which
+   redeems to `ΣB/ΣA` sUSDS — the product is exactly `w_j`. Any other value silently
+   over- or under-pays every market B holder.
+
+4. **Market B#31's on-chain name is `lambdaclass/lambda_ethereum_consensus\t`** — a literal
+   backslash + `t` (bytes `0x5c 0x74`), a stray escape sequence baked in at market creation.
+   Normalizing to `[a-z0-9]` strips the backslash but keeps the `t`, so it needs an explicit
+   entry in `ALIASES`. The name-matching assertions caught this before any transaction.
+
+5. **Only ratios matter.** `RealityProxy.resolveMultiScalarMarket` writes the raw answers as
+   the payout vector and `ConditionalTokens` divides by their sum, so the 2e-10 shortfall in
+   the CSV total is irrelevant.
+
+6. **`Market.resolve()` reverts unless EVERY question in that market is finalized.** One missed
+   answer blocks the whole market, which is why step 1 fails closed on an incomplete
+   outcome ↔ CSV mapping rather than skipping rows.
+
+7. **Answers are contestable.** Anyone can overwrite a question by posting 2× the bond, which
+   also restarts that question's 3.5-day clock. Re-running `answer-l1-markets.js` dry is the
+   check: it compares each on-chain `best_answer` to the intended value and warns loudly.
+
+### Expected redemption
+
+At these weights the wallet's stranded tokens are worth **~5,533 sUSDS** (4,774 direct from
+market A, 759 via market B's 4,510 OTHER tokens). Note this is much smaller than the 487k token
+count suggests — weights sum to 1, so `Σ balance × weight` tracks the *mean* per-outcome
+balance, not the total.
+
+## Redemption: stranded tokens → sUSDS (2026-09-01)
+
+### ✅ Status: EXECUTED 2026-09-01 — 98/98 outcomes redeemed, exact to the wei
+
+`resolve-l1-markets.js` had **nothing to do**: by 2026-09-01 both markets already read `CLOSED`
+with `payoutReported = true`, so a third party had called the permissionless `Market.resolve()`
+after the questions finalized. `resolve-l1-execution.json` was therefore never written — that is
+expected, not a gap.
+
+| Leg | Value |
+|---|---|
+| Phase 1 — market B | 32 outcomes → **4,510.2845 OTHER** tokens (3 txs) |
+| Phase 2 — market A | 67 outcomes (incl. the fresh OTHER) → **5,533.4660 sUSDS** (5 txs) |
+| sUSDS | 37,305.7415 → **42,839.2075** (+5,533.465968565583817205) |
+| Delta vs projection | **0** |
+| Transactions | 98 approvals + 8 redeems = 106; 13.28M gas on the redeems |
+| Gas cost | ~0.0000182 ETH |
+| Left in wallet | 2,467.94 (B) + 383.39 (A) "Invalid result" tokens, `payoutNumerator = 0`, worth 0 |
+
+Script: `redeem-l1-positions.js` → log `redeem-l1-positions-execution.json`, run
+`redeem-l1-run.log`. The predicted 5,533 in the section above was exactly right.
+
+### Things worth knowing before doing this again
+
+1. **Child market first, again — but for a different reason than the merge.** Unlike
+   `mergePositions`, `redeemPositions` is *not* capped at `min(balances)`; each outcome pays out
+   its own weight independently. Order still matters because market B redeems into market A's
+   outcome #66 (OTHER_TOKEN), whose standalone balance was **zero**. Redeeming A first would have
+   left B's whole 759 sUSDS behind a token balance of nothing.
+2. **Skip outcomes with `payoutNumerators == 0`.** The two "Invalid result" slots would burn
+   2,851 tokens for exactly zero collateral. The script reads the payout vector off
+   `ConditionalTokens` and filters them out rather than trusting the outcome name.
+3. **Pass the BASE collateral (sUSDS) for both markets**, exactly as with `mergePositions` —
+   `_redeemPositions` derives the position id from each market's own `parentCollectionId`.
+4. **A confirmed approve receipt is not globally visible state.** The first live run approved all
+   15 tokens of a chunk, then `estimateGas` on the redeem reverted with
+   `ERC20: transfer amount exceeds allowance` — the estimate hit a lagging RPC backend node. The
+   same call estimated fine seconds later. `ensureAllowance` now polls the allowance back until
+   it reads through, and `estimateGas` sits inside the retry loop. This cost only wasted
+   approvals, but on a send rather than an estimate it would have been a failed transaction.
+5. **The progress file is an audit trail, not the work queue.** Chunks are recomputed from live
+   balances every run, so a redeemed outcome (balance → 0) drops out by itself and the script is
+   safely resumable after a crash mid-phase.
+6. **67 outcomes in one call is ~2.4M gas at `CHUNK_SIZE = 15`**, well under Optimism's 40M block
+   limit; the chunking is caution, not necessity.

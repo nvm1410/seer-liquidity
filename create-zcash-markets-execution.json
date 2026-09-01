@@ -1,0 +1,1482 @@
+[
+  {
+    "id": 1,
+    "shortName": "GRANTSHUB",
+    "title": "Zcash Grants Hub",
+    "applicant": "Daniel Goh",
+    "requestedUsd": 3050,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xE599669a0cB02128fa0463953f9f70Fde240921A",
+    "chainId": 10,
+    "marketName": "Will Zcash Grants Hub be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zcash Grants Hub be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x5546e2e074ed448c568736641a373e8e2195a667bf2bc0ea102b8b2871d7a57b",
+    "questionId": "0x35a5f8d8c2f7b4f17651bb46d2a559277d59deb778c9395d11b250b318b57e8f",
+    "questionsIds": [
+      "0x7727cf27125b613497b24f9d129f9e24d73ef6797517c2dcb3ec7f4d798407c7"
+    ],
+    "realityQuestionId": "0x7727cf27125b613497b24f9d129f9e24d73ef6797517c2dcb3ec7f4d798407c7",
+    "tokenNames": [
+      "ZQ3GRANTSHUBYES",
+      "ZQ3GRANTSHUBNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xbe559e7f5486d11321c31f4aab8f6cd396bfd8604ea0ef973cb2a0dc15e2bcff",
+    "blockNumber": 155770409,
+    "gasUsed": "1715734",
+    "createdAt": "2026-08-19T11:39:58.976Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x30258BD4D6344B2be1AD364ebe5D19E4F88fC78e",
+      "0xF983075ccac6A52cE1dCA390cE319A3253f56CFd",
+      "0x75c9feD9069cbC1376709928999b299894C04055"
+    ]
+  },
+  {
+    "id": 2,
+    "shortName": "SHIELDEDSCAN",
+    "title": "ShieldedScan",
+    "applicant": "ShieldedScan",
+    "requestedUsd": 4060,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xbdb8245fB6E4c6dF77bB6b28AF7C7691572805EC",
+    "chainId": 10,
+    "marketName": "Will ShieldedScan be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ShieldedScan be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x0a9ed5b6fd08007b04b48dda06a828b55cb428ff7f4760ffb30f1d3e3cf7328b",
+    "questionId": "0xd809c5e2ab70f731c0c83e4a2b6110a9d58e3e943f46511d80055088c2177797",
+    "questionsIds": [
+      "0x76b2512e847d2a0f9963644ab46bf4d57fe7a3f779fab067d139a8484da21a26"
+    ],
+    "realityQuestionId": "0x76b2512e847d2a0f9963644ab46bf4d57fe7a3f779fab067d139a8484da21a26",
+    "tokenNames": [
+      "ZQ3SHIELDEDSCANYES",
+      "ZQ3SHIELDEDSCANNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x352c12aa806ccf3850ab71ba652eddb64de31a740409c0dc984ac19fb5ba794c",
+    "blockNumber": 155770414,
+    "gasUsed": "1686354",
+    "createdAt": "2026-08-19T11:40:09.398Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xD1122a4bEc93Ab3DA7Ca3B9601DCa61e3b4308DB",
+      "0x62600B021160180C743316415257d2518Cf4A75A",
+      "0xb5fA68e9592b9D799f51D1E333516CEF4faA4825"
+    ]
+  },
+  {
+    "id": 3,
+    "shortName": "ZECKIT",
+    "title": "ZecKit Post-M3 Stabilization and Developer Adoption",
+    "applicant": "Dapps over Apps",
+    "requestedUsd": 5000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x8F62C36678044f5BE39DE143C01d652919E59a31",
+    "chainId": 10,
+    "marketName": "Will ZecKit Post-M3 Stabilization and Developer Adoption be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZecKit Post-M3 Stabilization and Developer Adoption be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x836ce8b0253a71884260d933a614f9a396b794ceac5e42b0e0c3988192fc683d",
+    "questionId": "0x428983572d7bbd12025dc01e101c8440ba8a42d08f674d198cbef3b4c3947a01",
+    "questionsIds": [
+      "0x9a953c5a6eabf084355b78cef10b14fb436ff7d7833e4d55ec69282b67c3b87d"
+    ],
+    "realityQuestionId": "0x9a953c5a6eabf084355b78cef10b14fb436ff7d7833e4d55ec69282b67c3b87d",
+    "tokenNames": [
+      "ZQ3ZECKITYES",
+      "ZQ3ZECKITNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x755aeff503467378a6184ea3908915d569d72d039df9e7b4c41f734261b2b780",
+    "blockNumber": 155770419,
+    "gasUsed": "1739713",
+    "createdAt": "2026-08-19T11:40:19.342Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x93550F086AcdEAe522d844D7Be0aD8F94bA05939",
+      "0x3D6ae7e4E9cdc1eAe8ffE7A1Ff57AB3a519Cb8dA",
+      "0xe51DF98C9f08A74f683A4705a937b3839C9a8DE3"
+    ]
+  },
+  {
+    "id": 4,
+    "shortName": "ZCASHTOCASH",
+    "title": "zcashtocash via ZcashLabs",
+    "applicant": "ZcashLabs",
+    "requestedUsd": 6000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xdC8cDe1236921607e18382710D42DE2A8ccdd491",
+    "chainId": 10,
+    "marketName": "Will zcashtocash via ZcashLabs be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will zcashtocash via ZcashLabs be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xc9630c94f54f669fa07335ed5cc0a953626ae6a969aa2536c7d1ca6df2949a99",
+    "questionId": "0xcaca5ae4fe4c77f7cc67e9f3094d4e16ee7244af83d3f6896cb597fd35db7f33",
+    "questionsIds": [
+      "0x85abb033e9b569a3e8f131fc7f5738bfa7737c961ea2c62c66ae7a33d9a639e2"
+    ],
+    "realityQuestionId": "0x85abb033e9b569a3e8f131fc7f5738bfa7737c961ea2c62c66ae7a33d9a639e2",
+    "tokenNames": [
+      "ZQ3ZCASHTOCASHYES",
+      "ZQ3ZCASHTOCASHNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xbd820a7efc2360a877a0e7faaa0c978d5721ca22e7b3ef09b89db936504a8acb",
+    "blockNumber": 155770424,
+    "gasUsed": "1724759",
+    "createdAt": "2026-08-19T11:40:28.677Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x642b91635F5Ad1881540f47d1ced93f0b1cbf339",
+      "0xe711B847F30B5fD450B2C61B74422B335A77468F",
+      "0x03b880208f798B1D70f87cD1cEF8eF965057547A"
+    ]
+  },
+  {
+    "id": 5,
+    "shortName": "RECONCILE",
+    "title": "zec-ironwood-reconcile",
+    "applicant": "Steven Hert",
+    "requestedUsd": 8250,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x55094376a3283512a8144Fa9a251E430195286E2",
+    "chainId": 10,
+    "marketName": "Will zec-ironwood-reconcile be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will zec-ironwood-reconcile be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x57a15855355ca80b5254d885d4974b18ac037981ba48d99dff5f3dda3eca210d",
+    "questionId": "0x16f3093c3da1ac134d2344ca05443bd1c6be6ca57b784d03958a8d805bb4145f",
+    "questionsIds": [
+      "0x4a7ab6a21de99c65e10141a62e94b6da534313b088fcb840e13d89ccfe72e421"
+    ],
+    "realityQuestionId": "0x4a7ab6a21de99c65e10141a62e94b6da534313b088fcb840e13d89ccfe72e421",
+    "tokenNames": [
+      "ZQ3RECONCILEYES",
+      "ZQ3RECONCILENO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x169fc082403abc4816b69bcfa78bc512a9e2c0d861347a5b88ac3dc32c1131df",
+    "blockNumber": 155770428,
+    "gasUsed": "1745990",
+    "createdAt": "2026-08-19T11:40:33.843Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x6CE153c83A74258b9F0D80dBabc3011eF6178BBc",
+      "0x7AB992CFba241dDbD7691Ee5A426cfAFae026B14",
+      "0xe924C6d11dfC3E8a911A9b30FB5FfEAdd88565ad"
+    ]
+  },
+  {
+    "id": 6,
+    "shortName": "GLEYO",
+    "title": "Gleyo",
+    "applicant": "Gleyo",
+    "requestedUsd": 9081.2,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xAce4327Ac96E15040474065dC6aA0da0751BcBCA",
+    "chainId": 10,
+    "marketName": "Will Gleyo be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Gleyo be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xb1bda6db6f36257ec15fa03d692f88c5c4b13caee88157a2560cdfe1ded18eb0",
+    "questionId": "0x8eea11036c851d2a16a8a7eb1983f68259c3fae71936442be5aac7da1427e68d",
+    "questionsIds": [
+      "0x6d0036f9935aaab609d94eff4e7a35a44c97a2efc3ba1557f4e442aa55bd97ec"
+    ],
+    "realityQuestionId": "0x6d0036f9935aaab609d94eff4e7a35a44c97a2efc3ba1557f4e442aa55bd97ec",
+    "tokenNames": [
+      "ZQ3GLEYOYES",
+      "ZQ3GLEYONO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xd04a89f516228b41e9e9b091d041d7ff892b31f6ceb0884b01bd5f3757f85b00",
+    "blockNumber": 155770431,
+    "gasUsed": "1700785",
+    "createdAt": "2026-08-19T11:40:39.861Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x8A3dAe0FC9Bc4A0937D4432CedA163dAda18C9Be",
+      "0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586",
+      "0xCDB4f8F58079C1aBE08A8E0EafF59bEA2dC9a8bD"
+    ]
+  },
+  {
+    "id": 7,
+    "shortName": "FAUCET",
+    "title": "Self-Sovereign Zcash Testnet Faucet",
+    "applicant": "Jino Labs",
+    "requestedUsd": 9280,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xb4485E5404178444fbf3F279eddF2b5C4b421e39",
+    "chainId": 10,
+    "marketName": "Will Self-Sovereign Zcash Testnet Faucet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Self-Sovereign Zcash Testnet Faucet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x1abb64050ddbe41dfc55cb1cbe85169c69f29294f98b31f9abd949cbe570715b",
+    "questionId": "0x0b0f5231867beeb0e43c9360737009a0fdac02b2bc28f447dc45069ac75244e1",
+    "questionsIds": [
+      "0xb16efc412f63a20a09ce707b7da1b94ceb2552911b8b71c7287d930215d3df31"
+    ],
+    "realityQuestionId": "0xb16efc412f63a20a09ce707b7da1b94ceb2552911b8b71c7287d930215d3df31",
+    "tokenNames": [
+      "ZQ3FAUCETYES",
+      "ZQ3FAUCETNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xf09e7dc7cc3b1b916f3f876ae7ec4ed583a3bb0dde3cb1995acaaa67e7fc58c9",
+    "blockNumber": 155770434,
+    "gasUsed": "1732113",
+    "createdAt": "2026-08-19T11:40:49.740Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x758fcb92132bdf0Ba3BB4A752b30140ab042bB80",
+      "0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6",
+      "0x1392d71DD592707a0536225B51d18BF5bDaF5Ffc"
+    ]
+  },
+  {
+    "id": 8,
+    "shortName": "CYPHZEC",
+    "title": "CyphZec.com",
+    "applicant": "Thomas Zarebczan",
+    "requestedUsd": 10000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xe3A5794dFdcccBc964574bc6A5E3Cab92f198f03",
+    "chainId": 10,
+    "marketName": "Will CyphZec.com be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will CyphZec.com be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x7232e4631f8eab161b632093f9f623dc8d49ed2abf316486b41fc4eed72679e0",
+    "questionId": "0x0f70686c7eebe28e276dbec8cd6b49b45fae0bf6c2f4781ab7c14dd075946f5a",
+    "questionsIds": [
+      "0xf21c864c2aef8fdf978a513e1f738e33a3d0e4907fecf8198cad04259ba49b7d"
+    ],
+    "realityQuestionId": "0xf21c864c2aef8fdf978a513e1f738e33a3d0e4907fecf8198cad04259ba49b7d",
+    "tokenNames": [
+      "ZQ3CYPHZECYES",
+      "ZQ3CYPHZECNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x979e61c08188a206ad19dc75f9c54658de47675c1077fbc59646dbd341336d01",
+    "blockNumber": 155770439,
+    "gasUsed": "1678872",
+    "createdAt": "2026-08-19T11:40:58.983Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xfcc942219759ca67AE3B451b363a821Bb5073A7a",
+      "0x74702F3887287f7c5ca89B8B43e4E5e232E39A86",
+      "0xbEa602d1482119F29B8c979821A7dd191CB26d1B"
+    ]
+  },
+  {
+    "id": 9,
+    "shortName": "ZECLEDGER",
+    "title": "ZecLedger",
+    "applicant": "ZecLedger",
+    "requestedUsd": 10000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xFf4553ad2539B2722b322d10930f1B85969DEe6A",
+    "chainId": 10,
+    "marketName": "Will ZecLedger be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZecLedger be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xff6e6f43eff252e2e87b9fc0e58d30fecc126be4d2f34d8bdda2b216a0e3b690",
+    "questionId": "0x22b95073e5e9bf763acf02d6917c89d974744fbec279eff5072035b5f6da7af2",
+    "questionsIds": [
+      "0x77096658e9f632784585bd9a4afb2c6dcb86d2c3098b08cc3c3e9e8c36f7b622"
+    ],
+    "realityQuestionId": "0x77096658e9f632784585bd9a4afb2c6dcb86d2c3098b08cc3c3e9e8c36f7b622",
+    "tokenNames": [
+      "ZQ3ZECLEDGERYES",
+      "ZQ3ZECLEDGERNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x5f9e6d951ad17025724345c472aba6c6469fd0ffd036a665cdcf1e5594572838",
+    "blockNumber": 155770443,
+    "gasUsed": "1686260",
+    "createdAt": "2026-08-19T11:41:03.848Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x6Ff66A3D8139f5aC033e17B9d65cd7EDb842df92",
+      "0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da",
+      "0x7cbc8C8Ab4dab67421d685859d3C01f7ABA278F3"
+    ]
+  },
+  {
+    "id": 10,
+    "shortName": "LIGHTWALLETD",
+    "title": "lightwalletd-rs",
+    "applicant": "jpgonzalezra",
+    "requestedUsd": 10720,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0xd058cc42d014810B15A93874b3f11B02bfAd9732",
+    "chainId": 10,
+    "marketName": "Will lightwalletd-rs be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will lightwalletd-rs be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xde55e7739613aed889d5d87236c54437afa05720633021c19ae42f4c6ba81d38",
+    "questionId": "0x423e5aa3b6aceb8c99f8c22b225be6434be33c79dfa4b0219c29d2803873efa4",
+    "questionsIds": [
+      "0x6963b0fd4a46ae0049c58d6840d45952f21de55188d07c82386a8519ee6a9184"
+    ],
+    "realityQuestionId": "0x6963b0fd4a46ae0049c58d6840d45952f21de55188d07c82386a8519ee6a9184",
+    "tokenNames": [
+      "ZQ3LIGHTWALLETDYES",
+      "ZQ3LIGHTWALLETDNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x51133827fbc645ce6d0cda9df6ae651ad883d99592a18531036bc80290725516",
+    "blockNumber": 155770446,
+    "gasUsed": "1745166",
+    "createdAt": "2026-08-19T11:41:13.048Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x5947Da3E3753b85Fe01d735207dA28773aD2db63",
+      "0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2",
+      "0x789dB852bB0936f3743050DD80F3185Bc9b2c630"
+    ]
+  },
+  {
+    "id": 11,
+    "shortName": "BLINDVAULT",
+    "title": "Blindvault",
+    "applicant": "TIDJANI Walid",
+    "requestedUsd": 17000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x5395fD696b64d1d3e9295e09BfAf038E0c8F05f6",
+    "chainId": 10,
+    "marketName": "Will Blindvault be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Blindvault be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xf2e5952e9dafbb165461a1ea9b0810c809519bd08f3a2a99cedb587c9b60da35",
+    "questionId": "0x9b824120a6b7af812b01aa02a8b355863c6a262ec670f1f345adb4dfe58cc642",
+    "questionsIds": [
+      "0xb2d2516bb5f5b38b536604d4d1f32df3f9f7257461ec1ffe1f91e3e0f2f6c8ac"
+    ],
+    "realityQuestionId": "0xb2d2516bb5f5b38b536604d4d1f32df3f9f7257461ec1ffe1f91e3e0f2f6c8ac",
+    "tokenNames": [
+      "ZQ3BLINDVAULTYES",
+      "ZQ3BLINDVAULTNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xf2068c3552e5f0c7657fb582fbab5517cb2f4378f5bb31579424bc09b66cf2c5",
+    "blockNumber": 155770451,
+    "gasUsed": "1686268",
+    "createdAt": "2026-08-19T11:41:22.767Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42",
+      "0xfD55e6DB8Cc3EF85766444E21882f95B9aF426aC",
+      "0x6c6E69FD91F5564FC1bF6B80eD072495Ca325ad6"
+    ]
+  },
+  {
+    "id": 12,
+    "shortName": "ZALLETRPC",
+    "title": "Zallet RPC Parity Harness",
+    "applicant": "Creativesonchain",
+    "requestedUsd": 20000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x781FC94cf2a362C29cB08c86f8DcD1EA8181a158",
+    "chainId": 10,
+    "marketName": "Will Zallet RPC Parity Harness be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zallet RPC Parity Harness be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xbbb3f880060a4962c94771e1a987c5b1d582d2c8ed5bb3ff7842be6796771f6d",
+    "questionId": "0x846825f01f952b877b54ebec25beeaa05cb5a4968d254c598b1341b758fc8938",
+    "questionsIds": [
+      "0x526f6028a5df317386ea3b01fd3f7989172cfac42dce28fe4fe1187cbc364e7c"
+    ],
+    "realityQuestionId": "0x526f6028a5df317386ea3b01fd3f7989172cfac42dce28fe4fe1187cbc364e7c",
+    "tokenNames": [
+      "ZQ3ZALLETRPCYES",
+      "ZQ3ZALLETRPCNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x0867a0285a0619caa2ca8ae148422260f2a13cab81cef1e6995dc3252a8fa4ce",
+    "blockNumber": 155770455,
+    "gasUsed": "1746747",
+    "createdAt": "2026-08-19T11:41:28.400Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x76eEA0004D171054F537fDb6F274948a9Cc1EA57",
+      "0xee811Aa69f197a465E9Ad915F7cD613AB09A41d8",
+      "0x4094C9Cc1dCDdC337Db5345F4eB54e054A57AEB5"
+    ]
+  },
+  {
+    "id": 13,
+    "shortName": "ZECMAP",
+    "title": "Zecmap",
+    "applicant": "Batuhan",
+    "requestedUsd": 21300,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x78a72380C7936F2CB3574d2302E8437aeEBaB93c",
+    "chainId": 10,
+    "marketName": "Will Zecmap be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zecmap be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x17adcd02619d3a3187c0e855f2d18c30bc2b4b3b4205341a9be36bb84a6100c2",
+    "questionId": "0x7f935da0bf735994172e467699170b060e77f5bc23b27ecc6c65ea0fa0fe0572",
+    "questionsIds": [
+      "0x4c0b9bb26a989ec8129c8b2febd725c09bb29300fdaf09d8aded33deacc949fe"
+    ],
+    "realityQuestionId": "0x4c0b9bb26a989ec8129c8b2febd725c09bb29300fdaf09d8aded33deacc949fe",
+    "tokenNames": [
+      "ZQ3ZECMAPYES",
+      "ZQ3ZECMAPNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xe5abd689e6582991a383d7dbc0b779dabb5e57ace53bc808403c5f8741bac9e3",
+    "blockNumber": 155770458,
+    "gasUsed": "1715510",
+    "createdAt": "2026-08-19T11:41:33.927Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x6C05B893299fE0f66e57465E4eeC06fB78A52718",
+      "0x85051bd7FFDA82f16BfAFA9675b9de1a4B9C48c0",
+      "0xf9802699589BfD6fA3585fD9003924bC4EC2002c"
+    ]
+  },
+  {
+    "id": 14,
+    "shortName": "CONNAUGH",
+    "title": "Connaugh Zcash Videos",
+    "applicant": "Connaugh",
+    "requestedUsd": 22000,
+    "tier": "under25k",
+    "yesPrice": 0.55,
+    "market": "0x64a3ab58337ca2D6DdCDd6Ab6712b3E57626Ee1f",
+    "chainId": 10,
+    "marketName": "Will Connaugh Zcash Videos be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Connaugh Zcash Videos be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x122e96f8e8822063c55699e8e98c76430db4f78f7441f3c0ed3f6f86eb496ff0",
+    "questionId": "0x97199084ef3aded2964e3e4b7ebb5f42a055970464b7e836e47dfb3952184bec",
+    "questionsIds": [
+      "0x1e417456517e1fa365685f2120353e74853de064fbf6bddc5038d5d39c11a70e"
+    ],
+    "realityQuestionId": "0x1e417456517e1fa365685f2120353e74853de064fbf6bddc5038d5d39c11a70e",
+    "tokenNames": [
+      "ZQ3CONNAUGHYES",
+      "ZQ3CONNAUGHNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x66b674db231961d68c5a1db50f637b70da296254e37a8ef387ac2d9ee25454b1",
+    "blockNumber": 155770461,
+    "gasUsed": "1709173",
+    "createdAt": "2026-08-19T11:41:43.635Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2",
+      "0xB2E5f4eAbc756196857ACF7a10C584890d04A447",
+      "0x4CEb5C856794f0858241200a98eF18430c46Bbac"
+    ]
+  },
+  {
+    "id": 15,
+    "shortName": "ZAP1",
+    "title": "ZAP1 Attestation Protocol and Verification Tooling",
+    "applicant": "Frontier Compute",
+    "requestedUsd": 28000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x0586C5Bf8A0137D3dA895E59663b760B5E39C340",
+    "chainId": 10,
+    "marketName": "Will ZAP1 Attestation Protocol and Verification Tooling be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZAP1 Attestation Protocol and Verification Tooling be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x7f4a98ee6d97f75f613ee2601b55b433d7d37b67a8f2f7e6a13152850dd28ade",
+    "questionId": "0x2b009523799402968f389e8517a247d8871ee5f693355e4ee57ff830b12ada0c",
+    "questionsIds": [
+      "0x7d80cc8fa5b7118eeeba6f3f06b3c522ff57ec0fee0377a236f2814c245dcafe"
+    ],
+    "realityQuestionId": "0x7d80cc8fa5b7118eeeba6f3f06b3c522ff57ec0fee0377a236f2814c245dcafe",
+    "tokenNames": [
+      "ZQ3ZAP1YES",
+      "ZQ3ZAP1NO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x5245d77ed7f1d02f00be354c4e84165a3bc0f864916fd5dada9c9ea37bbb6d10",
+    "blockNumber": 155770466,
+    "gasUsed": "1754316",
+    "createdAt": "2026-08-19T11:41:53.246Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48",
+      "0x536B431A22CE9D09d36455B1950d22165DAF6aB4",
+      "0xf356CF72312Bed611a1aEB778336351eDf06B5cE"
+    ]
+  },
+  {
+    "id": 16,
+    "shortName": "ZECBOOKS",
+    "title": "ZecBooks",
+    "applicant": "SaneApps",
+    "requestedUsd": 32000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x140654d12ac41a2d946E6DEc85D07A0252B0BF20",
+    "chainId": 10,
+    "marketName": "Will ZecBooks be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZecBooks be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x1b89ee49d8c42d74abf3c650155447497d438afb5b3ed49ec2406a8f64f4419c",
+    "questionId": "0x1618995512e61fa858751b1535e34136cf9b9d7455c4556f7cfd774c52dd0fc6",
+    "questionsIds": [
+      "0x68fd52bf5d38da58b339d3ecaaa2ff3ffbba25c0e59a3d8166b5da0abe2d67c3"
+    ],
+    "realityQuestionId": "0x68fd52bf5d38da58b339d3ecaaa2ff3ffbba25c0e59a3d8166b5da0abe2d67c3",
+    "tokenNames": [
+      "ZQ3ZECBOOKSYES",
+      "ZQ3ZECBOOKSNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x9d15584d8565194bab93191079ffeda1c213b7cfff5c5aa351a177e10bfa9167",
+    "blockNumber": 155770470,
+    "gasUsed": "1693532",
+    "createdAt": "2026-08-19T11:41:57.878Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A",
+      "0x19c04F7216aa17d484424803EA55A0cae66A237C",
+      "0xcd15b679599C3e81c3d3AA80123911365aB31C1f"
+    ]
+  },
+  {
+    "id": 17,
+    "shortName": "CIPHERPAY",
+    "title": "CipherPay",
+    "applicant": "Atmosphere Labs (Kenbak)",
+    "requestedUsd": 35000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x0900986e76a3a75cE4dFD3615AAA5e388d1A7870",
+    "chainId": 10,
+    "marketName": "Will CipherPay be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will CipherPay be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x6ef911cdbe7ba479b51558e9ab0eb240b79ba3afb1e837fc780c61ae0fcfcd61",
+    "questionId": "0xb5b6357de6deaa6cc78c63f25cba886f9a575c216ebdd7d18b7177c3fad7e329",
+    "questionsIds": [
+      "0x0b0291087a0c2cea6860cb5c0e1aa2fff2f651ead5129e91da060fc8be218467"
+    ],
+    "realityQuestionId": "0x0b0291087a0c2cea6860cb5c0e1aa2fff2f651ead5129e91da060fc8be218467",
+    "tokenNames": [
+      "ZQ3CIPHERPAYYES",
+      "ZQ3CIPHERPAYNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xeb55ac753fec50301d2b899335207951945edd273fdbc08a33d0b0b915260967",
+    "blockNumber": 155770473,
+    "gasUsed": "1708296",
+    "createdAt": "2026-08-19T11:42:07.105Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x5469755c89E69baB03a61bd6D73a640015242e69",
+      "0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88",
+      "0x8a7dcF819B6fdF17Fb1d164FBf6890309bc5267E"
+    ]
+  },
+  {
+    "id": 18,
+    "shortName": "ZAFU",
+    "title": "Zafu Browser Extension",
+    "applicant": "Rotko Networks OU",
+    "requestedUsd": 38000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x725337EF90bE0a5a7064098d6A0191d93F8C1B70",
+    "chainId": 10,
+    "marketName": "Will Zafu Browser Extension be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zafu Browser Extension be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xd18f0e02a67602861a7f7c6750ed605129fee6e482506286089123c91566555a",
+    "questionId": "0x1143a4fc333b2ac020cc15a2e8ebaf9f56145852346d45966c382021de95523a",
+    "questionsIds": [
+      "0xbc0b563b859c73d36c4a3401302c0eb1ef2aab8939af3f94869b4e82ea8d3734"
+    ],
+    "realityQuestionId": "0xbc0b563b859c73d36c4a3401302c0eb1ef2aab8939af3f94869b4e82ea8d3734",
+    "tokenNames": [
+      "ZQ3ZAFUYES",
+      "ZQ3ZAFUNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xfdd999db1685155bbc23657fe2ec429a728c17a9ac8984eff1a208d49b0e240f",
+    "blockNumber": 155770478,
+    "gasUsed": "1701770",
+    "createdAt": "2026-08-19T11:42:16.981Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C",
+      "0x6092856669F7Eedf4c6E07105a96E9E14EF52EE2",
+      "0x2aE92D75C5cAB43783c37A2C8baF2a21C8fBa16B"
+    ]
+  },
+  {
+    "id": 19,
+    "shortName": "ZAPP",
+    "title": "Zapp",
+    "applicant": "Renee Chiu",
+    "requestedUsd": 40000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x06277FcEf6340930B0F08B90032EDAF07CE36b6A",
+    "chainId": 10,
+    "marketName": "Will Zapp be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zapp be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xde63f3c0161a97641f1516cade5b8c3214625ddc20f1c2732d49783f9de857d9",
+    "questionId": "0x0cf2074c038287258e1ac72b599ab91fb92a952dcacf65d91708dbd1c8376fcf",
+    "questionsIds": [
+      "0xe379973103f36573168c7e98eb8ff4896d6bdc28fb96a38b7090e874e9f3e8fd"
+    ],
+    "realityQuestionId": "0xe379973103f36573168c7e98eb8ff4896d6bdc28fb96a38b7090e874e9f3e8fd",
+    "tokenNames": [
+      "ZQ3ZAPPYES",
+      "ZQ3ZAPPNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x6eaaaf079200885be441a5abdd417e8d00d0174cfb8c681a59bc2ee2197e3898",
+    "blockNumber": 155770483,
+    "gasUsed": "1678727",
+    "createdAt": "2026-08-19T11:42:27.300Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4",
+      "0x39f0a7987F0B2a9cB78B35C935BB0eFaCeA42B82",
+      "0x74f3AC99F65c12e1DbF896D3eca739f95032B2BC"
+    ]
+  },
+  {
+    "id": 20,
+    "shortName": "HWSDK",
+    "title": "Open-Source Zcash Hardware-Wallet SDK",
+    "applicant": "wh00hw",
+    "requestedUsd": 40000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0xA58c14Daf5c0f14adFE08b2c672ab361948758d2",
+    "chainId": 10,
+    "marketName": "Will Open-Source Zcash Hardware-Wallet SDK be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Open-Source Zcash Hardware-Wallet SDK be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x35be5627d0ab66bf5f2ed4fe2ae31ac9383db3550782f44ef63003dd0b38a64d",
+    "questionId": "0x1c6d5bb005b62da6ceac2322713d74ab4f4a3b15668a2580328390220b98fa93",
+    "questionsIds": [
+      "0x92975e0c6d81d8a9e086ed946dcbce0f0b847c9d82a40e47b2c261f33a526ae9"
+    ],
+    "realityQuestionId": "0x92975e0c6d81d8a9e086ed946dcbce0f0b847c9d82a40e47b2c261f33a526ae9",
+    "tokenNames": [
+      "ZQ3HWSDKYES",
+      "ZQ3HWSDKNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xab5b0e097b67920588c16d5a843f0aa4dba1c71be9039b636a2f32fb0dbb51a4",
+    "blockNumber": 155770488,
+    "gasUsed": "1776213",
+    "createdAt": "2026-08-19T11:42:37.127Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xE497cC87790e25D1Ba3C388b79c5759B92A53E8C",
+      "0xA9980Ee502021d4E6906cff74374C24dDB49e4F2",
+      "0x096451451EeF3AEE60489366600D442971c5D110"
+    ]
+  },
+  {
+    "id": 21,
+    "shortName": "NOZY",
+    "title": "Nozy Wallet",
+    "applicant": "Leonine DAO",
+    "requestedUsd": 60000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x45eF7f50825619AEa0070d7d0147DaE5A26fc50B",
+    "chainId": 10,
+    "marketName": "Will Nozy Wallet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Nozy Wallet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x1def4226e1a24452dff1b9dabdb585533fa910f46dbd6735c24ed9f20b063686",
+    "questionId": "0xd4b50d2ffce14d1e9d00b6bc134963a3e8d22cc369b046bfaf7aaf4da9d8882c",
+    "questionsIds": [
+      "0x801a2d34a4599508a2950ca715eaf436e9d5babbe688e0bd3217d4185961a5b8"
+    ],
+    "realityQuestionId": "0x801a2d34a4599508a2950ca715eaf436e9d5babbe688e0bd3217d4185961a5b8",
+    "tokenNames": [
+      "ZQ3NOZYYES",
+      "ZQ3NOZYNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xe05056628ef5519b047d73106dbb8a76055051a2f6182196ec39b3b53e6c3ad1",
+    "blockNumber": 155770493,
+    "gasUsed": "1715536",
+    "createdAt": "2026-08-19T11:42:46.967Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7",
+      "0xaF2932072667544c6Beba7B695dfEA896252d60A",
+      "0xE2cD43993fA7af324A20BDD940E0B5563c771e10"
+    ]
+  },
+  {
+    "id": 22,
+    "shortName": "THORSWAP",
+    "title": "THORSwap / Metro",
+    "applicant": "THORSwap Labs",
+    "requestedUsd": 60000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x777B50f83e76acD9E520Abf6a258CC218B1aD054",
+    "chainId": 10,
+    "marketName": "Will THORSwap / Metro be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will THORSwap / Metro be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xa892d5f0a5db6ee381c4506d75d6672f4553b432ce7bed1407a64bd9873218ba",
+    "questionId": "0x143efd1120e82864815ad93f73200f498f04d0ecade40187b7cb540105b88f3a",
+    "questionsIds": [
+      "0x0ee986341f91bd96dba57b137e082c2010808965b84e174f4385c5abb6cf72a9"
+    ],
+    "realityQuestionId": "0x0ee986341f91bd96dba57b137e082c2010808965b84e174f4385c5abb6cf72a9",
+    "tokenNames": [
+      "ZQ3THORSWAPYES",
+      "ZQ3THORSWAPNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x3d75e720876c43103ceb6f5d19ed5e9964b6e1ba27db558308e37534ed1c84dc",
+    "blockNumber": 155770498,
+    "gasUsed": "1700996",
+    "createdAt": "2026-08-19T11:42:57.002Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x3906685605Bbc3b107613C77c078e065D0ccAE5C",
+      "0x6ab6b9B720172B73667AE83fd712D49d5c868ecA",
+      "0x11418F9C7104639537e26Fd62fE520D6B9FE2823"
+    ]
+  },
+  {
+    "id": 23,
+    "shortName": "UNSTOPPABLE",
+    "title": "Expanding Zcash In Unstoppable Wallet",
+    "applicant": "Horizontal Systems",
+    "requestedUsd": 80000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x404CcB09e7F47dE56b64253d9E2f839D555366b8",
+    "chainId": 10,
+    "marketName": "Will Expanding Zcash In Unstoppable Wallet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Expanding Zcash In Unstoppable Wallet be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x5c0d0ac5aae1cf23f269f3b3438a9c41cd302afc07734af4454f615c5616d271",
+    "questionId": "0x1fe672ae85796575cff9512f239651676108ed697d8baaecb5a709aaf7d80829",
+    "questionsIds": [
+      "0xfd0f93200588b4ef79b65db05e80dcc7940d7d1a34aedbf1596dbab19a92e5b0"
+    ],
+    "realityQuestionId": "0xfd0f93200588b4ef79b65db05e80dcc7940d7d1a34aedbf1596dbab19a92e5b0",
+    "tokenNames": [
+      "ZQ3UNSTOPPABLEYES",
+      "ZQ3UNSTOPPABLENO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x1fee286c038ced2540130bcb6b5bde2a11f1b2894c65efcf99b51899cbbb661f",
+    "blockNumber": 155770503,
+    "gasUsed": "1724907",
+    "createdAt": "2026-08-19T11:43:07.441Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xE03D7063F268047BA5dDBAAA3ece1CA777fE70ff",
+      "0xb7295c351321ebD651528324AF9FA5B7Ebbe198c",
+      "0x9D9fF2Ae8B76a670D253F0cE7a5CB164c901eB46"
+    ]
+  },
+  {
+    "id": 24,
+    "shortName": "ZCASHNAMES",
+    "title": "ZcashNames",
+    "applicant": "ZcashMe, Inc.",
+    "requestedUsd": 122400,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0xB6Bb6a1E1f02a11AFAE1DE272C94a78bd4673f37",
+    "chainId": 10,
+    "marketName": "Will ZcashNames be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZcashNames be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x74cfac516ff3bde12b42b41e0cf81fd8d797abf34383c81c8ba9803647f85da8",
+    "questionId": "0x4e83e93c58df03466f27ab98ff9bdf6ae659aca4a250d10c7a78e0c730bdbc19",
+    "questionsIds": [
+      "0x9aec95db739de97300b029de16b66457643b1c8df4e3de0e82d9f70c8f6508ae"
+    ],
+    "realityQuestionId": "0x9aec95db739de97300b029de16b66457643b1c8df4e3de0e82d9f70c8f6508ae",
+    "tokenNames": [
+      "ZQ3ZCASHNAMESYES",
+      "ZQ3ZCASHNAMESNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x74de1e4e966efff8a019a38e3c23c4f7068bccb25d4d3577c064313af69a084d",
+    "blockNumber": 155770508,
+    "gasUsed": "1715682",
+    "createdAt": "2026-08-19T11:43:18.154Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a",
+      "0x35DD8AD91E819B76b91319a9D9ACff39c7CF1a17",
+      "0xdEBb1577C672b07475ccE2D5C4F32DDCf48fdc53"
+    ]
+  },
+  {
+    "id": 25,
+    "shortName": "FRONTIERSEC",
+    "title": "Frontier Compute Zcash Security Research and Remediation Pack",
+    "applicant": "Frontier Compute LLC",
+    "requestedUsd": 136250,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0x751047Dc87049EB122CDbF570a591ECEEB81b984",
+    "chainId": 10,
+    "marketName": "Will Frontier Compute Zcash Security Research and Remediation Pack be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Frontier Compute Zcash Security Research and Remediation Pack be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xf28af7086a47c7542a14d2e69f73a6c99d478647560afcb606b59cf88673289d",
+    "questionId": "0xb7447b88265329fde3fd3ca9c7571bc9563397ca741e0c7578f52c4075b5af9f",
+    "questionsIds": [
+      "0xe76d7e092bf999f787d178e306640560b76f8643fc7c34a1fa6036fb68c8f1a7"
+    ],
+    "realityQuestionId": "0xe76d7e092bf999f787d178e306640560b76f8643fc7c34a1fa6036fb68c8f1a7",
+    "tokenNames": [
+      "ZQ3FRONTIERSECYES",
+      "ZQ3FRONTIERSECNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x4200a8286f29ea7f5ed3c755e0e6d47ba78e28052b220da912f12c09704091ad",
+    "blockNumber": 155770513,
+    "gasUsed": "1792845",
+    "createdAt": "2026-08-19T11:43:23.895Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x8994C409978a640d2de6b11D2dbd72794989F508",
+      "0x066279aF0d19382FFFDc2fBF8842058168f68d0a",
+      "0xF770ca84f5A7201B4dD35C61703831BbaA3204e1"
+    ]
+  },
+  {
+    "id": 26,
+    "shortName": "ZEBRACVE",
+    "title": "Zebra Critical Vulnerability Bug Bounty (CVE-2026-34202)",
+    "applicant": "robustfengbin",
+    "requestedUsd": 150000,
+    "tier": "mid",
+    "yesPrice": 0.55,
+    "market": "0xDA375Fa265997b5B408fA94D9C834693861BceCa",
+    "chainId": 10,
+    "marketName": "Will Zebra Critical Vulnerability Bug Bounty (CVE-2026-34202) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zebra Critical Vulnerability Bug Bounty (CVE-2026-34202) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xa69f29ef9e0b7b7e8942204cbc6a1a5318a8da11a4aa7b46f812afdfb8c22828",
+    "questionId": "0xf2b698a6c2c3deb4774847278d21ecf7d2a6e297d7b41041407ac58700fc1e1c",
+    "questionsIds": [
+      "0xcc60c02301bfa085b847ba74265169ad0acc3374982f75eb3a3e39c33b1021a9"
+    ],
+    "realityQuestionId": "0xcc60c02301bfa085b847ba74265169ad0acc3374982f75eb3a3e39c33b1021a9",
+    "tokenNames": [
+      "ZQ3ZEBRACVEYES",
+      "ZQ3ZEBRACVENO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x401630de3bf7e4a69031802145f4edfad6bd07e68040702cfbcd811a1bf92960",
+    "blockNumber": 155770516,
+    "gasUsed": "1807437",
+    "createdAt": "2026-08-19T11:43:30.130Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x81361090f60dB987307986DCff85A3F726278006",
+      "0xCee609fB783D37788d53B940fDD81Df3fdea4b3f",
+      "0xA7aBFf70a87c34c19D00CC6341a64f78E2429709"
+    ]
+  },
+  {
+    "id": 27,
+    "shortName": "BONUSIRONWOOD",
+    "title": "Bonus Grant - Ironwood zk-SNARK Formal Verification",
+    "applicant": "Jason McGee",
+    "requestedUsd": 261058,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0xDdBE118c992Fc4165291eaD70B64c33dB037eB67",
+    "chainId": 10,
+    "marketName": "Will Bonus Grant - Ironwood zk-SNARK Formal Verification be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Bonus Grant - Ironwood zk-SNARK Formal Verification be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xbdc59e61b429ac39bbc2d4ef24e978ebe1e532b0157605dd545c768325ec02cb",
+    "questionId": "0x44cb5c4da59083dbe0a377d94a8dc3b14e2cc0c11168198a0583334cb0573438",
+    "questionsIds": [
+      "0xe119131e1aa8bd0eecc92f0cff8ef59f8846e794b69f3dc73c0a6d323d2ec915"
+    ],
+    "realityQuestionId": "0xe119131e1aa8bd0eecc92f0cff8ef59f8846e794b69f3dc73c0a6d323d2ec915",
+    "tokenNames": [
+      "ZQ3BONUSIRONWOODYES",
+      "ZQ3BONUSIRONWOODNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x77fcabd6b8a5fe9fa93314064a0e02167652e00ffc806b76cd12a86c37584629",
+    "blockNumber": 155770519,
+    "gasUsed": "1725181",
+    "createdAt": "2026-08-19T11:43:35.945Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xb12161065f78BEBC0605CA824776Eca0e8CaB3c2",
+      "0x462900f36Cb99f667491B89802CC129252897592",
+      "0xc7267f855987d0a5d838E1185769B691e0891594"
+    ]
+  },
+  {
+    "id": 28,
+    "shortName": "CIPHERSCAN",
+    "title": "CipherScan",
+    "applicant": "Kenbak",
+    "requestedUsd": 375000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x73d8A605e090C267D18506A2EeeF5b0A6d22Fae9",
+    "chainId": 10,
+    "marketName": "Will CipherScan be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will CipherScan be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x6ec1e4179040e329afad55b13cedd68011342e58acddde493a03369337200b96",
+    "questionId": "0x8eb53513957e2192a62b453a1bae2c12107e3efd089fd9fa9963677b45e79052",
+    "questionsIds": [
+      "0x0e3f5ccf426bfca4951bd029e3c818cfa80aff9213042246c59399e48bdd982a"
+    ],
+    "realityQuestionId": "0x0e3f5ccf426bfca4951bd029e3c818cfa80aff9213042246c59399e48bdd982a",
+    "tokenNames": [
+      "ZQ3CIPHERSCANYES",
+      "ZQ3CIPHERSCANNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x1f3e1471f3b5737b4ea388516a4d2a0b9ea6e6ff520d65c8b41e2ce34822501b",
+    "blockNumber": 155770522,
+    "gasUsed": "1723018",
+    "createdAt": "2026-08-19T11:43:41.987Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200",
+      "0x1A4e4cED1Efa0be79841aA726d80DfF9B08483ae",
+      "0x58cCfbB574c7359dc82DacE75772Ca0f29049ba7"
+    ]
+  },
+  {
+    "id": 29,
+    "shortName": "MINTEXPLOIT",
+    "title": "Temporary Detectable Unlimited Mint and Sell Exploit",
+    "applicant": "Alex Sol",
+    "requestedUsd": 400000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0xc0e29B80a74287cFEF882a4d425d06117Aa09C07",
+    "chainId": 10,
+    "marketName": "Will Temporary Detectable Unlimited Mint and Sell Exploit be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Temporary Detectable Unlimited Mint and Sell Exploit be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x279c37825b4813efba6bf2afce3af706aeea707375165d679a6bd4c996b8b9a7",
+    "questionId": "0x10f771aedc27aabdf80f1babd64b65764eef22147a84748f4f723ec8c32fb031",
+    "questionsIds": [
+      "0x3243279c559cb3dcb40e85487b2dc64c13bebe95a0c62436c70fc0f4e434d7db"
+    ],
+    "realityQuestionId": "0x3243279c559cb3dcb40e85487b2dc64c13bebe95a0c62436c70fc0f4e434d7db",
+    "tokenNames": [
+      "ZQ3MINTEXPLOITYES",
+      "ZQ3MINTEXPLOITNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x08198de3547942c3f9632a5d66b5c76909272cee7ca4e13f065b2600a3e8fc56",
+    "blockNumber": 155770525,
+    "gasUsed": "1784636",
+    "createdAt": "2026-08-19T11:43:48.044Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xDaeA18eb86c017259EC2aec482b5FCd8D8323314",
+      "0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7",
+      "0x11D691c5E20344f2F273342f5bEe5576d4134f87"
+    ]
+  },
+  {
+    "id": 30,
+    "shortName": "ZEBRACONSENSUS",
+    "title": "Five Critical Zebra Consensus Divergence Vulnerabilities",
+    "applicant": "sangsoo-osec",
+    "requestedUsd": 425000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0xe7d2d53d782b13d1de2361aE458367Eb3a85B191",
+    "chainId": 10,
+    "marketName": "Will Five Critical Zebra Consensus Divergence Vulnerabilities be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Five Critical Zebra Consensus Divergence Vulnerabilities be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xa0ffe4bdad722638869954cb67ae1aba5c95d2385321f300c69e6e0c3a0566b3",
+    "questionId": "0xf83e9c1f687a6664c5decbc7fe65099b524e3745100ee009688c286922272f26",
+    "questionsIds": [
+      "0x801371031704cf008c45475f926d966271503e0a033e587bc868ec49e678c90a"
+    ],
+    "realityQuestionId": "0x801371031704cf008c45475f926d966271503e0a033e587bc868ec49e678c90a",
+    "tokenNames": [
+      "ZQ3ZEBRACONSENSUSYES",
+      "ZQ3ZEBRACONSENSUSNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x87513026bd5532ccd4c640830e3688e11426fa95b13559698f8436e1e5091df3",
+    "blockNumber": 155770528,
+    "gasUsed": "1785531",
+    "createdAt": "2026-08-19T11:43:54.343Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xa6B4e845dD137ee5e5AA814aCD928Fd0a05F76D1",
+      "0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A",
+      "0xEC10e6bAC49a4033a5B3E0ee9c1B5EF88968b1DD"
+    ]
+  },
+  {
+    "id": 31,
+    "shortName": "ZECROCKS",
+    "title": "Zec.rocks (16 months of uptime)",
+    "applicant": "Zec.rocks",
+    "requestedUsd": 584992,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x91736993FD987C230244825A27c3E531c66Fe63B",
+    "chainId": 10,
+    "marketName": "Will Zec.rocks (16 months of uptime) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Zec.rocks (16 months of uptime) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x59ad1b95dbde84db1e9dbacdf69ad4bf23b21c783796bd7220021c561ab7a396",
+    "questionId": "0xac289cfaa45d16f2989515ce2394f27ad5128ce21c7ff8b425ea5d4356925f62",
+    "questionsIds": [
+      "0xb376037ae2100ef867f1b261e443e137fe4c9529da644d91710004a3fb470777"
+    ],
+    "realityQuestionId": "0xb376037ae2100ef867f1b261e443e137fe4c9529da644d91710004a3fb470777",
+    "tokenNames": [
+      "ZQ3ZECROCKSYES",
+      "ZQ3ZECROCKSNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x6ca58145a3ce447a9b83af945e2b56b9cf4a173c166da685123a45bb5dfef032",
+    "blockNumber": 155770531,
+    "gasUsed": "1724745",
+    "createdAt": "2026-08-19T11:44:00.280Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x99534C2f36C0EDD0f276d218ab4E9C7D226E6b4D",
+      "0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b",
+      "0x401C3920866A73F1024139062B7Eb08B5E7fAcA9"
+    ]
+  },
+  {
+    "id": 32,
+    "shortName": "VALARAUDIT",
+    "title": "Ironwood external audit reimbursement",
+    "applicant": "ValarGroup",
+    "requestedUsd": 599000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x6a2eFDE79D7E7dF689Cb17FD0663b3455D838Dd4",
+    "chainId": 10,
+    "marketName": "Will Ironwood external audit reimbursement be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Ironwood external audit reimbursement be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xf4f986d6b7826ab1412b74115cabd642ee0f70708c74f04c786ea4c57d07584c",
+    "questionId": "0xa43af824d3a432babde560e72ceb0bc1efcd94c81bc3d1001805d533781fa6e9",
+    "questionsIds": [
+      "0x54a7423bc4e0e24102679ea1b5e19ede01f622ad780251da14ae161473d8a8ed"
+    ],
+    "realityQuestionId": "0x54a7423bc4e0e24102679ea1b5e19ede01f622ad780251da14ae161473d8a8ed",
+    "tokenNames": [
+      "ZQ3VALARAUDITYES",
+      "ZQ3VALARAUDITNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xb142faac8f115780099e1a88af8f0159c1f10d8a3d750e18feb8d7de497ae8f1",
+    "blockNumber": 155770534,
+    "gasUsed": "1732219",
+    "createdAt": "2026-08-19T11:44:05.928Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x2f12d011a46dEA4EDC14Bcc390B1bC6F49eBafee",
+      "0xf1aD2087103Bf520249344a6D59056941Df440A2",
+      "0x78b6664a4A5731E3FfE87c25421787bb067e0b4e"
+    ]
+  },
+  {
+    "id": 33,
+    "shortName": "TACHYON",
+    "title": "Ironwood zk-SNARK Formal Verification (Project Tachyon)",
+    "applicant": "Tachyon Foundation",
+    "requestedUsd": 738942,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x74A5f36e0Af651a1E577b40C2167aC62FD4012D7",
+    "chainId": 10,
+    "marketName": "Will Ironwood zk-SNARK Formal Verification (Project Tachyon) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Ironwood zk-SNARK Formal Verification (Project Tachyon) be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xd8e00bb22acc5e320dbc3c6a86df4b95872611a321c70e8b57d111904c77fdcd",
+    "questionId": "0x3a11e4cd93fbb8d6b468959e30ff310b7b13d0160639f15c7a3657419f618d53",
+    "questionsIds": [
+      "0xc6e60d2593921e984a59cc1c2ec231bb0a1596cda18c3ea96196973c18d55bd2"
+    ],
+    "realityQuestionId": "0xc6e60d2593921e984a59cc1c2ec231bb0a1596cda18c3ea96196973c18d55bd2",
+    "tokenNames": [
+      "ZQ3TACHYONYES",
+      "ZQ3TACHYONNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xb89c74038195e389d08f526c88428d30c38615cebfd904d84d0cdddf4b9e174e",
+    "blockNumber": 155770537,
+    "gasUsed": "1799325",
+    "createdAt": "2026-08-19T11:44:12.399Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x36CEaB5d6fc30c5D84922Ba2Be3c8b93C64A9614",
+      "0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac",
+      "0x07062E924615447CE1be7C5F7007C22200aAeBa1"
+    ]
+  },
+  {
+    "id": 34,
+    "shortName": "ORCHARDBOUNTY",
+    "title": "Orchard Counterfeiting Vulnerability Bug Bounty",
+    "applicant": "Taylor Hornby",
+    "requestedUsd": 750000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0xD2dc10FA13CaC63abFc098e7be89214eba6C38EC",
+    "chainId": 10,
+    "marketName": "Will Orchard Counterfeiting Vulnerability Bug Bounty be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Orchard Counterfeiting Vulnerability Bug Bounty be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xbe5e78a185185c2258bbff851b5fb5f6ca0278e112af358c17a45f2757d7d98b",
+    "questionId": "0x4c5f11c4c03ade9bf8c5100a4ea309dde5b32bf08703877fe9472ffeaa9f1493",
+    "questionsIds": [
+      "0x7eec5316e5f8deb0d531b537cd69f5692e56d2d14a6b5977a875ec812db676a1"
+    ],
+    "realityQuestionId": "0x7eec5316e5f8deb0d531b537cd69f5692e56d2d14a6b5977a875ec812db676a1",
+    "tokenNames": [
+      "ZQ3ORCHARDBOUNTYYES",
+      "ZQ3ORCHARDBOUNTYNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0xce7f930cc3f976d130037d9f08d39babd7a0cbdf4436ca2e6274ffc6d7b42321",
+    "blockNumber": 155770540,
+    "gasUsed": "1791232",
+    "createdAt": "2026-08-19T11:44:18.578Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x1C4900d1Be2eD0eC4E16dEf0edD3Eb7F8b19039f",
+      "0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A",
+      "0xA0Eaca66A10CE7194A6A6A2519581D1073Ab0a9c"
+    ]
+  },
+  {
+    "id": 35,
+    "shortName": "BONUSORCHARD",
+    "title": "Bonus Grant - Orchard Counterfeiting Bug Bounty",
+    "applicant": "Jason McGee",
+    "requestedUsd": 750000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0xBFa2F5855527B8fA1fDB648065FC172EA41C6D94",
+    "chainId": 10,
+    "marketName": "Will Bonus Grant - Orchard Counterfeiting Bug Bounty be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will Bonus Grant - Orchard Counterfeiting Bug Bounty be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x3f9d5839af321ecd31f174169aa786440890f8b8ea39dc5a5d5de803a80ef8de",
+    "questionId": "0x506dfdbf987510b7b28c72ed2d725b0a1a3d216d09d0bb7bf579312fc3b4d820",
+    "questionsIds": [
+      "0xe1ea0c3327dd70c5daf18c6830215eea4621a1452bc76d2afdf91ade3de023bf"
+    ],
+    "realityQuestionId": "0xe1ea0c3327dd70c5daf18c6830215eea4621a1452bc76d2afdf91ade3de023bf",
+    "tokenNames": [
+      "ZQ3BONUSORCHARDYES",
+      "ZQ3BONUSORCHARDNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x13dfbb790ba21f44dcf33044bb604270a1ac7a1b8f00d349c56e985197d3f2e8",
+    "blockNumber": 155770543,
+    "gasUsed": "1725044",
+    "createdAt": "2026-08-19T11:44:24.681Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x3F838f548308B0Be41F5F75B0B14D4248b6fCC19",
+      "0x18B28d020d4d27b574861840322dfCC3432f596F",
+      "0x5cd7447759274912485588c8D753e02c47f50B1f"
+    ]
+  },
+  {
+    "id": 36,
+    "shortName": "VALARIRONWOOD",
+    "title": "ValarGroup Ironwood Work",
+    "applicant": "ValarGroup",
+    "requestedUsd": 1203000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x8dFd98175EaeB4c512113f88EccBA1C9Bd281742",
+    "chainId": 10,
+    "marketName": "Will ValarGroup Ironwood Work be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ValarGroup Ironwood Work be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x3c6816c6e20c36c613cee7101f679a26bc1003c02d099b480dabcf32181da9d6",
+    "questionId": "0xa5e2e40931e46231aa619683d1f452c2af976ff4b62e77c5b8daa9a7c873dd6b",
+    "questionsIds": [
+      "0x70b65ea92f811fa04a48346d5bbb52b8c525560afa9ab53e44d0ed6311ca79da"
+    ],
+    "realityQuestionId": "0x70b65ea92f811fa04a48346d5bbb52b8c525560afa9ab53e44d0ed6311ca79da",
+    "tokenNames": [
+      "ZQ3VALARIRONWOODYES",
+      "ZQ3VALARIRONWOODNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x981d09f82d7d525274dbbd19016eff1908a35acc442a9df13fdf2c79b445b66a",
+    "blockNumber": 155770547,
+    "gasUsed": "1739491",
+    "createdAt": "2026-08-19T11:44:35.121Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x2aa0Bc400C00482234a93083c852211F8D85c86a",
+      "0x06fB380b6aCb813ff5BBC162f254DF27f1090E07",
+      "0x823261ec9B50ACc4e493aeb1729B60af2e03DF26"
+    ]
+  },
+  {
+    "id": 37,
+    "shortName": "ZODL",
+    "title": "ZODL Q1 2026 Core Protocol Development",
+    "applicant": "ZODL",
+    "requestedUsd": 1950000,
+    "tier": "over150k",
+    "yesPrice": 0.55,
+    "market": "0x2766eF544445b8247ADB241a5c2792AAc31eF133",
+    "chainId": 10,
+    "marketName": "Will ZODL Q1 2026 Core Protocol Development be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "encodedQuestion": "Will ZODL Q1 2026 Core Protocol Development be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x3d7d3417bf988ff6718272d72b5b00999c1660f39cfc2c596ddff392a8124179",
+    "questionId": "0x109d863ff7e6c5cc64edc5a13cac97ebc20888ea7f9ad4492a58713e4019d3c5",
+    "questionsIds": [
+      "0x346532cad223d955b07b7342c9f52f93cdb5fe46ea0b5a8b69c42ca1726fe39f"
+    ],
+    "realityQuestionId": "0x346532cad223d955b07b7342c9f52f93cdb5fe46ea0b5a8b69c42ca1726fe39f",
+    "tokenNames": [
+      "ZQ3ZODLYES",
+      "ZQ3ZODLNO"
+    ],
+    "openingTime": 1787097600,
+    "minBond": "5000000000000000",
+    "txHash": "0x47d680b71d72eb7036da47f2ec6d0b521f294931c975476329f00c4edc3e6c6b",
+    "blockNumber": 155770552,
+    "gasUsed": "1754140",
+    "createdAt": "2026-08-19T11:44:45.112Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xd8fd3713f7BBAa0B34269666cC071fAD85Bb0638",
+      "0x085dbdd74787219b190dA52cB02f93E1134Cab4F",
+      "0xBf5F97181A899B9116e7aBfCc67FAD2C342B348D"
+    ]
+  }
+]

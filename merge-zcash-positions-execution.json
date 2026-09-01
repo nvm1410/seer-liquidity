@@ -1,0 +1,705 @@
+[
+  {
+    "id": 1,
+    "shortName": "GRANTSHUB",
+    "market": "0xE599669a0cB02128fa0463953f9f70Fde240921A",
+    "wrappedTokens": [
+      "0x30258BD4D6344B2be1AD364ebe5D19E4F88fC78e",
+      "0xF983075ccac6A52cE1dCA390cE319A3253f56CFd",
+      "0x75c9feD9069cbC1376709928999b299894C04055"
+    ],
+    "balances": [
+      "139397270512624007202",
+      "139697740398203306296",
+      "139447746648203306298"
+    ],
+    "merged": "139397270512624007202",
+    "leftover": "350946021158598190",
+    "txHash": "0x1020be079ba21acc5dd6a5f9d1d44138d0b4ef3862086fb4e7fc49b415933c2b",
+    "blockNumber": 155982296
+  },
+  {
+    "id": 2,
+    "shortName": "SHIELDEDSCAN",
+    "market": "0xbdb8245fB6E4c6dF77bB6b28AF7C7691572805EC",
+    "wrappedTokens": [
+      "0xD1122a4bEc93Ab3DA7Ca3B9601DCa61e3b4308DB",
+      "0x62600B021160180C743316415257d2518Cf4A75A",
+      "0xb5fA68e9592b9D799f51D1E333516CEF4faA4825"
+    ],
+    "balances": [
+      "139445325864997635176",
+      "139445325864997635176",
+      "139445325864997635177"
+    ],
+    "merged": "139445325864997635176",
+    "leftover": "1",
+    "txHash": "0x1bfb450c6734c57b3e2e20f121e8a0d86f4cc4c945d11a01fff0df63d861930e",
+    "blockNumber": 155982312
+  },
+  {
+    "id": 3,
+    "shortName": "ZECKIT",
+    "market": "0x8F62C36678044f5BE39DE143C01d652919E59a31",
+    "wrappedTokens": [
+      "0x93550F086AcdEAe522d844D7Be0aD8F94bA05939",
+      "0x3D6ae7e4E9cdc1eAe8ffE7A1Ff57AB3a519Cb8dA",
+      "0xe51DF98C9f08A74f683A4705a937b3839C9a8DE3"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x4b6d138a38bb78c62e5771c31d0008ac901ebdf571c58dc8c3b66220a54c6808",
+    "blockNumber": 155982326
+  },
+  {
+    "id": 4,
+    "shortName": "ZCASHTOCASH",
+    "market": "0xdC8cDe1236921607e18382710D42DE2A8ccdd491",
+    "wrappedTokens": [
+      "0x642b91635F5Ad1881540f47d1ced93f0b1cbf339",
+      "0xe711B847F30B5fD450B2C61B74422B335A77468F",
+      "0x03b880208f798B1D70f87cD1cEF8eF965057547A"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0x6919138e15c1c321e216abdf71c938f95a977a4d093a9ff1f63e46291ab15f97",
+    "blockNumber": 155982339
+  },
+  {
+    "id": 5,
+    "shortName": "RECONCILE",
+    "market": "0x55094376a3283512a8144Fa9a251E430195286E2",
+    "wrappedTokens": [
+      "0x6CE153c83A74258b9F0D80dBabc3011eF6178BBc",
+      "0x7AB992CFba241dDbD7691Ee5A426cfAFae026B14",
+      "0xe924C6d11dfC3E8a911A9b30FB5FfEAdd88565ad"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x581b948b5aee4ef6d9cb079ffd3ba9a5ae05c669c936b2df74da93ba8115d7c6",
+    "blockNumber": 155982354
+  },
+  {
+    "id": 6,
+    "shortName": "GLEYO",
+    "market": "0xAce4327Ac96E15040474065dC6aA0da0751BcBCA",
+    "wrappedTokens": [
+      "0x8A3dAe0FC9Bc4A0937D4432CedA163dAda18C9Be",
+      "0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586",
+      "0xCDB4f8F58079C1aBE08A8E0EafF59bEA2dC9a8bD"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xc494db1a414e97c99a41db13978773145c3f4ec6f102ae3785491615ef7541cc",
+    "blockNumber": 155982368
+  },
+  {
+    "id": 7,
+    "shortName": "FAUCET",
+    "market": "0xb4485E5404178444fbf3F279eddF2b5C4b421e39",
+    "wrappedTokens": [
+      "0x758fcb92132bdf0Ba3BB4A752b30140ab042bB80",
+      "0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6",
+      "0x1392d71DD592707a0536225B51d18BF5bDaF5Ffc"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0xcc9cf04b260258d8f87ac4397f9ed7ea64b5d1c854b5cf426530a9837055dab5",
+    "blockNumber": 155982379
+  },
+  {
+    "id": 8,
+    "shortName": "CYPHZEC",
+    "market": "0xe3A5794dFdcccBc964574bc6A5E3Cab92f198f03",
+    "wrappedTokens": [
+      "0xfcc942219759ca67AE3B451b363a821Bb5073A7a",
+      "0x74702F3887287f7c5ca89B8B43e4E5e232E39A86",
+      "0xbEa602d1482119F29B8c979821A7dd191CB26d1B"
+    ],
+    "balances": [
+      "139445325864997635176",
+      "139445325864997635176",
+      "139445325864997635177"
+    ],
+    "merged": "139445325864997635176",
+    "leftover": "1",
+    "txHash": "0x530c701d66c1853fafdc9a43411ed029957eec35274792a1df31b2b31bef070b",
+    "blockNumber": 155982394
+  },
+  {
+    "id": 9,
+    "shortName": "ZECLEDGER",
+    "market": "0xFf4553ad2539B2722b322d10930f1B85969DEe6A",
+    "wrappedTokens": [
+      "0x6Ff66A3D8139f5aC033e17B9d65cd7EDb842df92",
+      "0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da",
+      "0x7cbc8C8Ab4dab67421d685859d3C01f7ABA278F3"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x72c55cf5932ff1f615e2a588c17e0ee6bc07a6f4b8a837ac581903a746a65aed",
+    "blockNumber": 155982410
+  },
+  {
+    "id": 10,
+    "shortName": "LIGHTWALLETD",
+    "market": "0xd058cc42d014810B15A93874b3f11B02bfAd9732",
+    "wrappedTokens": [
+      "0x5947Da3E3753b85Fe01d735207dA28773aD2db63",
+      "0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2",
+      "0x789dB852bB0936f3743050DD80F3185Bc9b2c630"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xe5ab2e7e9c02791e28172eef62898eb5394415a80ec5433631da00239d4bdd0b",
+    "blockNumber": 155982420
+  },
+  {
+    "id": 11,
+    "shortName": "BLINDVAULT",
+    "market": "0x5395fD696b64d1d3e9295e09BfAf038E0c8F05f6",
+    "wrappedTokens": [
+      "0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42",
+      "0xfD55e6DB8Cc3EF85766444E21882f95B9aF426aC",
+      "0x6c6E69FD91F5564FC1bF6B80eD072495Ca325ad6"
+    ],
+    "balances": [
+      "139441363063495963412",
+      "139441363063495963412",
+      "139441363063495963413"
+    ],
+    "merged": "139441363063495963412",
+    "leftover": "1",
+    "txHash": "0x536bfd7d21b368a2b815ebe1ae533d590302363796fa100dcade7ec7e95b0c6d",
+    "blockNumber": 155982436
+  },
+  {
+    "id": 12,
+    "shortName": "ZALLETRPC",
+    "market": "0x781FC94cf2a362C29cB08c86f8DcD1EA8181a158",
+    "wrappedTokens": [
+      "0x76eEA0004D171054F537fDb6F274948a9Cc1EA57",
+      "0xee811Aa69f197a465E9Ad915F7cD613AB09A41d8",
+      "0x4094C9Cc1dCDdC337Db5345F4eB54e054A57AEB5"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0x47acd0104d83639f5232ba6788fa6bf2c854b4be99e798aa965be1e304be21ff",
+    "blockNumber": 155982450
+  },
+  {
+    "id": 13,
+    "shortName": "ZECMAP",
+    "market": "0x78a72380C7936F2CB3574d2302E8437aeEBaB93c",
+    "wrappedTokens": [
+      "0x6C05B893299fE0f66e57465E4eeC06fB78A52718",
+      "0x85051bd7FFDA82f16BfAFA9675b9de1a4B9C48c0",
+      "0xf9802699589BfD6fA3585fD9003924bC4EC2002c"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x4e6bcc1827fad96bb0d6a9995a3a16bbde11d442dcf0868fdc5d0849b9e898df",
+    "blockNumber": 155982468
+  },
+  {
+    "id": 14,
+    "shortName": "CONNAUGH",
+    "market": "0x64a3ab58337ca2D6DdCDd6Ab6712b3E57626Ee1f",
+    "wrappedTokens": [
+      "0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2",
+      "0xB2E5f4eAbc756196857ACF7a10C584890d04A447",
+      "0x4CEb5C856794f0858241200a98eF18430c46Bbac"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x36ab1fd97db528463066d0a0126f7b3e1a157928b311f66064b169b6d0bac428",
+    "blockNumber": 155982484
+  },
+  {
+    "id": 15,
+    "shortName": "ZAP1",
+    "market": "0x0586C5Bf8A0137D3dA895E59663b760B5E39C340",
+    "wrappedTokens": [
+      "0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48",
+      "0x536B431A22CE9D09d36455B1950d22165DAF6aB4",
+      "0xf356CF72312Bed611a1aEB778336351eDf06B5cE"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x57a6c7e411e5f61f7bdc51e30b3be2d2ca8144d1abdbf8ef0ca9e59d11b317c9",
+    "blockNumber": 155982500
+  },
+  {
+    "id": 16,
+    "shortName": "ZECBOOKS",
+    "market": "0x140654d12ac41a2d946E6DEc85D07A0252B0BF20",
+    "wrappedTokens": [
+      "0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A",
+      "0x19c04F7216aa17d484424803EA55A0cae66A237C",
+      "0xcd15b679599C3e81c3d3AA80123911365aB31C1f"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xdb6e965aaed59108f70f08e127cca6a12a3922f773ed6a483bb04f2cd4a84d82",
+    "blockNumber": 155982515
+  },
+  {
+    "id": 17,
+    "shortName": "CIPHERPAY",
+    "market": "0x0900986e76a3a75cE4dFD3615AAA5e388d1A7870",
+    "wrappedTokens": [
+      "0x5469755c89E69baB03a61bd6D73a640015242e69",
+      "0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88",
+      "0x8a7dcF819B6fdF17Fb1d164FBf6890309bc5267E"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0x63c39b42123cf841cf27e7a328b613ddeb3afb3ef2ee47d61bed9a81cb00e05c",
+    "blockNumber": 155982531
+  },
+  {
+    "id": 18,
+    "shortName": "ZAFU",
+    "market": "0x725337EF90bE0a5a7064098d6A0191d93F8C1B70",
+    "wrappedTokens": [
+      "0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C",
+      "0x6092856669F7Eedf4c6E07105a96E9E14EF52EE2",
+      "0x2aE92D75C5cAB43783c37A2C8baF2a21C8fBa16B"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xf5a9d26e16611ac56e808011078e08b28a92ccf10fae6d7fd697d103c7f221fe",
+    "blockNumber": 155982545
+  },
+  {
+    "id": 19,
+    "shortName": "ZAPP",
+    "market": "0x06277FcEf6340930B0F08B90032EDAF07CE36b6A",
+    "wrappedTokens": [
+      "0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4",
+      "0x39f0a7987F0B2a9cB78B35C935BB0eFaCeA42B82",
+      "0x74f3AC99F65c12e1DbF896D3eca739f95032B2BC"
+    ],
+    "balances": [
+      "139445325864997635176",
+      "139445325864997635176",
+      "139445325864997635177"
+    ],
+    "merged": "139445325864997635176",
+    "leftover": "1",
+    "txHash": "0xe85ab41cae417e47ff7a8e64b9c2680e1bb7a358488d2bc6026b1affe112f911",
+    "blockNumber": 155982558
+  },
+  {
+    "id": 20,
+    "shortName": "HWSDK",
+    "market": "0xA58c14Daf5c0f14adFE08b2c672ab361948758d2",
+    "wrappedTokens": [
+      "0xE497cC87790e25D1Ba3C388b79c5759B92A53E8C",
+      "0xA9980Ee502021d4E6906cff74374C24dDB49e4F2",
+      "0x096451451EeF3AEE60489366600D442971c5D110"
+    ],
+    "balances": [
+      "139445325864997635176",
+      "139445325864997635176",
+      "139445325864997635177"
+    ],
+    "merged": "139445325864997635176",
+    "leftover": "1",
+    "txHash": "0xe4923a4da68ce95cec0b89c7376707159f083c3ab60b924a7ba275e20cbd61f9",
+    "blockNumber": 155982574
+  },
+  {
+    "id": 21,
+    "shortName": "NOZY",
+    "market": "0x45eF7f50825619AEa0070d7d0147DaE5A26fc50B",
+    "wrappedTokens": [
+      "0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7",
+      "0xaF2932072667544c6Beba7B695dfEA896252d60A",
+      "0xE2cD43993fA7af324A20BDD940E0B5563c771e10"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x59a68fe836dbcef4949da9d118b75206dd8ff9b5ad991ee88c542816709e4855",
+    "blockNumber": 155982591
+  },
+  {
+    "id": 22,
+    "shortName": "THORSWAP",
+    "market": "0x777B50f83e76acD9E520Abf6a258CC218B1aD054",
+    "wrappedTokens": [
+      "0x3906685605Bbc3b107613C77c078e065D0ccAE5C",
+      "0x6ab6b9B720172B73667AE83fd712D49d5c868ecA",
+      "0x11418F9C7104639537e26Fd62fE520D6B9FE2823"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x1524a2317fcca8990dbb3ebbf491f7df0b2570e94655afe3bd6c7d7b2dec8f6d",
+    "blockNumber": 155982610
+  },
+  {
+    "id": 23,
+    "shortName": "UNSTOPPABLE",
+    "market": "0x404CcB09e7F47dE56b64253d9E2f839D555366b8",
+    "wrappedTokens": [
+      "0xE03D7063F268047BA5dDBAAA3ece1CA777fE70ff",
+      "0xb7295c351321ebD651528324AF9FA5B7Ebbe198c",
+      "0x9D9fF2Ae8B76a670D253F0cE7a5CB164c901eB46"
+    ],
+    "balances": [
+      "139441363063495963412",
+      "139441363063495963412",
+      "139441363063495963413"
+    ],
+    "merged": "139441363063495963412",
+    "leftover": "1",
+    "txHash": "0xfb9151a0905998ad63e0b22d66a8add7244cb59571cbf23f034a805c87c0d60d",
+    "blockNumber": 155982627
+  },
+  {
+    "id": 24,
+    "shortName": "ZCASHNAMES",
+    "market": "0xB6Bb6a1E1f02a11AFAE1DE272C94a78bd4673f37",
+    "wrappedTokens": [
+      "0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a",
+      "0x35DD8AD91E819B76b91319a9D9ACff39c7CF1a17",
+      "0xdEBb1577C672b07475ccE2D5C4F32DDCf48fdc53"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x477e7c5097d86300e24310faea7a0e4d5413555d1fcc5f1c7144f01f22fae247",
+    "blockNumber": 155982642
+  },
+  {
+    "id": 25,
+    "shortName": "FRONTIERSEC",
+    "market": "0x751047Dc87049EB122CDbF570a591ECEEB81b984",
+    "wrappedTokens": [
+      "0x8994C409978a640d2de6b11D2dbd72794989F508",
+      "0x066279aF0d19382FFFDc2fBF8842058168f68d0a",
+      "0xF770ca84f5A7201B4dD35C61703831BbaA3204e1"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x1d17bdf28677ccd9f2ef82df0c48a42c9f96bd1051fb41d03933b2a7efb12a67",
+    "blockNumber": 155982655
+  },
+  {
+    "id": 26,
+    "shortName": "ZEBRACVE",
+    "market": "0xDA375Fa265997b5B408fA94D9C834693861BceCa",
+    "wrappedTokens": [
+      "0x81361090f60dB987307986DCff85A3F726278006",
+      "0xCee609fB783D37788d53B940fDD81Df3fdea4b3f",
+      "0xA7aBFf70a87c34c19D00CC6341a64f78E2429709"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0xfcf549ad840792fccd29a8346d5c6382936793b78eb5a27bcbb7aaf44f3e2522",
+    "blockNumber": 155982672
+  },
+  {
+    "id": 27,
+    "shortName": "BONUSIRONWOOD",
+    "market": "0xDdBE118c992Fc4165291eaD70B64c33dB037eB67",
+    "wrappedTokens": [
+      "0xb12161065f78BEBC0605CA824776Eca0e8CaB3c2",
+      "0x462900f36Cb99f667491B89802CC129252897592",
+      "0xc7267f855987d0a5d838E1185769B691e0891594"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xd946505695a81a054d676e9e56f3523b7ff6c977cc0f221cdaebe889627305bc",
+    "blockNumber": 155982687
+  },
+  {
+    "id": 28,
+    "shortName": "CIPHERSCAN",
+    "market": "0x73d8A605e090C267D18506A2EeeF5b0A6d22Fae9",
+    "wrappedTokens": [
+      "0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200",
+      "0x1A4e4cED1Efa0be79841aA726d80DfF9B08483ae",
+      "0x58cCfbB574c7359dc82DacE75772Ca0f29049ba7"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0xaacaa0260d67fc946806c3e99b3caf98614e183544a6fb733026cf1bab6d1a36",
+    "blockNumber": 155982700
+  },
+  {
+    "id": 29,
+    "shortName": "MINTEXPLOIT",
+    "market": "0xc0e29B80a74287cFEF882a4d425d06117Aa09C07",
+    "wrappedTokens": [
+      "0xDaeA18eb86c017259EC2aec482b5FCd8D8323314",
+      "0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7",
+      "0x11D691c5E20344f2F273342f5bEe5576d4134f87"
+    ],
+    "balances": [
+      "139445325864997635176",
+      "139445325864997635176",
+      "139445325864997635177"
+    ],
+    "merged": "139445325864997635176",
+    "leftover": "1",
+    "txHash": "0x21d8c5e059cfd8ae4fd958b7e58619eac1fe02adbdc5ae75dccae03bfff4bc05",
+    "blockNumber": 155982714
+  },
+  {
+    "id": 30,
+    "shortName": "ZEBRACONSENSUS",
+    "market": "0xe7d2d53d782b13d1de2361aE458367Eb3a85B191",
+    "wrappedTokens": [
+      "0xa6B4e845dD137ee5e5AA814aCD928Fd0a05F76D1",
+      "0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A",
+      "0xEC10e6bAC49a4033a5B3E0ee9c1B5EF88968b1DD"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0xc421e7648a191a98249dd860309b6fc979141ae65aac676cd94665df7ac26be5",
+    "blockNumber": 155982727
+  },
+  {
+    "id": 31,
+    "shortName": "ZECROCKS",
+    "market": "0x91736993FD987C230244825A27c3E531c66Fe63B",
+    "wrappedTokens": [
+      "0x99534C2f36C0EDD0f276d218ab4E9C7D226E6b4D",
+      "0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b",
+      "0x401C3920866A73F1024139062B7Eb08B5E7fAcA9"
+    ],
+    "balances": [
+      "139451709812550220546",
+      "139451709812550220546",
+      "139451709812550220547"
+    ],
+    "merged": "139451709812550220546",
+    "leftover": "1",
+    "txHash": "0x93ede573ab9e0973f4c696f1ab09462774da2b1341206ca3a4613b3fa934de36",
+    "blockNumber": 155982740
+  },
+  {
+    "id": 32,
+    "shortName": "VALARAUDIT",
+    "market": "0x6a2eFDE79D7E7dF689Cb17FD0663b3455D838Dd4",
+    "wrappedTokens": [
+      "0x2f12d011a46dEA4EDC14Bcc390B1bC6F49eBafee",
+      "0xf1aD2087103Bf520249344a6D59056941Df440A2",
+      "0x78b6664a4A5731E3FfE87c25421787bb067e0b4e"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0x46a77c97a266fb1cdde73f9130f0dbec322a4ba67e97c9ef69026b25bed95dd3",
+    "blockNumber": 155982754
+  },
+  {
+    "id": 33,
+    "shortName": "TACHYON",
+    "market": "0x74A5f36e0Af651a1E577b40C2167aC62FD4012D7",
+    "wrappedTokens": [
+      "0x36CEaB5d6fc30c5D84922Ba2Be3c8b93C64A9614",
+      "0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac",
+      "0x07062E924615447CE1be7C5F7007C22200aAeBa1"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0x20d570eb78074e96ad9e15667403c53424b2fc7143e87012e871fe45128fdf96",
+    "blockNumber": 155982767
+  },
+  {
+    "id": 34,
+    "shortName": "ORCHARDBOUNTY",
+    "market": "0xD2dc10FA13CaC63abFc098e7be89214eba6C38EC",
+    "wrappedTokens": [
+      "0x1C4900d1Be2eD0eC4E16dEf0edD3Eb7F8b19039f",
+      "0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A",
+      "0xA0Eaca66A10CE7194A6A6A2519581D1073Ab0a9c"
+    ],
+    "balances": [
+      "139447746648203306297",
+      "139447746648203306297",
+      "139447746648203306298"
+    ],
+    "merged": "139447746648203306297",
+    "leftover": "1",
+    "txHash": "0xea0ee434f1806d6d289a8fedc8f61d79a22eb457d3629f9e219e13f8ca5889ba",
+    "blockNumber": 155982780
+  },
+  {
+    "id": 35,
+    "shortName": "BONUSORCHARD",
+    "market": "0xBFa2F5855527B8fA1fDB648065FC172EA41C6D94",
+    "wrappedTokens": [
+      "0x3F838f548308B0Be41F5F75B0B14D4248b6fCC19",
+      "0x18B28d020d4d27b574861840322dfCC3432f596F",
+      "0x5cd7447759274912485588c8D753e02c47f50B1f"
+    ],
+    "balances": [
+      "139701703562550220545",
+      "139413677161025056372",
+      "139451709812550220547"
+    ],
+    "merged": "139413677161025056372",
+    "leftover": "326059053050328348",
+    "txHash": "0xe287758d3714606e9be26cf10be446a0f15c1845adad07ede921657a3c2cea52",
+    "blockNumber": 155982796
+  },
+  {
+    "id": 36,
+    "shortName": "VALARIRONWOOD",
+    "market": "0x8dFd98175EaeB4c512113f88EccBA1C9Bd281742",
+    "wrappedTokens": [
+      "0x2aa0Bc400C00482234a93083c852211F8D85c86a",
+      "0x06fB380b6aCb813ff5BBC162f254DF27f1090E07",
+      "0x823261ec9B50ACc4e493aeb1729B60af2e03DF26"
+    ],
+    "balances": [
+      "139701703562550220545",
+      "139413677161025056372",
+      "139451709812550220547"
+    ],
+    "merged": "139413677161025056372",
+    "leftover": "326059053050328348",
+    "txHash": "0xd8920b7c8e72546985a78be56f0e11037643c4a0aa1114b66627b6f62f0b6392",
+    "blockNumber": 155982810
+  },
+  {
+    "id": 37,
+    "shortName": "ZODL",
+    "market": "0x2766eF544445b8247ADB241a5c2792AAc31eF133",
+    "wrappedTokens": [
+      "0xd8fd3713f7BBAa0B34269666cC071fAD85Bb0638",
+      "0x085dbdd74787219b190dA52cB02f93E1134Cab4F",
+      "0xBf5F97181A899B9116e7aBfCc67FAD2C342B348D"
+    ],
+    "balances": [
+      "139394856497484905829",
+      "139695319614997635175",
+      "139445325864997635177"
+    ],
+    "merged": "139394856497484905829",
+    "leftover": "350932485025458694",
+    "txHash": "0x45a8836ed7cd3cc40930cefe32837a1bab14c8c837f80956b64cf1e7484ad602",
+    "blockNumber": 155982822
+  }
+]
