@@ -1,0 +1,248 @@
+{
+  "chainId": 10,
+  "chain": "optimism",
+  "collateral": {
+    "symbol": "sUSDS",
+    "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0"
+  },
+  "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+  "marketType": "categorical (single-select)",
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "createdAt": "2026-09-03",
+  "totalSeededSusds": 10000,
+  "markets": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "address": "0xF3f00A5Ecc66Bd6EbF32B6fd46bfb8F25289A4aA",
+      "seerUrl": "https://app.seer.pm/markets/10/0xF3f00A5Ecc66Bd6EbF32B6fd46bfb8F25289A4aA",
+      "question": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?",
+      "txHash": "0xe30f1a55c352175d1571c205831de5e3d567f1e52a01f5a3abe74f025df4677b",
+      "blockNumber": 156418642,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Smooth issuance curve",
+          "seedPrice": 0.15,
+          "tokenName": "ZNU7Q1SMOOTH",
+          "tokenAddress": "0x0629e8B94D14BC237523254c2591eAFaaa049713"
+        },
+        {
+          "index": 1,
+          "label": "Preserve halvings",
+          "seedPrice": 0.77,
+          "tokenName": "ZNU7Q1HALVINGS",
+          "tokenAddress": "0x95951CaD84fCa2b89E8463053264E7E585ff9EB9"
+        },
+        {
+          "index": 2,
+          "label": "Do not include issuance smoothing in NU7",
+          "seedPrice": 0.05,
+          "tokenName": "ZNU7Q1NONE",
+          "tokenAddress": "0x60E4DedaBc96BA1eaF1D098641353026A79aE441"
+        },
+        {
+          "index": 3,
+          "label": "Abstain",
+          "seedPrice": 0.03,
+          "tokenName": "ZNU7Q1ABSTAIN",
+          "tokenAddress": "0x7e30aE3e95778FA364297f4888B28CDAB32d8931"
+        },
+        {
+          "index": 4,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x484abC86CE8CCFD7593C456BF797b4e03A631657"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "address": "0x1CDDEAEd87aeA58BCee8053EfE413a12537F881A",
+      "seerUrl": "https://app.seer.pm/markets/10/0x1CDDEAEd87aeA58BCee8053EfE413a12537F881A",
+      "question": "Which NSM reissuance start date will be selected in the Zcash NU7 coinholder poll?",
+      "txHash": "0xa8fe50671b9f34392eaa8304eb9355936e1146549286ce4cee9e9359f4e06d94",
+      "blockNumber": 156418645,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "As soon as possible",
+          "seedPrice": 0.18,
+          "tokenName": "ZNU7Q2ASAP",
+          "tokenAddress": "0x0f97790931f207C2dd88DdA85318CAFd17615DF5"
+        },
+        {
+          "index": 1,
+          "label": "February 2027",
+          "seedPrice": 0.04,
+          "tokenName": "ZNU7Q2FEB2027",
+          "tokenAddress": "0xFAFB7ad4C3b8F93B82E6fdBa188341C01f197be3"
+        },
+        {
+          "index": 2,
+          "label": "February 2031",
+          "seedPrice": 0.74,
+          "tokenName": "ZNU7Q2FEB2031",
+          "tokenAddress": "0xF09Ed1D693268c8874f24d352a910C8b550e3eB5"
+        },
+        {
+          "index": 3,
+          "label": "Abstain",
+          "seedPrice": 0.04,
+          "tokenName": "ZNU7Q2ABSTAIN",
+          "tokenAddress": "0x5A168A22b4fA82Fa8393a23f1C092C3f852985B1"
+        },
+        {
+          "index": 4,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x141e7B9dbbf81d9286d3646918735ee32481ae72"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "address": "0x9C003F4627D0563359664e8F0B208f354f7acDfF",
+      "seerUrl": "https://app.seer.pm/markets/10/0x9C003F4627D0563359664e8F0B208f354f7acDfF",
+      "question": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?",
+      "txHash": "0x02293760914783c6bc08ebc246aa5505338de97960aeb251eda2deb4e51635d9",
+      "blockNumber": 156418648,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Immediately at NU7 activation",
+          "seedPrice": 0.42,
+          "tokenName": "ZNU7Q3IMMEDIATE",
+          "tokenAddress": "0xB6619A098C7B1d57132ce513dC7DdE2F0190E2fc"
+        },
+        {
+          "index": 1,
+          "label": "One year after this poll concludes",
+          "seedPrice": 0.08,
+          "tokenName": "ZNU7Q3ONEYEAR",
+          "tokenAddress": "0xb49fbb80128D6CF72186494294C142324589C5a1"
+        },
+        {
+          "index": 2,
+          "label": "Do not set a date to disable v4 transactions",
+          "seedPrice": 0.48,
+          "tokenName": "ZNU7Q3NODATE",
+          "tokenAddress": "0xb65686e2F08a2aB445Bfd11DC81beE15D9526704"
+        },
+        {
+          "index": 3,
+          "label": "Abstain",
+          "seedPrice": 0.02,
+          "tokenName": "ZNU7Q3ABSTAIN",
+          "tokenAddress": "0x51bB5FC537F346186AE900A449A9A597a3FEF971"
+        },
+        {
+          "index": 4,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x7F9ca80395c21B94677fc524d4561D23316c3A1F"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "address": "0x685d5C8F56e3722f3030Bc0102954dF541541aEb",
+      "seerUrl": "https://app.seer.pm/markets/10/0x685d5C8F56e3722f3030Bc0102954dF541541aEb",
+      "question": "Will the Zcash NU7 coinholder poll approve reducing block target spacing from 75s to 25s with per-pool action limits per ZIP-218?",
+      "txHash": "0x9f6a042a01dfd26a138580dbbfc835b0293eefc0774b4f1a1da3a9c2ebf8c4b6",
+      "blockNumber": 156418651,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Yes",
+          "seedPrice": 0.94,
+          "tokenName": "ZNU7Q4YES",
+          "tokenAddress": "0x09EdcdAdfF7Bf8ae95A6eD2AA97F277F1B236CF4"
+        },
+        {
+          "index": 1,
+          "label": "No",
+          "seedPrice": 0.04,
+          "tokenName": "ZNU7Q4NO",
+          "tokenAddress": "0xd1E0263aead53403D2C5AA9D852dd38089E4440F"
+        },
+        {
+          "index": 2,
+          "label": "Abstain",
+          "seedPrice": 0.02,
+          "tokenName": "ZNU7Q4ABSTAIN",
+          "tokenAddress": "0xc4DF4503E1E9016469b1137Ec2958cE546146334"
+        },
+        {
+          "index": 3,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x9f528a0276B13710d2E9Bc02a6D486600F023435"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "address": "0x1e3F03Cd6231027bccf02791483156Bb4a96D6C9",
+      "seerUrl": "https://app.seer.pm/markets/10/0x1e3F03Cd6231027bccf02791483156Bb4a96D6C9",
+      "question": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?",
+      "txHash": "0x97b5e36439c98e26d08ae39807707c3901980a01b7b6ca2a88a6037f5d9e5d46",
+      "blockNumber": 156418654,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Ship NU7 as soon as possible, removing any feature not implemented by the deadline",
+          "seedPrice": 0.87,
+          "tokenName": "ZNU7Q5SHIP",
+          "tokenAddress": "0xAFc05A8B5b7BfBa077833EB97c7f9844B5F070BD"
+        },
+        {
+          "index": 1,
+          "label": "Delay NU7 until every applicable approved feature is complete",
+          "seedPrice": 0.09,
+          "tokenName": "ZNU7Q5DELAY",
+          "tokenAddress": "0x5c18575ff3E93D08Fe0BaE5d07dCa9cbD81A95F4"
+        },
+        {
+          "index": 2,
+          "label": "I do not support this NU7 plan",
+          "seedPrice": 0.01,
+          "tokenName": "ZNU7Q5NOSUPPORT",
+          "tokenAddress": "0x142ea2f65C30d802f8a6e67ABec41929E0ce816d"
+        },
+        {
+          "index": 3,
+          "label": "Abstain",
+          "seedPrice": 0.03,
+          "tokenName": "ZNU7Q5ABSTAIN",
+          "tokenAddress": "0x79034abE5b6f357FB10a9c47B580E975dc4c65d5"
+        },
+        {
+          "index": 4,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0xD986A8d69cEDe6090689435Be65298C31637D880"
+        }
+      ]
+    }
+  ]
+}
