@@ -1,0 +1,72 @@
+{
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "snapshotOf": "Google Doc as read 2026-09-03",
+  "pollUrl": null,
+  "pollCloseAt": null,
+  "ballotFrozenAt": null,
+  "baseRatesFrom": "the 'Base Rate' column of the source doc, taken verbatim; each question's rates sum to 1.000",
+  "marketType": "categorical (single-select) — MarketFactory.createCategoricalMarket, REALITY_SINGLE_SELECT_TEMPLATE. The options within each question are mutually exclusive and exhaustive, so exactly one wins and price == P(that option). NOT multi-categorical (which normalises payouts across k winners) and NOT multi-scalar (which prices vote share).",
+  "note": "price is the seeded pool price for each outcome. tag drives the wrapped ERC20 symbol ZNU7<shortName><tag> and must be unique within a question. 'Invalid result' is appended by the factory: it is not listed here, gets no tokenName, and gets no pool.",
+  "hazard": "The base rates read naturally as vote SHARES (Abstain at 2-4%), but a single-select market resolves to whichever option actually WINS, and Abstain winning a plurality is ~0%. Seeding them verbatim is a deliberate decision taken 2026-09-03. If the intent turns out to be vote share, reprice (fork reseed-zcash-liquidity.js) or rebuild as multi-scalar.",
+  "questions": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "marketName": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "SMOOTH",   "label": "Smooth issuance curve",                      "price": 0.15 },
+        { "tag": "HALVINGS", "label": "Preserve halvings",                          "price": 0.77 },
+        { "tag": "NONE",     "label": "Do not include issuance smoothing in NU7",   "price": 0.05 },
+        { "tag": "ABSTAIN",  "label": "Abstain",                                    "price": 0.03 }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "marketName": "Which NSM reissuance start date will be selected in the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "ASAP",    "label": "As soon as possible", "price": 0.18 },
+        { "tag": "FEB2027", "label": "February 2027",       "price": 0.04 },
+        { "tag": "FEB2031", "label": "February 2031",       "price": 0.74 },
+        { "tag": "ABSTAIN", "label": "Abstain",             "price": 0.04 }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "marketName": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "IMMEDIATE", "label": "Immediately at NU7 activation",                    "price": 0.42 },
+        { "tag": "ONEYEAR",   "label": "One year after this poll concludes",               "price": 0.08 },
+        { "tag": "NODATE",    "label": "Do not set a date to disable v4 transactions",     "price": 0.48 },
+        { "tag": "ABSTAIN",   "label": "Abstain",                                          "price": 0.02 }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "marketName": "Will the Zcash NU7 coinholder poll approve reducing block target spacing from 75s to 25s with per-pool action limits per ZIP-218?",
+      "outcomes": [
+        { "tag": "YES",     "label": "Yes",     "price": 0.94 },
+        { "tag": "NO",      "label": "No",      "price": 0.04 },
+        { "tag": "ABSTAIN", "label": "Abstain", "price": 0.02 }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "marketName": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "SHIP",      "label": "Ship NU7 as soon as possible, removing any feature not implemented by the deadline", "price": 0.87 },
+        { "tag": "DELAY",     "label": "Delay NU7 until every applicable approved feature is complete",                      "price": 0.09 },
+        { "tag": "NOSUPPORT", "label": "I do not support this NU7 plan",                                                     "price": 0.01 },
+        { "tag": "ABSTAIN",   "label": "Abstain",                                                                            "price": 0.03 }
+      ]
+    }
+  ]
+}
