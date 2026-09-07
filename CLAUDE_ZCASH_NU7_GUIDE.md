@@ -9,6 +9,9 @@ coinholder poll, created and seeded 2026-09-03 with **10,000 sUSDS**.
 > ~0.000116 ETH gas over ~53 tx. `check-zcash-nu7-pools.js` reports 0/19 pools drifted
 > and 0/19 empty. Logs: `create-zcash-nu7-markets-execution.json`,
 > `add-zcash-nu7-liquidity-execution.json`, plus the two `*-run.log` files.
+>
+> **Fully unwound 2026-09-07** — all 19 pools drained and every outcome set merged back
+> to sUSDS. See §Unwinding. The markets themselves are still live and unresolved.
 
 ## The markets
 
@@ -55,6 +58,8 @@ templateId 2). **Not** `createMultiCategoricalMarket` (multi-select, wrong payou
 | `create-zcash-nu7-markets.js` | Creates one categorical market per question. Writes `create-zcash-nu7-markets-execution.json`. |
 | `add-zcash-nu7-liquidity.js` | Splits sUSDS and seeds one Uniswap V3 pool per option. Reads addresses from the creation log and **prices from the questions file**. Writes `add-zcash-nu7-liquidity-execution.json`. |
 | `check-zcash-nu7-pools.js` | Read-only. Live price + liquidity per pool, and each market's live price sum against 1. |
+| `withdraw-zcash-nu7-liquidity.js` | Removes all liquidity + fees from every pool. See §Unwinding. |
+| `merge-zcash-nu7-positions.js` | Converts full outcome sets back to sUSDS. See §Unwinding. |
 
 Wrapped ERC20 name = `ZNU7` + shortName + tag, e.g. `ZNU7Q1HALVINGS`. All 19 unique and
 well under the 31-byte `toString31` limit (which **reverts**, `src/MarketFactory.sol:448`).
@@ -156,13 +161,43 @@ back before touching either file for a new set.
 
 ## Unwinding
 
-There is no NU7-specific withdraw/merge script. `withdraw-zcash-liquidity.js` and
-`merge-zcash-positions.js` are the templates: point their `MARKETS_FILE` at
-`create-zcash-nu7-markets-execution.json`, start from fresh progress files, and relax the
-"3 outcomes / [Yes, No, Invalid]" assertions to `n + 1` outcomes the same way
-`add-zcash-nu7-liquidity.js` does. The merge is capped by the **smallest** outcome balance
-per market, so a market that has traded recovers less than was deployed — see the PD v1
-case in `GNOSIS_PD_MARKET_GUIDE.md`.
+**Status: fully unwound 2026-09-07, both steps clean on the first live run.** 19/19
+positions withdrawn (blocks 156581676–156581733), then 5/5 markets merged (blocks
+156581877–156581950). `check-zcash-nu7-pools.js` reports 19/19 pools empty. Logs:
+`withdraw-zcash-nu7-liquidity-execution.json`, `merge-zcash-nu7-positions-execution.json`,
+plus the two `*-run.log` files.
+
+```
+                         sUSDS        outcome tokens
+pre-seed  (2026-09-03)  42,839.21     —
+after seeding           32,839.21     1,306.08 minted
+after withdraw          41,534.14     +8,694.93 back (8,693.92 side + fees)
+after merge             42,837.64     +1,303.51 merged, 6.99 stranded
+```
+
+Net cost of the full round trip: **1.57 sUSDS**, plus ~0.0002 ETH of gas. That 1.57 is
+tick rounding plus the one trade the set ever took — Q4 (`YES` +0.0008, `NO` +0.0035);
+Q1 shows sub-dollar dust from the same effect. Nothing else moved off its seed price.
+
+| File | Role |
+|---|---|
+| `withdraw-zcash-nu7-liquidity.js` | Removes 100% of liquidity + collects fees, one tx per position. Scope = every wrapped token of every market in the creation log, paired against sUSDS, **including Invalid** so "withdraw all" stays true if an Invalid pool is ever added by hand. Resumable per position. |
+| `merge-zcash-nu7-positions.js` | Converts a full outcome set per market back to sUSDS via `Router.mergePositions`. One approval per slot then one merge, so a 5-slot market is 6 tx. Resumable per market. |
+
+Both are forks of the Q3 pair (`withdraw-zcash-liquidity.js`, `merge-zcash-positions.js`)
+with the same single structural change `add-zcash-nu7-liquidity.js` makes: the fixed
+`[YES, NO, Invalid]` triple becomes `n + 1` slots read from the creation log's `outcomes`
+array, and the `length !== 3` assertion becomes a length cross-check against that array.
+Both are checked in with `DRY_RUN = false` after the live run — flip them back first.
+
+**The merge is capped by the smallest balance in the set**, so a market that has traded
+recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`. Here
+that cost 6.99 tokens, left in the wallet: 2.40 each of Q4 `ABSTAIN` and `Invalid`, 1.33 of
+Q4 `YES`, 0.87 across Q1, and 1 wei of `Invalid` in each of Q2/Q3/Q5. Those are **not
+lost** — the markets are still live, so they redeem (or not) at resolution. Merging them
+would need buying back the missing sides, which is not worth the gas at this size.
+
+Wallet after the unwind: **42,837.64 sUSDS, 0.04094 ETH**.
 
 Related: `CLAUDE_ZCASH_MARKETS_GUIDE.md` (the Q3 grant markets these scripts fork from),
 `GNOSIS_PD_MARKET_GUIDE.md` (the other N-outcome categorical market).
