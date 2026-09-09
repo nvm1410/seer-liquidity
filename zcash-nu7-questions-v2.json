@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "supersedes": "zcash-nu7-questions.json (v1, markets created 2026-09-03, fully unwound 2026-09-07, left live and abandoned)",
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "snapshotOf": "Google Doc as read 2026-09-09 — the doc was revised after the v1 snapshot",
+  "pollUrl": null,
+  "pollCloseAt": null,
+  "revealAt": "2026-09-15",
+  "ballotFrozenAt": null,
+  "baseRatesFrom": "the 'Base Rate' column of the source doc, taken verbatim; each question's rates sum to 1.000",
+  "marketType": "categorical (single-select) — MarketFactory.createCategoricalMarket, REALITY_SINGLE_SELECT_TEMPLATE. The options within each question are mutually exclusive and exhaustive, so exactly one wins and price == P(that option). NOT multi-categorical (which normalises payouts across k winners) and NOT multi-scalar (which prices vote share).",
+  "changesFromV1": "The revised doc drops Abstain from every question (its General Notes say abstain is not an option in this market), which is what made the v1 base rates read as vote shares rather than P(win) — v1 hazard 1 is therefore gone. Option counts fall to 3/3/3/2/3 and every base rate moved. Two resolution rules are new and are now written into each market's question text: an official Abstain plurality promotes the second highest-voted option, and a question that misses official quorum resolves Invalid.",
+  "resolutionRules": [
+    "The winning option as revealed on 2026-09-15 resolves to 1; all other options resolve to 0.",
+    "Abstain is not an outcome in these markets. If Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner.",
+    "If a question does not reach the official quorum requirements, the market reverts — i.e. resolves Invalid."
+  ],
+  "note": "price is the seeded pool price for each outcome. tag drives the wrapped ERC20 symbol ZNU7V2<shortName><tag> and must be unique within a question. 'Invalid result' is appended by the factory: it is not listed here, gets no tokenName, and gets no pool.",
+  "hazard": "Invalid is a live outcome here, not a tail: rule 3 sends a below-quorum question straight to Invalid, and Invalid is deliberately unpooled. Whoever learns of a quorum failure first buys Invalid at ~0 and takes the pool. Same exposure v1 carried, now with a named trigger.",
+  "questions": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "marketName": "Which NSM issuance smoothing approach will win the Zcash NU7 coinholder poll, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "outcomes": [
+        { "tag": "SMOOTH",   "label": "Smooth issuance curve",                    "price": 0.15 },
+        { "tag": "HALVINGS", "label": "Preserve halvings",                        "price": 0.75 },
+        { "tag": "NONE",     "label": "Do not include issuance smoothing in NU7", "price": 0.10 }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "marketName": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "outcomes": [
+        { "tag": "ASAP",    "label": "As soon as possible",                        "price": 0.55 },
+        { "tag": "FEB2027", "label": "February 2027 regardless of the outcome of Q1", "price": 0.15 },
+        { "tag": "FEB2031", "label": "February 2031 regardless of the outcome of Q1", "price": 0.30 }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "marketName": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "outcomes": [
+        { "tag": "IMMEDIATE", "label": "Immediately at NU7 activation",                "price": 0.30 },
+        { "tag": "ONEYEAR",   "label": "One year after this poll concludes",           "price": 0.20 },
+        { "tag": "NODATE",    "label": "Do not set a date to disable v4 transactions",  "price": 0.50 }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "marketName": "Will the Zcash NU7 coinholder poll approve reducing the block target spacing from 75s to 25s and introducing per-pool action limits per ZIP-218, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "outcomes": [
+        { "tag": "YES", "label": "Yes", "price": 0.90 },
+        { "tag": "NO",  "label": "No",  "price": 0.10 }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "marketName": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "outcomes": [
+        { "tag": "SHIP",      "label": "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline", "price": 0.70 },
+        { "tag": "DELAY",     "label": "Delay NU7 until every applicable approved feature is deemed complete",                              "price": 0.25 },
+        { "tag": "NOSUPPORT", "label": "I do not support this NU7 plan",                                                                    "price": 0.05 }
+      ]
+    }
+  ]
+}

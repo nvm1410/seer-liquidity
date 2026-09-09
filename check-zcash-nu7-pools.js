@@ -25,7 +25,7 @@ const RPC_URL = process.env.RPC_URL;
 const CHAIN_ID = 10;
 const SUSDS_ADDRESS = "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0";
 const FEE_TIER = 100;
-const ADD_FILE = "./add-zcash-nu7-liquidity-execution.json";
+const ADD_FILE = "./add-zcash-nu7-liquidity-v2-execution.json";
 
 const LN_1_0001 = Math.log(1.0001);
 

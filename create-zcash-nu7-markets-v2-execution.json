@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "shortName": "Q1",
+    "topic": "NSM Issuance Smoothing",
+    "market": "0xAB5ff387679eD31d445C29E2A97aA2B7a6BD0716",
+    "chainId": 10,
+    "marketName": "Which NSM issuance smoothing approach will win the Zcash NU7 coinholder poll, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+    "outcomeLabels": [
+      "Smooth issuance curve",
+      "Preserve halvings",
+      "Do not include issuance smoothing in NU7"
+    ],
+    "prices": [
+      0.15,
+      0.75,
+      0.1
+    ],
+    "encodedQuestion": "Which NSM issuance smoothing approach will win the Zcash NU7 coinholder poll, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.␟\"Smooth issuance curve\",\"Preserve halvings\",\"Do not include issuance smoothing in NU7\"␟misc␟en_US",
+    "conditionId": "0xd7fe8005bfa6d6ee78aafe305c3f0c2271d05cd274811582c5f9c739f7695b91",
+    "questionId": "0x6657d950f9e2de85318ea6869d2219d6d87faa57a11100b60631da78d8ecb895",
+    "questionsIds": [
+      "0xff2b760bc405f12a87b0d77edb135e1081265dbb3299333ef14fb46452964259"
+    ],
+    "realityQuestionId": "0xff2b760bc405f12a87b0d77edb135e1081265dbb3299333ef14fb46452964259",
+    "tokenNames": [
+      "ZNU7V2Q1SMOOTH",
+      "ZNU7V2Q1HALVINGS",
+      "ZNU7V2Q1NONE"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x245f98b1ef79174d2aac2171bfa966fa498d201da45f523f399afe4a5ba1349f",
+    "blockNumber": 156660715,
+    "gasUsed": "2457307",
+    "createdAt": "2026-09-09T02:16:46.083Z",
+    "verified": true,
+    "outcomes": [
+      "Smooth issuance curve",
+      "Preserve halvings",
+      "Do not include issuance smoothing in NU7",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x9Dc4B144F9d35a3d65C0A361333fdF0e41FB13DE",
+      "0xE34A3109aD358a9F1e02af60797192B047A3c6b0",
+      "0x812444C2C94493Fb79Adc475Fc14778d02ddeFa2",
+      "0x07e2aBA748484487E00342761104C4659eedA610"
+    ]
+  },
+  {
+    "id": 2,
+    "shortName": "Q2",
+    "topic": "NSM Reissuance Start Date",
+    "market": "0xe00A21CE58f37524A690df0A06d94883C590525f",
+    "chainId": 10,
+    "marketName": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+    "outcomeLabels": [
+      "As soon as possible",
+      "February 2027 regardless of the outcome of Q1",
+      "February 2031 regardless of the outcome of Q1"
+    ],
+    "prices": [
+      0.55,
+      0.15,
+      0.3
+    ],
+    "encodedQuestion": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.␟\"As soon as possible\",\"February 2027 regardless of the outcome of Q1\",\"February 2031 regardless of the outcome of Q1\"␟misc␟en_US",
+    "conditionId": "0xbeb1ca06831c2e3b736e874baf4630573014b07ef37c30a6a0fe46d0292e9d96",
+    "questionId": "0x2cbc4d553cce313fd3edaf2de85692a8347ac37841ef5bb8d8e9ee33f196b73d",
+    "questionsIds": [
+      "0x6a7d93e031b1a14cc71081c3072e755052c9a7a49d0c350822e7ebb518407277"
+    ],
+    "realityQuestionId": "0x6a7d93e031b1a14cc71081c3072e755052c9a7a49d0c350822e7ebb518407277",
+    "tokenNames": [
+      "ZNU7V2Q2ASAP",
+      "ZNU7V2Q2FEB2027",
+      "ZNU7V2Q2FEB2031"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x3cf8a68a272e436d0beeb7fecf040a30eb217713e6f343af3c4e6c9ad62476cc",
+    "blockNumber": 156660718,
+    "gasUsed": "2585017",
+    "createdAt": "2026-09-09T02:16:52.101Z",
+    "verified": true,
+    "outcomes": [
+      "As soon as possible",
+      "February 2027 regardless of the outcome of Q1",
+      "February 2031 regardless of the outcome of Q1",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xAA3FB2Cc334082eBA4b453098e2E8D1f0a1e58d5",
+      "0x3799c83fF0ab4FaADD1E22d71F3B2346A22b243b",
+      "0xFc508d0A2bD0485Bc3cD892EB192b2eAB415Cf21",
+      "0x6959c735E5D4Ca44df903b6D1819e3D5D464c8A8"
+    ]
+  },
+  {
+    "id": 3,
+    "shortName": "Q3",
+    "topic": "Sprout Deprecation",
+    "market": "0x0226E074F4E79c898e9F8F4Bcd3F79A0c3544acd",
+    "chainId": 10,
+    "marketName": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+    "outcomeLabels": [
+      "Immediately at NU7 activation",
+      "One year after this poll concludes",
+      "Do not set a date to disable v4 transactions"
+    ],
+    "prices": [
+      0.3,
+      0.2,
+      0.5
+    ],
+    "encodedQuestion": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.␟\"Immediately at NU7 activation\",\"One year after this poll concludes\",\"Do not set a date to disable v4 transactions\"␟misc␟en_US",
+    "conditionId": "0x14f93f34aa7a9cf4f0cc9b5e94b04ad9b4c52b7bd956c085a0e635cdc301d42e",
+    "questionId": "0xb544a3775e452c7ac43148059b8f22cb271dc4e505ba402ebf4dcee962fc37d1",
+    "questionsIds": [
+      "0x74faf2afd6a06bd83e8cfb101d434639c92ff7bd5c5ff1c4ae931ce3c58e84ed"
+    ],
+    "realityQuestionId": "0x74faf2afd6a06bd83e8cfb101d434639c92ff7bd5c5ff1c4ae931ce3c58e84ed",
+    "tokenNames": [
+      "ZNU7V2Q3IMMEDIATE",
+      "ZNU7V2Q3ONEYEAR",
+      "ZNU7V2Q3NODATE"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0xd5423ea48a122ee666cfa2c479eac477b5fd5503aadf1c9c2b0ce655bd790e1b",
+    "blockNumber": 156660722,
+    "gasUsed": "2502323",
+    "createdAt": "2026-09-09T02:17:02.408Z",
+    "verified": true,
+    "outcomes": [
+      "Immediately at NU7 activation",
+      "One year after this poll concludes",
+      "Do not set a date to disable v4 transactions",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x6AF644c1920c04314f0782F8f464d85Cd857a6B7",
+      "0xb755Df13C7AACF4c8D255b311b7c5B7e91560703",
+      "0x069688728D32e5618cECc4F7b3eA60ecf07Fa71E",
+      "0x3a25874F1CE102E1B6a3943325fA3710A65EF00e"
+    ]
+  },
+  {
+    "id": 4,
+    "shortName": "Q4",
+    "topic": "Faster Block Times (ZIP-218)",
+    "market": "0xCFb9E0203dE77b326b9B02b0169e4Ff4375462A8",
+    "chainId": 10,
+    "marketName": "Will the Zcash NU7 coinholder poll approve reducing the block target spacing from 75s to 25s and introducing per-pool action limits per ZIP-218, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+    "outcomeLabels": [
+      "Yes",
+      "No"
+    ],
+    "prices": [
+      0.9,
+      0.1
+    ],
+    "encodedQuestion": "Will the Zcash NU7 coinholder poll approve reducing the block target spacing from 75s to 25s and introducing per-pool action limits per ZIP-218, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0xb25d3dc52bdf500473e600c64cd24faadd2ae4e0b9f086e45bcd95ba96f3d5b9",
+    "questionId": "0x16a1a48f265f0de707554172fda7d5d13fc11bf94e87a3c1a0562289c14d7e52",
+    "questionsIds": [
+      "0x41084d749d344dd6ee4efbee014a0a4f05126d47caee0dc287eb8d93b6a586bf"
+    ],
+    "realityQuestionId": "0x41084d749d344dd6ee4efbee014a0a4f05126d47caee0dc287eb8d93b6a586bf",
+    "tokenNames": [
+      "ZNU7V2Q4YES",
+      "ZNU7V2Q4NO"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x0d3d45433a93991d0b585edf9688c053d87fcad443e884c411c5c2a5a09df192",
+    "blockNumber": 156660727,
+    "gasUsed": "2129829",
+    "createdAt": "2026-09-09T02:17:09.961Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xEC6bcAE09E8a26a705dCb839d594Cc2E5c4F4Cdb",
+      "0xD3eCE6eF1b9704a6Cc00cFe2Da993D9DA5C5eFA6",
+      "0x66AeE32975e6C8d7cdD6A238bf1dc09eAcC21d95"
+    ]
+  },
+  {
+    "id": 5,
+    "shortName": "Q5",
+    "topic": "NU7 Scope and Readiness",
+    "market": "0xa08C1bA820FaEc9122c3844c25a877BD35EFeCe3",
+    "chainId": 10,
+    "marketName": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+    "outcomeLabels": [
+      "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+      "Delay NU7 until every applicable approved feature is deemed complete",
+      "I do not support this NU7 plan"
+    ],
+    "prices": [
+      0.7,
+      0.25,
+      0.05
+    ],
+    "encodedQuestion": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.␟\"Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline\",\"Delay NU7 until every applicable approved feature is deemed complete\",\"I do not support this NU7 plan\"␟misc␟en_US",
+    "conditionId": "0xc0e144080524e2d67eeceea24854deefc21c01692cc5490277a31c73681313b1",
+    "questionId": "0x77f31027741afb72df6ff83ba220a1984f8633bad1921d02030ddfaa2345d20e",
+    "questionsIds": [
+      "0x07c936853453232e2cd73aa2dce4dbd8a5608cfdd8e1482be936c13594b6a8ca"
+    ],
+    "realityQuestionId": "0x07c936853453232e2cd73aa2dce4dbd8a5608cfdd8e1482be936c13594b6a8ca",
+    "tokenNames": [
+      "ZNU7V2Q5SHIP",
+      "ZNU7V2Q5DELAY",
+      "ZNU7V2Q5NOSUPPORT"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x70f11cca4f7077ae2ac3213a0b60d5af13e34540f72982fedb87b696d08b7cae",
+    "blockNumber": 156660730,
+    "gasUsed": "2729823",
+    "createdAt": "2026-09-09T02:17:19.690Z",
+    "verified": true,
+    "outcomes": [
+      "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+      "Delay NU7 until every applicable approved feature is deemed complete",
+      "I do not support this NU7 plan",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xc7c30779B3553D94A74BA050D629Da5E3f90C2Ad",
+      "0x8B55a3Bca8eED26089d470AE8C9e3615aee4778d",
+      "0x68980bF3cd716C0A1Df17CF609Bc3615cB286000",
+      "0x3cCbb44aB758eF59a698f024391d328dFD125750"
+    ]
+  }
+]

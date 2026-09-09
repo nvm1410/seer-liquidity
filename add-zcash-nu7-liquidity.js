@@ -41,9 +41,9 @@ const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL; // Optimism
 const CHAIN_ID = 10;
 
-const QUESTIONS_FILE = "./zcash-nu7-questions.json";
-const MARKETS_FILE = "./create-zcash-nu7-markets-execution.json";
-const PROGRESS_FILE = "./add-zcash-nu7-liquidity-execution.json";
+const QUESTIONS_FILE = "./zcash-nu7-questions-v2.json";
+const MARKETS_FILE = "./create-zcash-nu7-markets-v2-execution.json";
+const PROGRESS_FILE = "./add-zcash-nu7-liquidity-v2-execution.json";
 
 // Addresses (Optimism, chain 10)
 const POSITION_MANAGER_ADDRESS = "0xC36442b4a4522E871399CD717aBDD847Ab11FE88";
@@ -61,10 +61,11 @@ const TICK_SPACING = 1;
 const TOTAL_BUDGET = 10_000n * 10n ** 18n; // 10,000 sUSDS = 2,000 per question
 
 // Liquidity range for every pool, in sUSDS per outcome token. An outcome token of
-// a categorical market can only ever be worth between 0 and 1. Wider on the low
-// side than the Zcash Q3 binaries' [0.02, 0.98] because these ballots have options
-// seeded as low as 0.01, which must sit strictly inside the band.
-const MIN_PRICE = 0.005;
+// a categorical market can only ever be worth between 0 and 1. Back to the Zcash
+// Q3 binaries' [0.02, 0.98] now that the v2 ballot has dropped Abstain: the lowest
+// seed price is 0.05, so the v1 floor of 0.005 would only spread depth across a
+// range no outcome sits in. Every seed price must stay strictly inside the band.
+const MIN_PRICE = 0.02;
 const MAX_PRICE = 0.98;
 
 // Trial outcome-token quantity used to size the (linear) budget.

@@ -36,8 +36,8 @@ const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL; // Optimism
 const CHAIN_ID = 10;
 
-const QUESTIONS_FILE = "./zcash-nu7-questions.json";
-const PROGRESS_FILE = "./create-zcash-nu7-markets-execution.json";
+const QUESTIONS_FILE = "./zcash-nu7-questions-v2.json";
+const PROGRESS_FILE = "./create-zcash-nu7-markets-v2-execution.json";
 
 // Addresses (Optimism, chain 10) — same deployment the zcash/octant scripts use.
 const MARKET_FACTORY = "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6";
@@ -47,14 +47,14 @@ const SUSDS_ADDRESS = "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0";
 // ── Market parameters ───────────────────────────────────────────────────────
 const CATEGORY = "misc";
 const LANG = "en_US";
-const TOKEN_PREFIX = "ZNU7";
+const TOKEN_PREFIX = "ZNU7V2";
 
 // Answerable immediately. Answering is gated operationally (see answer-octant-markets.js),
 // not at the contract level — Reality places no constraint on a past opening_ts at ask
 // time, stateOpen only requires opening_ts <= block.timestamp (RealityETH-3.0.sol:187).
 // Pinned to a fixed past instant rather than Date.now() so a resumed run derives the
 // same question ids for the markets it still has to create.
-const OPENING_TIME_ISO = "2026-09-03T00:00:00Z";
+const OPENING_TIME_ISO = "2026-09-09T00:00:00Z";
 
 // Reality min bond, in ETH on Optimism. Matches the Zcash Q3 set. Five markets
 // means 0.025 ETH to answer them all later — check the wallet before that run.

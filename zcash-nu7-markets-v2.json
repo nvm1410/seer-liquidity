@@ -1,0 +1,246 @@
+{
+  "version": 2,
+  "supersedes": "zcash-nu7-markets.json (v1, created 2026-09-03, unwound 2026-09-07, left live and abandoned)",
+  "chainId": 10,
+  "chain": "optimism",
+  "collateral": {
+    "symbol": "sUSDS",
+    "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0"
+  },
+  "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+  "marketType": "categorical (single-select)",
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "snapshotOf": "Google Doc as read 2026-09-09 — the doc was revised after the v1 snapshot",
+  "revealAt": "2026-09-15",
+  "createdAt": "2026-09-09",
+  "totalSeededSusds": 10000,
+  "resolutionRules": [
+    "The winning option as revealed on 2026-09-15 resolves to 1; all other options resolve to 0.",
+    "Abstain is not an outcome in these markets. If Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner.",
+    "If a question does not reach the official quorum requirements, the market reverts — i.e. resolves Invalid."
+  ],
+  "markets": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "address": "0xAB5ff387679eD31d445C29E2A97aA2B7a6BD0716",
+      "seerUrl": "https://app.seer.pm/markets/10/0xAB5ff387679eD31d445C29E2A97aA2B7a6BD0716",
+      "question": "Which NSM issuance smoothing approach will win the Zcash NU7 coinholder poll, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "txHash": "0x245f98b1ef79174d2aac2171bfa966fa498d201da45f523f399afe4a5ba1349f",
+      "blockNumber": 156660715,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Smooth issuance curve",
+          "seedPrice": 0.15,
+          "tokenName": "ZNU7V2Q1SMOOTH",
+          "tokenAddress": "0x9Dc4B144F9d35a3d65C0A361333fdF0e41FB13DE",
+          "poolTxHash": null
+        },
+        {
+          "index": 1,
+          "label": "Preserve halvings",
+          "seedPrice": 0.75,
+          "tokenName": "ZNU7V2Q1HALVINGS",
+          "tokenAddress": "0xE34A3109aD358a9F1e02af60797192B047A3c6b0",
+          "poolTxHash": null
+        },
+        {
+          "index": 2,
+          "label": "Do not include issuance smoothing in NU7",
+          "seedPrice": 0.1,
+          "tokenName": "ZNU7V2Q1NONE",
+          "tokenAddress": "0x812444C2C94493Fb79Adc475Fc14778d02ddeFa2",
+          "poolTxHash": null
+        },
+        {
+          "index": 3,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x07e2aBA748484487E00342761104C4659eedA610",
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "address": "0xe00A21CE58f37524A690df0A06d94883C590525f",
+      "seerUrl": "https://app.seer.pm/markets/10/0xe00A21CE58f37524A690df0A06d94883C590525f",
+      "question": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "txHash": "0x3cf8a68a272e436d0beeb7fecf040a30eb217713e6f343af3c4e6c9ad62476cc",
+      "blockNumber": 156660718,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "As soon as possible",
+          "seedPrice": 0.55,
+          "tokenName": "ZNU7V2Q2ASAP",
+          "tokenAddress": "0xAA3FB2Cc334082eBA4b453098e2E8D1f0a1e58d5",
+          "poolTxHash": null
+        },
+        {
+          "index": 1,
+          "label": "February 2027 regardless of the outcome of Q1",
+          "seedPrice": 0.15,
+          "tokenName": "ZNU7V2Q2FEB2027",
+          "tokenAddress": "0x3799c83fF0ab4FaADD1E22d71F3B2346A22b243b",
+          "poolTxHash": null
+        },
+        {
+          "index": 2,
+          "label": "February 2031 regardless of the outcome of Q1",
+          "seedPrice": 0.3,
+          "tokenName": "ZNU7V2Q2FEB2031",
+          "tokenAddress": "0xFc508d0A2bD0485Bc3cD892EB192b2eAB415Cf21",
+          "poolTxHash": null
+        },
+        {
+          "index": 3,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x6959c735E5D4Ca44df903b6D1819e3D5D464c8A8",
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "address": "0x0226E074F4E79c898e9F8F4Bcd3F79A0c3544acd",
+      "seerUrl": "https://app.seer.pm/markets/10/0x0226E074F4E79c898e9F8F4Bcd3F79A0c3544acd",
+      "question": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "txHash": "0xd5423ea48a122ee666cfa2c479eac477b5fd5503aadf1c9c2b0ce655bd790e1b",
+      "blockNumber": 156660722,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Immediately at NU7 activation",
+          "seedPrice": 0.3,
+          "tokenName": "ZNU7V2Q3IMMEDIATE",
+          "tokenAddress": "0x6AF644c1920c04314f0782F8f464d85Cd857a6B7",
+          "poolTxHash": null
+        },
+        {
+          "index": 1,
+          "label": "One year after this poll concludes",
+          "seedPrice": 0.2,
+          "tokenName": "ZNU7V2Q3ONEYEAR",
+          "tokenAddress": "0xb755Df13C7AACF4c8D255b311b7c5B7e91560703",
+          "poolTxHash": null
+        },
+        {
+          "index": 2,
+          "label": "Do not set a date to disable v4 transactions",
+          "seedPrice": 0.5,
+          "tokenName": "ZNU7V2Q3NODATE",
+          "tokenAddress": "0x069688728D32e5618cECc4F7b3eA60ecf07Fa71E",
+          "poolTxHash": null
+        },
+        {
+          "index": 3,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x3a25874F1CE102E1B6a3943325fA3710A65EF00e",
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "address": "0xCFb9E0203dE77b326b9B02b0169e4Ff4375462A8",
+      "seerUrl": "https://app.seer.pm/markets/10/0xCFb9E0203dE77b326b9B02b0169e4Ff4375462A8",
+      "question": "Will the Zcash NU7 coinholder poll approve reducing the block target spacing from 75s to 25s and introducing per-pool action limits per ZIP-218, as revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "txHash": "0x0d3d45433a93991d0b585edf9688c053d87fcad443e884c411c5c2a5a09df192",
+      "blockNumber": 156660727,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Yes",
+          "seedPrice": 0.9,
+          "tokenName": "ZNU7V2Q4YES",
+          "tokenAddress": "0xEC6bcAE09E8a26a705dCb839d594Cc2E5c4F4Cdb",
+          "poolTxHash": null
+        },
+        {
+          "index": 1,
+          "label": "No",
+          "seedPrice": 0.1,
+          "tokenName": "ZNU7V2Q4NO",
+          "tokenAddress": "0xD3eCE6eF1b9704a6Cc00cFe2Da993D9DA5C5eFA6",
+          "poolTxHash": null
+        },
+        {
+          "index": 2,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x66AeE32975e6C8d7cdD6A238bf1dc09eAcC21d95",
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "address": "0xa08C1bA820FaEc9122c3844c25a877BD35EFeCe3",
+      "seerUrl": "https://app.seer.pm/markets/10/0xa08C1bA820FaEc9122c3844c25a877BD35EFeCe3",
+      "question": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll revealed on 2026-09-15? Abstain is not an outcome here: if Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner. Resolves Invalid if the question does not reach official quorum.",
+      "txHash": "0x70f11cca4f7077ae2ac3213a0b60d5af13e34540f72982fedb87b696d08b7cae",
+      "blockNumber": 156660730,
+      "seededSusds": 2000,
+      "outcomes": [
+        {
+          "index": 0,
+          "label": "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+          "seedPrice": 0.7,
+          "tokenName": "ZNU7V2Q5SHIP",
+          "tokenAddress": "0xc7c30779B3553D94A74BA050D629Da5E3f90C2Ad",
+          "poolTxHash": null
+        },
+        {
+          "index": 1,
+          "label": "Delay NU7 until every applicable approved feature is deemed complete",
+          "seedPrice": 0.25,
+          "tokenName": "ZNU7V2Q5DELAY",
+          "tokenAddress": "0x8B55a3Bca8eED26089d470AE8C9e3615aee4778d",
+          "poolTxHash": null
+        },
+        {
+          "index": 2,
+          "label": "I do not support this NU7 plan",
+          "seedPrice": 0.05,
+          "tokenName": "ZNU7V2Q5NOSUPPORT",
+          "tokenAddress": "0x68980bF3cd716C0A1Df17CF609Bc3615cB286000",
+          "poolTxHash": null
+        },
+        {
+          "index": 3,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x3cCbb44aB758eF59a698f024391d328dFD125750",
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    }
+  ]
+}
