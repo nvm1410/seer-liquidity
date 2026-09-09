@@ -1,0 +1,226 @@
+
+Wallet   : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+DRY_RUN  : false
+Budget   : 10000 sUSDS
+Range    : [0.02, 0.98] sUSDS per outcome token
+
+Phase 0: resolving 5 markets on-chain...
+   OK: all 5 markets verified — single-select categorical, sUSDS, top-level; 14 pools to seed
+
+Phase 1: sizing positions...
+   Budget per market: 2000 sUSDS
+
+    #  mkt  outcome            price   ticks                    outcome        sUSDS
+    1  Q1   SMOOTH           0.150  [202,39122]               319.89        50.04
+    1  Q1   HALVINGS         0.750  [-39123,-203]             319.89      1604.09
+    1  Q1   NONE             0.100  [-39123,-203]             319.89        25.98
+       Q1 split 319.89 + pools 1680.11 = 2000.00 sUSDS
+
+    2  Q2   ASAP             0.550  [202,39122]               583.21      1035.04
+    2  Q2   FEB2027          0.150  [-39123,-203]             583.21        91.22
+    2  Q2   FEB2031          0.300  [-39123,-203]             583.21       290.52
+       Q2 split 583.21 + pools 1416.79 = 2000.00 sUSDS
+
+    3  Q3   IMMEDIATE        0.300  [-39123,-203]             635.39       316.52
+    3  Q3   ONEYEAR          0.200  [-39123,-203]             635.39       158.48
+    3  Q3   NODATE           0.500  [-39123,-203]             635.39       889.62
+       Q3 split 635.39 + pools 1364.61 = 2000.00 sUSDS
+
+    4  Q4   YES              0.900  [202,39122]               102.74      1888.92
+    4  Q4   NO               0.100  [-39123,-203]             102.74         8.34
+       Q4 split 102.74 + pools 1897.26 = 2000.00 sUSDS
+
+    5  Q5   SHIP             0.700  [-39123,-203]             388.85      1461.06
+    5  Q5   DELAY            0.250  [-39123,-203]             388.85       140.86
+    5  Q5   NOSUPPORT        0.050  [-39123,-203]             388.85         9.23
+       Q5 split 388.85 + pools 1611.15 = 2000.00 sUSDS
+
+   Splits (mint): 2030.067291498565444321 sUSDS over 5 markets
+   sUSDS side   : 7969.932708501434555655 sUSDS over 14 pools
+   GRAND TOTAL  : 9999.999999999999999976 sUSDS (budget 10000)
+
+sUSDS balance: 42837.643357528231391641 | need: 9999.999999999999999976
+   Router.conditionalTokens() = 0x8bdC504dC3A05310059c1c67E0A2667309D27B93
+  Approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 2030.067291498565444321 ...
+  Attempt 1/3...
+  Tx sent: 0x72f34d1fd9ed2c58ccef42daa0a713565f8be22a52cc42037ffe841c4ec7083d
+  Confirmed in block 156661866
+  Approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 7969.932708501434555655 ...
+  Attempt 1/3...
+  Tx sent: 0x0335589933f756b0486ecd1098941eadf2de0d56b0ccab1018faa5ee205551ba
+  Confirmed in block 156661870
+
+Phase 3: seeding 14 pools across 5 markets
+
+
+=== [1] Q1 NSM Issuance Smoothing — 0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC ===
+  splitting 319.888081913840361382 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xc3f599db9f456bcf63df951a801fa09fe7cf90707418d38c38c2dd75d3203616
+  Confirmed in block 156661873
+
+  --- Q1 SMOOTH @ 0.150 (0xB7eCbf3F2Ee1d2549eCc223763388250c47B31F7) ---
+  Approving 0xB7eCbf3F2Ee1d2549eCc223763388250c47B31F7 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 319.888081913840361381 ...
+  Attempt 1/3...
+  Tx sent: 0x3d78dfd606f22909fee08376ac435a42a3e26d1acf9f5e4d4f28abbadc68738e
+  Confirmed in block 156661876
+  Attempt 1/3...
+  Tx sent: 0x00b47634f56ac7582ffaf058d59312f1c806879a1f4d175d22a8e202e761c910
+  Confirmed in block 156661879
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q1 HALVINGS @ 0.750 (0x6F595fd3F50c0eF21DF6159Cf1D19fB635d00358) ---
+  Approving 0x6F595fd3F50c0eF21DF6159Cf1D19fB635d00358 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 319.888081913840361382 ...
+  Attempt 1/3...
+  Tx sent: 0xd961138549faaf207f726d61debf7f980138573e9cc69a108aef73328d5106e6
+  Confirmed in block 156661882
+  Attempt 1/3...
+  Tx sent: 0x0a21793a0ffe86ef4197da03d2431935a11f6b9af8d1be9c39c46f09dc907b9f
+  Confirmed in block 156661885
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q1 NONE @ 0.100 (0x10c314aDaC6B17c606bA58103769ec86Bd3a716F) ---
+  Approving 0x10c314aDaC6B17c606bA58103769ec86Bd3a716F -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 319.888081913840361381 ...
+  Attempt 1/3...
+  Tx sent: 0x4229f7bef74ffcf3241ac5bb56c3a650bdc5d01905c4032bab75ab8456ac50c8
+  Confirmed in block 156661888
+  Attempt 1/3...
+  Tx sent: 0x9f26ccddf214c1d99c07bd0d1749a0ca4e1a281777fdaa72f83fbe7f4bbe6125
+  Confirmed in block 156661891
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+=== [2] Q2 NSM Reissuance Start Date — 0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C ===
+  splitting 583.21056628683349447 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x5fac40e2f0a4b777d18e9c677ec39bfaddab55e5b848bbc10a8e22febf8fd851
+  Confirmed in block 156661894
+
+  --- Q2 ASAP @ 0.550 (0xFF08165A419d755cC0B62B4EcA52590011713558) ---
+  Approving 0xFF08165A419d755cC0B62B4EcA52590011713558 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 583.21056628683349447 ...
+  Attempt 1/3...
+  Tx sent: 0xaaead3928341c7d6fbeef9b6b4c7fbb1f27857b3cd5b9770f8af33e212e62542
+  Confirmed in block 156661897
+  Attempt 1/3...
+  Tx sent: 0x2c98fc6945049f0701fedca8e01db3d1a20073f788e3c11539a6a9661ea3f649
+  Confirmed in block 156661902
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q2 FEB2027 @ 0.150 (0x53dcb9C90c7FbFa0cE87C897dbbc4B4aE2f4cDc3) ---
+  Approving 0x53dcb9C90c7FbFa0cE87C897dbbc4B4aE2f4cDc3 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 583.21056628683349447 ...
+  Attempt 1/3...
+  Tx sent: 0x997360c39eb5ad8c5da78a8dbfd247377c41ed6d65dfafc3d136a04f956b9d44
+  Confirmed in block 156661906
+  Attempt 1/3...
+  Tx sent: 0x3672d7ded9732174ff9199f0a1aa5fd51411dde5ee6c399e4407f0dce4292554
+  Confirmed in block 156661910
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q2 FEB2031 @ 0.300 (0x0760B934b21bA959c1e98731FBce639215aBA572) ---
+  Approving 0x0760B934b21bA959c1e98731FBce639215aBA572 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 583.21056628683349447 ...
+  Attempt 1/3...
+  Tx sent: 0x4da97c93e9833c6e4fc3608d3083d69802eccb5e3577e8f538bacf873d5c3245
+  Confirmed in block 156661913
+  Attempt 1/3...
+  Tx sent: 0x11b651767d8771ed9ac1f2587c9f8f055a6ea8c2f41c2a526b09af53ed154581
+  Confirmed in block 156661917
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+=== [3] Q3 Sprout Deprecation — 0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6 ===
+  splitting 635.386750869479642702 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x10f46acef0e1a91f94058072ccda710f37f1502ef1341fb23927d4851f603e4e
+  Confirmed in block 156661920
+
+  --- Q3 IMMEDIATE @ 0.300 (0xab30Cc3E515bf24fbFa47D0d0A54Ac3342e71d45) ---
+  Approving 0xab30Cc3E515bf24fbFa47D0d0A54Ac3342e71d45 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 635.386750869479642702 ...
+  Attempt 1/3...
+  Tx sent: 0x58c0d5c31fd767053751585c416de73eee0d0863313b95c50bb65a08840d6bda
+  Confirmed in block 156661925
+  Attempt 1/3...
+  Tx sent: 0x89af7a36b8a2aeb86036e42c5b1112c3b5d077d29d22fb00efd395d59d99736c
+  Confirmed in block 156661929
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q3 ONEYEAR @ 0.200 (0x757d6A2A80c28Ab8d2241C7d1611f74489568881) ---
+  Approving 0x757d6A2A80c28Ab8d2241C7d1611f74489568881 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 635.386750869479642701 ...
+  Attempt 1/3...
+  Tx sent: 0xabbbe77eb955dca697e8acb8fa081eb9f47008df859438ad23488b3f3223fbcd
+  Confirmed in block 156661932
+  Attempt 1/3...
+  Tx sent: 0xf361f69183cb93cd3e693ce806af2306b1025ae328bee9593418c305f3bae113
+  Confirmed in block 156661937
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q3 NODATE @ 0.500 (0x425B9e68c68Abef4cb90A449A46c41640A0ee2F3) ---
+  Approving 0x425B9e68c68Abef4cb90A449A46c41640A0ee2F3 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 635.386750869479642702 ...
+  Attempt 1/3...
+  Tx sent: 0x703a975dde246e8ea968bb68f044255fca53b7e7d89620c2e90c8420f3972b8d
+  Confirmed in block 156661940
+  Attempt 1/3...
+  Tx sent: 0x91ec892a59b42f3c05d1b41c803bf28ab7030f8c1a6a2df7dc9c6387e98a6ef6
+  Confirmed in block 156661945
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+=== [4] Q4 Faster Block Times (ZIP-218) — 0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418 ===
+  splitting 102.735175821093573907 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x937ca4d07d69bd10e35fbfd1189fd5647d03737ce3baa2f25917c0a837eb8ca0
+  Confirmed in block 156661948
+
+  --- Q4 YES @ 0.900 (0xc63fc0CD70785D46f7bF8279939A448376C9f989) ---
+  Approving 0xc63fc0CD70785D46f7bF8279939A448376C9f989 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 102.735175821093573907 ...
+  Attempt 1/3...
+  Tx sent: 0x3ee2eeed90dabe5e29eeb8dfaf080e479513373fbb916299c521999f76cd1bf9
+  Confirmed in block 156661952
+  Attempt 1/3...
+  Tx sent: 0x1bb7722208e779156787c94f5bb39a644c8ef036319c4c173fa75b683a3881b8
+  Confirmed in block 156661954
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q4 NO @ 0.100 (0x39136b6d2Aa4fDa393DC205a1Bfe210EC9d4ca6a) ---
+  Approving 0x39136b6d2Aa4fDa393DC205a1Bfe210EC9d4ca6a -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 102.735175821093573906 ...
+  Attempt 1/3...
+  Tx sent: 0x3e2b029822aa906277d3c177e390e36f0250f606bfbaeaac5022bc573a965fe2
+  Confirmed in block 156661956
+  Attempt 1/3...
+  Tx sent: 0xd50e4f68646e16712586bdec003fe18511a99684169776b25f18d0720a466d48
+  Confirmed in block 156661958
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+=== [5] Q5 NU7 Scope and Readiness — 0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6 ===
+  splitting 388.84671660731837186 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x892ceaa9a6949655f6645c13b1e5ae8a787b0d75702019f3eb3c940c97b36ddf
+  Confirmed in block 156661961
+
+  --- Q5 SHIP @ 0.700 (0x7D4Bc377fAC1f1bA5fCC25F3599a70a821592667) ---
+  Approving 0x7D4Bc377fAC1f1bA5fCC25F3599a70a821592667 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 388.84671660731837186 ...
+  Attempt 1/3...
+  Tx sent: 0x72368876554a6f00b393872c3b078daa24dc09a024ac8eb1ac04edea78306510
+  Confirmed in block 156661965
+  Attempt 1/3...
+  Tx sent: 0xe1ca7c8cb72cd487adb1da1365509d9f093003008919518b4889a8fe50075e50
+  Confirmed in block 156661969
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q5 DELAY @ 0.250 (0x5923F0810D5f4188F3D8164c0f4Df7CCFFAB1db0) ---
+  Approving 0x5923F0810D5f4188F3D8164c0f4Df7CCFFAB1db0 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 388.84671660731837186 ...
+  Attempt 1/3...
+  Tx sent: 0x87a79afea8f9569231abb48d7987c5604d5f85a488dcdd89cfbeb5a653e30773
+  Confirmed in block 156661971
+  Attempt 1/3...
+  Tx sent: 0xa430fb5dfacdecbdd81e1cf7caa7ae71c4b1174a1ef1c21005306945bf8d5a62
+  Confirmed in block 156661974
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+  --- Q5 NOSUPPORT @ 0.050 (0x669E0c9C605aaEDFff1F375fCb6ebb2D5BbfB719) ---
+  Approving 0x669E0c9C605aaEDFff1F375fCb6ebb2D5BbfB719 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 388.846716607318371858 ...
+  Attempt 1/3...
+  Tx sent: 0x2b30026b9f3ebab77e3e7623c06af9bc54f9a347c4e5f5afcbdaa6e3710b37ce
+  Confirmed in block 156661977
+  Attempt 1/3...
+  Tx sent: 0x28ff8356f886db14fc224c535e589e763c462093c109da5a5ce2d716eb49e80c
+  Confirmed in block 156661981
+  Saved to ./add-zcash-nu7-liquidity-v3-execution.json
+
+Done. 14/14 pools seeded. See ./add-zcash-nu7-liquidity-v3-execution.json.

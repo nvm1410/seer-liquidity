@@ -1,0 +1,400 @@
+{
+  "version": 3,
+  "supersedes": "zcash-nu7-markets-v2.json (v2, created and unwound 2026-09-09, left live and abandoned)",
+  "chainId": 10,
+  "chain": "optimism",
+  "collateral": {
+    "symbol": "sUSDS",
+    "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0"
+  },
+  "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+  "marketType": "categorical (single-select)",
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "snapshotOf": "Google Doc as read 2026-09-09, after the v2 snapshot — re-read and diffed against v2: the ballot is UNCHANGED (same 5 questions, same options, same base rates, same 3 general notes). v3 is a rename-only rebuild.",
+  "revealAt": "2026-09-15",
+  "createdAt": "2026-09-09",
+  "totalSeededSusds": 10000,
+  "poolParams": {
+    "dex": "Uniswap V3",
+    "feeTier": 100,
+    "tickSpacing": 1,
+    "priceBand": [
+      0.02,
+      0.98
+    ]
+  },
+  "changesFromV2": "Market names only. v2 appended the full resolution rules to every marketName, which made them unreadably long; v3 names carry the question and nothing else. Outcomes, tags, seed prices, market type and openingTime are identical to v2.",
+  "resolutionRules": [
+    "The winning option as revealed on 2026-09-15 resolves to 1; all other options resolve to 0.",
+    "Abstain is not an outcome in these markets. If Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner.",
+    "If a question does not reach the official quorum requirements, the market reverts — i.e. resolves Invalid."
+  ],
+  "resolutionRulesPlacement": "OFF-CHAIN, by explicit decision on 2026-09-09. Unlike v2, these rules are NOT written into the question text — they live only in this file and in the source doc. Reality resolves off the question text alone, so rules 2 and 3 are convention, not something a resolver is bound by. See hazard 'unrecorded rules'.",
+  "markets": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "address": "0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC",
+      "seerUrl": "https://app.seer.pm/markets/10/0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC",
+      "question": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?",
+      "openingTime": 1788912000,
+      "conditionId": "0xc9d7c1783fc93f8ee1d63bfa563c1724454fab3547f2915526fc83ffe5426367",
+      "realityQuestionId": "0xf4d4599266fa9d6755a9809181f5d568c193663af9452af83ac28df34225a547",
+      "txHash": "0x96f1c7bbfb48f61f4c4cb4b4823ecf87816a28db97cd82ba62c07e373af707d4",
+      "blockNumber": 156661833,
+      "seededSusds": 2000,
+      "splitSusds": 319.8880819138403,
+      "splitTxHash": "0xc3f599db9f456bcf63df951a801fa09fe7cf90707418d38c38c2dd75d3203616",
+      "outcomes": [
+        {
+          "index": 0,
+          "tag": "SMOOTH",
+          "label": "Smooth issuance curve",
+          "seedPrice": 0.15,
+          "tokenName": "ZNU7V3Q1SMOOTH",
+          "tokenAddress": "0xB7eCbf3F2Ee1d2549eCc223763388250c47B31F7",
+          "poolSusds": 50.03986445955406,
+          "poolOutcomeTokens": 319.8880819138403,
+          "poolTicks": [
+            202,
+            39122
+          ],
+          "poolTxHash": "0x00b47634f56ac7582ffaf058d59312f1c806879a1f4d175d22a8e202e761c910"
+        },
+        {
+          "index": 1,
+          "tag": "HALVINGS",
+          "label": "Preserve halvings",
+          "seedPrice": 0.75,
+          "tokenName": "ZNU7V3Q1HALVINGS",
+          "tokenAddress": "0x6F595fd3F50c0eF21DF6159Cf1D19fB635d00358",
+          "poolSusds": 1604.0919439602028,
+          "poolOutcomeTokens": 319.8880819138403,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x0a21793a0ffe86ef4197da03d2431935a11f6b9af8d1be9c39c46f09dc907b9f"
+        },
+        {
+          "index": 2,
+          "tag": "NONE",
+          "label": "Do not include issuance smoothing in NU7",
+          "seedPrice": 0.1,
+          "tokenName": "ZNU7V3Q1NONE",
+          "tokenAddress": "0x10c314aDaC6B17c606bA58103769ec86Bd3a716F",
+          "poolSusds": 25.980109666402967,
+          "poolOutcomeTokens": 319.8880819138403,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x9f26ccddf214c1d99c07bd0d1749a0ca4e1a281777fdaa72f83fbe7f4bbe6125"
+        },
+        {
+          "index": 3,
+          "tag": null,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x5c49022b0Bf9d031b3dc407038C2010771AD7007",
+          "poolSusds": null,
+          "poolOutcomeTokens": null,
+          "poolTicks": null,
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "address": "0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C",
+      "seerUrl": "https://app.seer.pm/markets/10/0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C",
+      "question": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll?",
+      "openingTime": 1788912000,
+      "conditionId": "0x1fdb17712f9db92842b11dde5b1d9f7c9acc07434437d214bf45cb2a711f245d",
+      "realityQuestionId": "0xdb2d1e109293164cbd9c5c8d94ed561f3ca65252b5944a1f8f3ecb4a0a44e5a5",
+      "txHash": "0xbfd01770327bade2a38afab10138371a437820eabfb646fda974ed837e6cf2cc",
+      "blockNumber": 156661838,
+      "seededSusds": 2000,
+      "splitSusds": 583.2105662868335,
+      "splitTxHash": "0x5fac40e2f0a4b777d18e9c677ec39bfaddab55e5b848bbc10a8e22febf8fd851",
+      "outcomes": [
+        {
+          "index": 0,
+          "tag": "ASAP",
+          "label": "As soon as possible",
+          "seedPrice": 0.55,
+          "tokenName": "ZNU7V3Q2ASAP",
+          "tokenAddress": "0xFF08165A419d755cC0B62B4EcA52590011713558",
+          "poolSusds": 1035.043465625716,
+          "poolOutcomeTokens": 583.2105662868335,
+          "poolTicks": [
+            202,
+            39122
+          ],
+          "poolTxHash": "0x2c98fc6945049f0701fedca8e01db3d1a20073f788e3c11539a6a9661ea3f649"
+        },
+        {
+          "index": 1,
+          "tag": "FEB2027",
+          "label": "February 2027 regardless of the outcome of Q1",
+          "seedPrice": 0.15,
+          "tokenName": "ZNU7V3Q2FEB2027",
+          "tokenAddress": "0x53dcb9C90c7FbFa0cE87C897dbbc4B4aE2f4cDc3",
+          "poolSusds": 91.22209063816369,
+          "poolOutcomeTokens": 583.2105662868335,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x3672d7ded9732174ff9199f0a1aa5fd51411dde5ee6c399e4407f0dce4292554"
+        },
+        {
+          "index": 2,
+          "tag": "FEB2031",
+          "label": "February 2031 regardless of the outcome of Q1",
+          "seedPrice": 0.3,
+          "tokenName": "ZNU7V3Q2FEB2031",
+          "tokenAddress": "0x0760B934b21bA959c1e98731FBce639215aBA572",
+          "poolSusds": 290.5238774492868,
+          "poolOutcomeTokens": 583.2105662868335,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x11b651767d8771ed9ac1f2587c9f8f055a6ea8c2f41c2a526b09af53ed154581"
+        },
+        {
+          "index": 3,
+          "tag": null,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x3CB6167126cC1307571D0AbF01d5a8AE6C8bf304",
+          "poolSusds": null,
+          "poolOutcomeTokens": null,
+          "poolTicks": null,
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "address": "0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6",
+      "seerUrl": "https://app.seer.pm/markets/10/0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6",
+      "question": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?",
+      "openingTime": 1788912000,
+      "conditionId": "0x5ecf67893295d905bf483e871929da9483a32e952a5b4bbf192ebafda2635cd4",
+      "realityQuestionId": "0xa2f954bdd65c9bdf8f05ab49ac06044523ac46d0bc6d686368ec0544e4e90ca1",
+      "txHash": "0xfe758bf9f86a4cee1e72efe3ad3413b5fc5d0b7d83c4e6f46542a4dc9bf3d0dd",
+      "blockNumber": 156661841,
+      "seededSusds": 2000,
+      "splitSusds": 635.3867508694797,
+      "splitTxHash": "0x10f46acef0e1a91f94058072ccda710f37f1502ef1341fb23927d4851f603e4e",
+      "outcomes": [
+        {
+          "index": 0,
+          "tag": "IMMEDIATE",
+          "label": "Immediately at NU7 activation",
+          "seedPrice": 0.3,
+          "tokenName": "ZNU7V3Q3IMMEDIATE",
+          "tokenAddress": "0xab30Cc3E515bf24fbFa47D0d0A54Ac3342e71d45",
+          "poolSusds": 316.5152231685014,
+          "poolOutcomeTokens": 635.3867508694797,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x89af7a36b8a2aeb86036e42c5b1112c3b5d077d29d22fb00efd395d59d99736c"
+        },
+        {
+          "index": 1,
+          "tag": "ONEYEAR",
+          "label": "One year after this poll concludes",
+          "seedPrice": 0.2,
+          "tokenName": "ZNU7V3Q3ONEYEAR",
+          "tokenAddress": "0x757d6A2A80c28Ab8d2241C7d1611f74489568881",
+          "poolSusds": 158.47883109551384,
+          "poolOutcomeTokens": 635.3867508694797,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0xf361f69183cb93cd3e693ce806af2306b1025ae328bee9593418c305f3bae113"
+        },
+        {
+          "index": 2,
+          "tag": "NODATE",
+          "label": "Do not set a date to disable v4 transactions",
+          "seedPrice": 0.5,
+          "tokenName": "ZNU7V3Q3NODATE",
+          "tokenAddress": "0x425B9e68c68Abef4cb90A449A46c41640A0ee2F3",
+          "poolSusds": 889.619194866505,
+          "poolOutcomeTokens": 635.3867508694797,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x91ec892a59b42f3c05d1b41c803bf28ab7030f8c1a6a2df7dc9c6387e98a6ef6"
+        },
+        {
+          "index": 3,
+          "tag": null,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x827baB4860c9B6db3B524E52dBcc17aB988CF454",
+          "poolSusds": null,
+          "poolOutcomeTokens": null,
+          "poolTicks": null,
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "address": "0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418",
+      "seerUrl": "https://app.seer.pm/markets/10/0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418",
+      "question": "Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)?",
+      "openingTime": 1788912000,
+      "conditionId": "0x4e0661c38b773e3a112a8550c52ced0cca5a8e1fef263dbe57ecfdbcc530a0c1",
+      "realityQuestionId": "0x4803dd44bbb7bbed9a4a190cb74dabe6671d41d6f40787ff481731631ab3b8c1",
+      "txHash": "0x0dd590698836291aadb6191535b7d5984c7a15aeeceb48a0efdd4e029f983e2b",
+      "blockNumber": 156661845,
+      "seededSusds": 2000,
+      "splitSusds": 102.73517582109356,
+      "splitTxHash": "0x937ca4d07d69bd10e35fbfd1189fd5647d03737ce3baa2f25917c0a837eb8ca0",
+      "outcomes": [
+        {
+          "index": 0,
+          "tag": "YES",
+          "label": "Yes",
+          "seedPrice": 0.9,
+          "tokenName": "ZNU7V3Q4YES",
+          "tokenAddress": "0xc63fc0CD70785D46f7bF8279939A448376C9f989",
+          "poolSusds": 1888.9210587017415,
+          "poolOutcomeTokens": 102.73517582109356,
+          "poolTicks": [
+            202,
+            39122
+          ],
+          "poolTxHash": "0x1bb7722208e779156787c94f5bb39a644c8ef036319c4c173fa75b683a3881b8"
+        },
+        {
+          "index": 1,
+          "tag": "NO",
+          "label": "No",
+          "seedPrice": 0.1,
+          "tokenName": "ZNU7V3Q4NO",
+          "tokenAddress": "0x39136b6d2Aa4fDa393DC205a1Bfe210EC9d4ca6a",
+          "poolSusds": 8.343765477164908,
+          "poolOutcomeTokens": 102.73517582109356,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0xd50e4f68646e16712586bdec003fe18511a99684169776b25f18d0720a466d48"
+        },
+        {
+          "index": 2,
+          "tag": null,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x055b70cbb8dEcEBb9e6e2a8021c103917844f914",
+          "poolSusds": null,
+          "poolOutcomeTokens": null,
+          "poolTicks": null,
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "address": "0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6",
+      "seerUrl": "https://app.seer.pm/markets/10/0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6",
+      "question": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?",
+      "openingTime": 1788912000,
+      "conditionId": "0x451817a362e71d5589bdaa87c03a9856a06ef4d27bdba0923a334579c76a8939",
+      "realityQuestionId": "0x8f52209cc84918c9aa7e5c94ecf0b9c9b5d49efb3f47ae480a3a7e5bafe79de0",
+      "txHash": "0x962a71c7c19a8f18a72fe8bf29e8ff28a964a47c7a38f772ca7d01803d54072d",
+      "blockNumber": 156661850,
+      "seededSusds": 2000,
+      "splitSusds": 388.8467166073184,
+      "splitTxHash": "0x892ceaa9a6949655f6645c13b1e5ae8a787b0d75702019f3eb3c940c97b36ddf",
+      "outcomes": [
+        {
+          "index": 0,
+          "tag": "SHIP",
+          "label": "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+          "seedPrice": 0.7,
+          "tokenName": "ZNU7V3Q5SHIP",
+          "tokenAddress": "0x7D4Bc377fAC1f1bA5fCC25F3599a70a821592667",
+          "poolSusds": 1461.0591650780036,
+          "poolOutcomeTokens": 388.8467166073184,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0xe1ca7c8cb72cd487adb1da1365509d9f093003008919518b4889a8fe50075e50"
+        },
+        {
+          "index": 1,
+          "tag": "DELAY",
+          "label": "Delay NU7 until every applicable approved feature is deemed complete",
+          "seedPrice": 0.25,
+          "tokenName": "ZNU7V3Q5DELAY",
+          "tokenAddress": "0x5923F0810D5f4188F3D8164c0f4Df7CCFFAB1db0",
+          "poolSusds": 140.86268310430393,
+          "poolOutcomeTokens": 388.8467166073184,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0xa430fb5dfacdecbdd81e1cf7caa7ae71c4b1174a1ef1c21005306945bf8d5a62"
+        },
+        {
+          "index": 2,
+          "tag": "NOSUPPORT",
+          "label": "I do not support this NU7 plan",
+          "seedPrice": 0.05,
+          "tokenName": "ZNU7V3Q5NOSUPPORT",
+          "tokenAddress": "0x669E0c9C605aaEDFff1F375fCb6ebb2D5BbfB719",
+          "poolSusds": 9.231435210374089,
+          "poolOutcomeTokens": 388.8467166073184,
+          "poolTicks": [
+            -39123,
+            -203
+          ],
+          "poolTxHash": "0x28ff8356f886db14fc224c535e589e763c462093c109da5a5ce2d716eb49e80c"
+        },
+        {
+          "index": 3,
+          "tag": null,
+          "label": "Invalid result",
+          "seedPrice": null,
+          "tokenName": "SER-INVALID",
+          "tokenAddress": "0x12E1F677b221Cf2FF6c71Ed996cCf3fa5f8d4DD9",
+          "poolSusds": null,
+          "poolOutcomeTokens": null,
+          "poolTicks": null,
+          "poolTxHash": null,
+          "note": "appended by the factory; deliberately unpooled"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "supersedes": "zcash-nu7-questions-v2.json (v2, markets created 2026-09-09, fully unwound the same day, left live and abandoned)",
+  "source": "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0",
+  "snapshotOf": "Google Doc as read 2026-09-09, after the v2 snapshot — re-read and diffed against v2: the ballot is UNCHANGED (same 5 questions, same options, same base rates, same 3 general notes). v3 is a rename-only rebuild.",
+  "pollUrl": null,
+  "pollCloseAt": null,
+  "revealAt": "2026-09-15",
+  "ballotFrozenAt": null,
+  "baseRatesFrom": "the 'Base Rate' column of the source doc, taken verbatim; each question's rates sum to 1.000",
+  "marketType": "categorical (single-select) — MarketFactory.createCategoricalMarket, REALITY_SINGLE_SELECT_TEMPLATE. The options within each question are mutually exclusive and exhaustive, so exactly one wins and price == P(that option). NOT multi-categorical (which normalises payouts across k winners) and NOT multi-scalar (which prices vote share).",
+  "changesFromV2": "Market names only. v2 appended the full resolution rules to every marketName, which made them unreadably long; v3 names carry the question and nothing else. Outcomes, tags, seed prices, market type and openingTime are identical to v2.",
+  "resolutionRules": [
+    "The winning option as revealed on 2026-09-15 resolves to 1; all other options resolve to 0.",
+    "Abstain is not an outcome in these markets. If Abstain is the highest-voted option in the official poll, the second highest-voted option counts as the winner.",
+    "If a question does not reach the official quorum requirements, the market reverts — i.e. resolves Invalid."
+  ],
+  "resolutionRulesPlacement": "OFF-CHAIN, by explicit decision on 2026-09-09. Unlike v2, these rules are NOT written into the question text — they live only in this file and in the source doc. Reality resolves off the question text alone, so rules 2 and 3 are convention, not something a resolver is bound by. See hazard 'unrecorded rules'.",
+  "note": "price is the seeded pool price for each outcome. tag drives the wrapped ERC20 symbol ZNU7V3<shortName><tag> and must be unique within a question. 'Invalid result' is appended by the factory: it is not listed here, gets no tokenName, and gets no pool.",
+  "hazard": "Invalid is a live outcome here, not a tail: doc rule 3 sends a below-quorum question straight to Invalid, and Invalid is deliberately unpooled. Whoever learns of a quorum failure first buys Invalid at ~0 and takes the pool. In v3 that rule is no longer stated on-chain, so the market text gives a resolver no basis for it at all.",
+  "questions": [
+    {
+      "id": 1,
+      "shortName": "Q1",
+      "topic": "NSM Issuance Smoothing",
+      "marketName": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "SMOOTH",   "label": "Smooth issuance curve",                    "price": 0.15 },
+        { "tag": "HALVINGS", "label": "Preserve halvings",                        "price": 0.75 },
+        { "tag": "NONE",     "label": "Do not include issuance smoothing in NU7", "price": 0.10 }
+      ]
+    },
+    {
+      "id": 2,
+      "shortName": "Q2",
+      "topic": "NSM Reissuance Start Date",
+      "marketName": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "ASAP",    "label": "As soon as possible",                           "price": 0.55 },
+        { "tag": "FEB2027", "label": "February 2027 regardless of the outcome of Q1", "price": 0.15 },
+        { "tag": "FEB2031", "label": "February 2031 regardless of the outcome of Q1", "price": 0.30 }
+      ]
+    },
+    {
+      "id": 3,
+      "shortName": "Q3",
+      "topic": "Sprout Deprecation",
+      "marketName": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "IMMEDIATE", "label": "Immediately at NU7 activation",               "price": 0.30 },
+        { "tag": "ONEYEAR",   "label": "One year after this poll concludes",          "price": 0.20 },
+        { "tag": "NODATE",    "label": "Do not set a date to disable v4 transactions", "price": 0.50 }
+      ]
+    },
+    {
+      "id": 4,
+      "shortName": "Q4",
+      "topic": "Faster Block Times (ZIP-218)",
+      "marketName": "Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)?",
+      "outcomes": [
+        { "tag": "YES", "label": "Yes", "price": 0.90 },
+        { "tag": "NO",  "label": "No",  "price": 0.10 }
+      ]
+    },
+    {
+      "id": 5,
+      "shortName": "Q5",
+      "topic": "NU7 Scope and Readiness",
+      "marketName": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?",
+      "outcomes": [
+        { "tag": "SHIP",      "label": "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline", "price": 0.70 },
+        { "tag": "DELAY",     "label": "Delay NU7 until every applicable approved feature is deemed complete",                              "price": 0.25 },
+        { "tag": "NOSUPPORT", "label": "I do not support this NU7 plan",                                                                    "price": 0.05 }
+      ]
+    }
+  ]
+}

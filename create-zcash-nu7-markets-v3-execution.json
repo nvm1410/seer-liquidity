@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "shortName": "Q1",
+    "topic": "NSM Issuance Smoothing",
+    "market": "0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC",
+    "chainId": 10,
+    "marketName": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?",
+    "outcomeLabels": [
+      "Smooth issuance curve",
+      "Preserve halvings",
+      "Do not include issuance smoothing in NU7"
+    ],
+    "prices": [
+      0.15,
+      0.75,
+      0.1
+    ],
+    "encodedQuestion": "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?␟\"Smooth issuance curve\",\"Preserve halvings\",\"Do not include issuance smoothing in NU7\"␟misc␟en_US",
+    "conditionId": "0xc9d7c1783fc93f8ee1d63bfa563c1724454fab3547f2915526fc83ffe5426367",
+    "questionId": "0x3914b4d7dbbfbbaf05793fbabf2e11e1406fd792600a1197ea766a8db000621d",
+    "questionsIds": [
+      "0xf4d4599266fa9d6755a9809181f5d568c193663af9452af83ac28df34225a547"
+    ],
+    "realityQuestionId": "0xf4d4599266fa9d6755a9809181f5d568c193663af9452af83ac28df34225a547",
+    "tokenNames": [
+      "ZNU7V3Q1SMOOTH",
+      "ZNU7V3Q1HALVINGS",
+      "ZNU7V3Q1NONE"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x96f1c7bbfb48f61f4c4cb4b4823ecf87816a28db97cd82ba62c07e373af707d4",
+    "blockNumber": 156661833,
+    "gasUsed": "2141710",
+    "createdAt": "2026-09-09T02:54:05.429Z",
+    "verified": true,
+    "outcomes": [
+      "Smooth issuance curve",
+      "Preserve halvings",
+      "Do not include issuance smoothing in NU7",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xB7eCbf3F2Ee1d2549eCc223763388250c47B31F7",
+      "0x6F595fd3F50c0eF21DF6159Cf1D19fB635d00358",
+      "0x10c314aDaC6B17c606bA58103769ec86Bd3a716F",
+      "0x5c49022b0Bf9d031b3dc407038C2010771AD7007"
+    ]
+  },
+  {
+    "id": 2,
+    "shortName": "Q2",
+    "topic": "NSM Reissuance Start Date",
+    "market": "0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C",
+    "chainId": 10,
+    "marketName": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll?",
+    "outcomeLabels": [
+      "As soon as possible",
+      "February 2027 regardless of the outcome of Q1",
+      "February 2031 regardless of the outcome of Q1"
+    ],
+    "prices": [
+      0.55,
+      0.15,
+      0.3
+    ],
+    "encodedQuestion": "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll?␟\"As soon as possible\",\"February 2027 regardless of the outcome of Q1\",\"February 2031 regardless of the outcome of Q1\"␟misc␟en_US",
+    "conditionId": "0x1fdb17712f9db92842b11dde5b1d9f7c9acc07434437d214bf45cb2a711f245d",
+    "questionId": "0x4148babf0d97b3dee61671bc8a0c7428e3e59ab4b9fb7584ee145a6338f08834",
+    "questionsIds": [
+      "0xdb2d1e109293164cbd9c5c8d94ed561f3ca65252b5944a1f8f3ecb4a0a44e5a5"
+    ],
+    "realityQuestionId": "0xdb2d1e109293164cbd9c5c8d94ed561f3ca65252b5944a1f8f3ecb4a0a44e5a5",
+    "tokenNames": [
+      "ZNU7V3Q2ASAP",
+      "ZNU7V3Q2FEB2027",
+      "ZNU7V3Q2FEB2031"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0xbfd01770327bade2a38afab10138371a437820eabfb646fda974ed837e6cf2cc",
+    "blockNumber": 156661838,
+    "gasUsed": "2226007",
+    "createdAt": "2026-09-09T02:54:11.973Z",
+    "verified": true,
+    "outcomes": [
+      "As soon as possible",
+      "February 2027 regardless of the outcome of Q1",
+      "February 2031 regardless of the outcome of Q1",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xFF08165A419d755cC0B62B4EcA52590011713558",
+      "0x53dcb9C90c7FbFa0cE87C897dbbc4B4aE2f4cDc3",
+      "0x0760B934b21bA959c1e98731FBce639215aBA572",
+      "0x3CB6167126cC1307571D0AbF01d5a8AE6C8bf304"
+    ]
+  },
+  {
+    "id": 3,
+    "shortName": "Q3",
+    "topic": "Sprout Deprecation",
+    "market": "0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6",
+    "chainId": 10,
+    "marketName": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?",
+    "outcomeLabels": [
+      "Immediately at NU7 activation",
+      "One year after this poll concludes",
+      "Do not set a date to disable v4 transactions"
+    ],
+    "prices": [
+      0.3,
+      0.2,
+      0.5
+    ],
+    "encodedQuestion": "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?␟\"Immediately at NU7 activation\",\"One year after this poll concludes\",\"Do not set a date to disable v4 transactions\"␟misc␟en_US",
+    "conditionId": "0x5ecf67893295d905bf483e871929da9483a32e952a5b4bbf192ebafda2635cd4",
+    "questionId": "0x540d9ac56a04540e52b3b110a7057739724f3402c0f4ff8bed346aa59261fdbb",
+    "questionsIds": [
+      "0xa2f954bdd65c9bdf8f05ab49ac06044523ac46d0bc6d686368ec0544e4e90ca1"
+    ],
+    "realityQuestionId": "0xa2f954bdd65c9bdf8f05ab49ac06044523ac46d0bc6d686368ec0544e4e90ca1",
+    "tokenNames": [
+      "ZNU7V3Q3IMMEDIATE",
+      "ZNU7V3Q3ONEYEAR",
+      "ZNU7V3Q3NODATE"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0xfe758bf9f86a4cee1e72efe3ad3413b5fc5d0b7d83c4e6f46542a4dc9bf3d0dd",
+    "blockNumber": 156661841,
+    "gasUsed": "2194766",
+    "createdAt": "2026-09-09T02:54:18.056Z",
+    "verified": true,
+    "outcomes": [
+      "Immediately at NU7 activation",
+      "One year after this poll concludes",
+      "Do not set a date to disable v4 transactions",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xab30Cc3E515bf24fbFa47D0d0A54Ac3342e71d45",
+      "0x757d6A2A80c28Ab8d2241C7d1611f74489568881",
+      "0x425B9e68c68Abef4cb90A449A46c41640A0ee2F3",
+      "0x827baB4860c9B6db3B524E52dBcc17aB988CF454"
+    ]
+  },
+  {
+    "id": 4,
+    "shortName": "Q4",
+    "topic": "Faster Block Times (ZIP-218)",
+    "market": "0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418",
+    "chainId": 10,
+    "marketName": "Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)?",
+    "outcomeLabels": [
+      "Yes",
+      "No"
+    ],
+    "prices": [
+      0.9,
+      0.1
+    ],
+    "encodedQuestion": "Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)?␟\"Yes\",\"No\"␟misc␟en_US",
+    "conditionId": "0x4e0661c38b773e3a112a8550c52ced0cca5a8e1fef263dbe57ecfdbcc530a0c1",
+    "questionId": "0x5c2c648322b3698cabf65823db0e4eeb28fd6becf5e57a05bbb6c9c7ac5fd88c",
+    "questionsIds": [
+      "0x4803dd44bbb7bbed9a4a190cb74dabe6671d41d6f40787ff481731631ab3b8c1"
+    ],
+    "realityQuestionId": "0x4803dd44bbb7bbed9a4a190cb74dabe6671d41d6f40787ff481731631ab3b8c1",
+    "tokenNames": [
+      "ZNU7V3Q4YES",
+      "ZNU7V3Q4NO"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x0dd590698836291aadb6191535b7d5984c7a15aeeceb48a0efdd4e029f983e2b",
+    "blockNumber": 156661845,
+    "gasUsed": "1754027",
+    "createdAt": "2026-09-09T02:54:28.706Z",
+    "verified": true,
+    "outcomes": [
+      "Yes",
+      "No",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0xc63fc0CD70785D46f7bF8279939A448376C9f989",
+      "0x39136b6d2Aa4fDa393DC205a1Bfe210EC9d4ca6a",
+      "0x055b70cbb8dEcEBb9e6e2a8021c103917844f914"
+    ]
+  },
+  {
+    "id": 5,
+    "shortName": "Q5",
+    "topic": "NU7 Scope and Readiness",
+    "market": "0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6",
+    "chainId": 10,
+    "marketName": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?",
+    "outcomeLabels": [
+      "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+      "Delay NU7 until every applicable approved feature is deemed complete",
+      "I do not support this NU7 plan"
+    ],
+    "prices": [
+      0.7,
+      0.25,
+      0.05
+    ],
+    "encodedQuestion": "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?␟\"Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline\",\"Delay NU7 until every applicable approved feature is deemed complete\",\"I do not support this NU7 plan\"␟misc␟en_US",
+    "conditionId": "0x451817a362e71d5589bdaa87c03a9856a06ef4d27bdba0923a334579c76a8939",
+    "questionId": "0x3848093b8186b1212d1928115db066c6f1812d639ec646843998d36f0318f7d4",
+    "questionsIds": [
+      "0x8f52209cc84918c9aa7e5c94ecf0b9c9b5d49efb3f47ae480a3a7e5bafe79de0"
+    ],
+    "realityQuestionId": "0x8f52209cc84918c9aa7e5c94ecf0b9c9b5d49efb3f47ae480a3a7e5bafe79de0",
+    "tokenNames": [
+      "ZNU7V3Q5SHIP",
+      "ZNU7V3Q5DELAY",
+      "ZNU7V3Q5NOSUPPORT"
+    ],
+    "openingTime": 1788912000,
+    "minBond": "5000000000000000",
+    "txHash": "0x962a71c7c19a8f18a72fe8bf29e8ff28a964a47c7a38f772ca7d01803d54072d",
+    "blockNumber": 156661850,
+    "gasUsed": "2370804",
+    "createdAt": "2026-09-09T02:54:38.942Z",
+    "verified": true,
+    "outcomes": [
+      "Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline",
+      "Delay NU7 until every applicable approved feature is deemed complete",
+      "I do not support this NU7 plan",
+      "Invalid result"
+    ],
+    "wrappedTokens": [
+      "0x7D4Bc377fAC1f1bA5fCC25F3599a70a821592667",
+      "0x5923F0810D5f4188F3D8164c0f4Df7CCFFAB1db0",
+      "0x669E0c9C605aaEDFff1F375fCb6ebb2D5BbfB719",
+      "0x12E1F677b221Cf2FF6c71Ed996cCf3fa5f8d4DD9"
+    ]
+  }
+]

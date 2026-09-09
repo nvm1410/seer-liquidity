@@ -1,0 +1,127 @@
+
+Wallet   : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+DRY_RUN  : false
+Chain    : Optimism (10)
+
+arbitrator      : 0x5AFa42b30955f137e10f89dfb5EF1542a186F90e
+realitio        : 0x0eF940F7f053a2eF5D6578841072488aF0c7d89A
+questionTimeout : 302400s (3.5 days)
+minBond         : 0.005 ETH
+openingTime     : 1788912000 (2026-09-09T00:00:00Z)
+category/lang   : misc / en_US
+   openingTime is in the past — questions are answerable immediately, by design.
+
+Ballot snapshot : 5 questions, Google Doc as read 2026-09-09, after the v2 snapshot — re-read and diffed against v2: the ballot is UNCHANGED (same 5 questions, same options, same base rates, same 3 general notes). v3 is a rename-only rebuild.
+Source          : https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck/edit?tab=t.0
+
+   WARNING: ballotFrozenAt is null — the poll wording is NOT confirmed final.
+      Seer markets are immutable: a question reworded or dropped before the poll
+      runs resolves Invalid, and Invalid is deliberately unpooled. Read every
+      market name and outcome label below before setting DRY_RUN = false.
+   WARNING: pollUrl is null — no resolution source is recorded for these questions.
+
+   OK: 5 questions / 14 outcomes valid — unique ids, shortNames, token names and Reality questions; every price set sums to 1
+
+Markets to create:
+
+  [1] Q1 — NSM Issuance Smoothing
+      "Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?"
+         0. 0.15  ZNU7V3Q1SMOOTH     Smooth issuance curve
+         1. 0.75  ZNU7V3Q1HALVINGS   Preserve halvings
+         2. 0.10  ZNU7V3Q1NONE       Do not include issuance smoothing in NU7
+         3.  --   SER-INVALID        Invalid result (appended by the factory, gets no pool)
+
+  [2] Q2 — NSM Reissuance Start Date
+      "When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll?"
+         0. 0.55  ZNU7V3Q2ASAP       As soon as possible
+         1. 0.15  ZNU7V3Q2FEB2027    February 2027 regardless of the outcome of Q1
+         2. 0.30  ZNU7V3Q2FEB2031    February 2031 regardless of the outcome of Q1
+         3.  --   SER-INVALID        Invalid result (appended by the factory, gets no pool)
+
+  [3] Q3 — Sprout Deprecation
+      "When will v4 transactions be disabled, per the Zcash NU7 coinholder poll?"
+         0. 0.30  ZNU7V3Q3IMMEDIATE  Immediately at NU7 activation
+         1. 0.20  ZNU7V3Q3ONEYEAR    One year after this poll concludes
+         2. 0.50  ZNU7V3Q3NODATE     Do not set a date to disable v4 transactions
+         3.  --   SER-INVALID        Invalid result (appended by the factory, gets no pool)
+
+  [4] Q4 — Faster Block Times (ZIP-218)
+      "Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)?"
+         0. 0.90  ZNU7V3Q4YES        Yes
+         1. 0.10  ZNU7V3Q4NO         No
+         2.  --   SER-INVALID        Invalid result (appended by the factory, gets no pool)
+
+  [5] Q5 — NU7 Scope and Readiness
+      "How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll?"
+         0. 0.70  ZNU7V3Q5SHIP       Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline
+         1. 0.25  ZNU7V3Q5DELAY      Delay NU7 until every applicable approved feature is deemed complete
+         2. 0.05  ZNU7V3Q5NOSUPPORT  I do not support this NU7 plan
+         3.  --   SER-INVALID        Invalid result (appended by the factory, gets no pool)
+
+Checking Reality for pre-existing question ids...
+   OK: no collisions — all 5 questions are new
+
+Simulating createCategoricalMarket for 5 market(s)...
+
+    #  shortName  slots  first token           gas
+    1  Q1            4  ZNU7V3Q1SMOOTH         2159875
+    2  Q2            4  ZNU7V3Q2ASAP           2244841
+    3  Q3            4  ZNU7V3Q3IMMEDIATE      2213352
+    4  Q4            3  ZNU7V3Q4YES            1769115
+    5  Q5            4  ZNU7V3Q5SHIP           2390787
+
+   staticCall OK (first market would land at 0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC at the current nonce)
+
+   Total L2 gas : 10777970 over 5 tx (avg 2155594)
+   Gas price    : 0.001009982 gwei
+   L2 gas cost  : ~0.00001088555569654 ETH (EXCLUDES the Optimism L1 data fee)
+   ETH balance  : 0.040842869359171877 ETH
+   Answering all 5 later costs 0.025 ETH in bonds.
+
+Encoded Reality question for the first market, exactly as the factory will encode it:
+   Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll?␟"Smooth issuance curve","Preserve halvings","Do not include issuance smoothing in NU7"␟misc␟en_US
+
+Creating 5 markets...
+
+
+--- [1] Q1: NSM Issuance Smoothing ---
+  Attempt 1/3...
+  Tx sent: 0x96f1c7bbfb48f61f4c4cb4b4823ecf87816a28db97cd82ba62c07e373af707d4
+  Confirmed in block 156661833, gas used 2141710
+  0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC saved to ./create-zcash-nu7-markets-v3-execution.json
+  verified — 4 outcomes, 4 wrapped tokens
+     https://app.seer.pm/markets/10/0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC
+
+--- [2] Q2: NSM Reissuance Start Date ---
+  Attempt 1/3...
+  Tx sent: 0xbfd01770327bade2a38afab10138371a437820eabfb646fda974ed837e6cf2cc
+  Confirmed in block 156661838, gas used 2226007
+  0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C saved to ./create-zcash-nu7-markets-v3-execution.json
+  verified — 4 outcomes, 4 wrapped tokens
+     https://app.seer.pm/markets/10/0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C
+
+--- [3] Q3: Sprout Deprecation ---
+  Attempt 1/3...
+  Tx sent: 0xfe758bf9f86a4cee1e72efe3ad3413b5fc5d0b7d83c4e6f46542a4dc9bf3d0dd
+  Confirmed in block 156661841, gas used 2194766
+  0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6 saved to ./create-zcash-nu7-markets-v3-execution.json
+  verified — 4 outcomes, 4 wrapped tokens
+     https://app.seer.pm/markets/10/0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6
+
+--- [4] Q4: Faster Block Times (ZIP-218) ---
+  Attempt 1/3...
+  Tx sent: 0x0dd590698836291aadb6191535b7d5984c7a15aeeceb48a0efdd4e029f983e2b
+  Confirmed in block 156661845, gas used 1754027
+  0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418 saved to ./create-zcash-nu7-markets-v3-execution.json
+  verified — 3 outcomes, 3 wrapped tokens
+     https://app.seer.pm/markets/10/0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418
+
+--- [5] Q5: NU7 Scope and Readiness ---
+  Attempt 1/3...
+  Tx sent: 0x962a71c7c19a8f18a72fe8bf29e8ff28a964a47c7a38f772ca7d01803d54072d
+  Confirmed in block 156661850, gas used 2370804
+  0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6 saved to ./create-zcash-nu7-markets-v3-execution.json
+  verified — 4 outcomes, 4 wrapped tokens
+     https://app.seer.pm/markets/10/0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6
+
+Done. 5/5 markets created and verified. See ./create-zcash-nu7-markets-v3-execution.json.

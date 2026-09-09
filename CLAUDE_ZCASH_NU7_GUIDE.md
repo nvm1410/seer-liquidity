@@ -3,76 +3,78 @@
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
 
-> **Current set is v2**, created and seeded 2026-09-09 with **10,000 sUSDS**, both steps
-> clean on the first live run. 5/5 markets created and verified (12,404,299 gas over 5 tx,
-> blocks 156660715–156660730), then 14/14 pools seeded with **exactly 10,000.000000 sUSDS**
-> (wallet 42,837.64 → 32,837.64), ~0.00009 ETH of gas. `check-zcash-nu7-pools.js` reports
-> 0/14 drifted, 0/14 empty. Logs: `create-zcash-nu7-markets-v2-execution.json`,
-> `add-zcash-nu7-liquidity-v2-execution.json`, plus the two `*-v2-run.log` files.
+> **Current set is v3**, created and seeded 2026-09-09 with **10,000 sUSDS**, both steps
+> clean on the first live run. 5/5 markets created and verified (10,687,314 gas over 5 tx,
+> blocks 156661833–156661850), then 14/14 pools seeded with **exactly 10,000.000000 sUSDS**
+> (wallet 42,837.64 → 32,837.64). `check-zcash-nu7-pools.js` reports 0/14 drifted,
+> 0/14 empty. Logs: `create-zcash-nu7-markets-v3-execution.json`,
+> `add-zcash-nu7-liquidity-v3-execution.json`, plus the two `*-v3-run.log` files.
 >
-> **v1 is dead.** Created 2026-09-03 off an earlier revision of the same doc, fully unwound
-> 2026-09-07 for a net 1.57 sUSDS. Its five markets are still live and unresolved on-chain
-> but hold no liquidity and are not maintained — see §v1.
+> **v1 and v2 are both dead** — created and fully unwound, still live and unresolved
+> on-chain but holding no liquidity and not maintained. See §Previous sets.
 
-## The v2 markets
+## The v3 markets
 
 Source: the questions doc at
 `https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck`,
-snapshotted into `zcash-nu7-questions-v2.json`. The doc was **revised between the v1 and
-v2 snapshots** — see §What changed from v1.
+snapshotted into `zcash-nu7-questions-v3.json`. The doc was **re-read and diffed against
+the v2 snapshot before building v3: the ballot is unchanged.** Same five questions, same
+options, same base rates, same three general notes. v3 is a rename-only rebuild.
 
 | # | short | Topic | Address | Slots |
 |---|---|---|---|---|
-| 1 | `Q1` | NSM Issuance Smoothing | `0xAB5ff387679eD31d445C29E2A97aA2B7a6BD0716` | 4 |
-| 2 | `Q2` | NSM Reissuance Start Date | `0xe00A21CE58f37524A690df0A06d94883C590525f` | 4 |
-| 3 | `Q3` | Sprout Deprecation (v4 disable) | `0x0226E074F4E79c898e9F8F4Bcd3F79A0c3544acd` | 4 |
-| 4 | `Q4` | Faster Block Times (ZIP-218) | `0xCFb9E0203dE77b326b9B02b0169e4Ff4375462A8` | 3 |
-| 5 | `Q5` | NU7 Scope and Readiness | `0xa08C1bA820FaEc9122c3844c25a877BD35EFeCe3` | 4 |
+| 1 | `Q1` | NSM Issuance Smoothing | `0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC` | 4 |
+| 2 | `Q2` | NSM Reissuance Start Date | `0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C` | 4 |
+| 3 | `Q3` | Sprout Deprecation (v4 disable) | `0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6` | 4 |
+| 4 | `Q4` | Faster Block Times (ZIP-218) | `0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418` | 3 |
+| 5 | `Q5` | NU7 Scope and Readiness | `0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6` | 4 |
 
 `https://app.seer.pm/markets/10/<address>`. Slots = ballot options + `Invalid result`.
-`openingTime` is 1789948800 (2026-09-09T00:00:00Z), i.e. **in the past — all five questions
-are answerable now**, gated operationally rather than at the contract level. That was a
-deliberate re-decision on 2026-09-09, not inertia: the doc names a reveal date of
-September 15, so an opening time of 2026-09-16 was on the table and was declined in favour
-of matching v1 and the Q3 grant set. `MIN_BOND` 0.005 ETH, `questionTimeout` 302,400s
-(3.5 days). Wrapped ERC20 name = `ZNU7V2` + shortName + tag, e.g. `ZNU7V2Q1HALVINGS` —
-the `V2` is load-bearing, because leftover v1 tokens (`ZNU7Q4YES` and friends) are still
-in the wallet and the bare names would collide in any wallet UI.
+`openingTime` is 1788912000 (2026-09-09T00:00:00Z), i.e. **in the past — all five questions
+are answerable now**, gated operationally rather than at the contract level. Same value and
+same deliberate stance as v2. `MIN_BOND` 0.005 ETH, `questionTimeout` 302,400s (3.5 days).
+Wrapped ERC20 name = `ZNU7V3` + shortName + tag, e.g. `ZNU7V3Q1HALVINGS` — the `V3` is
+load-bearing, because leftover v1 (`ZNU7…`) and v2 (`ZNU7V2…`) tokens are still in the
+wallet and the bare names would collide in any wallet UI.
 
-## What changed from v1
+## What changed from v2 — the names, and only the names
 
-The revised doc drops **Abstain from every question**: its General Notes now say outright
-that abstain is not an option in these markets, and that an official Abstain plurality
-promotes the second highest-voted option. Option counts fall 4/4/4/3/4 → 3/3/3/2/3 and
-every base rate moved.
+v2 appended the full resolution rules to every market name, so each one ran past 300
+characters and opened with the question buried in front of two sentences of rules. v3
+carries the question and nothing else:
 
-| | v1 seed | v2 seed |
+| | v3 name | chars (v2 → v3) |
 |---|---|---|
-| Q1 | .15 / .77 / .05 / .03 abstain | .15 / **.75** / **.10** |
-| Q2 | .18 / .04 / .74 / .04 abstain | **.55 / .15 / .30** |
-| Q3 | .42 / .08 / .48 / .02 abstain | **.30 / .20 / .50** |
-| Q4 | .94 / .04 / .02 abstain | **.90 / .10** |
-| Q5 | .87 / .09 / .01 / .03 abstain | **.70 / .25 / .05** |
+| Q1 | Which NSM issuance smoothing approach will be selected in the Zcash NU7 coinholder poll? | 316 → 88 |
+| Q2 | When will NSM reissuance of funds removed from circulation begin, per the Zcash NU7 coinholder poll? | 328 → 100 |
+| Q3 | When will v4 transactions be disabled, per the Zcash NU7 coinholder poll? | 301 → 73 |
+| Q4 | Will the Zcash NU7 coinholder poll approve ZIP-218 (block spacing 75s to 25s, per-pool action limits)? | 375 → 102 |
+| Q5 | How will features not ready by the September 30th deadline be handled, per the Zcash NU7 coinholder poll? | 333 → 105 |
 
-Three consequences worth stating:
+Three deliberate calls inside that rewrite, all made with the user on 2026-09-09:
 
-- **v1 hazard 1 is gone.** That hazard was that the base rates read as *vote shares* while
-  a single-select market pays the *winner*, most visibly with Abstain seeded at 2–4% when
-  P(Abstain wins a plurality) is ~0. With Abstain removed from the ballot, the rates and the
-  payout rule now describe the same thing.
-- **The two new resolution rules are written into the question text**, not just the JSON.
-  Every v2 market name carries "Abstain is not an outcome here: if Abstain is the
-  highest-voted option in the official poll, the second highest-voted option counts as the
-  winner. Resolves Invalid if the question does not reach official quorum." Reality resolves
-  off the question text and nothing else, so a rule that lives only in a repo file does not
-  exist. This is the direct fix for v1 hazard 2 (immutable markets with no recorded
-  resolution basis) — though `pollUrl` and `pollCloseAt` are **still null**, so the *source*
-  is still unrecorded.
-- **The liquidity band tightened to [0.02, 0.98]**, back to the Q3 binaries' range. v1 needed
-  a 0.005 floor for Q5 `NOSUPPORT` at 0.01; v2's lowest seed is 0.05, so the wide band would
-  only have spread depth across prices no outcome sits in. Concentrating it roughly 5×'d the
-  thin pools: Q4 `NO` holds $8.34 of sUSDS against v1's $1.49, and the v2 minimum is Q5
-  `NOSUPPORT` at $9.23 against v1's $0.43.
+- **Every name still names the poll.** The alternative — dropping the trailing clause on
+  Q2/Q3/Q5 — was shown and declined, because "When will v4 transactions be disabled?"
+  reads as a generic Zcash question in a Seer search result.
+- **The reveal date is gone from the names.** v2 put `as revealed on 2026-09-15` in all
+  five; it is rules-ish, and it lives in `revealAt` in both JSON files.
+- **Q4 keeps both halves of its question.** The doc asks about block spacing *and*
+  per-pool action limits; both survive in a parenthetical rather than one being cut.
+
+Outcomes, tags, seed prices, market type, `openingTime` and pool params are **byte-identical
+to v2** — verified programmatically before creation, not by eye.
+
+### The cost of the rename: rules are no longer on-chain
+
+This is the one real regression and it should not be discovered later by surprise. v2's
+guide argued that "reality resolves off the question text and nothing else, so a rule that
+lives only in a repo file does not exist" — and that argument still holds. In v3 the two
+non-obvious rules (an official Abstain plurality promotes the second highest-voted option;
+a below-quorum question resolves Invalid) live **only** in `zcash-nu7-questions-v3.json`,
+`zcash-nu7-markets-v3.json` and the source doc. A resolver reading only the market text has
+no basis for either. That trade — legible names over self-contained resolution text — was
+the user's explicit instruction, recorded in `resolutionRulesPlacement` in both JSON files.
+It sharpens hazard 1 below.
 
 ## Why single-select categorical — and why that is not the Q3 answer
 
@@ -95,35 +97,35 @@ templateId 2). **Not** `createMultiCategoricalMarket` (multi-select, wrong payou
 
 | File | Role |
 |---|---|
-| `zcash-nu7-questions-v2.json` | The ballot snapshot — 5 questions, outcome labels, token tags, seed prices and the resolution rules. **The only file you should normally edit.** |
-| `create-zcash-nu7-markets.js` | Creates one categorical market per question. Writes `create-zcash-nu7-markets-v2-execution.json`. |
-| `add-zcash-nu7-liquidity.js` | Splits sUSDS and seeds one Uniswap V3 pool per option. Reads addresses from the creation log and **prices from the questions file**. Writes `add-zcash-nu7-liquidity-v2-execution.json`. |
+| `zcash-nu7-questions-v3.json` | The ballot snapshot — 5 questions, outcome labels, token tags, seed prices, and the resolution rules plus an explicit note that they are **off-chain only**. **The only file you should normally edit.** |
+| `create-zcash-nu7-markets.js` | Creates one categorical market per question. Writes `create-zcash-nu7-markets-v3-execution.json`. |
+| `add-zcash-nu7-liquidity.js` | Splits sUSDS and seeds one Uniswap V3 pool per option. Reads addresses from the creation log and **prices from the questions file**. Writes `add-zcash-nu7-liquidity-v3-execution.json`. |
 | `check-zcash-nu7-pools.js` | Read-only. Live price + liquidity per pool, and each market's live price sum against 1. |
 | `withdraw-zcash-nu7-liquidity.js` | Removes all liquidity + fees from every pool. See §Unwinding. |
 | `merge-zcash-nu7-positions.js` | Converts full outcome sets back to sUSDS. See §Unwinding. |
-| `zcash-nu7-markets-v2.json` | Flat reference: addresses, Seer URLs, outcomes, seed prices, token names/addresses. Generated, not read by any script. |
+| `zcash-nu7-markets-v3.json` | Flat reference: addresses, Seer URLs, outcomes, seed prices, token names/addresses, every tx hash. Generated, not read by any script. |
 
-The five scripts are **shared between v1 and v2** — only their `*_FILE` constants and
-`TOKEN_PREFIX` were repointed. To stand up a v3, bump those constants again rather than
-editing the v2 JSONs, so the v2 record survives. Addresses, `.env` keys (`PRIVATE_KEY`,
-`RPC_URL` = Optimism) and the `FEE_TIER = 100 / TICK_SPACING = 1` pool params are identical
-to the Q3 scripts — see that guide.
+The five scripts are **shared across v1/v2/v3** — only their `*_FILE` constants and
+`TOKEN_PREFIX` get repointed. To stand up a v4, bump those constants again rather than
+editing the v3 JSONs, so each generation's record survives. Addresses, `.env` keys
+(`PRIVATE_KEY`, `RPC_URL` = Optimism) and the `FEE_TIER = 100 / TICK_SPACING = 1` pool
+params are identical to the Q3 scripts — see that guide.
 
 ## Seeded prices and capital
 
 Prices are the doc's "Base Rate" column **verbatim**; each question sums to exactly 1.000.
 Budget is 2,000 sUSDS per question, equal outcome-quantity `Q` per pool within a market,
-uniform band `[0.02, 0.98]`.
+uniform band `[0.02, 0.98]`. Unchanged from v2, since the prices are unchanged.
 
 ```
         prices               sUSDS side per pool           split      total
-Q1  .15 / .75 / .10        50.03 / 1604.13 /   25.98      319.86    2,000.00
-Q2  .55 / .15 / .30      1034.98 /   91.23 /  290.56      583.23    2,000.00
-Q3  .30 / .20 / .50       316.51 /  158.49 /  889.61      635.38    2,000.00
+Q1  .15 / .75 / .10        50.04 / 1604.09 /   25.98      319.89    2,000.00
+Q2  .55 / .15 / .30      1035.04 /   91.22 /  290.52      583.21    2,000.00
+Q3  .30 / .20 / .50       316.52 /  158.48 /  889.62      635.39    2,000.00
 Q4  .90 / .10            1888.92 /    8.34                102.74    2,000.00
-Q5  .70 / .25 / .05      1461.10 /  140.85 /    9.23      388.82    2,000.00
+Q5  .70 / .25 / .05      1461.06 /  140.86 /    9.23      388.85    2,000.00
 
-splits (mint)  2,030.03   sUSDS side  7,969.97   DEPLOYED  10,000.00
+splits (mint)  2,030.07   sUSDS side  7,969.93   DEPLOYED  10,000.00
 ```
 
 Two sizing points, both inherited from the Q3 script and both load-bearing:
@@ -141,24 +143,27 @@ than silently minting an entirely one-sided position.
 
 ## Hazards
 
-**1. Invalid is a live outcome with a named trigger, and it is unpooled.** The doc's rule 3
-sends a question that misses official quorum straight to Invalid. Invalid gets no pool by
-design, so whoever learns of a quorum failure first buys it at ~0 and takes the pool. This
-is the sharpest exposure in the set. The mitigation is not a pool — it is watching the poll.
+**1. Invalid is a live outcome with a named trigger, it is unpooled, and in v3 its trigger
+is no longer written on-chain.** The doc's rule 3 sends a question that misses official
+quorum straight to Invalid. Invalid gets no pool by design, so whoever learns of a quorum
+failure first buys it at ~0 and takes the pool. This is the sharpest exposure in the set,
+and v3's shorter names make it sharper than v2's: the market text no longer tells a reader
+the rule exists. The mitigation is not a pool — it is watching the poll.
 
-**2. `pollUrl` and `pollCloseAt` are still null.** The reveal date (September 15) and the
-resolution rules are now in the question text, but no canonical URL is recorded for the
-official result. Fill both in as soon as the poll is published. The doc itself is also
-**not frozen** — it has already been revised once, which is exactly what killed v1.
+**2. `pollUrl` and `pollCloseAt` are still null.** No canonical URL is recorded for the
+official result. In v2 the reveal date and rules were at least in the question text; in v3
+nothing about resolution is on-chain at all. Fill both in as soon as the poll is published.
+The doc itself is also **not frozen** — it was revised once between v1 and v2, which is
+what killed v1. It was verified unchanged before v3 was built.
 
 **3. Thin long-shot pools, accepted.** Depth tracks a pool's own token price, so each
 market's favourite holds most of that market's sUSDS: Q4 `YES` $1,888.92 against `NO` $8.34.
-Much better than v1 thanks to the tighter band, but the shape is unchanged. Pushing a long
-shot's price *down* is cheap; pushing it up is defended by the outcome-token side. The
-alternative — capping the favourite's sUSDS side the way `add-pd-liquidity-gnosis-v2.js`
-caps "No To All" — was costed and declined for v1 and not revisited.
+Pushing a long shot's price *down* is cheap; pushing it up is defended by the outcome-token
+side. The alternative — capping the favourite's sUSDS side the way
+`add-pd-liquidity-gnosis-v2.js` caps "No To All" — was costed and declined for v1 and has
+not been revisited.
 
-**4. Answering all five costs 0.025 ETH in bonds.** Wallet held 0.04085 ETH after seeding,
+**4. Answering all five costs 0.025 ETH in bonds.** Wallet held 0.04076 ETH after seeding,
 so this is covered.
 
 **5. Outcome labels are shortened from the doc.** Q1(a) is written in the doc as "Smooth
@@ -166,14 +171,15 @@ issuance curve. Replace halvings with a gradual issuance curve. ZEC removed…";
 outcome is `Smooth issuance curve`. Same for Q2/Q3/Q5. The full text lives in the source
 doc, which the question text does not link to — see hazard 2.
 
-**6. Two live NU7 market sets now exist on Seer.** v1's five markets are unresolved and
-searchable. Anyone arriving from a link will find both. v2 is distinguishable by the
-resolution rules in the question text and by the `ZNU7V2` token prefix.
+**6. Three live NU7 market sets now exist on Seer.** v1's and v2's markets are unresolved
+and searchable. Anyone arriving from a link will find all three, and v2's names are the
+*most* explicit about resolution rules despite being the abandoned set. v3 is identifiable
+by the `ZNU7V3` token prefix and by the addresses above.
 
 ## Runbook
 
 ```bash
-# 1. Edit zcash-nu7-questions-v2.json. Dry run prints every market name, all outcome
+# 1. Edit zcash-nu7-questions-v3.json. Dry run prints every market name, all outcome
 #    labels, token names, the encoded Reality question, gas, and the question-id
 #    collision check. Sends nothing.
 node create-zcash-nu7-markets.js          # DRY_RUN = true
@@ -193,14 +199,14 @@ node add-zcash-nu7-liquidity.js
 node check-zcash-nu7-pools.js
 ```
 
-Both live steps are done for v2. `create-zcash-nu7-markets.js` and
+Both live steps are done for v3. `create-zcash-nu7-markets.js` and
 `add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back before
 touching either file for a new set.
 
 ## Unwinding
 
-Not yet run for v2. `withdraw-zcash-nu7-liquidity.js` then `merge-zcash-nu7-positions.js`,
-both currently `DRY_RUN = true` and both repointed at the v2 logs.
+Not yet run for v3. `withdraw-zcash-nu7-liquidity.js` then `merge-zcash-nu7-positions.js`,
+in that order, both currently `DRY_RUN = true` and both repointed at the v3 logs.
 
 | File | Role |
 |---|---|
@@ -208,18 +214,37 @@ both currently `DRY_RUN = true` and both repointed at the v2 logs.
 | `merge-zcash-nu7-positions.js` | Converts a full outcome set per market back to sUSDS via `Router.mergePositions`. One approval per slot then one merge, so a 4-slot market is 5 tx. Resumable per market. |
 
 **The merge is capped by the smallest balance in the set**, so a market that has traded
-recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`, and
-the v1 round trip below.
+recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`. Run
+`check-zcash-nu7-pools.js` first: if it reports 0 pools drifted, the round trip is whole.
 
-## v1 (dead)
+## Previous sets (dead)
 
-Created 2026-09-03 off the pre-revision doc, seeded with 10,000 sUSDS across 19 pools,
-fully unwound 2026-09-07 for a **net cost of 1.57 sUSDS** plus ~0.0002 ETH of gas — tick
-rounding plus the single trade the set ever took (Q4 `YES` +0.0008, `NO` +0.0035). The
-merge stranded 6.99 tokens in the wallet (2.40 each of Q4 `ABSTAIN` and `Invalid`, 1.33 of
-Q4 `YES`, 0.87 across Q1, 1 wei of `Invalid` in each of Q2/Q3/Q5). Those are **not lost** —
-the v1 markets are still live, so they redeem or not at resolution; buying back the missing
-sides to merge them is not worth the gas at this size.
+Both are still live and unresolved on-chain, hold no liquidity, and are not maintained.
+Their artifacts are retained as-is and no script points at them.
+
+**v2** — created 2026-09-09 off the same (unchanged) ballot, seeded with 10,000 sUSDS over
+14 pools, and fully unwound the **same day** because the names were unusable. Nothing had
+traded, so the round trip was exact: all 14 positions withdrawn, all 5 sets merged, wallet
+40,807.61 → 42,837.643357528231391641 — **the identical balance it held before v2 was
+seeded**. Net cost 0 sUSDS plus ~0.0001 ETH of gas, with 5 wei of outcome tokens stranded.
+Files: `zcash-nu7-questions-v2.json`, `zcash-nu7-markets-v2.json`, and the `*-v2-*.json` /
+`*-v2-run.log` artifacts.
+
+| # | short | Address | Slots |
+|---|---|---|---|
+| 1 | `Q1` | `0xAB5ff387679eD31d445C29E2A97aA2B7a6BD0716` | 4 |
+| 2 | `Q2` | `0xe00A21CE58f37524A690df0A06d94883C590525f` | 4 |
+| 3 | `Q3` | `0x0226E074F4E79c898e9F8F4Bcd3F79A0c3544acd` | 4 |
+| 4 | `Q4` | `0xCFb9E0203dE77b326b9B02b0169e4Ff4375462A8` | 3 |
+| 5 | `Q5` | `0xa08C1bA820FaEc9122c3844c25a877BD35EFeCe3` | 4 |
+
+**v1** — created 2026-09-03 off a **pre-revision** ballot (every question still carried an
+Abstain option and every base rate differed), seeded with 10,000 sUSDS across 19 pools,
+fully unwound 2026-09-07 for a net cost of 1.57 sUSDS plus ~0.0002 ETH — tick rounding plus
+the single trade the set ever took. The merge stranded 6.99 tokens, which are not lost: the
+v1 markets are still live, so they redeem or not at resolution. Files:
+`zcash-nu7-questions.json`, `zcash-nu7-markets.json`, and the `*-execution.json` /
+`*-run.log` artifacts with no version infix.
 
 | # | short | Address | Slots |
 |---|---|---|---|
@@ -229,9 +254,14 @@ sides to merge them is not worth the gas at this size.
 | 4 | `Q4` | `0x685d5C8F56e3722f3030Bc0102954dF541541aEb` | 4 |
 | 5 | `Q5` | `0x1e3F03Cd6231027bccf02791483156Bb4a96D6C9` | 5 |
 
-v1 artifacts retained as-is: `zcash-nu7-questions.json`, `zcash-nu7-markets.json`, and the
-`create-` / `add-` / `withdraw-` / `merge-zcash-nu7-*-execution.json` files without a `-v2`
-infix, plus their `*-run.log`s. No script points at them any more.
+### The v1→v2→v3 lesson
+
+Three builds of the same five markets in seven days, two of them thrown away. v1 died to a
+**stale input** (a silently revised doc). v2 died to an **unreviewed output** (names written
+without showing them to the user first). The guard for the first is in the runbook — re-read
+and diff the live doc. The guard for the second is simpler: **market names are immutable, so
+show them before creating anything.** The v3 dry run prints every name; that output is the
+review step, not a formality.
 
 Related: `CLAUDE_ZCASH_MARKETS_GUIDE.md` (the Q3 grant markets these scripts fork from),
 `GNOSIS_PD_MARKET_GUIDE.md` (the other N-outcome categorical market).

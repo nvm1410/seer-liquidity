@@ -33,8 +33,8 @@ const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL; // Optimism
 const CHAIN_ID = 10;
 
-const MARKETS_FILE = "./create-zcash-nu7-markets-v2-execution.json";
-const PROGRESS_FILE = "./withdraw-zcash-nu7-liquidity-v2-execution.json";
+const MARKETS_FILE = "./create-zcash-nu7-markets-v3-execution.json";
+const PROGRESS_FILE = "./withdraw-zcash-nu7-liquidity-v3-execution.json";
 
 // Addresses (Optimism, chain 10)
 const POSITION_MANAGER_ADDRESS = "0xC36442b4a4522E871399CD717aBDD847Ab11FE88";
