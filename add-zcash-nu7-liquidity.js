@@ -43,7 +43,7 @@ const CHAIN_ID = 10;
 
 const QUESTIONS_FILE = "./zcash-nu7-questions-v3.json";
 const MARKETS_FILE = "./create-zcash-nu7-markets-v3-execution.json";
-const PROGRESS_FILE = "./add-zcash-nu7-liquidity-v3-execution.json";
+const PROGRESS_FILE = "./add-zcash-nu7-liquidity-v3-round2-execution.json";
 
 // Addresses (Optimism, chain 10)
 const POSITION_MANAGER_ADDRESS = "0xC36442b4a4522E871399CD717aBDD847Ab11FE88";
@@ -55,6 +55,11 @@ const MARKET_VIEW = "0x336695ec9efbafd6322fb82eaadbcda02e38f348";
 // Uniswap V3 pool params used across this repo's Seer pools.
 const FEE_TIER = 100;
 const TICK_SPACING = 1;
+
+const POOL_ABI = [
+  "function slot0() view returns (uint160 sqrtPriceX96, int24 tick, uint16 observationIndex, uint16 observationCardinality, uint16 observationCardinalityNext, uint8 feeProtocol, bool unlocked)",
+  "function liquidity() view returns (uint128)",
+];
 
 // Total capital to deploy across ALL markets: every split plus the sUSDS side of
 // every pool must sum to this. Split evenly per market.
@@ -124,15 +129,30 @@ async function ensureAllowance(tokenAddress, spender, amount) {
   await new Promise((r) => setTimeout(r, 2000));
 }
 
-// Build a Pool at a fresh (not-yet-deployed) price plus the tick range for it.
-function buildPoolAndBounds(outcomeToken, price) {
+// Build the Pool to size against, plus the tick range for it.
+//
+// `live` is the pool's on-chain slot0, or null if the pool has never been
+// initialised. It is load-bearing on a re-seed: a pool that was drained still
+// exists and keeps its last price, and `createAndInitializePoolIfNecessary` is a
+// no-op on it — so the mint executes at the pool's OWN price no matter what
+// sqrtPriceX96 we pass. Sizing against the seed price there would (a) mis-split
+// the two sides and (b) blow the 0.5% slippage guard on any pool that has
+// traded. So: existing pool -> take its price as given; fresh pool -> seed price.
+function buildPoolAndBounds(outcomeToken, price, live) {
   const [t0, t1] = sortTokens(outcomeToken, SUSDS_ADDRESS);
   const isToken0Outcome = t0.toLowerCase() === outcomeToken.toLowerCase();
   // Pool price is token1/token0. token1/token0 = sUSDS/outcome (= price) when
   // outcome is token0, else outcome/sUSDS (= 1/price).
   const orientedPrice = isToken0Outcome ? price : 1 / price;
-  const tickCurrent = priceToTick(orientedPrice);
-  const sqrtPriceX96 = TickMath.getSqrtRatioAtTick(tickCurrent);
+  const tickCurrent = live ? live.tick : priceToTick(orientedPrice);
+  const sqrtPriceX96 = live
+    ? live.sqrtPriceX96
+    : TickMath.getSqrtRatioAtTick(tickCurrent).toString();
+
+  // The price this position will actually be built around, in sUSDS per outcome
+  // token, read back from sqrtPriceX96 so it reflects a mid-tick pool exactly.
+  const orientedActual = (Number(sqrtPriceX96) / 2 ** 96) ** 2;
+  const effectivePrice = isToken0Outcome ? orientedActual : 1 / orientedActual;
 
   const token0 = new Token(CHAIN_ID, t0, 18, "T0");
   const token1 = new Token(CHAIN_ID, t1, 18, "T1");
@@ -151,12 +171,12 @@ function buildPoolAndBounds(outcomeToken, price) {
   if (tickLower >= tickUpper) throw new Error("Invalid tick range");
   if (tickCurrent <= tickLower || tickCurrent >= tickUpper) {
     throw new Error(
-      `price ${price} sits outside the band [${MIN_PRICE}, ${MAX_PRICE}] — the position ` +
+      `price ${effectivePrice} sits outside the band [${MIN_PRICE}, ${MAX_PRICE}] — the position ` +
         "would be entirely one-sided. Widen the band or reprice the outcome."
     );
   }
 
-  return { pool, isToken0Outcome, tickLower, tickUpper, tickCurrent };
+  return { pool, isToken0Outcome, tickLower, tickUpper, tickCurrent, effectivePrice, live: !!live };
 }
 
 // For a given outcome-token quantity, return the Position plus the amounts it
@@ -298,6 +318,46 @@ async function main() {
       `${allPools.length} pools to seed`
   );
 
+  // ── Phase 0b: read live pool state ────────────────────────────────────────
+  // On a first seed every pool is missing and every price comes from the
+  // questions file. On a RE-seed the pools still exist at whatever price they
+  // were left at, and that price — not the questions file — is what the mint
+  // will execute against. See buildPoolAndBounds.
+  console.log("\nPhase 0b: reading live pool state...");
+  let existing = 0;
+  let nonEmpty = 0;
+  for (const p of allPools) {
+    const outcome = new Token(CHAIN_ID, p.outcomeToken, 18, "OUT");
+    const susds = new Token(CHAIN_ID, SUSDS_ADDRESS, 18, "SUSDS");
+    p.poolAddress = Pool.getAddress(outcome, susds, FEE_TIER);
+    const code = await provider.getCode(p.poolAddress);
+    if (!code || code === "0x") {
+      p.live = null;
+      continue;
+    }
+    const pool = new ethers.Contract(p.poolAddress, POOL_ABI, provider);
+    const [slot0, liquidity] = await Promise.all([pool.slot0(), pool.liquidity()]);
+    if (slot0.sqrtPriceX96 === 0n) {
+      p.live = null; // deployed but never initialised
+      continue;
+    }
+    p.live = { sqrtPriceX96: slot0.sqrtPriceX96.toString(), tick: Number(slot0.tick) };
+    p.liveLiquidity = liquidity;
+    existing++;
+    if (liquidity !== 0n) nonEmpty++;
+  }
+  console.log(
+    `   ${existing}/${allPools.length} pools already exist and keep their last price` +
+      ` (${allPools.length - existing} fresh)`
+  );
+  if (nonEmpty) {
+    console.warn(
+      `   WARNING: ${nonEmpty} of those already hold liquidity — this run mints a NEW position
+` +
+        "   on top rather than topping up. Check the progress log before going live."
+    );
+  }
+
   // ── Phase 1: size positions & solve for Q, per market ─────────────────────
   // Budget is split evenly across markets and Q is solved per market, NOT once
   // globally. With one global Q the sUSDS side explodes as a price approaches a
@@ -313,7 +373,7 @@ async function main() {
   for (const e of entries) {
     let trialSusds = 0n;
     for (const p of e.pools) {
-      p.meta = buildPoolAndBounds(p.outcomeToken, p.price);
+      p.meta = buildPoolAndBounds(p.outcomeToken, p.price, p.live);
       trialSusds += sizePosition(p.meta, Q0).susdsUsed;
     }
     // Capital for this market = one split of Q + the sUSDS side of every pool.
@@ -325,7 +385,7 @@ async function main() {
   // Final pass at each market's Q.
   let sumSusds = 0n;
   console.log(
-    "\n    #  mkt  outcome            price   ticks                    outcome        sUSDS"
+    "\n    #  mkt  outcome           seed    live    ticks                  outcome        sUSDS"
   );
   for (const e of entries) {
     e.splitAmount = 0n;
@@ -345,11 +405,14 @@ async function main() {
     }
     e.capital += e.splitAmount;
     for (const p of e.pools) {
+      const drifted = Math.abs(p.meta.effectivePrice - p.price) > 0.0005;
       console.log(
         `   ${String(e.id).padStart(2)}  ${e.shortName.padEnd(4)} ${p.tag.padEnd(16)} ` +
-          `${p.price.toFixed(3)}  [${p.meta.tickLower},${p.meta.tickUpper}]`.padEnd(27) +
+          `${p.price.toFixed(3)}  ${p.meta.effectivePrice.toFixed(4)}` +
+          `  [${p.meta.tickLower},${p.meta.tickUpper}]`.padEnd(23) +
           `${Number(formatUnits(p.outcomeUsed, 18)).toFixed(2).padStart(12)}` +
-          `${Number(formatUnits(p.susdsUsed, 18)).toFixed(2).padStart(13)}`
+          `${Number(formatUnits(p.susdsUsed, 18)).toFixed(2).padStart(13)}` +
+          (drifted ? "  <- live" : "")
       );
     }
     console.log(
@@ -466,7 +529,10 @@ async function main() {
           tag: p.tag,
           label: p.label,
           outcomeToken: p.outcomeToken,
+          poolAddress: p.poolAddress,
           price: p.price,
+          effectivePrice: p.meta.effectivePrice,
+          preExisting: p.meta.live,
           tickLower: p.meta.tickLower,
           tickUpper: p.meta.tickUpper,
           amount0: p.amount0.toString(),

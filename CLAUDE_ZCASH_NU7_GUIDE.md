@@ -3,11 +3,19 @@
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
 
-> **v3 is unwound as of 2026-09-12 — all three sets now hold zero liquidity.** The v3
-> markets are still live and unresolved on-chain; only the liquidity is gone. 14/14
-> positions withdrawn and 5/5 outcome sets merged back to sUSDS, on the user's
-> instruction to remove NU7 liquidity. Net cost of the full v3 round trip:
-> **2.33 sUSDS**. See §Unwinding.
+> **v3 is seeded again as of 2026-09-12 with 10,000 sUSDS over the same 14 pools.**
+> It had been unwound earlier the same day and was put straight back — the withdraw
+> was premature. 14/14 pools re-seeded clean on the first live run, blocks
+> 156814420–156814538, wallet 42,835.31 → **32,835.31** (exactly 10,000.000000
+> deployed, 0.0000105 ETH of gas). The re-seed took the pools' **live prices** as
+> given rather than restoring the questions-file base rates — the user's explicit
+> call; see §Re-seeding a drained set. Logs:
+> `add-zcash-nu7-liquidity-v3-round2-execution.json` / `add-zcash-nu7-v3-round2-run.log`.
+> The round-1 seed and unwind logs are untouched, and `check-zcash-nu7-pools.js` now
+> reads the round-2 log.
+>
+> The earlier same-day unwind (14/14 withdrawn, 5/5 merged) cost **2.33 sUSDS** for
+> that round trip. See §Unwinding — it still describes how to take the set down.
 >
 > It was created and seeded 2026-09-09 with **10,000 sUSDS**, both steps clean on the
 > first live run: 5/5 markets created and verified (10,687,314 gas over 5 tx, blocks
@@ -105,7 +113,8 @@ templateId 2). **Not** `createMultiCategoricalMarket` (multi-select, wrong payou
 | `zcash-nu7-questions-v3.json` | The ballot snapshot — 5 questions, outcome labels, token tags, seed prices, and the resolution rules plus an explicit note that they are **off-chain only**. **The only file you should normally edit.** |
 | `create-zcash-nu7-markets.js` | Creates one categorical market per question. Writes `create-zcash-nu7-markets-v3-execution.json`. |
 | `add-zcash-nu7-liquidity.js` | Splits sUSDS and seeds one Uniswap V3 pool per option. Reads addresses from the creation log and **prices from the questions file**. Writes `add-zcash-nu7-liquidity-v3-execution.json`. |
-| `check-zcash-nu7-pools.js` | Read-only. Live price + liquidity per pool, and each market's live price sum against 1. |
+| `add-zcash-nu7-liquidity-v3-round2-execution.json` | The 2026-09-12 re-seed's resume log — the positions currently held. Round 1's log is kept beside it as history. |
+| `check-zcash-nu7-pools.js` | Read-only. Live price + liquidity per pool, and each market's live price sum against 1. Reads the **round-2** log. |
 | `withdraw-zcash-nu7-liquidity.js` | Removes all liquidity + fees from every pool. See §Unwinding. |
 | `merge-zcash-nu7-positions.js` | Converts full outcome sets back to sUSDS. See §Unwinding. |
 | `zcash-nu7-markets-v3.json` | Flat reference: addresses, Seer URLs, outcomes, seed prices, token names/addresses, every tx hash. Generated, not read by any script. |
@@ -148,10 +157,9 @@ than silently minting an entirely one-sided position.
 
 ## Hazards
 
-These were written while v3 held liquidity. **Hazards 1 and 3 are now moot for v3** —
-there is nothing left in the pools to take — but both apply again in full the moment any
-NU7 set is re-seeded, so they are kept as written rather than deleted. Hazards 2, 5 and 6
-still apply: the markets remain live and unresolved.
+These were written while v3 held liquidity, were briefly moot during the 2026-09-12
+unwind, and are **live again in full** now that v3 is re-seeded. Hazard 1 in particular is
+the sharpest exposure in the set and there is once more 10,000 sUSDS behind it.
 
 **1. Invalid is a live outcome with a named trigger, it is unpooled, and in v3 its trigger
 is no longer written on-chain.** The doc's rule 3 sends a question that misses official
@@ -209,16 +217,87 @@ node add-zcash-nu7-liquidity.js
 node check-zcash-nu7-pools.js
 ```
 
-Both live steps are done for v3, and it has since been unwound. `create-zcash-nu7-markets.js`
-and `add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back
-before touching either file for a new set. The two unwind scripts are checked in at
+Both live steps are done for v3, which was unwound on 2026-09-12 and **re-seeded the same
+day** — see §Re-seeding a drained set, and note that step 3/4 needs a fresh `PROGRESS_FILE`
+on any re-seed or it will skip every pool. `create-zcash-nu7-markets.js` and
+`add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back before
+touching either file for a new set. The two unwind scripts are checked in at
 `DRY_RUN = true`.
+
+## Re-seeding a drained set
+
+Run 2026-09-12, straight after the unwind, because the withdraw had been premature.
+Putting 10,000 sUSDS back across the same 14 pools is **not** the same operation as the
+first seed, and the difference is one fact about Uniswap V3:
+
+**A drained pool is not a gone pool.** `withdraw-zcash-nu7-liquidity.js` burns the
+liquidity but the pool contract survives and keeps its last `sqrtPriceX96`.
+`createAndInitializePoolIfNecessary` — which is what `createPool: true` compiles to in
+`NonfungiblePositionManager.addCallParameters` — is a **no-op** on an initialised pool.
+So the mint executes against the pool's own price, whatever the script believed.
+
+Sizing a position against the questions-file seed price would therefore have two effects,
+one silent and one loud:
+
+- **silent** — the two sides of the position are split at the wrong ratio, so the pool
+  gets depth centred somewhere the market is not.
+- **loud** — `mintAmountsWithSlippage` builds `amount0Min`/`amount1Min` around the
+  assumed price at 0.5%. Q4 `NO` had drifted 1.98% off its seed, so that mint would have
+  reverted outright.
+
+`buildPoolAndBounds` now takes the pool's live `slot0` (read in Phase 0b) and uses it as
+the current price when the pool already exists, falling back to the seed price only for a
+genuinely fresh pool. The dry-run table prints `seed` and `live` side by side and marks
+any pool more than 0.0005 apart with `<- live`.
+
+### The alternative that was declined
+
+Restoring the original prices instead would mean swapping each drifted pool back to its
+base rate before minting. On a *drained* pool that swap is close to free — there is no
+liquidity to trade against, so the price walks without filling — but it needs a swap
+script this repo does not have for NU7, and the drift was tiny. The user's call was
+explicit: **take the live prices, just restore the state before the withdraw.** Only two
+pools were meaningfully off anyway:
+
+| pool | seed | live at re-seed | sUSDS side, round 1 → round 2 |
+|---|---|---|---|
+| Q1 `SMOOTH` | 0.1500 | 0.1504 (+0.29%) | 50.04 → 50.31 |
+| Q4 `NO` | 0.1000 | 0.1020 (+1.98%) | 8.34 → 8.63 |
+
+Q2, Q3 and Q5 came back **identical to the cent**; the other nine pools were within
+0.01% (tick-floor rounding). Splits moved 2,030.07 → 2,030.44, sUSDS side 7,969.93 →
+7,969.56, total still exactly 10,000.000000.
+
+The one accepted consequence: Q4's live prices now sum to 1.0019, so the set carries a
+~0.19% arbitrage against its own depth until someone takes it. That is the price of not
+repricing, and it was the smaller cost.
+
+### Re-running the seed script on an already-seeded set
+
+`PROGRESS_FILE` is a **resume log, not a record** — the script skips any split or pool
+already listed in it. Pointing it at round 1's log would have skipped all 14 pools and
+seeded nothing. So round 2 got its own file:
+
+```js
+const PROGRESS_FILE = "./add-zcash-nu7-liquidity-v3-round2-execution.json";
+```
+
+Bump that constant for every re-seed rather than deleting or editing the previous log, and
+repoint `ADD_FILE` in `check-zcash-nu7-pools.js` at the newest one — that is the file that
+describes the positions actually held. `withdraw-zcash-nu7-liquidity.js` reads the
+creation log rather than the seed log, so it needs no change to take round 2 back down.
 
 ## Unwinding
 
-**Run for v3 on 2026-09-12.** `withdraw-zcash-nu7-liquidity.js` then
-`merge-zcash-nu7-positions.js`, in that order — both are checked back in at
-`DRY_RUN = true` and both stay pointed at the v3 logs.
+**Run for v3 on 2026-09-12 — and reversed the same day, see §Re-seeding a drained set.**
+The account below is of that unwind; it is still the procedure for taking the set down.
+`withdraw-zcash-nu7-liquidity.js` then `merge-zcash-nu7-positions.js`, in that order —
+both are checked back in at `DRY_RUN = true`. Both read the **creation** log for scope, so
+they already cover the round-2 positions — but **both of their `PROGRESS_FILE`s are full
+from the 2026-09-12 unwind**, and every position and market in them will be skipped as
+"already logged". Bump both constants to a `-round2-` name before unwinding again, exactly
+as the seed script's was. This is the same trap in all three scripts: the progress file is
+a resume log scoped to one run, not a record of what is currently held.
 
 Both steps went clean on the first live run, no retries:
 

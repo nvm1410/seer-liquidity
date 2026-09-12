@@ -60,7 +60,19 @@
             202,
             39122
           ],
-          "poolTxHash": "0x00b47634f56ac7582ffaf058d59312f1c806879a1f4d175d22a8e202e761c910"
+          "poolTxHash": "0x00b47634f56ac7582ffaf058d59312f1c806879a1f4d175d22a8e202e761c910",
+          "round2": {
+            "effectivePrice": 0.15043060829833643,
+            "poolAddress": "0x3b0F97075D049519393B8b93f6ae0c4922AA0C5F",
+            "poolSusds": 50.30766156226857,
+            "poolOutcomeTokens": 320.12776329030413,
+            "poolTicks": [
+              202,
+              39122
+            ],
+            "poolTxHash": "0x195130064a3eb05e948763b30791f6d6334d1cb52b3542f4761d9444b856f033",
+            "blockNumber": 156814443
+          }
         },
         {
           "index": 1,
@@ -75,7 +87,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x0a21793a0ffe86ef4197da03d2431935a11f6b9af8d1be9c39c46f09dc907b9f"
+          "poolTxHash": "0x0a21793a0ffe86ef4197da03d2431935a11f6b9af8d1be9c39c46f09dc907b9f",
+          "round2": {
+            "effectivePrice": 0.7498213495374484,
+            "poolAddress": "0xca7eD379b85915Daf1D57DC39f33c5A01b8A2c65",
+            "poolSusds": 1603.5649994590074,
+            "poolOutcomeTokens": 320.12776329030413,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x84b530f4c41bcc2525e78680ec4b314cf1bff03d7f3e3267f21ccd5fa208a9f7",
+            "blockNumber": 156814450
+          }
         },
         {
           "index": 2,
@@ -90,7 +114,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x9f26ccddf214c1d99c07bd0d1749a0ca4e1a281777fdaa72f83fbe7f4bbe6125"
+          "poolTxHash": "0x9f26ccddf214c1d99c07bd0d1749a0ca4e1a281777fdaa72f83fbe7f4bbe6125",
+          "round2": {
+            "effectivePrice": 0.09999002302959495,
+            "poolAddress": "0x72B58c513De430a2Ab1d6C79e037F125e1641b03",
+            "poolSusds": 25.99957568842001,
+            "poolOutcomeTokens": 320.12776329030413,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x9524cbedd1dabd1cd8b07543a96fc3f1a4a67e5f469ccc844edfe86296b2dc41",
+            "blockNumber": 156814457
+          }
         },
         {
           "index": 3,
@@ -105,7 +141,12 @@
           "poolTxHash": null,
           "note": "appended by the factory; deliberately unpooled"
         }
-      ]
+      ],
+      "round2": {
+        "splitSusds": 320.12776329030413,
+        "splitTxHash": "0x583112d8533ecda7569655ca9b6f868e64b38a663a6ea308b85a2ffdf848bbc5",
+        "blockNumber": 156814436
+      }
     },
     {
       "id": 2,
@@ -136,7 +177,19 @@
             202,
             39122
           ],
-          "poolTxHash": "0x2c98fc6945049f0701fedca8e01db3d1a20073f788e3c11539a6a9661ea3f649"
+          "poolTxHash": "0x2c98fc6945049f0701fedca8e01db3d1a20073f788e3c11539a6a9661ea3f649",
+          "round2": {
+            "effectivePrice": 0.5500367900501135,
+            "poolAddress": "0xd687CE332eD59306a1Be5cCa84EB3F9d892eb01b",
+            "poolSusds": 1035.043465625716,
+            "poolOutcomeTokens": 583.2105662868335,
+            "poolTicks": [
+              202,
+              39122
+            ],
+            "poolTxHash": "0xe078c80b100a939dd5d8262879729b15f3d7fc24c1a8dd96b2379221608a173b",
+            "blockNumber": 156814469
+          }
         },
         {
           "index": 1,
@@ -151,7 +204,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x3672d7ded9732174ff9199f0a1aa5fd51411dde5ee6c399e4407f0dce4292554"
+          "poolTxHash": "0x3672d7ded9732174ff9199f0a1aa5fd51411dde5ee6c399e4407f0dce4292554",
+          "round2": {
+            "effectivePrice": 0.1499872270781593,
+            "poolAddress": "0xC49fF843c4700Aa9F879418bdeB7Fb7EebbB7B19",
+            "poolSusds": 91.22209063816369,
+            "poolOutcomeTokens": 583.2105662868335,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x80c464cdf5285a65e7c040165ca2fa2aa54fffbeebd2aa897963bc7d9778afbb",
+            "blockNumber": 156814476
+          }
         },
         {
           "index": 2,
@@ -166,7 +231,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x11b651767d8771ed9ac1f2587c9f8f055a6ea8c2f41c2a526b09af53ed154581"
+          "poolTxHash": "0x11b651767d8771ed9ac1f2587c9f8f055a6ea8c2f41c2a526b09af53ed154581",
+          "round2": {
+            "effectivePrice": 0.2999799022669992,
+            "poolAddress": "0xABA6d5eA27605383e3d52e77266d8562d47FBb54",
+            "poolSusds": 290.5238774492868,
+            "poolOutcomeTokens": 583.2105662868335,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x6ea497daa7626802f39c162ea8056c65f869bd67a46222f66071e5e237291a18",
+            "blockNumber": 156814483
+          }
         },
         {
           "index": 3,
@@ -181,7 +258,12 @@
           "poolTxHash": null,
           "note": "appended by the factory; deliberately unpooled"
         }
-      ]
+      ],
+      "round2": {
+        "splitSusds": 583.2105662868335,
+        "splitTxHash": "0x2efeb5bba2822c315b2a454f18ccee6fb3d64fa0944530bbbd7c2bb800246737",
+        "blockNumber": 156814461
+      }
     },
     {
       "id": 3,
@@ -212,7 +294,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x89af7a36b8a2aeb86036e42c5b1112c3b5d077d29d22fb00efd395d59d99736c"
+          "poolTxHash": "0x89af7a36b8a2aeb86036e42c5b1112c3b5d077d29d22fb00efd395d59d99736c",
+          "round2": {
+            "effectivePrice": 0.2999799022669992,
+            "poolAddress": "0xBc906179042Ea00eD3e4a7Dc955a412c5eC71087",
+            "poolSusds": 316.5152231685014,
+            "poolOutcomeTokens": 635.3867508694797,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0xb8ee7fd78d72e35eb5630c34a5209cb473803700b2b48daeae37b750bf3052f1",
+            "blockNumber": 156814489
+          }
         },
         {
           "index": 1,
@@ -227,7 +321,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0xf361f69183cb93cd3e693ce806af2306b1025ae328bee9593418c305f3bae113"
+          "poolTxHash": "0xf361f69183cb93cd3e693ce806af2306b1025ae328bee9593418c305f3bae113",
+          "round2": {
+            "effectivePrice": 0.19998367807988282,
+            "poolAddress": "0x2002Bcda29203b95ee7e8059011BF4308306e87f",
+            "poolSusds": 158.47883109551384,
+            "poolOutcomeTokens": 635.3867508694797,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x97691292399cc9a780e88a0de4de83274355ed3fbe70507580f1a55646fbd168",
+            "blockNumber": 156814496
+          }
         },
         {
           "index": 2,
@@ -242,7 +348,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x91ec892a59b42f3c05d1b41c803bf28ab7030f8c1a6a2df7dc9c6387e98a6ef6"
+          "poolTxHash": "0x91ec892a59b42f3c05d1b41c803bf28ab7030f8c1a6a2df7dc9c6387e98a6ef6",
+          "round2": {
+            "effectivePrice": 0.49999091920718775,
+            "poolAddress": "0x8619E06F6C606B9Cf0f1331C081ab9914fbcE95A",
+            "poolSusds": 889.619194866505,
+            "poolOutcomeTokens": 635.3867508694797,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x9ab6a7d182f4854872e1647196df8fdc04f8c851bcfd6745fd82fc849168a283",
+            "blockNumber": 156814503
+          }
         },
         {
           "index": 3,
@@ -257,7 +375,12 @@
           "poolTxHash": null,
           "note": "appended by the factory; deliberately unpooled"
         }
-      ]
+      ],
+      "round2": {
+        "splitSusds": 635.3867508694797,
+        "splitTxHash": "0xfcbba9111e59679dc0745a9dbdb0e79c3a7397bbeafd65fd767752e46b9ddcad",
+        "blockNumber": 156814485
+      }
     },
     {
       "id": 4,
@@ -288,7 +411,19 @@
             202,
             39122
           ],
-          "poolTxHash": "0x1bb7722208e779156787c94f5bb39a644c8ef036319c4c173fa75b683a3881b8"
+          "poolTxHash": "0x1bb7722208e779156787c94f5bb39a644c8ef036319c4c173fa75b683a3881b8",
+          "round2": {
+            "effectivePrice": 0.899949742678613,
+            "poolAddress": "0x5dB57bDf0c7ddd6ecbf8267D5F77a0B5C7eF6c31",
+            "poolSusds": 1888.5007566043105,
+            "poolOutcomeTokens": 102.86961926635442,
+            "poolTicks": [
+              202,
+              39122
+            ],
+            "poolTxHash": "0x89bcf3d3595bc320085c680deea16a37d98ca6ec1b5ff5fd2792d6315ab1eee6",
+            "blockNumber": 156814512
+          }
         },
         {
           "index": 1,
@@ -303,7 +438,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0xd50e4f68646e16712586bdec003fe18511a99684169776b25f18d0720a466d48"
+          "poolTxHash": "0xd50e4f68646e16712586bdec003fe18511a99684169776b25f18d0720a466d48",
+          "round2": {
+            "effectivePrice": 0.1019870268691207,
+            "poolAddress": "0xc6Fe8548a11c469A4b00962Bb762feF4f88eAaA2",
+            "poolSusds": 8.629624129334948,
+            "poolOutcomeTokens": 102.86961926635442,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x763c2608f0c9d5dc99dcaf231a0762b2268a43224ef1cd9d58a10848e81b957b",
+            "blockNumber": 156814517
+          }
         },
         {
           "index": 2,
@@ -318,7 +465,12 @@
           "poolTxHash": null,
           "note": "appended by the factory; deliberately unpooled"
         }
-      ]
+      ],
+      "round2": {
+        "splitSusds": 102.86961926635442,
+        "splitTxHash": "0xbf782b1b1b0df0e4d7f7f46640d6745e29e531b9a085bb3a5ce62e9bbfa8aa82",
+        "blockNumber": 156814505
+      }
     },
     {
       "id": 5,
@@ -349,7 +501,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0xe1ca7c8cb72cd487adb1da1365509d9f093003008919518b4889a8fe50075e50"
+          "poolTxHash": "0xe1ca7c8cb72cd487adb1da1365509d9f093003008919518b4889a8fe50075e50",
+          "round2": {
+            "effectivePrice": 0.6999949444431314,
+            "poolAddress": "0x5619D7A10569Cd88569FAfDF175F3FDAB9971662",
+            "poolSusds": 1461.0591650780036,
+            "poolOutcomeTokens": 388.8467166073184,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0xf7fcb59bdda74299e54a5d2ef6d0a80f879dbc65e32f1752da5145b3b6ab6ddc",
+            "blockNumber": 156814527
+          }
         },
         {
           "index": 1,
@@ -364,7 +528,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0xa430fb5dfacdecbdd81e1cf7caa7ae71c4b1174a1ef1c21005306945bf8d5a62"
+          "poolTxHash": "0xa430fb5dfacdecbdd81e1cf7caa7ae71c4b1174a1ef1c21005306945bf8d5a62",
+          "round2": {
+            "effectivePrice": 0.24999091928964853,
+            "poolAddress": "0xF379528546C11F69118118A34685ad45394380C0",
+            "poolSusds": 140.86268310430393,
+            "poolOutcomeTokens": 388.8467166073184,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x4dc01ba2eb48c0bf99769c8f2b5d02a90cb01a1f3cb5983f28a22d3db7e3d782",
+            "blockNumber": 156814533
+          }
         },
         {
           "index": 2,
@@ -379,7 +555,19 @@
             -39123,
             -203
           ],
-          "poolTxHash": "0x28ff8356f886db14fc224c535e589e763c462093c109da5a5ce2d716eb49e80c"
+          "poolTxHash": "0x28ff8356f886db14fc224c535e589e763c462093c109da5a5ce2d716eb49e80c",
+          "round2": {
+            "effectivePrice": 0.04999910293646765,
+            "poolAddress": "0x4362Dec96d3ad27d924c0B363D3D1Db4fca53Bd6",
+            "poolSusds": 9.231435210374089,
+            "poolOutcomeTokens": 388.8467166073184,
+            "poolTicks": [
+              -39123,
+              -203
+            ],
+            "poolTxHash": "0x1de8ad76916c8f768a8fc84e02e5c4200e6cc1ad1cb1cd1ee814c4e0abbfcdf2",
+            "blockNumber": 156814538
+          }
         },
         {
           "index": 3,
@@ -394,7 +582,38 @@
           "poolTxHash": null,
           "note": "appended by the factory; deliberately unpooled"
         }
+      ],
+      "round2": {
+        "splitSusds": 388.8467166073184,
+        "splitTxHash": "0xaa32aae9dc3e8fcae517420922b1506e1507a59dbc9a291070f7452c082332a5",
+        "blockNumber": 156814520
+      }
+    }
+  ],
+  "liquidityRounds": [
+    {
+      "round": 1,
+      "seededAt": "2026-09-09",
+      "totalSusds": 10000,
+      "pricedAt": "questions-file base rates (all 14 pools fresh)",
+      "log": "add-zcash-nu7-liquidity-v3-execution.json",
+      "unwoundAt": "2026-09-12",
+      "unwindNote": "14/14 withdrawn, 5/5 merged, net cost 2.331427 sUSDS; 5.666643 outcome tokens stranded on Q1/Q4"
+    },
+    {
+      "round": 2,
+      "seededAt": "2026-09-12",
+      "totalSusds": 10000,
+      "pricedAt": "live pool prices — the 14 pools survived the unwind and kept their last sqrtPriceX96",
+      "log": "add-zcash-nu7-liquidity-v3-round2-execution.json",
+      "reason": "the round-1 unwind was premature; the same 10,000 sUSDS was put straight back",
+      "walletBefore": "42835.311930032466321207",
+      "walletAfter": "32835.311930032466321225",
+      "blocks": [
+        156814420,
+        156814538
       ]
     }
-  ]
+  ],
+  "reseededAt": "2026-09-12"
 }
