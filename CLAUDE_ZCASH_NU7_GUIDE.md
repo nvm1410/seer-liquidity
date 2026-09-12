@@ -3,14 +3,19 @@
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
 
-> **Current set is v3**, created and seeded 2026-09-09 with **10,000 sUSDS**, both steps
-> clean on the first live run. 5/5 markets created and verified (10,687,314 gas over 5 tx,
-> blocks 156661833–156661850), then 14/14 pools seeded with **exactly 10,000.000000 sUSDS**
-> (wallet 42,837.64 → 32,837.64). `check-zcash-nu7-pools.js` reports 0/14 drifted,
-> 0/14 empty. Logs: `create-zcash-nu7-markets-v3-execution.json`,
+> **v3 is unwound as of 2026-09-12 — all three sets now hold zero liquidity.** The v3
+> markets are still live and unresolved on-chain; only the liquidity is gone. 14/14
+> positions withdrawn and 5/5 outcome sets merged back to sUSDS, on the user's
+> instruction to remove NU7 liquidity. Net cost of the full v3 round trip:
+> **2.33 sUSDS**. See §Unwinding.
+>
+> It was created and seeded 2026-09-09 with **10,000 sUSDS**, both steps clean on the
+> first live run: 5/5 markets created and verified (10,687,314 gas over 5 tx, blocks
+> 156661833–156661850), then 14/14 pools seeded with **exactly 10,000.000000 sUSDS**
+> (wallet 42,837.64 → 32,837.64). Logs: `create-zcash-nu7-markets-v3-execution.json`,
 > `add-zcash-nu7-liquidity-v3-execution.json`, plus the two `*-v3-run.log` files.
 >
-> **v1 and v2 are both dead** — created and fully unwound, still live and unresolved
+> **v1 and v2 are also dead** — created and fully unwound, still live and unresolved
 > on-chain but holding no liquidity and not maintained. See §Previous sets.
 
 ## The v3 markets
@@ -143,6 +148,11 @@ than silently minting an entirely one-sided position.
 
 ## Hazards
 
+These were written while v3 held liquidity. **Hazards 1 and 3 are now moot for v3** —
+there is nothing left in the pools to take — but both apply again in full the moment any
+NU7 set is re-seeded, so they are kept as written rather than deleted. Hazards 2, 5 and 6
+still apply: the markets remain live and unresolved.
+
 **1. Invalid is a live outcome with a named trigger, it is unpooled, and in v3 its trigger
 is no longer written on-chain.** The doc's rule 3 sends a question that misses official
 quorum straight to Invalid. Invalid gets no pool by design, so whoever learns of a quorum
@@ -199,14 +209,53 @@ node add-zcash-nu7-liquidity.js
 node check-zcash-nu7-pools.js
 ```
 
-Both live steps are done for v3. `create-zcash-nu7-markets.js` and
-`add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back before
-touching either file for a new set.
+Both live steps are done for v3, and it has since been unwound. `create-zcash-nu7-markets.js`
+and `add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back
+before touching either file for a new set. The two unwind scripts are checked in at
+`DRY_RUN = true`.
 
 ## Unwinding
 
-Not yet run for v3. `withdraw-zcash-nu7-liquidity.js` then `merge-zcash-nu7-positions.js`,
-in that order, both currently `DRY_RUN = true` and both repointed at the v3 logs.
+**Run for v3 on 2026-09-12.** `withdraw-zcash-nu7-liquidity.js` then
+`merge-zcash-nu7-positions.js`, in that order — both are checked back in at
+`DRY_RUN = true` and both stay pointed at the v3 logs.
+
+Both steps went clean on the first live run, no retries:
+
+- **Withdraw** — 14/14 positions (NFTs #1128687–#1128700), one tx each, blocks
+  156803312–156803350. `check-zcash-nu7-pools.js` then reported **14/14 pools empty**.
+  Log: `withdraw-zcash-nu7-liquidity-v3-execution.json` / `withdraw-zcash-nu7-v3-run.log`.
+- **Merge** — 5/5 markets, blocks ~156803360–156803448, recovering
+  **2,027.833326 sUSDS**. Wallet 40,807.478604 → **42,835.311930**.
+  Log: `merge-zcash-nu7-positions-v3-execution.json` / `merge-zcash-nu7-v3-run.log`.
+
+### What the round trip cost, and where it went
+
+v3 was seeded from 42,837.643358 and came back to 42,835.311930 — a net cost of
+**2.331427 sUSDS** plus gas, against 10,000 deployed. Unlike v2's exact zero, this set
+had traded, so the two accounting lines are worth keeping separate:
+
+- **5.666643 outcome tokens stranded**, because the merge is capped by the smallest
+  balance in each set. Q1 left 1.0487 / 0.7487 / 0.7487 and Q4 left 1.6352 / 1.4852;
+  Q2, Q3 and Q5 left exactly zero. These are **not lost** — the v3 markets are live, so
+  they redeem or not at resolution, exactly like v1's 6.99.
+- The gap between 5.67 stranded and 2.33 net cost is the sUSDS that came *back* out of
+  the pools from the one trade — someone bought Q4 `NO`, paying sUSDS in and taking
+  `NO` tokens out, which is why Q4's `Yes` and `Invalid` balances exceed its `No`.
+
+Only **1 of 14 pools had moved off its seed price** at withdrawal time: Q4 `NO`,
+0.1000 → 0.1020. That single small trade is the entire difference between this unwind
+and v2's exact-zero round trip — the other 13 pools were untouched, and the residual
+±1e-4 price drift on Q1/Q2/Q3/Q5 is tick granularity, not trading.
+
+### Before unwinding a future set
+
+Run `check-zcash-nu7-pools.js` first. It tells you both things that matter: how many
+pools have drifted (i.e. traded, so the merge will strand tokens) and how many are
+already empty (so the withdraw is partly or wholly done). Then dry-run both scripts —
+the merge dry run prints the exact per-slot balances, the mergeable minimum, the
+stranded total and the projected wallet balance, so the cost of the unwind is known
+before a single tx is sent.
 
 | File | Role |
 |---|---|
@@ -214,8 +263,8 @@ in that order, both currently `DRY_RUN = true` and both repointed at the v3 logs
 | `merge-zcash-nu7-positions.js` | Converts a full outcome set per market back to sUSDS via `Router.mergePositions`. One approval per slot then one merge, so a 4-slot market is 5 tx. Resumable per market. |
 
 **The merge is capped by the smallest balance in the set**, so a market that has traded
-recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`. Run
-`check-zcash-nu7-pools.js` first: if it reports 0 pools drifted, the round trip is whole.
+recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`, and
+Q1/Q4 in the v3 unwind above.
 
 ## Previous sets (dead)
 
