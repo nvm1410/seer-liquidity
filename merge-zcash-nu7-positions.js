@@ -31,7 +31,7 @@ const RPC_URL = process.env.RPC_URL; // Optimism
 const CHAIN_ID = 10;
 
 const MARKETS_FILE = "./create-zcash-nu7-markets-v3-execution.json";
-const PROGRESS_FILE = "./merge-zcash-nu7-positions-v3-execution.json";
+const PROGRESS_FILE = "./merge-zcash-nu7-positions-v3-round2-execution.json";
 
 // Addresses (Optimism, chain 10)
 const ROUTER_ADDRESS = "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD";

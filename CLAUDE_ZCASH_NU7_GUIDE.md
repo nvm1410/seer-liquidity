@@ -3,7 +3,13 @@
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
 
-> **v3 is seeded again as of 2026-09-12 with 10,000 sUSDS over the same 14 pools.**
+> **v3 holds no liquidity as of 2026-09-14 — round 2 is unwound.** 14/14 positions
+> withdrawn, 5/5 markets merged, wallet → **42,243.03 sUSDS**. 13/14 pools had traded
+> hard in the two days since the re-seed, so this unwind stranded **2,204.29 outcome
+> tokens** and came back 592.29 sUSDS short of the pre-seed balance, ~539 of which is
+> the stranded tokens at last pool prices. See §Unwinding → Round 2.
+>
+> **Round 2 (2026-09-12):** re-seeded with 10,000 sUSDS over the same 14 pools.
 > It had been unwound earlier the same day and was put straight back — the withdraw
 > was premature. 14/14 pools re-seeded clean on the first live run, blocks
 > 156814420–156814538, wallet 42,835.31 → **32,835.31** (exactly 10,000.000000
@@ -157,9 +163,11 @@ than silently minting an entirely one-sided position.
 
 ## Hazards
 
-These were written while v3 held liquidity, were briefly moot during the 2026-09-12
-unwind, and are **live again in full** now that v3 is re-seeded. Hazard 1 in particular is
-the sharpest exposure in the set and there is once more 10,000 sUSDS behind it.
+These were written while v3 held liquidity. **Since the 2026-09-14 unwind no pool holds
+liquidity, so hazards 1 and 3 are moot** — there is nothing for a quorum-failure trader to
+take. They come back in full on any re-seed. Hazards 2, 5 and 6 are about the markets
+themselves and still apply, and the 2,204 stranded outcome tokens are exposed to
+resolution either way.
 
 **1. Invalid is a live outcome with a named trigger, it is unpooled, and in v3 its trigger
 is no longer written on-chain.** The doc's rule 3 sends a question that misses official
@@ -289,15 +297,50 @@ creation log rather than the seed log, so it needs no change to take round 2 bac
 
 ## Unwinding
 
-**Run for v3 on 2026-09-12 — and reversed the same day, see §Re-seeding a drained set.**
-The account below is of that unwind; it is still the procedure for taking the set down.
-`withdraw-zcash-nu7-liquidity.js` then `merge-zcash-nu7-positions.js`, in that order —
-both are checked back in at `DRY_RUN = true`. Both read the **creation** log for scope, so
-they already cover the round-2 positions — but **both of their `PROGRESS_FILE`s are full
-from the 2026-09-12 unwind**, and every position and market in them will be skipped as
-"already logged". Bump both constants to a `-round2-` name before unwinding again, exactly
-as the seed script's was. This is the same trap in all three scripts: the progress file is
-a resume log scoped to one run, not a record of what is currently held.
+Run twice for v3: round 1 on 2026-09-12 (reversed the same day, see §Re-seeding a drained
+set) and round 2 on 2026-09-14. `withdraw-zcash-nu7-liquidity.js` then
+`merge-zcash-nu7-positions.js`, in that order — both are checked back in at
+`DRY_RUN = true`. Both read the **creation** log for scope, so they cover every round's
+positions — but **their `PROGRESS_FILE`s now point at `-round2-` logs that are full**, and
+every position and market in them would be skipped as "already logged". Bump both (and the
+seed script's) to `-round3-` before any further run. This is the same trap in all three
+scripts: the progress file is a resume log scoped to one run, not a record of what is held.
+
+### Round 2 — 2026-09-14
+
+On the user's instruction, two days after the re-seed. `check-zcash-nu7-pools.js`
+beforehand showed **13/14 pools moved**, several heavily: Q2 `ASAP` 0.55 → 0.439,
+`FEB2031` 0.30 → 0.427, Q5 `DELAY` 0.25 → 0.194, Q1 `NONE` 0.10 → 0.139. This wallet was
+the sole LP in every pool (position liquidity = pool liquidity).
+
+- **Withdraw** — 14/14 positions (NFTs #1129217–#1129230), no retries, blocks
+  156897056–156897099. Wallet 32,835.311930 → 40,651.584863 (+7,816.27 sUSDS).
+  Check afterwards: **14/14 pools empty**. Log:
+  `withdraw-zcash-nu7-liquidity-v3-round2-execution.json` / `withdraw-zcash-nu7-v3-round2-run.log`.
+- **Merge** — 5/5 markets, blocks 156897134–156897216, recovering **1,591.441148 sUSDS**.
+  Wallet → **42,243.026011**. One approval (Q4 `Invalid`) reverted on attempt 1 with no
+  revert data and went through on attempt 2 — an RPC/nonce hiccup, not a contract
+  problem. Log: `merge-zcash-nu7-positions-v3-round2-execution.json` /
+  `merge-zcash-nu7-v3-round2-run.log`. Gas for both steps: ~0.0000074 ETH.
+
+**What round 2 cost.** 10,000 in, 9,407.71 back: **592.29 sUSDS short**, plus
+**2,204.29 outcome tokens stranded** (merge capped by each set's smallest balance):
+
+| mkt | stranded (non-Invalid) | Invalid stranded | value at last pool price |
+|---|---|---|---|
+| Q1 | 95.59 SMOOTH, 136.64 HALVINGS | 71.78 | 110.60 |
+| Q2 | 489.05 ASAP, 396.88 FEB2027 | 211.23 | 256.42 |
+| Q3 | 181.53 ONEYEAR, 155.65 NODATE | 68.57 | 102.21 |
+| Q4 | 32.45 YES | 4.47 | 28.55 |
+| Q5 | 191.39 DELAY, 83.89 NOSUPPORT | 85.18 | 41.35 |
+
+Marked at the drained pools' last prices (Invalid at 0) the stranded tokens are worth
+**~539.13 sUSDS**, putting the mark-to-market loss at **~53 sUSDS** — ordinary impermanent
+loss to the traders who moved the prices. The real figure is set at resolution: the
+stranded side is mostly the options traders sold *into* the pools, so if those win, the
+round trip ends in profit; if they lose, the full 592.29 is realised.
+
+### Round 1 — 2026-09-12
 
 Both steps went clean on the first live run, no retries:
 

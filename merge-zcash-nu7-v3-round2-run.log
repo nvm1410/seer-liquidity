@@ -1,0 +1,159 @@
+
+📋 Wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN : false
+
+🔍 Step 1: resolving 5 markets and reading balances...
+
+   [1] Q1 — 4 slots
+             344.6859  Smooth issuance curve                             (+95.5878 leftover)
+             385.7336  Preserve halvings                                 (+136.6356 leftover)
+             249.0980  Do not include issuance smoothing in NU7        
+             320.8765  Invalid result                                    (+71.7785 leftover)
+             249.0980  MERGEABLE (min of the set)                      
+
+   [2] Q2 — 4 slots
+             861.0307  As soon as possible                               (+489.0535 leftover)
+             768.8570  February 2027 regardless of the outcome of Q1     (+396.8798 leftover)
+             371.9773  February 2031 regardless of the outcome of Q1   
+             583.2106  Invalid result                                    (+211.2333 leftover)
+             371.9773  MERGEABLE (min of the set)                      
+
+   [3] Q3 — 4 slots
+             566.8130  Immediately at NU7 activation                   
+             748.3401  One year after this poll concludes                (+181.5271 leftover)
+             722.4635  Do not set a date to disable v4 transactions      (+155.6505 leftover)
+             635.3868  Invalid result                                    (+68.5737 leftover)
+             566.8130  MERGEABLE (min of the set)                      
+
+   [4] Q4 — 3 slots
+             132.3303  Yes                                               (+32.4468 leftover)
+              99.8834  No                                              
+             104.3549  Invalid result                                    (+4.4714 leftover)
+              99.8834  MERGEABLE (min of the set)                      
+
+   [5] Q5 — 4 slots
+             303.6694  Ship NU7 as soon as possible, removing any featu
+             495.0545  Delay NU7 until every applicable approved featur  (+191.3850 leftover)
+             387.5564  I do not support this NU7 plan                    (+83.8870 leftover)
+             388.8467  Invalid result                                    (+85.1773 leftover)
+             303.6694  MERGEABLE (min of the set)                      
+
+   Recoverable  : 1591.441147721455527401 sUSDS over 5 markets
+   Stranded     : 2204.287312253138048623 outcome tokens (imbalance from trading)
+   sUSDS now    : 40651.584863373459416979
+   sUSDS after  : 42243.02601109491494438
+
+🔀 Step 3: merging 5 markets
+
+
+--- [1] Q1 — merging 249.098016414486432339 ---
+  Approving 0xB7eCbf3F2Ee1d2549eCc223763388250c47B31F7 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 249.098016414486432339 ...
+  Attempt 1/3...
+  Tx sent: 0xa3af8a148fc1aab4010cbfb68ef9eca172f542280fdea36e7a911a75b3e93146
+  Confirmed in block 156897134
+  Approving 0x6F595fd3F50c0eF21DF6159Cf1D19fB635d00358 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 249.098016414486432339 ...
+  Attempt 1/3...
+  Tx sent: 0xd48c86cc9fb5016d5ba8e494851b51ba0e833f2c16918d7f1054454cda818be2
+  Confirmed in block 156897137
+  Approving 0x10c314aDaC6B17c606bA58103769ec86Bd3a716F -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 249.098016414486432339 ...
+  Attempt 1/3...
+  Tx sent: 0xb009a88cb87e79ab37ed451282dbadcc70fdd3a81af496e410887b6a7a9edaf5
+  Confirmed in block 156897140
+  Approving 0x5c49022b0Bf9d031b3dc407038C2010771AD7007 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 249.098016414486432339 ...
+  Attempt 1/3...
+  Tx sent: 0x069243a147dcf28468646b22a1fdcec601b38622558ad6a14dc2a41494f7cebd
+  Confirmed in block 156897145
+  Attempt 1/3...
+  Tx sent: 0x4d539871be9653273078ac5273cd1bb49ac7a70e8f9f046a296ad52e12788f2f
+  Confirmed in block 156897150
+  ✅ Saved to ./merge-zcash-nu7-positions-v3-round2-execution.json
+
+--- [2] Q2 — merging 371.97726532118594864 ---
+  Approving 0xFF08165A419d755cC0B62B4EcA52590011713558 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 371.97726532118594864 ...
+  Attempt 1/3...
+  Tx sent: 0xe4d61187304e2bae11bfa118cc5451b89304b6a9f4d82320de37cf7f45142118
+  Confirmed in block 156897153
+  Approving 0x53dcb9C90c7FbFa0cE87C897dbbc4B4aE2f4cDc3 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 371.97726532118594864 ...
+  Attempt 1/3...
+  Tx sent: 0x80482865aa4da9d967c6dd9848d0f4acd062d54fb7a6e3445ccd7baec780741e
+  Confirmed in block 156897156
+  Approving 0x0760B934b21bA959c1e98731FBce639215aBA572 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 371.97726532118594864 ...
+  Attempt 1/3...
+  Tx sent: 0xe7cff49c1d3dee87d3aee0d91bd2d17b329789d8d7d295a7366f3a4080f6d0b2
+  Confirmed in block 156897159
+  Approving 0x3CB6167126cC1307571D0AbF01d5a8AE6C8bf304 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 371.97726532118594864 ...
+  Attempt 1/3...
+  Tx sent: 0x7d85d05a36a28d13b7e960a3f645768911c30e307a60e55765c5178396b5e8fd
+  Confirmed in block 156897162
+  Attempt 1/3...
+  Tx sent: 0x0e568d815dc43d1f3c66828a9b7bd41d7c0ea29911ac4675f86840e4bad4973a
+  Confirmed in block 156897165
+  ✅ Saved to ./merge-zcash-nu7-positions-v3-round2-execution.json
+
+--- [3] Q3 — merging 566.813025842809610611 ---
+  Approving 0xab30Cc3E515bf24fbFa47D0d0A54Ac3342e71d45 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 566.813025842809610611 ...
+  Attempt 1/3...
+  Tx sent: 0xef76abeb0daf1fc9ad2335ebbe1999861e951d152973dec4c7b61cc2a173df18
+  Confirmed in block 156897168
+  Approving 0x757d6A2A80c28Ab8d2241C7d1611f74489568881 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 566.813025842809610611 ...
+  Attempt 1/3...
+  Tx sent: 0xc045d0503e0862f09e26064cf578b596331648b9123bafd15829115058fc8acf
+  Confirmed in block 156897171
+  Approving 0x425B9e68c68Abef4cb90A449A46c41640A0ee2F3 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 566.813025842809610611 ...
+  Attempt 1/3...
+  Tx sent: 0x21ff829333bdb5d03dbd0ae1edf2a666ddb9c50c1c2a52efa163e6c60b779380
+  Confirmed in block 156897175
+  Approving 0x827baB4860c9B6db3B524E52dBcc17aB988CF454 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 566.813025842809610611 ...
+  Attempt 1/3...
+  Tx sent: 0xcc2729dced29b3983eddfee8f0a2224c7da4a1de9c23529448759868adb51e02
+  Confirmed in block 156897178
+  Attempt 1/3...
+  Tx sent: 0xc5ae52bd5864fced33da5f29f42f2e9dd21f7c523265e517e55c556b6be7845b
+  Confirmed in block 156897181
+  ✅ Saved to ./merge-zcash-nu7-positions-v3-round2-execution.json
+
+--- [4] Q4 — merging 99.883410888294508627 ---
+  Approving 0xc63fc0CD70785D46f7bF8279939A448376C9f989 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 99.883410888294508627 ...
+  Attempt 1/3...
+  Tx sent: 0x3428e3ed54eddb5d18b2a9bc5c7131a17cc524ea82bd2d9456a13b181801c83e
+  Confirmed in block 156897185
+  Approving 0x39136b6d2Aa4fDa393DC205a1Bfe210EC9d4ca6a -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 99.883410888294508627 ...
+  Attempt 1/3...
+  Tx sent: 0xa0fc4b12d73790862ce6718d33b549ceba3a56b6db58d459cc9f3f6e367a53f5
+  Confirmed in block 156897187
+  Approving 0x055b70cbb8dEcEBb9e6e2a8021c103917844f914 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 99.883410888294508627 ...
+  Attempt 1/3...
+  Tx sent: 0xb95108866e41f04ebfb25969f468f2ce4d7142cfe81730f05e6931e267541770
+  Attempt 1 failed: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0", "to": "0x055b70cbb8dEcEBb9e6e2a8021c103917844f914" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": "40000", "blockHash": "0x544d7e4bbdf38e9cb8c79eb7f3c62db821c5cedc7bf5c97f3ccbcfa3cabc395c", "blockNumber": 156897190, "contractAddress": null, "cumulativeGasUsed": "2830431", "from": "0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0", "gasPrice": "1000551", "gasUsed": "23006", "hash": "0xb95108866e41f04ebfb25969f468f2ce4d7142cfe81730f05e6931e267541770", "index": 7, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x055b70cbb8dEcEBb9e6e2a8021c103917844f914" }, code=CALL_EXCEPTION, version=6.15.0)
+  Attempt 2/3...
+  Tx sent: 0x3490ee5e85573514889147251507b5ee2c485a285623cd35ab2a04df275044ea
+  Confirmed in block 156897195
+  Attempt 1/3...
+  Tx sent: 0x0d6a46dbd1d6be6cc053a642c3d85b2418123c51bde428058f3d785f4f6dae20
+  Confirmed in block 156897199
+  ✅ Saved to ./merge-zcash-nu7-positions-v3-round2-execution.json
+
+--- [5] Q5 — merging 303.669429254679027184 ---
+  Approving 0x7D4Bc377fAC1f1bA5fCC25F3599a70a821592667 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 303.669429254679027184 ...
+  Attempt 1/3...
+  Tx sent: 0xe0d6ac1289c169744af275bcd45e6fb590d0cf3e87fda9783eb03be8e81c428f
+  Confirmed in block 156897202
+  Approving 0x5923F0810D5f4188F3D8164c0f4Df7CCFFAB1db0 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 303.669429254679027184 ...
+  Attempt 1/3...
+  Tx sent: 0x7979082775753b76346668ea47b9a48537781eacc4234f8da57d10546c5d9bc5
+  Confirmed in block 156897206
+  Approving 0x669E0c9C605aaEDFff1F375fCb6ebb2D5BbfB719 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 303.669429254679027184 ...
+  Attempt 1/3...
+  Tx sent: 0x33d22e883299db31e491af4402333a066c1564d3990daca084c4bcea3becd4df
+  Confirmed in block 156897209
+  Approving 0x12E1F677b221Cf2FF6c71Ed996cCf3fa5f8d4DD9 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 303.669429254679027184 ...
+  Attempt 1/3...
+  Tx sent: 0xac14c9dc18d6534f67492279f6fd133d458bda712f352dd0bd194b0d726c08fc
+  Confirmed in block 156897213
+  Attempt 1/3...
+  Tx sent: 0xfd498e6c5a31fee8da5a3aa72d8f9127431bf6e705f72c86f26ecf8874d7f8e0
+  Confirmed in block 156897216
+  ✅ Saved to ./merge-zcash-nu7-positions-v3-round2-execution.json
+
+🎉 Done! 5/5 markets merged.
+   sUSDS 40651.584863373459416979 → 42243.02601109491494438 (+1591.441147721455527401)
