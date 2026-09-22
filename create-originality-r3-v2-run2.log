@@ -1,0 +1,62 @@
+
+LIVE RUN — originality round 3 market creation (bundled multi-scalar parent)
+   wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+   seed    : ./originality-r3-seed.json (generated 2026-09-22T02:40:51.847Z)
+   bundles : Bundle A 33 / Bundle B 33 / Bundle C 32
+   children: 98
+
+Seed file validated: 1 parent (3 bundles), 98 children, 199 distinct ERC20 symbols.
+
+(node:6100) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/create-originality-r3-markets.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Factory config:
+   arbitrator      : 0x5AFa42b30955f137e10f89dfb5EF1542a186F90e
+   realitio        : 0x0eF940F7f053a2eF5D6578841072488aF0c7d89A
+   questionTimeout : 302400 s
+   collateralToken : 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0
+   openingTime     : 1790045982 (pinned by an earlier run)
+
+Checking Reality for pre-existing question ids...
+   WARNING: 100 question(s) already exist on Reality:
+      parent Bundle A
+      parent Bundle B
+      parent Bundle C
+      ethereum/py_ecc
+      blockscout/blockscout
+      LFDT-web3j/web3j
+      herumi/mcl
+      paulmillr/noble-curves
+      arkworks-rs/algebra
+      flashbots/rbuilder
+      ... and 90 more
+      The factory reuses an existing question rather than asking a new one
+      (MarketFactory.askRealityQuestion). Expected only when resuming a
+      partially-completed run for exactly these questions.
+
+Parent already created (0x52f80FC4fa783AB5850d1658589284c47a21B3b7) — skipping it.
+97 child market(s) already created — skipping them.
+
+Simulating CHILD market(s) (createScalarMarket)...
+   skalenetwork/libBLS                          gas 1855772
+   sampled 1, avg 1855772 -> ~1855772 for 1 children
+
+   Total L2 gas : 1855772
+   Gas price    : 0.00100141 gwei
+   L2 gas cost  : ~0.00000185838863852 ETH (EXCLUDES the Optimism L1 data fee)
+   ETH balance  : 0.040547210995545923 ETH
+
+--- Phase B: 1 child market(s) ---
+
+[1/1] Bundle A[29] skalenetwork/libBLS
+    Attempt 1/3...
+    Tx sent: 0xe770cc531e244d6112f8db376ec51dc74e1a8379bd338383fae7d2a80dcf54f8
+    Confirmed in block 157223958, gas used 1840002
+  Created 0x16C9363E1bD998fadC5c97A2d5C6321dFaECf88C
+
+--- Summary ---
+   parent   : 0x52f80FC4fa783AB5850d1658589284c47a21B3b7 (Bundle A / Bundle B / Bundle C)
+   children : 1/1 created this run, 98/98 total
+
+Progress log: ./create-originality-r3-v2-execution.json

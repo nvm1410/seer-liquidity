@@ -1,0 +1,3314 @@
+{
+  "generatedAt": "2026-09-22T02:40:51.847Z",
+  "note": "Round-3 originality seed (v2, bundled multi-scalar parent). Prices are the LAST traded prices of the round-2 pools, read from each drained pool's surviving sqrtPriceX96. seedUp is the round-2 UP pool's last price; seedDown is 1 - seedUp (the raw legs are separate pools and do not sum to 1). Frozen input: edit this file, not the scripts.",
+  "source": {
+    "chainId": 10,
+    "r2ParentMarket": "0xdb3aae8d1c964767eeaa17805be25cded7a17210",
+    "r2ParentMarketName": "Which of those repositories will be evaluated for originality during the second round of the deepfunding experiment?",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "band": {
+    "minPrice": 0.02,
+    "maxPrice": 0.98
+  },
+  "budget": {
+    "totalSusds": 1000,
+    "note": "one parent split of totalSusds; each bundle token's supply is divided evenly across its repos"
+  },
+  "parent": {
+    "marketType": "multiScalar",
+    "marketName": "How many repositories in [bundle] will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+    "questionStart": "How many repositories in ",
+    "questionEnd": " will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+    "outcomeType": "bundle",
+    "outcomes": [
+      "Bundle A",
+      "Bundle B",
+      "Bundle C"
+    ],
+    "tokenNames": [
+      "ORIG_R3_A",
+      "ORIG_R3_B",
+      "ORIG_R3_C"
+    ],
+    "category": "misc",
+    "lang": "en_US",
+    "minBondWei": "500000000000000",
+    "questionTimeout": 302400
+  },
+  "bundles": [
+    {
+      "index": 0,
+      "label": "Bundle A",
+      "tokenName": "ORIG_R3_A",
+      "question": "How many repositories in Bundle A will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "repos": [
+        "ethereum/py_ecc",
+        "blockscout/blockscout",
+        "LFDT-web3j/web3j",
+        "herumi/mcl",
+        "paulmillr/noble-curves",
+        "arkworks-rs/algebra",
+        "flashbots/rbuilder",
+        "protofire/solhint",
+        "l2beat/l2beat",
+        "Consensys/gnark-crypto",
+        "Vectorized/solady",
+        "taikoxyz/taiko-mono",
+        "flashbots/mev-boost",
+        "flashbots/mev-boost-relay",
+        "ethereum/js-ethereum-cryptography",
+        "libp2p/libp2p",
+        "supranational/blst",
+        "wighawag/hardhat-deploy",
+        "ethstaker/eth-docker",
+        "DefiLlama/DefiLlama-Adapters",
+        "DefiLlama/chainlist",
+        "Certora/CertoraProver",
+        "Plonky3/Plonky3",
+        "ChainSafe/bls",
+        "intellij-solidity/intellij-solidity",
+        "dappnode/DAppNode",
+        "wealdtech/ethdo",
+        "lambdaclass/lambdaworks",
+        "smartcontracts/simple-optimism-node",
+        "skalenetwork/libBLS",
+        "shazow/whatsabi",
+        "TrueBlocks/trueblocks-core",
+        "EspressoSystems/jellyfish"
+      ],
+      "globalRange": [
+        0,
+        32
+      ]
+    },
+    {
+      "index": 1,
+      "label": "Bundle B",
+      "tokenName": "ORIG_R3_B",
+      "question": "How many repositories in Bundle B will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "repos": [
+        "a16z/halmos",
+        "succinctlabs/op-succinct",
+        "succinctlabs/sp1",
+        "otterscan/otterscan",
+        "lambdaclass/ethrex",
+        "NethermindEth/juno",
+        "Commit-Boost/commit-boost-client",
+        "Cyfrin/aderyn",
+        "0xMiden/miden-vm",
+        "holiman/goevmlab",
+        "edb-rs/edb",
+        "evmts/tevm-monorepo",
+        "succinctlabs/rsp",
+        "aestus-relay/mev-boost-relay",
+        "OffchainLabs/stylus-sdk-rs",
+        "ethstaker/ethstaker-deposit-cli",
+        "dl-solarity/solidity-lib",
+        "risc0/risc0-ethereum",
+        "powdr-labs/powdr",
+        "axiom-crypto/snark-verifier",
+        "swiss-knife-xyz/swiss-knife",
+        "a16z/helios",
+        "alloy-rs/alloy",
+        "apeworx/ape",
+        "chainsafe/lodestar",
+        "consensys/teku",
+        "erigontech/erigon",
+        "eth-infinitism/account-abstraction",
+        "ethereum-lists/chains",
+        "ethereum/consensus-specs",
+        "ethereum/eips",
+        "ipsilon/evmone",
+        "ethereum/execution-apis"
+      ],
+      "globalRange": [
+        33,
+        65
+      ]
+    },
+    {
+      "index": 2,
+      "label": "Bundle C",
+      "tokenName": "ORIG_R3_C",
+      "question": "How many repositories in Bundle C will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "repos": [
+        "argotorg/fe",
+        "ethereum/go-ethereum",
+        "remix-project-org/remix-project",
+        "argotorg/solidity",
+        "argotorg/sourcify",
+        "ethereum/web3.py",
+        "ethers-io/ethers.js",
+        "foundry-rs/foundry",
+        "grandinetech/grandine",
+        "hyperledger-web3j/web3j",
+        "hyperledger/besu",
+        "nethereum/nethereum",
+        "nethermindeth/nethermind",
+        "nomicfoundation/hardhat",
+        "openzeppelin/openzeppelin-contracts",
+        "paradigmxyz/reth",
+        "OffchainLabs/prysm",
+        "safe-global/safe-smart-account",
+        "scaffold-eth/scaffold-eth-2",
+        "sigp/lighthouse",
+        "status-im/nimbus-eth2",
+        "vyperlang/titanoboa",
+        "vyperlang/vyper",
+        "wevm/viem",
+        "argotorg/hevm",
+        "ethdebug/format",
+        "argotorg/act",
+        "ethpandaops/ethereum-package",
+        "ethpandaops/ethereum-helm-charts",
+        "ethpandaops/checkpointz",
+        "lambdaclass/lambda_ethereum_consensus",
+        "erigontech/silkworm"
+      ],
+      "globalRange": [
+        66,
+        97
+      ]
+    }
+  ],
+  "children": [
+    {
+      "r2ParentOutcome": 0,
+      "repo": "ethereum/py_ecc",
+      "tokenCode": "PY_ECC",
+      "marketName": "What will be the average originality score of ethereum/py_ecc in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "PY_ECC_D_R3",
+        "PY_ECC_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x26148f944c3C78e695C0eb7ab41C051996EBaA85",
+      "r2ParentOutcomeToken": "0x26bD9e492036d7959b89936adB68204238C2ad4d",
+      "r2TokenSymbol": "PY_ECC",
+      "r2DownPool": "0x90e26945E47E7BaBFc982Df50B25bb8D78bA0835",
+      "r2UpPool": "0x90457fcF97C84e820036158B4D6d27b24f932560",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.45210862526254053,
+      "rawUp": 0.54849768224125,
+      "seedUp": 0.54849768224125,
+      "seedDown": 0.45150231775875005,
+      "parentOutcome": 0,
+      "indexInBundle": 0,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 1,
+      "repo": "blockscout/blockscout",
+      "tokenCode": "BLOCKSCOUT",
+      "marketName": "What will be the average originality score of blockscout/blockscout in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "BLOCKSCOUT_D_R3",
+        "BLOCKSCOUT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6b3C9D9202d6724B0e25a2C77181d97A8Eb9b6A3",
+      "r2ParentOutcomeToken": "0x52F93160204C2da1A190E398774D8819BaB5F842",
+      "r2TokenSymbol": "BLOBLO",
+      "r2DownPool": "0x52c0775edeEDd746d0c06113C772eCF634d990d7",
+      "r2UpPool": "0x97277Da76b19cc0F9ECaC7246b7c14b87242c731",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3758186772488263,
+      "rawUp": 0.6230012522679634,
+      "seedUp": 0.6230012522679634,
+      "seedDown": 0.37699874773203657,
+      "parentOutcome": 0,
+      "indexInBundle": 1,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 2,
+      "repo": "LFDT-web3j/web3j",
+      "tokenCode": "LFDT_WEB3J",
+      "marketName": "What will be the average originality score of LFDT-web3j/web3j in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LFDT_WEB3J_D_R3",
+        "LFDT_WEB3J_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6a1F0E21a01D93c98ecC4b7E21e87d88236675D4",
+      "r2ParentOutcomeToken": "0x86d23EAf426189000Acb93aDf1eF5C5E6B1A30Da",
+      "r2TokenSymbol": "LFDWEB",
+      "r2DownPool": "0xF60dF578E6F4E91bD1437C372D081E324535b0A8",
+      "r2UpPool": "0x902B9cbB1DE74A6Fb9Fd274390DB55476de9F671",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.49059446032466986,
+      "rawUp": 0.5379171143460391,
+      "seedUp": 0.5379171143460391,
+      "seedDown": 0.46208288565396094,
+      "parentOutcome": 0,
+      "indexInBundle": 2,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 3,
+      "repo": "herumi/mcl",
+      "tokenCode": "MCL",
+      "marketName": "What will be the average originality score of herumi/mcl in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "MCL_D_R3",
+        "MCL_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x4d2E6eb448ED0eFB6eAaA5370491b065f9246D51",
+      "r2ParentOutcomeToken": "0x798d81bb8A2BA841cc452f529874120C657A976A",
+      "r2TokenSymbol": "HERMCL",
+      "r2DownPool": "0x9085eDD3794Ec49BD453630417719d2bF53AFc8d",
+      "r2UpPool": "0xacceE598Ad80D3dBa3b30Df4575C01e441D4e8c3",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3283627793373225,
+      "rawUp": 0.6902048785642639,
+      "seedUp": 0.6902048785642639,
+      "seedDown": 0.30979512143573606,
+      "parentOutcome": 0,
+      "indexInBundle": 3,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 4,
+      "repo": "paulmillr/noble-curves",
+      "tokenCode": "NOBLE_CURVES",
+      "marketName": "What will be the average originality score of paulmillr/noble-curves in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "NOBLE_CURVES_D_R3",
+        "NOBLE_CURVES_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xfa2E73D20Bd09518d957962bB628B23C5a9F06db",
+      "r2ParentOutcomeToken": "0xfB645E77bcF4e1758bF3cE487882Def0D589DF19",
+      "r2TokenSymbol": "PAUNOB",
+      "r2DownPool": "0x5B0BaD7625DfC10703ffFC7db62a8e62F0B3B057",
+      "r2UpPool": "0xAA29b704d1576C99A987071a6ab4065e487F212D",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.44564146487461165,
+      "rawUp": 0.5585239485236533,
+      "seedUp": 0.5585239485236533,
+      "seedDown": 0.4414760514763467,
+      "parentOutcome": 0,
+      "indexInBundle": 4,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 5,
+      "repo": "arkworks-rs/algebra",
+      "tokenCode": "ALGEBRA",
+      "marketName": "What will be the average originality score of arkworks-rs/algebra in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ALGEBRA_D_R3",
+        "ALGEBRA_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x8Ccc50c004F8268fD786b0008ed1Ac175474F2df",
+      "r2ParentOutcomeToken": "0x1915cC9359430e7674Dd6Db155Fa1D86363211DC",
+      "r2TokenSymbol": "ARKALG",
+      "r2DownPool": "0x46791166237AD72d812ba65E4A29066384b31BE4",
+      "r2UpPool": "0x23BF646eAEc8a1276fc949B642c4A9Fc01Cb0a06",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3371465255806541,
+      "rawUp": 0.6448284602526461,
+      "seedUp": 0.6448284602526461,
+      "seedDown": 0.35517153974735394,
+      "parentOutcome": 0,
+      "indexInBundle": 5,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 6,
+      "repo": "flashbots/rbuilder",
+      "tokenCode": "RBUILDER",
+      "marketName": "What will be the average originality score of flashbots/rbuilder in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "RBUILDER_D_R3",
+        "RBUILDER_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xE05F63E0Df4A31EcEdA638230dBE23dd522A1614",
+      "r2ParentOutcomeToken": "0xbbd48e0c86c455D3Cb892721668EB3FddB89E505",
+      "r2TokenSymbol": "FLARBU",
+      "r2DownPool": "0x0ac8E1B1BD01f292eDa97D7d4e17238De4d66e1a",
+      "r2UpPool": "0x9FF67129231Eb52B2A6809A1FCE71b0Cb48ff907",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4162036737533253,
+      "rawUp": 0.5800241773852541,
+      "seedUp": 0.5800241773852541,
+      "seedDown": 0.41997582261474586,
+      "parentOutcome": 0,
+      "indexInBundle": 6,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 7,
+      "repo": "protofire/solhint",
+      "tokenCode": "SOLHINT",
+      "marketName": "What will be the average originality score of protofire/solhint in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SOLHINT_D_R3",
+        "SOLHINT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x791820A631F75a577FBec6cF7BCdE23a80fA9313",
+      "r2ParentOutcomeToken": "0x63f36EF07fafaC096b6785f0B108491eCFfcD65B",
+      "r2TokenSymbol": "PROSOL",
+      "r2DownPool": "0x6d65861F61b8a10704EA12dD58f5000d2a6C0fcA",
+      "r2UpPool": "0xE19B7F0f2B73010707c31ed45Ac74788b1953466",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5041650732086327,
+      "rawUp": 0.497057989127653,
+      "seedUp": 0.497057989127653,
+      "seedDown": 0.502942010872347,
+      "parentOutcome": 0,
+      "indexInBundle": 7,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 8,
+      "repo": "l2beat/l2beat",
+      "tokenCode": "L2BEAT",
+      "marketName": "What will be the average originality score of l2beat/l2beat in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "L2BEAT_D_R3",
+        "L2BEAT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x9E718d27d6091d693A9F29D75CF4c7129682DF70",
+      "r2ParentOutcomeToken": "0x10648A515DC579D79AbE6Acb9400B9cE371A0f42",
+      "r2TokenSymbol": "L2BL2B",
+      "r2DownPool": "0x9f4363887A5030CA7DA1e0F2e0F047E14F3B18cA",
+      "r2UpPool": "0x4d32f81Bf527536706Ca86b26b5AD8571dc79589",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.39197151274431574,
+      "rawUp": 0.6117128708513876,
+      "seedUp": 0.6117128708513876,
+      "seedDown": 0.3882871291486124,
+      "parentOutcome": 0,
+      "indexInBundle": 8,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 9,
+      "repo": "Consensys/gnark-crypto",
+      "tokenCode": "GNARK_CRYPTO",
+      "marketName": "What will be the average originality score of Consensys/gnark-crypto in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "GNARK_CRYPTO_D_R3",
+        "GNARK_CRYPTO_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xe9D401Bd34fE3054f5bd27fd049773eA700D0Ed4",
+      "r2ParentOutcomeToken": "0x0078cca3246d454561bBa9e582b84247ec288327",
+      "r2TokenSymbol": "CONGNA",
+      "r2DownPool": "0xc48BF915A1838B6507Dd98b28aa4b7B7BE4Fe823",
+      "r2UpPool": "0x3CAf6237489c043b741a9D9F7fD0789d11106Ce4",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.1869772939501314,
+      "rawUp": 0.801970669024207,
+      "seedUp": 0.801970669024207,
+      "seedDown": 0.198029330975793,
+      "parentOutcome": 0,
+      "indexInBundle": 9,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 10,
+      "repo": "Vectorized/solady",
+      "tokenCode": "SOLADY",
+      "marketName": "What will be the average originality score of Vectorized/solady in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SOLADY_D_R3",
+        "SOLADY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xFAd80d50aD5EE1D12c699611b673eceC9Fe2fcDb",
+      "r2ParentOutcomeToken": "0x23ad972f34f49d7D7EC3713b98C3dF11e4F8C236",
+      "r2TokenSymbol": "VECSOL",
+      "r2DownPool": "0xA3eF69f48dD58a79DB759f5fa4c66970D5192092",
+      "r2UpPool": "0x67968554ffc463A384A54A59643F4E74B324EEdE",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5031583562582108,
+      "rawUp": 0.5013698468979986,
+      "seedUp": 0.5013698468979986,
+      "seedDown": 0.4986301531020014,
+      "parentOutcome": 0,
+      "indexInBundle": 10,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 11,
+      "repo": "taikoxyz/taiko-mono",
+      "tokenCode": "TAIKO_MONO",
+      "marketName": "What will be the average originality score of taikoxyz/taiko-mono in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "TAIKO_MONO_D_R3",
+        "TAIKO_MONO_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xdE65CF71f12BeaC8996FBf66Cc0320b1D5ccf017",
+      "r2ParentOutcomeToken": "0xE658790dAbDf28F615572D1b203cBEE232584779",
+      "r2TokenSymbol": "TAITAI",
+      "r2DownPool": "0x0a8d111d0379c00cc19a7412621BB0a4458456A0",
+      "r2UpPool": "0x9Ac53250439684F1F543fdb2cF667F8014a5F0f1",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4818293965447034,
+      "rawUp": 0.49450510110896717,
+      "seedUp": 0.49450510110896717,
+      "seedDown": 0.5054948988910328,
+      "parentOutcome": 0,
+      "indexInBundle": 11,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 12,
+      "repo": "flashbots/mev-boost",
+      "tokenCode": "MEV_BOOST",
+      "marketName": "What will be the average originality score of flashbots/mev-boost in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "MEV_BOOST_D_R3",
+        "MEV_BOOST_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x60A002f728ad76A5Aaa3e5934C904De7a556343D",
+      "r2ParentOutcomeToken": "0xE2e783dF1cEEf703fF79C9611C6787e64f5bF30F",
+      "r2TokenSymbol": "FLAMEV",
+      "r2DownPool": "0xC1a29083DbFe969548E21ACdD7E3a67C3c2A5A80",
+      "r2UpPool": "0xdDf34fDA65ba7764f1d13e26742983022A98e69C",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.34409631342442903,
+      "rawUp": 0.6738329557199366,
+      "seedUp": 0.6738329557199366,
+      "seedDown": 0.3261670442800634,
+      "parentOutcome": 0,
+      "indexInBundle": 12,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 13,
+      "repo": "flashbots/mev-boost-relay",
+      "tokenCode": "FLASHBOTS_MEV_BOOST_RELAY",
+      "marketName": "What will be the average originality score of flashbots/mev-boost-relay in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "FLASHBOTS_MEV_BOOST_RELAY_D_R3",
+        "FLASHBOTS_MEV_BOOST_RELAY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xC624008EdcC1cD57f351BE1CD698112adA801C8a",
+      "r2ParentOutcomeToken": "0x1718D08F69eB1f7cb3C1a35C11d062E7c59526e6",
+      "r2TokenSymbol": "FLAME1",
+      "r2DownPool": "0x5c5331D682eB7F769436888cB54B503aeCd72Fac",
+      "r2UpPool": "0xd3dd8240F01D32376Bb52d4BE5E9192E4992CC21",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.33199926326903456,
+      "rawUp": 0.6728187441931035,
+      "seedUp": 0.6728187441931035,
+      "seedDown": 0.3271812558068965,
+      "parentOutcome": 0,
+      "indexInBundle": 13,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 14,
+      "repo": "ethereum/js-ethereum-cryptography",
+      "tokenCode": "JS_ETHEREUM_CRYPTOGRAPHY",
+      "marketName": "What will be the average originality score of ethereum/js-ethereum-cryptography in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "JS_ETHEREUM_CRYPTOGRAPHY_D_R3",
+        "JS_ETHEREUM_CRYPTOGRAPHY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x875D13eC10067f2aC2dB037ffbC2c312C183DB34",
+      "r2ParentOutcomeToken": "0xaa29671a2ACE31a9292Ea2Ae0cc7bD0CAf33134D",
+      "r2TokenSymbol": "JS-ETH",
+      "r2DownPool": "0xB36FfA45b45f7da94908d4643899F0022DB38fA5",
+      "r2UpPool": "0x10428f82B9E49F48C8906bd785ffA80d38dE11ac",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3228064256563245,
+      "rawUp": 0.660239673495217,
+      "seedUp": 0.660239673495217,
+      "seedDown": 0.33976032650478305,
+      "parentOutcome": 0,
+      "indexInBundle": 14,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 15,
+      "repo": "libp2p/libp2p",
+      "tokenCode": "LIBP2P",
+      "marketName": "What will be the average originality score of libp2p/libp2p in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LIBP2P_D_R3",
+        "LIBP2P_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xE245467480E269E0E9e62Fd2524E3104ACD68c34",
+      "r2ParentOutcomeToken": "0xbf260FFCb88A8034561FCa1139eA9625FBeC41D9",
+      "r2TokenSymbol": "LIBLIB",
+      "r2DownPool": "0xA5eCfbb915240a074B6689ABcA64AB08d463bd61",
+      "r2UpPool": "0x82b131AeA36f070b34573b0A6d60BDF119219F1b",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.33702247492749965,
+      "rawUp": 0.728028338009473,
+      "seedUp": 0.728028338009473,
+      "seedDown": 0.271971661990527,
+      "parentOutcome": 0,
+      "indexInBundle": 15,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 16,
+      "repo": "supranational/blst",
+      "tokenCode": "BLST",
+      "marketName": "What will be the average originality score of supranational/blst in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "BLST_D_R3",
+        "BLST_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xa62E347B4e78552ecb9b86BC10277df8497E08EC",
+      "r2ParentOutcomeToken": "0x515c1976CD033e04EE5f45Ed040ea14a78871476",
+      "r2TokenSymbol": "SUPBLS",
+      "r2DownPool": "0x702351740EF07D2dDdF6db507c3EDB41148C3e4e",
+      "r2UpPool": "0x1edBC559BCF8f00a89c6678BC20D2EF273aEE93f",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.26016985052974245,
+      "rawUp": 0.7407437409910793,
+      "seedUp": 0.7407437409910793,
+      "seedDown": 0.2592562590089207,
+      "parentOutcome": 0,
+      "indexInBundle": 16,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 17,
+      "repo": "wighawag/hardhat-deploy",
+      "tokenCode": "HARDHAT_DEPLOY",
+      "marketName": "What will be the average originality score of wighawag/hardhat-deploy in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HARDHAT_DEPLOY_D_R3",
+        "HARDHAT_DEPLOY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6f8b013A4E186D5133625750A0C5aF4682fE10E6",
+      "r2ParentOutcomeToken": "0xD563eB6dfC41d3F937609Da7983E26965B9C3c30",
+      "r2TokenSymbol": "WIGHAR",
+      "r2DownPool": "0xfE2e9a70c14e2cAd62717D675871Ac88D12ed858",
+      "r2UpPool": "0x409a1bFfB5F1341B6D565b6e5Bb2eD65f2F107A7",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.23278754855717007,
+      "rawUp": 0.7933935843639401,
+      "seedUp": 0.7933935843639401,
+      "seedDown": 0.20660641563605986,
+      "parentOutcome": 0,
+      "indexInBundle": 17,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 18,
+      "repo": "ethstaker/eth-docker",
+      "tokenCode": "ETH_DOCKER",
+      "marketName": "What will be the average originality score of ethstaker/eth-docker in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETH_DOCKER_D_R3",
+        "ETH_DOCKER_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x548AE98B416175d3a13360ceCC79503a7C0D9cDD",
+      "r2ParentOutcomeToken": "0xe41D8F2d49A23A8DF7C7b1519eF35e57D69Fa90E",
+      "r2TokenSymbol": "ETHETH",
+      "r2DownPool": "0xCf81563E2C745A8e3e3ec704Fe9d4a260a28f6D9",
+      "r2UpPool": "0xb5039426Ea492c64695cD04dc0e7bFEdBce3890C",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3428980053201489,
+      "rawUp": 0.6686737132574457,
+      "seedUp": 0.6686737132574457,
+      "seedDown": 0.33132628674255427,
+      "parentOutcome": 0,
+      "indexInBundle": 18,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 19,
+      "repo": "DefiLlama/DefiLlama-Adapters",
+      "tokenCode": "DEFILLAMA_ADAPTERS",
+      "marketName": "What will be the average originality score of DefiLlama/DefiLlama-Adapters in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "DEFILLAMA_ADAPTERS_D_R3",
+        "DEFILLAMA_ADAPTERS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x9B8B504949Fd0cc1FeBA6e61Ca3CE802edEA9d1e",
+      "r2ParentOutcomeToken": "0x345218E4BF18F1C3c498BB0cAc1303f3D8258968",
+      "r2TokenSymbol": "DEFDEF",
+      "r2DownPool": "0xbFD052398C55804b0Dd1C91a180fAcc471358d87",
+      "r2UpPool": "0xD44859F67d46F22aEBBb0329108E647ae5c614DC",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.29917260595754874,
+      "rawUp": 0.7112000151961393,
+      "seedUp": 0.7112000151961393,
+      "seedDown": 0.2887999848038607,
+      "parentOutcome": 0,
+      "indexInBundle": 19,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 20,
+      "repo": "DefiLlama/chainlist",
+      "tokenCode": "CHAINLIST",
+      "marketName": "What will be the average originality score of DefiLlama/chainlist in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "CHAINLIST_D_R3",
+        "CHAINLIST_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x16DE39b0e972d160c62B2b5F246e3de363175819",
+      "r2ParentOutcomeToken": "0x8282dB7Ac8458866a8b9304efa6c70dCf744C221",
+      "r2TokenSymbol": "DEFCHA",
+      "r2DownPool": "0x7738E1F90d1d863D54D010A3233d79A8F59b63DF",
+      "r2UpPool": "0x8aC88D24DF3ad333c1C23B450F9FECCe20eFD49A",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5970389107935475,
+      "rawUp": 0.40611533914016845,
+      "seedUp": 0.40611533914016845,
+      "seedDown": 0.5938846608598316,
+      "parentOutcome": 0,
+      "indexInBundle": 20,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 21,
+      "repo": "Certora/CertoraProver",
+      "tokenCode": "CERTORAPROVER",
+      "marketName": "What will be the average originality score of Certora/CertoraProver in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "CERTORAPROVER_D_R3",
+        "CERTORAPROVER_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x46ebAd092625c58A1B4084eF08c07c8dBbc4636B",
+      "r2ParentOutcomeToken": "0x7Cb20e7A88208F21c4B0D7D4A917030b484E44b9",
+      "r2TokenSymbol": "CERCER",
+      "r2DownPool": "0x94a3B4fb8eCbd4EF88e875017D80D1203fd1b3aA",
+      "r2UpPool": "0x7DF529717913F7052106F31F51c783773e9bD970",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.25280049285838924,
+      "rawUp": 0.7472826374563905,
+      "seedUp": 0.7472826374563905,
+      "seedDown": 0.25271736254360955,
+      "parentOutcome": 0,
+      "indexInBundle": 21,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 22,
+      "repo": "Plonky3/Plonky3",
+      "tokenCode": "PLONKY3",
+      "marketName": "What will be the average originality score of Plonky3/Plonky3 in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "PLONKY3_D_R3",
+        "PLONKY3_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x7d4ED01a6c92Bee878E9D11a3033C1b82e552047",
+      "r2ParentOutcomeToken": "0xA143A45CC1BA169Cb7190AcC1A1A625bdd3A45C1",
+      "r2TokenSymbol": "PLOPLO",
+      "r2DownPool": "0x7057c0480675551B018C27c4D7c4b7E8EfDc8548",
+      "r2UpPool": "0xfC229F49dd937bDF8A900D980F235cE48f0A9Fe2",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3004702229257153,
+      "rawUp": 0.7045809992090998,
+      "seedUp": 0.7045809992090998,
+      "seedDown": 0.2954190007909002,
+      "parentOutcome": 0,
+      "indexInBundle": 22,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 23,
+      "repo": "ChainSafe/bls",
+      "tokenCode": "BLS",
+      "marketName": "What will be the average originality score of ChainSafe/bls in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "BLS_D_R3",
+        "BLS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x42c07d6949dc17349B794CDA94C4Fc52D6B88992",
+      "r2ParentOutcomeToken": "0x389991B6153214b33b4494202d2804861954A366",
+      "r2TokenSymbol": "CHABLS",
+      "r2DownPool": "0x333cE0A5638a3E823Fc600C7E373d33C7e4725bB",
+      "r2UpPool": "0x5dFc8d1c205c72A543a8d1F26B738B2918925337",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3660726212139058,
+      "rawUp": 0.6340279475647334,
+      "seedUp": 0.6340279475647334,
+      "seedDown": 0.36597205243526665,
+      "parentOutcome": 0,
+      "indexInBundle": 23,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 24,
+      "repo": "intellij-solidity/intellij-solidity",
+      "tokenCode": "INTELLIJ_SOLIDITY",
+      "marketName": "What will be the average originality score of intellij-solidity/intellij-solidity in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "INTELLIJ_SOLIDITY_D_R3",
+        "INTELLIJ_SOLIDITY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x1F63c5d7f6A0b987E775bc9810C1BA8C4B5f074c",
+      "r2ParentOutcomeToken": "0x15CA5920288948989BD98d8773c73EEf20a3FFe9",
+      "r2TokenSymbol": "INTINT",
+      "r2DownPool": "0xFe9E3Dbea385CCb6174045a5a02Fb4343D5bD11E",
+      "r2UpPool": "0xb429Da8533aD3d9fa30f52cB9E45708aF2787395",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3324305308617033,
+      "rawUp": 0.67260049347773,
+      "seedUp": 0.67260049347773,
+      "seedDown": 0.32739950652227,
+      "parentOutcome": 0,
+      "indexInBundle": 24,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 25,
+      "repo": "dappnode/DAppNode",
+      "tokenCode": "DAPPNODE",
+      "marketName": "What will be the average originality score of dappnode/DAppNode in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "DAPPNODE_D_R3",
+        "DAPPNODE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x54e8105F4477BDda45ab1225c56082C2BDB9C189",
+      "r2ParentOutcomeToken": "0xCa41907b8f27844d8604faC85D1E58c3b73b641b",
+      "r2TokenSymbol": "DAPDAP",
+      "r2DownPool": "0xE0C8775C2942f26B0651fbC4567208f16A3D64BA",
+      "r2UpPool": "0x27825ebD3B2f23f5B8A8a832D2D0f9035700Ac20",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.496094684329301,
+      "rawUp": 0.4831749097118796,
+      "seedUp": 0.4831749097118796,
+      "seedDown": 0.5168250902881204,
+      "parentOutcome": 0,
+      "indexInBundle": 25,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 26,
+      "repo": "wealdtech/ethdo",
+      "tokenCode": "ETHDO",
+      "marketName": "What will be the average originality score of wealdtech/ethdo in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHDO_D_R3",
+        "ETHDO_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x317a4320A6A1acc17eF2242907e37B1Ee4ab9FD4",
+      "r2ParentOutcomeToken": "0xF20c9b8a9D21c5d259cE35eEC5B387BbE9b9Cd11",
+      "r2TokenSymbol": "WEAETH",
+      "r2DownPool": "0x39d932DBFd408e62f3d2F598b2004e231B560918",
+      "r2UpPool": "0x8023e5f854469069560b65790952cc6d43693b9D",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3473209619537466,
+      "rawUp": 0.6594760776264449,
+      "seedUp": 0.6594760776264449,
+      "seedDown": 0.3405239223735551,
+      "parentOutcome": 0,
+      "indexInBundle": 26,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 27,
+      "repo": "lambdaclass/lambdaworks",
+      "tokenCode": "LAMBDAWORKS",
+      "marketName": "What will be the average originality score of lambdaclass/lambdaworks in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LAMBDAWORKS_D_R3",
+        "LAMBDAWORKS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x818D0fd05eec53e83C422862Af82aBB968bC9E85",
+      "r2ParentOutcomeToken": "0x6b6619EE1C21E5726B949418a19B4E25016C7B1F",
+      "r2TokenSymbol": "LAMLAM",
+      "r2DownPool": "0xb2fFD49340da13b9D2B1FdDfd6adC177A5CED5F9",
+      "r2UpPool": "0xa8310fa4a8551408A6F2627c70b1d08550bcEA74",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3512152808658698,
+      "rawUp": 0.6471647829816639,
+      "seedUp": 0.6471647829816639,
+      "seedDown": 0.3528352170183361,
+      "parentOutcome": 0,
+      "indexInBundle": 27,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 28,
+      "repo": "smartcontracts/simple-optimism-node",
+      "tokenCode": "SIMPLE_OPTIMISM_NODE",
+      "marketName": "What will be the average originality score of smartcontracts/simple-optimism-node in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SIMPLE_OPTIMISM_NODE_D_R3",
+        "SIMPLE_OPTIMISM_NODE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6b22980B299be2edb32a18c483b5ee2d1E6fd878",
+      "r2ParentOutcomeToken": "0xb2A2C64BEF9882136b7f20187e8E932948EE2D84",
+      "r2TokenSymbol": "SMASIM",
+      "r2DownPool": "0x7c48c2250c21873d6330F0c3F9DfBa6A20ad75b4",
+      "r2UpPool": "0xE451a919CCEE9edd03479d0Ee1915eCC05bB7b0d",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3078619429240337,
+      "rawUp": 0.7078795311479673,
+      "seedUp": 0.7078795311479673,
+      "seedDown": 0.2921204688520327,
+      "parentOutcome": 0,
+      "indexInBundle": 28,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 29,
+      "repo": "skalenetwork/libBLS",
+      "tokenCode": "LIBBLS",
+      "marketName": "What will be the average originality score of skalenetwork/libBLS in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LIBBLS_D_R3",
+        "LIBBLS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x967b5Ae06f999E07Efb5CF24FDAC8071B0c52a7E",
+      "r2ParentOutcomeToken": "0x747028b6F48600cAE931CF9cf07347D3557a500a",
+      "r2TokenSymbol": "SKALIB",
+      "r2DownPool": "0x5dc7b4D7922b3596B698278560917a399878F49E",
+      "r2UpPool": "0xf7933cA86314D26458B82D1fbAaddd8C78f09665",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3309036474026456,
+      "rawUp": 0.7146237977302903,
+      "seedUp": 0.7146237977302903,
+      "seedDown": 0.2853762022697097,
+      "parentOutcome": 0,
+      "indexInBundle": 29,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 30,
+      "repo": "shazow/whatsabi",
+      "tokenCode": "WHATSABI",
+      "marketName": "What will be the average originality score of shazow/whatsabi in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "WHATSABI_D_R3",
+        "WHATSABI_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xa1C9a25CB7396C0D46e6A7f68Db0587260c4bdEb",
+      "r2ParentOutcomeToken": "0x6f7475F711dd7b997A81b8aA5c0A326FB7e82282",
+      "r2TokenSymbol": "SHAWHA",
+      "r2DownPool": "0xFfC0469Be4CBb62E40d7bf860374180D46F892C9",
+      "r2UpPool": "0x631a78A8982f905674Bf2Ce93a067Da786855c22",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.46635138722130715,
+      "rawUp": 0.5216984923603795,
+      "seedUp": 0.5216984923603795,
+      "seedDown": 0.47830150763962054,
+      "parentOutcome": 0,
+      "indexInBundle": 30,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 31,
+      "repo": "TrueBlocks/trueblocks-core",
+      "tokenCode": "TRUEBLOCKS_CORE",
+      "marketName": "What will be the average originality score of TrueBlocks/trueblocks-core in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "TRUEBLOCKS_CORE_D_R3",
+        "TRUEBLOCKS_CORE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x91d28997EBc221d0E3e3C086e7d5c45AbF303E28",
+      "r2ParentOutcomeToken": "0x6b935306f8f224588174ECb02391739B44568F9a",
+      "r2TokenSymbol": "TRUTRU",
+      "r2DownPool": "0x6580AE25599cA8976dfB891f5b4182B23DA5A585",
+      "r2UpPool": "0x3Fcc17a380a05DB2d3e11ed61EdfcFE541efc1aE",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3547626366224895,
+      "rawUp": 0.6505646573114103,
+      "seedUp": 0.6505646573114103,
+      "seedDown": 0.34943534268858967,
+      "parentOutcome": 0,
+      "indexInBundle": 31,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 32,
+      "repo": "EspressoSystems/jellyfish",
+      "tokenCode": "JELLYFISH",
+      "marketName": "What will be the average originality score of EspressoSystems/jellyfish in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "JELLYFISH_D_R3",
+        "JELLYFISH_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x3959F313fA7F849F965a7cEbd7317CD122B1a6B5",
+      "r2ParentOutcomeToken": "0xbF9Bc7Ba2914C5Ed61612F872E68d58e5190dB3e",
+      "r2TokenSymbol": "ESPJEL",
+      "r2DownPool": "0x7a93463397A34Ca9A8b285cF7Cd4592f541C750D",
+      "r2UpPool": "0xAbEc4C3e4Cfa235B412d2c6300B9CfEf4C16a1A3",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4915465273661044,
+      "rawUp": 0.5101344182403008,
+      "seedUp": 0.5101344182403008,
+      "seedDown": 0.4898655817596992,
+      "parentOutcome": 0,
+      "indexInBundle": 32,
+      "bundleTokenName": "ORIG_R3_A"
+    },
+    {
+      "r2ParentOutcome": 33,
+      "repo": "a16z/halmos",
+      "tokenCode": "HALMOS",
+      "marketName": "What will be the average originality score of a16z/halmos in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HALMOS_D_R3",
+        "HALMOS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x3360A8220CD9a2Bc30744C7E198f791d34528cf5",
+      "r2ParentOutcomeToken": "0x2b94999086F1576dC1060a2aF5C08D08605E3D0e",
+      "r2TokenSymbol": "A16HAL",
+      "r2DownPool": "0xE1D7fE63f8110811bC8B3907070808d758C7bcb0",
+      "r2UpPool": "0x36150b01Cca28661fbC9dA29216826Bd1407FBEf",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.28611241117858566,
+      "rawUp": 0.7124847403003183,
+      "seedUp": 0.7124847403003183,
+      "seedDown": 0.2875152596996817,
+      "parentOutcome": 1,
+      "indexInBundle": 0,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 34,
+      "repo": "succinctlabs/op-succinct",
+      "tokenCode": "OP_SUCCINCT",
+      "marketName": "What will be the average originality score of succinctlabs/op-succinct in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "OP_SUCCINCT_D_R3",
+        "OP_SUCCINCT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x813a729c2bC0E816f5D6bdB7027801Ba11769358",
+      "r2ParentOutcomeToken": "0xC90490794244c58598C5e19e1fFb458fE75D7cCf",
+      "r2TokenSymbol": "SUCOP-",
+      "r2DownPool": "0xD606B24144BC188D12177302Bd92CA0620551871",
+      "r2UpPool": "0x0c5c7a1105c6507d73A6C39962990da2583b8916",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5746899505591672,
+      "rawUp": 0.4272763978232889,
+      "seedUp": 0.4272763978232889,
+      "seedDown": 0.572723602176711,
+      "parentOutcome": 1,
+      "indexInBundle": 1,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 35,
+      "repo": "succinctlabs/sp1",
+      "tokenCode": "SP1",
+      "marketName": "What will be the average originality score of succinctlabs/sp1 in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SP1_D_R3",
+        "SP1_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x9Cf1b06BC00dF9f76c70573a4c691d6c43c8c877",
+      "r2ParentOutcomeToken": "0xe2562F96d7C43731e0FB3183bdE816391e26fAca",
+      "r2TokenSymbol": "SUCSP1",
+      "r2DownPool": "0x1a35e0a0fbc1188FC204B8483e628B5984DF8149",
+      "r2UpPool": "0x33bd55B7357Ffdc7c68b4A2d37d2C835f4B7469d",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4670384209006795,
+      "rawUp": 0.53562318484849,
+      "seedUp": 0.53562318484849,
+      "seedDown": 0.46437681515150997,
+      "parentOutcome": 1,
+      "indexInBundle": 2,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 36,
+      "repo": "otterscan/otterscan",
+      "tokenCode": "OTTERSCAN",
+      "marketName": "What will be the average originality score of otterscan/otterscan in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "OTTERSCAN_D_R3",
+        "OTTERSCAN_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x1459C289Fbd534A29EA2D8421B40212971A5Bff6",
+      "r2ParentOutcomeToken": "0xBF5F92EA5C9252624f8a5F3eA68Fa891BE2a38e7",
+      "r2TokenSymbol": "OTTOTT",
+      "r2DownPool": "0x5dEd4Ed5C8f18451edc5B36aAaB6826947649648",
+      "r2UpPool": "0xbBFDC81B780B61c8DF44e11dCd69C7AB06CB9874",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.29899616099746934,
+      "rawUp": 0.7078772749263726,
+      "seedUp": 0.7078772749263726,
+      "seedDown": 0.29212272507362735,
+      "parentOutcome": 1,
+      "indexInBundle": 3,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 37,
+      "repo": "lambdaclass/ethrex",
+      "tokenCode": "ETHREX",
+      "marketName": "What will be the average originality score of lambdaclass/ethrex in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHREX_D_R3",
+        "ETHREX_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x89dDE92C3103cCb85FB5C801555fFc7eEBE77b8c",
+      "r2ParentOutcomeToken": "0xe9545e0Bb4146F2E9Dc3dC448638e2550DC17AB8",
+      "r2TokenSymbol": "LAMETH",
+      "r2DownPool": "0xd3C98d1C7e386d3a6Cf761f8601b453e0745f715",
+      "r2UpPool": "0x777bB73d807E1c5B5C4F54c66CEB64A00b2db634",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3816464514330027,
+      "rawUp": 0.6072639992817648,
+      "seedUp": 0.6072639992817648,
+      "seedDown": 0.3927360007182352,
+      "parentOutcome": 1,
+      "indexInBundle": 4,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 38,
+      "repo": "NethermindEth/juno",
+      "tokenCode": "JUNO",
+      "marketName": "What will be the average originality score of NethermindEth/juno in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "JUNO_D_R3",
+        "JUNO_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x03F820388c02381EB0c84ae4f07c6926617018b4",
+      "r2ParentOutcomeToken": "0xB68a6316a6bb26519d2882e88Cd5d05a44840207",
+      "r2TokenSymbol": "NETJUN",
+      "r2DownPool": "0x0166e8085F01898f38EAd6905b6BB364e9D1776C",
+      "r2UpPool": "0xc98Be67814E2162aa02acf52e0931B6A37F5624C",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.45491325528368665,
+      "rawUp": 0.5554726335263195,
+      "seedUp": 0.5554726335263195,
+      "seedDown": 0.4445273664736805,
+      "parentOutcome": 1,
+      "indexInBundle": 5,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 39,
+      "repo": "Commit-Boost/commit-boost-client",
+      "tokenCode": "COMMIT_BOOST_CLIENT",
+      "marketName": "What will be the average originality score of Commit-Boost/commit-boost-client in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "COMMIT_BOOST_CLIENT_D_R3",
+        "COMMIT_BOOST_CLIENT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x4e7aa4062875AEc170c6e80D74D0AFa2f17A9b0c",
+      "r2ParentOutcomeToken": "0x8cF3692524dA7662EB6cA226f1d2D99C3AE51222",
+      "r2TokenSymbol": "COMCOM",
+      "r2DownPool": "0xB38145b124696D37cA631db093d1B260Eb315bb9",
+      "r2UpPool": "0x2dB4E8C925130187E44461B79D534f236a6aE3a7",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.31616045165259626,
+      "rawUp": 0.7018621557625448,
+      "seedUp": 0.7018621557625448,
+      "seedDown": 0.29813784423745515,
+      "parentOutcome": 1,
+      "indexInBundle": 6,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 40,
+      "repo": "Cyfrin/aderyn",
+      "tokenCode": "ADERYN",
+      "marketName": "What will be the average originality score of Cyfrin/aderyn in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ADERYN_D_R3",
+        "ADERYN_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x7719DbBf7844775aD197F3978362930AC3499368",
+      "r2ParentOutcomeToken": "0xd22F75E39CA88158d6db365Adb67995EF9A438E8",
+      "r2TokenSymbol": "CYFADE",
+      "r2DownPool": "0x8A603CD7C4F3A5c2B1E72de318fa8c6E6f477Cb9",
+      "r2UpPool": "0x0fd16BB39da8ce6465490026dd62261DA44a5384",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.27020503236422566,
+      "rawUp": 0.7346601809805579,
+      "seedUp": 0.7346601809805579,
+      "seedDown": 0.26533981901944215,
+      "parentOutcome": 1,
+      "indexInBundle": 7,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 41,
+      "repo": "0xMiden/miden-vm",
+      "tokenCode": "MIDEN_VM",
+      "marketName": "What will be the average originality score of 0xMiden/miden-vm in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "MIDEN_VM_D_R3",
+        "MIDEN_VM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xb29c2E2389ea9df276D466f92aab7eBA021bD2c2",
+      "r2ParentOutcomeToken": "0xeFD675b14f5D612D47Cb970dDa1c05D16f938274",
+      "r2TokenSymbol": "0XMMID",
+      "r2DownPool": "0x57BacFAeDEA55002752c05a437FAFC1E7C87a494",
+      "r2UpPool": "0x4106aAE239B0689AcDf16A0Dec26220D1983fC8b",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.38176428499656534,
+      "rawUp": 0.622838981573975,
+      "seedUp": 0.622838981573975,
+      "seedDown": 0.377161018426025,
+      "parentOutcome": 1,
+      "indexInBundle": 8,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 42,
+      "repo": "holiman/goevmlab",
+      "tokenCode": "GOEVMLAB",
+      "marketName": "What will be the average originality score of holiman/goevmlab in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "GOEVMLAB_D_R3",
+        "GOEVMLAB_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x88aCec70448373fCacAD1eA8cCfA0be55BDe832d",
+      "r2ParentOutcomeToken": "0x65fDf8c8D13cc1752ef52055f6a34b5E39E08329",
+      "r2TokenSymbol": "HOLGOE",
+      "r2DownPool": "0x1B3b4D2705cD67f1Ce6970Dc87CcbfC33624D22A",
+      "r2UpPool": "0xd0f1c60470CC8b5FD12513F1d72b45a70e82eBEc",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4904849982733658,
+      "rawUp": 0.509607675633367,
+      "seedUp": 0.509607675633367,
+      "seedDown": 0.49039232436663305,
+      "parentOutcome": 1,
+      "indexInBundle": 9,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 43,
+      "repo": "edb-rs/edb",
+      "tokenCode": "EDB",
+      "marketName": "What will be the average originality score of edb-rs/edb in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "EDB_D_R3",
+        "EDB_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xdfd774C06AD1F61F85CCebb8ee3e4F5c543f4eE3",
+      "r2ParentOutcomeToken": "0x88762Fac51E4a0e21515D1F553027B0C7eBCa02a",
+      "r2TokenSymbol": "EDBEDB",
+      "r2DownPool": "0xB2B1357637024E21Bd19f5332eF7ADbec07d221E",
+      "r2UpPool": "0x1ca7788Ca3abdcfb706EAe42348350f45f265d7b",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3724098333582202,
+      "rawUp": 0.6318072003217644,
+      "seedUp": 0.6318072003217644,
+      "seedDown": 0.3681927996782356,
+      "parentOutcome": 1,
+      "indexInBundle": 10,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 44,
+      "repo": "evmts/tevm-monorepo",
+      "tokenCode": "TEVM_MONOREPO",
+      "marketName": "What will be the average originality score of evmts/tevm-monorepo in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "TEVM_MONOREPO_D_R3",
+        "TEVM_MONOREPO_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x89b222848c4C3Ab4bEe254f0E1Ed790BaA0A011b",
+      "r2ParentOutcomeToken": "0x1A69091D692271adf2F5Eb9D085f538dFF6690bD",
+      "r2TokenSymbol": "EVMTEV",
+      "r2DownPool": "0xc82505f91340f7E0a6f8c3712aD5B80D5B0dB393",
+      "r2UpPool": "0x1b4B82229269A2806FA03b4E1c99c935FB61F9e4",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4637417310424513,
+      "rawUp": 0.5361959579713238,
+      "seedUp": 0.5361959579713238,
+      "seedDown": 0.4638040420286762,
+      "parentOutcome": 1,
+      "indexInBundle": 11,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 45,
+      "repo": "succinctlabs/rsp",
+      "tokenCode": "RSP",
+      "marketName": "What will be the average originality score of succinctlabs/rsp in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "RSP_D_R3",
+        "RSP_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xe0238aca82c429Fc509A4C8dE36E583b19a7D8AC",
+      "r2ParentOutcomeToken": "0x210cD9db12170cA711Fd8713F948D07f83551614",
+      "r2TokenSymbol": "SUCRSP",
+      "r2DownPool": "0x303B07DE0a6855952fb816Ec1472D657C0De3a0a",
+      "r2UpPool": "0x964CFEBd20F71D71438c867c7EfA207D05EE33dc",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.47718546386313715,
+      "rawUp": 0.5255736049767976,
+      "seedUp": 0.5255736049767976,
+      "seedDown": 0.4744263950232024,
+      "parentOutcome": 1,
+      "indexInBundle": 12,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 46,
+      "repo": "aestus-relay/mev-boost-relay",
+      "tokenCode": "AESTUS_MEV_BOOST_RELAY",
+      "marketName": "What will be the average originality score of aestus-relay/mev-boost-relay in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "AESTUS_MEV_BOOST_RELAY_D_R3",
+        "AESTUS_MEV_BOOST_RELAY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x99A45Ced155084F19f1395aC2EeE3CE473376571",
+      "r2ParentOutcomeToken": "0xd121Cfe40a176407a1c02eE3Fd5e7671108900a4",
+      "r2TokenSymbol": "AESMEV",
+      "r2DownPool": "0xdbc084366a7537FB91836c663A00de8eC092E921",
+      "r2UpPool": "0x698537eFE607C2904B484a23bfd9De679efE49BB",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5109063014408596,
+      "rawUp": 0.4794783000076228,
+      "seedUp": 0.4794783000076228,
+      "seedDown": 0.5205216999923772,
+      "parentOutcome": 1,
+      "indexInBundle": 13,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 47,
+      "repo": "OffchainLabs/stylus-sdk-rs",
+      "tokenCode": "STYLUS_SDK_RS",
+      "marketName": "What will be the average originality score of OffchainLabs/stylus-sdk-rs in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "STYLUS_SDK_RS_D_R3",
+        "STYLUS_SDK_RS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xbEC377Da983dFC82596D289f1Ed73b7b94f5d9e3",
+      "r2ParentOutcomeToken": "0x0023BfC70dfFB2b696E9FA6c1287A721DDed22E7",
+      "r2TokenSymbol": "OFFSTY",
+      "r2DownPool": "0x55209697c8E7946EE5c8ce09B1EDa264eE577593",
+      "r2UpPool": "0x498B125f2239970705524F9fddaF165180eeDccb",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4250281881027829,
+      "rawUp": 0.5514542999504762,
+      "seedUp": 0.5514542999504762,
+      "seedDown": 0.44854570004952377,
+      "parentOutcome": 1,
+      "indexInBundle": 14,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 48,
+      "repo": "ethstaker/ethstaker-deposit-cli",
+      "tokenCode": "ETHSTAKER_DEPOSIT_CLI",
+      "marketName": "What will be the average originality score of ethstaker/ethstaker-deposit-cli in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHSTAKER_DEPOSIT_CLI_D_R3",
+        "ETHSTAKER_DEPOSIT_CLI_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x90D03861c9B697E6cf8556B0e10B1e835A1ec2fC",
+      "r2ParentOutcomeToken": "0xf518E6407A954922C825C94D2f0Fb88Fcad30Fe8",
+      "r2TokenSymbol": "ETHET1",
+      "r2DownPool": "0x4529ae1C0E5DA26d9D6D1aFe80Df79191f8977F8",
+      "r2UpPool": "0xcEd62C99E0Aa449bEBc2315eF105b167E0647b4e",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.30720969453217334,
+      "rawUp": 0.699646872088883,
+      "seedUp": 0.699646872088883,
+      "seedDown": 0.300353127911117,
+      "parentOutcome": 1,
+      "indexInBundle": 15,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 49,
+      "repo": "dl-solarity/solidity-lib",
+      "tokenCode": "SOLIDITY_LIB",
+      "marketName": "What will be the average originality score of dl-solarity/solidity-lib in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SOLIDITY_LIB_D_R3",
+        "SOLIDITY_LIB_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xE3a22A0F9D259EE948C29FF1Da002b609b4AC56F",
+      "r2ParentOutcomeToken": "0x130CB4017FDF793C6cBaCaf2Df9d08979E85c5fD",
+      "r2TokenSymbol": "DL-SOL",
+      "r2DownPool": "0xA0A8660e912F236F5A71056F930f566685737B67",
+      "r2UpPool": "0x6b689F5000b50A799629ca56EFaBbFF7176db6Ca",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2664287065335758,
+      "rawUp": 0.7425031512741568,
+      "seedUp": 0.7425031512741568,
+      "seedDown": 0.2574968487258432,
+      "parentOutcome": 1,
+      "indexInBundle": 16,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 50,
+      "repo": "risc0/risc0-ethereum",
+      "tokenCode": "RISC0_ETHEREUM",
+      "marketName": "What will be the average originality score of risc0/risc0-ethereum in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "RISC0_ETHEREUM_D_R3",
+        "RISC0_ETHEREUM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xcFA27ea6334a8398B2e52f4760F3e16c4BE04f94",
+      "r2ParentOutcomeToken": "0x7e92c061E742440553A7c7d2879dBfeB2a7B2e2A",
+      "r2TokenSymbol": "RISRIS",
+      "r2DownPool": "0xA582A6A7465A5804684fA52E335df86B29ac42C7",
+      "r2UpPool": "0xDa454D44191e9b0D56D87e162172FB5028a35fAf",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4778320238223892,
+      "rawUp": 0.5255505152377619,
+      "seedUp": 0.5255505152377619,
+      "seedDown": 0.47444948476223814,
+      "parentOutcome": 1,
+      "indexInBundle": 17,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 51,
+      "repo": "powdr-labs/powdr",
+      "tokenCode": "POWDR",
+      "marketName": "What will be the average originality score of powdr-labs/powdr in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "POWDR_D_R3",
+        "POWDR_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x3B628743d43B508c9D05f4a8FF1F9E6e56C9fFC3",
+      "r2ParentOutcomeToken": "0x868bcDdc60b0714A42cb4DA882AeDD77aBDe4870",
+      "r2TokenSymbol": "POWPOW",
+      "r2DownPool": "0x8b1291Cb630629F7aDf40322Eaff519Fc7Cae488",
+      "r2UpPool": "0xE065cEe2410E675c6f95bbeC6538E6777bef7f02",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.31348336337024435,
+      "rawUp": 0.6903810181903303,
+      "seedUp": 0.6903810181903303,
+      "seedDown": 0.30961898180966974,
+      "parentOutcome": 1,
+      "indexInBundle": 18,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 52,
+      "repo": "axiom-crypto/snark-verifier",
+      "tokenCode": "SNARK_VERIFIER",
+      "marketName": "What will be the average originality score of axiom-crypto/snark-verifier in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SNARK_VERIFIER_D_R3",
+        "SNARK_VERIFIER_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xdb166d3495e143B9Da0E4d9234474183BABC861e",
+      "r2ParentOutcomeToken": "0xeA9f72aD2F7c22309975a72Fa551DFA89b3E0F59",
+      "r2TokenSymbol": "AXISNA",
+      "r2DownPool": "0x14e9725EfCeA37F0957835ED01b2159810823bc6",
+      "r2UpPool": "0x23c222CDD9F5efc15c6A256323D3d208c0374d7E",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3629217661198274,
+      "rawUp": 0.6413703512431828,
+      "seedUp": 0.6413703512431828,
+      "seedDown": 0.35862964875681724,
+      "parentOutcome": 1,
+      "indexInBundle": 19,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 53,
+      "repo": "swiss-knife-xyz/swiss-knife",
+      "tokenCode": "SWISS_KNIFE",
+      "marketName": "What will be the average originality score of swiss-knife-xyz/swiss-knife in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SWISS_KNIFE_D_R3",
+        "SWISS_KNIFE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x2Cc6BEBee9F8BC52F85aaDbc129fA2D594A315BC",
+      "r2ParentOutcomeToken": "0x7eF11FCD318B5115b1bF25194df2e2db0965cCBB",
+      "r2TokenSymbol": "SWISWI",
+      "r2DownPool": "0xcf53EC061977497F6DEa28098A03b84A5EB7cFe6",
+      "r2UpPool": "0x952C77C9E9A4dA5f5fd536EC608d05b5686a7FF2",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.42525267719874804,
+      "rawUp": 0.5787683970616949,
+      "seedUp": 0.5787683970616949,
+      "seedDown": 0.4212316029383051,
+      "parentOutcome": 1,
+      "indexInBundle": 20,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 54,
+      "repo": "a16z/helios",
+      "tokenCode": "HELIOS",
+      "marketName": "What will be the average originality score of a16z/helios in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HELIOS_D_R3",
+        "HELIOS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x229B0E371c07a85eaA794C1E352E9e96fE4924A5",
+      "r2ParentOutcomeToken": "0xc8E7358e3c5AF21264261a490df60027d8417310",
+      "r2TokenSymbol": "A16HEL",
+      "r2DownPool": "0x31927f042e532566d43cC5fec7174e3b25216562",
+      "r2UpPool": "0xC7221806b80ca56551F90c50A42A0529D733064c",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4680952301121656,
+      "rawUp": 0.5335894174860245,
+      "seedUp": 0.5335894174860245,
+      "seedDown": 0.4664105825139755,
+      "parentOutcome": 1,
+      "indexInBundle": 21,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 55,
+      "repo": "alloy-rs/alloy",
+      "tokenCode": "ALLOY",
+      "marketName": "What will be the average originality score of alloy-rs/alloy in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ALLOY_D_R3",
+        "ALLOY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xb1EF31eb7cd2785a9bF069E7A72D63505468723f",
+      "r2ParentOutcomeToken": "0xE97d84838c407eCd06fa5E1FE431306A93430bFA",
+      "r2TokenSymbol": "ALLALL",
+      "r2DownPool": "0x34A2d0F5B50dEb3F8b67b8f4Eb4D794015711DdD",
+      "r2UpPool": "0xABF14552e771730c763d16025c35C2c88AB62b66",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.44057513426299044,
+      "rawUp": 0.5609149534823592,
+      "seedUp": 0.5609149534823592,
+      "seedDown": 0.4390850465176408,
+      "parentOutcome": 1,
+      "indexInBundle": 22,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 56,
+      "repo": "apeworx/ape",
+      "tokenCode": "APE",
+      "marketName": "What will be the average originality score of apeworx/ape in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "APE_D_R3",
+        "APE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x95aBEF17Eb2E9667c28C9134763925c068ac2328",
+      "r2ParentOutcomeToken": "0x2Bb9B77097448f9B35B9b2056A053482f9ebCA96",
+      "r2TokenSymbol": "APEAPE",
+      "r2DownPool": "0x660Ec714Cb87216067eD4648c6592D296050d1C9",
+      "r2UpPool": "0x28663580A69202B2Ce9459c77Fd534Abd57984E5",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.32287509449752494,
+      "rawUp": 0.6817142484666461,
+      "seedUp": 0.6817142484666461,
+      "seedDown": 0.3182857515333539,
+      "parentOutcome": 1,
+      "indexInBundle": 23,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 57,
+      "repo": "chainsafe/lodestar",
+      "tokenCode": "LODESTAR",
+      "marketName": "What will be the average originality score of chainsafe/lodestar in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LODESTAR_D_R3",
+        "LODESTAR_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xE5cd3FeAF7e9ccf5894FdEFCD8E8e3A8CA2f5229",
+      "r2ParentOutcomeToken": "0xb1810A29EB29753682e02305D4B2680471D2e1C5",
+      "r2TokenSymbol": "CHALOD",
+      "r2DownPool": "0xC2d9186e954dd86827f0Aba7f0921dc478fc60A4",
+      "r2UpPool": "0x6d15B1d7D3EcfA456CcCbAfbD9e87e4c64e66D32",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3250778228956176,
+      "rawUp": 0.6749978596156725,
+      "seedUp": 0.6749978596156725,
+      "seedDown": 0.3250021403843275,
+      "parentOutcome": 1,
+      "indexInBundle": 24,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 58,
+      "repo": "consensys/teku",
+      "tokenCode": "TEKU",
+      "marketName": "What will be the average originality score of consensys/teku in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "TEKU_D_R3",
+        "TEKU_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x12B5C022E061f1CcED57B644179DA185A165cd4b",
+      "r2ParentOutcomeToken": "0x3A744655B3DC5F04CC418ae69296A06159BE9F24",
+      "r2TokenSymbol": "CONTEK",
+      "r2DownPool": "0x52C46B7De0293fca48ab69Fb25630f0881eF0Df8",
+      "r2UpPool": "0x3976E5e0394DFa893Ed7BAcc90e3528946A3f8E0",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.36330994939760153,
+      "rawUp": 0.6572821109360542,
+      "seedUp": 0.6572821109360542,
+      "seedDown": 0.34271788906394585,
+      "parentOutcome": 1,
+      "indexInBundle": 25,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 59,
+      "repo": "erigontech/erigon",
+      "tokenCode": "ERIGON",
+      "marketName": "What will be the average originality score of erigontech/erigon in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ERIGON_D_R3",
+        "ERIGON_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x5b3CbF5A4d5A2b0C42230c298C81E1E88C52e91B",
+      "r2ParentOutcomeToken": "0xd459AEa39b96521D4f550730ef6Ec4A77735B44D",
+      "r2TokenSymbol": "ERIERI",
+      "r2DownPool": "0xeA2910eBE6E209E122990de2Dc4d634E1D5C3cf2",
+      "r2UpPool": "0x87D2a12B108E65486818Fb8cC24Ccce86F67362F",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.25379126264001006,
+      "rawUp": 0.7523257678726114,
+      "seedUp": 0.7523257678726114,
+      "seedDown": 0.2476742321273886,
+      "parentOutcome": 1,
+      "indexInBundle": 26,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 60,
+      "repo": "eth-infinitism/account-abstraction",
+      "tokenCode": "ACCOUNT_ABSTRACTION",
+      "marketName": "What will be the average originality score of eth-infinitism/account-abstraction in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ACCOUNT_ABSTRACTION_D_R3",
+        "ACCOUNT_ABSTRACTION_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xfa93413296A5dC1c55034dF48e7E31dFAFC8225A",
+      "r2ParentOutcomeToken": "0xeE43393EdFD8203a68954b40c1d515D78BA4deC1",
+      "r2TokenSymbol": "ETHACC",
+      "r2DownPool": "0x1e391A6d386CDCC6Ce880AE10051F3934150624b",
+      "r2UpPool": "0x57D344Ad29EA1bc956E57678996c4B743f5AA3C9",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2657163196023295,
+      "rawUp": 0.7391280417862542,
+      "seedUp": 0.7391280417862542,
+      "seedDown": 0.26087195821374576,
+      "parentOutcome": 1,
+      "indexInBundle": 27,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 61,
+      "repo": "ethereum-lists/chains",
+      "tokenCode": "CHAINS",
+      "marketName": "What will be the average originality score of ethereum-lists/chains in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "CHAINS_D_R3",
+        "CHAINS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xDAa6a6Dec1391cEa3296A87E28D45011d5e6606d",
+      "r2ParentOutcomeToken": "0x90927F16cCB17181b20891ab2AF789b4b6B7E1cD",
+      "r2TokenSymbol": "ETHCHA",
+      "r2DownPool": "0x35d34fb74c78D7516319aa35f75e056aD0aF151E",
+      "r2UpPool": "0x6a7E0Da06aC19304884d114B7316A025dbC45506",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.37963019066850634,
+      "rawUp": 0.6272066347030791,
+      "seedUp": 0.6272066347030791,
+      "seedDown": 0.37279336529692086,
+      "parentOutcome": 1,
+      "indexInBundle": 28,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 62,
+      "repo": "ethereum/consensus-specs",
+      "tokenCode": "CONSENSUS_SPECS",
+      "marketName": "What will be the average originality score of ethereum/consensus-specs in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "CONSENSUS_SPECS_D_R3",
+        "CONSENSUS_SPECS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x949e88444afe7D0c76CE744248F4EED19C9D978B",
+      "r2ParentOutcomeToken": "0x3524FF7E02703eE066dAF9B3EEb81D0B48729808",
+      "r2TokenSymbol": "CONSEN",
+      "r2DownPool": "0x797a5aeBc8F1eF171CE988692153f6eBCeD8405e",
+      "r2UpPool": "0xa0f20eBBD3FaD304c6B247d14fF96F46354638d9",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4544736190629017,
+      "rawUp": 0.510896049725495,
+      "seedUp": 0.510896049725495,
+      "seedDown": 0.48910395027450504,
+      "parentOutcome": 1,
+      "indexInBundle": 29,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 63,
+      "repo": "ethereum/eips",
+      "tokenCode": "EIPS",
+      "marketName": "What will be the average originality score of ethereum/eips in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "EIPS_D_R3",
+        "EIPS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xe9332e982b38Bd6fc330F06304E982DEE367E42C",
+      "r2ParentOutcomeToken": "0xe5D0a3CB116D9C4d3f3161556E6e3614bc21Adab",
+      "r2TokenSymbol": "EIPS",
+      "r2DownPool": "0x9a901799730Db17a17641eC73d564de1af264873",
+      "r2UpPool": "0x4193F0259d7bdB6dcDAC84F9634a85BE6953E95d",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.5181836889283502,
+      "rawUp": 0.4961618276962182,
+      "seedUp": 0.4961618276962182,
+      "seedDown": 0.5038381723037818,
+      "parentOutcome": 1,
+      "indexInBundle": 30,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 64,
+      "repo": "ipsilon/evmone",
+      "tokenCode": "EVMONE",
+      "marketName": "What will be the average originality score of ipsilon/evmone in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "EVMONE_D_R3",
+        "EVMONE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xFd8056A2deC02212Ee42d091163c31ca1081249d",
+      "r2ParentOutcomeToken": "0x84703f0A25bAba59CbF05081Bd41B3c5c1211f11",
+      "r2TokenSymbol": "IPSEVM",
+      "r2DownPool": "0xaFdFeea8162f1d19B3cE85850611552915A38136",
+      "r2UpPool": "0xc8997e44F798A2D3556b969f0cFAd372B2d62F7C",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.32352030699639617,
+      "rawUp": 0.6806290773262236,
+      "seedUp": 0.6806290773262236,
+      "seedDown": 0.3193709226737764,
+      "parentOutcome": 1,
+      "indexInBundle": 31,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 65,
+      "repo": "ethereum/execution-apis",
+      "tokenCode": "EXECUTION_APIS",
+      "marketName": "What will be the average originality score of ethereum/execution-apis in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "EXECUTION_APIS_D_R3",
+        "EXECUTION_APIS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xb53ad3ee0bB2CcE46BaE867BfA1314273278a458",
+      "r2ParentOutcomeToken": "0x054D20B8439EFB43847cdd6B4Bf0E9324ec09028",
+      "r2TokenSymbol": "EXECUT",
+      "r2DownPool": "0xaa4fc120bC5f0569F8a373ED288F0fCF0733BEc7",
+      "r2UpPool": "0xB36ba653f365F6c805802Bddc893091Ec1e9F4e5",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.43810756285545105,
+      "rawUp": 0.5389468183228981,
+      "seedUp": 0.5389468183228981,
+      "seedDown": 0.46105318167710185,
+      "parentOutcome": 1,
+      "indexInBundle": 32,
+      "bundleTokenName": "ORIG_R3_B"
+    },
+    {
+      "r2ParentOutcome": 66,
+      "repo": "argotorg/fe",
+      "tokenCode": "FE",
+      "marketName": "What will be the average originality score of argotorg/fe in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "FE_D_R3",
+        "FE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xc0172d4F5F17968c0BE81440Ca87831C96C5BFAB",
+      "r2ParentOutcomeToken": "0x9C3016184c2Df95D67d84611097e2E3Bf8bAF26b",
+      "r2TokenSymbol": "FE",
+      "r2DownPool": "0x1BF0C94075e35cCCF93Ea5794ffa55d84401CF0E",
+      "r2UpPool": "0x3DBf5674835F8576C91Cc2772eEFA1455fB60F1e",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.38860833284852403,
+      "rawUp": 0.6116392536687775,
+      "seedUp": 0.6116392536687775,
+      "seedDown": 0.38836074633122253,
+      "parentOutcome": 2,
+      "indexInBundle": 0,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 67,
+      "repo": "ethereum/go-ethereum",
+      "tokenCode": "GO_ETHEREUM",
+      "marketName": "What will be the average originality score of ethereum/go-ethereum in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "GO_ETHEREUM_D_R3",
+        "GO_ETHEREUM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x5532EDD83fA85a5058699c38BF3071246Ddc08B7",
+      "r2ParentOutcomeToken": "0xe82f8F284f63CB109618e458e9fFD632a933F1D9",
+      "r2TokenSymbol": "GO-ETH",
+      "r2DownPool": "0x72Ed1268b17ab9a9e8007dDdf7eFe8b341E0ad6c",
+      "r2UpPool": "0x8dc234e67C3880C07aDb42789aD7a3535d5909C3",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.20847656914203172,
+      "rawUp": 0.8035620164182072,
+      "seedUp": 0.8035620164182072,
+      "seedDown": 0.19643798358179276,
+      "parentOutcome": 2,
+      "indexInBundle": 1,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 68,
+      "repo": "remix-project-org/remix-project",
+      "tokenCode": "REMIX_PROJECT",
+      "marketName": "What will be the average originality score of remix-project-org/remix-project in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "REMIX_PROJECT_D_R3",
+        "REMIX_PROJECT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x65A2BEfA680EF9474285DbaB98A10cD2d98DC5f3",
+      "r2ParentOutcomeToken": "0x2dC28a1Bf46ECE6676cf3C5c1a86422d12fc5927",
+      "r2TokenSymbol": "REMREM",
+      "r2DownPool": "0x7B4DF35D132577a400fc5B5975FAb4C6806c256a",
+      "r2UpPool": "0xCB73fEd6bE9ce993C5396e280cA44575DfB0F4D5",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2956955734321562,
+      "rawUp": 0.7133259227656126,
+      "seedUp": 0.7133259227656126,
+      "seedDown": 0.2866740772343874,
+      "parentOutcome": 2,
+      "indexInBundle": 2,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 69,
+      "repo": "argotorg/solidity",
+      "tokenCode": "SOLIDITY",
+      "marketName": "What will be the average originality score of argotorg/solidity in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SOLIDITY_D_R3",
+        "SOLIDITY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x19D2388573b514FB6cA82c080D5987759b85825c",
+      "r2ParentOutcomeToken": "0x3aF58D43504997aeD0b0dFe3B1F8D0d59136B738",
+      "r2TokenSymbol": "SOLIDI",
+      "r2DownPool": "0xd001870eF1056582F779da4A6cF752E9D9688B3C",
+      "r2UpPool": "0xA46d1f180679443d658A750B7550Ff7028A516e1",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.21072992727724213,
+      "rawUp": 0.796745709935843,
+      "seedUp": 0.796745709935843,
+      "seedDown": 0.20325429006415696,
+      "parentOutcome": 2,
+      "indexInBundle": 3,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 70,
+      "repo": "argotorg/sourcify",
+      "tokenCode": "SOURCIFY",
+      "marketName": "What will be the average originality score of argotorg/sourcify in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SOURCIFY_D_R3",
+        "SOURCIFY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xfdce8B1ABf12B1F46f60c1Fe471475Eb4abdd2E9",
+      "r2ParentOutcomeToken": "0x798ddB15AB55E22f7e42f162B8B5813C01c44639",
+      "r2TokenSymbol": "SOURCI",
+      "r2DownPool": "0xC0987FAd1A0348A6B1e4a688852b31C54F4283Fb",
+      "r2UpPool": "0x5824B584673ADec0675582700DFB48dC7775106c",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2624351717234136,
+      "rawUp": 0.7436253387019213,
+      "seedUp": 0.7436253387019213,
+      "seedDown": 0.25637466129807873,
+      "parentOutcome": 2,
+      "indexInBundle": 4,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 71,
+      "repo": "ethereum/web3.py",
+      "tokenCode": "WEB3_PY",
+      "marketName": "What will be the average originality score of ethereum/web3.py in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "WEB3_PY_D_R3",
+        "WEB3_PY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x7889247bfa964185f4629C7b2C423817263D57cE",
+      "r2ParentOutcomeToken": "0x22A4abaad86efe2D4AA5F87ffB3D8348d8baE8Eb",
+      "r2TokenSymbol": "WEB3.P",
+      "r2DownPool": "0xE87b55548523a2A35D8b7680ACB391265923BB4B",
+      "r2UpPool": "0xB41d1ca05af2e6c0d1A4Da2C2acbb7Ce0DCf1847",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2152874547393168,
+      "rawUp": 0.8042684992731316,
+      "seedUp": 0.8042684992731316,
+      "seedDown": 0.1957315007268684,
+      "parentOutcome": 2,
+      "indexInBundle": 5,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 72,
+      "repo": "ethers-io/ethers.js",
+      "tokenCode": "ETHERS_JS",
+      "marketName": "What will be the average originality score of ethers-io/ethers.js in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHERS_JS_D_R3",
+        "ETHERS_JS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xa2EC3ca390b60b9A00f4470D3a97E94b18CF56Ff",
+      "r2ParentOutcomeToken": "0x3F7e85795E9524EfC5Ce3C445452e6688D566CC2",
+      "r2TokenSymbol": "ETHET2",
+      "r2DownPool": "0xEe14E4664a8ebCDeC8ab3d7c76e96B461B332ab5",
+      "r2UpPool": "0x1cC4890A950CBde934De1991eD3Ee5068d1187D3",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.36759334831282653,
+      "rawUp": 0.6360886420182192,
+      "seedUp": 0.6360886420182192,
+      "seedDown": 0.36391135798178076,
+      "parentOutcome": 2,
+      "indexInBundle": 6,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 73,
+      "repo": "foundry-rs/foundry",
+      "tokenCode": "FOUNDRY",
+      "marketName": "What will be the average originality score of foundry-rs/foundry in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "FOUNDRY_D_R3",
+        "FOUNDRY_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xFD7dF08023FFDd98392b6fC16cB779d374C64FE5",
+      "r2ParentOutcomeToken": "0xc52b64D94ADCd80993161903E89d901c0260cbeC",
+      "r2TokenSymbol": "FOUFOU",
+      "r2DownPool": "0x0A94c783a47e41a77437E542d797F37643B5923A",
+      "r2UpPool": "0x9916A2fb41231d14E5692dec4Ea9c25E9cbE0205",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.26349635898469015,
+      "rawUp": 0.7404769867997482,
+      "seedUp": 0.7404769867997482,
+      "seedDown": 0.25952301320025184,
+      "parentOutcome": 2,
+      "indexInBundle": 7,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 74,
+      "repo": "grandinetech/grandine",
+      "tokenCode": "GRANDINE",
+      "marketName": "What will be the average originality score of grandinetech/grandine in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "GRANDINE_D_R3",
+        "GRANDINE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x5Cb802d9f0c0ba05436215F2D44633c0491FAbeb",
+      "r2ParentOutcomeToken": "0xE2cDAB27380dc1dE4D3b592C2BF205507f0AEc51",
+      "r2TokenSymbol": "GRAGRA",
+      "r2DownPool": "0x5B390010381E05BB7d003d71Dd595dC86e80c84d",
+      "r2UpPool": "0x429590415aED499b0a5cC120B700E719B10e90f6",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.34353959044010357,
+      "rawUp": 0.6624233352340563,
+      "seedUp": 0.6624233352340563,
+      "seedDown": 0.3375766647659437,
+      "parentOutcome": 2,
+      "indexInBundle": 8,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 75,
+      "repo": "hyperledger-web3j/web3j",
+      "tokenCode": "HYPERLEDGER_WEB3J",
+      "marketName": "What will be the average originality score of hyperledger-web3j/web3j in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HYPERLEDGER_WEB3J_D_R3",
+        "HYPERLEDGER_WEB3J_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xCb3bf78d27FCcE537D60bf02Eb149f89ECD68C7D",
+      "r2ParentOutcomeToken": "0x40058E9C7823bb55F47EA625C4806B6cF834582e",
+      "r2TokenSymbol": "HYPWEB",
+      "r2DownPool": "0x4223b1628907d6892B03dF671ba0E956739cB794",
+      "r2UpPool": "0xa7d13f8E80cdf8315f56090197A6600560218efc",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.29706878182002544,
+      "rawUp": 0.7065674183627421,
+      "seedUp": 0.7065674183627421,
+      "seedDown": 0.29343258163725794,
+      "parentOutcome": 2,
+      "indexInBundle": 9,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 76,
+      "repo": "hyperledger/besu",
+      "tokenCode": "BESU",
+      "marketName": "What will be the average originality score of hyperledger/besu in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "BESU_D_R3",
+        "BESU_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xb69725F2851e2bFf7120e0aA5B18aD8cB3b1f613",
+      "r2ParentOutcomeToken": "0xD5e5C3bC5880A722da85DBd4cA2Ee7470216F743",
+      "r2TokenSymbol": "HYPBES",
+      "r2DownPool": "0x97082D78baCAc239843C01c113FC4a216a871255",
+      "r2UpPool": "0xee5C1DbD299eD21d8b9B1cdf3a2CCF9d30c7248B",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.45265565275279684,
+      "rawUp": 0.5488631801024737,
+      "seedUp": 0.5488631801024737,
+      "seedDown": 0.4511368198975263,
+      "parentOutcome": 2,
+      "indexInBundle": 10,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 77,
+      "repo": "nethereum/nethereum",
+      "tokenCode": "NETHEREUM",
+      "marketName": "What will be the average originality score of nethereum/nethereum in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "NETHEREUM_D_R3",
+        "NETHEREUM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x9BC2c971D1Dc44eeA4d14d2d65fc9478dA811F6a",
+      "r2ParentOutcomeToken": "0x01724bFDE51826E7656A4387EEA1FE4f1BA1C0bA",
+      "r2TokenSymbol": "NETNET",
+      "r2DownPool": "0x6c5873E3A19b1151D8ca731027F549F24bBCC92D",
+      "r2UpPool": "0xC91C32e332FB91A8C1AC422B916667F4a0d9D0B7",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3582546257995771,
+      "rawUp": 0.6463718597211491,
+      "seedUp": 0.6463718597211491,
+      "seedDown": 0.3536281402788509,
+      "parentOutcome": 2,
+      "indexInBundle": 11,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 78,
+      "repo": "nethermindeth/nethermind",
+      "tokenCode": "NETHERMIND",
+      "marketName": "What will be the average originality score of nethermindeth/nethermind in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "NETHERMIND_D_R3",
+        "NETHERMIND_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x89B82E03409175BE4BD35664cE4bDeCCf4fFF0b1",
+      "r2ParentOutcomeToken": "0x5d479dfCfe90ac4567F33b9665e1F913C14c21c3",
+      "r2TokenSymbol": "NETNE1",
+      "r2DownPool": "0xffA24881f26941a3304C10A1a7a3EE880f86c944",
+      "r2UpPool": "0x2375Be0De4c6e01DEad741151B8B9D0D032aD402",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3275055405608277,
+      "rawUp": 0.6781546552931023,
+      "seedUp": 0.6781546552931023,
+      "seedDown": 0.32184534470689774,
+      "parentOutcome": 2,
+      "indexInBundle": 12,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 79,
+      "repo": "nomicfoundation/hardhat",
+      "tokenCode": "HARDHAT",
+      "marketName": "What will be the average originality score of nomicfoundation/hardhat in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HARDHAT_D_R3",
+        "HARDHAT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x0a484B5c6FD3cBF1B28ab70Ab7614207a9b35846",
+      "r2ParentOutcomeToken": "0xc556B2398428595333E642825F839108063F392a",
+      "r2TokenSymbol": "NOMHAR",
+      "r2DownPool": "0x1268876F4D18Ff280f888ddb698b18D1E8d1BDc9",
+      "r2UpPool": "0xA446835de23213c0454d78f85D45394Aa5287397",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.41778910633684885,
+      "rawUp": 0.576041967279325,
+      "seedUp": 0.576041967279325,
+      "seedDown": 0.423958032720675,
+      "parentOutcome": 2,
+      "indexInBundle": 13,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 80,
+      "repo": "openzeppelin/openzeppelin-contracts",
+      "tokenCode": "OPENZEPPELIN_CONTRACTS",
+      "marketName": "What will be the average originality score of openzeppelin/openzeppelin-contracts in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "OPENZEPPELIN_CONTRACTS_D_R3",
+        "OPENZEPPELIN_CONTRACTS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xbc9074324E88811f3A137d8BB68D685E724CBCf0",
+      "r2ParentOutcomeToken": "0x2079b45908E7892535591281b7d0Ec267b10130C",
+      "r2TokenSymbol": "OPEOPE",
+      "r2DownPool": "0x781F0da4C39143c1cfA44499F3c838edC16dec0C",
+      "r2UpPool": "0x5B3876891457018eb16c8b4DF99dAA9453510A27",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.25017801495928715,
+      "rawUp": 0.7785196156379461,
+      "seedUp": 0.7785196156379461,
+      "seedDown": 0.22148038436205386,
+      "parentOutcome": 2,
+      "indexInBundle": 14,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 81,
+      "repo": "paradigmxyz/reth",
+      "tokenCode": "RETH",
+      "marketName": "What will be the average originality score of paradigmxyz/reth in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "RETH_D_R3",
+        "RETH_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xb411f385CC2962770dff92058841CcA36530E5DB",
+      "r2ParentOutcomeToken": "0xc6f1Bd5fAC4E3195fD4300bCb42a0460F239a55e",
+      "r2TokenSymbol": "PARRET",
+      "r2DownPool": "0x4c220d8128463F7FCFB09AEED5D6b772C227cb6A",
+      "r2UpPool": "0xf7493b8175316A95ae1C7C8CE96B64eA8e58885D",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.28247337162082825,
+      "rawUp": 0.7232200810181073,
+      "seedUp": 0.7232200810181073,
+      "seedDown": 0.2767799189818927,
+      "parentOutcome": 2,
+      "indexInBundle": 15,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 82,
+      "repo": "OffchainLabs/prysm",
+      "tokenCode": "PRYSM",
+      "marketName": "What will be the average originality score of OffchainLabs/prysm in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "PRYSM_D_R3",
+        "PRYSM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xd866d7AD48A94A722FF2003c9A1de6f64c24127B",
+      "r2ParentOutcomeToken": "0xBe92368e5B76099d98C945870B98979ffbef01b4",
+      "r2TokenSymbol": "OFFPRY",
+      "r2DownPool": "0x5A532188822969b8e481BcA89e4F7966e421BA3B",
+      "r2UpPool": "0x4bE8d05a412aF0ba172E9F20ab603F4E045691F6",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.44568763925550836,
+      "rawUp": 0.5515029275593039,
+      "seedUp": 0.5515029275593039,
+      "seedDown": 0.44849707244069614,
+      "parentOutcome": 2,
+      "indexInBundle": 16,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 83,
+      "repo": "safe-global/safe-smart-account",
+      "tokenCode": "SAFE_SMART_ACCOUNT",
+      "marketName": "What will be the average originality score of safe-global/safe-smart-account in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SAFE_SMART_ACCOUNT_D_R3",
+        "SAFE_SMART_ACCOUNT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xbA2457bd6461B854AAE94d6853a244334703F58d",
+      "r2ParentOutcomeToken": "0x04F548D63aA65964a36127D19e6ee74bD00A5102",
+      "r2TokenSymbol": "SAFSAF",
+      "r2DownPool": "0xf955e638653790389b519380A56180bF3816049b",
+      "r2UpPool": "0xb64bC7499C832A55c442D3C9eFA1E426B7473631",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3834739928861432,
+      "rawUp": 0.6160616379636786,
+      "seedUp": 0.6160616379636786,
+      "seedDown": 0.38393836203632137,
+      "parentOutcome": 2,
+      "indexInBundle": 17,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 84,
+      "repo": "scaffold-eth/scaffold-eth-2",
+      "tokenCode": "SCAFFOLD_ETH_2",
+      "marketName": "What will be the average originality score of scaffold-eth/scaffold-eth-2 in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SCAFFOLD_ETH_2_D_R3",
+        "SCAFFOLD_ETH_2_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x930fc2612d770204e3d12d09aff2a1f978174d00",
+      "r2ParentOutcomeToken": "0xDdc2904E4900d499Ee24Ba576FDDb1dF3848C2ed",
+      "r2TokenSymbol": "SCASCA",
+      "r2DownPool": "0x0e830A4a6aC238d8744D7F9467fc23B55D3489Ce",
+      "r2UpPool": "0x224CCD88AAacaf0AC8c569C291865e0bb1f16044",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.32402963739254126,
+      "rawUp": 0.676044150991132,
+      "seedUp": 0.676044150991132,
+      "seedDown": 0.323955849008868,
+      "parentOutcome": 2,
+      "indexInBundle": 18,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 85,
+      "repo": "sigp/lighthouse",
+      "tokenCode": "LIGHTHOUSE",
+      "marketName": "What will be the average originality score of sigp/lighthouse in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LIGHTHOUSE_D_R3",
+        "LIGHTHOUSE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xF8C18424AD00893BADf79A804Bfe2ef4C09f86BC",
+      "r2ParentOutcomeToken": "0x152d1af7EE484C17ef208805E7F5145e53b12677",
+      "r2TokenSymbol": "SIGLIG",
+      "r2DownPool": "0xF7F2429042D241D88E56fF39f9260A5abF91a8c6",
+      "r2UpPool": "0x416317D37EA68A91dF4708FcE7dC47C4599BE750",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.26413513106715214,
+      "rawUp": 0.7402477828222759,
+      "seedUp": 0.7402477828222759,
+      "seedDown": 0.2597522171777241,
+      "parentOutcome": 2,
+      "indexInBundle": 19,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 86,
+      "repo": "status-im/nimbus-eth2",
+      "tokenCode": "NIMBUS_ETH2",
+      "marketName": "What will be the average originality score of status-im/nimbus-eth2 in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "NIMBUS_ETH2_D_R3",
+        "NIMBUS_ETH2_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xA5E2d591ac8C618217D60E986d6A743e36239206",
+      "r2ParentOutcomeToken": "0x987d6403f10695123A4FAC3a2C9F8346721d0Ea9",
+      "r2TokenSymbol": "STANIM",
+      "r2DownPool": "0x3a6b361A21d723cb40143aAB855e1201a36c17d2",
+      "r2UpPool": "0x3705fCBBeF5a68AE36E14898d41C7c8f89a1915b",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2756369342120805,
+      "rawUp": 0.7284270541342723,
+      "seedUp": 0.7284270541342723,
+      "seedDown": 0.27157294586572767,
+      "parentOutcome": 2,
+      "indexInBundle": 20,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 87,
+      "repo": "vyperlang/titanoboa",
+      "tokenCode": "TITANOBOA",
+      "marketName": "What will be the average originality score of vyperlang/titanoboa in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "TITANOBOA_D_R3",
+        "TITANOBOA_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x92b322414DBbd4967f5509DA726d4bf4EbA8A8D8",
+      "r2ParentOutcomeToken": "0x9b417902ceA28A31e99cd44FCF96B1340426E2c7",
+      "r2TokenSymbol": "VYPTIT",
+      "r2DownPool": "0xeE13AFc47EEF13936c69dBCfCc0acdCF0C62c86f",
+      "r2UpPool": "0x831Bf3F323d4B75b7aa4abAA37Eb2283C056F01d",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.31558289655519295,
+      "rawUp": 0.6892279964163908,
+      "seedUp": 0.6892279964163908,
+      "seedDown": 0.31077200358360924,
+      "parentOutcome": 2,
+      "indexInBundle": 21,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 88,
+      "repo": "vyperlang/vyper",
+      "tokenCode": "VYPER",
+      "marketName": "What will be the average originality score of vyperlang/vyper in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "VYPER_D_R3",
+        "VYPER_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6D06C54F1ce44e554e637D6b94e43aB9D81Fb97f",
+      "r2ParentOutcomeToken": "0x1307535D0B59c40483014A680c489296023f8dc9",
+      "r2TokenSymbol": "VYPVYP",
+      "r2DownPool": "0x61C552Bf7A1a6B1dd9d1f2C3e1C90D8fcc6da003",
+      "r2UpPool": "0x714206d0E23862e05b9C274A7979EBd5d6ff7f43",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4877116999767728,
+      "rawUp": 0.5103096039646969,
+      "seedUp": 0.5103096039646969,
+      "seedDown": 0.48969039603530307,
+      "parentOutcome": 2,
+      "indexInBundle": 22,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 89,
+      "repo": "wevm/viem",
+      "tokenCode": "VIEM",
+      "marketName": "What will be the average originality score of wevm/viem in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "VIEM_D_R3",
+        "VIEM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xD97F9435D007146a9205f914FACE370aE1E5B0BA",
+      "r2ParentOutcomeToken": "0xa8759d06559a1AB936945A5db6cED4A9EFfa2Bdf",
+      "r2TokenSymbol": "WEVVIE",
+      "r2DownPool": "0xB75B5541995dBaa92DE40E21d9c354368389F447",
+      "r2UpPool": "0x944DbF9a5ac8016F17744c12A71544Ad28Fad1cF",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4074623294545564,
+      "rawUp": 0.5788568221841327,
+      "seedUp": 0.5788568221841327,
+      "seedDown": 0.4211431778158673,
+      "parentOutcome": 2,
+      "indexInBundle": 23,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 90,
+      "repo": "argotorg/hevm",
+      "tokenCode": "HEVM",
+      "marketName": "What will be the average originality score of argotorg/hevm in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "HEVM_D_R3",
+        "HEVM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x6d9C9C11c2C81f742400ceCFc1B7023af5AbcB53",
+      "r2ParentOutcomeToken": "0x6CA470Ba33320e294557aa7273D0781a8c802199",
+      "r2TokenSymbol": "HEVM",
+      "r2DownPool": "0xf16a65492DC953055E4B7462C8aEbe2B8794F887",
+      "r2UpPool": "0xC623c76220dbC324FD28c2b6747Ab43c56e554EA",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.32751359970602356,
+      "rawUp": 0.6786674998833914,
+      "seedUp": 0.6786674998833914,
+      "seedDown": 0.32133250011660863,
+      "parentOutcome": 2,
+      "indexInBundle": 24,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 91,
+      "repo": "ethdebug/format",
+      "tokenCode": "FORMAT",
+      "marketName": "What will be the average originality score of ethdebug/format in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "FORMAT_D_R3",
+        "FORMAT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xA0E6108E878cE62d404197CC650eF2e4c6E6Aa20",
+      "r2ParentOutcomeToken": "0xAa6f1b1E080f064f37aD5aE188cdD2981bA7eB69",
+      "r2TokenSymbol": "ETHFOR",
+      "r2DownPool": "0x5633fDACACa12ddbd1dCA92F96Ee1fF0B6ea862f",
+      "r2UpPool": "0x0A4b826241f385CB65A0FcF788c916ed4A38aE71",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.2982052015612256,
+      "rawUp": 0.708760337958543,
+      "seedUp": 0.708760337958543,
+      "seedDown": 0.291239662041457,
+      "parentOutcome": 2,
+      "indexInBundle": 25,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 92,
+      "repo": "argotorg/act",
+      "tokenCode": "ACT",
+      "marketName": "What will be the average originality score of argotorg/act in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ACT_D_R3",
+        "ACT_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x53ae2F1b9B1c0a4d8781206ef8c3fD6abd07985f",
+      "r2ParentOutcomeToken": "0xBC339c2a8f6Ce1c4A289bADC9fAa9233ac411643",
+      "r2TokenSymbol": "ACT",
+      "r2DownPool": "0x61f2AB9B155Eec31732B4A63d6B386af36eB01F4",
+      "r2UpPool": "0x7D9D4e4D54fCe1d2176059DD2C2d07705CbC1F2B",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3375732009089828,
+      "rawUp": 0.6702929933419637,
+      "seedUp": 0.6702929933419637,
+      "seedDown": 0.3297070066580363,
+      "parentOutcome": 2,
+      "indexInBundle": 26,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 93,
+      "repo": "ethpandaops/ethereum-package",
+      "tokenCode": "ETHEREUM_PACKAGE",
+      "marketName": "What will be the average originality score of ethpandaops/ethereum-package in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHEREUM_PACKAGE_D_R3",
+        "ETHEREUM_PACKAGE_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x1F987444F2380Cb27BfBf4FD1e172B8Cc757D13D",
+      "r2ParentOutcomeToken": "0x263589b0C132B6A37A7a15e88856639b35c667f4",
+      "r2TokenSymbol": "ETHET3",
+      "r2DownPool": "0x805034a2cB2d14BB419B47c5f5BA17d4e9c27C11",
+      "r2UpPool": "0x36103843B04B116437101E1e1161C9eC11780627",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.3475676465638698,
+      "rawUp": 0.6554282720053666,
+      "seedUp": 0.6554282720053666,
+      "seedDown": 0.3445717279946334,
+      "parentOutcome": 2,
+      "indexInBundle": 27,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 94,
+      "repo": "ethpandaops/ethereum-helm-charts",
+      "tokenCode": "ETHEREUM_HELM_CHARTS",
+      "marketName": "What will be the average originality score of ethpandaops/ethereum-helm-charts in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "ETHEREUM_HELM_CHARTS_D_R3",
+        "ETHEREUM_HELM_CHARTS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xcdc025c36bA21441E3A5a5e35cC2245739647938",
+      "r2ParentOutcomeToken": "0x42bE1Db2949C4C81FbbFf41829E2bFB94FA8920D",
+      "r2TokenSymbol": "ETHET4",
+      "r2DownPool": "0xEc28BA682D8feFCddBD8B5A37d9d522C9C13f767",
+      "r2UpPool": "0x0188C26660d2043d80190FA47d407A14183Fb333",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4996476106259082,
+      "rawUp": 0.501344080810923,
+      "seedUp": 0.501344080810923,
+      "seedDown": 0.49865591918907703,
+      "parentOutcome": 2,
+      "indexInBundle": 28,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 95,
+      "repo": "ethpandaops/checkpointz",
+      "tokenCode": "CHECKPOINTZ",
+      "marketName": "What will be the average originality score of ethpandaops/checkpointz in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "CHECKPOINTZ_D_R3",
+        "CHECKPOINTZ_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x298E9FA6891F8519Ba9ee90642F237841AA61353",
+      "r2ParentOutcomeToken": "0x77Bf4174051cedB3D275D7DEe24959992562F1E5",
+      "r2TokenSymbol": "ETHCHE",
+      "r2DownPool": "0x54D374651C3b62A1592Aa72883D963dA2c6b8957",
+      "r2UpPool": "0x064E99B9f2F516a8d479cfb46a5322B69eBa034a",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.31016252787150705,
+      "rawUp": 0.7042567760067021,
+      "seedUp": 0.7042567760067021,
+      "seedDown": 0.2957432239932979,
+      "parentOutcome": 2,
+      "indexInBundle": 29,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 96,
+      "repo": "lambdaclass/lambda_ethereum_consensus",
+      "tokenCode": "LAMBDA_ETHEREUM_CONSENSUS",
+      "marketName": "What will be the average originality score of lambdaclass/lambda_ethereum_consensus in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "LAMBDA_ETHEREUM_CONSENSUS_D_R3",
+        "LAMBDA_ETHEREUM_CONSENSUS_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0xC62b2b087d779413b80bA569119f6484AAFB4A82",
+      "r2ParentOutcomeToken": "0xaBA00fd56177a8854575FE33b59534699bF135b5",
+      "r2TokenSymbol": "LAMLA1",
+      "r2DownPool": "0xf1e9799e0f98939D916839c8Cea7aC386812D281",
+      "r2UpPool": "0x80cA352761ff7cBdd9AB2a63B250dEf3F53d9cC8",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.28580292248529854,
+      "rawUp": 0.7174208812829166,
+      "seedUp": 0.7174208812829166,
+      "seedDown": 0.2825791187170834,
+      "parentOutcome": 2,
+      "indexInBundle": 30,
+      "bundleTokenName": "ORIG_R3_C"
+    },
+    {
+      "r2ParentOutcome": 97,
+      "repo": "erigontech/silkworm",
+      "tokenCode": "SILKWORM",
+      "marketName": "What will be the average originality score of erigontech/silkworm in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNames": [
+        "SILKWORM_D_R3",
+        "SILKWORM_U_R3"
+      ],
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "r2ChildMarket": "0x817d903C2a50b204A875ebb58756dc21537B9d9A",
+      "r2ParentOutcomeToken": "0xFA3632732277c982dDa2d34C2C37621b6c776e0f",
+      "r2TokenSymbol": "ERISIL",
+      "r2DownPool": "0xdd2a623D4a48E3FA3bD513Ce35c5b199D01E716C",
+      "r2UpPool": "0x1C7F09b89231f5838f71943F9930db4BCD7E5cB1",
+      "r2PoolLiquidity": [
+        "0",
+        "0"
+      ],
+      "rawDown": 0.4240785315318921,
+      "rawUp": 0.5783198379487148,
+      "seedUp": 0.5783198379487148,
+      "seedDown": 0.4216801620512852,
+      "parentOutcome": 2,
+      "indexInBundle": 31,
+      "bundleTokenName": "ORIG_R3_C"
+    }
+  ]
+}

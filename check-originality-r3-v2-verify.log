@@ -1,0 +1,12 @@
+
+Verify round-3 originality (markets + pools), seed ./originality-r3-seed.json
+(node:6052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/check-originality-r3-pools.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+   parent 0x52f80FC4fa783AB5850d1658589284c47a21B3b7: Bundle A / Bundle B / Bundle C / Invalid result, symbols ORIG_R3_A / ORIG_R3_B / ORIG_R3_C / SER-INVALID
+   children: 98/98 checked
+   pools: 196/196 live and on their seed price (±0.001)
+   wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0: sUSDS 41243.02601109491494438, parent Invalid 1000, idle bundle tokens 0.000000000000129103 / 0.000000000000135386 / 0.000000000000123465
+
+VERIFY OK: https://app.seer.pm/markets/10/0x52f80FC4fa783AB5850d1658589284c47a21B3b7

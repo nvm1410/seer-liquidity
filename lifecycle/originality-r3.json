@@ -1,0 +1,262 @@
+{
+  "setSlug": "originality-r3",
+  "version": "v2 (bundled multiscalar parent)",
+  "mode": "launch",
+  "source": {
+    "request": "Round 3 originality, rebuilt: one multiscalar parent 'Round 3 - Originality: evaluated repositories by bundle' with outcomes Bundle A/B/C, one uint question per bundle ('How many repositories in Bundle X will be evaluated for originality during Round 3 of the Deep Funding experiment?'), plus one conditional scalar score market per repo (98), each conditional on its bundle's outcome token. Bundles = the first 33 / next 33 / last 32 repos in round-2 outcome order.",
+    "docs": [],
+    "proposalText": "Title: Round 3 - Originality: evaluated repositories by bundle | Type: Multiscalar | Outcomes: Bundle A, Bundle B, Bundle C | Unit: repositories | 1-3: How many repositories in Bundle {A,B,C} will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+    "priceSourceNote": "No source doc. Prices come from the v1 seed snapshot (round-2 drained pools' surviving sqrtPriceX96), taken 2026-09-21T02:55:14Z."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": "sUSDS"
+  },
+  "supersedes": {
+    "v1": "3 multi-categorical parents (33/33/32) + 98 scalar children. Scrapped before launch 2026-09-22; files deleted, backup in the session scratchpad. On-chain footprint: 5 zero-value self-transfers only (nonces 10478-10482).",
+    "whyBundles": "OP Mainnet per-tx gas cap 2^24 = 16,777,216. A multi-categorical parent costs ~372k gas per outcome; a 3-outcome multiscalar parent asks 3 short Reality questions and deploys 4 wrapped tokens."
+  },
+  "precedents": {
+    "roundTwoParent": "0xdb3aae8d1c964767eeaa17805be25cded7a17210",
+    "multiScalarNameShape": "L1 market 0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6: marketName = questionStart + '[' + outcomeType + ']' + questionEnd, e.g. '... of [repository] in the second round ...'",
+    "scripts": [
+      "v1 create-originality-r3-markets.js (validation, resume, qid collision check, per-child verify)",
+      "v1 add-originality-r3-liquidity.js (per-repo X = B / (1 + r_down + r_up))",
+      "v1 check-originality-r3-pools.js"
+    ]
+  },
+  "markets": [
+    {
+      "type": "multiScalar",
+      "role": "parent",
+      "count": 1,
+      "marketName": "How many repositories in [bundle] will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "marketNameChars": 114,
+      "questionStart": "How many repositories in ",
+      "questionEnd": " will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "outcomeType": "bundle",
+      "outcomes": [
+        "Bundle A",
+        "Bundle B",
+        "Bundle C"
+      ],
+      "tokenNames": [
+        "ORIG_R3_A",
+        "ORIG_R3_B",
+        "ORIG_R3_C"
+      ],
+      "invalidSlot": "Invalid result, factory-added, token SER-INVALID",
+      "parentMarket": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400,
+      "openingTimeNote": "creation timestamp, answerable immediately (as round 2)",
+      "estimatedGas": 2580638,
+      "bundles": [
+        {
+          "label": "Bundle A",
+          "token": "ORIG_R3_A",
+          "repos": 33,
+          "globalRange": [
+            0,
+            32
+          ]
+        },
+        {
+          "label": "Bundle B",
+          "token": "ORIG_R3_B",
+          "repos": 33,
+          "globalRange": [
+            33,
+            65
+          ]
+        },
+        {
+          "label": "Bundle C",
+          "token": "ORIG_R3_C",
+          "repos": 32,
+          "globalRange": [
+            66,
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "type": "scalar",
+      "role": "child",
+      "count": 98,
+      "marketNameTemplate": "What will be the average originality score of {repo} in Round 3 of the Deep Funding experiment?",
+      "marketNameChars": {
+        "min": 98,
+        "max": 126
+      },
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNameScheme": "<REPO>_D_R3 / <REPO>_U_R3",
+      "parentOutcome": "bundle index 0/1/2",
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "estimatedGasEach": "1.83M-1.91M (estimated against the L1 multiscalar parent 0x3220...)"
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 1000,
+    "priceSource": "last pool prices",
+    "priceSourceDetail": "round-2 UP pool last price per repo (drained pools keep sqrtPriceX96); re-read 2026-09-22, identical to the 2026-09-21 v1 snapshot",
+    "seedConvention": "seedUp = round-2 last UP; seedDown = 1 - seedUp",
+    "seedStats": {
+      "upMin": 0.4061,
+      "upMedian": 0.6573,
+      "upMax": 0.8043,
+      "upMean": 0.6372
+    },
+    "band": {
+      "minPrice": 0.02,
+      "maxPrice": 0.98
+    },
+    "feeTier": 100,
+    "tickSpacing": 1,
+    "perPool": "one parent split of 1000 -> 1000 of each bundle token; per repo B = 1000/33 (A,B) or 1000/32 (C); X = B/(1+r_down+r_up)",
+    "pools": 196,
+    "bundleUse": {
+      "ORIG_R3_A": "216.3940 child splits + 783.6060 pool collateral",
+      "ORIG_R3_B": "226.2136 + 773.7864",
+      "ORIG_R3_C": "200.5383 + 799.4617"
+    },
+    "unpooledByDesign": "1000 parent Invalid + ~643 child Invalid tokens",
+    "depthNote": "~30 bundle tokens per repo, roughly 10 sUSDS per repo: the same per-repo sUSDS depth as v1 and the original round-2 1k seed",
+    "previewLog": "add-originality-r3-v2-preview.log"
+  },
+  "ui": {
+    "repo": "ai-prediction-markets",
+    "branch": "feat/originality-r3",
+    "precedentCommits": [
+      "0dca1e9 feat: zcash-nu7 markets",
+      "1c9938c redeem originality"
+    ],
+    "views": [
+      "Round 3 originality tab shown like round 2: flat list of 98 repos with DOWN/UP prices, bundles hidden",
+      "DEEP_CONTESTS round3 entry, leaderboard false"
+    ],
+    "criticalConstraint": "ADD a new constant for round 3; do NOT overwrite ORIGINALITY_PARENT_MARKET_ID (round 2 still redeemable; overwriting orphaned round 1 in b6d2cd9)"
+  },
+  "spendingCap": {
+    "collateral": 1020,
+    "gasEth": 0.01
+  },
+  "walletAtIntake": {
+    "sUSDS": "42243.026",
+    "ETH": "0.040731",
+    "readAt": "2026-09-22"
+  },
+  "gate": {
+    "approvedAt": "2026-09-22T02:59:41.059Z",
+    "approvedBy": "user (\"do it\")",
+    "summaryHash": "sha256(originality-r3-seed.json)=c14e5a1921e70ce38ee55912501cc49715653f3614525982789ae16f589c715e",
+    "immutableTextRef": "create-originality-r3-v2-dryrun.log (225-line IMMUTABLE block)"
+  },
+  "stages": [
+    {
+      "name": "phase0-intake",
+      "status": "done",
+      "artifacts": [
+        "lifecycle/originality-r3.json",
+        "originality-r3-seed.json"
+      ],
+      "notes": "Grill answered 2026-09-22. Seed re-snapshotted: 98 rows, 0 out of band, prices identical to v1 snapshot."
+    },
+    {
+      "name": "phase0-scripts",
+      "status": "done",
+      "artifacts": [
+        "snapshot-originality-r2-prices.js",
+        "create-originality-r3-markets.js",
+        "add-originality-r3-liquidity.js",
+        "check-originality-r3-pools.js",
+        "create-originality-r3-v2-dryrun.log",
+        "add-originality-r3-v2-preview.log"
+      ],
+      "notes": "Create dry run clean: parent 2,580,638 gas (15.4% of cap), 0 Reality collisions. Child path estimated 1.83-1.91M against an existing multiscalar parent. Liquidity preview: each bundle token used exactly (1000/1000). Verifier failure test pending: needs live markets."
+    },
+    {
+      "name": "gate",
+      "status": "done",
+      "artifacts": [],
+      "notes": "Approved. Pre-live dry run re-diffed: immutable block identical, 0 collisions."
+    },
+    {
+      "name": "phase1-create",
+      "status": "done",
+      "artifacts": [
+        "create-originality-r3-v2-execution.json",
+        "create-originality-r3-v2-run.log",
+        "create-originality-r3-v2-run2.log"
+      ],
+      "notes": "Parent 0x52f80FC4fa783AB5850d1658589284c47a21B3b7 + 98 children. One child (skalenetwork/libBLS) hit a transient estimateGas revert in run 1 (no tx sent) and was created on the resume. check --markets-only: VERIFY OK. Verifier failure test: corrupted seed (symbol, name, bundle) -> exit 1 with all 3 caught."
+    },
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "artifacts": [
+        "add-originality-r3-v2-liquidity-execution.json",
+        "add-originality-r3-v2-run.log",
+        "add-originality-r3-v2-dryrun.log"
+      ],
+      "notes": "1 parent split (1000 sUSDS), 98 child splits, 196 pools. Two mint attempts reverted at estimateGas right after their approve (RPC lag) and succeeded on retry 2; no failures. Wallet sUSDS 42243.026 -> 41243.026."
+    },
+    {
+      "name": "phase1-verify",
+      "status": "done",
+      "artifacts": [
+        "check-originality-r3-pools.js",
+        "check-originality-r3-v2-verify.log"
+      ],
+      "notes": "Full verify OK from live chain: 101 markets, 196/196 pools live and within 0.001 of seed, 1000 parent Invalid held, idle bundle tokens ~1e-13. Failure tests: corrupted symbol/name/bundle -> 3 caught; corrupted price -> both legs caught."
+    },
+    {
+      "name": "phase2-ui",
+      "status": "pending",
+      "artifacts": [],
+      "notes": ""
+    }
+  ],
+  "evidenceLog": [],
+  "grillAnswers": {
+    "1_outcomeType": "bundle (default); proposal title is UI-only",
+    "2_childWording": "match parent: in Round 3 of the Deep Funding experiment (default)",
+    "3_unevaluatedRepos": "skipped by user — no resolution rule set now",
+    "4_bundleLists": "hidden: bundles are only a gas-limit workaround, not published or shown",
+    "5_tokenNames": "ORIG_R3_A/B/C + <REPO>_D_R3/_U_R3 (default)",
+    "6_liquidity": "1000 sUSDS, 196 child pools, no bundle-token pools (default)",
+    "7_spendingCap": "1020 sUSDS + 0.01 ETH (default)",
+    "8_ui": "ai-prediction-markets feat/originality-r3, show like round 2 originality: flat 98 repos, bundles hidden; new constant, do not overwrite ORIGINALITY_PARENT_MARKET_ID; PR, no merge"
+  },
+  "immutableText": {
+    "totalErc20Symbols": 199,
+    "uniqueErc20Symbols": 199,
+    "longestSymbol": "FLASHBOTS_MEV_BOOST_RELAY_D_R3",
+    "longestSymbolBytes": 30,
+    "maxSymbolBytes": 31,
+    "realityCollisionCheck": "clean: 3 parent questions + 98 children all new",
+    "dryRunLog": "create-originality-r3-v2-dryrun.log"
+  },
+  "addresses": {
+    "parent": "0x52f80FC4fa783AB5850d1658589284c47a21B3b7",
+    "parentWrappedTokens": [
+      "0xaDaDD3798F7652871DA5208981a0Ce6d6E22fd13",
+      "0x3d85b25440F49692151CEd06D04D991Aad27a6C5",
+      "0xF295331Dcf6A3f8DaBc872431165920dF6f8323B",
+      "0x8cEE1C7AB2E5D857b672bA6529d722e2ba2C6Ee7"
+    ],
+    "seer": "https://app.seer.pm/markets/10/0x52f80FC4fa783AB5850d1658589284c47a21B3b7"
+  },
+  "walletAfter": {
+    "sUSDS": "41243.026",
+    "readAt": "2026-09-22T04:00:56.112Z"
+  }
+}

@@ -1,0 +1,638 @@
+
+LIVE RUN — originality round 3 market creation (bundled multi-scalar parent)
+   wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+   seed    : ./originality-r3-seed.json (generated 2026-09-22T02:40:51.847Z)
+   bundles : Bundle A 33 / Bundle B 33 / Bundle C 32
+   children: 98
+
+Seed file validated: 1 parent (3 bundles), 98 children, 199 distinct ERC20 symbols.
+
+(node:8968) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/create-originality-r3-markets.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Factory config:
+   arbitrator      : 0x5AFa42b30955f137e10f89dfb5EF1542a186F90e
+   realitio        : 0x0eF940F7f053a2eF5D6578841072488aF0c7d89A
+   questionTimeout : 302400 s
+   collateralToken : 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0
+   openingTime     : 1790045982 (2026-09-22T02:59:42.000Z) — answerable immediately, as in round 2
+
+Checking Reality for pre-existing question ids...
+   OK: no collisions — 3 parent questions and all 98 children are new
+
+
+Simulating the PARENT market (createMultiScalarMarket)...
+   3 bundles -> 2602849 gas  (15.5% of the 16777216 cap)
+
+CHILD gas cannot be estimated until the parent exists; using the measured ~1,863,068 each.
+   ~182580664 for 98 children
+
+   Total L2 gas : 185183513
+   Gas price    : 0.001001258 gwei
+   L2 gas cost  : ~0.000185416473859354 ETH (EXCLUDES the Optimism L1 data fee)
+   ETH balance  : 0.040730767148281821 ETH
+
+--- Phase A: multi-scalar parent (3 bundles) ---
+    Attempt 1/3...
+    Tx sent: 0xa5930dd5d4642d8622af8eadf4940288bc662260931f3f887d5db9eb0645e0d1
+    Confirmed in block 157223613, gas used 2581196
+  Created 0x52f80FC4fa783AB5850d1658589284c47a21B3b7
+  https://app.seer.pm/markets/10/0x52f80FC4fa783AB5850d1658589284c47a21B3b7
+  Verified: 4 outcomes, templateId 1, wrappedTokens 4
+
+--- Phase B: 98 child market(s) ---
+
+[1/98] Bundle A[0] ethereum/py_ecc
+    Attempt 1/3...
+    Tx sent: 0xcc9ee07afe9c2d98b7bd526f7857b45b95fafa659971674b56cb668da9d84864
+    Confirmed in block 157223617, gas used 1876718
+  Created 0x7e6192A6C9702c9e49671FaE6A97aCD8843976eb
+
+[2/98] Bundle A[1] blockscout/blockscout
+    Attempt 1/3...
+    Tx sent: 0x35eddc2c511139b3ef997702fec31153a1e56b94cd9e9f53a3a982778fa73b58
+    Confirmed in block 157223620, gas used 1818060
+  Created 0x3172682c0E73e4bd2a1105AF469417D09E5039B7
+
+[3/98] Bundle A[2] LFDT-web3j/web3j
+    Attempt 1/3...
+    Tx sent: 0xaa88df2198796c5c02efd5bbd191fe1243da9ce3b1116b6bb4416f967c836a73
+    Confirmed in block 157223623, gas used 1869462
+  Created 0xb653aD536660811257ec8aDb0ED1898aae2AbC24
+
+[4/98] Bundle A[3] herumi/mcl
+    Attempt 1/3...
+    Tx sent: 0x0ca993b04b4f68956ea7db7881e03748898189dc1ac1057c1a2927f425cfe9bd
+    Confirmed in block 157223626, gas used 1839822
+  Created 0xC4f9dB466414731aa79dD9851A2185e589180624
+
+[5/98] Bundle A[4] paulmillr/noble-curves
+    Attempt 1/3...
+    Tx sent: 0x16fe5126c884e8458190badef79d7be2e281e8ad2ebe9e3e373e75c4892eb709
+    Confirmed in block 157223631, gas used 1840184
+  Created 0x61C8e32e7B87954a97d7f32D9db856d7005e9855
+
+[6/98] Bundle A[5] arkworks-rs/algebra
+    Attempt 1/3...
+    Tx sent: 0xca170bec199ec086b3b4191b447da18a03862f23ea98a557b5fd769dbde8267a
+    Confirmed in block 157223635, gas used 1832676
+  Created 0xCdF9Ad1C756430600fcB86bf09e669FFF412D55C
+
+[7/98] Bundle A[6] flashbots/rbuilder
+    Attempt 1/3...
+    Tx sent: 0x0b6913be2632fcfb0f1be435f7d262a8111f03633f59d18a12d797611f6ae8bb
+    Confirmed in block 157223638, gas used 1832674
+  Created 0xf45f966C19EDA472d706eeeba29a761ac6BF5527
+
+[8/98] Bundle A[7] protofire/solhint
+    Attempt 1/3...
+    Tx sent: 0x34bc99b7594f8fa789324f938531c0017c2a50275576e12dd6670d99a218ef24
+    Confirmed in block 157223641, gas used 1839988
+  Created 0x34914b2c614a58a6cafb8D7B3F3A5b64140F661c
+
+[9/98] Bundle A[8] l2beat/l2beat
+    Attempt 1/3...
+    Tx sent: 0x1d3dd7984caa2eef5e05ab9666a532444e808f86d0581cac15dfe075e4a766d4
+    Confirmed in block 157223646, gas used 1810516
+  Created 0x48505727e6b85bf1B8c25ba4d06329cDfd6eaE16
+
+[10/98] Bundle A[9] Consensys/gnark-crypto
+    Attempt 1/3...
+    Tx sent: 0xbb397acbf6a7383f606e5f7ec56a97eddb13ba98903e762df1757dced9b0e14c
+    Confirmed in block 157223649, gas used 1847534
+  Created 0x16605c0eB1139f36658A2532b93735d923fb0D7D
+
+[11/98] Bundle A[10] Vectorized/solady
+    Attempt 1/3...
+    Tx sent: 0xcb182d3c0f673909479c5d07e1a87ecb3ba8170b33bc6e5082bc3c258d90cb2a
+    Confirmed in block 157223652, gas used 1839978
+  Created 0xcf40d59d011600d6BC3D8bC921495d9AB48ce437
+
+[12/98] Bundle A[11] taikoxyz/taiko-mono
+    Attempt 1/3...
+    Tx sent: 0x79b7cf936c151cbe2af16df0a207ad5cea28e61c62a94dc96729a64212be9054
+    Confirmed in block 157223657, gas used 1854812
+  Created 0x0D6e1e1b4314EE05515D8C03725fC48d93FcFBCA
+
+[13/98] Bundle A[12] flashbots/mev-boost
+    Attempt 1/3...
+    Tx sent: 0xb6a4d327d6465e662cecb0678b9950bb69d7e3ea62181c5c7faaef1813d43ff2
+    Confirmed in block 157223660, gas used 1818024
+  Created 0x3Ccb63FB185D2598bAd4d4d83BC3853B980815E9
+
+[14/98] Bundle A[13] flashbots/mev-boost-relay
+    Attempt 1/3...
+    Tx sent: 0xb28abed592718c9184e1b7dbb8bf58d620609a681f8371c046acb932b217bc87
+    Confirmed in block 157223663, gas used 1841308
+  Created 0x14173dfB839ef4676f05Dd28424196c135807cCa
+
+[15/98] Bundle A[14] ethereum/js-ethereum-cryptography
+    Attempt 1/3...
+    Tx sent: 0x39ef3e7c57a796d515d2f4dbecc4bb5c19f876c16bcc774182819953cbaa80f5
+    Confirmed in block 157223666, gas used 1833992
+  Created 0xeD806018aed460f7C8469d453C32B6d9f431d3BB
+
+[16/98] Bundle A[15] libp2p/libp2p
+    Attempt 1/3...
+    Tx sent: 0x7a97dc16e596ec51e0a8bb2fcd81e0b2edd193e8cf834e2a0ff0d8a1d532e5d2
+    Confirmed in block 157223671, gas used 1817838
+  Created 0x16d25D82C7473cd9F91967c1931cFD36994c663f
+
+[17/98] Bundle A[16] supranational/blst
+    Attempt 1/3...
+    Tx sent: 0x243ad9ae5a9701071d3cb2880bc1b816ecd36e575e93ead346785c2cde4cb9b9
+    Confirmed in block 157223674, gas used 1847278
+  Created 0x2B3A03745a3E4391bdA2920cE852f9B2EE617BAd
+
+[18/98] Bundle A[17] wighawag/hardhat-deploy
+    Attempt 1/3...
+    Tx sent: 0xb7d9c8c60694ac2db5c828c47777fb0a20e97d39acdf5c0bd50a59c1bc98c696
+    Confirmed in block 157223679, gas used 1840261
+  Created 0x61aA38901a39bCc76D5cB15b8C406B9727Af2474
+
+[19/98] Bundle A[18] ethstaker/eth-docker
+    Attempt 1/3...
+    Tx sent: 0xac24efa0db22a896871603cd591910de6a9d27efb70377933da82222622a1dcd
+    Confirmed in block 157223682, gas used 1825386
+  Created 0x955A5e8317763DFB774de2ed0c65a93f9f5021ed
+
+[20/98] Bundle A[19] DefiLlama/DefiLlama-Adapters
+    Attempt 1/3...
+    Tx sent: 0xe56b9515bf2ffca424261c1cf4c9a9bf41645b0dfe4f74688692c66bf6c90d0c
+    Confirmed in block 157223685, gas used 1855862
+  Created 0xdAE672D4B1ABb32E311E5C01aF9AE15A907e2557
+
+[21/98] Bundle A[20] DefiLlama/chainlist
+    Attempt 1/3...
+    Tx sent: 0x58310f03fba4297661bb03012e11aaef6e26503261a45da6b1b1af62f24ee042
+    Confirmed in block 157223690, gas used 1810674
+  Created 0xa16249d3Ce202dC6bBAf2535a8e714a99AcEDCcA
+
+[22/98] Bundle A[21] Certora/CertoraProver
+    Attempt 1/3...
+    Tx sent: 0x2002b45321b957361522c6e7ec61f645462185fbf3523f0eb3b5a63e6b19be7c
+    Confirmed in block 157223694, gas used 1810824
+  Created 0x84aa7A1384bF68454c2446612aF205c8E16d659B
+
+[23/98] Bundle A[22] Plonky3/Plonky3
+    Attempt 1/3...
+    Tx sent: 0xabeebb3d98e7610d0951336da7a3ac426c3c54e98df58f2f85f5c3784ec41733
+    Confirmed in block 157223697, gas used 1825250
+  Created 0x5053350662F7Eff9E8d415156d5a6159CE1A7E66
+
+[24/98] Bundle A[23] ChainSafe/bls
+    Attempt 1/3...
+    Tx sent: 0x18acce3af1eb7c84aa72593b075be8232444eedbc17c83f998ee2d2f9692927c
+    Confirmed in block 157223701, gas used 1817794
+  Created 0x562A9a0D4Dba9F7Fee58d1B22A0FCC419CA11102
+
+[25/98] Bundle A[24] intellij-solidity/intellij-solidity
+    Attempt 1/3...
+    Tx sent: 0xad65a8e672a7c08dea30b472709b17704881329eeba8ca478a95854f32bea7bc
+    Confirmed in block 157223704, gas used 1848604
+  Created 0xe46c603f9B61c3F367cF62222a340AB28D2285fb
+
+[26/98] Bundle A[25] dappnode/DAppNode
+    Attempt 1/3...
+    Tx sent: 0x9a882a96687be99be20de29e6e794dbaf861a1cb0828e538eac3a6e4e63c5e25
+    Confirmed in block 157223707, gas used 1839970
+  Created 0x174666728E544E8882A0A49b7B6cdC2287124d1b
+
+[27/98] Bundle A[26] wealdtech/ethdo
+    Attempt 1/3...
+    Tx sent: 0x8f62f554bdf8eb2cef76972db9e14abb593d375db09d83af0f5bb99e15daaa8e
+    Confirmed in block 157223712, gas used 1832608
+  Created 0x0AfB2d380cBcc209ccF54211d60CfE7E5ac99c25
+
+[28/98] Bundle A[27] lambdaclass/lambdaworks
+    Attempt 1/3...
+    Tx sent: 0xfa52b12b694f9729b341a6dc7a377786cd694e2e7ec38ecad8b6e98f873f9f68
+    Confirmed in block 157223715, gas used 1818125
+  Created 0x08e343960dDC8C718922FDbeb0eA1F05EC2C6f04
+
+[29/98] Bundle A[28] smartcontracts/simple-optimism-node
+    Attempt 1/3...
+    Tx sent: 0x09a73e9f259d9045e76ae4ae621b7d340f4a75e9e678aaf8aebddaeaf35385f9
+    Confirmed in block 157223718, gas used 1855970
+  Created 0x6bF5Afc2Ca6fB5E43ab27d98B0a80F3fcb6f62f5
+
+[30/98] Bundle A[29] skalenetwork/libBLS
+  FAILED: execution reverted (no data present; likely require(false) occurred
+
+[30/98] Bundle A[30] shazow/whatsabi
+    Attempt 1/3...
+    Tx sent: 0x0ee08b97b6b63f97d2a047dbf330a6a2aa95aee00e5ff24e45d6ad9239a85e67
+    Confirmed in block 157223722, gas used 1854744
+  Created 0xa53a4338D39fDc946741c3A078e08Cc09Af8240A
+
+[31/98] Bundle A[31] TrueBlocks/trueblocks-core
+    Attempt 1/3...
+    Tx sent: 0x0b3b36e6a8599e279ebece09b614baae3b4519e669902361ee28c07a6e197d2e
+    Confirmed in block 157223725, gas used 1863102
+  Created 0x200B8fB8906cE0614Ab7c200f7EB5Fae5e14c45f
+
+[32/98] Bundle A[32] EspressoSystems/jellyfish
+    Attempt 1/3...
+    Tx sent: 0x8526927e864c87e4683505911add516ac102a5b6071c0120c429f2b6ef32b234
+    Confirmed in block 157223729, gas used 1877660
+  Created 0xE233cb991bb2650a8380f2eEFa88F4B5c6b3D4cd
+
+[33/98] Bundle B[0] a16z/halmos
+    Attempt 1/3...
+    Tx sent: 0x257b94c35d220b9775b0fdb803eb06e5c7b053c14eda855c1f549aac241f1616
+    Confirmed in block 157223734, gas used 1881952
+  Created 0xebdBA6C87fB7b773Cbc0077E4e943670F37B9a83
+
+[34/98] Bundle B[1] succinctlabs/op-succinct
+    Attempt 1/3...
+    Tx sent: 0x4978e7a2704faa6039ff60aea5f3f82d7847e9ab694859aaeda76f2d69ba2d8f
+    Confirmed in block 157223737, gas used 1860145
+  Created 0x0C658A6E0343bf1365f95B25C1FF63b728ad8Fd3
+
+[35/98] Bundle B[2] succinctlabs/sp1
+    Attempt 1/3...
+    Tx sent: 0x4f56ff1224e3f269bf263930e68ae7ca55b7848164b32691ef19d2fccb06b123
+    Confirmed in block 157223740, gas used 1874576
+  Created 0x4b41eFdF43AaaC6fA1Dd3B9fFa1A570D6597CDC7
+
+[36/98] Bundle B[3] otterscan/otterscan
+    Attempt 1/3...
+    Tx sent: 0x98252f961ffaa1d855c3af87708a4f5f79adcb011dd973bc6f8864d22d71896f
+    Confirmed in block 157223745, gas used 1852664
+  Created 0xAf87f8D0aBBF8Bd3e7C12003991FEfE676FB1A41
+
+[37/98] Bundle B[4] lambdaclass/ethrex
+    Attempt 1/3...
+    Tx sent: 0x153ef0ac62c816cefe75dab3198f2cd1d77ae45d630dae5ac93de5d9d5046994
+    Confirmed in block 157223750, gas used 1867280
+  Created 0x86370e61593C1fC759982D55F01e236844bfAf2F
+
+[38/98] Bundle B[5] NethermindEth/juno
+    Attempt 1/3...
+    Tx sent: 0xa4d1aed1c3c1456763133e095b0eba275548cb5e64dcf75325fcb09222c8f7de
+    Confirmed in block 157223753, gas used 1881932
+  Created 0x5a01F885471fA4205DE2639A8be665Ba21bEc3ac
+
+[39/98] Bundle B[6] Commit-Boost/commit-boost-client
+    Attempt 1/3...
+    Tx sent: 0xf94619797ade63424be7c7b8e03a74bdd15cf2d6b4c2e967c7d49918d421b7a2
+    Confirmed in block 157223757, gas used 1912670
+  Created 0x2D97934Bd5e0435838Da311ADf6A3Ec101c3728c
+
+[40/98] Bundle B[7] Cyfrin/aderyn
+    Attempt 1/3...
+    Tx sent: 0x28b2a5257d377a4e42b825c00d00783f7de64697902f9b028f388f19c98c64cb
+    Confirmed in block 157223761, gas used 1925992
+  Created 0x413D3Fb6A93f1edfBFadE4ae8686408370dc4818
+
+[41/98] Bundle B[8] 0xMiden/miden-vm
+    Attempt 1/3...
+    Tx sent: 0xbd7477cb15dd9d974dd676f0568c64ddbc1cbe36f44c73568899629f923e2769
+    Confirmed in block 157223764, gas used 1882004
+  Created 0xECFf2e8ab900b7Ec2c4F445149201E98C02d4c62
+
+[42/98] Bundle B[9] holiman/goevmlab
+    Attempt 1/3...
+    Tx sent: 0x29bf8f21a6ff5c8f226820e040cc8c89dccc264bdc42d4ab786c80090ca5dc9b
+    Confirmed in block 157223768, gas used 1882046
+  Created 0xb9d2A2a1F4c278f011042c2D00B6aE597AdFbb90
+
+[43/98] Bundle B[10] edb-rs/edb
+    Attempt 1/3...
+    Tx sent: 0x0ae632f7b98bedfb2ab6b326cd4ff6f32edada0863c27b57cfbf7d2b00ccfaf8
+    Confirmed in block 157223771, gas used 1874434
+  Created 0x6dD9734f3B7F6fCe66Ed0F400b79E1205E48F0b3
+
+[44/98] Bundle B[11] evmts/tevm-monorepo
+    Attempt 1/3...
+    Tx sent: 0x233d3e2ff1192906312188f52370400f2dfba47ee1e319f9e9a8be2bc3b3eef8
+    Confirmed in block 157223776, gas used 1867474
+  Created 0x349ec1Ea268c412a276c002CB2F48a0ceb3cEbd9
+
+[45/98] Bundle B[12] succinctlabs/rsp
+    Attempt 1/3...
+    Tx sent: 0xacb4ac2c2174269857ac3453b1d8648980498d57cb4b5b0e123889e1bb44a942
+    Confirmed in block 157223781, gas used 1881898
+  Created 0xd6DDaF0eCE8b81c1E8cD9D7f8811e7CaCC6AFA92
+
+[46/98] Bundle B[13] aestus-relay/mev-boost-relay
+    Attempt 1/3...
+    Tx sent: 0xb9053aadeb886db9479f01358674d29fc327e09dd7941cf1e241f61d127f05ae
+    Confirmed in block 157223784, gas used 1890654
+  Created 0x7c01a10Aa90a98f37ec8991316e85998e3400a23
+
+[47/98] Bundle B[14] OffchainLabs/stylus-sdk-rs
+    Attempt 1/3...
+    Tx sent: 0x09a9fa59fff4b8ff368766c96e15a29c394f5f59cbe302b83b26816c53bc6ae9
+    Confirmed in block 157223788, gas used 1934500
+  Created 0x8ede7C2F483826aaac3f94602e98f0fCf0daefD2
+
+[48/98] Bundle B[15] ethstaker/ethstaker-deposit-cli
+    Attempt 1/3...
+    Tx sent: 0x9393f0cada55ee330d377f9b5faa8af0a2af458dec3da639f38ebbd1ad905487
+    Confirmed in block 157223791, gas used 1883292
+  Created 0x63109e5Ea805A8D0d6C58Cf2d2fd39b2d06e3a45
+
+[49/98] Bundle B[16] dl-solarity/solidity-lib
+    Attempt 1/3...
+    Tx sent: 0xd951dbf1db544637ebc255ee5a2afa6adaf4b11964292885afae05a581e79dee
+    Confirmed in block 157223795, gas used 1889583
+  Created 0xD2cbcf69AC50d31A75B8c6dc3efCdE9A9270f735
+
+[50/98] Bundle B[17] risc0/risc0-ethereum
+    Attempt 1/3...
+    Tx sent: 0x88721526e714d87c87ffc43ac836def2d59a32102d0931e5c7ce7b7eadad21bf
+    Confirmed in block 157223798, gas used 1860178
+  Created 0xD32f67A1e374c3E229964Cd4190873c20981aeD3
+
+[51/98] Bundle B[18] powdr-labs/powdr
+    Attempt 1/3...
+    Tx sent: 0x91aaab9dbd381fbe466a7d71d9f8949112442c9fcb47a2477dc6da3bb9ebe84f
+    Confirmed in block 157223801, gas used 1874610
+  Created 0xA015aAE93DBA4F57bAD60D7d5106ECAFEF8603D7
+
+[52/98] Bundle B[19] axiom-crypto/snark-verifier
+    Attempt 1/3...
+    Tx sent: 0xc07ac0e0402130329f2cffee954c964eb2acc48ee5c9674f4dc4236939e8f441
+    Confirmed in block 157223804, gas used 1897744
+  Created 0x12c50fED65C66B31DDCe2d314cabc5c916f4E87f
+
+[53/98] Bundle B[20] swiss-knife-xyz/swiss-knife
+    Attempt 1/3...
+    Tx sent: 0xf420cbed231d09e27f5bc3ceca6102daa51830a89b8db8a641a3d8df3ef4594c
+    Confirmed in block 157223808, gas used 1890350
+  Created 0xD53c44f717Ad25906b78D1C8966A66E2ec754692
+
+[54/98] Bundle B[21] a16z/helios
+    Attempt 1/3...
+    Tx sent: 0x23ef8a620100790fa6a3efb08bce9484d2f23c88cd6514da3b8a7564797d1cb3
+    Confirmed in block 157223813, gas used 1845132
+  Created 0x50B87c43B1bD192f821FAf5E1Bd24C1dAb5Fdd46
+
+[55/98] Bundle B[22] alloy-rs/alloy
+    Attempt 1/3...
+    Tx sent: 0x8f2549edcf4ae8819ea439b4a102fb328d28bece20f31ea4622908e90f283867
+    Confirmed in block 157223817, gas used 1859872
+  Created 0xc123517ef0d53B127eA949BC403AB8AfA829ed38
+
+[56/98] Bundle B[23] apeworx/ape
+    Attempt 1/3...
+    Tx sent: 0xee36fcef7c0123ee19a3bd6587ba800e2b90deac50517e1056f4b14a13f0f3c6
+    Confirmed in block 157223820, gas used 1845060
+  Created 0x080848554EE722a29FAe5e77bDbC6A51B5Ef6661
+
+[57/98] Bundle B[24] chainsafe/lodestar
+    Attempt 1/3...
+    Tx sent: 0x1620c1ae7aa01306e299793e29f3b5a197570591e41b6ebd7a20773f04b50f09
+    Confirmed in block 157223825, gas used 1852656
+  Created 0xEb2C133333f436a66D593fAC546A3cf3FB938D30
+
+[58/98] Bundle B[25] consensys/teku
+    Attempt 1/3...
+    Tx sent: 0x9bd82a7950b4521fabcb531739a74bd5ff5b2046bf88eda81c3ccad7782e6e2e
+    Confirmed in block 157223828, gas used 1852484
+  Created 0x1fcbE5371992a1Df7111274D781309d49db75847
+
+[59/98] Bundle B[26] erigontech/erigon
+    Attempt 1/3...
+    Tx sent: 0x795bcdf77128f521ed480be32adc16f5ee8fc47262793167633b07f8d3030cc7
+    Confirmed in block 157223832, gas used 1867268
+  Created 0x8Ac382D16B53463644e18b1401371B97076eE518
+
+[60/98] Bundle B[27] eth-infinitism/account-abstraction
+    Attempt 1/3...
+    Tx sent: 0x162dd1defaa38c33ad8a28ffbb5c8eca17efb3a5d17478906881f9f54c2caf6d
+    Confirmed in block 157223837, gas used 1912638
+  Created 0x7e79e4BaeC50efa7a8B647a54144E828a6C9777d
+
+[61/98] Bundle B[28] ethereum-lists/chains
+    Attempt 1/3...
+    Tx sent: 0x134093e882688eb172d69b19ba139bc8e10378bc145c938d2f9cbcc6c391bb0d
+    Confirmed in block 157223841, gas used 1867360
+  Created 0x9d65D25042a7ebA86B031A138c38eA7094115510
+
+[62/98] Bundle B[29] ethereum/consensus-specs
+    Attempt 1/3...
+    Tx sent: 0xe634571c36d5254aff700d19e09ff352e069e1ffc03584130d028bf3e573ea42
+    Confirmed in block 157223845, gas used 1845583
+  Created 0x8EBD6144b77908442dc245F682A1d31e0f887Ab3
+
+[63/98] Bundle B[30] ethereum/eips
+    Attempt 1/3...
+    Tx sent: 0xc57599021d037fd6e08535f45ec2b0ac41f8031c5455ee433fed6fc9f4a14cef
+    Confirmed in block 157223850, gas used 1889236
+  Created 0x2e2A36409951Cfd44E3c3CF0A3A2C568552D0a9c
+
+[64/98] Bundle B[31] ipsilon/evmone
+    Attempt 1/3...
+    Tx sent: 0x0beb602ff71fcd71972c20cc589b2915645572ef65d7026dd0015c73e4a303b5
+    Confirmed in block 157223855, gas used 1867232
+  Created 0x7e0F8B6944d576E2690D03Ce6218bD13CA74fd73
+
+[65/98] Bundle B[32] ethereum/execution-apis
+    Attempt 1/3...
+    Tx sent: 0x14e2f6a62dd553b6011c9473bd556d6d92430f28744d6709eaef4425a89e1f1d
+    Confirmed in block 157223860, gas used 1845529
+  Created 0xa11eC52bbC7B7907572D34aDD79dDEa2eE3Ae811
+
+[66/98] Bundle C[0] argotorg/fe
+    Attempt 1/3...
+    Tx sent: 0x0ca28c7f407ec2e354578fd8fc1e0e2aa56ffa646b250b29b25c45c064c27281
+    Confirmed in block 157223863, gas used 1837644
+  Created 0xA429CB6ccb906d07ABdB63C044cb7be3a6F62024
+
+[67/98] Bundle C[1] ethereum/go-ethereum
+    Attempt 1/3...
+    Tx sent: 0xa028965304cbad41830b3f5de783cec9e7e9c7524193166035db940bd47d6d35
+    Confirmed in block 157223868, gas used 1830608
+  Created 0xB547C18FdaeB6145783EE580c9d2808E0c75A4F0
+
+[68/98] Bundle C[2] remix-project-org/remix-project
+    Attempt 1/3...
+    Tx sent: 0x8b09f02eb528ece903edbd516efd89729bb7983add1fcd9afde98580b85267e5
+    Confirmed in block 157223872, gas used 1860952
+  Created 0xD1923b6E6c8aE996A5579017366244e609070F70
+
+[69/98] Bundle C[3] argotorg/solidity
+    Attempt 1/3...
+    Tx sent: 0x6f9e0679bd9431875cbfdf44ae6a9574ea00fe70611830a50ebe5904851eb8eb
+    Confirmed in block 157223877, gas used 1859882
+  Created 0x57bFaf5055C01FfF8cc9286F3e1A7720aE333E80
+
+[70/98] Bundle C[4] argotorg/sourcify
+    Attempt 1/3...
+    Tx sent: 0xab08fd1db6d5b8f972548803fc01932087bfdd71fe306d1b01928953eca46a5c
+    Confirmed in block 157223880, gas used 1845196
+  Created 0x7aa95c31a098b46Ae68f99a1e2414399eD0d99C1
+
+[71/98] Bundle C[5] ethereum/web3.py
+    Attempt 1/3...
+    Tx sent: 0xd9a6489a8f19e5532cb6e2d081b97fb12f0f70aee61e00f6a59f154310f5d5d1
+    Confirmed in block 157223883, gas used 1845202
+  Created 0x815E8dC49a612c9631Edd6F4bd1e1dDa8017e677
+
+[72/98] Bundle C[6] ethers-io/ethers.js
+    Attempt 1/3...
+    Tx sent: 0x4b51642e6145b9e7373c46484f7ec2f1af06105e6354a73de2f946de3d0a5ef7
+    Confirmed in block 157223885, gas used 1867308
+  Created 0x343A9d27b2f335AA1a74f2322529730DeddaCB07
+
+[73/98] Bundle C[7] foundry-rs/foundry
+    Attempt 1/3...
+    Tx sent: 0x7c966c71ded06296bd3649592debdb4f251ced29205f2a382d35641174e0e85d
+    Confirmed in block 157223887, gas used 1852548
+  Created 0x22Eb4970Fb64dB584765C878cdEa6D60CC29B63c
+
+[74/98] Bundle C[8] grandinetech/grandine
+    Attempt 1/3...
+    Tx sent: 0x915c78dc6544d99aea9c373be5bad17666cad49d455843ba4f7ff2f36aa86217
+    Confirmed in block 157223889, gas used 1874688
+  Created 0x6F0B04e04eEF06E6A6468614292A3D02D598AebA
+
+[75/98] Bundle C[9] hyperledger-web3j/web3j
+    Attempt 1/3...
+    Tx sent: 0x7e32ad784d44c7d5b41412228ca33b719321aef7e740185c3e80159f27666993
+    Confirmed in block 157223891, gas used 1838153
+  Created 0xa4dD21B04142b24b2949900f58eB4EA90eA8561a
+
+[76/98] Bundle C[10] hyperledger/besu
+    Attempt 1/3...
+    Tx sent: 0x330559e4aa33f53d137b74af94627e3c0a286ed24f9af50709f917f11ee49931
+    Confirmed in block 157223893, gas used 1911210
+  Created 0x4C004a74D5E9Fe87dBc0f41D1835588618A4Bc9f
+
+[77/98] Bundle C[11] nethereum/nethereum
+    Attempt 1/3...
+    Tx sent: 0x32fa79af67f278c199f80165dd6f021ae212b5988d8b9e0720ead4f703e4c41b
+    Confirmed in block 157223895, gas used 1859916
+  Created 0x4427bDd162A3fAE29bf89E9b618c8b02D2C37709
+
+[78/98] Bundle C[12] nethermindeth/nethermind
+    Attempt 1/3...
+    Tx sent: 0xce0cd2dfc2e6cafeeeb566c45c9aa6db5f1cae10799a8762e4a310dc5aad1a4a
+    Confirmed in block 157223897, gas used 1830609
+  Created 0xf3650fB878F9243d08f5B40fDB9b603528C475aD
+
+[79/98] Bundle C[13] nomicfoundation/hardhat
+    Attempt 1/3...
+    Tx sent: 0xb795685764f6b53ab3a7f05f81b7ef16e965f62d3ab42905bb122f937660842f
+    Confirmed in block 157223899, gas used 1852599
+  Created 0xCCDA450680586BB285981156410e8f9528bE1e92
+
+[80/98] Bundle C[14] openzeppelin/openzeppelin-contracts
+    Attempt 1/3...
+    Tx sent: 0x10c55c7e755286e8e2595a18aafb12532282db045f8951e6b34f04919bbff465
+    Confirmed in block 157223902, gas used 1875916
+  Created 0x21B520587b29bfAF330b27A34b6Ca4e768DE9A8B
+
+[81/98] Bundle C[15] paradigmxyz/reth
+    Attempt 1/3...
+    Tx sent: 0x74b8beb5c88fbee0d49c7d354069179128d49657de4bf5db03c81bbc6dd9c571
+    Confirmed in block 157223906, gas used 1845060
+  Created 0x10F55Ea4CC7A14653F2AcE4599f8d8F6e9611Bb7
+
+[82/98] Bundle C[16] OffchainLabs/prysm
+    Attempt 1/3...
+    Tx sent: 0x6be3750f35bd27b677cd20376581e93046b093540664ed1d7ae42feedbb8fe91
+    Confirmed in block 157223910, gas used 1874564
+  Created 0x50c1f379823BdE05b7f395be8da6F6A16A824D12
+
+[83/98] Bundle C[17] safe-global/safe-smart-account
+    Attempt 1/3...
+    Tx sent: 0x9ae49219d0b1968606edb7f6faf039e117d6563d0255af9d650eb8bde3336151
+    Confirmed in block 157223912, gas used 1861056
+  Created 0x03BF4264FFEf7d648Ec50beaaEc78A9CcC56F6ae
+
+[84/98] Bundle C[18] scaffold-eth/scaffold-eth-2
+    Attempt 1/3...
+    Tx sent: 0xedb0a54b9b606e5af31f51e2adbaa9c0fb2ed423e69d06130879b6c0d7ef83be
+    Confirmed in block 157223914, gas used 1882960
+  Created 0x8da3dF7108dbB62244b34CfA7a308D48D24CB7e3
+
+[85/98] Bundle C[19] sigp/lighthouse
+    Attempt 1/3...
+    Tx sent: 0x6be5be92ce7cd90cbc5881f09b42fcd3e128184116575392ee7122741e6c4338
+    Confirmed in block 157223916, gas used 1837884
+  Created 0x69A4d873b3Fb124482341495cD1F94939b963C4d
+
+[86/98] Bundle C[20] status-im/nimbus-eth2
+    Attempt 1/3...
+    Tx sent: 0x56f480b625db096ef1e5a79629339fec9364cdde51a3b174901a3c8945d74303
+    Confirmed in block 157223918, gas used 1830604
+  Created 0x9e0d86528D6289ae62fb5F556628a9A8eD068291
+
+[87/98] Bundle C[21] vyperlang/titanoboa
+    Attempt 1/3...
+    Tx sent: 0xac2271ee37045f40b33880227f0560ffc8514dd9205e8c4d531ca4115923579e
+    Confirmed in block 157223920, gas used 1845216
+  Created 0x96526Ee677010817171aF5a42d3803612c23e02d
+
+[88/98] Bundle C[22] vyperlang/vyper
+    Attempt 1/3...
+    Tx sent: 0x1b99cb454d0f82c17dabb1e361f6c5b60e8db1dc11565e8649ecb85cc63e9df8
+    Confirmed in block 157223922, gas used 1859786
+  Created 0x239989FCbbd6A0b06eF9E1D415885deA70E5444e
+
+[89/98] Bundle C[23] wevm/viem
+    Attempt 1/3...
+    Tx sent: 0x3156a25413da8c02a710a74a6e2a2c0ba3b1eb717df2236ce6b359a5b6bdbcea
+    Confirmed in block 157223925, gas used 1830290
+  Created 0xf8a06FC745D4796ECbeE2E96aECE174DF8bdd6e0
+
+[90/98] Bundle C[24] argotorg/hevm
+    Attempt 1/3...
+    Tx sent: 0x944add68eaf03136f07060fea3fe496e1dd89007a69a6b2025131ba2d663721f
+    Confirmed in block 157223928, gas used 1837674
+  Created 0xD31eE15A44A28E4BD35CC749576C1294Ee68115a
+
+[91/98] Bundle C[25] ethdebug/format
+    Attempt 1/3...
+    Tx sent: 0xb6631bba822db91ea4c90032f13fb42497b8e11cde034e2adb999c2c9a76001b
+    Confirmed in block 157223930, gas used 1881874
+  Created 0x288384a6A44774268ADf06E3ae56996A51f9B958
+
+[92/98] Bundle C[26] argotorg/act
+    Attempt 1/3...
+    Tx sent: 0xaed2b1bb4b11cd32008c3a61322ac6a96fb1f51111d1ab5d2de2b91458d96eb5
+    Confirmed in block 157223932, gas used 1845016
+  Created 0xda29F51abB6a04824299267cAD7b0b417dC76592
+
+[93/98] Bundle C[27] ethpandaops/ethereum-package
+    Attempt 1/3...
+    Tx sent: 0xe0e018d870bb081a0570fa1961b34b9eac6658bab9621ca758acc28811b0d869
+    Confirmed in block 157223934, gas used 1890356
+  Created 0x1853207E367B57bF50594d1EFfcf65377F33D4F6
+
+[94/98] Bundle C[28] ethpandaops/ethereum-helm-charts
+    Attempt 1/3...
+    Tx sent: 0x7faff0c84e5f528172f6edf604cbc4e29b8c06c9556f3b3f725dab33662598de
+    Confirmed in block 157223936, gas used 1905246
+  Created 0x0cc9D676F5AD57420E65F903660BEb1F4FB13d49
+
+[95/98] Bundle C[29] ethpandaops/checkpointz
+    Attempt 1/3...
+    Tx sent: 0xe02029639d9cb31ea113bbb1b67e669abacf08bbf3676d3e6bcc0660978d3e07
+    Confirmed in block 157223938, gas used 1838065
+  Created 0xE03c58ec657253511b525290565fC767A1B56766
+
+[96/98] Bundle C[30] lambdaclass/lambda_ethereum_consensus
+    Attempt 1/3...
+    Tx sent: 0x9cf0f7efb48167d4ba42d8a5df787196fdd099851e77aabe2fa7f4aa25b2092d
+    Confirmed in block 157223940, gas used 1875984
+  Created 0x65612DEb6Fc1790C00Cf370D6Ab5e6c02B6eff9C
+
+[97/98] Bundle C[31] erigontech/silkworm
+    Attempt 1/3...
+    Tx sent: 0xe592ccbe031b38664ff945449c6167a0019bde9bd59eb9ee63d122306d5fa9a7
+    Confirmed in block 157223942, gas used 1852542
+  Created 0xAD1BC4C0FF4740C8A5C7124D020175028cD36A38
+
+--- Summary ---
+   parent   : 0x52f80FC4fa783AB5850d1658589284c47a21B3b7 (Bundle A / Bundle B / Bundle C)
+   children : 97/98 created this run, 97/98 total
+   failed   : 1 — re-run to retry only these
+      - skalenetwork/libBLS
+
+Progress log: ./create-originality-r3-v2-execution.json
+exit=0
