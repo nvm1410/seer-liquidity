@@ -143,7 +143,8 @@
       "Round 3 originality tab shown like round 2: flat list of 98 repos with DOWN/UP prices, bundles hidden",
       "DEEP_CONTESTS round3 entry, leaderboard false"
     ],
-    "criticalConstraint": "ADD a new constant for round 3; do NOT overwrite ORIGINALITY_PARENT_MARKET_ID (round 2 still redeemable; overwriting orphaned round 1 in b6d2cd9)"
+    "criticalConstraint": "ADD a new constant for round 3; do NOT overwrite ORIGINALITY_PARENT_MARKET_ID (round 2 still redeemable; overwriting orphaned round 1 in b6d2cd9)",
+    "pr": "https://github.com/seer-pm/ai-prediction-markets/pull/17"
   },
   "spendingCap": {
     "collateral": 1020,
@@ -220,12 +221,31 @@
     },
     {
       "name": "phase2-ui",
-      "status": "pending",
-      "artifacts": [],
-      "notes": ""
+      "status": "done",
+      "artifacts": [
+        "ai-prediction-markets feat/originality-r3 cfb9ed4",
+        "https://github.com/seer-pm/ai-prediction-markets/pull/17"
+      ],
+      "notes": "Round config parameterises the round-2 tab/hooks; new on-chain data function; per-collateral budget split; merge dedupe; charts/volume use market collateral. tsc -b + build pass; functions typecheck and lint errors pre-exist on main. Playwright desktop+400px: 98 rows, 0 errors; UI prices within 0.00008 of chain."
     }
   ],
-  "evidenceLog": [],
+  "evidenceLog": [
+    {
+      "stage": "launch",
+      "model": "claude-opus-5",
+      "checks": [
+        "create dry run re-diffed vs gate: identical",
+        "markets-only verify OK; corrupted seed (symbol/name/bundle) caught",
+        "liquidity dry run vs preview: within 0.001 token",
+        "full verify OK: 196/196 pools on seed",
+        "corrupted price caught on both legs",
+        "UI prices vs chain within one tick",
+        "tsc -b, build pass; lint/functions errors pre-existing on main"
+      ],
+      "result": "accepted",
+      "learning": "A 3-outcome multi-scalar parent with children conditional on bundle tokens gets a large nested set under the 2^24 tx gas cap; the UI must then key rows off a static market list and split the parent mint per shared collateral token. The shared Apollo client is cache-first per warm instance, so a data function read right after seeding returns stale no-pool results."
+    }
+  ],
   "grillAnswers": {
     "1_outcomeType": "bundle (default); proposal title is UI-only",
     "2_childWording": "match parent: in Round 3 of the Deep Funding experiment (default)",
