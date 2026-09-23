@@ -1,0 +1,1073 @@
+
+📋 Wallet   : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN  : false
+📋 Budget   : 20000 sUSDS
+📋 Range    : [0.02, 0.98] sUSDS per outcome token
+(node:17272) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/add-zcash-liquidity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+🔍 Phase 0: resolving 37 markets on-chain...
+   ✅ all 37 markets verified: binary categorical, sUSDS, top-level
+
+📐 Phase 1: sizing positions...
+   Budget per market: 540.54054054054054054 sUSDS
+
+    #  shortName        side  price   ticks                 outcome       sUSDS    mkt total
+    1  GRANTSHUB       YES  0.550  [-39123,-203]         139.45      247.46
+    1  GRANTSHUB       NO   0.450  [202,39122]           139.45      153.63       540.54
+    2  SHIELDEDSCAN    YES  0.550  [202,39122]           139.45      247.48
+    2  SHIELDEDSCAN    NO   0.450  [-39123,-203]         139.45      153.62       540.54
+    3  ZECKIT          YES  0.550  [-39123,-203]         139.45      247.46
+    3  ZECKIT          NO   0.450  [-39123,-203]         139.45      153.62       540.54
+    4  ZCASHTOCASH     YES  0.550  [-39123,-203]         139.45      247.46
+    4  ZCASHTOCASH     NO   0.450  [202,39122]           139.45      153.63       540.54
+    5  RECONCILE       YES  0.550  [-39123,-203]         139.45      247.46
+    5  RECONCILE       NO   0.450  [-39123,-203]         139.45      153.62       540.54
+    6  GLEYO           YES  0.550  [-39123,-203]         139.45      247.46
+    6  GLEYO           NO   0.450  [-39123,-203]         139.45      153.62       540.54
+    7  FAUCET          YES  0.550  [-39123,-203]         139.45      247.46
+    7  FAUCET          NO   0.450  [202,39122]           139.45      153.63       540.54
+    8  CYPHZEC         YES  0.550  [202,39122]           139.45      247.48
+    8  CYPHZEC         NO   0.450  [-39123,-203]         139.45      153.62       540.54
+    9  ZECLEDGER       YES  0.550  [-39123,-203]         139.45      247.46
+    9  ZECLEDGER       NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   10  LIGHTWALLETD    YES  0.550  [-39123,-203]         139.45      247.46
+   10  LIGHTWALLETD    NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   11  BLINDVAULT      YES  0.550  [202,39122]           139.44      247.47
+   11  BLINDVAULT      NO   0.450  [202,39122]           139.44      153.63       540.54
+   12  ZALLETRPC       YES  0.550  [-39123,-203]         139.45      247.46
+   12  ZALLETRPC       NO   0.450  [202,39122]           139.45      153.63       540.54
+   13  ZECMAP          YES  0.550  [-39123,-203]         139.45      247.46
+   13  ZECMAP          NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   14  CONNAUGH        YES  0.550  [-39123,-203]         139.45      247.46
+   14  CONNAUGH        NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   15  ZAP1            YES  0.550  [-39123,-203]         139.45      247.46
+   15  ZAP1            NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   16  ZECBOOKS        YES  0.550  [-39123,-203]         139.45      247.46
+   16  ZECBOOKS        NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   17  CIPHERPAY       YES  0.550  [-39123,-203]         139.45      247.46
+   17  CIPHERPAY       NO   0.450  [202,39122]           139.45      153.63       540.54
+   18  ZAFU            YES  0.550  [-39123,-203]         139.45      247.46
+   18  ZAFU            NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   19  ZAPP            YES  0.550  [202,39122]           139.45      247.48
+   19  ZAPP            NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   20  HWSDK           YES  0.550  [202,39122]           139.45      247.48
+   20  HWSDK           NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   21  NOZY            YES  0.550  [-39123,-203]         139.45      247.46
+   21  NOZY            NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   22  THORSWAP        YES  0.550  [-39123,-203]         139.45      247.46
+   22  THORSWAP        NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   23  UNSTOPPABLE     YES  0.550  [202,39122]           139.44      247.47
+   23  UNSTOPPABLE     NO   0.450  [202,39122]           139.44      153.63       540.54
+   24  ZCASHNAMES      YES  0.550  [-39123,-203]         139.45      247.46
+   24  ZCASHNAMES      NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   25  FRONTIERSEC     YES  0.550  [-39123,-203]         139.45      247.46
+   25  FRONTIERSEC     NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   26  ZEBRACVE        YES  0.550  [-39123,-203]         139.45      247.46
+   26  ZEBRACVE        NO   0.450  [202,39122]           139.45      153.63       540.54
+   27  BONUSIRONWOOD   YES  0.550  [-39123,-203]         139.45      247.46
+   27  BONUSIRONWOOD   NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   28  CIPHERSCAN      YES  0.550  [-39123,-203]         139.45      247.46
+   28  CIPHERSCAN      NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   29  MINTEXPLOIT     YES  0.550  [202,39122]           139.45      247.48
+   29  MINTEXPLOIT     NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   30  ZEBRACONSENSUS  YES  0.550  [-39123,-203]         139.45      247.46
+   30  ZEBRACONSENSUS  NO   0.450  [202,39122]           139.45      153.63       540.54
+   31  ZECROCKS        YES  0.550  [-39123,-203]         139.45      247.46
+   31  ZECROCKS        NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   32  VALARAUDIT      YES  0.550  [-39123,-203]         139.45      247.46
+   32  VALARAUDIT      NO   0.450  [202,39122]           139.45      153.63       540.54
+   33  TACHYON         YES  0.550  [-39123,-203]         139.45      247.46
+   33  TACHYON         NO   0.450  [202,39122]           139.45      153.63       540.54
+   34  ORCHARDBOUNTY   YES  0.550  [-39123,-203]         139.45      247.46
+   34  ORCHARDBOUNTY   NO   0.450  [202,39122]           139.45      153.63       540.54
+   35  BONUSORCHARD    YES  0.550  [-39123,-203]         139.45      247.46
+   35  BONUSORCHARD    NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   36  VALARIRONWOOD   YES  0.550  [-39123,-203]         139.45      247.46
+   36  VALARIRONWOOD   NO   0.450  [-39123,-203]         139.45      153.62       540.54
+   37  ZODL            YES  0.550  [202,39122]           139.45      247.48
+   37  ZODL            NO   0.450  [-39123,-203]         139.45      153.62       540.54
+
+   Splits (mint): 5159.614634237464991261 sUSDS over 37 markets
+   sUSDS side   : 14840.385365762535008713 sUSDS over 74 pools
+   GRAND TOTAL  : 19999.999999999999999974 sUSDS (budget 20000)
+
+💰 sUSDS balance: 24552.023331135397852988 | need: 19999.999999999999999974
+   Router.conditionalTokens() = 0x8bdC504dC3A05310059c1c67E0A2667309D27B93
+  Approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 → 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD for 5159.614634237464991261 ...
+  Attempt 1/3...
+  Tx sent: 0x826b7f56aad7aee8af48d272464a89e6f2dafa9c55e12556d2717011e0492947
+  Confirmed in block 155889485
+  Approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 14840.385365762535008713 ...
+  Attempt 1/3...
+  Tx sent: 0xab07676f87422b246f025244cd442e359cb168300efdc89cf930f62a001258af
+  Confirmed in block 155889489
+
+📈 Phase 3: seeding 74 pools across 37 markets
+
+
+=== [1] GRANTSHUB — 0xE599669a0cB02128fa0463953f9f70Fde240921A ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x400929a0a4dca33aa14c4593cab9de4011f569c8c1f392737159de285bb8444c
+  Confirmed in block 155889493
+
+  --- GRANTSHUB YES @ 0.550 (0x30258BD4D6344B2be1AD364ebe5D19E4F88fC78e) ---
+  Approving 0x30258BD4D6344B2be1AD364ebe5D19E4F88fC78e → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x2a44fde4d650159601579824069622cd4abc99c9bd1345d006a3af7282df7f35
+  Confirmed in block 155889496
+  Attempt 1/3...
+  Tx sent: 0x4c2ca09549a896f652596b943112e70c5f14b8a5401c8dd4a3a8a74747237aec
+  Confirmed in block 155889500
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- GRANTSHUB NO @ 0.450 (0xF983075ccac6A52cE1dCA390cE319A3253f56CFd) ---
+  Approving 0xF983075ccac6A52cE1dCA390cE319A3253f56CFd → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0xf41ec46aa9f5f9bf3aac10c64bf574392dec587b3fface9d6696c8eb2c76dc58
+  Confirmed in block 155889503
+  Attempt 1/3...
+  Tx sent: 0xc20c5b7f901510cdc21167471f0384ba6e6ed6bce778f47e675460249388ae0c
+  Confirmed in block 155889507
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [2] SHIELDEDSCAN — 0xbdb8245fB6E4c6dF77bB6b28AF7C7691572805EC ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x6029b398e61ad054e2839d363fe65fc6ad8d6659e6642105bb08389de49f3c2c
+  Confirmed in block 155889510
+
+  --- SHIELDEDSCAN YES @ 0.550 (0xD1122a4bEc93Ab3DA7Ca3B9601DCa61e3b4308DB) ---
+  Approving 0xD1122a4bEc93Ab3DA7Ca3B9601DCa61e3b4308DB → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x9db1f64ef541d028fd814488181d01924847e3a1fe298dce655ceaddc9fd2185
+  Confirmed in block 155889514
+  Attempt 1/3...
+  Tx sent: 0x222ebd6e20c25085f17b09a953b7327040ada40b50f9742b22e8b2e5e0a2f342
+  Confirmed in block 155889519
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- SHIELDEDSCAN NO @ 0.450 (0x62600B021160180C743316415257d2518Cf4A75A) ---
+  Approving 0x62600B021160180C743316415257d2518Cf4A75A → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x9a27a4d6580359f3794c839c1fd7f95d80005e83c3889d2d9b9e083c81300f83
+  Confirmed in block 155889522
+  Attempt 1/3...
+  Tx sent: 0x81873ab20d132eef74baff0c50c2b1561a7a349b875deacf203f7ba53d7dafdd
+  Confirmed in block 155889526
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [3] ZECKIT — 0x8F62C36678044f5BE39DE143C01d652919E59a31 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xdedfe3b462ab0dbe63f40cd32e8a627226a9aa25c0c6ad4e19d44a01988850b0
+  Confirmed in block 155889529
+
+  --- ZECKIT YES @ 0.550 (0x93550F086AcdEAe522d844D7Be0aD8F94bA05939) ---
+  Approving 0x93550F086AcdEAe522d844D7Be0aD8F94bA05939 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x017add27aa3ffa1f8b2ddfc05e0ef964e24e77169e01e679a8dad9ebf2cd7ec3
+  Confirmed in block 155889534
+  Attempt 1/3...
+  Tx sent: 0x1511bf287128f0f2ee80eb47afd983d7dfc4f32a7237e05e16011471229f78dc
+  Confirmed in block 155889538
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZECKIT NO @ 0.450 (0x3D6ae7e4E9cdc1eAe8ffE7A1Ff57AB3a519Cb8dA) ---
+  Approving 0x3D6ae7e4E9cdc1eAe8ffE7A1Ff57AB3a519Cb8dA → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x5075faf8e5b6327ad7200f6b64f8b31384e243c981ff22f269b0adbedf9bc23c
+  Confirmed in block 155889541
+  Attempt 1/3...
+  Tx sent: 0x7b645c50a3b1a49ee65938638793a0fa55001dbb6f117c1f17cd81cda5f9873b
+  Confirmed in block 155889545
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [4] ZCASHTOCASH — 0xdC8cDe1236921607e18382710D42DE2A8ccdd491 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xa936c11a483ba1817bb8dc9f95b04d0f8452f89df85b846c14cd46105439473f
+  Confirmed in block 155889548
+
+  --- ZCASHTOCASH YES @ 0.550 (0x642b91635F5Ad1881540f47d1ced93f0b1cbf339) ---
+  Approving 0x642b91635F5Ad1881540f47d1ced93f0b1cbf339 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0xb9f8579be18840d4f987df5eaca07dbd24d93f979db5d8ad1fd92d776ac4dfa8
+  Confirmed in block 155889551
+  Attempt 1/3...
+  Tx sent: 0x124d081bbfdb9d2b1ae960fac9bebeb25fe9762d294ce769457c43f6e97ffa5d
+  Confirmed in block 155889554
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZCASHTOCASH NO @ 0.450 (0xe711B847F30B5fD450B2C61B74422B335A77468F) ---
+  Approving 0xe711B847F30B5fD450B2C61B74422B335A77468F → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x6816de84169bd24622071375083a0046cefe30a82e58cfb8c397449839ce838a
+  Confirmed in block 155889558
+  Attempt 1/3...
+  Tx sent: 0x8eaaf88c3f83d82e38edde9099e3f205b8e668c142b5cfb2f3f9a28f866c11b8
+  Confirmed in block 155889561
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [5] RECONCILE — 0x55094376a3283512a8144Fa9a251E430195286E2 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x19ed625d3da23fda0a4d3afe2a28c7b1156ec69650328ef020ae0985edd4db19
+  Confirmed in block 155889565
+
+  --- RECONCILE YES @ 0.550 (0x6CE153c83A74258b9F0D80dBabc3011eF6178BBc) ---
+  Approving 0x6CE153c83A74258b9F0D80dBabc3011eF6178BBc → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xb44284a63c263f3ed8bfdb4d6f552d30dc93da7054857116fa04364eba9e9138
+  Confirmed in block 155889567
+  Attempt 1/3...
+  Tx sent: 0xaf5f123ea24272549bad18f0133f464c4c119d69bd3f8a53bb05bb029f6104d0
+  Confirmed in block 155889569
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- RECONCILE NO @ 0.450 (0x7AB992CFba241dDbD7691Ee5A426cfAFae026B14) ---
+  Approving 0x7AB992CFba241dDbD7691Ee5A426cfAFae026B14 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xa2d05d440ad87dd132e7dfad6bd81117acd05478717fce9870c567534809e4d6
+  Confirmed in block 155889572
+  Attempt 1/3...
+  Tx sent: 0x72b500ae2960fa011a3a2e2a8bda8c3cf5891b4bc5455baa73867e40ad9efa85
+  Confirmed in block 155889576
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [6] GLEYO — 0xAce4327Ac96E15040474065dC6aA0da0751BcBCA ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xac1d26c9d0c2f56f2ab74c86e0e862b7d999a4f134fbfbda21b563f9ab7934d1
+  Confirmed in block 155889578
+
+  --- GLEYO YES @ 0.550 (0x8A3dAe0FC9Bc4A0937D4432CedA163dAda18C9Be) ---
+  Approving 0x8A3dAe0FC9Bc4A0937D4432CedA163dAda18C9Be → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x7491f70da7ad5d5dc9b39db15786fd7c8cceb2ef157d434b8d8b381bb2a5c4d3
+  Confirmed in block 155889581
+  Attempt 1/3...
+  Tx sent: 0xe6504e693c659756d76c6648a05a57e13938acd06020c9a02dfe2d22f2362b0c
+  Confirmed in block 155889585
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- GLEYO NO @ 0.450 (0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586) ---
+  Approving 0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x4d10f7b18244b203a3e36827a31d6499dfa74bb17cdc0e981e5dbee6304b8ec7
+  Confirmed in block 155889587
+  Attempt 1/3...
+  Tx sent: 0x4d821acf46a8e031be9e84f713f93be35b2c6bd8009ba021c392b25abcd496ff
+  Confirmed in block 155889589
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [7] FAUCET — 0xb4485E5404178444fbf3F279eddF2b5C4b421e39 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x0493e1267103901e85f3423d674334b1558edcc8c4f9034f9c1715ab754482ba
+  Confirmed in block 155889592
+
+  --- FAUCET YES @ 0.550 (0x758fcb92132bdf0Ba3BB4A752b30140ab042bB80) ---
+  Approving 0x758fcb92132bdf0Ba3BB4A752b30140ab042bB80 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x73a6c6a9ae9f616babf69a35497bee63c25e7eceaf72a85e038f56cafbaa7da1
+  Confirmed in block 155889596
+  Attempt 1/3...
+  Tx sent: 0xb3980af442995b83e81f0d23764a5a14195c8ca3dfd9f42e7b98e95d93aacd43
+  Confirmed in block 155889600
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- FAUCET NO @ 0.450 (0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6) ---
+  Approving 0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x0896bfd488113bc2ff9ed3fad3693ab39848cc1ab7a7e71e28210f7574b69494
+  Confirmed in block 155889603
+  Attempt 1/3...
+  Tx sent: 0xf6871278cd8425a15d7b5aeec7b2d9dc31f03314ba2720c4357afe094e4a9b59
+  Confirmed in block 155889608
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [8] CYPHZEC — 0xe3A5794dFdcccBc964574bc6A5E3Cab92f198f03 ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x29befec1ea721b2788aacec809776a11382c51896618d0366c8db37529b5fb75
+  Confirmed in block 155889611
+
+  --- CYPHZEC YES @ 0.550 (0xfcc942219759ca67AE3B451b363a821Bb5073A7a) ---
+  Approving 0xfcc942219759ca67AE3B451b363a821Bb5073A7a → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0xb9b6c8d2d18153781cb4fef1afa52f343386f480fe5ec0f91d9e9a6bfc70b1db
+  Confirmed in block 155889615
+  Attempt 1/3...
+  Tx sent: 0xde8f2280e9480c8c1f252272abb2f4fe998f24fa51c971bef7f81e814888b1ce
+  Confirmed in block 155889618
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- CYPHZEC NO @ 0.450 (0x74702F3887287f7c5ca89B8B43e4E5e232E39A86) ---
+  Approving 0x74702F3887287f7c5ca89B8B43e4E5e232E39A86 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x7032971e184558d522dab6ccd6a4f88dbfa7f8a2a4a720bca69606b911eac24f
+  Confirmed in block 155889621
+  Attempt 1/3...
+  Tx sent: 0xf935b61e91dc199847395939bbbb52633bdf072cda72ff56a75123ea7dd244fb
+  Confirmed in block 155889624
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [9] ZECLEDGER — 0xFf4553ad2539B2722b322d10930f1B85969DEe6A ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xfc92035d969fc4fdc9b59a72adb821c7a95632252479ef33942f502efbefd535
+  Confirmed in block 155889627
+
+  --- ZECLEDGER YES @ 0.550 (0x6Ff66A3D8139f5aC033e17B9d65cd7EDb842df92) ---
+  Approving 0x6Ff66A3D8139f5aC033e17B9d65cd7EDb842df92 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xf1871db7b2654ba5f83677058c10ae26c1d63ab14a9a00b5d487b192b2ee4df1
+  Confirmed in block 155889631
+  Attempt 1/3...
+  Tx sent: 0x2b06208d31e41ee7be612b85792939725cc0e4feb24d3d9bc6e0e2e6f0c25d80
+  Confirmed in block 155889635
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZECLEDGER NO @ 0.450 (0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da) ---
+  Approving 0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xdc91f0ff42dab64eac19c911857ef66792e55a8b6914f7de0e33e3331e904b76
+  Confirmed in block 155889638
+  Attempt 1/3...
+  Tx sent: 0xee70b718d790498076fcd4259ae51feeb9668f50b9adf1823d655e0084bfa2e7
+  Confirmed in block 155889642
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [10] LIGHTWALLETD — 0xd058cc42d014810B15A93874b3f11B02bfAd9732 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x4d332df0810e5e91f667f41e5b8ffd5903db6e7f57a0ed850ff1e6a4172c1592
+  Confirmed in block 155889646
+
+  --- LIGHTWALLETD YES @ 0.550 (0x5947Da3E3753b85Fe01d735207dA28773aD2db63) ---
+  Approving 0x5947Da3E3753b85Fe01d735207dA28773aD2db63 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x7cb78c8a287b81a2c355a36e91831d360844cc430b08abdea78a562dbd005e72
+  Confirmed in block 155889648
+  Attempt 1/3...
+  Tx sent: 0x00b7c90c8a929ad02b3b065308cd5e39e01bcc7b5ae04d97cc99e632512ee37f
+  Confirmed in block 155889650
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- LIGHTWALLETD NO @ 0.450 (0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2) ---
+  Approving 0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x16ec3d1122c09692156c9cc327d8e1a07a8cb2ffa43a93d6c1a2053aa5b41dcd
+  Confirmed in block 155889653
+  Attempt 1/3...
+  Tx sent: 0xfbe035fc0994165df68c98f1c3e948d00b464aa59c9539429e15fc4fd978b317
+  Confirmed in block 155889657
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [11] BLINDVAULT — 0x5395fD696b64d1d3e9295e09BfAf038E0c8F05f6 ===
+  💧 splitting 139.441363063495963413 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xc67f3f619bbb4ebaf5591c1822d12b1a7b81b7436589b1141c11e97eec763c8f
+  Confirmed in block 155889659
+
+  --- BLINDVAULT YES @ 0.550 (0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42) ---
+  Approving 0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.441363063495963413 ...
+  Attempt 1/3...
+  Tx sent: 0xd83900514fbf6280b6a0e51263a6af7eb3d42c9101c059300b7118d592fafd36
+  Confirmed in block 155889662
+  Attempt 1/3...
+  Tx sent: 0xec06ffcbf863510609ecd7afa37f29e47e0b69e3cb4e6ef6c6076876c43c118b
+  Confirmed in block 155889666
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- BLINDVAULT NO @ 0.450 (0xfD55e6DB8Cc3EF85766444E21882f95B9aF426aC) ---
+  Approving 0xfD55e6DB8Cc3EF85766444E21882f95B9aF426aC → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.441363063495963413 ...
+  Attempt 1/3...
+  Tx sent: 0xb25dcd974cb3c93ff93eac1099401ff08465284f14ed438803617b23a2efc4cd
+  Confirmed in block 155889669
+  Attempt 1/3...
+  Tx sent: 0x4af4bb1d7fc7b19803b066a26333515263528d245c56a7830920e1ff3975473f
+  Confirmed in block 155889673
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [12] ZALLETRPC — 0x781FC94cf2a362C29cB08c86f8DcD1EA8181a158 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x14c9f34f3a851d43f378da1b8400cca09fd781e4547e2e9e261201607eaf7cfd
+  Confirmed in block 155889675
+
+  --- ZALLETRPC YES @ 0.550 (0x76eEA0004D171054F537fDb6F274948a9Cc1EA57) ---
+  Approving 0x76eEA0004D171054F537fDb6F274948a9Cc1EA57 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x6961109eebf9b6e6e5a5a3bddaca333933625186a3e107c05669ff3c03f2bb86
+  Confirmed in block 155889677
+  Attempt 1/3...
+  Tx sent: 0xf6662af063622f9ebf6782eec2b94ab3846981f205a89c21a06014bdf40ff260
+  Confirmed in block 155889679
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZALLETRPC NO @ 0.450 (0xee811Aa69f197a465E9Ad915F7cD613AB09A41d8) ---
+  Approving 0xee811Aa69f197a465E9Ad915F7cD613AB09A41d8 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0xc68153f1574ab3732617c4458b4045202ef77fb14ad95459538af62f995e9827
+  Confirmed in block 155889681
+  Attempt 1/3...
+  Tx sent: 0x2f993c1b28f5699458dcf3a4ff103ed36a430550279bf10c64ad49889673baec
+  Confirmed in block 155889683
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [13] ZECMAP — 0x78a72380C7936F2CB3574d2302E8437aeEBaB93c ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xcbd95e768e013ce3c8b98ddceecc6966ea9405e99ed542b92125c147072b6f4c
+  Confirmed in block 155889686
+
+  --- ZECMAP YES @ 0.550 (0x6C05B893299fE0f66e57465E4eeC06fB78A52718) ---
+  Approving 0x6C05B893299fE0f66e57465E4eeC06fB78A52718 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x783fedb74753678a23c7cfa1a797123ba1ec9f013483cbb8571512f9587f8335
+  Confirmed in block 155889690
+  Attempt 1/3...
+  Tx sent: 0x5f8858c90849c6f5b21681c3f204fe84c9c7702b872eff999c229fcfe0c182a5
+  Confirmed in block 155889694
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZECMAP NO @ 0.450 (0x85051bd7FFDA82f16BfAFA9675b9de1a4B9C48c0) ---
+  Approving 0x85051bd7FFDA82f16BfAFA9675b9de1a4B9C48c0 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x7af281ea0fbcfe12ae71dd9509c39b6b3df93eb8b53d9d841631ee426054ab5c
+  Confirmed in block 155889697
+  Attempt 1/3...
+  Tx sent: 0x14eb0feedc0ea5a26425cd81a638730371a470f8ca4304bf4194ff143b00212d
+  Confirmed in block 155889701
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [14] CONNAUGH — 0x64a3ab58337ca2D6DdCDd6Ab6712b3E57626Ee1f ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xa66dc5226d5fb240ca31425800ea76ad0c8e12b2f3ef73f874ed05508d2f4cb8
+  Confirmed in block 155889704
+
+  --- CONNAUGH YES @ 0.550 (0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2) ---
+  Approving 0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x06a4d17837b724483bab70c9281fe11dfacfbe918314643bf5ab8577938a241c
+  Confirmed in block 155889708
+  Attempt 1/3...
+  Tx sent: 0x1bc00729177a0138a4160cb05a192d61ce55ce275500bd172d9aa75ad954d740
+  Confirmed in block 155889712
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- CONNAUGH NO @ 0.450 (0xB2E5f4eAbc756196857ACF7a10C584890d04A447) ---
+  Approving 0xB2E5f4eAbc756196857ACF7a10C584890d04A447 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x191dc6e4e220e03dd564817757866f9ed530855c382b2d42a5dc5f95e30cce4b
+  Confirmed in block 155889715
+  Attempt 1/3...
+  Tx sent: 0xe25c70b48f07a0c368763698f8a9f1f9db5e7721129699e71ad6cc1bac20e310
+  Confirmed in block 155889719
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [15] ZAP1 — 0x0586C5Bf8A0137D3dA895E59663b760B5E39C340 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x998658c992656db76de7acf84240eb37fc6e07a204a4f9bfb3ba42f16f45e6ec
+  Confirmed in block 155889721
+
+  --- ZAP1 YES @ 0.550 (0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48) ---
+  Approving 0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x5264eeda17771ce6a0c194aacb05ea799d4687da6ec793ddc6a2bb3b91c905f7
+  Confirmed in block 155889724
+  Attempt 1/3...
+  Tx sent: 0x78a1ffeae27c99031ca414df98f16c4620a58b2736029eea9e042c1a6abf61ad
+  Confirmed in block 155889728
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZAP1 NO @ 0.450 (0x536B431A22CE9D09d36455B1950d22165DAF6aB4) ---
+  Approving 0x536B431A22CE9D09d36455B1950d22165DAF6aB4 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x2ae52ee91de6005e7b3eb2f0baf885304d785a6d3cbe10a68ce34f7c42bb350f
+  Confirmed in block 155889733
+  Attempt 1/3...
+  Tx sent: 0xdf380f743f08dc5842f3d4ee07705c2acfa6f9974bbdc9efa8c46e9d2468a926
+  Confirmed in block 155889737
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [16] ZECBOOKS — 0x140654d12ac41a2d946E6DEc85D07A0252B0BF20 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xc1f7dfa7fe7646a510543e47ef1d1364ea2fcf1e57246467b382dbdb5bb4f38a
+  Confirmed in block 155889741
+
+  --- ZECBOOKS YES @ 0.550 (0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A) ---
+  Approving 0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x779ccf577b1c11f20cd182a2cbf3b1566c04b3583a81bf75dff2bc1633935799
+  Confirmed in block 155889744
+  Attempt 1/3...
+  Tx sent: 0xbfc2028466686e568bcb8e370af9714b9e63e475c7182715343ac36521ad53b2
+  Confirmed in block 155889748
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZECBOOKS NO @ 0.450 (0x19c04F7216aa17d484424803EA55A0cae66A237C) ---
+  Approving 0x19c04F7216aa17d484424803EA55A0cae66A237C → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xa77def43c80253634ca14c141af46d84355ab57e05bbfec20482ae18d4ae39d0
+  Confirmed in block 155889750
+  Attempt 1/3...
+  Tx sent: 0xd1824eadee8865e827fef9b789b548d3530f3f397f8f234cc0138a67cfdc3ccf
+  Confirmed in block 155889752
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [17] CIPHERPAY — 0x0900986e76a3a75cE4dFD3615AAA5e388d1A7870 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xf842acd96460277c62746eeae4db2f3dcd26fe80b17574e144a635dab7818e94
+  Confirmed in block 155889755
+
+  --- CIPHERPAY YES @ 0.550 (0x5469755c89E69baB03a61bd6D73a640015242e69) ---
+  Approving 0x5469755c89E69baB03a61bd6D73a640015242e69 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x76499e8509e49a7e2ea08a0fe076563aa4a2259896ed9f29f77cfcaae51e577a
+  Confirmed in block 155889759
+  Attempt 1/3...
+  Tx sent: 0xaa1df463633e89d2a9c9aab2355d31706b2c0bad7a5679dffce9d573125431f1
+  Confirmed in block 155889763
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- CIPHERPAY NO @ 0.450 (0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88) ---
+  Approving 0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x66478c890030157002ffcb0624c397e8ffa8ad02caa954b0c7872d5b91c73845
+  Confirmed in block 155889766
+  Attempt 1/3...
+  Tx sent: 0x621d816c8b2444ae684043fb73e073f884ae38a20264ad532315ffa121566eca
+  Confirmed in block 155889770
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [18] ZAFU — 0x725337EF90bE0a5a7064098d6A0191d93F8C1B70 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xd939b64736dde25368f86d57ca13b1f204484c6d836fd22ba361bd6486c4f7d4
+  Confirmed in block 155889772
+
+  --- ZAFU YES @ 0.550 (0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C) ---
+  Approving 0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x8143f8cd4bffa739d0bff78774c71fec8037e7c3e5c4b157ef1100b1ec50d692
+  Confirmed in block 155889774
+  Attempt 1/3...
+  Tx sent: 0x2731faae3ae5c05feaa5e19043cbb4899c26fd28483c3a3342a590317acb8eaf
+  Confirmed in block 155889776
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZAFU NO @ 0.450 (0x6092856669F7Eedf4c6E07105a96E9E14EF52EE2) ---
+  Approving 0x6092856669F7Eedf4c6E07105a96E9E14EF52EE2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xf757d826d0a6e190934558092f558879405606d964e653519c9fce25da7b57e7
+  Confirmed in block 155889779
+  Attempt 1/3...
+  Tx sent: 0xf8ca90fe5f6ebb68b1962099da502ac3adcf13a2cb905c8fc918753a709bec15
+  Confirmed in block 155889783
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [19] ZAPP — 0x06277FcEf6340930B0F08B90032EDAF07CE36b6A ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x3cb521f9796ed1f66e6372040709c15fb20b36ca04adb0bd88823586f0bc70d1
+  Confirmed in block 155889785
+
+  --- ZAPP YES @ 0.550 (0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4) ---
+  Approving 0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x5e1eb215219932d7b082762e3d809eebd4afb5e4baacc769c36dfd82d8b83316
+  Confirmed in block 155889788
+  Attempt 1/3...
+  Tx sent: 0xf1f597ab1519d4e9c91a5682412f9029e633d7f21f01c9a819c795027f72920f
+  Confirmed in block 155889792
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZAPP NO @ 0.450 (0x39f0a7987F0B2a9cB78B35C935BB0eFaCeA42B82) ---
+  Approving 0x39f0a7987F0B2a9cB78B35C935BB0eFaCeA42B82 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x7c4d911890b7b8649264e6e498557682e6ade4fa1d5b305a9e039cdd6852890a
+  Confirmed in block 155889794
+  Attempt 1/3...
+  Tx sent: 0x5882dd2d1c628240312c286dc23e75893d497514891b5f8159ffad0389328910
+  Confirmed in block 155889796
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [20] HWSDK — 0xA58c14Daf5c0f14adFE08b2c672ab361948758d2 ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x18a16dc7f6bd4b4790188199a950cd6d500bf78bedd0185efcffc7f4827a52e3
+  Confirmed in block 155889799
+
+  --- HWSDK YES @ 0.550 (0xE497cC87790e25D1Ba3C388b79c5759B92A53E8C) ---
+  Approving 0xE497cC87790e25D1Ba3C388b79c5759B92A53E8C → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x2b8825c1b9d30df66b734c297e3ac9b2d5a6493007a340097183329b907d9a69
+  Confirmed in block 155889803
+  Attempt 1/3...
+  Tx sent: 0xfc51e1cc08675cac65cc628a934261bf1572a1f307ad919630d7df0296f57741
+  Confirmed in block 155889807
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- HWSDK NO @ 0.450 (0xA9980Ee502021d4E6906cff74374C24dDB49e4F2) ---
+  Approving 0xA9980Ee502021d4E6906cff74374C24dDB49e4F2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x6973169e64696da017946ae95d1695aaf3225ae72c1bd2b32bd88bb1e5929b2e
+  Confirmed in block 155889809
+  Attempt 1/3...
+  Tx sent: 0x818fc99522f9a5b13f11a0b4129360c6fcdd46fa053c3d65045bd3ea86279b5f
+  Confirmed in block 155889811
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [21] NOZY — 0x45eF7f50825619AEa0070d7d0147DaE5A26fc50B ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x17ff3b910b2b6cb1ab28e749b8302ab435d392eaa8097404e291d2f129bcf8ba
+  Confirmed in block 155889813
+
+  --- NOZY YES @ 0.550 (0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7) ---
+  Approving 0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xabbc6b035d6a7eb815f457efa69be2a7702398e1c2953c95998ca5499819e221
+  Confirmed in block 155889816
+  Attempt 1/3...
+  Tx sent: 0xc23423170384779f2758ff1909105120fea3ad516c0a2ecd02784abaeffeb8a4
+  Confirmed in block 155889820
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- NOZY NO @ 0.450 (0xaF2932072667544c6Beba7B695dfEA896252d60A) ---
+  Approving 0xaF2932072667544c6Beba7B695dfEA896252d60A → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xb1c2ca5ffb9777172b1746623d0e86c9613fa93a92903d44452d8311dfe5177f
+  Confirmed in block 155889823
+  Attempt 1/3...
+  Tx sent: 0x3d7fd591c8b10d813fb327d3a1ef7ec77157dfdee59cacf904c6ed7b098d1ae9
+  Confirmed in block 155889827
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [22] THORSWAP — 0x777B50f83e76acD9E520Abf6a258CC218B1aD054 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xc151298a65b2a209ca0281f48f313b42067073dbe45a4ddee7cc4da238883c2c
+  Confirmed in block 155889829
+
+  --- THORSWAP YES @ 0.550 (0x3906685605Bbc3b107613C77c078e065D0ccAE5C) ---
+  Approving 0x3906685605Bbc3b107613C77c078e065D0ccAE5C → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x856686851fa999a6c9e7219cf8ac30cf280cd2b608c074729f37f20224697b66
+  Confirmed in block 155889832
+  Attempt 1/3...
+  Tx sent: 0xe5c495af9b8e4a9ab90018a8afda15a6226fcf04e14ed785f5e971a58c425968
+  Confirmed in block 155889836
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- THORSWAP NO @ 0.450 (0x6ab6b9B720172B73667AE83fd712D49d5c868ecA) ---
+  Approving 0x6ab6b9B720172B73667AE83fd712D49d5c868ecA → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x0552bb2d4e685bd2064380693b5742ea7703d41fef15e2b8786069a390c1d5c4
+  Confirmed in block 155889839
+  Attempt 1/3...
+  Tx sent: 0x12711b8105ae47e783c7a59e138e79bc6d7bfab421f7196d9e132d5fd9856e44
+  Confirmed in block 155889843
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [23] UNSTOPPABLE — 0x404CcB09e7F47dE56b64253d9E2f839D555366b8 ===
+  💧 splitting 139.441363063495963413 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xe089cd0c87585cd24cb0d4d48f0aefc2f0e924e9545b69c207b8fc01a79a283b
+  Confirmed in block 155889845
+
+  --- UNSTOPPABLE YES @ 0.550 (0xE03D7063F268047BA5dDBAAA3ece1CA777fE70ff) ---
+  Approving 0xE03D7063F268047BA5dDBAAA3ece1CA777fE70ff → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.441363063495963413 ...
+  Attempt 1/3...
+  Tx sent: 0xeaa164a87b7d95dc829f5288dc21ae41f0c60395e6eeae68a79fdb05f07d2754
+  Confirmed in block 155889848
+  Attempt 1/3...
+  Tx sent: 0x9536336d1fa8ec2f42b4e53815248542ee80de53fb67a6620d2f53e706c5a321
+  Confirmed in block 155889852
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- UNSTOPPABLE NO @ 0.450 (0xb7295c351321ebD651528324AF9FA5B7Ebbe198c) ---
+  Approving 0xb7295c351321ebD651528324AF9FA5B7Ebbe198c → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.441363063495963413 ...
+  Attempt 1/3...
+  Tx sent: 0xe7eb2a7b20c24fcb822a530f951efac99375bc7802b68674dbb1a086115f4a4d
+  Confirmed in block 155889856
+  Attempt 1/3...
+  Tx sent: 0x01461db30b2a15415aef30139c1e6411348693209336c49a0c94e23c7c469692
+  Confirmed in block 155889860
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [24] ZCASHNAMES — 0xB6Bb6a1E1f02a11AFAE1DE272C94a78bd4673f37 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x520f412d74177e06e5c557d50c49e21db927b6566a58ac60ec21a25b477497e7
+  Confirmed in block 155889863
+
+  --- ZCASHNAMES YES @ 0.550 (0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a) ---
+  Approving 0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xcb4917f99d9ef34f87defb423f5f1fb3f7651f57e6557b66bdb6f714aacb8c89
+  Confirmed in block 155889867
+  Attempt 1/3...
+  Tx sent: 0x3f83dfea341cb34b976ab57529c1945195570ffa3287da6c6f6d95a6cca190bf
+  Confirmed in block 155889871
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZCASHNAMES NO @ 0.450 (0x35DD8AD91E819B76b91319a9D9ACff39c7CF1a17) ---
+  Approving 0x35DD8AD91E819B76b91319a9D9ACff39c7CF1a17 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xabaac8fddebf248715a3353e71169e53ac1d63df758f582c0c66a4929a3b8f83
+  Confirmed in block 155889875
+  Attempt 1/3...
+  Tx sent: 0xc97a267bc148fa841252f52f4eb382824844e0ed816d5b22a0d3b8d2aaf5857f
+  Confirmed in block 155889877
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [25] FRONTIERSEC — 0x751047Dc87049EB122CDbF570a591ECEEB81b984 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xccf120ef15243889aeb6341044401a362e33ce21d1670dee7c625ed5470d62ec
+  Confirmed in block 155889879
+
+  --- FRONTIERSEC YES @ 0.550 (0x8994C409978a640d2de6b11D2dbd72794989F508) ---
+  Approving 0x8994C409978a640d2de6b11D2dbd72794989F508 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x153f6d23238814132d490707d0da0bd277e34079559b411216fea44a456bbf5a
+  Confirmed in block 155889882
+  Attempt 1/3...
+  Tx sent: 0x0e0347f15259a9ff165362fab0665b3e395a39ff32941c36712358f276b5f3e5
+  Confirmed in block 155889886
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- FRONTIERSEC NO @ 0.450 (0x066279aF0d19382FFFDc2fBF8842058168f68d0a) ---
+  Approving 0x066279aF0d19382FFFDc2fBF8842058168f68d0a → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xbc2b0e011faf7a0da5e915366ca9894d959173afcc7b6e95955845423df4351b
+  Confirmed in block 155889889
+  Attempt 1/3...
+  Tx sent: 0xd949ffdf8423c289437c15002f4d560ae8b2d0a1dbbf4d5765cc9a44bcf9ea70
+  Confirmed in block 155889892
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [26] ZEBRACVE — 0xDA375Fa265997b5B408fA94D9C834693861BceCa ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x719e10d30d70d50a77fa62b02052b49af2df688c4d4bab49e34aab323ff14334
+  Confirmed in block 155889895
+
+  --- ZEBRACVE YES @ 0.550 (0x81361090f60dB987307986DCff85A3F726278006) ---
+  Approving 0x81361090f60dB987307986DCff85A3F726278006 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x5e30e1745b4fd617b7e97871e420f7f06738ff7e9f159d0db56fce12d4bd1323
+  Confirmed in block 155889899
+  Attempt 1/3...
+  Tx sent: 0x5fdff9a0198e501a9e4727921da3cf613b7f2fba78de7e069ca5c72128737795
+  Confirmed in block 155889902
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZEBRACVE NO @ 0.450 (0xCee609fB783D37788d53B940fDD81Df3fdea4b3f) ---
+  Approving 0xCee609fB783D37788d53B940fDD81Df3fdea4b3f → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0xf847d4b3606d9d6ccac6ded12890872183d03ecdd9ca7696c3f1d3ae4a16a924
+  Confirmed in block 155889905
+  Attempt 1/3...
+  Tx sent: 0xbf11653af6e21ebb9a7571ebb5ff3c302da596c5fa0f9629774699c070282151
+  Confirmed in block 155889910
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [27] BONUSIRONWOOD — 0xDdBE118c992Fc4165291eaD70B64c33dB037eB67 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xa204865aae9e511831caa94e40c08fe2a2fcda77ac1b3ae03de1ae80d3a53c99
+  Confirmed in block 155889913
+
+  --- BONUSIRONWOOD YES @ 0.550 (0xb12161065f78BEBC0605CA824776Eca0e8CaB3c2) ---
+  Approving 0xb12161065f78BEBC0605CA824776Eca0e8CaB3c2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xc603765466d5be5bc133bc6ef08a82df23554d9aa11aa0db80bd0823c58df162
+  Confirmed in block 155889916
+  Attempt 1/3...
+  Tx sent: 0xb5a1e016caac6930f2758fb97b1d0c8bdeb88d2881890f7a44233fdf28964f9c
+  Confirmed in block 155889921
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- BONUSIRONWOOD NO @ 0.450 (0x462900f36Cb99f667491B89802CC129252897592) ---
+  Approving 0x462900f36Cb99f667491B89802CC129252897592 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x372c36aa6ba84aa525adba648b1c262bd304b81368b5c588a8790b4cacddcdab
+  Confirmed in block 155889925
+  Attempt 1/3...
+  Tx sent: 0xa3d171a868049aa3a9942ea100ae14b66c560f4c5408b54fa1a6a5f8f95f5cd7
+  Confirmed in block 155889928
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [28] CIPHERSCAN — 0x73d8A605e090C267D18506A2EeeF5b0A6d22Fae9 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x76e754d090494b818d0ecca48e9600b9af55450c2c85b3e54f681e21b95f464b
+  Confirmed in block 155889932
+
+  --- CIPHERSCAN YES @ 0.550 (0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200) ---
+  Approving 0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x35be3277120337157a5339e8a236f78d44ca3ced233c21f1ab9dbe1f17a1d18e
+  Confirmed in block 155889936
+  Attempt 1/3...
+  Tx sent: 0x93a22001eebf959ea64653e8b83a414c81b1b6b786bb0081079a8764f297e599
+  Confirmed in block 155889939
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- CIPHERSCAN NO @ 0.450 (0x1A4e4cED1Efa0be79841aA726d80DfF9B08483ae) ---
+  Approving 0x1A4e4cED1Efa0be79841aA726d80DfF9B08483ae → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x4169e1f18e7721824030eb70db6b172d2a548d4a968a5164a9f1e0f57d34729a
+  Confirmed in block 155889943
+  Attempt 1/3...
+  Tx sent: 0x89fcfea92fa771829d3d7cc3c3b0414631dd37a4f95c7fc632fa28cd7664744a
+  Confirmed in block 155889947
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [29] MINTEXPLOIT — 0xc0e29B80a74287cFEF882a4d425d06117Aa09C07 ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x54c933eec55300fcfd2c4a56f2ccb78f9cc735ff603cec883a827c9a87d9ac68
+  Confirmed in block 155889950
+
+  --- MINTEXPLOIT YES @ 0.550 (0xDaeA18eb86c017259EC2aec482b5FCd8D8323314) ---
+  Approving 0xDaeA18eb86c017259EC2aec482b5FCd8D8323314 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0xb4b0272d77e302304317e5c3efe036a1a39fc5469e027330501208d77bc7f5ba
+  Confirmed in block 155889954
+  Attempt 1/3...
+  Tx sent: 0x4faa4228910ae1feb3d59a6310bbea0d6633a2feb44f81c789766718c122cf69
+  Confirmed in block 155889958
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- MINTEXPLOIT NO @ 0.450 (0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7) ---
+  Approving 0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0xceba278254023a279c88b3985550f0b414fbcdc6e76b671110b34f916bb3e458
+  Confirmed in block 155889961
+  Attempt 1/3...
+  Tx sent: 0x310ac8c3a8fe99c8fb5545d90cfdcf8098ab71a4ce2e04973d793c18f28eb5d3
+  Confirmed in block 155889965
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [30] ZEBRACONSENSUS — 0xe7d2d53d782b13d1de2361aE458367Eb3a85B191 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x5be699acacc9de4fc850cd72b0003cb86ad1d4aab5a853b23977364f5b04a99a
+  Confirmed in block 155889967
+
+  --- ZEBRACONSENSUS YES @ 0.550 (0xa6B4e845dD137ee5e5AA814aCD928Fd0a05F76D1) ---
+  Approving 0xa6B4e845dD137ee5e5AA814aCD928Fd0a05F76D1 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x3031775e4f47efb9968a56d4c5bc9209b68667409f891c5c460b4661a3814db7
+  Confirmed in block 155889969
+  Attempt 1/3...
+  Tx sent: 0x52cdb825e06cfab98361ee0338c5ce3c6d34f88059bef2ff15b006c767dcc2a1
+  Confirmed in block 155889973
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZEBRACONSENSUS NO @ 0.450 (0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A) ---
+  Approving 0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x9a646b7da97fbc34706ab986674430392d75f90130942018afce6609a9b5bdba
+  Confirmed in block 155889976
+  Attempt 1/3...
+  Tx sent: 0x2255925b9aba0fcbf76f300c3a2034764e9087642ff6430113bca86aaef3548c
+  Confirmed in block 155889980
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [31] ZECROCKS — 0x91736993FD987C230244825A27c3E531c66Fe63B ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xe8263b2829df34a4f425f728af89e68f8656258af30e790c5d1bcd23555cd1b3
+  Confirmed in block 155889982
+
+  --- ZECROCKS YES @ 0.550 (0x99534C2f36C0EDD0f276d218ab4E9C7D226E6b4D) ---
+  Approving 0x99534C2f36C0EDD0f276d218ab4E9C7D226E6b4D → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x3f15e9361417363f5dda97b9e4d0d37f08a8b35809e25bc365ff7dd2e7824d7e
+  Confirmed in block 155889985
+  Attempt 1/3...
+  Tx sent: 0x2558d474327a43a5915877daa5a1cb7fd15cfd1d56cd3dbe7dbe58a5e5909ff8
+  Confirmed in block 155889989
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZECROCKS NO @ 0.450 (0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b) ---
+  Approving 0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x6a1b3a817098aeb83e9e1daa2664f10f13ffcd2c83b657300ebc026777b33c17
+  Confirmed in block 155889991
+  Attempt 1/3...
+  Tx sent: 0x2672da0e735bc1d4fef493ddc9fd7b05fc48899a71ff469b5f28eb9312d5861f
+  Confirmed in block 155889993
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [32] VALARAUDIT — 0x6a2eFDE79D7E7dF689Cb17FD0663b3455D838Dd4 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xb172a93c04d4a9dce57fd990020e683fe53e46fb315d6d1ef1661c66cb6357f9
+  Confirmed in block 155889995
+
+  --- VALARAUDIT YES @ 0.550 (0x2f12d011a46dEA4EDC14Bcc390B1bC6F49eBafee) ---
+  Approving 0x2f12d011a46dEA4EDC14Bcc390B1bC6F49eBafee → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x1058c14fd609ff5047df160e04b38c8e8a4f2482a3e759f1779ddc690656e6e6
+  Confirmed in block 155889998
+  Attempt 1/3...
+  Tx sent: 0xedc4373bd45f3334c848588a54b229a1447ecde225683f16f11a84be21ea33f6
+  Confirmed in block 155890002
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- VALARAUDIT NO @ 0.450 (0xf1aD2087103Bf520249344a6D59056941Df440A2) ---
+  Approving 0xf1aD2087103Bf520249344a6D59056941Df440A2 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0xa93b8c5d96bd52434f707384dbbb8c159c683282f193d5b4512dbc26b44328dc
+  Confirmed in block 155890005
+  Attempt 1/3...
+  Tx sent: 0x9c64abf190da67af99a57e744f965ea7ea063aa146b0415fe6618ec0460df5c3
+  Confirmed in block 155890008
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [33] TACHYON — 0x74A5f36e0Af651a1E577b40C2167aC62FD4012D7 ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x2fc8dd256211872b9b3cae30ded7a92a0d06870b728c2a2a6be71ce3af5f9a70
+  Confirmed in block 155890010
+
+  --- TACHYON YES @ 0.550 (0x36CEaB5d6fc30c5D84922Ba2Be3c8b93C64A9614) ---
+  Approving 0x36CEaB5d6fc30c5D84922Ba2Be3c8b93C64A9614 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x8d63b0af407f985196de2659361b1cd1ad2b73610e5b29f767565b5aae9d4eb6
+  Confirmed in block 155890012
+  Attempt 1/3...
+  Tx sent: 0x97e4b2e8571229beb3462ed7395988e97877df05f507e6c3f7089a0e0f824e2e
+  Confirmed in block 155890014
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- TACHYON NO @ 0.450 (0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac) ---
+  Approving 0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x868bb210ffcfbb46a3f67ece929a58286071c2bb23213501a01bea18b3df5d9d
+  Confirmed in block 155890017
+  Attempt 1/3...
+  Tx sent: 0x7cd6ddae67e7fc39bf5c21580e1381ab37bc9afd265c9e179ab2f2fc6ef4a2f6
+  Confirmed in block 155890021
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [34] ORCHARDBOUNTY — 0xD2dc10FA13CaC63abFc098e7be89214eba6C38EC ===
+  💧 splitting 139.447746648203306298 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x8d5469c6d474da29f77c28e7fe153cd2a2f0b8e7f81b455e6223002391d314f1
+  Confirmed in block 155890023
+
+  --- ORCHARDBOUNTY YES @ 0.550 (0x1C4900d1Be2eD0eC4E16dEf0edD3Eb7F8b19039f) ---
+  Approving 0x1C4900d1Be2eD0eC4E16dEf0edD3Eb7F8b19039f → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x43741f682ca8df064bd99a5cf5df137031d422a001b3314f706e109c4100eb54
+  Confirmed in block 155890025
+  Attempt 1/3...
+  Tx sent: 0x29b173b4c2f4b50e724cb06422db69cfc6fcd8cb6f363e04019c460f3c46724b
+  Confirmed in block 155890028
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ORCHARDBOUNTY NO @ 0.450 (0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A) ---
+  Approving 0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.447746648203306298 ...
+  Attempt 1/3...
+  Tx sent: 0x8c037b3788c3eeb36952fefd677a40a291628e35bcb49b0c016adfe9d40d6f47
+  Confirmed in block 155890030
+  Attempt 1/3...
+  Tx sent: 0x0c4d77bcf9824ba078188f64ccc751462a834197bcdcd49d242d75bb4c95b2be
+  Confirmed in block 155890033
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [35] BONUSORCHARD — 0xBFa2F5855527B8fA1fDB648065FC172EA41C6D94 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0xff2e835a2e9ff35addec4ec87d0395691cf121d776e92d857c9407e5e43784f2
+  Confirmed in block 155890036
+
+  --- BONUSORCHARD YES @ 0.550 (0x3F838f548308B0Be41F5F75B0B14D4248b6fCC19) ---
+  Approving 0x3F838f548308B0Be41F5F75B0B14D4248b6fCC19 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xdd856a728c3730d65a5c0ff9f7c8a33392c9254726766f580796a8149e5dfd01
+  Confirmed in block 155890041
+  Attempt 1/3...
+  Tx sent: 0x1fbf42ca341af9cefad8cf4413494622a7b8a619db797fee90aa651d67a97a07
+  Confirmed in block 155890045
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- BONUSORCHARD NO @ 0.450 (0x18B28d020d4d27b574861840322dfCC3432f596F) ---
+  Approving 0x18B28d020d4d27b574861840322dfCC3432f596F → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xc7b8fb05b5b8ccfb1bd8803362f39de9ecba207df830a3db896d317fc1543cd6
+  Confirmed in block 155890048
+  Attempt 1/3...
+  Tx sent: 0xc58ddd67fed357bd22baf646c5d413a30cbe2dd0a95b1648b67886616fed3d91
+  Confirmed in block 155890052
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [36] VALARIRONWOOD — 0x8dFd98175EaeB4c512113f88EccBA1C9Bd281742 ===
+  💧 splitting 139.451709812550220547 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x5a68767640bbca7c6d5593aceb3da457e70dc2c1c9403f36602507bed312a206
+  Confirmed in block 155890054
+
+  --- VALARIRONWOOD YES @ 0.550 (0x2aa0Bc400C00482234a93083c852211F8D85c86a) ---
+  Approving 0x2aa0Bc400C00482234a93083c852211F8D85c86a → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0xc73490e792e3ae7b790b596dcf8415f8af7152de7a53c4c80c33ded481fe0d94
+  Confirmed in block 155890057
+  Attempt 1/3...
+  Tx sent: 0x20ef785b759546a51745a68bfec28cf3343afc334e923ce71ec410363ea0221b
+  Confirmed in block 155890061
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- VALARIRONWOOD NO @ 0.450 (0x06fB380b6aCb813ff5BBC162f254DF27f1090E07) ---
+  Approving 0x06fB380b6aCb813ff5BBC162f254DF27f1090E07 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.451709812550220547 ...
+  Attempt 1/3...
+  Tx sent: 0x6064c2e04853c825c68aac55b2626fffbad44b8904f0b098984260ff0c8c221e
+  Confirmed in block 155890064
+  Attempt 1/3...
+  Tx sent: 0x612ff354496b3f00859e06280d9b6889adfa2dae1b76f592ed6a818a856fac0b
+  Confirmed in block 155890068
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+=== [37] ZODL — 0x2766eF544445b8247ADB241a5c2792AAc31eF133 ===
+  💧 splitting 139.445325864997635177 sUSDS
+  Attempt 1/3...
+  Tx sent: 0x428a096e55c6faba2b83aa347d64824b3905868567e81f4c3330c9f1b299e3c8
+  Confirmed in block 155890071
+
+  --- ZODL YES @ 0.550 (0xd8fd3713f7BBAa0B34269666cC071fAD85Bb0638) ---
+  Approving 0xd8fd3713f7BBAa0B34269666cC071fAD85Bb0638 → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x82c6e26152df5dfaebebe5f7f483d40f1c77c8eb4f189f67dac912ce747a8bc4
+  Confirmed in block 155890074
+  Attempt 1/3...
+  Tx sent: 0x68c9ae9a7b2951681b258b0f952afc92b4c61a17b70b0056f22a46da953bef00
+  Confirmed in block 155890078
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+  --- ZODL NO @ 0.450 (0x085dbdd74787219b190dA52cB02f93E1134Cab4F) ---
+  Approving 0x085dbdd74787219b190dA52cB02f93E1134Cab4F → 0xC36442b4a4522E871399CD717aBDD847Ab11FE88 for 139.445325864997635177 ...
+  Attempt 1/3...
+  Tx sent: 0x0f9f4d3b34e4043a394eded1e115635f3b62e7d51f365897aa3930d0f019cc74
+  Confirmed in block 155890081
+  Attempt 1/3...
+  Tx sent: 0x03e73690cae6610ccaa6a2a05623b8b45bcec49c5aed398796029d977e64e6e6
+  Confirmed in block 155890085
+  ✅ Saved to ./add-zcash-liquidity-execution.json
+
+🎉 Done! 74/74 pools seeded. See ./add-zcash-liquidity-execution.json.

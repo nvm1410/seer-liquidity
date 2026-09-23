@@ -1,0 +1,120 @@
+
+📋 Wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN : false
+(node:17516) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/withdraw-zcash-nu7-liquidity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+🔍 Step 1: resolving outcome tokens for 5 markets...
+   19 candidate pools (all outcome slots incl. Invalid, 5 markets)
+
+🔍 Step 2: scanning wallet positions...
+   Wallet holds 541 position NFTs.
+   Matched 14 NU7 positions — 14 with liquidity > 0.
+
+   #1128687 [ 1] Q1   Smooth issuance curve                      liquidity 203514569334912919052
+   #1128688 [ 1] Q1   Preserve halvings                          liquidity 2213736737449200113528
+   #1128689 [ 1] Q1   Do not include issuance smoothing in NU7   liquidity 148630699540323766557
+   #1128690 [ 2] Q2   As soon as possible                        liquidity 1724434457973763264175
+   #1128691 [ 2] Q2   February 2027 regardless of the outcome of liquidity 371023241541392273447
+   #1128692 [ 2] Q2   February 2031 regardless of the outcome of liquidity 715067739118934916785
+   #1128693 [ 3] Q3   Immediately at NU7 activation              liquidity 779040356389753567664
+   #1128694 [ 3] Q3   One year after this poll concludes         liquidity 518277725571957896187
+   #1128695 [ 3] Q3   Do not set a date to disable v4 transactio liquidity 1572641264680533167420
+   #1128696 [ 4] Q4   Yes                                        liquidity 2339824324005944725398
+   #1128697 [ 4] Q4   No                                         liquidity 47734198030547618975
+   #1128698 [ 5] Q5   Ship NU7 as soon as possible, removing any liquidity 2101513454453458630543
+   #1128699 [ 5] Q5   Delay NU7 until every applicable approved  liquidity 392839874811935165305
+   #1128700 [ 5] Q5   I do not support this NU7 plan             liquidity 112319334433915725928
+
+📉 Step 3: withdrawing 14 positions
+
+
+--- #1128687 [1] Q1 Smooth issuance curve ---
+  Attempt 1/3...
+  Tx sent: 0x870a4716daa25bb5eaa0752409139402f67e92f05d7b959ec87213d3e9353956
+  Confirmed in block 156803308
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128688 [1] Q1 Preserve halvings ---
+  Attempt 1/3...
+  Tx sent: 0xa9c29148d9dc1b3b02de9aeb20044f4f88fa5d548503b66b1cfcb9cd2afcd5cb
+  Confirmed in block 156803311
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128689 [1] Q1 Do not include issuance smoothing in NU7 ---
+  Attempt 1/3...
+  Tx sent: 0x99a97d1c5d16193d5aac6d3ca4ad3a66a6623df155904341e00abf0e289f992f
+  Confirmed in block 156803315
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128690 [2] Q2 As soon as possible ---
+  Attempt 1/3...
+  Tx sent: 0x7ec37944232e292ff5dfd2f4d1ec1674a3e8e59bbf591f322b4bcff77f424bd1
+  Confirmed in block 156803318
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128691 [2] Q2 February 2027 regardless of the outcome of Q1 ---
+  Attempt 1/3...
+  Tx sent: 0x37f65210918f9d8217fb27cbfbd7db3f5043b1cbf09c4b1b0b46762f9dc7519c
+  Confirmed in block 156803321
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128692 [2] Q2 February 2031 regardless of the outcome of Q1 ---
+  Attempt 1/3...
+  Tx sent: 0x4cc75a1243441ac64f05580d730a3a21611d7f70ced1fe4bfc4f196ffa94840b
+  Confirmed in block 156803324
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128693 [3] Q3 Immediately at NU7 activation ---
+  Attempt 1/3...
+  Tx sent: 0x71f350d71e3f920d37bfd6710301a47e3419b0949004f13beb7e92e016505dc6
+  Confirmed in block 156803327
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128694 [3] Q3 One year after this poll concludes ---
+  Attempt 1/3...
+  Tx sent: 0x6eee2972e7cef9c7e7b5242e3bdb8d6e0f65f17026ed3b6a8b5939149426fc97
+  Confirmed in block 156803332
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128695 [3] Q3 Do not set a date to disable v4 transactions ---
+  Attempt 1/3...
+  Tx sent: 0x8b311b938d527abc9dc7ff5ef1b9048837956491ca2059921923fd0759cbef20
+  Confirmed in block 156803335
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128696 [4] Q4 Yes ---
+  Attempt 1/3...
+  Tx sent: 0x816acd78aa41c694c482c7ea153ecea71f79dbdaa71b4a67b535cdf977409ff6
+  Confirmed in block 156803338
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128697 [4] Q4 No ---
+  Attempt 1/3...
+  Tx sent: 0x7379669f523c4c7cfb633d708c73abf7e8b85fb803b957ee313fa44cf9097e3f
+  Confirmed in block 156803341
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128698 [5] Q5 Ship NU7 as soon as possible, removing any feature not implemented by the September 30th deadline ---
+  Attempt 1/3...
+  Tx sent: 0xc4020e68969d1b93a3d16e2ab42f323e53b32fe296e4ac38cf73a24c1299302c
+  Confirmed in block 156803344
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128699 [5] Q5 Delay NU7 until every applicable approved feature is deemed complete ---
+  Attempt 1/3...
+  Tx sent: 0xb2f622f52b1b02d639b122cbf48a3bbf40df75f4a0f292032da908dac5e25387
+  Confirmed in block 156803347
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+--- #1128700 [5] Q5 I do not support this NU7 plan ---
+  Attempt 1/3...
+  Tx sent: 0x69847017c53553351fe29e554189eed4b43f195bbe4a728672ace3c8519845b1
+  Confirmed in block 156803350
+  ✅ Saved to ./withdraw-zcash-nu7-liquidity-v3-execution.json
+
+🎉 Done! 14/14 positions withdrawn. See ./withdraw-zcash-nu7-liquidity-v3-execution.json.
+   The wallet now holds the outcome tokens + sUSDS. To convert the outcome
+   tokens back to sUSDS, merge a full set per market (Router.mergePositions).

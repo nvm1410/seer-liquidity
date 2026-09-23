@@ -1,0 +1,23 @@
+(node:19188) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/verify-l1-unwind.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+📋 Wallet : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+
+📉 L1 positions : 198 matched of 494 NFTs held
+   drained (liquidity = 0)  : 198
+   still funded             : 0
+   with uncollected fees    : 0
+
+📄 withdraw: 198 entries | ok 198 | reverted 0 | pending 0
+
+📄 merge: 2 entries | ok 2 | reverted 0 | pending 0
+
+🧾 Residual outcome tokens (stranded until the markets resolve):
+   Market A : 351173.309797163442676209 across 67/68 outcomes
+   Market B : 135954.36250388919468391 across 32/33 outcomes
+
+💰 sUSDS balance : 37505.741498927464627829
+
+🎉 All 198 L1 positions are fully drained.

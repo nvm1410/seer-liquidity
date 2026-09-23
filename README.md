@@ -39,7 +39,8 @@ node check-originality-r3-pools.js --markets-only   # a safe read-only example
 |---|---|
 | `*.js` (root) | one script per campaign phase. **Frozen** — records of real on-chain runs |
 | `*-execution.json` | append-only **resume logs**, not records of holdings |
-| `*_GUIDE.md` | per-campaign runbooks: structure, prices, hazards, what it cost |
+| `docs/guides/` | per-campaign runbooks: structure, prices, hazards, what it cost |
+| `archive/runs/` | stdout transcripts of past runs, by campaign |
 | `lifecycle/<slug>.json` | structured per-campaign manifest |
 | `abis/` | shared contract ABIs |
 | `tools/` | repo audits (`npm test`) |

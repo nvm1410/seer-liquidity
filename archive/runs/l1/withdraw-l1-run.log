@@ -1,0 +1,1429 @@
+
+📋 Wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN : false  |  BURN_NFT: false  |  COLLECT_EMPTY: true
+(node:19160) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/withdraw-l1-liquidity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+🔍 Step 1: resolving markets A and B from chain...
+   Market A 0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6: 68 outcomes
+   Market B 0xfea47428981f70110c64dd678889826c3627245b: 33 outcomes (parentOutcome 66)
+   101 candidate pools (all outcomes of A + B vs sUSDS)
+
+🔍 Step 2: scanning wallet positions...
+   Wallet holds 494 position NFTs.
+   Matched 198 L1 positions (A: 133, B: 65) across 100 distinct pools
+   198 with liquidity > 0 | 0 empty with uncollected fees | 0 empty and clean
+
+   Cross-check vs ./execution.json (198 known L1 positions):
+     missing from wallet/scan : 0
+     found but not in file    : 0
+
+🔍 Step 3: computing projected returns...
+
+    tokenId   mkt  #   outcome                        liquidity      outcome-out       sUSDS-out
+   1038868   A   0  ethereum/go-ethereum                2.0874        4.7531        0.4419
+   1038869   A   1  argotorg/solidity                   2.1324        5.1049        0.4394
+   1038870   A   2  foundry-rs/foundry                  2.3577       11.7893        0.3023
+   1038871   A   3  OpenZeppelin/openzeppelin-co        2.4441        7.8377        0.4247
+   1038872   A   4  ethereum/consensus-specs            2.6198        6.7557        0.5181
+   1038873   A   5  OffchainLabs/prysm                  2.7443       11.4831        0.4001
+   1038874   A   6  ethereum/EIPs                       2.7880        7.6815        0.5309
+   1038875   A   7  ethers-io/ethers.js                 2.9044       11.7466        0.4335
+   1038876   A   8  NomicFoundation/hardhat             3.0932       10.9062        0.5060
+   1038877   A   9  sigp/lighthouse                     3.1622        8.4733        0.6119
+   1038878   A  10  flashbots/mev-boost                 3.5853       20.7266        0.4115
+   1038879   A  11  erigontech/erigon                   3.5900       23.4182        0.3741
+   1038880   A  12  remix-project-org/remix-proj        3.6869       32.7836        0.2945
+   1038881   A  13  wighawag/hardhat-deploy             3.9647       42.9627        0.2637
+   1038882   A  14  Consensys/teku                      4.1221       24.6398        0.4607
+   1038883   A  15  ethereum/execution-apis             4.1453       18.1186        0.5861
+   1038884   A  16  supranational/blst                  4.3114       23.5322        0.5173
+   1038885   A  17  NethermindEth/nethermind            4.3148       17.9525        0.6315
+   1038886   A  18  hyperledger/besu                    4.5401       27.9602        0.4955
+   1038887   A  19  wevm/viem                           4.7336       24.7147        0.5876
+   1038888   A  20  libp2p/libp2p                       4.7774       21.1442        0.6695
+   1038889   A  21  ethereum/js-ethereum-cryptog        5.1968       46.4418        0.4132
+   1038890   A  22  ethereum/web3.py                    5.2136       42.3977        0.4508
+   1038891   A  23  paradigmxyz/reth                    5.2330       33.9283        0.5479
+   1038892   A  24  Vectorized/solady                   5.2400       48.1506        0.4063
+   1038893   A  25  safe-global/safe-smart-accou        5.2538       38.7159        0.4945
+   1038894   A  26  blockscout/blockscout               5.3009       44.5054        0.4456
+   1038895   A  27  flashbots/mev-boost-relay           5.4778       53.8161        0.3995
+   1038896   A  28  scaffold-eth/scaffold-eth-2         5.5795       70.1931        0.3208
+   1038897   A  29  argotorg/sourcify                   5.6265       59.4037        0.3836
+   1038898   A  30  vyperlang/vyper                     5.7888       41.2724        0.5604
+   1038899   A  31  ethereum/py_ecc                     5.9201       58.8380        0.4271
+   1038900   A  32  Nethereum/Nethereum                 5.8623       58.8446        0.4190
+   1038901   A  33  LFDT-web3j/web3j                    5.8278       59.9200        0.4073
+   1038902   A  34  l2beat/l2beat                       5.8206       49.0623        0.4876
+   1038903   A  35  ChainSafe/lodestar                  5.8055       45.1428        0.5219
+   1038904   A  36  Consensys/gnark-crypto              5.7184       55.6431        0.4207
+   1038905   A  37  eth-infinitism/account-abstr        5.5491       43.5759        0.4946
+   1038906   A  38  arkworks-rs/algebra                 5.4895       58.2767        0.3723
+   1038907   A  39  paulmillr/noble-curves              5.3057       50.3556        0.3994
+   1038908   A  40  DefiLlama/DefiLlama-Adapters        5.2937       48.6763        0.4102
+   1038909   A  41  flashbots/rbuilder                  5.2609       48.3815        0.4076
+   1038910   A  42  ChainSafe/bls                       5.2585       67.3546        0.2970
+   1038911   A  43  taikoxyz/taiko-mono                 5.2444       56.9145        0.3483
+   1038912   A  44  wealdtech/ethdo                     4.9274       64.3430        0.2729
+   1038913   A  45  protofire/solhint                   4.8945       55.3902        0.3122
+   1038914   A  46  herumi/mcl                          4.7865       54.4495        0.3038
+   1038915   A  47  ipsilon/evmone                      4.6778       52.9793        0.2982
+   1038916   A  48  shazow/whatsabi                     4.6091       64.9138        0.2364
+   1038917   A  49  ethereum-lists/chains               4.6049       46.5066        0.3273
+   1038918   A  50  argotorg/hevm                       4.5984       59.9075        0.2553
+   1038919   A  51  status-im/nimbus-eth2               4.5121       36.4639        0.3923
+   1038920   A  52  Plonky3/Plonky3                     4.3859       45.8024        0.3021
+   1038921   A  53  TrueBlocks/trueblocks-core          4.3651       49.9979        0.2752
+   1038922   A  54  ethstaker/eth-docker                4.1805       36.7776        0.3371
+   1038923   A  55  Certora/CertoraProver               3.9989       45.4394        0.2541
+   1038924   A  56  erigontech/silkworm                 3.9982       47.4072        0.2438
+   1038925   A  57  ApeWorX/ape                         3.9448       60.9217        0.1837
+   1038926   A  58  intellij-solidity/intellij-s        3.8919       49.8500        0.2198
+   1038927   A  59  smartcontracts/simple-optimi        3.7876       52.7038        0.1967
+   1038928   A  60  succinctlabs/op-succinct            3.7545       50.4570        0.2020
+   1038929   A  61  succinctlabs/sp1                    3.6725       35.0931        0.2748
+   1038930   A  62  a16z/halmos                         3.6040       46.2215        0.2033
+   1038931   A  63  0xMiden/miden-vm                    3.5514       47.9483        0.1902
+   1038932   A  64  dappnode/DAppNode                   3.4496       34.7955        0.2455
+   1038933   A  65  EspressoSystems/jellyfish           3.4266       47.5742        0.1783
+   1038936   B   0  otterscan/otterscan                 3.3606       41.6081        0.1963
+   1038938   B   1  risc0/risc0-ethereum                3.3483       35.9765        0.2245
+   1038939   B   2  aestus-relay/mev-boost-relay        3.1403       58.3156        0.1196
+   1038940   B   3  Commit-Boost/commit-boost-cl        3.1372       36.5984        0.1943
+   1038941   B   4  edb-rs/edb                          3.0810       56.3565        0.1193
+   1038942   B   5  alloy-rs/alloy                      3.0701       30.1744        0.2238
+   1038943   B   6  OffchainLabs/stylus-sdk-rs          3.0631       49.8174        0.1350
+   1038944   B   7  DefiLlama/chainlist                 3.0318       28.9811        0.2268
+   1038945   B   8  a16z/helios                         2.9883       35.8584        0.1801
+   1038946   B   9  grandinetech/grandine               2.9795       53.7509        0.1172
+   1038947   B  10  axiom-crypto/snark-verifier         2.9715       50.6480        0.1244
+   1038948   B  11  ethstaker/ethstaker-deposit-        2.9188       52.3553        0.1155
+   1038949   B  12  skalenetwork/libBLS                 2.7778       36.1919        0.1542
+   1038950   B  13  ethpandaops/ethereum-helm-ch        2.7683       39.9883        0.1383
+   1038951   B  14  holiman/goevmlab                    2.6514       35.7410        0.1422
+   1038952   B  15  ethpandaops/checkpointz             2.5333       31.7973        0.1460
+   1038953   B  16  lambdaclass/lambdaworks             2.4492       29.2596        0.1482
+   1038954   B  17  powdr-labs/powdr                    2.3294       32.6455        0.1201
+   1038955   B  18  Cyfrin/aderyn                       2.3277       23.5950        0.1649
+   1038956   B  19  NethermindEth/juno                  2.3132       28.1983        0.1372
+   1038957   B  20  ethdebug/format                     2.2981       40.1259        0.0937
+   1038958   B  21  argotorg/fe                         2.2963       38.5356        0.0978
+   1038959   B  22  succinctlabs/rsp                    2.2026       41.5315        0.0824
+   1038960   B  23  vyperlang/titanoboa                 2.1946       34.8756        0.0991
+   1038961   B  24  lambdaclass/ethrex                  2.1754       34.1212        0.0997
+   1038962   B  25  deepfunding/dependency-graph        2.0751       43.2912        0.0691
+   1038963   B  26  swiss-knife-xyz/swiss-knife         2.0523       39.6431        0.0747
+   1038964   B  27  dl-solarity/solidity-lib            2.0308       32.4977        0.0911
+   1038965   B  28  argotorg/act                        1.9064       38.2546        0.0664
+   1038966   B  29  evmts/tevm-monorepo                 1.8522       26.2330        0.0944
+   1038967   B  30  ethpandaops/ethereum-package        1.6925       16.3920        0.1251
+   1038968   B  31  lambdaclass/lambda_ethereum_        1.6441       26.2786        0.0738
+   1039269   A   0  ethereum/go-ethereum              910.5213     2072.6388      192.7269
+   1039270   A   1  argotorg/solidity                 976.8039     2337.8805      201.2675
+   1039271   A   2  foundry-rs/foundry                883.0056     4414.6670      113.2251
+   1039272   A   3  OpenZeppelin/openzeppelin-co      972.8530     3119.1743      169.0563
+   1039273   A   4  ethereum/consensus-specs         1038.9531     2678.5564      205.4602
+   1039274   A   5  OffchainLabs/prysm               1057.7081     4425.2666      154.1993
+   1039275   A   6  ethereum/EIPs                    1071.2187     2950.8412      203.9681
+   1039276   A   7  ethers-io/ethers.js              1245.0674     5034.9504      185.8341
+   1039277   A   8  NomicFoundation/hardhat          1178.8842     4155.9924      192.8569
+   1039278   A   9  sigp/lighthouse                  1268.0985     3397.2815      245.3589
+   1039279   A  10  flashbots/mev-boost              1494.0950     8636.6690      171.4548
+   1039280   A  11  erigontech/erigon                1432.9029     9346.1769      149.2920
+   1039281   A  12  remix-project-org/remix-proj     1470.3398    13073.3107      117.4459
+   1039282   A  13  wighawag/hardhat-deploy          1635.5586    17722.3585      108.7772
+   1039283   A  14  Consensys/teku                   1694.6127    10128.9190      189.3988
+   1039284   A  15  ethereum/execution-apis          1647.7414     7201.5757      232.9579
+   1039285   A  16  supranational/blst               1712.1715     9344.6474      205.4382
+   1039286   A  17  NethermindEth/nethermind         1767.2190     7352.2542      258.6386
+   1039287   A  18  hyperledger/besu                 1852.4525    11407.5914      202.1742
+   1039288   A  19  wevm/viem                        1876.1225     9794.4789      232.8759
+   1039289   A  20  libp2p/libp2p                    1893.1533     8378.1774      265.2835
+   1039290   A  21  ethereum/js-ethereum-cryptog     2056.3181    18375.5976      163.5088
+   1039291   A  22  ethereum/web3.py                 2062.8669    16774.4428      178.3636
+   1039292   A  23  paradigmxyz/reth                 2070.4089    13422.7245      216.7701
+   1039293   A  24  Vectorized/solady                2118.8899    19469.5622      164.2898
+   1039294   A  25  safe-global/safe-smart-accou     2078.4932    15316.0557      195.6288
+   1039295   A  26  blockscout/blockscout            2096.8633    17603.9460      176.2765
+   1039296   A  27  flashbots/mev-boost-relay        2165.7433    21276.3498      157.9343
+   1039297   A  28  scaffold-eth/scaffold-eth-2      2202.8649    27712.3595      126.6602
+   1039298   A  29  argotorg/sourcify                2223.6888    23476.4932      151.5882
+   1039299   A  30  vyperlang/vyper                  2329.1785    16605.0228      225.4456
+   1039300   A  31  ethereum/py_ecc                  2328.6499    23142.8965      168.0025
+   1039301   A  32  Nethereum/Nethereum              2379.7659    23886.7604      170.1061
+   1039302   A  33  LFDT-web3j/web3j                 2371.6806    24384.4439      165.7608
+   1039303   A  34  l2beat/l2beat                    2439.6320    20563.3105      204.3690
+   1039304   A  35  ChainSafe/lodestar               2402.7273    18682.3768      215.9824
+   1039305   A  36  Consensys/gnark-crypto           2478.6090    24117.2091      182.3584
+   1039306   A  37  eth-infinitism/account-abstr     2539.3680    19940.3353      226.3297
+   1039307   A  38  arkworks-rs/algebra              2285.7845    24265.1314      155.0123
+   1039308   A  39  paulmillr/noble-curves           2476.0731    23499.0629      186.4049
+   1039309   A  40  DefiLlama/DefiLlama-Adapters     2409.7095    22156.5636      186.7255
+   1039310   A  41  flashbots/rbuilder               2407.5130    22139.5551      186.5295
+   1039311   A  42  ChainSafe/bls                    2006.0305    25694.2092      113.2875
+   1039312   A  43  taikoxyz/taiko-mono              2044.1241    22182.7746      135.7536
+   1039313   A  44  wealdtech/ethdo                  1816.7971    23723.5049      100.6321
+   1039314   A  45  protofire/solhint                1929.0152    21829.7958      123.0555
+   1039315   A  46  herumi/mcl                       2033.6893    23133.8099      129.0871
+   1039316   A  47  ipsilon/evmone                   2073.5947    23484.0537      132.1804
+   1039317   A  48  shazow/whatsabi                  1868.5213    26315.5348       95.8167
+   1039319   A  49  ethereum-lists/chains            1991.5283    20112.3543      141.5477
+   1039320   A  50  argotorg/hevm                    2041.7610    26599.3558      113.3557
+   1039321   A  51  status-im/nimbus-eth2            2105.7557    17016.4262      183.0629
+   1039322   A  52  Plonky3/Plonky3                  2046.8403    21374.6320      140.9791
+   1039323   A  53  TrueBlocks/trueblocks-core       1942.5000    22248.8455      122.4773
+   1039324   A  54  ethstaker/eth-docker             1913.0983    16829.7047      154.2770
+   1039325   A  55  Certora/CertoraProver            1830.0142    20793.4398      116.2847
+   1039326   A  56  erigontech/silkworm              1714.0467    20322.6228      104.4975
+   1039327   A  57  ApeWorX/ape                      1483.2566    22905.8613       69.0750
+   1039328   A  58  intellij-solidity/intellij-s     1537.8784    19697.6013       86.8527
+   1039329   A  59  smartcontracts/simple-optimi     1546.9466    21524.5243       80.3233
+   1039330   A  60  succinctlabs/op-succinct         1648.7696    22157.1785       88.7056
+   1039331   A  61  succinctlabs/sp1                 1713.9141    16376.7924      128.2261
+   1039332   A  62  a16z/halmos                      1649.2921    21151.4364       93.0244
+   1039333   A  63  0xMiden/miden-vm                 1571.7833    21219.8163       84.1708
+   1039334   A  64  dappnode/DAppNode                1609.8810    16237.9753      114.5557
+   1039335   A  65  EspressoSystems/jellyfish        1481.7979    20572.0111       77.1170
+   1039336   B   0  otterscan/otterscan              1537.0917    19030.4074       89.7950
+   1039337   B   1  risc0/risc0-ethereum             1562.6348    16789.1550      104.7715
+   1039338   B   2  aestus-relay/mev-boost-relay     1356.9278    25197.2323       51.6555
+   1039339   B   3  Commit-Boost/commit-boost-cl     1464.0951    17079.4652       90.6848
+   1039340   B   4  edb-rs/edb                       1365.5839    24978.1621       52.8756
+   1039341   B   5  alloy-rs/alloy                   1404.9859    13807.9818      102.4219
+   1039342   B   6  OffchainLabs/stylus-sdk-rs       1401.7834    22797.1389       61.7634
+   1039343   B   7  DefiLlama/chainlist              1414.9154    13524.5079      105.8240
+   1039344   B   8  a16z/helios                      1367.5161    16409.1269       82.3973
+   1039345   B   9  grandinetech/grandine            1318.2152    23780.4278       51.8364
+   1039346   B  10  axiom-crypto/snark-verifier      1354.0788    23079.1509       56.6952
+   1039347   B  11  ethstaker/ethstaker-deposit-     1316.8425    23619.6755       52.1148
+   1039348   B  12  skalenetwork/libBLS              1271.2021    16561.6929       70.5736
+   1039349   B  13  ethpandaops/ethereum-helm-ch     1266.8610    18299.1276       63.2859
+   1039350   B  14  holiman/goevmlab                 1237.3665    16679.3309       66.3665
+   1039351   B  15  ethpandaops/checkpointz          1159.2959    14550.6931       66.8109
+   1039352   B  16  lambdaclass/lambdaworks          1120.8374    13389.2666       67.8326
+   1039353   B  17  powdr-labs/powdr                 1087.0906    15234.6958       56.0312
+   1039354   B  18  Cyfrin/aderyn                    1086.3225    11010.7012       76.9570
+   1039355   B  19  NethermindEth/juno               1058.5848    12903.7218       62.8023
+   1039356   B  20  ethdebug/format                  1051.6554    18362.1332       42.8810
+   1039357   B  21  argotorg/fe                      1071.6653    17983.5000       45.6416
+   1039358   B  22  succinctlabs/rsp                 1027.9467    19381.4391       38.4653
+   1039359   B  23  vyperlang/titanoboa              1004.2951    15959.4546       45.3642
+   1039360   B  24  lambdaclass/ethrex                995.5280    15614.0107       45.6040
+   1039361   B  25  deepfunding/dependency-graph      897.5783    18724.9727       29.8880
+   1039362   B  26  swiss-knife-xyz/swiss-knife       957.7899    18500.1941       34.8683
+   1039363   B  27  dl-solarity/solidity-lib          929.3528    14871.1077       41.6697
+   1039364   B  28  argotorg/act                      889.7120    17852.3531       31.0025
+   1039365   B  29  evmts/tevm-monorepo               847.6091    12004.2719       43.2177
+   1039366   B  30  ethpandaops/ethereum-package      789.8567     7649.1353       58.3744
+   1039367   B  31  lambdaclass/lambda_ethereum_      752.3812    12025.0091       33.7791
+   1055065   A  67  Invalid result                     80.8557     3230.1614        1.3631
+   1055066   B  32  Invalid result                     80.8556    11249.0882        0.2865
+
+   Total liquidity to remove : 158506.116804064375452412
+   sUSDS returned directly   : 12485.620586955640689647
+   Outcome tokens returned   : 1663246.237660035475632884 across 100 tokens
+   (the outcome tokens convert to sUSDS only via merge-l1-positions.js, capped by
+    the smallest balance in each market's full outcome set)
+
+📉 Step 4: withdrawing 198 positions
+
+
+--- #1038868 [A0] ethereum/go-ethereum ---
+  Attempt 1/3...
+  Tx sent: 0x3b3c915aa4f858e3993c5f7e15c6dd42b82f4a7a1d04a5d9da7f997878800020
+  Confirmed in block 156026508
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038869 [A1] argotorg/solidity ---
+  Attempt 1/3...
+  Tx sent: 0x18df5e659417c735cd799564bf265f635a524d37a42f0184743ef4a735fcc958
+  Confirmed in block 156026511
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038870 [A2] foundry-rs/foundry ---
+  Attempt 1/3...
+  Tx sent: 0x0f409fc763dd1295ae62dd07859c6feedf60818771a597db3db4fec6ab692a94
+  Confirmed in block 156026514
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038871 [A3] OpenZeppelin/openzeppelin-contracts ---
+  Attempt 1/3...
+  Tx sent: 0xc2a489d7682e27fdd2b0050d17d92ae28eaa6d0bc7ed3cca4f9b70e82609f91e
+  Confirmed in block 156026517
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038872 [A4] ethereum/consensus-specs ---
+  Attempt 1/3...
+  Tx sent: 0xac6561905a0c3f2ac0e8d052807d6ce740088852c7942f61347a5b4c509571a5
+  Confirmed in block 156026520
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038873 [A5] OffchainLabs/prysm ---
+  Attempt 1/3...
+  Tx sent: 0x1d709929f357500540f9c9f8131d989678ed6d8d2c9d039617ff9eb39172e323
+  Confirmed in block 156026523
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038874 [A6] ethereum/EIPs ---
+  Attempt 1/3...
+  Tx sent: 0x68be64cf09fbd3f8273220e62a65a927612678f793e79429d02e4aa765569eac
+  Confirmed in block 156026526
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038875 [A7] ethers-io/ethers.js ---
+  Attempt 1/3...
+  Tx sent: 0x24fcb72151eedff21bb5113faafdf31ee83df6a4acc38721260b34a3a25602ef
+  Confirmed in block 156026529
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038876 [A8] NomicFoundation/hardhat ---
+  Attempt 1/3...
+  Tx sent: 0x9fbac0691384d2beaf77dd9fda69953a10085b841f078e9d8d1d437d3ebb2f32
+  Confirmed in block 156026532
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038877 [A9] sigp/lighthouse ---
+  Attempt 1/3...
+  Tx sent: 0x759f8ba7c9a58f96a862cc74fd5e1d719fc7c4320bbd98b1b3dc0d6cb1cee657
+  Confirmed in block 156026535
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038878 [A10] flashbots/mev-boost ---
+  Attempt 1/3...
+  Tx sent: 0x17943575270c547f9549146ecb3113443c4c6cfcd2d24a03de65f5b58dac6e2e
+  Confirmed in block 156026538
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038879 [A11] erigontech/erigon ---
+  Attempt 1/3...
+  Tx sent: 0xdc0cec16420b263ebcb59032f7b73b0f9359882a40b17f3cb8efe96e3a7a8821
+  Confirmed in block 156026541
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038880 [A12] remix-project-org/remix-project ---
+  Attempt 1/3...
+  Tx sent: 0xf7964767e618759776b629f47e53a4cfa57cfcaaa53b343c3e6f045681d30d1d
+  Confirmed in block 156026544
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038881 [A13] wighawag/hardhat-deploy ---
+  Attempt 1/3...
+  Tx sent: 0x78ca80c3580db240b76700e82602fd1fbe8c00ebb33d4c15ce3844117b9ddda5
+  Confirmed in block 156026548
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038882 [A14] Consensys/teku ---
+  Attempt 1/3...
+  Tx sent: 0xdcc4fc08372a41e0ab8ba6b748fecad7540945e7e6a402fae70e546ba405a39e
+  Confirmed in block 156026551
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038883 [A15] ethereum/execution-apis ---
+  Attempt 1/3...
+  Tx sent: 0x22c20b15b06af6a4c412831fc94f740efb8a53ceeb5ad0e8044a203e69458bba
+  Confirmed in block 156026554
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038884 [A16] supranational/blst ---
+  Attempt 1/3...
+  Tx sent: 0xf343e2c56acad541158345050c8c796d289e6201d6447c89d156ef5715b3f476
+  Confirmed in block 156026557
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038885 [A17] NethermindEth/nethermind ---
+  Attempt 1/3...
+  Tx sent: 0x0f24ff619bf93ba621245eb4db16883798320a48f84cc973aead59555fd934c9
+  Confirmed in block 156026560
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038886 [A18] hyperledger/besu ---
+  Attempt 1/3...
+  Tx sent: 0xb3772df6de6b621446264ab5db336d965c345bcbe84ccd17b252242703569aba
+  Confirmed in block 156026563
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038887 [A19] wevm/viem ---
+  Attempt 1/3...
+  Tx sent: 0xb109cd0a9fbef5f7905fd4140eb2cd4bc020348daf505ebc1b4e924494e79f8e
+  Confirmed in block 156026566
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038888 [A20] libp2p/libp2p ---
+  Attempt 1/3...
+  Tx sent: 0x2cd6a0811c7315583fb437865827dfb0ea393f2dbeb7378cd679f3bb1a9c71ba
+  Confirmed in block 156026569
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038889 [A21] ethereum/js-ethereum-cryptography ---
+  Attempt 1/3...
+  Tx sent: 0xb52e128323c5149882e4d6a7855481ca4db177072bc2cc461e7c54d51e175718
+  Confirmed in block 156026572
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038890 [A22] ethereum/web3.py ---
+  Attempt 1/3...
+  Tx sent: 0x8ff62d84eb5db605f9715e21d05ef0d80a39f816fcf04165ccab15635521ec46
+  Confirmed in block 156026574
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038891 [A23] paradigmxyz/reth ---
+  Attempt 1/3...
+  Tx sent: 0xb784239cab1fba94bc7d6ab7c4dab91b468b2cb20134a562016d84985ebca850
+  Confirmed in block 156026577
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038892 [A24] Vectorized/solady ---
+  Attempt 1/3...
+  Tx sent: 0x502d31fd41d04e7d2008a71514b23bb7404e138842987109025ca1333bdf518f
+  Confirmed in block 156026580
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038893 [A25] safe-global/safe-smart-account ---
+  Attempt 1/3...
+  Tx sent: 0x57df89ceb6ed01fa22ddd7f7bb5ac2a7b298575658fdf882dcf50c999df4ae28
+  Confirmed in block 156026583
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038894 [A26] blockscout/blockscout ---
+  Attempt 1/3...
+  Tx sent: 0xd810365bf454396b8cad31300bf22e262a760c952022ac54ad6f8d7a29bdef56
+  Confirmed in block 156026586
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038895 [A27] flashbots/mev-boost-relay ---
+  Attempt 1/3...
+  Tx sent: 0x28ffa3f5564a37a67582b70483c4acae38e1223b61114904c1432a608df24999
+  Confirmed in block 156026589
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038896 [A28] scaffold-eth/scaffold-eth-2 ---
+  Attempt 1/3...
+  Tx sent: 0xabd7b28d409d0441e5a57a0a6983dbf06c683c0792711b8ecf3ca101d4ae7339
+  Confirmed in block 156026592
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038897 [A29] argotorg/sourcify ---
+  Attempt 1/3...
+  Tx sent: 0xaca7bada92bc05433a1a27c8de56330edb9bc6b452e9b644d05bfd89f659572f
+  Confirmed in block 156026595
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038898 [A30] vyperlang/vyper ---
+  Attempt 1/3...
+  Tx sent: 0x0ec0f726b5eacc28b553bd14395f7805fbec0ad7fc4af2bcd5382cbb814f2aa0
+  Confirmed in block 156026598
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038899 [A31] ethereum/py_ecc ---
+  Attempt 1/3...
+  Tx sent: 0xe010b197f99f374e10fa0874f4d67088721bb9dc843556357d0212f06ec90453
+  Confirmed in block 156026601
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038900 [A32] Nethereum/Nethereum ---
+  Attempt 1/3...
+  Tx sent: 0x72f1d75bf588ea142ae115deb8507206b832b6a282aa108a2f61c9d35464b7d1
+  Confirmed in block 156026604
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038901 [A33] LFDT-web3j/web3j ---
+  Attempt 1/3...
+  Tx sent: 0xcc51359dc3b4426f15b925180f6d82fb88f63302e02ab0a62c6fd122c657fb1a
+  Confirmed in block 156026607
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038902 [A34] l2beat/l2beat ---
+  Attempt 1/3...
+  Tx sent: 0x16517b42ec0d3ca87d1187c84b9e29acd69c20ec3d9fb62d5839c3413492fcc6
+  Confirmed in block 156026610
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038903 [A35] ChainSafe/lodestar ---
+  Attempt 1/3...
+  Tx sent: 0x325526355d4756b68f106609036e1459e66653cf4df50ed317851a2030d1286e
+  Confirmed in block 156026613
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038904 [A36] Consensys/gnark-crypto ---
+  Attempt 1/3...
+  Tx sent: 0x2a70f0e8dc8f33ea14a87901cea9d5671afc4864fa4a0c7b65d109a72c4dd117
+  Confirmed in block 156026615
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038905 [A37] eth-infinitism/account-abstraction ---
+  Attempt 1/3...
+  Tx sent: 0x226b403a934e506a11e2c003bb660368676cd6fe0707ffa5f82212541bb45dad
+  Confirmed in block 156026617
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038906 [A38] arkworks-rs/algebra ---
+  Attempt 1/3...
+  Tx sent: 0x60ec7a7f8ef2d3d2b8130266b33c5d746d2d7744ce0fdde6913749835d893d34
+  Confirmed in block 156026620
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038907 [A39] paulmillr/noble-curves ---
+  Attempt 1/3...
+  Tx sent: 0x2a307950f292fa9617bb77d9b68513f85861adcf8f878ce95a12ef707d21acf0
+  Confirmed in block 156026623
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038908 [A40] DefiLlama/DefiLlama-Adapters ---
+  Attempt 1/3...
+  Tx sent: 0xb813ec83871eb2055e6199da6a61ae2b76c693b7ce2fe57f2320364118ba44a9
+  Confirmed in block 156026626
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038909 [A41] flashbots/rbuilder ---
+  Attempt 1/3...
+  Tx sent: 0x6029a7c4829f71354c4b7e70fec0038cec9ea7c9a67b4a2f69d5d7c463a6e48f
+  Confirmed in block 156026629
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038910 [A42] ChainSafe/bls ---
+  Attempt 1/3...
+  Tx sent: 0xb4aad820d7d3cae62a65e73fc24aa8906ec22ee9a3d080c89dc22d0ac574773e
+  Confirmed in block 156026632
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038911 [A43] taikoxyz/taiko-mono ---
+  Attempt 1/3...
+  Tx sent: 0x3cbd43585b913ddc408b670c5cd8bdfbbad65a2ffeb8459a8abf42cb3ee0366c
+  Confirmed in block 156026637
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038912 [A44] wealdtech/ethdo ---
+  Attempt 1/3...
+  Tx sent: 0x45d49d8d7cd580832da6d1c923c4d007fd9306c475bc79f923c606f7014713ad
+  Confirmed in block 156026640
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038913 [A45] protofire/solhint ---
+  Attempt 1/3...
+  Tx sent: 0xc7cae1287e89aed711f37d1dd5b82899be23eb059e6d7b0f18734dab888aad64
+  Confirmed in block 156026643
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038914 [A46] herumi/mcl ---
+  Attempt 1/3...
+  Tx sent: 0x10b287a2149b8afae4e18066fb397fdf8ed12b8c0f99f94a1b659c29f02bf816
+  Confirmed in block 156026646
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038915 [A47] ipsilon/evmone ---
+  Attempt 1/3...
+  Tx sent: 0x8c54242599e04a255eb7fe095247401170a8b5ebfd5b76a6e63a627d689cbf88
+  Confirmed in block 156026649
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038916 [A48] shazow/whatsabi ---
+  Attempt 1/3...
+  Tx sent: 0x0439749f1afe783490f9bdcd705de940301b4375aa2b19ad05770438eb95d772
+  Confirmed in block 156026652
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038917 [A49] ethereum-lists/chains ---
+  Attempt 1/3...
+  Tx sent: 0xdeccc12dbcd394803adaa89753340d3564b421f5439209fea7dc0be0948f9699
+  Confirmed in block 156026655
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038918 [A50] argotorg/hevm ---
+  Attempt 1/3...
+  Tx sent: 0xd861fdf9166bf6fb4986b578bcfa9d14f9d3e0c2dd42ab13a4d249cfa7e3e467
+  Confirmed in block 156026658
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038919 [A51] status-im/nimbus-eth2 ---
+  Attempt 1/3...
+  Tx sent: 0x652353e8799c2c668f1ec96fa8c9b2701b3e6c592d9b08abf1acc57950d0fcf9
+  Confirmed in block 156026661
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038920 [A52] Plonky3/Plonky3 ---
+  Attempt 1/3...
+  Tx sent: 0x04c2455f98c8baf65450b5c899fefb36a328a3d7161e88b99ae7849436a37613
+  Confirmed in block 156026665
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038921 [A53] TrueBlocks/trueblocks-core ---
+  Attempt 1/3...
+  Tx sent: 0x2e157b421ad1c7c5edc7bba409613c22a50663ee30a5a7884c404e6596072b4b
+  Confirmed in block 156026668
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038922 [A54] ethstaker/eth-docker ---
+  Attempt 1/3...
+  Tx sent: 0x77c90f047248c8d8e8949467782b14a90941fd5d8ded6b4e9453c4d4f1d60901
+  Confirmed in block 156026671
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038923 [A55] Certora/CertoraProver ---
+  Attempt 1/3...
+  Tx sent: 0x0b94a276876264034840d752a4d8acc7a08b59265ebd8522c61961dc31627029
+  Confirmed in block 156026674
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038924 [A56] erigontech/silkworm ---
+  Attempt 1/3...
+  Tx sent: 0xed47d55c38805de29874d1cd3f8b3181540cab358f560aecd63a9d5fd38e86ce
+  Confirmed in block 156026677
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038925 [A57] ApeWorX/ape ---
+  Attempt 1/3...
+  Tx sent: 0x27c4d5a4919b5b0e39655177f8cd4af9ee3c22073878b57296eb01382bfd2381
+  Confirmed in block 156026680
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038926 [A58] intellij-solidity/intellij-solidity ---
+  Attempt 1/3...
+  Tx sent: 0x2fa1da552e5d86b9fd67cdc0cf65cf239d23dd1e8133f4a08562c81fabde4143
+  Confirmed in block 156026683
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038927 [A59] smartcontracts/simple-optimism-node ---
+  Attempt 1/3...
+  Tx sent: 0x97232267652282fe2ffc0fa64a3a8bcf471b15282adcec4a89174b4d3a5644a1
+  Confirmed in block 156026686
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038928 [A60] succinctlabs/op-succinct ---
+  Attempt 1/3...
+  Tx sent: 0xc1bdebeb2a52d594f0221aabcbf9c872c1505ef27b9caed28dfdb07e6732e0d9
+  Confirmed in block 156026689
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038929 [A61] succinctlabs/sp1 ---
+  Attempt 1/3...
+  Tx sent: 0xb0499cebbf03c9d5a5617da97663c3459641cb1c3ab96ce0af8f46a3d1e79233
+  Confirmed in block 156026692
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038930 [A62] a16z/halmos ---
+  Attempt 1/3...
+  Tx sent: 0x2ca54594f950fac414282afa01ae309318d0c23c3870ef599425cbde0b924efe
+  Confirmed in block 156026695
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038931 [A63] 0xMiden/miden-vm ---
+  Attempt 1/3...
+  Tx sent: 0xda312506a52aa7fe47422f3fd9d0b2727582a12364011ec7c60347eabdea9d9b
+  Confirmed in block 156026698
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038932 [A64] dappnode/DAppNode ---
+  Attempt 1/3...
+  Tx sent: 0x5ef7619636007f4baffe033db164a937fcb4965e6457cafa2cfd813b03e2e6ce
+  Confirmed in block 156026701
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038933 [A65] EspressoSystems/jellyfish ---
+  Attempt 1/3...
+  Tx sent: 0x0cdf60f99b58cdfacffcf68c66909b425b89f41d11fdaabb6a13d551f1825ff8
+  Confirmed in block 156026704
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038936 [B0] otterscan/otterscan ---
+  Attempt 1/3...
+  Tx sent: 0xa1c16c78c3dcfc4e19486eb8baf60b74adb139e39c925018d9fff6cb4a031e26
+  Confirmed in block 156026709
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038938 [B1] risc0/risc0-ethereum ---
+  Attempt 1/3...
+  Tx sent: 0x4ba202b3932dbb21d8b494d4082995bbdf48031808caecb3595bd612bd6a2c89
+  Confirmed in block 156026712
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038939 [B2] aestus-relay/mev-boost-relay ---
+  Attempt 1/3...
+  Tx sent: 0x2bf1602913f74b1b31b9ef1908f5dce99e69e0891360f8adf0cbb4b6982b0628
+  Confirmed in block 156026715
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038940 [B3] Commit-Boost/commit-boost-client ---
+  Attempt 1/3...
+  Tx sent: 0x6f4ccb079c50922d9e7263195f5760440edd286d1d31138384d33592d6973336
+  Confirmed in block 156026718
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038941 [B4] edb-rs/edb ---
+  Attempt 1/3...
+  Tx sent: 0x79f098191047d6749e385a7c10bfb5cd9280f6a3ab9cbcfdb1ce427f8eee9090
+  Confirmed in block 156026721
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038942 [B5] alloy-rs/alloy ---
+  Attempt 1/3...
+  Tx sent: 0x36c6d1c7ff1179dcb3733d2a1b066f1513ce79a44f41ca8cf0ca543d11710363
+  Confirmed in block 156026723
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038943 [B6] OffchainLabs/stylus-sdk-rs ---
+  Attempt 1/3...
+  Tx sent: 0x13035febabab80c550296cdfee49243ee8f6167d0edde43886291798662e45a3
+  Confirmed in block 156026726
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038944 [B7] DefiLlama/chainlist ---
+  Attempt 1/3...
+  Tx sent: 0x0c65313f349f66e5818912bacd00937cf3644d30a6e2f37c8bcbb53d9b13c5f3
+  Confirmed in block 156026729
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038945 [B8] a16z/helios ---
+  Attempt 1/3...
+  Tx sent: 0x85290ab1ac75946e8dcaacd641f57785f40a51f9578c02a4ed90c44fa3faa6b9
+  Confirmed in block 156026732
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038946 [B9] grandinetech/grandine ---
+  Attempt 1/3...
+  Tx sent: 0xc2ce58b370572c7f1c1c2d24bb96ff75713e9f892ad67ee07ccb3577125be742
+  Confirmed in block 156026735
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038947 [B10] axiom-crypto/snark-verifier ---
+  Attempt 1/3...
+  Tx sent: 0xf23349b2ff7ba6d5ec5d7b2b620c4d0c00481c9958e297324a2ccc2a45d7501a
+  Confirmed in block 156026738
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038948 [B11] ethstaker/ethstaker-deposit-cli ---
+  Attempt 1/3...
+  Tx sent: 0x262b223de0133947accd0180dfbd147fb4734c07659c6aac3aed39de72b6a891
+  Confirmed in block 156026741
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038949 [B12] skalenetwork/libBLS ---
+  Attempt 1/3...
+  Tx sent: 0x32ef9c1239b1563366c855ced8da6265ec46a3da3fa85f91871285389b8945e5
+  Confirmed in block 156026744
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038950 [B13] ethpandaops/ethereum-helm-charts ---
+  Attempt 1/3...
+  Tx sent: 0x291047c57d1651b38c2f91ee0ab8210b0fe2ba8da6dbbd849a8479edf2337db0
+  Confirmed in block 156026747
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038951 [B14] holiman/goevmlab ---
+  Attempt 1/3...
+  Tx sent: 0x99ade85f859b071d20b1c85b773fe4faead4bee7cc934ba0d83cdc9b0b1468c3
+  Confirmed in block 156026750
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038952 [B15] ethpandaops/checkpointz ---
+  Attempt 1/3...
+  Tx sent: 0xa1f270b6248e6a8345f523ffb39639d4856751fdc040d51d556776e2df0a3d6d
+  Confirmed in block 156026753
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038953 [B16] lambdaclass/lambdaworks ---
+  Attempt 1/3...
+  Tx sent: 0x3a27fc5cfc8b7aba529ab642955988b41a3e1f8a2f65e80e0bad954c63f3c935
+  Confirmed in block 156026756
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038954 [B17] powdr-labs/powdr ---
+  Attempt 1/3...
+  Tx sent: 0x7866c49a9ffaf1bd3fa92f6ce077145646796bef377c5994638a62fdf5770741
+  Confirmed in block 156026759
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038955 [B18] Cyfrin/aderyn ---
+  Attempt 1/3...
+  Tx sent: 0x69f8cd7b8ce8ae7e322e9ed062dc8907d99333d85f09b4d04181be8bbd89d309
+  Confirmed in block 156026762
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038956 [B19] NethermindEth/juno ---
+  Attempt 1/3...
+  Tx sent: 0x210641c5cfe7dacf6639b4f8d028bf85414b6f1a982c2a49aa14ae7a8ee66d98
+  Confirmed in block 156026765
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038957 [B20] ethdebug/format ---
+  Attempt 1/3...
+  Tx sent: 0x28aad77e6c8735aa45f17421003d4531f8fbe406f3bec702aec3cb67f9aa0e2c
+  Confirmed in block 156026768
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038958 [B21] argotorg/fe ---
+  Attempt 1/3...
+  Tx sent: 0x91bc55d125935a0cca4c7394892ecc5115dcbaf3569394ca13bcfc50c3a49f32
+  Confirmed in block 156026771
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038959 [B22] succinctlabs/rsp ---
+  Attempt 1/3...
+  Tx sent: 0x5540170c1f1f513c6c6e2db99d1d94f3037d44456bc96cf08cffae17a509defb
+  Confirmed in block 156026774
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038960 [B23] vyperlang/titanoboa ---
+  Attempt 1/3...
+  Tx sent: 0x733e72a9c2665a362d85b244c696dcc70dea524def216fd804a4d00870a79677
+  Confirmed in block 156026777
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038961 [B24] lambdaclass/ethrex ---
+  Attempt 1/3...
+  Tx sent: 0x0ebebeb0a56ab09245a3fe4792bead381589c7731dff165b64a26968429b3890
+  Confirmed in block 156026780
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038962 [B25] deepfunding/dependency-graph ---
+  Attempt 1/3...
+  Tx sent: 0x11fb5e32cd0eb5b6a1abc864dd8a2423cc63dedcad2a3035a19404e1b242266a
+  Confirmed in block 156026784
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038963 [B26] swiss-knife-xyz/swiss-knife ---
+  Attempt 1/3...
+  Tx sent: 0x6abe0954453ba07e786172d03cef7d84a3cdb62dc357c13e9f62cdff5e6591c0
+  Confirmed in block 156026788
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038964 [B27] dl-solarity/solidity-lib ---
+  Attempt 1/3...
+  Tx sent: 0x0db4427daa7228a08b13adb9b0ded03470ad6a7ad3c5743df26e24d00a53342d
+  Confirmed in block 156026791
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038965 [B28] argotorg/act ---
+  Attempt 1/3...
+  Tx sent: 0x82071161e949dc9ca3122bd9aa56c8e927b3e31b07cb2073c46643d4eab23393
+  Confirmed in block 156026794
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038966 [B29] evmts/tevm-monorepo ---
+  Attempt 1/3...
+  Tx sent: 0xbec5d869e46e5422bf679db8de213c23e77998b002cf9a0d6d20220e2cd1fda8
+  Confirmed in block 156026797
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038967 [B30] ethpandaops/ethereum-package ---
+  Attempt 1/3...
+  Tx sent: 0x8ba65d1137e7ba85307aa0f424162bb29a0c288f8705efbcff5085cb8d20ee1c
+  Confirmed in block 156026800
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1038968 [B31] lambdaclass/lambda_ethereum_consensus\t ---
+  Attempt 1/3...
+  Tx sent: 0x8a8b9096b78237b93dbcf2870912b629f8f58ac78ed51b978d3e1a3bfb858e43
+  Confirmed in block 156026803
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039269 [A0] ethereum/go-ethereum ---
+  Attempt 1/3...
+  Tx sent: 0x3fa3fedf9098f697d9f770930c21067fafa8d8ed1a00fa2af62ac4d839bc9a41
+  Confirmed in block 156026806
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039270 [A1] argotorg/solidity ---
+  Attempt 1/3...
+  Tx sent: 0xabd4618c440fefcd9c1eb86a1bf21b9c4dfb860d9ad22db026c6749de5c3b4fb
+  Confirmed in block 156026809
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039271 [A2] foundry-rs/foundry ---
+  Attempt 1/3...
+  Tx sent: 0x74c20442cd0dafc8eb76ba343124268afa2d3a9f57b34fdfdb157a4c780914e2
+  Confirmed in block 156026812
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039272 [A3] OpenZeppelin/openzeppelin-contracts ---
+  Attempt 1/3...
+  Tx sent: 0xf38d038b34ea7f838bb166b06813e6851a177a17eeade86950be9933f81dc140
+  Confirmed in block 156026815
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039273 [A4] ethereum/consensus-specs ---
+  Attempt 1/3...
+  Tx sent: 0x38f78f32656cb28db956f09f2722e03e52c7583a6a54f04ad80d6ce1d7984f66
+  Confirmed in block 156026818
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039274 [A5] OffchainLabs/prysm ---
+  Attempt 1/3...
+  Tx sent: 0x421a77ef5f644c53ce7fe733c26005320098894954508656619ab8357c56cbf9
+  Confirmed in block 156026821
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039275 [A6] ethereum/EIPs ---
+  Attempt 1/3...
+  Tx sent: 0x5a20bf99610e830f30fe7df1dd598f0eadf8fbd5e3f08854fdc5b5cb1924d64d
+  Confirmed in block 156026824
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039276 [A7] ethers-io/ethers.js ---
+  Attempt 1/3...
+  Tx sent: 0x55ecdf5f8701ab4af9b8638cec1c46d73c68e64af08e6015c74d01ba093ba695
+  Confirmed in block 156026827
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039277 [A8] NomicFoundation/hardhat ---
+  Attempt 1/3...
+  Tx sent: 0xaf6a235f9c016e4ddc85f548cfcf6124555be7ff550fbd5707cfa9a3acb56ae7
+  Confirmed in block 156026830
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039278 [A9] sigp/lighthouse ---
+  Attempt 1/3...
+  Tx sent: 0x9a97349d903dd475f19c1c5dc7eb05bb1762a906a8f30343f9d49911e207a263
+  Confirmed in block 156026833
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039279 [A10] flashbots/mev-boost ---
+  Attempt 1/3...
+  Tx sent: 0xee0a8d5d72cb31e2c6b9298e734bfde0479dbd5ce91a0076d1ef0701d782b4ef
+  Confirmed in block 156026837
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039280 [A11] erigontech/erigon ---
+  Attempt 1/3...
+  Tx sent: 0xa421d120c1484feb976f7470380d0fd1cf80e478b4b85ed4231f607eff6b38a5
+  Confirmed in block 156026840
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039281 [A12] remix-project-org/remix-project ---
+  Attempt 1/3...
+  Tx sent: 0xa1ee755eea347f0ce410578747702814f35fc1fa1430ef3c8a274b64a1c97083
+  Confirmed in block 156026842
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039282 [A13] wighawag/hardhat-deploy ---
+  Attempt 1/3...
+  Tx sent: 0x6b696f302cb570ecbe743b6fd2cb1beec25999b8e85433151313813bde7b19f7
+  Confirmed in block 156026845
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039283 [A14] Consensys/teku ---
+  Attempt 1/3...
+  Tx sent: 0xdd614e5981eb47a2318eb5bd1409cd3932caf4eb583838749a564c3387e44c89
+  Confirmed in block 156026847
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039284 [A15] ethereum/execution-apis ---
+  Attempt 1/3...
+  Tx sent: 0x79fcf1d6f12cd4466fa505c6316782dcbec309d2d018fdc85a69a93cfb2468e9
+  Confirmed in block 156026850
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039285 [A16] supranational/blst ---
+  Attempt 1/3...
+  Tx sent: 0xee50a24032395aa1da28628d9a3cb50e58880380988aca3532a131d8bc5daae2
+  Confirmed in block 156026853
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039286 [A17] NethermindEth/nethermind ---
+  Attempt 1/3...
+  Tx sent: 0xf160b52ef12b8bf15494cfbc314c6cf3e1fcd61e167045233ba1a5b0268a809c
+  Confirmed in block 156026856
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039287 [A18] hyperledger/besu ---
+  Attempt 1/3...
+  Tx sent: 0x3cc6377907f4e1cdbdb9f94f63945e67405303c0048925438e8a2b9a726c1ca5
+  Confirmed in block 156026859
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039288 [A19] wevm/viem ---
+  Attempt 1/3...
+  Attempt 1 failed: nonce has already been used (transaction="0x02f902910a822059830f424083101fcc83035ace94c36442b4a4522e871399cd717abdd847ab11fe8880b90224ac9650d8000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000012000000000000000000000000000000000000000000000000000000000000000a40c49ccbe00000000000000000000000000000000000000000000000000000000000fdbb8000000000000000000000000000000000000000000000065b46e018f3f6cb1450000000000000000000000000000000000000000000002110233a39e3eab541b00000000000000000000000000000000000000000000000c96da07193c50b075000000000000000000000000000000000000000000000000000000006a8d6e41000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000084fc6f786500000000000000000000000000000000000000000000000000000000000fdbb800000000000000000000000000dc3e0acadb8dba21bb08ff30540222ff8836e000000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000c001a05a1c9db57fa7bc4845897031a50654b32a0c1d0e4e3ddebc5d7877dd08502417a0399c1d06769925d052da6ec7c96a1d8d84bdf8d956e52c0d405672b505d3088e", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9755, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+  Attempt 2/3...
+  Tx sent: 0xd96cdeafb464c7c6a76cd355158d09be2ab10628c7361b7ea25b2b50745091d7
+  Confirmed in block 156026865
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039289 [A20] libp2p/libp2p ---
+  Attempt 1/3...
+  Tx sent: 0x586a440f18749ffbc81da717b10ebb9ae33dca47bb907d408ca7f41ed296a017
+  Confirmed in block 156026869
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039290 [A21] ethereum/js-ethereum-cryptography ---
+  Attempt 1/3...
+  Tx sent: 0x63cafe4f7d6766250f66dc1db550f0cffd36f68bc8190ce2909a23a5dc3045fa
+  Confirmed in block 156026872
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039291 [A22] ethereum/web3.py ---
+  Attempt 1/3...
+  Tx sent: 0x92a3c09caf6707bfc51c9d9fa1948649626f7ecee5f49cd12d8f67da04db79e5
+  Confirmed in block 156026874
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039292 [A23] paradigmxyz/reth ---
+  Attempt 1/3...
+  Tx sent: 0xf25f3f417a686e7e88d760c8cc1cb723206c7bfd1a3173814334e99a9154401c
+  Confirmed in block 156026877
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039293 [A24] Vectorized/solady ---
+  Attempt 1/3...
+  Tx sent: 0xeaa83828a3d899fc47028fdeba2a8cc1c6becf2c18e85915754495162d84e440
+  Confirmed in block 156026880
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039294 [A25] safe-global/safe-smart-account ---
+  Attempt 1/3...
+  Tx sent: 0x57c612c2394817ef06012c7ea015c1e4847fb183897d78d0e88a7eee616f88c1
+  Confirmed in block 156026882
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039295 [A26] blockscout/blockscout ---
+  Attempt 1/3...
+  Tx sent: 0x1ca723d44b77fd3c5245c189908325a5ba73df79c3962609cdb729dde712095b
+  Confirmed in block 156026884
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039296 [A27] flashbots/mev-boost-relay ---
+  Attempt 1/3...
+  Tx sent: 0x9c2bb591c988c6879cf2b37503838f593c6d6d7639d67860ae001d88e121b504
+  Confirmed in block 156026887
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039297 [A28] scaffold-eth/scaffold-eth-2 ---
+  Attempt 1/3...
+  Attempt 1 failed: nonce has already been used (transaction="0x02f902910a822059830f424083101f6483035ace94c36442b4a4522e871399cd717abdd847ab11fe8880b90224ac9650d8000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000012000000000000000000000000000000000000000000000000000000000000000a40c49ccbe00000000000000000000000000000000000000000000000000000000000fdbc10000000000000000000000000000000000000000000000776ae46aeee36d38f60000000000000000000000000000000000000000000005d9d2cecf39bd88f35a000000000000000000000000000000000000000000000006d889fa2d86e076f2000000000000000000000000000000000000000000000000000000006a8d6e79000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000084fc6f786500000000000000000000000000000000000000000000000000000000000fdbc100000000000000000000000000dc3e0acadb8dba21bb08ff30540222ff8836e000000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000c080a065d5b050155f770b297c70a1f97fd0edbe097d1deb732cc8ddd30c61bc312ef6a0493b7e70bf4f22e35f60a43d0bbc0a3b8598c412ea3248226fba923bf149531f", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9764, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+  Attempt 2/3...
+  Tx sent: 0xc6d742e36cd5194c0cbf85411699f19c6a96366d8f7b50ffb322e5ec665e159b
+  Confirmed in block 156026892
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039298 [A29] argotorg/sourcify ---
+  Attempt 1/3...
+  Tx sent: 0x3efeeff20388a0a3bf305b5c46555c0739ff9d8022a026ef117ab7318ef5416d
+  Confirmed in block 156026895
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039299 [A30] vyperlang/vyper ---
+  Attempt 1/3...
+  Tx sent: 0x8c8d37feab308ac3aa6da3cfed26c3921cf2b1e52a33974fd5863fe92e244ea5
+  Confirmed in block 156026898
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039300 [A31] ethereum/py_ecc ---
+  Attempt 1/3...
+  Tx sent: 0x1707e2fa931e039236cfb74c3c3e215534660a7a68127c40f486abef804ffbbe
+  Confirmed in block 156026900
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039301 [A32] Nethereum/Nethereum ---
+  Attempt 1/3...
+  Tx sent: 0x12a0fe51c60ed043943ef18530c33a13b725c3612fb747d377e48fd3f355727b
+  Confirmed in block 156026903
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039302 [A33] LFDT-web3j/web3j ---
+  Attempt 1/3...
+  Tx sent: 0x7fcab34e84b917265ebe6c174c16264c674c1cdd65aa1a43cb14a8de8bc24a14
+  Confirmed in block 156026906
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039303 [A34] l2beat/l2beat ---
+  Attempt 1/3...
+  Tx sent: 0x3694e68989954f897df30f8c5d0b16f923633cc4258a7343ed478b3583800e32
+  Confirmed in block 156026909
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039304 [A35] ChainSafe/lodestar ---
+  Attempt 1/3...
+  Tx sent: 0xcc7db2e8e1d8a213db3f0096c1d757a18d21bb9f64272dd8e2a9f5533b837be3
+  Confirmed in block 156026912
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039305 [A36] Consensys/gnark-crypto ---
+  Attempt 1/3...
+  Tx sent: 0x69f8a27904a49a6b442ace57745e3fbea2db5a566a15a73f6073adc5197444b2
+  Confirmed in block 156026915
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039306 [A37] eth-infinitism/account-abstraction ---
+  Attempt 1/3...
+  Tx sent: 0x984cc4d39b40c23ec4c2d7e1969706162ee5faa51a1736e5327b94eb3cfef271
+  Confirmed in block 156026918
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039307 [A38] arkworks-rs/algebra ---
+  Attempt 1/3...
+  Tx sent: 0x6d863b55743575af8e57df48af7446af83eb71c7e9e5642fdbff0c55e7979096
+  Confirmed in block 156026921
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039308 [A39] paulmillr/noble-curves ---
+  Attempt 1/3...
+  Tx sent: 0x42a52b1cf9b79112f2977211a9b33abc9fc18e485704f4d4eede114e3b8ee1cd
+  Confirmed in block 156026924
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039309 [A40] DefiLlama/DefiLlama-Adapters ---
+  Attempt 1/3...
+  Tx sent: 0x90903c4a90bc774723d4bfd116b87ccd6db38494d6f7ef42c776436a55d8a57b
+  Confirmed in block 156026927
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039310 [A41] flashbots/rbuilder ---
+  Attempt 1/3...
+  Tx sent: 0x2e8b501485b3790a3e51ed0f42b4776121956c160b04d53197d246edf0d3adab
+  Confirmed in block 156026930
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039311 [A42] ChainSafe/bls ---
+  Attempt 1/3...
+  Tx sent: 0x155793008b8f7a392e92784a3c3c55e7c89bb52bfbaaa936b56acf1e8d27d609
+  Confirmed in block 156026933
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039312 [A43] taikoxyz/taiko-mono ---
+  Attempt 1/3...
+  Tx sent: 0xce39d18736a5283f8af46f1851d8159b21145f4f6bdaae0107716ee818275e55
+  Confirmed in block 156026936
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039313 [A44] wealdtech/ethdo ---
+  Attempt 1/3...
+  Tx sent: 0x477b384f1dcf9f9e8a83155cfea263953002e24d0cd27d690b9fc010ad5dfc45
+  Confirmed in block 156026939
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039314 [A45] protofire/solhint ---
+  Attempt 1/3...
+  Tx sent: 0x118b9bec822548dea2533393a7e17bd56d03e6884f9533db53f4fe6268e3a7fe
+  Confirmed in block 156026942
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039315 [A46] herumi/mcl ---
+  Attempt 1/3...
+  Tx sent: 0x913b6302bbb0db3488b68af7f4b1b2fae8245edc35306d6fc691b323332a6881
+  Confirmed in block 156026945
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039316 [A47] ipsilon/evmone ---
+  Attempt 1/3...
+  Tx sent: 0xd7510ecef425d8fb4ad7986bb54dcd81d41ebe103e8cdf1c0bcbf034236fe150
+  Confirmed in block 156026948
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039317 [A48] shazow/whatsabi ---
+  Attempt 1/3...
+  Tx sent: 0xf3a9b924062d1455b9dc906c0b1278f93a8683065bd07263ea54b6fd9f35c908
+  Confirmed in block 156026951
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039319 [A49] ethereum-lists/chains ---
+  Attempt 1/3...
+  Tx sent: 0x098543723a3ba7fc4f698ab1111d997526fe6b3ad0a7a85fdf8d9a74764fcb56
+  Confirmed in block 156026954
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039320 [A50] argotorg/hevm ---
+  Attempt 1/3...
+  Tx sent: 0xf3b27bfd9a81044d108d9e58d85815d7def818160cf2f91fa3b3c71883121c95
+  Confirmed in block 156026958
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039321 [A51] status-im/nimbus-eth2 ---
+  Attempt 1/3...
+  Tx sent: 0x43d13fe5379d991416bfbcee647aa5be712e23103b2eec068848542f7a8b1bf6
+  Confirmed in block 156026960
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039322 [A52] Plonky3/Plonky3 ---
+  Attempt 1/3...
+  Tx sent: 0xa85e06ec966d34ad9e13b61251c685525201a84e3e301d758b4c3706826e6ebe
+  Confirmed in block 156026963
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039323 [A53] TrueBlocks/trueblocks-core ---
+  Attempt 1/3...
+  Tx sent: 0xe1627ed9dfc15018e8d42c2cfffbae601ce71c0cb42bca0d7b67cb90cc251c2c
+  Confirmed in block 156026966
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039324 [A54] ethstaker/eth-docker ---
+  Attempt 1/3...
+  Tx sent: 0x81de14230dd28dd85171e3be70068a68eebd24c29c104dd01a1475af556cee29
+  Confirmed in block 156026969
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039325 [A55] Certora/CertoraProver ---
+  Attempt 1/3...
+  Tx sent: 0xf95d2a978487fcb4c556103480a8c161be4a86c2998e8e23dccd5dd3dcf03891
+  Confirmed in block 156026973
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039326 [A56] erigontech/silkworm ---
+  Attempt 1/3...
+  Tx sent: 0x90850f46e5ff279c3c72d1b32681df36f5b4483604fb56450e873cd722f69a9c
+  Confirmed in block 156026976
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039327 [A57] ApeWorX/ape ---
+  Attempt 1/3...
+  Tx sent: 0x82cd7423ffd1610c553d48de3cd93f8afdc59907f9a4049962481469b0ab83b6
+  Confirmed in block 156026979
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039328 [A58] intellij-solidity/intellij-solidity ---
+  Attempt 1/3...
+  Tx sent: 0xa7a8b1e6b134b279752a977d78e817d66ef7784be8dcf9c5501fbc5190c99fb4
+  Confirmed in block 156026982
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039329 [A59] smartcontracts/simple-optimism-node ---
+  Attempt 1/3...
+  Tx sent: 0x65ab42ef38353c60c05ace887df27145d9337e53a75eff1b81551438653aed41
+  Confirmed in block 156026985
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039330 [A60] succinctlabs/op-succinct ---
+  Attempt 1/3...
+  Tx sent: 0x385b4224d6799d56b58bb80b8063ad9c137c6575c074f4e14484c7dc95de56ac
+  Confirmed in block 156026988
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039331 [A61] succinctlabs/sp1 ---
+  Attempt 1/3...
+  Tx sent: 0x63a5992d44353d2dd64d1bf23e215cbc52cb5121ac4545e16f74cbfe3767dc97
+  Confirmed in block 156026991
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039332 [A62] a16z/halmos ---
+  Attempt 1/3...
+  Tx sent: 0x37ccec0f64f6881bfa4cdaa5fa6d75395587c9137732785d6e9cc00090586326
+  Confirmed in block 156026994
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039333 [A63] 0xMiden/miden-vm ---
+  Attempt 1/3...
+  Tx sent: 0xc3692c409975dd34d54cb12c753ca9a7ec2bc19092c14dd4e3f8a871b441902a
+  Confirmed in block 156026998
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039334 [A64] dappnode/DAppNode ---
+  Attempt 1/3...
+  Tx sent: 0x4a1cffa9e1d73b53e8cb505934135214f36938d1dcc4118d4a62e1b330afbbac
+  Confirmed in block 156027001
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039335 [A65] EspressoSystems/jellyfish ---
+  Attempt 1/3...
+  Tx sent: 0x79c88da0b379157b42346ceab5832a073293176206a9f17d927b552871b38d2f
+  Confirmed in block 156027004
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039336 [B0] otterscan/otterscan ---
+  Attempt 1/3...
+  Tx sent: 0x0a8368fcfe1943a99de3eac1eb0e9d3a9360989663a7e4219b33d1a525e1f31f
+  Confirmed in block 156027007
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039337 [B1] risc0/risc0-ethereum ---
+  Attempt 1/3...
+  Tx sent: 0xd754a32e8eff630b2331184407675b4ca4d4005b5b1143f0c6d99594a1c0d47b
+  Confirmed in block 156027010
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039338 [B2] aestus-relay/mev-boost-relay ---
+  Attempt 1/3...
+  Tx sent: 0x08173161cb7ee2b6a71a507e06c65043173b5c78848ce75dfe5dd9f2a5189f65
+  Confirmed in block 156027012
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039339 [B3] Commit-Boost/commit-boost-client ---
+  Attempt 1/3...
+  Tx sent: 0xd18ebd429595cc5efdbc232f6a9b49d7c5bb2df32f1aa18e2f5f88c7069c9d83
+  Confirmed in block 156027015
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039340 [B4] edb-rs/edb ---
+  Attempt 1/3...
+  Tx sent: 0x7df7a1d2385ac75cd457836e9279da8c2533be6748922d67903a11dfe7b9c6e0
+  Confirmed in block 156027018
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039341 [B5] alloy-rs/alloy ---
+  Attempt 1/3...
+  Tx sent: 0x2db70a9f3653bc0dfdecec412c0150899450ed07f1886afd71e8f089c7642555
+  Confirmed in block 156027021
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039342 [B6] OffchainLabs/stylus-sdk-rs ---
+  Attempt 1/3...
+  Tx sent: 0x308fce00fe85924c60f05df9ed809035f36646c5f95c77f2d1ddf64788ace28c
+  Confirmed in block 156027024
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039343 [B7] DefiLlama/chainlist ---
+  Attempt 1/3...
+  Tx sent: 0xab21a4ba568f1ab4e2813e196e118fca445d84b35b7124950e09fb1c8ae94f2e
+  Confirmed in block 156027029
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039344 [B8] a16z/helios ---
+  Attempt 1/3...
+  Tx sent: 0xdb70c64f291e38a02529f45194656205f29ad3b3b35380dfd806e89d9650fef7
+  Confirmed in block 156027032
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039345 [B9] grandinetech/grandine ---
+  Attempt 1/3...
+  Tx sent: 0x2916c097d166e5bdf033c54c977c0bb4132a093a77d8a2ed0ecdc1b67b692ab2
+  Confirmed in block 156027035
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039346 [B10] axiom-crypto/snark-verifier ---
+  Attempt 1/3...
+  Tx sent: 0x1e68be49e6691af571dfe8fa4b863a862a8911d68c0d1edf2096411445eb091a
+  Confirmed in block 156027039
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039347 [B11] ethstaker/ethstaker-deposit-cli ---
+  Attempt 1/3...
+  Tx sent: 0x3e5576c8ce6732d541012e11ee61557ac894b040e7ee403a7174b669dd037611
+  Confirmed in block 156027042
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039348 [B12] skalenetwork/libBLS ---
+  Attempt 1/3...
+  Tx sent: 0x66e7cddf9cf9c9812f568b9670a8db0e95cfaa60ebb715d90ad3f547db29f477
+  Confirmed in block 156027045
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039349 [B13] ethpandaops/ethereum-helm-charts ---
+  Attempt 1/3...
+  Tx sent: 0x33a1f01b8c42b0b4cca2d0acbc9973e95e0463b21a6102b40f67f5ea7ee1c626
+  Confirmed in block 156027048
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039350 [B14] holiman/goevmlab ---
+  Attempt 1/3...
+  Tx sent: 0x7df6f9347c2073395c7f4336d7a0d53a558c19a5ab4f1fa13224786df2e27b12
+  Confirmed in block 156027051
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039351 [B15] ethpandaops/checkpointz ---
+  Attempt 1/3...
+  Tx sent: 0x40db2aaecf7739addb4660f99e2daa192ec7611a9f863adaf258724d70fd9d0e
+  Confirmed in block 156027054
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039352 [B16] lambdaclass/lambdaworks ---
+  Attempt 1/3...
+  Tx sent: 0x88573003d626ca0b79dd3198199c4e41e2ec669e262f1c761f9bf93a6fe4ef68
+  Confirmed in block 156027057
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039353 [B17] powdr-labs/powdr ---
+  Attempt 1/3...
+  Tx sent: 0x88736c313dbeb7ec588d4c3904f0a914de45d3ffb740baf8862885a51f6057d5
+  Confirmed in block 156027060
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039354 [B18] Cyfrin/aderyn ---
+  Attempt 1/3...
+  Tx sent: 0x5ebbca5def3069962f8cc42014a803a17dba103df813387e30afd4c3625504cc
+  Confirmed in block 156027063
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039355 [B19] NethermindEth/juno ---
+  Attempt 1/3...
+  Tx sent: 0xb29cb758c878065b24ca5c045294fea91891ad41bf43d8e3cbe97fea37e8c244
+  Confirmed in block 156027066
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039356 [B20] ethdebug/format ---
+  Attempt 1/3...
+  Tx sent: 0xae140ad28158c46c6d361cac7662a65cb40c46e40f5d301699e0688ab2695568
+  Confirmed in block 156027071
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039357 [B21] argotorg/fe ---
+  Attempt 1/3...
+  Tx sent: 0x376a7e58cffabf67e13300cf3ce78cbff7c7cc03a37208b28769017d34982364
+  Confirmed in block 156027073
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039358 [B22] succinctlabs/rsp ---
+  Attempt 1/3...
+  Tx sent: 0xccf79279f5c9b9d6f470296abd6541131f09bdebe19c69b9d2766e13046bfb16
+  Confirmed in block 156027076
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039359 [B23] vyperlang/titanoboa ---
+  Attempt 1/3...
+  Tx sent: 0x6a82b0e145173a03c66a5c3fc2b3592da2758940b5a92085a678fff36ce809f0
+  Confirmed in block 156027079
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039360 [B24] lambdaclass/ethrex ---
+  Attempt 1/3...
+  Tx sent: 0x697c5d29aa45d0e82005644f3a76f077fba302ca5a1c40bd18ec2f77d691af79
+  Confirmed in block 156027082
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039361 [B25] deepfunding/dependency-graph ---
+  Attempt 1/3...
+  Tx sent: 0x15c13db5006f1adcc8a23fc54e6ea4021d125a88e67a7b640f527be959e667f1
+  Confirmed in block 156027085
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039362 [B26] swiss-knife-xyz/swiss-knife ---
+  Attempt 1/3...
+  Tx sent: 0xc88843b4a5cfead22c05418acff93cff4ce8bc7ee8952fae3c9dcca30171e9fa
+  Confirmed in block 156027088
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039363 [B27] dl-solarity/solidity-lib ---
+  Attempt 1/3...
+  Tx sent: 0x196647da2a806169e2167bd5aea2c6272b22fd4e356504ac429dd3242491db45
+  Confirmed in block 156027091
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039364 [B28] argotorg/act ---
+  Attempt 1/3...
+  Tx sent: 0x5180a4721a8dcc29c13cc775485a92bda0be06ffddfae58f4854443bfd2fe96b
+  Confirmed in block 156027094
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039365 [B29] evmts/tevm-monorepo ---
+  Attempt 1/3...
+  Tx sent: 0xca3ccf4ba45fe504b383f9e3735b349c82b221e1b6cdfb30aae5aee3007a2051
+  Confirmed in block 156027097
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039366 [B30] ethpandaops/ethereum-package ---
+  Attempt 1/3...
+  Tx sent: 0x463d2b7be298e449262df0e79c4d4424260b09f9c7568ee1df29bffda8137245
+  Confirmed in block 156027100
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1039367 [B31] lambdaclass/lambda_ethereum_consensus\t ---
+  Attempt 1/3...
+  Tx sent: 0x03af96b04fbc6b72424f576399c0d314667630ae3c2613bf9d1ce3691ae2754d
+  Confirmed in block 156027103
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1055065 [A67] Invalid result ---
+  Attempt 1/3...
+  Tx sent: 0x86302c2d6b5b52639edcb35bf42d1c55505568937d598cba3c222765e0cb23e3
+  Confirmed in block 156027106
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+--- #1055066 [B32] Invalid result ---
+  Attempt 1/3...
+  Tx sent: 0x89e6b535a5a6bde8d024ddfec405d46a2a97c9cee15eeda8fa04257fb6cc7112
+  Confirmed in block 156027109
+  ✅ Saved to ./withdraw-l1-liquidity-execution.json
+
+🎉 Done! 198/198 positions withdrawn, 0 failure(s).
+   Progress: ./withdraw-l1-liquidity-execution.json
+   The wallet now holds A/B outcome tokens + sUSDS. Next: node merge-l1-positions.js
+   (merges Market B first — it mints the 'Other repositories' token Market A needs.)

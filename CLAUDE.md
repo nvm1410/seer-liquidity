@@ -41,9 +41,28 @@ Do not copy these into this file — point at them.
 |---|---|
 | How to run a campaign end to end | `~/.claude/skills/seer-market-lifecycle/SKILL.md` (+ `references/grill-checklist.md`, `references/repos.md`) |
 | What happened in each past campaign | project memory — `~/.claude/projects/D--Code-liquidity/memory/MEMORY.md` |
-| Why a campaign was built the way it was | the `CLAUDE_*_GUIDE.md` / `*_GUIDE.md` files at the root |
+| Why a campaign was built the way it was | `docs/guides/` |
 | What a campaign *is*, machine-readable | `lifecycle/<slug>.json` |
 | On-chain contract reference | `src/*.sol` — a read-only copy of the Seer contracts, never compiled |
+
+## Files that moved
+
+The frozen scripts cite guides **by name** in their header comments — e.g.
+`add-zcash-nu7-liquidity.js:23` says *"see CLAUDE_ZCASH_MARKETS_GUIDE.md step 5"*. Those names no
+longer exist, so grep lands here instead:
+
+| Cited as | Now at |
+|---|---|
+| `CLAUDE_L1_ADDBACK_GUIDE.md` | `docs/guides/l1-deepfunding.md` |
+| `CLAUDE_ZCASH_MARKETS_GUIDE.md` | `docs/guides/zcash-q3.md` |
+| `CLAUDE_ZCASH_NU7_GUIDE.md` | `docs/guides/zcash-nu7.md` |
+| `GNOSIS_PD_MARKET_GUIDE.md` | `docs/guides/gnosis-pd.md` |
+| `REMOVE_MERGE_ORIGINALITY_GUIDE.md` | `docs/guides/originality-unwind.md` |
+| `useImpliedProbs.ts`, `get-originality-markets-data.ts` | `docs/reference/ui/` (UI-repo files, not runnable here) |
+| `*-run.log`, `*-dryrun.log` | `archive/runs/<campaign>/` |
+| `test.json`, `data.json`, `participants.json` | `archive/dead/` (unreferenced; `test.json` was a byte-identical copy of `execution.json`) |
+
+Everything on the freeze surface stayed at the root. `npm run audit:paths` is what proves it.
 
 ## Environment
 

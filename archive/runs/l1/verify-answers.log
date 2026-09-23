@@ -1,0 +1,248 @@
+
+📋 Wallet   : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN  : true
+📋 Markets  : A 0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6
+              B 0xfea47428981f70110c64dd678889826c3627245b
+
+(node:18832) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/answer-l1-markets.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+📄 ./l1weightsForResolution.csv: 98 data row(s) parsed
+🧮 CSV weights sum to 0.9999999998
+
+🔗 Market A  0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6
+   What will be the juror weight (computed through Huber loss minimization in the log domain with δ = 1.345σ) of [repository] in the second round of the deepfunding experiment?
+   templateId 1 | bounds 0..1000000000000000000 | outcomes 68 | questions 67 | payoutReported false
+
+🔗 Market B  0xfea47428981f70110c64dd678889826c3627245b
+   What will be the juror weight (computed through Huber loss minimization in the log domain with δ = 1.345σ) of [repository] in the second round of the deepfunding experiment?
+   templateId 1 | bounds 0..1000000000000000000 | outcomes 33 | questions 32 | payoutReported false
+
+📊 Market A — 67 answer(s)
+    #  outcome                                             weight          answer (wei)
+    0  ethereum/go-ethereum                                 0.0456649495  45664949500000000
+    1  argotorg/solidity                                    0.0452813548  45281354800000000
+    2  foundry-rs/foundry                                   0.0271170673  27117067300000000
+    3  OpenZeppelin/openzeppelin-contracts                  0.0319796862  31979686200000000
+    4  ethereum/consensus-specs                             0.0432632546  43263254600000000
+    5  OffchainLabs/prysm                                   0.0252864375  25286437500000000
+    6  ethereum/EIPs                                        0.0420340109  42034010900000000
+    7  ethers-io/ethers.js                                  0.0150753758  15075375800000000
+    8  NomicFoundation/hardhat                              0.0214837921  21483792100000000
+    9  sigp/lighthouse                                       0.021292866  21292866000000000
+   10  flashbots/mev-boost                                  0.0148377884  14837788400000000
+   11  erigontech/erigon                                    0.0079207642  7920764200000000
+   12  remix-project-org/remix-project                      0.0088093756  8809375600000000
+   13  wighawag/hardhat-deploy                              0.0051659098  5165909800000000
+   14  Consensys/teku                                       0.0098355659  9835565900000000
+   15  ethereum/execution-apis                               0.026261322  26261322000000000
+   16  supranational/blst                                   0.0322558057  32255805700000000
+   17  NethermindEth/nethermind                             0.0420546824  42054682400000000
+   18  hyperledger/besu                                     0.0139662909  13966290900000000
+   19  wevm/viem                                            0.0240571647  24057164700000000
+   20  libp2p/libp2p                                        0.0208826396  20882639600000000
+   21  ethereum/js-ethereum-cryptography                    0.0128889075  12888907500000000
+   22  ethereum/web3.py                                     0.0050746467  5074646700000000
+   23  paradigmxyz/reth                                     0.0073826253  7382625300000000
+   24  Vectorized/solady                                    0.0065578117  6557811700000000
+   25  safe-global/safe-smart-account                       0.0274380044  27438004400000000
+   26  blockscout/blockscout                                0.0087106657  8710665700000000
+   27  flashbots/mev-boost-relay                            0.0114741802  11474180200000000
+   28  scaffold-eth/scaffold-eth-2                          0.0029533244  2953324400000000
+   29  argotorg/sourcify                                    0.0055631203  5563120300000000
+   30  vyperlang/vyper                                      0.0084217785  8421778500000000
+   31  ethereum/py_ecc                                      0.0044673171  4467317100000000
+   32  Nethereum/Nethereum                                  0.0105537525  10553752500000000
+   33  LFDT-web3j/web3j                                     0.0090318933  9031893300000000
+   34  l2beat/l2beat                                        0.0168007357  16800735700000000
+   35  ChainSafe/lodestar                                   0.0081095541  8109554100000000
+   36  Consensys/gnark-crypto                               0.0139931934  13993193400000000
+   37  eth-infinitism/account-abstraction                    0.010405335  10405335000000000
+   38  arkworks-rs/algebra                                  0.0036167016  3616701600000000
+   39  paulmillr/noble-curves                               0.0031381719  3138171900000000
+   40  DefiLlama/DefiLlama-Adapters                         0.0060169541  6016954100000000
+   41  flashbots/rbuilder                                   0.0133954457  13395445700000000
+   42  ChainSafe/bls                                        0.0015828361  1582836100000000
+   43  taikoxyz/taiko-mono                                  0.0048679914  4867991400000000
+   44  wealdtech/ethdo                                      0.0022570143  2257014300000000
+   45  protofire/solhint                                    0.0066525111  6652511100000000
+   46  herumi/mcl                                           0.0045958574  4595857400000000
+   47  ipsilon/evmone                                       0.0022766533  2276653300000000
+   48  shazow/whatsabi                                      0.0017631491  1763149100000000
+   49  ethereum-lists/chains                                0.0025507464  2550746400000000
+   50  argotorg/hevm                                        0.0014166968  1416696800000000
+   51  status-im/nimbus-eth2                                 0.009443012  9443012000000000
+   52  Plonky3/Plonky3                                      0.0167744721  16774472100000000
+   53  TrueBlocks/trueblocks-core                           0.0022541481  2254148100000000
+   54  ethstaker/eth-docker                                 0.0123549564  12354956400000000
+   55  Certora/CertoraProver                                0.0049050468  4905046800000000
+   56  erigontech/silkworm                                  0.0063216094  6321609400000000
+   57  ApeWorX/ape                                          0.0024180645  2418064500000000
+   58  intellij-solidity/intellij-solidity                  0.0012521644  1252164400000000
+   59  smartcontracts/simple-optimism-node                  0.0030639049  3063904900000000
+   60  succinctlabs/op-succinct                             0.0037709208  3770920800000000
+   61  succinctlabs/sp1                                     0.0090043743  9004374300000000
+   62  a16z/halmos                                          0.0015093785  1509378500000000
+   63  0xMiden/miden-vm                                     0.0025693861  2569386100000000
+   64  dappnode/DAppNode                                    0.0061029966  6102996600000000
+   65  EspressoSystems/jellyfish                            0.0014488053  1448805300000000
+   66  Other repositories not present on the market creat   0.1683230807  168323080700000000
+
+📊 Market B — 32 answer(s)
+    #  outcome                                             weight          answer (wei)
+    0  otterscan/otterscan                                  0.0016786693  1678669300000000
+    1  risc0/risc0-ethereum                                 0.0177003449  17700344900000000
+    2  aestus-relay/mev-boost-relay                         0.0024887979  2488797900000000
+    3  Commit-Boost/commit-boost-client                     0.0022640677  2264067700000000
+    4  edb-rs/edb                                           0.0008865587  886558700000000
+    5  alloy-rs/alloy                                       0.0014811491  1481149100000000
+    6  OffchainLabs/stylus-sdk-rs                           0.0033052731  3305273100000000
+    7  DefiLlama/chainlist                                  0.0039353206  3935320600000000
+    8  a16z/helios                                          0.0027037694  2703769400000000
+    9  grandinetech/grandine                                0.0030822674  3082267400000000
+   10  axiom-crypto/snark-verifier                          0.0017935514  1793551400000000
+   11  ethstaker/ethstaker-deposit-cli                        0.00222637  2226370000000000
+   12  skalenetwork/libBLS                                  0.0019079439  1907943900000000
+   13  ethpandaops/ethereum-helm-charts                     0.0037666831  3766683100000000
+   14  holiman/goevmlab                                     0.0360415414  36041541400000000
+   15  ethpandaops/checkpointz                              0.0035214005  3521400500000000
+   16  lambdaclass/lambdaworks                              0.0021192938  2119293800000000
+   17  powdr-labs/powdr                                     0.0026226812  2622681200000000
+   18  Cyfrin/aderyn                                        0.0427614786  42761478600000000
+   19  NethermindEth/juno                                   0.0042639582  4263958200000000
+   20  ethdebug/format                                         0.0016179  1617900000000000
+   21  argotorg/fe                                          0.0021250459  2125045900000000
+   22  succinctlabs/rsp                                     0.0009172964  917296400000000
+   23  vyperlang/titanoboa                                  0.0019119473  1911947300000000
+   24  lambdaclass/ethrex                                   0.0020380487  2038048700000000
+   25  deepfunding/dependency-graph                         0.0014285214  1428521400000000
+   26  swiss-knife-xyz/swiss-knife                          0.0008588064  858806400000000
+   27  dl-solarity/solidity-lib                             0.0011315314  1131531400000000
+   28  argotorg/act                                         0.0044371702  4437170200000000
+   29  evmts/tevm-monorepo                                  0.0026566657  2656665700000000
+   30  ethpandaops/ethereum-package                         0.0081442284  8144228400000000
+   31  lambdaclass/lambda_ethereum_consensus\t              0.0005047987  504798700000000
+
+🧮 Σ market A payouts (66 repos + Other) = 999999999800000000  (0.9999999998)
+🧮 Σ market B payouts (32 repos)          = 168323080700000000  (0.1683230807)
+🧮 A#66 "Other repositories"              = 168323080700000000 — equals Σ market B ✅
+
+💵 Implied redemption for 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0 at these payouts:
+   market A holdings → 4774.280986543267709521 sUSDS (includes any OTHER already held)
+   market B holdings → 4510.284499982295721376 OTHER → 759.184982022316107684 sUSDS
+   ─────────────────────────────────────────────
+   total            → 5533.465968565583817205 sUSDS
+   (sanity: weights sum to 1, so Σ balance×weight ≈ the MEAN per-outcome
+    balance, not the ~487k total the unwind stranded. With ~351k spread
+    over 67 A outcomes, ~5k sUSDS is the expected order of magnitude.
+    A result far outside that means the weights or the mapping are
+    wrong — stop before bonding.)
+
+💰 Bond required: 0.0 ETH for 0 unanswered question(s)
+
+⚙️  Submit phase (DRY RUN — no transactions)
+
+  ── Market A ──
+  [A# 0] ethereum/go-ethereum: already in progress log — skipping
+  [A# 1] argotorg/solidity: already in progress log — skipping
+  [A# 2] foundry-rs/foundry: already in progress log — skipping
+  [A# 3] OpenZeppelin/openzeppelin-contracts: already in progress log — skipping
+  [A# 4] ethereum/consensus-specs: already in progress log — skipping
+  [A# 5] OffchainLabs/prysm: already in progress log — skipping
+  [A# 6] ethereum/EIPs: already in progress log — skipping
+  [A# 7] ethers-io/ethers.js: already in progress log — skipping
+  [A# 8] NomicFoundation/hardhat: already in progress log — skipping
+  [A# 9] sigp/lighthouse: already in progress log — skipping
+  [A#10] flashbots/mev-boost: already in progress log — skipping
+  [A#11] erigontech/erigon: already in progress log — skipping
+  [A#12] remix-project-org/remix-project: already in progress log — skipping
+  [A#13] wighawag/hardhat-deploy: already in progress log — skipping
+  [A#14] Consensys/teku: already in progress log — skipping
+  [A#15] ethereum/execution-apis: already in progress log — skipping
+  [A#16] supranational/blst: already in progress log — skipping
+  [A#17] NethermindEth/nethermind: already in progress log — skipping
+  [A#18] hyperledger/besu: already in progress log — skipping
+  [A#19] wevm/viem: already in progress log — skipping
+  [A#20] libp2p/libp2p: already in progress log — skipping
+  [A#21] ethereum/js-ethereum-cryptography: already in progress log — skipping
+  [A#22] ethereum/web3.py: already in progress log — skipping
+  [A#23] paradigmxyz/reth: already in progress log — skipping
+  [A#24] Vectorized/solady: already in progress log — skipping
+  [A#25] safe-global/safe-smart-account: already in progress log — skipping
+  [A#26] blockscout/blockscout: already in progress log — skipping
+  [A#27] flashbots/mev-boost-relay: already in progress log — skipping
+  [A#28] scaffold-eth/scaffold-eth-2: already in progress log — skipping
+  [A#29] argotorg/sourcify: already in progress log — skipping
+  [A#30] vyperlang/vyper: already in progress log — skipping
+  [A#31] ethereum/py_ecc: already in progress log — skipping
+  [A#32] Nethereum/Nethereum: already in progress log — skipping
+  [A#33] LFDT-web3j/web3j: already in progress log — skipping
+  [A#34] l2beat/l2beat: already in progress log — skipping
+  [A#35] ChainSafe/lodestar: already in progress log — skipping
+  [A#36] Consensys/gnark-crypto: already in progress log — skipping
+  [A#37] eth-infinitism/account-abstraction: already in progress log — skipping
+  [A#38] arkworks-rs/algebra: already in progress log — skipping
+  [A#39] paulmillr/noble-curves: already in progress log — skipping
+  [A#40] DefiLlama/DefiLlama-Adapters: already in progress log — skipping
+  [A#41] flashbots/rbuilder: already in progress log — skipping
+  [A#42] ChainSafe/bls: already in progress log — skipping
+  [A#43] taikoxyz/taiko-mono: already in progress log — skipping
+  [A#44] wealdtech/ethdo: already in progress log — skipping
+  [A#45] protofire/solhint: already in progress log — skipping
+  [A#46] herumi/mcl: already in progress log — skipping
+  [A#47] ipsilon/evmone: already in progress log — skipping
+  [A#48] shazow/whatsabi: already in progress log — skipping
+  [A#49] ethereum-lists/chains: already in progress log — skipping
+  [A#50] argotorg/hevm: already in progress log — skipping
+  [A#51] status-im/nimbus-eth2: already in progress log — skipping
+  [A#52] Plonky3/Plonky3: already in progress log — skipping
+  [A#53] TrueBlocks/trueblocks-core: already in progress log — skipping
+  [A#54] ethstaker/eth-docker: already in progress log — skipping
+  [A#55] Certora/CertoraProver: already in progress log — skipping
+  [A#56] erigontech/silkworm: already in progress log — skipping
+  [A#57] ApeWorX/ape: already in progress log — skipping
+  [A#58] intellij-solidity/intellij-solidity: already in progress log — skipping
+  [A#59] smartcontracts/simple-optimism-node: already in progress log — skipping
+  [A#60] succinctlabs/op-succinct: already in progress log — skipping
+  [A#61] succinctlabs/sp1: already in progress log — skipping
+  [A#62] a16z/halmos: already in progress log — skipping
+  [A#63] 0xMiden/miden-vm: already in progress log — skipping
+  [A#64] dappnode/DAppNode: already in progress log — skipping
+  [A#65] EspressoSystems/jellyfish: already in progress log — skipping
+  [A#66] Other repositories not present on the market: already in progress log — skipping
+  ── Market B ──
+  [B# 0] otterscan/otterscan: already in progress log — skipping
+  [B# 1] risc0/risc0-ethereum: already in progress log — skipping
+  [B# 2] aestus-relay/mev-boost-relay: already in progress log — skipping
+  [B# 3] Commit-Boost/commit-boost-client: already in progress log — skipping
+  [B# 4] edb-rs/edb: already in progress log — skipping
+  [B# 5] alloy-rs/alloy: already in progress log — skipping
+  [B# 6] OffchainLabs/stylus-sdk-rs: already in progress log — skipping
+  [B# 7] DefiLlama/chainlist: already in progress log — skipping
+  [B# 8] a16z/helios: already in progress log — skipping
+  [B# 9] grandinetech/grandine: already in progress log — skipping
+  [B#10] axiom-crypto/snark-verifier: already in progress log — skipping
+  [B#11] ethstaker/ethstaker-deposit-cli: already in progress log — skipping
+  [B#12] skalenetwork/libBLS: already in progress log — skipping
+  [B#13] ethpandaops/ethereum-helm-charts: already in progress log — skipping
+  [B#14] holiman/goevmlab: already in progress log — skipping
+  [B#15] ethpandaops/checkpointz: already in progress log — skipping
+  [B#16] lambdaclass/lambdaworks: already in progress log — skipping
+  [B#17] powdr-labs/powdr: already in progress log — skipping
+  [B#18] Cyfrin/aderyn: already in progress log — skipping
+  [B#19] NethermindEth/juno: already in progress log — skipping
+  [B#20] ethdebug/format: already in progress log — skipping
+  [B#21] argotorg/fe: already in progress log — skipping
+  [B#22] succinctlabs/rsp: already in progress log — skipping
+  [B#23] vyperlang/titanoboa: already in progress log — skipping
+  [B#24] lambdaclass/ethrex: already in progress log — skipping
+  [B#25] deepfunding/dependency-graph: already in progress log — skipping
+  [B#26] swiss-knife-xyz/swiss-knife: already in progress log — skipping
+  [B#27] dl-solarity/solidity-lib: already in progress log — skipping
+  [B#28] argotorg/act: already in progress log — skipping
+  [B#29] evmts/tevm-monorepo: already in progress log — skipping
+  [B#30] ethpandaops/ethereum-package: already in progress log — skipping
+  [B#31] lambdaclass/lambda_ethereum_consensus\t: already in progress log — skipping
+
+🎉 Dry run — 0 answer(s) would be submitted (99 skipped), bonding 0.0 ETH. Set DRY_RUN = false to execute.

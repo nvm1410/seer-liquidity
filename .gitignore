@@ -1,6 +1,13 @@
 # Logs
 logs
 *.log
+# ...but run logs are evidence of what was executed on chain, and belong in
+# history. Before this, *.log plus 20 one-off `git add -f` calls meant 12 logs
+# were silently absent - the split even cut through a single campaign
+# (merge-zcash-nu7-v3-run.log ignored while its -v2- and -v3-round2- siblings
+# were tracked). Un-ignore by directory instead.
+!archive/runs/**/*.log
+!runs/**/*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

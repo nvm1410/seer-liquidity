@@ -1,0 +1,1716 @@
+
+📋 Wallet   : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+📋 DRY_RUN  : false
+📋 Budget   : 20000 sUSDS
+📋 Range    : [0.02, 0.98] sUSDS per outcome token
+(node:11076) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Code/liquidity/reseed-zcash-liquidity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Code\liquidity\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+   SwapRouter verified against V3 factory 0x1F98431c8aD98523631AE4a59f267346ea31F984
+
+🔍 Phase 0: resolving 37 markets on-chain...
+   ✅ 37 markets verified; 74 pools + position NFTs matched
+
+📐 Phase 1: sizing positions at the new prices...
+   Budget per market: 540.54054054054054054 sUSDS
+
+    #  shortName        side  price   now→target        move    outcome       sUSDS    mkt total
+    1  GRANTSHUB       YES  0.680   -3857→ -3857  —                109.55      369.63
+    1  GRANTSHUB       NO   0.320   11394→ 11394  —                109.55       61.36       430.99
+    2  SHIELDEDSCAN    YES  0.820    1984→  1984  —                 57.95      470.42
+    2  SHIELDEDSCAN    NO   0.180  -17149→-17149  —                 57.95       12.17       482.59
+    3  ZECKIT          YES  0.640   -4464→ -4464  —                121.63      333.96
+    3  ZECKIT          NO   0.360  -10218→-10218  —                121.63       84.95       418.91
+    4  ZCASHTOCASH     YES  0.610   -4944→ -4944  —                129.19      305.77
+    4  ZCASHTOCASH     NO   0.390    9416→  9416  —                129.19      105.58       411.35
+    5  RECONCILE       YES  0.640   -4464→ -4464  —                121.63      333.96
+    5  RECONCILE       NO   0.360  -10218→-10218  —                121.63       84.95       418.91
+    6  GLEYO           YES  0.660   -5979→ -4156  buy outcome      115.86      352.15
+    6  GLEYO           NO   0.340   -7986→-10789  sell outcome     115.90       72.62       424.77
+    7  FAUCET          YES  0.680   -5979→ -3857  buy outcome      109.57      369.68
+    7  FAUCET          NO   0.320    7985→ 11394  sell outcome     109.62       61.38       431.07
+    8  CYPHZEC         YES  0.830    5978→  1863  buy outcome       54.13      476.15
+    8  CYPHZEC         NO   0.170   -7986→-17721  sell outcome      54.28       10.38       486.53
+    9  ZECLEDGER       YES  0.670   -5979→ -4005  buy outcome      112.77      361.03
+    9  ZECLEDGER       NO   0.330   -7986→-11088  sell outcome     112.81       66.84       427.87
+   10  LIGHTWALLETD    YES  0.790   -5979→ -2358  buy outcome       69.56      452.28
+   10  LIGHTWALLETD    NO   0.210   -7986→-15608  sell outcome      69.67       18.82       471.10
+   11  BLINDVAULT      YES  0.200    5978→ 16095  sell outcome      65.90       16.42
+   11  BLINDVAULT      NO   0.800    7985→  2231  buy outcome       65.69      458.55       474.97
+   12  ZALLETRPC       YES  0.180   -5979→-17149  sell outcome      58.21       12.21
+   12  ZALLETRPC       NO   0.820    7985→  1984  buy outcome       57.97      470.48       482.69
+   13  ZECMAP          YES  0.550   -5979→ -5979  —                139.45      247.46
+   13  ZECMAP          NO   0.450   -7986→ -7986  —                139.45      153.62       401.09
+   14  CONNAUGH        YES  0.270   -5979→-13094  sell outcome      92.36       38.17
+   14  CONNAUGH        NO   0.730   -7986→ -3148  buy outcome       92.22      410.25       448.43
+   15  ZAP1            YES  0.320   -5979→-11395  sell outcome     109.67       61.39
+   15  ZAP1            NO   0.680   -7986→ -3857  buy outcome      109.57      369.68       431.07
+   16  ZECBOOKS        YES  0.160   -5979→-18327  sell outcome      50.56        8.76
+   16  ZECBOOKS        NO   0.840   -7986→ -1744  buy outcome       50.29      481.61       490.37
+   17  CIPHERPAY       YES  0.690   -5979→ -3711  buy outcome      106.27      378.19
+   17  CIPHERPAY       NO   0.310    7985→ 11712  sell outcome     106.32       56.18       434.37
+   18  ZAFU            YES  0.440   -5979→ -8211  sell outcome     138.30      145.08
+   18  ZAFU            NO   0.560   -7986→ -5799  buy outcome      138.26      257.29       402.37
+   19  ZAPP            YES  0.470    5978→  7550  sell outcome     141.28      171.41
+   19  ZAPP            NO   0.530   -7986→ -6350  buy outcome      141.26      227.96       399.37
+   20  HWSDK           YES  0.670    5978→  4004  buy outcome      112.76      361.04
+   20  HWSDK           NO   0.330   -7986→-11088  sell outcome     112.80       66.84       427.88
+   21  NOZY            YES  0.520   -5979→ -6540  sell outcome     141.83      218.31
+   21  NOZY            NO   0.480   -7986→ -7341  buy outcome      141.82      180.49       398.80
+   22  THORSWAP        YES  0.920   -5979→  -834  buy outcome       20.56      518.93
+   22  THORSWAP        NO   0.080   -7986→-25259  sell outcome      20.90        1.17       520.11
+   23  UNSTOPPABLE     YES  0.860    5978→  1508  buy outcome       42.68      491.99
+   23  UNSTOPPABLE     NO   0.140    7985→ 19662  sell outcome      42.88        5.99       497.98
+   24  ZCASHNAMES      YES  0.380   -5979→ -9677  sell outcome     126.91       98.46
+   24  ZCASHNAMES      NO   0.620   -7986→ -4781  buy outcome      126.84      315.34       413.80
+   25  FRONTIERSEC     YES  0.310   -5979→-11713  sell outcome     106.38       56.19
+   25  FRONTIERSEC     NO   0.690   -7986→ -3711  buy outcome      106.27      378.18       434.37
+   26  ZEBRACVE        YES  0.400   -5979→ -9164  sell outcome     131.44      113.00
+   26  ZEBRACVE        NO   0.600    7985→  5108  buy outcome      131.38      296.25       409.25
+   27  BONUSIRONWOOD   YES  0.840   -5979→ -1744  buy outcome       50.29      481.63
+   27  BONUSIRONWOOD   NO   0.160   -7986→-18327  sell outcome      50.46        8.75       490.37
+   28  CIPHERSCAN      YES  0.420   -5979→ -8676  sell outcome     135.26      128.58
+   28  CIPHERSCAN      NO   0.580   -7986→ -5448  buy outcome      135.22      276.84       405.42
+   29  MINTEXPLOIT     YES  0.820    5978→  1984  buy outcome       57.97      470.50
+   29  MINTEXPLOIT     NO   0.180   -7986→-17149  sell outcome      58.11       12.19       482.69
+   30  ZEBRACONSENSUS  YES  0.710   -5979→ -3426  buy outcome       99.41      394.60
+   30  ZEBRACONSENSUS  NO   0.290    7985→ 12379  sell outcome      99.47       46.63       441.23
+   31  ZECROCKS        YES  0.570   -5979→ -5622  buy outcome      136.84      267.08
+   31  ZECROCKS        NO   0.430   -7986→ -8441  sell outcome     136.85      136.70       403.78
+   32  VALARAUDIT      YES  0.780   -5979→ -2485  buy outcome       73.39      445.81
+   32  VALARAUDIT      NO   0.220    7985→ 15142  sell outcome      73.50       21.45       467.26
+   33  TACHYON         YES  0.950   -5979→  -513  buy outcome       10.06      530.35
+   33  TACHYON         NO   0.050    7985→ 29958  sell outcome      10.56        0.26       530.61
+   34  ORCHARDBOUNTY   YES  0.970   -5979→  -305  buy outcome        3.31      537.32
+   34  ORCHARDBOUNTY   NO   0.030    7985→ 35067  sell outcome       4.02        0.04       537.37
+   35  BONUSORCHARD    YES  0.910   -5988→  -944  buy outcome       24.18      514.82
+   35  BONUSORCHARD    NO   0.090   -7985→-24081  sell outcome      24.48        1.67       516.49
+   36  VALARIRONWOOD   YES  0.860   -5988→ -1509  buy outcome       42.68      491.98
+   36  VALARIRONWOOD   NO   0.140   -7985→-19663  sell outcome      42.88        5.99       497.98
+   37  ZODL            YES  0.880    5976→  1278  buy outcome       35.17      501.63
+   37  ZODL            NO   0.120   -7998→-21204  sell outcome      35.40        3.86       505.50
+
+   Pools needing a reprice: 62/74
+   Splits (mint): 3258.417118741946029999 sUSDS over 37 markets
+   sUSDS side   : 16746.959805216001361726 sUSDS over 74 pools
+   price slivers: 2.718991755352642795 sUSDS (stays in the positions)
+   GRAND TOTAL  : 20008.09591571330003452 sUSDS (budget 20000)
+
+💰 sUSDS balance: 22136.003199328607581634 | need: 20008.09591571330003452
+      approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 -> 0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD
+      attempt 1/3...
+      tx 0xf8761d3e3db33d4357bb359a8e42ca08d0c6c3d9a91d7d873e5401023c9c46a0
+      confirmed in block 155988755
+      approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x027ba9d2426ef80420af2669396bea8dc29899e5cbae9ee8f5f1bb57a650ed1d
+      confirmed in block 155988758
+      approving 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x4f23a3ff477ea17c544fa0b19488214e43a1f0ec8b6894a6ecaf72f7c7fd0343
+      confirmed in block 155988761
+
+📈 Phase 3: re-seeding 74 pools across 37 markets
+
+
+=== [1] GRANTSHUB — 0xE599669a0cB02128fa0463953f9f70Fde240921A ===
+  ⏭  split already logged
+  ⏭  YES pool already funded
+  ⏭  NO pool already funded
+
+=== [2] SHIELDEDSCAN — 0xbdb8245fB6E4c6dF77bB6b28AF7C7691572805EC ===
+  ⏭  split already logged
+  ⏭  YES pool already funded
+
+  --- SHIELDEDSCAN NO → 0.180 (#1125447) ---
+    ⚠️  outcome balance 57.912864467560606416 < planned 57.948922199083443376 — sizing from balance instead
+    3/3 fund: 57.907073181113850355 outcome + 12.160859004128883812 sUSDS at tick -17149
+      attempt 1/3...
+      tx 0xbcb24ab3bca71da57f5ca0d3cf4522b4ce22763ea1a102af4a421cc7b681c13f
+      confirmed in block 155988765
+  ✅ SHIELDEDSCAN NO re-seeded at 0.180
+
+=== [3] ZECKIT — 0x8F62C36678044f5BE39DE143C01d652919E59a31 ===
+  ⏭  split already logged
+  ⏭  YES pool already funded
+
+  --- ZECKIT NO → 0.360 (#1125449) ---
+    ⚠️  outcome balance 121.625388349073959002 < planned 121.632713900555037452 — sizing from balance instead
+    3/3 fund: 121.613225810239051606 outcome + 84.938892119886385065 sUSDS at tick -10218
+      attempt 1/3...
+      tx 0x3a556748a78b3f87a50da877eb4ff830150201b937df1732c93c46158f88b001
+      confirmed in block 155988768
+  ✅ ZECKIT NO re-seeded at 0.360
+
+=== [4] ZCASHTOCASH — 0xdC8cDe1236921607e18382710D42DE2A8ccdd491 ===
+  ⏭  split already logged
+  ⏭  YES pool already funded
+
+  --- ZCASHTOCASH NO → 0.390 (#1125452) ---
+    ⚠️  outcome balance 129.181631119667137467 < planned 129.186233227120270814 — sizing from balance instead
+    3/3 fund: 129.168712956555170753 outcome + 105.569507579999677595 sUSDS at tick 9416
+      attempt 1/3...
+      tx 0xf79316088df6d5557d8ff668ee7eda6eab9eb09beb0a18fa075304fcc89f16ba
+      confirmed in block 155988771
+  ✅ ZCASHTOCASH NO re-seeded at 0.390
+
+=== [5] RECONCILE — 0x55094376a3283512a8144Fa9a251E430195286E2 ===
+  ⏭  split already logged
+  ⏭  YES pool already funded
+
+  --- RECONCILE NO → 0.360 (#1125455) ---
+    ⚠️  outcome balance 121.625388349073959002 < planned 121.632713900555037452 — sizing from balance instead
+    3/3 fund: 121.613225810239051606 outcome + 84.938892119886385065 sUSDS at tick -10218
+      attempt 1/3...
+      tx 0xa60e001b74348dcef4235fba603c0ab5b659a9fbc9b880022fe6f7e252a9398b
+      confirmed in block 155988774
+  ✅ RECONCILE NO re-seeded at 0.360
+
+=== [6] GLEYO — 0xAce4327Ac96E15040474065dC6aA0da0751BcBCA ===
+  💧 splitting 115.902255480639517932 sUSDS
+      attempt 1/3...
+      tx 0x53b36a870c288bb678533909adf5acfc3d5ca68e58c723602de9e37b5a635404
+      confirmed in block 155988776
+
+  --- GLEYO YES → 0.660 (#1125456) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x8A3dAe0FC9Bc4A0937D4432CedA163dAda18C9Be -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xbf484ff4fd6c351490e8ca189da38101eaad8654f0054014ff9da22ac118970f
+      confirmed in block 155988779
+      attempt 1/3...
+      tx 0x6fcfb3f0281cb51734e0ef9753b33dbc092297a4169fe87663917f61d0b75812
+      confirmed in block 155988782
+    2/3 swap: tick -5979 → -4156, in sUSDS cap 0.016739442780331164
+      attempt 1/3...
+      tx 0x64c4a7685ba09f9517fc8e994a1bcc732b9de7b2e270e004806ba8153c64bf0f
+      confirmed in block 155988785
+    3/3 fund: 115.844920575739631376 outcome + 352.102041440055336764 sUSDS at tick -4156
+      attempt 1/3...
+      tx 0x9d2d9c5f4ac5ba1f765ec049c9974cb3991bb42974dbf48a93881e8177f3b40f
+      confirmed in block 155988788
+  ✅ GLEYO YES re-seeded at 0.660
+
+  --- GLEYO NO → 0.340 (#1125457) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x61de4bfa7f334d36fc1851d0732505ae786a5478cf436fbc5603a6c25967b716
+      confirmed in block 155988791
+      attempt 1/3...
+      tx 0x558f14bc2337d7ebd9695c012e3e1d301cca4abeab9d7842c09fed1b8c3a37d9
+      confirmed in block 155988794
+    2/3 swap: tick -7986 → -10789, in outcome cap 0.037334904899886556
+      approving 0x9Ad4E748da99E0Cc3a37A499B6849658d54D4586 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x5867cfb377de63c5cd3be71dec299c1675a7047bdab981cca9f67d312e0b2473
+      confirmed in block 155988797
+      attempt 1/3...
+      tx 0xad89b5b58e2283b052a3b880076529845ef26bd1c68c4603952280b8d6d1a5ae
+      confirmed in block 155988802
+    3/3 fund: 115.844920575739631376 outcome + 72.593578524745572396 sUSDS at tick -10789
+      attempt 1/3...
+      tx 0x8395a331f6ba54ef432a0b7f783f3df8cab617068859a6ffd64986545b97d18f
+      confirmed in block 155988807
+  ✅ GLEYO NO re-seeded at 0.340
+
+=== [7] FAUCET — 0xb4485E5404178444fbf3F279eddF2b5C4b421e39 ===
+  💧 splitting 109.617950912917702116 sUSDS
+      attempt 1/3...
+      tx 0x189223cfaef8f6258938418706a35414d7a250c9f4da7f3fe31e2b14d226ab76
+      confirmed in block 155988810
+
+  --- FAUCET YES → 0.680 (#1125459) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x758fcb92132bdf0Ba3BB4A752b30140ab042bB80 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x8490c08e45fa9d1a43c2e86a3bd47bf407c358697a15ac0268d705d266e0786a
+      confirmed in block 155988815
+      attempt 1/3...
+      tx 0x26f6fcedcfa3666fbeccaa437c5e30f45c72c7240f54d93e7f3f2fdb659bbcef
+      confirmed in block 155988818
+    2/3 swap: tick -5979 → -3857, in sUSDS cap 0.019633568631825888
+      attempt 1/3...
+      tx 0xb04f90c56b5fa01353b3747f052575b30cdff6ad892b7c17590dcfbe276b0684
+      confirmed in block 155988821
+    3/3 fund: 109.55183313217313896 outcome + 369.629759014458552734 sUSDS at tick -3857
+      attempt 1/3...
+      tx 0x88164e092d8c427c6225289f3d96b2801e98b393231556377ad0b19f1dcdfb80
+      confirmed in block 155988826
+  ✅ FAUCET YES re-seeded at 0.680
+
+  --- FAUCET NO → 0.320 (#1125460) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x88f259591047b913dedfa4e83394dd027e8b930751e3c262acd90a7ec4335343
+      confirmed in block 155988829
+      attempt 1/3...
+      tx 0xc86c959271a47ac9ba538c248370a7ec236a414ca93f21b1b2e183364e7e6d14
+      confirmed in block 155988833
+    2/3 swap: tick 7985 → 11394, in outcome cap 0.046117780744563156
+      approving 0xFEEa3779BCd0473c5ec1A0228324a7b878628FF6 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x0acb0a51e8c64d5e6f9de98ff33618ee5502ef09959f5abda16c0616db9039d2
+      confirmed in block 155988836
+      attempt 1/3...
+      tx 0xf06cf0a3f728cba0501f69d7c8a4e8d28a195ae7219d3ef8ce2bcd915b326d89
+      confirmed in block 155988840
+    3/3 fund: 109.55183313217313896 outcome + 61.358948393908848844 sUSDS at tick 11394
+      attempt 1/3...
+      tx 0x778c6105daeb3713d03c170350045782254f8f37d86b903df898c8b91cd26d0c
+      confirmed in block 155988843
+  ✅ FAUCET NO re-seeded at 0.320
+
+=== [8] CYPHZEC — 0xe3A5794dFdcccBc964574bc6A5E3Cab92f198f03 ===
+  💧 splitting 54.282503821444632202 sUSDS
+      attempt 1/3...
+      tx 0x9f21e6b72c78bf9b3f85a4d92f8315931965f98e16857751b4123f1663180711
+      confirmed in block 155988846
+
+  --- CYPHZEC YES → 0.830 (#1125461) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xfcc942219759ca67AE3B451b363a821Bb5073A7a -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x0c8443412b0c00c432adb6b233835d957e238d21b87741834ae3e08024270a3b
+      confirmed in block 155988850
+      attempt 1/3...
+      tx 0x3aef8bcf55bd98fa202376af0f64ca5f2fe003d6bb70d25f171162121f07c09e
+      confirmed in block 155988852
+    2/3 swap: tick 5978 → 1863, in sUSDS cap 0.04007437907913916
+      attempt 1/3...
+      tx 0x83bfbf212a81c3bb6a7cc5d3a80fd8db3af45cee273e6fff37b454496133a4ce
+      confirmed in block 155988855
+    3/3 fund: 54.106903500412649098 outcome + 476.077179294633220682 sUSDS at tick 1863
+      attempt 1/3...
+      tx 0xf6666ac908e5a751e3386ed85eef76071f05c9efb35f1d8ea5cdb5a69f0d3ef3
+      confirmed in block 155988859
+  ✅ CYPHZEC YES re-seeded at 0.830
+
+  --- CYPHZEC NO → 0.170 (#1125462) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x74702F3887287f7c5ca89B8B43e4E5e232E39A86 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x57f108f1b83104bf88798a0784c039b980d3bcd243bd4d791fc452dcf0e8c126
+      confirmed in block 155988862
+      attempt 1/3...
+      tx 0xe46db99d577c4894c59453ad91834f4e44219000bf2c4e584126089a3cb2f865
+      confirmed in block 155988866
+    2/3 swap: tick -7986 → -17721, in outcome cap 0.155600321031983104
+      approving 0x74702F3887287f7c5ca89B8B43e4E5e232E39A86 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xff103a1d62b0d215c7fd21778fd3bd154bdbcc4c27a54c4885ec1daf963c301c
+      confirmed in block 155988869
+      attempt 1/3...
+      tx 0xfe5433b9eed20a501d64a208b15ba7275e27320d0371b13232b2b086dd263861
+      confirmed in block 155988873
+    3/3 fund: 54.106903500412649098 outcome + 10.356457745494670756 sUSDS at tick -17721
+      attempt 1/3...
+      tx 0xcafdc2b1dd37fe9adb43df1544ea68cd3f6e070262c1318b172b200044f7f8f7
+      confirmed in block 155988877
+  ✅ CYPHZEC NO re-seeded at 0.170
+
+=== [9] ZECLEDGER — 0xFf4553ad2539B2722b322d10930f1B85969DEe6A ===
+  💧 splitting 112.809650586120987545 sUSDS
+      attempt 1/3...
+      tx 0xcffba49dea2021deff3025607562f77b35c0289be485970b9e76cdb3acc9c0c6
+      confirmed in block 155988879
+
+  --- ZECLEDGER YES → 0.670 (#1125463) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x6Ff66A3D8139f5aC033e17B9d65cd7EDb842df92 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xd41851b12e495bedabc8426353a9923e2528caeb1c2a05e6f40c261b170fca66
+      confirmed in block 155988882
+      attempt 1/3...
+      tx 0x0b6002702dc2c622b8de86cd96a29088c941ed781f7edb19da5fa3eba0410d9b
+      confirmed in block 155988886
+    2/3 swap: tick -5979 → -4005, in sUSDS cap 0.018195617039234716
+      attempt 1/3...
+      tx 0xc287f9a37ac1c3ba2191bd5c2a9ee41df0c72dee44d71a6e1be1bbf7a55546b0
+      confirmed in block 155988889
+    3/3 fund: 112.748015470905807793 outcome + 360.972512736370660092 sUSDS at tick -4005
+      attempt 1/3...
+      tx 0x0eb641281ee06da8177b1bbe666f7e10a99160bedf886fbe856b9e20f63d6c67
+      confirmed in block 155988893
+  ✅ ZECLEDGER YES re-seeded at 0.670
+
+  --- ZECLEDGER NO → 0.330 (#1125464) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x500e1a5ea4b70782fe311fa442868c1b85e6c32861e1f0a44ee33cc043954cd9
+      confirmed in block 155988896
+      attempt 1/3...
+      tx 0x1f4317de021c4887d88ca64221d175a4574b8c59fbd75e37eb3e76c86b8c2054
+      confirmed in block 155988900
+    2/3 swap: tick -7986 → -11088, in outcome cap 0.041635115215179752
+      approving 0x23Bb08e1fE39A96833424cfC91F9b5BC8726A8Da -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xd4d1a65fc4c4783b350386bd7ef9d6e934b26316d539c50c805b81f536eef0ce
+      confirmed in block 155988903
+      attempt 1/3...
+      tx 0x40f05c708b24f0f5d6389addf4519f89c6a80f09c1def0e26694c8282b04d1a3
+      confirmed in block 155988907
+    3/3 fund: 112.748015470905807793 outcome + 66.820012333264072655 sUSDS at tick -11088
+      attempt 1/3...
+      tx 0xade3c698ae2f0f39dd44f0981b0debc065ce0bdc238cefc359a490d3afc659fd
+      confirmed in block 155988910
+  ✅ ZECLEDGER NO re-seeded at 0.330
+
+=== [10] LIGHTWALLETD — 0xd058cc42d014810B15A93874b3f11B02bfAd9732 ===
+  💧 splitting 69.671129883965364349 sUSDS
+      attempt 1/3...
+      tx 0x632361c500fcba8311c2c6b3c6ca1046bc972856dda2943aad49ce2263f0b9cd
+      confirmed in block 155988913
+
+  --- LIGHTWALLETD YES → 0.790 (#1125465) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x5947Da3E3753b85Fe01d735207dA28773aD2db63 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x758e16938e522a51e6edf8cb6f7b8f40b57b434f5918fbf7ebc8db22cf4f0066
+      confirmed in block 155988917
+      attempt 1/3...
+      tx 0x63fb8c6586a6c10ea5d56c602fcca784fd96db19682237c4acd8b9d1bc76ed1c
+      confirmed in block 155988921
+    2/3 swap: tick -5979 → -2358, in sUSDS cap 0.034813367290025884
+      attempt 1/3...
+      tx 0x6b8a46c045fe7e3a8a897de0c89d78148045791dd4c7d38737312c1c4da31aa9
+      confirmed in block 155988924
+    3/3 fund: 69.536010280080917665 outcome + 452.207908747720779778 sUSDS at tick -2358
+      attempt 1/3...
+      tx 0x4a2798ef62992c7cb66140d8fd5596e80fa61cf93824401a93a8c6a6c82e7ee8
+      confirmed in block 155988928
+  ✅ LIGHTWALLETD YES re-seeded at 0.790
+
+  --- LIGHTWALLETD NO → 0.210 (#1125466) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xd3fc9c19588d51fcc2560788ab1e5e851a6a51b8a25dd3fd20d13ff253b0f535
+      confirmed in block 155988930
+      attempt 1/3...
+      tx 0xfed20f1fd4b4d7f757a8362a7aaf2a012fb2095ffb9b3316128606883ff526c7
+      confirmed in block 155988932
+    2/3 swap: tick -7986 → -15608, in outcome cap 0.115119603884446684
+      approving 0x24a69DFeC66C47aa2A08E9718BeB1eb15453c4e2 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x9291d20f0671fdd56f6e86d3a76dfb230ee94d61dd49270415cfeb72f6b79d99
+      confirmed in block 155988935
+      attempt 1/3...
+      tx 0x0f4eb99c94d609eb60ef5c184f45cea5f47579b70308701450bde09f6b99089d
+      confirmed in block 155988939
+    3/3 fund: 69.536010280080917665 outcome + 18.796621512738843096 sUSDS at tick -15608
+      attempt 1/3...
+      tx 0xb68d87e3b505fbcda1b10848adf8b4d39228831604dcd9a4a2d64999d99330ff
+      confirmed in block 155988943
+  ✅ LIGHTWALLETD NO re-seeded at 0.210
+
+=== [11] BLINDVAULT — 0x5395fD696b64d1d3e9295e09BfAf038E0c8F05f6 ===
+  💧 splitting 65.897643480682272554 sUSDS
+      attempt 1/3...
+      tx 0x5b3019042aa9756a33c96f8db2c9b584d534427040c878a67e240b7a50a592fb
+      confirmed in block 155988946
+
+  --- BLINDVAULT YES → 0.200 (#1125467) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x337fdf563bb40e11637ecb3936ac7d9e3f76b527d9b0eb2db86d337c44017c0c
+      confirmed in block 155988950
+      attempt 1/3...
+      tx 0x35a268744808026d981de7d2b044f3080351acefa7283e1765e514e5e5eb2bad
+      confirmed in block 155988952
+    2/3 swap: tick 5978 → 16095, in outcome cap 0.209978095037276096
+      approving 0xf148A4a5208a02b6A4C102BA40Dc83aC6E595E42 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x8d59a83d1dfa887db290b1a5bd61617c6f703776ea699a6c167caf8c636120f7
+      confirmed in block 155988955
+      attempt 1/3...
+      tx 0x8cb1e1a64d9e4664b097fada5d7aeb577f8d4c84524c0b09f9aa2e33f3a099cd
+      confirmed in block 155988959
+    3/3 fund: 65.667665385644996458 outcome + 16.380535996904122252 sUSDS at tick 16095
+      attempt 1/3...
+      tx 0x0ecfe34f2a438e723b9f9a92f6d5f28771eebb34e02c4278c7135fbca9412882
+      confirmed in block 155988962
+  ✅ BLINDVAULT YES re-seeded at 0.200
+
+  --- BLINDVAULT NO → 0.800 (#1125469) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xfD55e6DB8Cc3EF85766444E21882f95B9aF426aC -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8af0a822059830f4240830f48f082c0ed94fd55e6db8cc3ef85766444e21882f95b9af426ac80b844095ea7b3000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe880000000000000000000000000000000000000000000000038f9977a3dc17b76ac080a0628141b04ce7fd6f9679c0074d16ccaa6c598f0c04188c3ccd09d36150a0522ba0474014788406fc9df5d0be0708d493a2424260ffe13e21d9602604b6884763b8", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9378, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x8c8bef9051da9054495683c588444b5ea75b9a3e7b10fed32afdf6e5fb8c0fa6
+      confirmed in block 155988967
+      attempt 1/3...
+      tx 0xf3d02938bc4e06d24df3fb58ddb492d7b94f374b3a82015ca3fb6d8d165a7a29
+      confirmed in block 155988971
+    2/3 swap: tick 7985 → 2231, in sUSDS cap 0.037228432573314388
+      attempt 1/3...
+      tx 0x5394904a3b7fab218f6dfe8eed8823ab00f94e39d5bf8187f50362cbd12802a1
+      confirmed in block 155988974
+    3/3 fund: 65.667665385644996458 outcome + 458.492339157991421826 sUSDS at tick 2231
+      attempt 1/3...
+      tx 0x03f0cc6a8b59c74253236ecefc4778ceb08bb09be35f57a4afd9333e7b82e9af
+      confirmed in block 155988978
+  ✅ BLINDVAULT NO re-seeded at 0.800
+
+=== [12] ZALLETRPC — 0x781FC94cf2a362C29cB08c86f8DcD1EA8181a158 ===
+  💧 splitting 58.207492743036759159 sUSDS
+      attempt 1/3...
+      tx 0xf4a087661379cfe1488fb9ba0747fc75776836d0ffa9634485ef5b0c4f068a76
+      confirmed in block 155988981
+
+  --- ZALLETRPC YES → 0.180 (#1125470) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x76eEA0004D171054F537fDb6F274948a9Cc1EA57 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xfa345237842c6915d78dc595f78fdc8f62fb42ac321f6e323175cd1b863e0e0a
+      confirmed in block 155988985
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f48d28305450f94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c5e00000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000007e16fd9b54e7fe00000000000000000000000000000000000000000000000000465945a1c39280000000000000000000000000000000000000000000000000007db3278d843060000000000000000000000000000000000000000000000000000000006a8c465fc001a0a2e638cdb7d8f660b2a2a948162ad030f450388376f95fcf799ebc281b16b228a039295a48410f33fed7503c27fbfc1464eb887a3b9f6deb7a7f478cdd38efdc74", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9384, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      attempt 2 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f48d08305450f94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c5e00000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000007e16fd9b54e7fe00000000000000000000000000000000000000000000000000465945a1c39280000000000000000000000000000000000000000000000000007db3278d843060000000000000000000000000000000000000000000000000000000006a8c465fc001a036d7006bda7ec947e90581790edb864de7795942ec7b0cbacd7019b5d6790500a0246fbb743f9cae73a3c98b6b50211d2f6087f078777c5b7c667891f03fc01160", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9384, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 3/3...
+      tx 0x9ec4644ea6a49bc3368d1fc779ff343f86acb75a6d8321a40e924f0f5f5f795b
+      confirmed in block 155988993
+    2/3 swap: tick -5979 → -17149, in outcome cap 0.238570543953315784
+      approving 0x76eEA0004D171054F537fDb6F274948a9Cc1EA57 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x4a73982f10ee1aa7fa93848f4d5a81af711d703ffce1f92020440c8b325a21e9
+      confirmed in block 155988996
+      attempt 1/3...
+      tx 0x6aaa1ad523a70041bb177950657addddfb2aaa6bfc8d3070fafc54ddc81cb5ff
+      confirmed in block 155989000
+    3/3 fund: 57.948922199083443375 outcome + 12.169647567926569564 sUSDS at tick -17149
+      attempt 1/3...
+      tx 0x4625654b04febdf7233f9b4cb678998ac3a31d268d8b30627ec36df1caa1c2ed
+      confirmed in block 155989004
+  ✅ ZALLETRPC YES re-seeded at 0.180
+
+  --- ZALLETRPC NO → 0.820 (#1125471) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xee811Aa69f197a465E9Ad915F7cD613AB09A41d8 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x9619fa2a865ce68b2f84000175b6e6e39ed1b35758e7ec729014c33a9c4acbd8
+      confirmed in block 155989007
+      attempt 1/3...
+      tx 0xdc1969c5e0ceeb6284f16df0b5a26f16ee403ca7fd512fa652b5b3a17a19efd0
+      confirmed in block 155989010
+    2/3 swap: tick 7985 → 1984, in sUSDS cap 0.039078807623558536
+      attempt 1/3...
+      tx 0xf713163fec767c64278c81f65ccbcde689a003fb90dd1c83cd29e730557905fd
+      confirmed in block 155989013
+    3/3 fund: 57.948922199083443376 outcome + 470.4219707735305276 sUSDS at tick 1984
+      attempt 1/3...
+      tx 0x8b2a250f6aa2ec17d805e365bf854f852dedaac135968168ae640d1f2be6c750
+      confirmed in block 155989017
+  ✅ ZALLETRPC NO re-seeded at 0.820
+
+=== [13] ZECMAP — 0x78a72380C7936F2CB3574d2302E8437aeEBaB93c ===
+  💧 splitting 139.451709812550220547 sUSDS
+      attempt 1/3...
+      tx 0x11b06fa5b225f602fb067c270b8be9eeb159aeadf3af84fe5b2f0344d0c13fb8
+      confirmed in block 155989019
+
+  --- ZECMAP YES → 0.550 (#1125472) ---
+    3/3 fund: 139.451709812550220547 outcome + 247.464907084644165149 sUSDS at tick -5979
+      approving 0x6C05B893299fE0f66e57465E4eeC06fB78A52718 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8af0a8224b0830f4240830f489282c0ed946c05b893299fe0f66e57465e4eec06fb78a5271880b844095ea7b3000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe880000000000000000000000000000000000000000000000078f47ff3a49e93b03c001a0c42937729c32ef143c0b1cdac6259405b043bfdd8595431610d60f52c23e6442a053edb05cedf6f01fd5a480263a4f00926de240f2d62c1f898a1e5ee7a1e854a9", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9393, tx nonce 9392" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x0abbda1dabf8fe22cf9c8c2699c95ff87f28ebe05b2a00dd99db3571de7f5779
+      confirmed in block 155989024
+      attempt 1/3...
+      tx 0x56f3d1e45a152ba26c48693022e8470de0a2017815bccd7497999a340be6d5d6
+      confirmed in block 155989026
+  ✅ ZECMAP YES re-seeded at 0.550
+
+  --- ZECMAP NO → 0.450 (#1125473) ---
+    3/3 fund: 139.451709812550220547 outcome + 153.623923643346154844 sUSDS at tick -7986
+      approving 0x85051bd7FFDA82f16BfAFA9675b9de1a4B9C48c0 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x930ccbf62802d6df902e8ccc0ad83653966df95a77e395bbd0293c88e545d6ef
+      confirmed in block 155989029
+      attempt 1/3...
+      tx 0xb522653f9719a9688eed6573d07b1e3eea35068dc1672bb625a2b353096a8672
+      confirmed in block 155989033
+  ✅ ZECMAP NO re-seeded at 0.450
+
+=== [14] CONNAUGH — 0x64a3ab58337ca2D6DdCDd6Ab6712b3E57626Ee1f ===
+  💧 splitting 92.358341286607037833 sUSDS
+      attempt 1/3...
+      tx 0xe02b69b0f8ea3769a72bb5d818d03bb57695a2364513dd8e43e35ec3525db062
+      confirmed in block 155989036
+
+  --- CONNAUGH YES → 0.270 (#1125474) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x58b95c5ab8e782f59629a4ee7710aac7666259e569eada0f3253f307f14329a8
+      confirmed in block 155989040
+      attempt 1/3...
+      tx 0xe27544126b95d0be4693280f18c2a3ebe3d44fb818d3e62570f3fe8e582bf6ae
+      confirmed in block 155989044
+    2/3 swap: tick -5979 → -13094, in outcome cap 0.136261258412735704
+      approving 0xa92d9460dFa22bb2Ee1827Aa5946DDF657BCC9F2 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xead4316bf8d8ed7eb4192d2a69f04a5054c52c4b7651df70b5c4c2024142f1e4
+      confirmed in block 155989046
+      attempt 1/3...
+      tx 0x2be91d74c4d6a7097599ce954df74289bfcfcd336fc382614e5a19890a3b38d8
+      confirmed in block 155989048
+    3/3 fund: 92.202080028194302129 outcome + 38.139265513182326957 sUSDS at tick -13094
+      attempt 1/3...
+      tx 0xa16064f95e1b863426e12fd5563804448f86fa9860a848ba96d4359a212efc08
+      confirmed in block 155989051
+  ✅ CONNAUGH YES re-seeded at 0.270
+
+  --- CONNAUGH NO → 0.730 (#1125475) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0xB2E5f4eAbc756196857ACF7a10C584890d04A447 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x085c38bd1f07af30bc38b66fc6f6a3859170536781ccb9e077ab6f6a0001497a
+      confirmed in block 155989054
+      attempt 1/3...
+      tx 0xe9beb1179f64d47a3c44395f61fa3ad41fdba2b006ab11b9e11a130f94448fb3
+      confirmed in block 155989058
+    2/3 swap: tick -7986 → -3148, in sUSDS cap 0.030559350726396708
+      attempt 1/3...
+      tx 0x1875e17a9385a46a79ca65b60eb8fdbd78b69498310e7792a13149388c5109ee
+      confirmed in block 155989062
+    3/3 fund: 92.202080028194302129 outcome + 410.199194999163911453 sUSDS at tick -3148
+      attempt 1/3...
+      tx 0x0a9ba5cb0fd274c9bfc34048fbe3cc46d91ac227679d77e2f33b38a6b60583c6
+      confirmed in block 155989065
+  ✅ CONNAUGH NO re-seeded at 0.730
+
+=== [15] ZAP1 — 0x0586C5Bf8A0137D3dA895E59663b760B5E39C340 ===
+  💧 splitting 109.672266833810736727 sUSDS
+      attempt 1/3...
+      tx 0xbc792aea3137e5f2266c9259b342573470eab884c2a7f9313c553c403e368071
+      confirmed in block 155989067
+
+  --- ZAP1 YES → 0.320 (#1125476) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xcae6205da5f2d31d297a1dcfb41f4c64b6a07f7b0ef1ed6f5522e0b610faade7
+      confirmed in block 155989070
+      attempt 1/3...
+      tx 0xaeb6316cbfb7688f2caae08af29dd1df9d1b614cdff92b576bcc541247c048a6
+      confirmed in block 155989074
+    2/3 swap: tick -5979 → -11395, in outcome cap 0.099190244592328412
+      approving 0x5D43E5830D6Bb5A865Dbe2a4eab85A98f36d9A48 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x5c94ff41cdf9be6cf1b3ab92303ae695921a1c4b1adc22ef194365b614963b0e
+      confirmed in block 155989078
+      attempt 1/3...
+      tx 0x5449a99203387a2786b964c4cf3a40ef1bb92dd595b10dd5dbb532617129f197
+      confirmed in block 155989082
+    3/3 fund: 109.553076589218408315 outcome + 61.35350949152189162 sUSDS at tick -11395
+      attempt 1/3...
+      tx 0x11c88424ca08d482e53e6718c0c3b0e1e4a7db2c569c6e76f99c97c3f4e281c1
+      confirmed in block 155989085
+  ✅ ZAP1 YES re-seeded at 0.320
+
+  --- ZAP1 NO → 0.680 (#1125477) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x536B431A22CE9D09d36455B1950d22165DAF6aB4 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xc4329b7a18d5caee27dc469137535e3bd9889393cd4b3214bfd2e613373cd6c1
+      confirmed in block 155989088
+      attempt 1/3...
+      tx 0xb9abcb0edfca6dd89d51b481974e08fe9ece5611d2a1f08d518971eae4d86b42
+      confirmed in block 155989092
+    2/3 swap: tick -7986 → -3857, in sUSDS cap 0.025605798055526088
+      attempt 1/3...
+      tx 0xb2a05f9198e28842a69666a6e60e62745eac74e5a4bbdb7ce26ee79053e91d71
+      confirmed in block 155989095
+    3/3 fund: 109.553076589218408315 outcome + 369.633954459800240602 sUSDS at tick -3857
+      attempt 1/3...
+      tx 0xeb7b551029fefd512d1dc37668056e9cab8a3e8a3d217be6b71d09a155433cd6
+      confirmed in block 155989099
+  ✅ ZAP1 NO re-seeded at 0.680
+
+=== [16] ZECBOOKS — 0x140654d12ac41a2d946E6DEc85D07A0252B0BF20 ===
+  💧 splitting 50.560053401009735719 sUSDS
+      attempt 1/3...
+      tx 0x3dc7c00bc8c1cd16dc00a9fa89571849be8abc25f74d8a351127e02af43f70a2
+      confirmed in block 155989101
+
+  --- ZECBOOKS YES → 0.160 (#1125478) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x491ab9c04661548ec6074db2dd491037da3aa9fb2b5f7773d4e7d2622910cc0b
+      confirmed in block 155989103
+      attempt 1/3...
+      tx 0x3be7af94163b1c0d683a4872004373eef822b280490ef15772a84c2945c7dce5
+      confirmed in block 155989105
+    2/3 swap: tick -5979 → -18327, in outcome cap 0.272392790492941108
+      approving 0x072322e606Cd8BE426a10cCfa7b11a41dc532C0A -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xb58aaca089002e6b0a058e86e8d99582a4f8d2afd8966d2d4181b45eb51a38f8
+      confirmed in block 155989108
+      attempt 1/3...
+      tx 0xc7b397b1a1903bba776d4e4e65d6bfdd5cc4605ea2c07e94d7687c488a15faf0
+      confirmed in block 155989112
+    3/3 fund: 50.267660610516794611 outcome + 8.724579866489093282 sUSDS at tick -18327
+      attempt 1/3...
+      tx 0x19f0085cc6e84f2ef2db814710af90bd40e96d23f0430e39688447262284556d
+      confirmed in block 155989116
+  ✅ ZECBOOKS YES re-seeded at 0.160
+
+  --- ZECBOOKS NO → 0.840 (#1125479) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x19c04F7216aa17d484424803EA55A0cae66A237C -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x653555e17dc3255906ca5f5fb8138e9ce60301a611a5b975319054f51645294b
+      confirmed in block 155989119
+      attempt 1/3...
+      tx 0xe2fb9d3f79c214339f5b74cb0a5b901a403dac1c5e04d3e1f0b520d113be9278
+      confirmed in block 155989123
+    2/3 swap: tick -7986 → -1744, in sUSDS cap 0.040902303502829632
+      attempt 1/3...
+      tx 0x3d067e13b50a78fc03b37d45a462616d64c98cd26a71955beaf534af37baf7e3
+      confirmed in block 155989125
+    3/3 fund: 50.267660610516794612 outcome + 481.548300063534652645 sUSDS at tick -1744
+      attempt 1/3...
+      tx 0xa1e05a37b137cef50d7ecbe786522ff5e3f1efa7eb32e1b89a19ab7891199450
+      confirmed in block 155989128
+  ✅ ZECBOOKS NO re-seeded at 0.840
+
+=== [17] CIPHERPAY — 0x0900986e76a3a75cE4dFD3615AAA5e388d1A7870 ===
+  💧 splitting 106.321357659356432626 sUSDS
+      attempt 1/3...
+      tx 0xb9f826ae1dfbae788313c909c466990983a889138fc843734130e10e40014356
+      confirmed in block 155989130
+
+  --- CIPHERPAY YES → 0.690 (#1125480) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x5469755c89E69baB03a61bd6D73a640015242e69 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x9f12f678ca3b27c22a43e8f3916cb527e1009b207ab23e4df21a4186aaeed934
+      confirmed in block 155989133
+      attempt 1/3...
+      tx 0x8d1806fd892753a1d60596c0224b4914805546ee3f4d1092eba8f46db31334ba
+      confirmed in block 155989137
+    2/3 swap: tick -5979 → -3711, in sUSDS cap 0.021062552364181196
+      attempt 1/3...
+      tx 0xa1b031f905d432041569ad74106ffd6625e1580cfeabd3a72be44bc87923f5c0
+      confirmed in block 155989139
+    3/3 fund: 106.250523475654321134 outcome + 378.131795658206767752 sUSDS at tick -3711
+      attempt 1/3...
+      tx 0xa7dd0055251f7ed4e07edf21a4c436dee31aa2104272baaafb889da629b7c0c1
+      confirmed in block 155989142
+  ✅ CIPHERPAY YES re-seeded at 0.690
+
+  --- CIPHERPAY NO → 0.310 (#1125481) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x0d40eed6ca7b332b95482161a580ead782c1b747ea3ba9f6651ade114abfc355
+      confirmed in block 155989146
+      attempt 1/3...
+      tx 0xc66cfdb5de52a9e27c01cec67202c26bf768ff75bef65d5a3defdfaae839e2c1
+      confirmed in block 155989148
+    2/3 swap: tick 7985 → 11712, in outcome cap 0.050834183702111492
+      approving 0xcfd4b84a89aF4fD1d33bdD74C7AEC215C2443d88 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x63953b81337877724762058574a1e85771de9376add386a93a1a3f334f765c10
+      confirmed in block 155989151
+      attempt 1/3...
+      tx 0xfd8182ff901c6e0d10c4dcf253f91bb91648937ebdd4f114760a78fcfbb25655
+      confirmed in block 155989155
+    3/3 fund: 106.250523475654321134 outcome + 56.158221406679451654 sUSDS at tick 11712
+      attempt 1/3...
+      tx 0xdaef338a44cacd1c730a811c75797d038f7a50ad8334d64b409aca7b12d0a31a
+      confirmed in block 155989159
+  ✅ CIPHERPAY NO re-seeded at 0.310
+
+=== [18] ZAFU — 0x725337EF90bE0a5a7064098d6A0191d93F8C1B70 ===
+  💧 splitting 138.302015107965906058 sUSDS
+      attempt 1/3...
+      tx 0xb9b47df73cee50b5cd34d534cfef98706ea200dc1fde55e121d99546f29d26c7
+      confirmed in block 155989161
+
+  --- ZAFU YES → 0.440 (#1125482) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x285f07070cbe0ec645c60aeeba69e4c754d229f996d078638ec7abc3a7552edf
+      confirmed in block 155989163
+      attempt 1/3...
+      tx 0x2ffc2a5e1909535ceb1817fe8aec280d775c465140b146a206f00ac0c3af3224
+      confirmed in block 155989165
+    2/3 swap: tick -5979 → -8211, in outcome cap 0.037654393291644
+      approving 0x4c172fc0Cf9073C5ea413A7ebC7398bfB1CC472C -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x44ed28151a16302160cf90154f3cc7825992464ce199818ecb3278ac2031c840
+      confirmed in block 155989167
+      attempt 1/3...
+      tx 0xc1e195e95808d2123d5987096b8e24dd91514b42610dd6478a1223773ac0212a
+      confirmed in block 155989170
+    3/3 fund: 138.244360714674262058 outcome + 145.044847242485242364 sUSDS at tick -8211
+      attempt 1/3...
+      tx 0xcaf6f2c8f25b0ec225abb936d8635377452effbd77c39ed9dfd7baf306449169
+      confirmed in block 155989174
+  ✅ ZAFU YES re-seeded at 0.440
+
+  --- ZAFU NO → 0.560 (#1125483) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x6092856669F7Eedf4c6E07105a96E9E14EF52EE2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x80e784c747a0667af5a65dc6e5da5d8bed5deeb273a19a5540e6fde6b9d8ed70
+      confirmed in block 155989177
+      attempt 1/3...
+      tx 0x2d78662dfe1615407ff141a6ffe12890714f622a4009137e196d36c8365c2513
+      confirmed in block 155989181
+    2/3 swap: tick -7986 → -5799, in sUSDS cap 0.01290338614377972
+      attempt 1/3...
+      tx 0xf498829b930d85c31d03ce7b721a5ef447a7be5b2f95f321f441197bc75df3d0
+      confirmed in block 155989183
+    3/3 fund: 138.244360714674262058 outcome + 257.251332583381036114 sUSDS at tick -5799
+      attempt 1/3...
+      tx 0xdb12d1a5f776515d812ef8a0927da02908d284304a3dee482da844e50f48ba4c
+      confirmed in block 155989185
+  ✅ ZAFU NO re-seeded at 0.560
+
+=== [19] ZAPP — 0x06277FcEf6340930B0F08B90032EDAF07CE36b6A ===
+  💧 splitting 141.281906933731264061 sUSDS
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8d00a822059830f4240830f482a83080adf94179d8f8c811b8c759c33809dbc6c5cedc62d05dd80b864d5f82280000000000000000000000000b5b2dc7fd34c249f4be7fb1fcea07950784229e000000000000000000000000006277fcef6340930b0f08b90032edaf07ce36b6a000000000000000000000000000000000000000000000007a8ae29d006d9863dc080a02492549a318ae7f213fae25cd755968275e0f06cc5146f8cb53ebc17ca08e0c1a00284743651767d6ef5ed5e879c5bb914eaafd8575cfdacda922f5747bc5b1ff7", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9447, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0xcc29029cbd2b9d9dc9477e5c24124cf8f5569b4ab9277c41e25bd3d626061e6c
+      confirmed in block 155989190
+
+  --- ZAPP YES → 0.470 (#1125484) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x758918d44b102855f9e1cbe9eee60fd58e363ab4e7df69b57df9eed503686208
+      confirmed in block 155989194
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f4826830545fb94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c6c000000000000000000000000000000000000000000000000007e1a37f2ecbf9100000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000007db6deaa45d6ff0000000000000000000000000000000000000000000000000046585e2546399d000000000000000000000000000000000000000000000000000000006a8c4802c080a0e5a45e6122491921938cf0fc17d5eac079ea9504e6f72714f92c58c6985821efa044371fbb696e64263fc9f2e31eb885302d03acab811786228557dac6e9666f9e", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9449, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x9853bfdded8dc246a7bfbf38e89187d38d1d7d34a24432a4e97ac5e017058ac1
+      confirmed in block 155989200
+    2/3 swap: tick 5978 → 7550, in outcome cap 0.026079241454564068
+      approving 0xdE73025E7bCf5650b9afD1F8f45678E7c55656d4 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xbaabbd1bb026e31d5bb336c816a8e3ed33c8919be4d7a6bae051ef2e18374f52
+      confirmed in block 155989203
+      attempt 1/3...
+      tx 0xec5b78f56dc8a613efcae3932c0712d707656d975e4ae8b7272f28a3582d02c9
+      confirmed in block 155989206
+    3/3 fund: 141.235827692276699993 outcome + 171.378032689930476488 sUSDS at tick 7550
+      attempt 1/3...
+      tx 0x1440ee323fd204676bfda03854fef6a1154fd9ac80a17b8df855e47092a85814
+      confirmed in block 155989209
+  ✅ ZAPP YES re-seeded at 0.470
+
+  --- ZAPP NO → 0.530 (#1125485) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x39f0a7987F0B2a9cB78B35C935BB0eFaCeA42B82 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xd892a566d44efe83f3563e743089f085126f660df864ade845bd937e4313a63d
+      confirmed in block 155989211
+      attempt 1/3...
+      tx 0x4a3bbf2f57cca09b7e15e5b882b435319376543a3bf7f9eaa299c013820c8bee
+      confirmed in block 155989213
+    2/3 swap: tick -7986 → -6350, in sUSDS cap 0.00951833164082718
+      attempt 1/3...
+      tx 0xb0bccbc3305d72567c687104b266a7c66a6f76a2124a3151c48cff01ab42a6b7
+      confirmed in block 155989215
+    3/3 fund: 141.235827692276699993 outcome + 227.926680158333364059 sUSDS at tick -6350
+      attempt 1/3...
+      tx 0x4e3f3d628b68b29660d3f93eadbd9740271d9400c330c16cd2e8a9b1c0cb51b8
+      confirmed in block 155989217
+  ✅ ZAPP NO re-seeded at 0.530
+
+=== [20] HWSDK — 0xA58c14Daf5c0f14adFE08b2c672ab361948758d2 ===
+  💧 splitting 112.802121786020261409 sUSDS
+      attempt 1/3...
+      tx 0xea2c195f080474f056f609bd2e77e1dee9b97c8cf04bc34dc5632e30516f4c91
+      confirmed in block 155989219
+
+  --- HWSDK YES → 0.670 (#1125486) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xE497cC87790e25D1Ba3C388b79c5759B92A53E8C -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x818d993c7704462b3a871146e5f6da8d400958f2736651be43689b60059891c8
+      confirmed in block 155989222
+      attempt 1/3...
+      tx 0xeed94e9cd77cea834adae3765436ea7e33d5d8294d323a469495a7c23f0a2f1b
+      confirmed in block 155989226
+    2/3 swap: tick 5978 → 4004, in sUSDS cap 0.01819743660093864
+      attempt 1/3...
+      tx 0x40eb6bdeafb9efafe93bc31afe3cd9cd75c6cf2157d52c18333f0423f355f7de
+      confirmed in block 155989229
+    3/3 fund: 112.740486670805081657 outcome + 360.98450347323793638 sUSDS at tick 4004
+      attempt 1/3...
+      tx 0x58e755504c3a85f8f6c6847d5af9868c68e40cdd6b926c6b353ce7ab27d13b08
+      confirmed in block 155989233
+  ✅ HWSDK YES re-seeded at 0.670
+
+  --- HWSDK NO → 0.330 (#1125487) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0xA9980Ee502021d4E6906cff74374C24dDB49e4F2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x901724f5292ab70726b95f783ce51dc8631443e38b9969a36dd2adc816e74d61
+      confirmed in block 155989236
+      attempt 1/3...
+      tx 0x6d8d1b971a953d6c7940b8df32e177baca530763b425412bc6f8120e75993528
+      confirmed in block 155989240
+    2/3 swap: tick -7986 → -11088, in outcome cap 0.041635115215179752
+      approving 0xA9980Ee502021d4E6906cff74374C24dDB49e4F2 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x01e6cd873aee4902789bdb2023cc9203ea63ef89be92ad8e410708036d468927
+      confirmed in block 155989243
+      attempt 1/3...
+      tx 0x9e2c8e0a9357d7d7949179b6f35025d577f6bb61651bd0d36208201c88de4b69
+      confirmed in block 155989247
+    3/3 fund: 112.740486670805081657 outcome + 66.815550396497522501 sUSDS at tick -11088
+      attempt 1/3...
+      tx 0x4ee242588a28293a72f0bd4a4b0ae7ac96e7a6c83f376518570967cbfef2cc55
+      confirmed in block 155989251
+  ✅ HWSDK NO re-seeded at 0.330
+
+=== [21] NOZY — 0x45eF7f50825619AEa0070d7d0147DaE5A26fc50B ===
+  💧 splitting 141.828746016529035948 sUSDS
+      attempt 1/3...
+      tx 0xdfae66731e4a0c8096dd11889d7edbf0c5650acfe18d8362d32934cdead7c372
+      confirmed in block 155989253
+
+  --- NOZY YES → 0.520 (#1125488) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x1b62424178722e31cf6c57a883f175a86308334deef66e0d286a6542a2d7a4e6
+      confirmed in block 155989256
+      attempt 1/3...
+      tx 0xec6568f5e1784c82267e59f5a5d144a347f9e8b9434685de54d82de7ddb9595f
+      confirmed in block 155989260
+    2/3 swap: tick -5979 → -6540, in outcome cap 0.009072594275838376
+      approving 0xa3335bab5994D51D451dF0399A9EF9a8Bc50b8B7 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xdafddbb02cba27260a832db78de45e98645f89321ea681b367807552baad98dc
+      confirmed in block 155989263
+      attempt 1/3...
+      tx 0xcff5ad4aa1be417d88ecc7a8b2b153e4cd42e5bd995ef8714534748fca1d517e
+      confirmed in block 155989267
+    3/3 fund: 141.799673422253197572 outcome + 218.277502612428708508 sUSDS at tick -6540
+      attempt 1/3...
+      tx 0xfefaad67b4d61c1d610d2030edeb834b5ec103adc4b5695846807736073012aa
+      confirmed in block 155989271
+  ✅ NOZY YES re-seeded at 0.520
+
+  --- NOZY NO → 0.480 (#1125489) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0xaF2932072667544c6Beba7B695dfEA896252d60A -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xd3da356b4c7ffd590a4f90386d845f6dac0123b319edc99a07c06d5253bee5f2
+      confirmed in block 155989274
+      attempt 1/3...
+      tx 0x97710608097ac850c5c6cb44218619abc65aa4b74f93e3ddddced2c39db68731
+      confirmed in block 155989278
+    2/3 swap: tick -7986 → -7341, in sUSDS cap 0.00365995626143714
+      attempt 1/3...
+      tx 0x9409d73c6c370723513fa1e11460832211b2efb5f45e8387a9c81eed1e3cc557
+      confirmed in block 155989280
+    3/3 fund: 141.799673422253197572 outcome + 180.463364505858634457 sUSDS at tick -7341
+      attempt 1/3...
+      tx 0xe4fe21575fe5f05472c2f82f30946ec9a4a7ccddb4642b67f7c58705d1651cd9
+      confirmed in block 155989283
+  ✅ NOZY NO re-seeded at 0.480
+
+=== [22] THORSWAP — 0x777B50f83e76acD9E520Abf6a258CC218B1aD054 ===
+  💧 splitting 20.903985668287550531 sUSDS
+      attempt 1/3...
+      tx 0x670c6240228b46967792c1261d2c6dfd242526813130330f0a2c23f87cec548f
+      confirmed in block 155989286
+
+  --- THORSWAP YES → 0.920 (#1125490) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x3906685605Bbc3b107613C77c078e065D0ccAE5C -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x390c562438c322f19f95f3e506100d4b40a5ee4a76cde7669b36e281581b623d
+      confirmed in block 155989290
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f47d48305450f94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c7200000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000007e16fd9b54e7fe00000000000000000000000000000000000000000000000000465945a1c39280000000000000000000000000000000000000000000000000007db3278d843060000000000000000000000000000000000000000000000000000000006a8c48bfc080a0e0a33be3dda785d32c944a85b938aeac23fcb696f4a59e51a52b5fead95c6102a0544994e3c840d8f281056e44c5f3d8188b1243c2ab18a8a1ccec11e67f759d27", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9479, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x3f3d96ce7f7cd6b129fefa921caaa1f0d528f7f3fa9a39901d9c88f202987a63
+      confirmed in block 155989295
+    2/3 swap: tick -5979 → -834, in sUSDS cap 0.051457950633185008
+      attempt 1/3...
+      tx 0x15cf7e8ae76f24ea2aa183b26da37f9ad9f10a228ffdba483ef2cb32145c1278
+      confirmed in block 155989298
+    3/3 fund: 20.543565202278316668 outcome + 518.846554859747436905 sUSDS at tick -834
+      attempt 1/3...
+      tx 0x9f14b38192725c88abc631b13717ab975270cead37ecda03fa13b97c3a469e85
+      confirmed in block 155989302
+  ✅ THORSWAP YES re-seeded at 0.920
+
+  --- THORSWAP NO → 0.080 (#1125491) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x6ab6b9B720172B73667AE83fd712D49d5c868ecA -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xe1eccc22b395081227722975091929dffbbd20d7cf7c447fdcf0beb5c59c46e7
+      confirmed in block 155989305
+      attempt 1/3...
+      tx 0x473f751032e467e1326ab709a2883c738d76e7455744acacbb8a24dd209a74a0
+      confirmed in block 155989309
+    2/3 swap: tick -7986 → -25259, in outcome cap 0.340420466009233864
+      approving 0x6ab6b9B720172B73667AE83fd712D49d5c868ecA -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x1f42df1e3a40356359ddc899c9878f2efbd9a8e803c5ce5c3f90547545693baf
+      confirmed in block 155989312
+      attempt 1/3...
+      tx 0xe7b46684035b2f4e6f96412ba254b5740afede029ac263aaf9e6fca2e375de18
+      confirmed in block 155989317
+    3/3 fund: 20.543565202278316667 outcome + 1.150420478514786963 sUSDS at tick -25259
+      attempt 1/3...
+      tx 0x340439a98a375191e805951120d9bb5f301d21f434406d6da6a99dab888782a2
+      confirmed in block 155989320
+  ✅ THORSWAP NO re-seeded at 0.080
+
+=== [23] UNSTOPPABLE — 0x404CcB09e7F47dE56b64253d9E2f839D555366b8 ===
+  💧 splitting 42.876784154802310521 sUSDS
+      attempt 1/3...
+      tx 0xcd4f0e9e1d0234f9cadf00a578477a472f17b4255e6683c2d58a0703872bbca1
+      confirmed in block 155989322
+
+  --- UNSTOPPABLE YES → 0.860 (#1125493) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xE03D7063F268047BA5dDBAAA3ece1CA777fE70ff -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x4dc386434e8c8e56c508dd114ec4633c3d0946b24b9902c6e13da9e788d4a182
+      confirmed in block 155989325
+      attempt 1/3...
+      tx 0x0607dbad3afe56af53c1a5620469ae6b6b3b4c28cea6f6c5cf1f82438200008d
+      confirmed in block 155989329
+    2/3 swap: tick 5978 → 1508, in sUSDS cap 0.043933561451382424
+      attempt 1/3...
+      tx 0xccea6c53f7eb87692474ccb5b7eb440547624fccfdcb06020320db2523bcad0e
+      attempt 1 failed: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0", "to": "0xE592427A0AEce92De3Edee1F18E0157C05861564" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": "64800", "blockHash": "0x20be92e4fd242d013316bd9aeb6fd28f5edafb8b1eb10c33cf99fe91a4c11ac6", "blockNumber": 155989331, "contractAddress": null, "cumulativeGasUsed": "5313786", "from": "0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0", "gasPrice": "1000707", "gasUsed": "288172", "hash": "0xccea6c53f7eb87692474ccb5b7eb440547624fccfdcb06020320db2523bcad0e", "index": 14, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0xE592427A0AEce92De3Edee1F18E0157C05861564" }, code=CALL_EXCEPTION, version=6.15.0)
+      attempt 2/3...
+      tx 0xad8cc04e2309e91f2d40a03f66eceeb141fa64f7d8b85513554253db4b5c0233
+      confirmed in block 155989336
+    3/3 fund: 42.660012876232201221 outcome + 491.908059210338873885 sUSDS at tick 1508
+      attempt 1/3...
+      tx 0x7a51728571765d90145d75562262429414ec9715046805d2b7fe727f4be008c2
+      confirmed in block 155989340
+  ✅ UNSTOPPABLE YES re-seeded at 0.860
+
+  --- UNSTOPPABLE NO → 0.140 (#1125495) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xb7295c351321ebD651528324AF9FA5B7Ebbe198c -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xdb95310db6c881ae7c2464bae6b9d17b1b97328e4e62e1fd8fd36e3a22e19515
+      confirmed in block 155989342
+      attempt 1/3...
+      tx 0x10b3acd6e868d8b2766f237066f05c7765a6d44ec25e7d6f20a1a67e67e672f3
+      confirmed in block 155989345
+    2/3 swap: tick 7985 → 19662, in outcome cap 0.1967712785701093
+      approving 0xb7295c351321ebD651528324AF9FA5B7Ebbe198c -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xa37cc6ac19cc5c4c7c35987d0cb0c30537dc58dba17e9544ecdef2656dedf793
+      confirmed in block 155989349
+      attempt 1/3...
+      tx 0xb563d92ae460dc659217d6368f0f369c3cde53b684f03fa8be87644850d8190b
+      confirmed in block 155989351
+    3/3 fund: 42.660012876232201221 outcome + 5.97246845396946543 sUSDS at tick 19662
+      attempt 1/3...
+      tx 0xe64185501303be285dfd48e96628d561629b2c49cf590f82cad413604a5297a0
+      confirmed in block 155989353
+  ✅ UNSTOPPABLE NO re-seeded at 0.140
+
+=== [24] ZCASHNAMES — 0xB6Bb6a1E1f02a11AFAE1DE272C94a78bd4673f37 ===
+  💧 splitting 126.905834572294243945 sUSDS
+      attempt 1/3...
+      tx 0xdb6e44e840f3bbbb9d9b67fac91645124109da0eaac22bb23b5b3b114c36480b
+      confirmed in block 155989355
+
+  --- ZCASHNAMES YES → 0.380 (#1125496) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x2f8f87c72992e8009665045d06c2392abd5b2ed8ae7008083c0b785d68355991
+      confirmed in block 155989357
+      attempt 1/3...
+      tx 0x530c90d1741039752d444fdaa96fc6616b7fbbbded43515fe0a7ecd445649454
+      confirmed in block 155989359
+    2/3 swap: tick -5979 → -9677, in outcome cap 0.064773528517824508
+      approving 0x15ff1f101bfB5fBB2D8FcE7458D333995c6cA30a -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x34192dc6d69629cae5eaabd824598869d2de0b8439d8e765d9c10719a176a845
+      confirmed in block 155989362
+      attempt 1/3...
+      tx 0xf99b0e0d115e985c5bb2588cad7f5e1ea21eed6b6fade56b15993be6bddfece1
+      confirmed in block 155989366
+    3/3 fund: 126.821061043776419437 outcome + 98.421494505037000822 sUSDS at tick -9677
+      attempt 1/3...
+      tx 0xd80c73779bab2e1e5dbaa5e2a18092c0842a904b52717f9f42c09f0a03bb392f
+      confirmed in block 155989370
+  ✅ ZCASHNAMES YES re-seeded at 0.380
+
+  --- ZCASHNAMES NO → 0.620 (#1125497) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x35DD8AD91E819B76b91319a9D9ACff39c7CF1a17 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xf99467b94d44e576298d6d7f8d767055b92218fe328c4ba6cc8659f3d3d34a18
+      confirmed in block 155989372
+      attempt 1/3...
+      tx 0xeb8cb962eb84779c039e503791eb7ca40a742581d679e755ba07cfa8ead3bb3b
+      confirmed in block 155989375
+    2/3 swap: tick -7986 → -4781, in sUSDS cap 0.01940811708936736
+      attempt 1/3...
+      tx 0x1e01489e40853adabf24ba7e59942dbcbfa55c0c4115da722b9f228df61e2f26
+      confirmed in block 155989378
+    3/3 fund: 126.821061043776419437 outcome + 315.29798499172712028 sUSDS at tick -4781
+      attempt 1/3...
+      tx 0xfb40f91c718d065d4e403ede51efecfce1a8bd864befae4fdc4905bb750a5b93
+      confirmed in block 155989382
+  ✅ ZCASHNAMES NO re-seeded at 0.620
+
+=== [25] FRONTIERSEC — 0x751047Dc87049EB122CDbF570a591ECEEB81b984 ===
+  💧 splitting 106.377518630734733809 sUSDS
+      attempt 1/3...
+      tx 0xec50383e89df882513775df3081027939afdd0151eb2557e2c039281a3996abc
+      confirmed in block 155989384
+
+  --- FRONTIERSEC YES → 0.310 (#1125498) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x8994C409978a640d2de6b11D2dbd72794989F508 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x695ff33cf0eed165f23c1c6c32e8fdefa2caeec999cfb9d2f3b14bd18a411d88
+      confirmed in block 155989386
+      attempt 1/3...
+      tx 0x9b2b0fe5d5e673a2440af0a5f6647f05f73ae1ba964c1547e8ac652df8a766cf
+      confirmed in block 155989389
+    2/3 swap: tick -5979 → -11713, in outcome cap 0.105891388511684132
+      approving 0x8994C409978a640d2de6b11D2dbd72794989F508 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xf7989c345fa3a894d03af1a0eafaa7d29c9cc90b27b8bfab623801610be62476
+      confirmed in block 155989392
+      attempt 1/3...
+      tx 0x5267da127e555bc0d65d09e397491043ffcae409061907be235faef23f13dae1
+      confirmed in block 155989396
+    3/3 fund: 106.251627242223049677 outcome + 56.153189478432381306 sUSDS at tick -11713
+      attempt 1/3...
+      tx 0x1b1920122d37b8c641f76ff40e58d4938bce27cd610aa92bf2e8e12d3e4a2cb1
+      confirmed in block 155989400
+  ✅ FRONTIERSEC YES re-seeded at 0.310
+
+  --- FRONTIERSEC NO → 0.690 (#1125499) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x066279aF0d19382FFFDc2fBF8842058168f68d0a -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xc2f53368e119692a60b3edb76799c58e7a03959531f4b3929fad9489904f49df
+      confirmed in block 155989403
+      attempt 1/3...
+      tx 0xf339e4457e136d07b0026e40ca9dd6a3b9c0d4b882ab7efda6b1570adc3e01de
+      confirmed in block 155989405
+    2/3 swap: tick -7986 → -3711, in sUSDS cap 0.026611546205793696
+      attempt 1/3...
+      tx 0x51baf269c78ef3ea5a76ab3eba6aec64deb2cfaafd87ff60492443e266f52a7e
+      confirmed in block 155989407
+    3/3 fund: 106.251627242223049677 outcome + 378.135723819885109555 sUSDS at tick -3711
+      attempt 1/3...
+      tx 0x2222cc7808ad9c6d74d213cf741f325aaf8da0ef932456accfb5942d0dce57a2
+      confirmed in block 155989410
+  ✅ FRONTIERSEC NO re-seeded at 0.690
+
+=== [26] ZEBRACVE — 0xDA375Fa265997b5B408fA94D9C834693861BceCa ===
+  💧 splitting 131.439206794584018994 sUSDS
+      attempt 1/3...
+      tx 0xdecffd936ca870d1270d0772f729a5efc1bf52399f2f74195959dc43b987ff60
+      confirmed in block 155989414
+
+  --- ZEBRACVE YES → 0.400 (#1125500) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x81361090f60dB987307986DCff85A3F726278006 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xb47105a100f46830d57e5cd30183faf900ed562efcf951fb5948a5160ad77fe9
+      confirmed in block 155989416
+      attempt 1/3...
+      tx 0x70d3e2822a0d900bf07fe78f8ccbbfff6238b489a4db325063d8b4bf04a892a7
+      confirmed in block 155989418
+    2/3 swap: tick -5979 → -9164, in outcome cap 0.055056790962141996
+      approving 0x81361090f60dB987307986DCff85A3F726278006 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xf4a3dd7171aedb663aab3fd6825af13395b45defa28bfb7a8f3449d648947a06
+      confirmed in block 155989420
+      attempt 1/3...
+      tx 0x804077ac48e2fc5f9867fde5d914c5e68f0f151c3831cdfe9568d557ab548cb0
+      confirmed in block 155989422
+    3/3 fund: 131.364150003621876998 outcome + 112.96634551431486347 sUSDS at tick -9164
+      attempt 1/3...
+      tx 0x0e6566cf555aad38894c3226e5124d16038f7a2ebe470d7a662fa48e9041d755
+      confirmed in block 155989424
+  ✅ ZEBRACVE YES re-seeded at 0.400
+
+  --- ZEBRACVE NO → 0.600 (#1125501) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xCee609fB783D37788d53B940fDD81Df3fdea4b3f -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x9b7cb774ce18a63d4b9afc8966f8836f741ffa9cfc5b8c4add430afa0b0a78db
+      confirmed in block 155989427
+      attempt 1/3...
+      tx 0x2405662d67f8d6ce7b43eea8df65c0d56e2c1e779c5c9a81b67f6b91a5638227
+      confirmed in block 155989431
+    2/3 swap: tick 7985 → 5108, in sUSDS cap 0.017277759281422888
+      attempt 1/3...
+      tx 0x1de0b4b48eab673c362e77e890f92f10edf879849f620de44c652e289a68cc61
+      confirmed in block 155989434
+    3/3 fund: 131.364150003621876998 outcome + 296.21004502260380007 sUSDS at tick 5108
+      attempt 1/3...
+      tx 0xe2595987cfc445ec495bfa907358dc1f23c25822f1371b899b2e5049f63dd82c
+      confirmed in block 155989438
+  ✅ ZEBRACVE NO re-seeded at 0.600
+
+=== [27] BONUSIRONWOOD — 0xDdBE118c992Fc4165291eaD70B64c33dB037eB67 ===
+  💧 splitting 50.455681906477770403 sUSDS
+      attempt 1/3...
+      tx 0x7bfed343256dc607e4a494a52b297889c3e6add03203d7f077cb027775216c43
+      confirmed in block 155989441
+
+  --- BONUSIRONWOOD YES → 0.840 (#1125502) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0xb12161065f78BEBC0605CA824776Eca0e8CaB3c2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x67a709f2ff5723a1191fbaa7590950cd425545563ad1672231234ddca64d4152
+      confirmed in block 155989445
+      attempt 1/3...
+      tx 0xf4eb34a4e945b19860543ebbd0e637804c5821b44e467bcec2c4d3a6085da2e1
+      confirmed in block 155989447
+    2/3 swap: tick -5979 → -1744, in sUSDS cap 0.041367098482479936
+      attempt 1/3...
+      tx 0xd7eeeb8731ddf3391e53bcd9d69fefe829412420d6e4c597490aa508f857f193
+      confirmed in block 155989450
+    3/3 fund: 50.267660610516794612 outcome + 481.548300063534652645 sUSDS at tick -1744
+      attempt 1/3...
+      tx 0x45060dd087e8b9b1919c046442b908aa1189f1050947a721030bd111b1c401e8
+      confirmed in block 155989454
+  ✅ BONUSIRONWOOD YES re-seeded at 0.840
+
+  --- BONUSIRONWOOD NO → 0.160 (#1125503) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x462900f36Cb99f667491B89802CC129252897592 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xcf79294f459b324cb3937628bdb6deb95462d33b9331f05a9da35a875f3a80fe
+      confirmed in block 155989456
+      attempt 1/3...
+      tx 0xf991d1c4950718f6673a3cd61d1194c989b627d6282d1a7ac4f3e74127c1928a
+      confirmed in block 155989458
+    2/3 swap: tick -7986 → -18327, in outcome cap 0.168021295960975792
+      approving 0x462900f36Cb99f667491B89802CC129252897592 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x3a660cefd1383b5223b723699c73a4a9de20fb25edb3efb89a0a521dd91ac08f
+      confirmed in block 155989461
+      attempt 1/3...
+      tx 0x4b9bf1f1d248ded4369bd942b1ce8c2773088c8b05b8018a295f37f3502578f6
+      confirmed in block 155989465
+    3/3 fund: 50.267660610516794611 outcome + 8.724579866489093282 sUSDS at tick -18327
+      attempt 1/3...
+      tx 0x0064cb9fadce248653b9e312c20ef205a420394550d56bd7a07892151f3b574d
+      confirmed in block 155989469
+  ✅ BONUSIRONWOOD NO re-seeded at 0.160
+
+=== [28] CIPHERSCAN — 0x73d8A605e090C267D18506A2EeeF5b0A6d22Fae9 ===
+  💧 splitting 135.26302712512234004 sUSDS
+      attempt 1/3...
+      tx 0x2fc97422a708d2b913c70ca306ad1b41fbeb6638c04196202ec4a86d07175100
+      confirmed in block 155989472
+
+  --- CIPHERSCAN YES → 0.420 (#1125504) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xf17f2548de4b04ede62d96c10fdb854078113193c72e9e8a3afa10df58f2becf
+      confirmed in block 155989476
+      attempt 1/3...
+      tx 0x98865587369ea44f22e534f44fe0193b4fbea2ca16a59e4dbc8b0bbf39d851b6
+      confirmed in block 155989479
+    2/3 swap: tick -5979 → -8676, in outcome cap 0.046042031944087228
+      approving 0xa6732AFA5Bf18DC403D9b4C32D5AD76845Fbe200 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x64a089873b889ae2adf0465caed7dc59823012eb0dd4a0495eb49e9920eeb908
+      confirmed in block 155989482
+      attempt 1/3...
+      tx 0x99aa9383b4c9cf5af37c7cdb5892bf793cf8f776be6a15a49959193b94439730
+      confirmed in block 155989486
+    3/3 fund: 135.196985093178252812 outcome + 128.540779624159647576 sUSDS at tick -8676
+      attempt 1/3...
+      tx 0x545531491f471bd24751a966fe189264c5cf1c6b78d64abd27f90b4c3d08b96e
+      confirmed in block 155989490
+  ✅ CIPHERSCAN YES re-seeded at 0.420
+
+  --- CIPHERSCAN NO → 0.580 (#1125505) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x1A4e4cED1Efa0be79841aA726d80DfF9B08483ae -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xefc867320a878140b6a1c5012cc6fd594c75d3570e38b073742ae3f802243d14
+      confirmed in block 155989493
+      attempt 1/3...
+      tx 0xfa3c95dacb4910faed7a844dc46031aefa880679935029c726d2695b43610026
+      confirmed in block 155989497
+    2/3 swap: tick -7986 → -5448, in sUSDS cap 0.015108880110101548
+      attempt 1/3...
+      tx 0xd778e2dd469e9c4fac3a661f1433b0755e108221af762b8fc5f9f37c637ae47e
+      confirmed in block 155989500
+    3/3 fund: 135.196985093178252812 outcome + 276.802775823202640149 sUSDS at tick -5448
+      attempt 1/3...
+      tx 0xccf8226dba074c346a213f78dd78db5a68951d3d156a9235a176291c2faa80cc
+      confirmed in block 155989504
+  ✅ CIPHERSCAN NO re-seeded at 0.580
+
+=== [29] MINTEXPLOIT — 0xc0e29B80a74287cFEF882a4d425d06117Aa09C07 ===
+  💧 splitting 58.113138702082181939 sUSDS
+      attempt 1/3...
+      tx 0xfa8dc5df0c54686b2ddb18fe1d5510fb1daa95cacb49eb3933a7f2adfefdc018
+      confirmed in block 155989507
+
+  --- MINTEXPLOIT YES → 0.820 (#1125506) ---
+    1/3 dust: 0.02 outcome + 0.035494674666667921 sUSDS
+      approving 0xDaeA18eb86c017259EC2aec482b5FCd8D8323314 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x42136f7af9d6098f284575cdaf2948beb8b29b4439b4a9e61af92e64b74e03ed
+      confirmed in block 155989511
+      attempt 1/3...
+      tx 0x18f06092b414571b25b2ad0b632be757b17c3f04484309ed125b5a8ec2d676e0
+      confirmed in block 155989515
+    2/3 swap: tick 5978 → 1984, in sUSDS cap 0.0387745703916695
+      attempt 1/3...
+      tx 0xc89404028aee31a791f63d2c081ea17d95cd21d5ea29fda95e2665cc8312a3b9
+      confirmed in block 155989518
+    3/3 fund: 57.948922199083443376 outcome + 470.4219707735305276 sUSDS at tick 1984
+      attempt 1/3...
+      tx 0xe99729b66ee7162e20c74be221169baf019677b453eff0428d037cda0b686c99
+      confirmed in block 155989522
+  ✅ MINTEXPLOIT YES re-seeded at 0.820
+
+  --- MINTEXPLOIT NO → 0.180 (#1125508) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x5fc622c5f29cf181cbf3698ae56d9fdd7a3b1d38b8f5318ce4e9f9cb435591c3
+      confirmed in block 155989524
+      attempt 1/3...
+      tx 0xb5d28d44c55684f09f0357360fa2e701a1f8ca5d6fd6cbb0f4f50c69d0c97e8d
+      confirmed in block 155989526
+    2/3 swap: tick -7986 → -17149, in outcome cap 0.144216502998738564
+      approving 0xa7F7a38C36BAbA1c233Fc03b3A2a2ED4b6D03Ae7 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x0714285ed45dd985da6a944ac91dbfa995a3b5df3b9a6012b385fe6fedf43cc6
+      confirmed in block 155989529
+      attempt 1/3...
+      tx 0x624be2ef2635b949ef8f6f56d6370f60da2063ffaf86d8e225fd163efc65ca59
+      confirmed in block 155989533
+    3/3 fund: 57.948922199083443375 outcome + 12.169647567926569564 sUSDS at tick -17149
+      attempt 1/3...
+      tx 0x572e43475e292257f78867dc45dd401de8b2e650b12168097f69845231afb894
+      confirmed in block 155989536
+  ✅ MINTEXPLOIT NO re-seeded at 0.180
+
+=== [30] ZEBRACONSENSUS — 0xe7d2d53d782b13d1de2361aE458367Eb3a85B191 ===
+  💧 splitting 99.472488583490792393 sUSDS
+      attempt 1/3...
+      tx 0x60be758c3ae759573bad245048c4228ccf9edcd72e5648fba6d6032869236e47
+      confirmed in block 155989538
+
+  --- ZEBRACONSENSUS YES → 0.710 (#1125509) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0xa6B4e845dD137ee5e5AA814aCD928Fd0a05F76D1 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xdc3fc3e0a708489f868a0e50ef0d716be80c4bf87cdf3f49bf072dd11c75d32d
+      confirmed in block 155989540
+      attempt 1/3...
+      tx 0x09bb0f5fcf89fbafb720cca6b0e502d4240b2aac348b5eac545fd364f7d92a5c
+      confirmed in block 155989544
+    2/3 swap: tick -5979 → -3426, in sUSDS cap 0.023882241870304652
+      attempt 1/3...
+      tx 0x8997582454699e7878b6df0179053ebed7f30acf0774c14960cfdba200905598
+      confirmed in block 155989547
+    3/3 fund: 99.391514839221727889 outcome + 394.538058083544894917 sUSDS at tick -3426
+      attempt 1/3...
+      tx 0xb9d538c89762aff3b04afe4985c9cf07d77440200bb8fa8f3492dd63cbec9811
+      confirmed in block 155989551
+  ✅ ZEBRACONSENSUS YES re-seeded at 0.710
+
+  --- ZEBRACONSENSUS NO → 0.290 (#1125510) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x2b0cc1d0b7b675b69942eefb02fc9b1c66e84c33d36af453be250fe6222ac34d
+      confirmed in block 155989554
+      attempt 1/3...
+      tx 0xb1267a358f5a72c85df62a8ecf7d55c22659969f6b9fdb5221dbae96bb58c7e4
+      confirmed in block 155989558
+    2/3 swap: tick 7985 → 12379, in outcome cap 0.060973744269064504
+      approving 0xccCE3AEC0d7e411AEA3e4e5F4EcD6796F3BB296A -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x2bcc5d91441cca1f7f0186cdba48e72cb998f2aea075fff4cccad7155d284eab
+      confirmed in block 155989560
+      attempt 1/3...
+      tx 0x48bfe8d18190c0ec75c4c2ef00d95d1689bff9e9aff5924a5b6677a9961980ed
+      confirmed in block 155989562
+    3/3 fund: 99.391514839221727889 outcome + 46.610967617773917733 sUSDS at tick 12379
+      attempt 1/3...
+      tx 0xe06e55c1aeada290b601e6c60fdf43659814351ee36284f43b8bd17f3df262eb
+      confirmed in block 155989565
+  ✅ ZEBRACONSENSUS NO re-seeded at 0.290
+
+=== [31] ZECROCKS — 0x91736993FD987C230244825A27c3E531c66Fe63B ===
+  💧 splitting 136.849752357291467757 sUSDS
+      attempt 1/3...
+      tx 0xcf80d5ef17b3d53354f5463ac6fa0856aa515a3bd19ae06e4a0d2a8008ddd147
+      confirmed in block 155989569
+
+  --- ZECROCKS YES → 0.570 (#1125511) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x99534C2f36C0EDD0f276d218ab4E9C7D226E6b4D -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xb68d76b36963e9f3d8cc31411e2dac324c546df30b27140f67632357f434e316
+      confirmed in block 155989572
+      attempt 1/3...
+      tx 0xbde08e7159f73c7398c4499f2e5cb9deb5f2f5d7a5c9014db17a08ab4ffe7c84
+      confirmed in block 155989576
+    2/3 swap: tick -5979 → -5622, in sUSDS cap 0.003159089238250604
+      attempt 1/3...
+      tx 0xf5340b9b7e2949b039632372f6f3039db0f8c14a1609e6fcfdccd84a816058a9
+      confirmed in block 155989579
+    3/3 fund: 136.824041970042272361 outcome + 267.039135614571431896 sUSDS at tick -5622
+      attempt 1/3...
+      tx 0xd9499869f6ac247108bd22aa49cdf1474d8732da12c5235f64cb3f71ec418eb4
+      confirmed in block 155989583
+  ✅ ZECROCKS YES re-seeded at 0.570
+
+  --- ZECROCKS NO → 0.430 (#1125512) ---
+    1/3 dust: 0.02 outcome + 0.022032562218110642 sUSDS
+      approving 0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x027104168785386b6437a5d59bcb1d665d989bf1869628a9ce75926fe91ea5f0
+      confirmed in block 155989585
+      attempt 1/3...
+      tx 0x34fdb7e33140a64668dc481886ddea893fcbbed0f0a6dbfe1eb8b6c6f888d13d
+      confirmed in block 155989587
+    2/3 swap: tick -7986 → -8441, in outcome cap 0.005710387249195396
+      approving 0x351F6E7b2Ce6936392A6b1bED8216c06F2f6980b -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x9acd0fe42c885b16d0699b2e6977a19d9b5eea87d7226c30662c2a26b8d5bb23
+      confirmed in block 155989589
+      attempt 1/3...
+      tx 0x48ec0eaaa78b4ad8df5641a3fa893b0cf4e1b543aaead8c6e00dd68d0eb52aa3
+      confirmed in block 155989591
+    3/3 fund: 136.824041970042272361 outcome + 136.677362955926836283 sUSDS at tick -8441
+      attempt 1/3...
+      tx 0x5f5fb971786cf77c53377f90fa68356095a9224850b5b64c1bbffefe96a2392d
+      confirmed in block 155989594
+  ✅ ZECROCKS NO re-seeded at 0.430
+
+=== [32] VALARAUDIT — 0x6a2eFDE79D7E7dF689Cb17FD0663b3455D838Dd4 ===
+  💧 splitting 73.495745112343702749 sUSDS
+      attempt 1/3...
+      tx 0x73a99dbb07ff95d739d8e6921010025e223259d3d6d76c32ceae348ff42c0885
+      confirmed in block 155989596
+
+  --- VALARAUDIT YES → 0.780 (#1125513) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x2f12d011a46dEA4EDC14Bcc390B1bC6F49eBafee -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x8572d4ca1416967af8099d4284b1895debddc82ef4e9a24ee91f0949efe8e818
+      confirmed in block 155989599
+      attempt 1/3...
+      tx 0x790b5107c1720e82d2ad48e99616eee8060a8d48d1ed9f186d8f9a80812126ec
+      confirmed in block 155989603
+    2/3 swap: tick -5979 → -2485, in sUSDS cap 0.033482720631598496
+      attempt 1/3...
+      tx 0xc2df5bd62b68f3f085987d513f3719b1d6e8f6ac760708e65a997c8939be0482
+      confirmed in block 155989606
+    3/3 fund: 73.368974242219645829 outcome + 445.745295920026739459 sUSDS at tick -2485
+      attempt 1/3...
+      tx 0x6bc4215a35ad63296cf3e8d15beca004b73b1c2f8e67098df344c0f9de4fcaa4
+      confirmed in block 155989610
+  ✅ VALARAUDIT YES re-seeded at 0.780
+
+  --- VALARAUDIT NO → 0.220 (#1125514) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xf1aD2087103Bf520249344a6D59056941Df440A2 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x94d6cced7ba940e6bfb9d4f46d370a2fb4a5b54e203ead930f84e50b11844a52
+      confirmed in block 155989612
+      attempt 1/3...
+      tx 0xfa8fdd5e20ebc11e54aded5c9bbe645c50204c3e6928809a1ddedebddcb42e1e
+      confirmed in block 155989614
+    2/3 swap: tick 7985 → 15142, in outcome cap 0.10677087012405692
+      approving 0xf1aD2087103Bf520249344a6D59056941Df440A2 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8af0a822059830f4240830f470a82c0e194f1ad2087103bf520249344a6d59056941df440a280b844095ea7b3000000000000000000000000e592427a0aece92de3edee1f18e0157c05861564000000000000000000000000000000000000000000000000017b538a6a1a9158c080a005c1af9635be57add8751360a8ffc3ab5b0342bdbf64b4c6071984a153e0e737a01d06b66445dbc89f8ee5620a4c7d7e5ced10463cba452c597da2187159ef2238", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9585, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x9b831be9aa18a80df340f5b6ee4db3468b832518f04bb94984d91b71203c3962
+      confirmed in block 155989619
+      attempt 1/3...
+      tx 0x533bd42ad9c4c63201c02f1a094ef5dbffea1dff2561531f1eef921effe462a0
+      confirmed in block 155989623
+    3/3 fund: 73.368974242219645829 outcome + 21.426270378294155246 sUSDS at tick 15142
+      attempt 1/3...
+      tx 0xe669258ad30222e8b7328b1e0bc0aab9d9cb0c4e37c724c10999875ecc03c2c8
+      confirmed in block 155989627
+  ✅ VALARAUDIT NO re-seeded at 0.220
+
+=== [33] TACHYON — 0x74A5f36e0Af651a1E577b40C2167aC62FD4012D7 ===
+  💧 splitting 10.557770308321834344 sUSDS
+      attempt 1/3...
+      tx 0x8859e8ce227ee1bb85fd9156f9eab07218c43176ad30a78ad7cc58ce0451ec6f
+      confirmed in block 155989629
+
+  --- TACHYON YES → 0.950 (#1125515) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x36CEaB5d6fc30c5D84922Ba2Be3c8b93C64A9614 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xec16c06f631ec91047ce408fa627aae2706a6f2e267623787641fa0e33cc02e3
+      confirmed in block 155989632
+      attempt 1/3...
+      tx 0x2448d998996f9f0f811f227b4d1d8a50112bacb765cf0643954fbd7b8aacdfda
+      confirmed in block 155989636
+    2/3 swap: tick -5979 → -513, in sUSDS cap 0.05512843543813836
+      attempt 1/3...
+      tx 0xd2a75fe2a61808e81000328cbf145091e3dd8b075c5041ec555277d9587106c5
+      confirmed in block 155989639
+    3/3 fund: 10.041434697619904054 outcome + 530.260692813939646198 sUSDS at tick -513
+      attempt 1/3...
+      tx 0xee88964e957353c3058d54a302d606a003b4d075fa25e3daf04fc0d761a991f5
+      confirmed in block 155989643
+  ✅ TACHYON YES re-seeded at 0.950
+
+  --- TACHYON NO → 0.050 (#1125516) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8af0a822059830f4240830f46fa82c0e194e86805aa2293b2c93025d15fdb87d112ef72c0ac80b844095ea7b3000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe880000000000000000000000000000000000000000000000008ba1658cba6c9634c001a0168b1be444ae41a9d03ce207c418096495eaa5505eca481c99677f23cc563277a025240bb2fb607665c28ba73b908afd96ede2bbf010a90928eed9f71be2a641ca", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9593, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      attempt 2 failed: nonce has already been used (transaction="0x02f8af0a822059830f4240830f46f682c0e194e86805aa2293b2c93025d15fdb87d112ef72c0ac80b844095ea7b3000000000000000000000000c36442b4a4522e871399cd717abdd847ab11fe880000000000000000000000000000000000000000000000008ba1658cba6c9634c080a06f32a7135394e285f60a58392ce142566110197efd54b0c28e5e780705fc7750a03841bd0f3a8d7b081360c0eadbc938bfdbfd9f74533218e17c673dd17095e7a5", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9593, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 3/3...
+      tx 0x3b6024c00b8a505fadd7846774a63de54fc49e1e9d80ad9a6a78ec8675e4ece2
+      confirmed in block 155989650
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f46f2830545fb94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c8c000000000000000000000000000000000000000000000000004e4880a0ce7f2500000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000004e09413386e83e000000000000000000000000000000000000000000000000004680a58411d929000000000000000000000000000000000000000000000000000000006a8c4b92c001a09ec6d7654ee898b9a0fa7943b775b9dbfc6351d88d3b3d5058558ed2419f1f72a02ec00fc9f2e88029c9501d52d9872780734bf87f5e646ee6e62e99c0cccac0f8", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9594, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0xb9edaadaf0c9020aeb97c9575265cc33541c3cb758f14a2222d842939b48158a
+      confirmed in block 155989656
+    2/3 swap: tick 7985 → 29958, in outcome cap 0.496335610701930292
+      approving 0xE86805aA2293b2c93025d15fdb87D112EF72C0Ac -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x30ba5cc29b29d0066fd907489fa8b7dea21d39122abdf627ba145616d2b5907f
+      confirmed in block 155989659
+      attempt 1/3...
+      tx 0x36f1774a1a2600205a240e93d99783ecca1f3af96d04bfbf7528982766f24c8d
+      confirmed in block 155989663
+    3/3 fund: 10.041434697619904052 outcome + 0.238413028980990251 sUSDS at tick 29958
+      attempt 1/3...
+      tx 0x2d7de0393d6d99d76952af1f5c87496ac63aa7c26446513f7051c7d928880b91
+      confirmed in block 155989667
+  ✅ TACHYON NO re-seeded at 0.050
+
+=== [34] ORCHARDBOUNTY — 0xD2dc10FA13CaC63abFc098e7be89214eba6C38EC ===
+  💧 splitting 4.022763647212437001 sUSDS
+      attempt 1/3...
+      tx 0x81020607aa7fea5ffd8280469f509e489fde0525930659657ff2226814ece803
+      confirmed in block 155989669
+
+  --- ORCHARDBOUNTY YES → 0.970 (#1125517) ---
+    1/3 dust: 0.02 outcome + 0.03549112555411251 sUSDS
+      approving 0x1C4900d1Be2eD0eC4E16dEf0edD3Eb7F8b19039f -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xa8b5910a319fa7b90b2068a4af16dfce957608a512d7a1143682effe1950a189
+      confirmed in block 155989672
+      attempt 1/3...
+      tx 0xd484cd2bd392ca703d985448a626b38047fbe13121041c4ddc50d1bd4b353866
+      confirmed in block 155989676
+    2/3 swap: tick -5979 → -305, in sUSDS cap 0.057538464537902488
+      attempt 1/3...
+      tx 0xf5049d75968f94d93f7a9590742e9d00fc6d94a5f53df89ccebff2da12e4136d
+      confirmed in block 155989679
+    3/3 fund: 3.289756341915382685 outcome + 537.228831600675909671 sUSDS at tick -305
+      attempt 1/3...
+      tx 0x0d37866c6b3cd260f9977caec3c2989892eda7fbd9dc9df0cee946e0d22bf81d
+      confirmed in block 155989683
+  ✅ ORCHARDBOUNTY YES re-seeded at 0.970
+
+  --- ORCHARDBOUNTY NO → 0.030 (#1125518) ---
+    1/3 dust: 0.02 outcome + 0.022034765474332453 sUSDS
+      approving 0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x17e9d90764bd84a15c82232e2664f8dc9a0c277cf04e19256148fce267c3864e
+      confirmed in block 155989686
+      attempt 1/3...
+      tx 0x4edce7038073d19ad5a319bc115169e031ea06e452498fd485c49c2da882fc36
+      confirmed in block 155989690
+    2/3 swap: tick 7985 → 35067, in outcome cap 0.71300730529705432
+      approving 0xe20c4c16dFDA999a0a9661bF9fbcab84f5dA274A -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x9d948faec5e396dc6eddfa471220d147f06be52041f8de83f90d54c826908343
+      confirmed in block 155989692
+      attempt 1/3...
+      tx 0x80e4f32fc666b68d49f47d01ced3ca383bacf352ab9a98b6421fb309c1b5305e
+      confirmed in block 155989694
+    3/3 fund: 3.289756341915382681 outcome + 0.021952597949248173 sUSDS at tick 35067
+      attempt 1/3...
+      tx 0x0720ef6ef81f47bef491dea7f86c55c8c0e48482586a53bb4b94c157cb9bb2a4
+      confirmed in block 155989697
+  ✅ ORCHARDBOUNTY NO re-seeded at 0.030
+
+=== [35] BONUSORCHARD — 0xBFa2F5855527B8fA1fDB648065FC172EA41C6D94 ===
+  💧 splitting 24.482228967486199541 sUSDS
+      attempt 1/3...
+      tx 0xddf9126766360b4175294866d14dd2ca4f64fac67c1b325b93af9094b044a7bb
+      confirmed in block 155989700
+
+  --- BONUSORCHARD YES → 0.910 (#1125519) ---
+    1/3 dust: 0.02 outcome + 0.035407861837169792 sUSDS
+      approving 0x3F838f548308B0Be41F5F75B0B14D4248b6fCC19 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x17eb2792cf5bf550b5b97c60e0391f87ff1c0b934e8b1da8817496de5c8ffbfc
+      confirmed in block 155989704
+      attempt 1/3...
+      tx 0x325ba64916cdafdbeb2615aa3a142df13ec63819538cd36305ec927ea188b608
+      confirmed in block 155989706
+    2/3 swap: tick -5988 → -944, in sUSDS cap 0.05020236723248284
+      attempt 1/3...
+      tx 0x1ec7e80900526b4635dbd6e2f8103a4490b44272c7eca3f33f743f8b2d9c2d06
+      confirmed in block 155989709
+    3/3 fund: 24.15541387428526805 outcome + 514.736294427269118943 sUSDS at tick -944
+      attempt 1/3...
+      tx 0xfc8506cb466ac2e71698a02ccf42b75b68df8dd6d6936189272132e975ede12c
+      confirmed in block 155989713
+  ✅ BONUSORCHARD YES re-seeded at 0.910
+
+  --- BONUSORCHARD NO → 0.090 (#1125520) ---
+    1/3 dust: 0.02 outcome + 0.022037376026520792 sUSDS
+      approving 0x18B28d020d4d27b574861840322dfCC3432f596F -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x9a3d815d9fe84a4f36bc13ddd30024af48a0f1eb050fd3439b8f63482bc32075
+      confirmed in block 155989716
+      attempt 1/3...
+      tx 0x1c964540bd93c2e9d8fb8b08e119f8f2faa9ea28b52278ef5acf2a02e6f352c9
+      confirmed in block 155989720
+    2/3 swap: tick -7985 → -24081, in outcome cap 0.30680976232929762
+      approving 0x18B28d020d4d27b574861840322dfCC3432f596F -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0x40baf343a1384e58620fb52db1e3c86ec12307fcaf7acd254afff7bfe8fb95b8
+      confirmed in block 155989724
+      attempt 1/3...
+      tx 0x413b7121f16fb4cab9be303d8ed1b488ccd0e332ea00a1b3310236b8bb0a9c45
+      confirmed in block 155989728
+    3/3 fund: 24.155413874285268049 outcome + 1.648832238986153533 sUSDS at tick -24081
+      attempt 1/3...
+      tx 0x124a00328daa87070a7136500f65e995e2c2c993ad8daf5052f22edd4024e231
+      confirmed in block 155989731
+  ✅ BONUSORCHARD NO re-seeded at 0.090
+
+=== [36] VALARIRONWOOD — 0x8dFd98175EaeB4c512113f88EccBA1C9Bd281742 ===
+  💧 splitting 42.880756381013856242 sUSDS
+      attempt 1/3...
+      tx 0x81442a6ccd9eff620aeab218cda424d27352f9c72fb042ad28d951692be3ea0b
+      confirmed in block 155989735
+
+  --- VALARIRONWOOD YES → 0.860 (#1125521) ---
+    1/3 dust: 0.02 outcome + 0.035407861837169792 sUSDS
+      approving 0x2aa0Bc400C00482234a93083c852211F8D85c86a -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xa29cef9df0ab637f9058a6011a161d357c12ef4500a10be8239ba3956b223fd7
+      confirmed in block 155989738
+      attempt 1/3...
+      tx 0x9ffb028e867b2b815af723fa3d57d1566af855b62cb9cb8b415c0c49ae585840
+      confirmed in block 155989742
+    2/3 swap: tick -5988 → -1509, in sUSDS cap 0.043929152590619516
+      attempt 1/3...
+      tx 0xa6a763a2daaf0521836dcd47945e1beb20c5df0a727679141e233d5283cb0f1e
+      confirmed in block 155989744
+    3/3 fund: 42.663942169320200046 outcome + 491.904177052211393729 sUSDS at tick -1509
+      attempt 1/3...
+      tx 0x9c5328eea2a98dcdce5bcce89d2855bd07fd0982052590f03ae2700499b6f334
+      confirmed in block 155989747
+  ✅ VALARIRONWOOD YES re-seeded at 0.860
+
+  --- VALARIRONWOOD NO → 0.140 (#1125523) ---
+    1/3 dust: 0.02 outcome + 0.022037376026520792 sUSDS
+      approving 0x06fB380b6aCb813ff5BBC162f254DF27f1090E07 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x0df53773ce528f2c8bd2d7b0dbe1ac409a60f90d32f8f0e74f7608e014060fef
+      confirmed in block 155989749
+      attempt 1/3...
+      tx 0x19317adbdc5a3f7524f878952551bf9b12760cb82110204e2c469b872063c193
+      confirmed in block 155989751
+    2/3 swap: tick -7985 → -19663, in outcome cap 0.196814166373756436
+      approving 0x06fB380b6aCb813ff5BBC162f254DF27f1090E07 -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      tx 0xe83f952d72aa7d1a83bcfb96427a0fe54488349f462519868f4a2b063eb6c23c
+      confirmed in block 155989753
+      attempt 1/3...
+      tx 0x473304d7c8576e445584ef0c3bc87b71bb8d503f46e763e2a5aae214c942bcda
+      confirmed in block 155989755
+    3/3 fund: 42.663942169320200046 outcome + 5.972421319008946757 sUSDS at tick -19663
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f901300a822059830f4240830f46d88304103f94c36442b4a4522e871399cd717abdd847ab11fe8880b8c4219f5d170000000000000000000000000000000000000000000000000000000000112c930000000000000000000000000000000000000000000000025014c55c1823976e00000000000000000000000000000000000000000000000052e24d8be07f8a450000000000000000000000000000000000000000000000024db5dd2e8ed229b4000000000000000000000000000000000000000000000000528ceb0c98488638000000000000000000000000000000000000000000000000000000006a8c4c61c001a07bf3659735029b3c453cee5efb478e917b533bf5cb97c24403c64d6caa327af9a01f023771efaad533566c8b2e84765e6be881782957231544fefb843c64de397f", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9627, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x65de4cac093fe0c02c323f9d272ce46ea427a973325e42213226e61a470530fb
+      confirmed in block 155989760
+  ✅ VALARIRONWOOD NO re-seeded at 0.140
+
+=== [37] ZODL — 0x2766eF544445b8247ADB241a5c2792AAc31eF133 ===
+  💧 splitting 35.400873724525794951 sUSDS
+      attempt 1/3...
+      tx 0x2843b61c004c5864340c4ac524668542a432156fc799b4a1577b2e09469584ef
+      confirmed in block 155989762
+
+  --- ZODL YES → 0.880 (#1125524) ---
+    1/3 dust: 0.02 outcome + 0.035513217476117102 sUSDS
+      approving 0xd8fd3713f7BBAa0B34269666cC071fAD85Bb0638 -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0x10c5b2cc1077e5dbbd8b9538dc3d2587e0f0de978b3e22be0ae61ecd96ffc806
+      confirmed in block 155989765
+      attempt 1/3...
+      tx 0xc92645d5ce972a0354b5be2b555723926976de436b9c1724d91d07df02a58d6c
+      confirmed in block 155989768
+    2/3 swap: tick 5976 → 1278, in sUSDS cap 0.046471583456950004
+      attempt 1/3...
+      tx 0x3c57d594cc7f6e63d81a71c0ff47e5a81b855a4b9ce4344d9b9a4639eaea2faf
+      confirmed in block 155989770
+    3/3 fund: 35.149046458793081595 outcome + 501.551996850517216191 sUSDS at tick 1278
+      attempt 1/3...
+      tx 0x44d7d5d60d1036049e788a4a2c4cd7b4e46a4377ca695458c1ab218f042832fa
+      confirmed in block 155989773
+  ✅ ZODL YES re-seeded at 0.880
+
+  --- ZODL NO → 0.120 (#1125526) ---
+    1/3 dust: 0.02 outcome + 0.021974904934550213 sUSDS
+      approving 0x085dbdd74787219b190dA52cB02f93E1134Cab4F -> 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
+      attempt 1/3...
+      tx 0xb76db66d7c994e6b233158dc803c31bc4827f07c8d69a4a9be0034a8120c8683
+      confirmed in block 155989775
+      attempt 1/3...
+      tx 0x598d1b5adb5bd5f79dcddea46e9638f298878e0c7418ecab090ea987756986f0
+      confirmed in block 155989777
+    2/3 swap: tick -7998 → -21204, in outcome cap 0.231826242409707016
+      approving 0x085dbdd74787219b190dA52cB02f93E1134Cab4F -> 0xE592427A0AEce92De3Edee1F18E0157C05861564
+      attempt 1/3...
+      attempt 1 failed: nonce has already been used (transaction="0x02f8af0a822059830f4240830f46da82c0e194085dbdd74787219b190da52cb02f93e1134cab4f80b844095ea7b3000000000000000000000000e592427a0aece92de3edee1f18e0157c0586156400000000000000000000000000000000000000000000000003379cbd3c71b608c080a01f46936823a93bdc85c77c5c8042b75bcbedcd7a55c939af9d5e4db9f2b32623a017889264089b4751a9f59629bb01b1a928192743ce43a1026711cd97919e48cd", info={ "error": { "code": -32000, "message": "nonce too low: next nonce 9635, tx nonce 8281" } }, code=NONCE_EXPIRED, version=6.15.0)
+      attempt 2/3...
+      tx 0x77e9db64cf01a12b784899eb174d2cd7fa0ac48680f7f5a8a3b5321e52d600cf
+      confirmed in block 155989782
+      attempt 1/3...
+      tx 0xb3824d7a2e66d6b9861f1432656cd1c509e123359c3b24cf3a832a11519f7363
+      confirmed in block 155989786
+    3/3 fund: 35.149046458793081595 outcome + 3.83949723123024274 sUSDS at tick -21204
+      attempt 1/3...
+      tx 0xbd61f1953f2ad6e5f2bf85a96fc78cac633ac52b9e50250f710d84ced1bb3f57
+      confirmed in block 155989788
+  ✅ ZODL NO re-seeded at 0.120
+
+🎉 Done! 74/74 pools re-seeded. See ./reseed-zcash-liquidity-execution.json.
+   Verify with: node check-zcash-pools.js
