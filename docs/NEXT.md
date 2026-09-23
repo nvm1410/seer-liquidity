@@ -62,7 +62,9 @@ a missing input. `evals/cases.md` exists but has not been exercised since the re
 reorganised — and the skill referenced paths that no longer existed until 2026-09-23.
 
 ### No run-and-cost log
-Elapsed time, intervention time and spend are not recorded anywhere. `archive/runs/` has stdout
+Elapsed time, intervention time and spend are not recorded anywhere. The evidence log in
+[`RETROSPECTIVE-2026-09-23.md`](RETROSPECTIVE-2026-09-23.md) has the row shape; the cost fields in
+it are blank for exactly this reason. `archive/runs/` has stdout
 and `lifecycle/*.json` has `stages[].txCount`, but nothing says what a campaign cost in gas or in
 attention. Would need to be captured at the time; it cannot be reconstructed.
 

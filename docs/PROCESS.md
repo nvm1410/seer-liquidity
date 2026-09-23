@@ -88,6 +88,11 @@ A lesson is only finished when it names a mechanical check. Prose prevents nothi
 > "A one-page project brief, an acceptance/evidence list, a run-and-cost log, and a short
 > next-step note." — Day 1
 
+A retrospective written to the program's own three templates — report, operating plan and
+evidence log — is at [`RETROSPECTIVE-2026-09-23.md`](RETROSPECTIVE-2026-09-23.md). It marks the
+fields only the account holder can fill, and records the three process items that were never
+exercised rather than omitting them.
+
 | Artifact | Here | Status |
 |---|---|---|
 | project brief | `lifecycle/<slug>.json` — `source`, `markets`, `liquidity` | **yes**, and machine-validated |
