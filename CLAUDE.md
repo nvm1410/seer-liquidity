@@ -8,7 +8,8 @@ run moves real capital.
 
 **1. The root `.js` scripts are frozen.**
 All 53 of them are records of real on-chain runs. Do not edit them and do not refactor them onto
-shared modules. A new campaign is a *new* script, never a fork of an old one.
+shared modules. A new campaign is a *new* script built on [`lib/`](lib/README.md), never a fork of
+an old one. `lib/` may not import a frozen script, and no frozen script may import `lib/`.
 
 **2. `*-execution.json` is a RESUME LOG, not a record of holdings.**
 Every mutating script skips work already listed in its progress file. Pointing a new round at a
@@ -16,6 +17,8 @@ previous round's log makes it skip everything and do nothing — silently. Commi
 write-up of that happening. Use a fresh filename per round.
 
 **3. `DRY_RUN` is a hand-edited constant in the frozen scripts, not a flag.**
+*(New scripts do not have this problem: the harness is dry by default and `--live` is the only way
+to send. This invariant is about the 53 frozen ones.)*
 Run `npm run audit:dryrun` before typing `node <anything>.js`. A script committed at
 `DRY_RUN = false` sends real transactions immediately, with no prompt and no undo. The guides tell
 you to type these commands verbatim, so the flag state is the only thing standing between a read
@@ -41,6 +44,7 @@ Do not copy these into this file — point at them.
 | The campaign index (chain, structure, capital, dates, status) | [`docs/README.md`](docs/README.md) |
 | Why a campaign was built the way it was | [`docs/guides/`](docs/guides/) |
 | What a campaign *is*, machine-readable | `lifecycle/<slug>.json` ([schema](lifecycle/README.md)) |
+| How to write a new campaign script | [`lib/README.md`](lib/README.md) — the harness, its flags and its guards |
 | On-chain contract reference | `src/*.sol` — a read-only copy of the Seer contracts, never compiled |
 
 ## Files that moved
