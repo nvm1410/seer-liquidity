@@ -1,0 +1,31 @@
+#!/bin/sh
+# Stop a script from being committed while it is armed to send transactions,
+# and stop a file move from silently breaking a frozen script.
+#
+# Install with: npm run hooks:install
+# Bypass (deliberately, and say why in the commit message): git commit --no-verify
+
+set -e
+
+# Only the staged root scripts. Checking the whole tree would mean any
+# historical drift blocks every unrelated commit, which is how hooks get
+# disabled. Added/Copied/Modified only — a deleted file has nothing to scan.
+staged=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^[^/]+\.js$' || true)
+
+if [ -n "$staged" ]; then
+  # shellcheck disable=SC2086
+  node tools/audit-dry-run.js $staged || {
+    echo ""
+    echo "pre-commit: refusing to commit a script armed to send transactions."
+    exit 1
+  }
+fi
+
+# The freeze surface is cheap to check and catches the damage a `git mv` does
+# to a frozen script's relative path, which otherwise surfaces mid-campaign.
+node tools/audit-paths.js >/dev/null || {
+  echo ""
+  echo "pre-commit: a file a frozen script depends on has moved. Run:"
+  echo "  node tools/audit-paths.js"
+  exit 1
+}
