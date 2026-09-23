@@ -7,7 +7,7 @@ run moves real capital.
 ## Invariants
 
 **1. Every operational script runs on the harness. There is no `DRY_RUN` constant left.**
-The hand-edited flag is gone from the repo — `grep '^const DRY_RUN' *.js` returns nothing. A script
+The hand-edited flag is gone from the repo — `grep -rn '^const DRY_RUN' campaigns` returns nothing. A script
 is dry by default and cannot be armed by accident:
 
 ```bash
@@ -141,8 +141,10 @@ Three cross-campaign imports are deliberate and correct — `originality-r3`'s s
 
 ## Environment
 
-ESM, run as bare `node <script>.js` **from the repo root**. Secrets in `.env`:
-`PRIVATE_KEY`, `RPC_URL` (Optimism), `GNOSIS_RPC_URL`, `CREDORA_API`.
+ESM, Node >= 20.19. Run scripts **from the repo root** by their full path
+(`node campaigns/<slug>/<script>.js`) — several read CWD-relative files, so the working
+directory is load-bearing. Secrets in `.env`: `PRIVATE_KEY`, `RPC_URL` (Optimism),
+`GNOSIS_RPC_URL`, `CREDORA_API`.
 
 ## Checks
 

@@ -2,9 +2,12 @@
 
 > **Status: HISTORICAL.** live and seeded at per-proposal prices since 2026-08-24; unresolved  
 > Machine-readable: [`lifecycle/zcash-q3.json`](../../lifecycle/zcash-q3.json)  
+> Scripts and data: [`campaigns/zcash-q3/`](../../campaigns/zcash-q3/)  
 > Run logs: [`archive/runs/zcash-q3/`](../../archive/runs/zcash-q3/)  
 > The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
-> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+> The runbook commands below were updated on 2026-09-23 when every script moved onto the harness:
+> a script is **dry by default** and `--live` is the only way to send. There is no `DRY_RUN`
+> constant any more. The narrative, costs and hazards are as they were written.
 
 Read this before running anything in the `*-zcash-*` scripts. Covers why the markets
 are shaped the way they are, the create → seed → withdraw sequence, the numbers each
@@ -128,7 +131,7 @@ total $9,014,383.20.
 ## Step 1 — create the markets
 
 ```bash
-node campaigns/zcash-q3/create-zcash-markets.js          # DRY_RUN = true
+node campaigns/zcash-q3/create-zcash-markets.js          # dry run, sends nothing
 ```
 
 The dry run does all of this before printing a table:
@@ -155,7 +158,7 @@ total L2 gas   65,674,426 over 37 tx
 L2 gas cost    ~0.0000657 ETH at 0.001 gwei   (EXCLUDES the Optimism L1 data fee)
 ```
 
-Then set `DRY_RUN = false` and re-run. Each market is created, the address read from
+Then re-run with `--live`. Each market is created, the address read from
 the `NewMarket` event, and verified via MarketView (outcomes `[Yes, No, Invalid result]`,
 sUSDS collateral, top-level, 3 wrapped tokens, 1 question, templateId 2) before being
 appended to `create-zcash-markets-execution.json`. **The run is resumable** — proposals
@@ -172,7 +175,7 @@ already in the log are skipped, so re-running retries only failures.
 ## Step 2 — seed the YES/NO pools
 
 ```bash
-node campaigns/zcash-q3/add-zcash-liquidity.js           # DRY_RUN = true
+node campaigns/zcash-q3/add-zcash-liquidity.js          # dry run, sends nothing
 ```
 
 Per market: split `Q` sUSDS on the market (yielding `Q` YES + `Q` NO + `Q` Invalid),
@@ -218,7 +221,7 @@ approvals + 74 mints. The live run matched that and cost **0.000409 ETH** all-in
 ## Step 3 — withdraw
 
 ```bash
-node campaigns/zcash-q3/withdraw-zcash-liquidity.js      # DRY_RUN = true
+node campaigns/zcash-q3/withdraw-zcash-liquidity.js          # dry run, sends nothing
 ```
 
 Derives scope from the creation log, resolves every wrapped token **from chain** (not
@@ -245,7 +248,7 @@ burned (no `burnToken: true`) — step 5 refunds those same tokenIds.
 ## Step 4 — merge the outcome tokens back to sUSDS
 
 ```bash
-node campaigns/zcash-q3/merge-zcash-positions.js         # DRY_RUN = true
+node campaigns/zcash-q3/merge-zcash-positions.js          # dry run, sends nothing
 ```
 
 Merging needs a **complete set — {YES, NO, Invalid}**. Invalid was never pooled, but
@@ -268,7 +271,7 @@ round-trip cost      0.58 sUSDS + gas
 ## Step 5 — re-seed at new prices
 
 ```bash
-node campaigns/zcash-q3/reseed-zcash-liquidity.js        # DRY_RUN = true
+node campaigns/zcash-q3/reseed-zcash-liquidity.js          # dry run, sends nothing
 ```
 
 **Re-running `add-zcash-liquidity.js` with different prices does not work.** All 74 pools

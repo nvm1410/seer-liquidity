@@ -2,9 +2,12 @@
 
 > **Status: HISTORICAL.** closed out 2026-09-01 - answered, resolved, redeemed  
 > Machine-readable: [`lifecycle/l1-deepfunding.json`](../../lifecycle/l1-deepfunding.json)  
+> Scripts and data: [`campaigns/l1-deepfunding/`](../../campaigns/l1-deepfunding/)  
 > Run logs: [`archive/runs/l1/`](../../archive/runs/l1/)  
 > The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
-> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+> The runbook commands below were updated on 2026-09-23 when every script moved onto the harness:
+> a script is **dry by default** and `--live` is the only way to send. There is no `DRY_RUN`
+> constant any more. The narrative, costs and hazards are as they were written.
 
 Read this file at the start of the session before helping with L1 liquidity restoration.
 
@@ -71,7 +74,7 @@ This script is already written and ready. Key behaviours:
 - Approves each unique token **once** before sending any increase txs.
 - Writes progress incrementally to `add-back-l1-execution.json` after each
   success — safe to interrupt and re-run.
-- `DRY_RUN = true` by default. Always run dry first, then flip to `false`.
+- Dry by default. Always run dry first, review, then re-run with `--live`.
 
 ## How to run
 
@@ -85,8 +88,7 @@ node campaigns/l1-deepfunding/add-back-l1-liquidity.js
 #   - Skipped (delta=0) means those positions were never reduced or already done
 
 # Step 3 — live run
-# Edit add-back-l1-liquidity.js line 11: const DRY_RUN = false;
-node campaigns/l1-deepfunding/add-back-l1-liquidity.js
+node campaigns/l1-deepfunding/add-back-l1-liquidity.js --resume --live
 
 # Step 4 — verify idempotency (re-run, all should be skipped)
 node campaigns/l1-deepfunding/add-back-l1-liquidity.js
@@ -209,8 +211,8 @@ tokens have one tiny NFT each (`1055065`, `1055066`).
 - **Phase 3**: `increaseLiquidity` per pool, capping via `Position.fromAmounts` if a balance
   falls short, writing `add-20k-l1-execution.json` after each success.
 
-Run it exactly like the add-back: dry run first, review, flip `DRY_RUN = false`, then
-`node campaigns/l1-deepfunding/verify-20k-l1.js`. If it dies mid-run set `SKIP_SPLITS = true` and re-run — the splits
+Run it exactly like the add-back: dry run first, review, re-run with `--live`, then
+`node campaigns/l1-deepfunding/verify-20k-l1.js`. If it dies mid-run pass `--skip-splits` and re-run — the splits
 already happened and only the missing `increaseLiquidity` calls are retried.
 
 ## Unwind: all L1 liquidity back to sUSDS (2026-08-25)
@@ -243,7 +245,7 @@ drained, both merges landed, 0 failures.**
 | `withdraw-l1-liquidity-execution.json` | 198 entries (`kind: "remove"`, market A/B label, txHash) |
 | `merge-l1-positions-execution.json` | 2 entries, one per market, resumable per phase |
 
-Run order: `withdraw-l1-liquidity.js` (dry, then `DRY_RUN = false`) →
+Run order: `withdraw-l1-liquidity.js` (dry, then `--live`) →
 `merge-l1-positions.js` (dry, then live) → `verify-l1-unwind.js`.
 
 ### Things worth knowing before re-running this
@@ -264,9 +266,9 @@ Run order: `withdraw-l1-liquidity.js` (dry, then `DRY_RUN = false`) →
    matches on `pairKey(token0, token1)` against A's + B's wrapped tokens. It cross-checks
    against `execution.json`'s 198 IDs and prints any divergence — on this run: 0 missing,
    0 extra, 100 distinct pools (A: 133 NFTs, B: 65).
-4. **NFTs were kept, not burned** (`BURN_NFT = false`). All 198 are still owned at zero
+4. **NFTs were kept, not burned** (`unwind.burnNft: false`). All 198 are still owned at zero
    liquidity, so a future round can `increaseLiquidity` the same tokenIds exactly as the
-   two add rounds did. `COLLECT_EMPTY = true` sweeps fees off already-empty positions;
+   two add rounds did. `unwind.collectEmpty: true` sweeps fees off already-empty positions;
    nothing qualified on this run.
 5. **~487k outcome tokens are stranded** in the wallet — the trading imbalance across two
    many-outcome markets. They are not lost: they become redeemable via
@@ -307,7 +309,7 @@ answers, none pending arbitration, none unanswered.
 | `redeem-l1-positions.js` | Step 3 — redeems every non-zero-payout outcome, B then A, back to sUSDS |
 | `redeem-l1-positions-execution.json` | 8 entries, one per redeem chunk |
 
-Run order: `answer-l1-markets.js` (dry, then `DRY_RUN = false`) → wait 3.5 days →
+Run order: `answer-l1-markets.js` (dry, then `--live`) → wait 3.5 days →
 `resolve-l1-markets.js` (dry, then live) → `redeem-l1-positions.js` (dry, then live).
 
 ### Things worth knowing before doing this again

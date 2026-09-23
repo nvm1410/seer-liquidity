@@ -1,8 +1,13 @@
 # Guide: Remove & Merge All Originality Liquidity
 
-> **Status: HISTORICAL.** round-2 originality was unwound 2026-06-19; see lifecycle/originality-r3.json for the round-3 set  
+> **Status: HISTORICAL.** round-2 originality was unwound 2026-06-19; 8,300.58 sUSDS is still stranded behind one zero outcome  
+> Machine-readable: [`lifecycle/originality-r2.json`](../../lifecycle/originality-r2.json)  
+> Scripts and data: [`campaigns/originality-r2/`](../../campaigns/originality-r2/)  
+> Successor: [`lifecycle/originality-r3.json`](../../lifecycle/originality-r3.json) is the round-3 set  
 > The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
-> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+> The runbook commands below were updated on 2026-09-23 when every script moved onto the harness:
+> a script is **dry by default** and `--live` is the only way to send. There is no `DRY_RUN`
+> constant any more. The narrative, costs and hazards are as they were written.
 
 Read this before helping unwind originality liquidity. Script: `remove-merge-originality.js`.
 
@@ -67,15 +72,14 @@ node campaigns/originality-r2/remove-merge-originality.js
 #      - Phase 3: "outcomes at zero: 0" means the full parent merge will run.
 #        If > 0, those outcomes block the parent merge (see Issues below).
 
-# 3. Live run — edit line ~28: const DRY_RUN = false;  then:
+# 3. Live run:
 node campaigns/originality-r2/remove-merge-originality.js
 
 # 4. (optional) verify wallet sUSDS went up and outcome-token balances went to ~dust.
 ```
 
-Config flags (top of file):
-- `DRY_RUN` — default `true`. Flip to `false` to send transactions.
-- `BURN_NFT` — default `false`. Set `true` to also burn each emptied position NFT
+Behaviour (dry by default; `--live` sends):
+- `burnNft` — `unwind.burnNft` in the manifest, default `false`. Set `true` to also burn each emptied position NFT
   in the same remove tx (only if you don't want to reuse the NFTs).
 
 ## Idempotency / resume

@@ -2,8 +2,11 @@
 
 > **Status: HISTORICAL.** v2 live and seeded since 2026-08-12; v1 drained and abandoned  
 > Machine-readable: [`lifecycle/gnosis-pd.json`](../../lifecycle/gnosis-pd.json)  
+> Scripts and data: [`campaigns/gnosis-pd/`](../../campaigns/gnosis-pd/) and [`campaigns/gnosis-pd-v1/`](../../campaigns/gnosis-pd-v1/)  
 > The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
-> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+> The runbook commands below were updated on 2026-09-23 when every script moved onto the harness:
+> a script is **dry by default** and `--live` is the only way to send. There is no `DRY_RUN`
+> constant any more. The narrative, costs and hazards are as they were written.
 
 Read this before touching liquidity on the Gnosis "Probability of Default" market or
 wiring the `risk-pricing-ui` frontend to it. Covers: market structure, the
@@ -137,16 +140,16 @@ correct against their own source — don't "fix" one to match the other.
 # 2. Freeze the PD snapshot. Needs CREDORA_API in .env.
 node campaigns/gnosis-pd/fetch-credora-pd.js
 
-# 3. Create the market. DRY_RUN = true by default: prints outcomes, token names,
+# 3. Create the market. A dry run prints outcomes, token names,
 #    the encoded Reality question, the predicted address and the gas estimate.
 node campaigns/gnosis-pd/create-pd-market-gnosis.js
-#    Review, then flip DRY_RUN = false and re-run. NOT idempotent — a second live
+#    Review, then re-run with --live. NOT idempotent — a second live
 #    run creates a second market. Writes create-pd-market-execution.json.
 
 # 4. Seed liquidity. Reads the market address from that file.
 node campaigns/gnosis-pd/add-pd-liquidity-gnosis-v2.js
 #    Check the dry run's GRAND TOTAL and the "No To All: N% of total" line, then
-#    flip DRY_RUN = false. ~70 transactions; resumable via its progress log.
+#    re-run with --live. ~70 transactions; resumable via its progress log.
 
 # 5. Point the UI at the new address: RISK_PRICING_MARKET_ID in
 #    risk-pricing-ui/src/consts/markets.ts. That is the only required edit.
@@ -320,11 +323,11 @@ this repo. Wallet used this session: `0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
 
 ### How to run the remove script
 
-Already run against v1. To reuse it for another market, point `MARKET` at that
-address first and start from a fresh `PROGRESS_FILE`.
+Already run against v1. To reuse it for another market, point the manifest's
+`results.parent` at that address and pass `--progress=<new path>`.
 
 ```
-# 1. Dry run (default DRY_RUN = true) — enumerates all NPM positions for this
+# 1. Dry run (the default) — enumerates all NPM positions for this
 #    market, projects removal amounts + the final merge amount, no transactions.
 node campaigns/gnosis-pd/remove-liquidity-gnosis.js
 
@@ -333,8 +336,8 @@ node campaigns/gnosis-pd/remove-liquidity-gnosis.js
 #    The merge preview is the cash you actually get back — on a market that has
 #    traded it will be far below what was deployed.
 
-# 3. Live run — flip DRY_RUN = false at the top of the file, then re-run.
-#    BURN_NFT = true by default (cleans up emptied position NFTs in the same tx).
+# 3. Live run — re-run with --live.
+#    unwind.burnNft in the manifest is true here (cleans up emptied NFTs in the same tx).
 ```
 
 Expect ~75 transactions (49 removes + up to 26 approvals + 1 merge) — each costs

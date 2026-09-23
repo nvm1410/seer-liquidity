@@ -20,33 +20,50 @@ L1 / Deep Funding GG24, Octant epoch 12, and the Gnosis probability-of-default m
 
 ## Running something
 
-Scripts are ESM and take no arguments — run them as bare `node <script>.js` **from the repo root**.
+Scripts are ESM. Run them **from the repo root** by their full path — several read CWD-relative
+files, so the working directory is load-bearing.
 
 ```bash
 cp .env.example .env    # then fill in PRIVATE_KEY and RPC_URL
 npm install
-npm test                # audits: nothing armed to send, no broken paths
+npm test                # audits: nothing can send unasked, no broken paths, golden tests
 node campaigns/originality-r3/check-originality-r3-pools.js --markets-only   # a safe read-only example
 ```
 
-> **Every mutating script gates transactions on a hand-edited `const DRY_RUN` near the top of the
-> file — not a CLI flag.** A script committed at `false` sends real transactions the moment you run
-> it, with no prompt. Always `npm run audit:dryrun` first.
+> **Every script is dry by default and `--live` is the only way to send.** It prints the entire
+> plan — every market resolved, every amount sized — exits 0 and sends nothing. There is no
+> `DRY_RUN` constant anywhere in the repo; `npm run audit:dryrun` fails the build if a script could
+> ever send without that flag.
+
+```bash
+node campaigns/zcash-q3/add-zcash-liquidity.js          # dry: prints the plan
+node campaigns/zcash-q3/add-zcash-liquidity.js --live   # sends, after a confirmation
+```
+
+Other flags: `--resume` (required when a progress log already has entries — it is a resume log, and
+every item in it will be SKIPPED), `--progress=<path>` (write somewhere new, which is what a re-seed
+needs), `--yes` (skip the confirmation, for an unattended resume).
 
 ## Layout
 
 | Path | |
 |---|---|
-| `*.js` (root) | one script per campaign phase. **Frozen** — records of real on-chain runs |
-| `*-execution.json` | append-only **resume logs**, not records of holdings |
-| `docs/guides/` | per-campaign runbooks: structure, prices, hazards, what it cost |
-| `archive/runs/` | stdout transcripts of past runs, by campaign |
-| `lifecycle/<slug>.json` | structured per-campaign manifest |
-| `abis/` | shared contract ABIs |
+| `lib/` | the harness and shared modules — **build a new campaign on this** |
+| `lifecycle/<slug>.json` | the structured manifest — **declare a new campaign here** |
 | `tools/` | repo audits (`npm test`) |
+| `campaigns/<slug>/` | every past campaign, self-contained: its scripts **and** its data |
+| `campaigns/<slug>/superseded/` | generations that were replaced, kept with their own campaign |
+| `docs/guides/` | per-campaign runbooks: structure, prices, hazards, what it cost |
+| `docs/README.md` | the campaign index |
+| `archive/` | stdout transcripts by campaign, dead files, orphan tools |
+| `abis/` | shared contract ABIs |
 | `src/` | read-only copy of the Seer Solidity contracts, for reference. Never compiled |
+
+The root holds configuration and these two markdown files, nothing else. A `*-execution.json` in a
+campaign directory is an append-only **resume log, not a record of holdings**.
 
 ## Start here
 
-**`CLAUDE.md`** — the repo invariants (why the scripts are frozen, why a resume log is not a record,
-the `DRY_RUN` hazard, the file-move rule) and pointers to the campaign guides and history.
+**`CLAUDE.md`** — the repo invariants (how a change is proved not to alter behaviour, why a resume
+log is not a record, which three scripts are gated rather than migrated, the file-move rule) and
+pointers to the campaign guides and history.

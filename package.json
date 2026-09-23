@@ -2,7 +2,6 @@
   "name": "liquidity",
   "version": "1.0.0",
   "description": "Scripts that operate Seer prediction markets on Optimism and Gnosis",
-  "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=20.19.0"

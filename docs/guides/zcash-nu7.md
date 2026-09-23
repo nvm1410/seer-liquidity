@@ -2,9 +2,12 @@
 
 > **Status: HISTORICAL.** v3 markets live but holding ZERO liquidity since the 2026-09-14 unwind; unresolved  
 > Machine-readable: [`lifecycle/zcash-nu7.json`](../../lifecycle/zcash-nu7.json)  
+> Scripts and data: [`campaigns/zcash-nu7/`](../../campaigns/zcash-nu7/)  
 > Run logs: [`archive/runs/zcash-nu7/`](../../archive/runs/zcash-nu7/)  
 > The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
-> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+> The runbook commands below were updated on 2026-09-23 when every script moved onto the harness:
+> a script is **dry by default** and `--live` is the only way to send. There is no `DRY_RUN`
+> constant any more. The narrative, costs and hazards are as they were written.
 
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
@@ -214,17 +217,17 @@ by the `ZNU7V3` token prefix and by the addresses above.
 # 1. Edit zcash-nu7-questions-v3.json. Dry run prints every market name, all outcome
 #    labels, token names, the encoded Reality question, gas, and the question-id
 #    collision check. Sends nothing.
-node campaigns/zcash-nu7/create-zcash-nu7-markets.js          # DRY_RUN = true
+node campaigns/zcash-nu7/create-zcash-nu7-markets.js          # dry run, sends nothing
 
-# 2. Flip DRY_RUN = false, re-run. Resumable — logged questions are skipped, so a
+# 2. Re-run with --live. Resumable — logged questions are skipped, so a
 #    re-run retries only failures and never creates a duplicate market.
 node campaigns/zcash-nu7/create-zcash-nu7-markets.js
 
 # 3. Dry-run seeding. Resolves all markets on-chain against the questions file,
 #    sizes every position, prints the capital table. Confirm the GRAND TOTAL.
-node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js           # DRY_RUN = true
+node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js          # dry run, sends nothing
 
-# 4. Flip DRY_RUN = false, re-run. Resumable at both split and pool level.
+# 4. Re-run with --live. Resumable at both split and pool level.
 node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js
 
 # 5. Verify.
@@ -232,11 +235,10 @@ node campaigns/zcash-nu7/check-zcash-nu7-pools.js
 ```
 
 Both live steps are done for v3, which was unwound on 2026-09-12 and **re-seeded the same
-day** — see §Re-seeding a drained set, and note that step 3/4 needs a fresh `PROGRESS_FILE`
-on any re-seed or it will skip every pool. `create-zcash-nu7-markets.js` and
-`add-zcash-nu7-liquidity.js` are checked in with `DRY_RUN = false` — flip them back before
-touching either file for a new set. The two unwind scripts are checked in at
-`DRY_RUN = true`.
+day** — see §Re-seeding a drained set, and note that step 3/4 needs a fresh progress file
+on any re-seed or it will skip every pool — pass `--progress=<new path>`, and the harness's
+reuse guard will refuse an existing log unless you also pass `--resume`, which is the point.
+Every script here is dry unless given `--live`.
 
 ## Re-seeding a drained set
 
@@ -288,15 +290,19 @@ repricing, and it was the smaller cost.
 
 ### Re-running the seed script on an already-seeded set
 
-`PROGRESS_FILE` is a **resume log, not a record** — the script skips any split or pool
+A progress file is a **resume log, not a record** — the script skips any split or pool
 already listed in it. Pointing it at round 1's log would have skipped all 14 pools and
 seeded nothing. So round 2 got its own file:
 
-```js
-const PROGRESS_FILE = "./add-zcash-nu7-liquidity-v3-round2-execution.json";
+```bash
+node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js \
+  --progress=campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-round2-execution.json --live
 ```
 
-Bump that constant for every re-seed rather than deleting or editing the previous log, and
+This is now enforced rather than remembered: `lib/progress.js` REFUSES a non-empty progress
+file unless you also pass `--resume`, so reusing the previous round's log by accident exits 2
+instead of silently seeding nothing. Give every re-seed a new path rather than deleting or
+editing the previous log, and
 repoint `ADD_FILE` in `check-zcash-nu7-pools.js` at the newest one — that is the file that
 describes the positions actually held. `withdraw-zcash-nu7-liquidity.js` reads the
 creation log rather than the seed log, so it needs no change to take round 2 back down.
@@ -305,12 +311,12 @@ creation log rather than the seed log, so it needs no change to take round 2 bac
 
 Run twice for v3: round 1 on 2026-09-12 (reversed the same day, see §Re-seeding a drained
 set) and round 2 on 2026-09-14. `withdraw-zcash-nu7-liquidity.js` then
-`merge-zcash-nu7-positions.js`, in that order — both are checked back in at
-`DRY_RUN = true`. Both read the **creation** log for scope, so they cover every round's
-positions — but **their `PROGRESS_FILE`s now point at `-round2-` logs that are full**, and
-every position and market in them would be skipped as "already logged". Bump both (and the
-seed script's) to `-round3-` before any further run. This is the same trap in all three
-scripts: the progress file is a resume log scoped to one run, not a record of what is held.
+`merge-zcash-nu7-positions.js`, in that order. Both read the **creation** log for scope, so they cover every round's
+positions — but **their default progress files are the `-round2-` logs, which are full**, and
+every position and market in them would be skipped as "already logged". Pass
+`--progress=...-round3-...` to both (and to the seed script) before any further run. The
+reuse guard now catches this: without `--resume` a full log is refused outright. The progress
+file is a resume log scoped to one run, not a record of what is held.
 
 ### Round 2 — 2026-09-14
 

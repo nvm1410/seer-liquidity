@@ -1,6 +1,6 @@
 # `lib/` — the shared layer
 
-**For new campaigns only.** The 53 root scripts are frozen records of real on-chain runs and must
+**For new campaigns only.** The 53 scripts under `campaigns/` are frozen records of real on-chain runs and must
 never be refactored onto this. `lib/` may not import a frozen script, and no frozen script may
 import `lib/`.
 
