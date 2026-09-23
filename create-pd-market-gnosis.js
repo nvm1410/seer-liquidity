@@ -13,14 +13,17 @@
 //   node create-pd-market-gnosis.js          # dry: validates, simulates, prices gas
 //   node create-pd-market-gnosis.js --live   # refused unless the manifest is gated
 //
-// NOT IDEMPOTENT, and still unguarded: a live run creates a market whether or not
-// one already exists, and unlike the zcash creators there is no Reality
-// question-id collision check. Both are known gaps — see CLAUDE.md.
+// Creation is NOT idempotent, so this now refuses to run when its output file
+// already records a market (--force-new overrides), and checks Reality for a
+// question-id collision the way the other three creators always did. Before, a
+// second run created a duplicate market silently — and because openingTime is
+// Date.now() the duplicate asked a DIFFERENT question, so it would not even
+// collide visibly with the first.
 
 import { ethers } from "ethers";
 import fs from "fs";
 import { getMarketInfo, makeMarketView, normalizeName } from "./lib/market.js";
-import { checkTokenName, encodeQuestionWithOutcomes } from "./lib/reality.js";
+import { TEMPLATE, checkTokenName, computeQuestionId, encodeQuestionWithOutcomes } from "./lib/reality.js";
 import { run } from "./lib/run.js";
 
 const MARKET_NAME = "What is the Probability of Default (PD) for the following DeFi assets before 2027?";
@@ -37,6 +40,9 @@ const MIN_GAS_PRICE_FOR_CHECK = 2_000_000_000n; // 2 gwei
 
 const MarketFactoryAbi = [
   "function createMultiCategoricalMarket((string marketName,string[] outcomes,string questionStart,string questionEnd,string outcomeType,uint256 parentOutcome,address parentMarket,string category,string lang,uint256 lowerBound,uint256 upperBound,uint256 minBond,uint32 openingTime,string[] tokenNames) params) external returns (address)",
+  "function arbitrator() view returns (address)",
+  "function realitio() view returns (address)",
+  "function questionTimeout() view returns (uint32)",
   "event NewMarket(address indexed market, string marketName, address parentMarket, bytes32 conditionId, bytes32 questionId, bytes32[] questionsIds)",
 ];
 
@@ -55,7 +61,7 @@ await run(
     needsGate: true, // the market name and 35 outcome labels are immutable
   },
   async (ctx) => {
-    const { manifest, provider, wallet, chainId, addr, log, dry } = ctx;
+    const { manifest, provider, wallet, chainId, addr, args, log, dry } = ctx;
     const spec = manifest.markets[0];
     const minBond = ethers.parseEther(spec.minBondEth);
     const outFile = manifest.files.markets;
@@ -100,7 +106,56 @@ await run(
     const encodedQuestion = encodeQuestionWithOutcomes(MARKET_NAME, outcomes, CATEGORY, LANG);
     log.log(`\n📝 Reality question (␟-separated, as the factory will encode it):\n   ${encodedQuestion}`);
 
-    const args = [
+    // ── Idempotency guard ─────────────────────────────────────────────────────
+    // This script is not idempotent and never was: a live run creates a market
+    // whether or not one already exists. Nothing stopped a second run producing a
+    // duplicate — and because openingTime is Date.now(), the duplicate would ask a
+    // DIFFERENT Reality question rather than colliding visibly with the first.
+    if (fs.existsSync(outFile)) {
+      const prior = JSON.parse(fs.readFileSync(outFile, "utf8"));
+      if (prior.market && !args.flags.has("--force-new")) {
+        throw new Error(
+          `${outFile} already records market ${prior.market} (created ${prior.createdAt}). ` +
+            `Creating another would be a duplicate. Pass --force-new if a second market is genuinely wanted, ` +
+            `and move the existing file aside first — this script overwrites it.`
+        );
+      }
+    }
+
+    // ── Reality collision check ───────────────────────────────────────────────
+    // The other three creators do this; this one never did. The factory REUSES an
+    // existing question with the same content hash rather than asking a new one,
+    // which silently binds two markets to one question.
+    const [arbitrator, realitioAddr, questionTimeout] = await Promise.all([
+      factory.arbitrator(),
+      factory.realitio(),
+      factory.questionTimeout(),
+    ]);
+    const realitio = new ethers.Contract(
+      realitioAddr,
+      ["function getTimeout(bytes32 question_id) view returns (uint32)"],
+      provider
+    );
+    const questionId = computeQuestionId({
+      templateId: TEMPLATE.CATEGORICAL,
+      openingTime,
+      encodedQuestion,
+      arbitrator,
+      questionTimeout: Number(questionTimeout),
+      minBond,
+      realitio: realitioAddr,
+      factory: addr.marketFactory,
+    });
+    log.log(`   questionId: ${questionId}`);
+    if (Number(await realitio.getTimeout(questionId)) !== 0) {
+      throw new Error(
+        `Reality question ${questionId} already exists — the factory would REUSE it, binding this ` +
+          `market to an existing question. Change the question text or openingTime.`
+      );
+    }
+    log.log("   ✅ no Reality collision — this question is new");
+
+    const createArgs = [
       [
         MARKET_NAME,
         outcomes,
@@ -125,12 +180,10 @@ await run(
         `category=${CATEGORY} | lang=${LANG}`
     );
 
-    const factory = new ethers.Contract(addr.marketFactory, MarketFactoryAbi, wallet);
-
     // ── Simulate ──────────────────────────────────────────────────────────────
     log.log("\n🧪 Simulating createMultiCategoricalMarket ...");
-    const predictedMarket = await factory.createMultiCategoricalMarket.staticCall(...args);
-    const gasEstimate = await factory.createMultiCategoricalMarket.estimateGas(...args);
+    const predictedMarket = await factory.createMultiCategoricalMarket.staticCall(...createArgs);
+    const gasEstimate = await factory.createMultiCategoricalMarket.estimateGas(...createArgs);
     log.log(`   Predicted market : ${predictedMarket}`);
     log.log(`   Gas estimate     : ${gasEstimate.toString()} (block limit ${GNOSIS_BLOCK_GAS_LIMIT})`);
 
@@ -160,7 +213,7 @@ await run(
 
     // ── Send ──────────────────────────────────────────────────────────────────
     log.log("\n🚀 Creating market...");
-    const tx = await factory.createMultiCategoricalMarket(...args, { gasLimit });
+    const tx = await factory.createMultiCategoricalMarket(...createArgs, { gasLimit });
     log.log(`   Tx sent: ${tx.hash}`);
     const receipt = await tx.wait();
     log.log(`   Confirmed in block ${receipt.blockNumber}, gas used ${receipt.gasUsed.toString()}`);

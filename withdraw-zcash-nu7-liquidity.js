@@ -16,6 +16,8 @@ import fs from "fs";
 import { runBatched } from "./lib/batch.js";
 import { assertMarket, getMarketInfo, makeMarketView } from "./lib/market.js";
 import {
+  classifyPositions,
+  collectFees,
   enumerateWalletPositions,
   matchPositions,
   withdrawPosition,
@@ -80,8 +82,9 @@ await run(
       pauseMs: 1000,
     });
     const matched = matchPositions(positionsData, byPair);
-    const withLiquidity = matched.filter((x) => x.pos.liquidity > 0n);
-    const empty = matched.filter((x) => x.pos.liquidity === 0n);
+    // THREE buckets, not two. A position at zero liquidity can still hold
+    // uncollected fees, and this lineage used to just warn about those.
+    const { withLiquidity, emptyWithFees, emptyClean } = classifyPositions(matched);
 
     log.log(`   Matched ${matched.length} NU7 positions — ${withLiquidity.length} with liquidity > 0.\n`);
     for (const { tokenId, pos, meta } of withLiquidity) {
@@ -90,18 +93,23 @@ await run(
           `${meta.shortName.padEnd(4)} ${meta.side.slice(0, 42).padEnd(42)} liquidity ${pos.liquidity.toString()}`
       );
     }
-    if (empty.length) {
+    if (emptyWithFees.length) {
       log.log(
-        `\n   ℹ️  ${empty.length} matched position(s) already have zero liquidity and are skipped.` +
-          `\n      Any residual uncollected fees on those must be collected separately.`
+        `\n   💸 ${emptyWithFees.length} position(s) are at zero liquidity but still hold uncollected fees —` +
+          `\n      these are SWEPT in step 4. This lineage used to only warn about them.`
       );
     }
-
-    if (withLiquidity.length === 0) {
-      log.log("\n✅ Nothing to withdraw — no NU7 positions with liquidity.");
-      return { matched: matched.length, withdrawn: 0 };
+    if (emptyClean.length) {
+      log.log(`   ℹ️  ${emptyClean.length} matched position(s) are empty and clean — nothing to do.`);
     }
-    if (dry) return { matched: matched.length, toWithdraw: withLiquidity.length };
+
+    if (withLiquidity.length === 0 && emptyWithFees.length === 0) {
+      log.log("\n✅ Nothing to withdraw — no NU7 positions with liquidity or owed fees.");
+      return { matched: matched.length, withdrawn: 0, swept: 0 };
+    }
+    if (dry) {
+      return { matched: matched.length, toWithdraw: withLiquidity.length, toSweep: emptyWithFees.length };
+    }
 
     // ── Step 3: remove 100% liquidity + collect ───────────────────────────────
     log.log(`\n📉 Step 3: withdrawing ${withLiquidity.length} positions\n`);
@@ -144,7 +152,46 @@ await run(
       await sleep(DELAY_MS);
     }
 
-    log.log(`\n🎉 Done! ${successCount}/${withLiquidity.length} positions withdrawn. See ${progress.path}.`);
+    // ── Step 4: sweep fees off positions that were already empty ─────────────
+    // withdrawPosition collects as part of the burn, so these are the only ones
+    // whose fees would otherwise be left on the table.
+    let sweptCount = 0;
+    if (emptyWithFees.length) {
+      log.log(`\n🧹 Step 4: collecting fees from ${emptyWithFees.length} already-empty position(s)\n`);
+      for (const { tokenId, meta } of emptyWithFees) {
+        const key = tokenId.toString();
+        if (progress.has("collect", key)) {
+          log.log(`  ⏭  #${key}: already in progress log`);
+          sweptCount++;
+          continue;
+        }
+        log.log(`\n--- collect #${key} [${meta.id}] ${meta.shortName} ${meta.side} ---`);
+        try {
+          const entry = await collectFees(tokenId, {
+            positionManager,
+            wallet,
+            retry: (fn) => retryTransaction(fn, { log }),
+          });
+          progress.append({
+            kind: "collect",
+            key,
+            positionId: key,
+            id: meta.id,
+            shortName: meta.shortName,
+            market: meta.market,
+            outcomeToken: meta.outcomeToken,
+            ...entry,
+          });
+          sweptCount++;
+          log.log(`  ✅ Saved to ${progress.path}`);
+        } catch (err) {
+          log.error(`  ❌ Collect failed for #${key}: ${err.shortMessage || err.message}`);
+        }
+        await sleep(DELAY_MS);
+      }
+    }
+
+    log.log(`\n🎉 Done! ${successCount}/${withLiquidity.length} positions withdrawn, ${sweptCount} swept. See ${progress.path}.`);
     log.log(
       "   The wallet now holds the outcome tokens + sUSDS. To convert the outcome\n" +
         "   tokens back to sUSDS, merge a full set per market (Router.mergePositions)."

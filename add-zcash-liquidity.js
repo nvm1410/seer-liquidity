@@ -13,11 +13,12 @@
 // Both pools of a market use the same outcome quantity Q, which is what makes the
 // split exact.
 //
-// THIS IS A FIRST-SEED SCRIPT. It prices every pool from the seed file and does
-// not read live pool state, so re-running it against pools that already exist
-// would mint at the wrong ratio — a drained V3 pool keeps its last price and
-// createAndInitializePoolIfNecessary is a no-op on it. Re-pricing an existing set
-// is reseed-zcash-liquidity.js, which does a dust -> swap -> fund sequence.
+// THIS IS A FIRST-SEED SCRIPT, and it now REFUSES to run if any pool already
+// exists. It prices every pool from the seed file, but a drained V3 pool keeps
+// its last sqrtPriceX96 and createAndInitializePoolIfNecessary is a no-op on it,
+// so the mint would execute at the pool's own price — wrong ratio, and a revert
+// once the drift exceeds the slippage bound. Re-pricing an existing set is
+// reseed-zcash-liquidity.js, which walks each pool to its target with a swap.
 //
 //   node add-zcash-liquidity.js          # dry: sizes every position, prints the table
 //   node add-zcash-liquidity.js --live   # sends, after a confirmation
@@ -31,7 +32,7 @@ import { RouterAbi } from "./abis/RouterAbi.js";
 import { assertMarket, getMarketInfo, makeMarketView, resolveOutcomeTokens } from "./lib/market.js";
 import { run } from "./lib/run.js";
 import { ensureAllowance, retryTransaction, sleep } from "./lib/tx.js";
-import { buildPoolAndBounds, sizePosition } from "./lib/uniswap.js";
+import { buildPoolAndBounds, readLivePool, sizePosition } from "./lib/uniswap.js";
 
 const DELAY_MS = 2000;
 const Q0 = 1_000n * 10n ** 18n; // trial quantity for the linear budget solve
@@ -86,6 +87,32 @@ await run(
       });
     }
     log.log(`   ✅ all ${entries.length} markets verified: binary categorical, sUSDS, top-level`);
+
+    // ── Phase 0b: refuse to seed a pool that already exists ───────────────────
+    // This script prices every pool from the seed file. A drained V3 pool keeps
+    // its last sqrtPriceX96 and createAndInitializePoolIfNecessary is a no-op on
+    // it, so the mint would execute at the pool's OWN price: the sides split at
+    // the wrong ratio, and mintAmountsWithSlippage is built around a price the
+    // pool is not at, so a drifted pool reverts outright.
+    log.log("\n🔍 Phase 0b: checking no pool exists yet...");
+    const live = [];
+    for (const p of entries.flatMap((e) => e.pools)) {
+      const state = await readLivePool(p.outcomeToken, collateral, { provider, chainId, feeTier: amm.feeTier });
+      p.poolAddress = state.poolAddress;
+      if (state.live) live.push({ p, ...state });
+    }
+    if (live.length) {
+      log.error(`\n❌ ${live.length} of ${entries.length * 2} pools already exist and hold a price:`);
+      for (const { p, live: l, liquidity } of live.slice(0, 8)) {
+        log.error(`   ${p.outcomeToken} tick ${l.tick}, liquidity ${liquidity}`);
+      }
+      if (live.length > 8) log.error(`   ...and ${live.length - 8} more`);
+      throw new Error(
+        "This is a FIRST-SEED script and would mint at the pools' own prices, not the seed prices. " +
+          "Use reseed-zcash-liquidity.js, which walks each pool to its target with a swap first."
+      );
+    }
+    log.log(`   ✅ all ${entries.length * 2} pools are fresh`);
 
     // ── Phase 1: size positions & solve for Q, per market ─────────────────────
     // Q is solved PER MARKET, not once globally. With one global Q the sUSDS side

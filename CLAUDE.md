@@ -38,35 +38,19 @@ Next, in order of how likely they are to be re-run: `reseed-zcash-liquidity`,
 `fetch-credora-pd`. The l1 / octant / originality scripts are last — those campaigns are closed
 out, so migrating them buys consistency and nothing else.
 
-Two improvements are deliberately **deferred** so that each migration could be proved identical
-first, and both are still outstanding:
+All four deferred improvements are now **done**, each as its own visible change after the
+migration it belonged to had been proved identical:
 
-1. `withdraw-zcash-*` should sweep fees off zero-liquidity positions rather than warning about
-   them. `lib/positions.js` already classifies three ways; the L1 script does this and the zcash
-   lineage does not.
-2. `add-zcash-liquidity` should refuse to seed a pool that already exists. It prices from the seed
-   file unconditionally, and the q3 pools are live — the exact case `lib/uniswap.js` documents as
-   broken on a re-seed.
-
-**2. `*-execution.json` is a RESUME LOG, not a record of holdings.**
-Every mutating script skips work already listed in its progress file. Pointing a new round at a
-previous round's log makes it skip everything and do nothing — silently. Commit `95bdd69` is the
-write-up of that happening. Use a fresh filename per round.
-
-**3. `DRY_RUN` is a hand-edited constant in the not-yet-migrated scripts, not a flag.**
-Run `npm run audit:dryrun` before typing `node <anything>.js`. A script committed at
-`DRY_RUN = false` sends real transactions immediately, with no prompt and no undo. The guides tell
-you to type these commands verbatim, so the flag state is the only thing standing between a read
-and a 10,000 sUSDS spend.
-
-**4. The freeze surface is 58 file paths.**
-The scripts reference their inputs and resume logs by relative path. `tools/freeze-surface.json`
-is the snapshot; `npm run audit:paths` checks every one still resolves. **Run it before and after
-moving any file.** Not every literal is an input — a `PROGRESS_FILE` is a write target and may
-legitimately not exist (e.g. `./resolve-l1-execution.json`).
-
-> `assets_pd.ts` is **data, not code**, despite the extension: `fetch-credora-pd.js:22` text-parses
-> it at runtime. It must stay at the root.
+1. `withdraw-zcash-*` now classifies three ways and **sweeps** fees off zero-liquidity positions
+   instead of warning about them. (On the current nu7 set all 28 empty positions turn out to be
+   clean, so nothing is swept — but that is now *checked* rather than asserted.)
+2. `add-zcash-liquidity` **refuses** to run if any pool already exists, pointing at
+   `reseed-zcash-liquidity`. It prices from the seed file, and a drained V3 pool keeps its last
+   price. Verified firing against all 74 live q3 pools.
+3. `create-pd-market-gnosis` gained the **Reality collision check** the other three creators always
+   had, and an **idempotency guard** — it refuses when its output file already records a market
+   (`--force-new` overrides). Verified firing against the recorded v2 market.
+4. `toString31` is documented as **reverting**, not truncating, in `lib/reality.js`.
 
 ## Where the knowledge lives
 
