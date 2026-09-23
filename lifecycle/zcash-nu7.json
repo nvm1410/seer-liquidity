@@ -8,7 +8,9 @@
   "status": "complete",
   "source": {
     "request": "One single-select categorical market per question in the Zcash NU7 coinholder poll. Five questions: NSM issuance smoothing, NSM reissuance start date, Sprout deprecation, faster block times (ZIP-218), NU7 scope and readiness.",
-    "docs": ["https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck"],
+    "docs": [
+      "https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck"
+    ],
     "priceSourceNote": "Seed prices are the source doc's 'Base Rate' column verbatim. Each question's prices sum to exactly 1.000. The doc is NOT frozen (ballotFrozenAt is null) and was silently revised once between v1 and v2 - it was re-read and diffed before v3."
   },
   "supersedes": {
@@ -42,7 +44,8 @@
   "files": {
     "seed": "zcash-nu7-questions-v3.json",
     "markets": "create-zcash-nu7-markets-v3-execution.json",
-    "reference": "zcash-nu7-markets-v3.json"
+    "reference": "zcash-nu7-markets-v3.json",
+    "liquidity": "add-zcash-nu7-liquidity-v3-round2-execution.json"
   },
   "markets": [
     {
@@ -51,7 +54,9 @@
       "count": 5,
       "templateId": 2,
       "marketNameTemplate": "per question, see zcash-nu7-questions-v3.json",
-      "outcomes": ["per question: 2 or 3 ballot options, plus the factory-appended Invalid result"],
+      "outcomes": [
+        "per question: 2 or 3 ballot options, plus the factory-appended Invalid result"
+      ],
       "tokenNameScheme": "ZNU7V3<shortName><tag>",
       "parentMarket": null,
       "parentOutcome": null,
@@ -63,7 +68,10 @@
   ],
   "liquidity": {
     "totalCollateral": 10000,
-    "band": { "minPrice": 0.02, "maxPrice": 0.98 },
+    "band": {
+      "minPrice": 0.02,
+      "maxPrice": 0.98
+    },
     "sizing": "solved",
     "pools": 14,
     "priceSource": "round 1: zcash-nu7-questions-v3.json base rates. Round 2: live pool slot0, on the user's explicit call.",
@@ -74,7 +82,10 @@
     "gasEth": 0.01
   },
   "unwind": {
-    "order": ["withdraw", "merge"],
+    "order": [
+      "withdraw",
+      "merge"
+    ],
     "orderNote": "No redeem: the markets are unresolved. Run check-zcash-nu7-pools.js first - it reports how many pools drifted (the merge will strand that much) and how many are already empty (the withdraw is partly done).",
     "burnNft": false,
     "collectEmpty": true,
@@ -160,8 +171,20 @@
   "immutableText": {
     "tokenPrefix": "ZNU7V3",
     "prefixNote": "The V3 infix is load-bearing: v1 (ZNU7) and v2 (ZNU7V2) tokens are still in the wallet.",
-    "nameLengthsV3": [88, 100, 73, 102, 105],
-    "nameLengthsV2": [316, 328, 301, 375, 333],
+    "nameLengthsV3": [
+      88,
+      100,
+      73,
+      102,
+      105
+    ],
+    "nameLengthsV2": [
+      316,
+      328,
+      301,
+      375,
+      333
+    ],
     "regression": "v3's shorter names dropped the resolution rules from the on-chain text. Reality resolves off the question text and nothing else, so the two non-obvious rules - an Abstain plurality promotes the runner-up, and a below-quorum question resolves Invalid - now live only in zcash-nu7-questions-v3.json and the source doc. Recorded as the user's explicit instruction; it is the one real regression from v2."
   }
 }

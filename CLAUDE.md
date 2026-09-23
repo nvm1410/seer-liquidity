@@ -6,26 +6,41 @@ run moves real capital.
 
 ## Invariants
 
-**1. The root `.js` scripts are frozen.**
-All 53 of them are records of real on-chain runs. Do not edit them and do not refactor them onto
-shared modules. A new campaign is a *new* script built on [`lib/`](lib/README.md), never a fork of
-an old one. `lib/` may not import a frozen script, and no frozen script may import `lib/`.
+**1. The root scripts are being migrated onto `lib/`, one at a time, with proof.**
+They are records of real on-chain runs, so a migration must be *shown* not to change behaviour:
+
+```bash
+node tools/refactor-diff.js <script.js>   # runs the old and new versions, diffs the output
+```
+
+For a mutating script that compares **dry-run** output — the whole plan, every market resolved and
+every amount sized. Identical plan, sound refactor. The tool refuses to execute an old version
+whose `DRY_RUN` is not `true`.
+
+Until a script is migrated it keeps its old shape. **The two generations are invoked differently**,
+which is the thing most likely to catch you out:
+
+| | invocation | to send |
+|---|---|---|
+| migrated | `node x.js` | `node x.js --live` |
+| not yet | `node x.js` | edit `const DRY_RUN` in the source |
+
+A migrated script is dry by default and cannot be armed by accident. Never fork an old script to
+start a campaign — build on [`lib/`](lib/README.md).
 
 **2. `*-execution.json` is a RESUME LOG, not a record of holdings.**
 Every mutating script skips work already listed in its progress file. Pointing a new round at a
 previous round's log makes it skip everything and do nothing — silently. Commit `95bdd69` is the
 write-up of that happening. Use a fresh filename per round.
 
-**3. `DRY_RUN` is a hand-edited constant in the frozen scripts, not a flag.**
-*(New scripts do not have this problem: the harness is dry by default and `--live` is the only way
-to send. This invariant is about the 53 frozen ones.)*
+**3. `DRY_RUN` is a hand-edited constant in the not-yet-migrated scripts, not a flag.**
 Run `npm run audit:dryrun` before typing `node <anything>.js`. A script committed at
 `DRY_RUN = false` sends real transactions immediately, with no prompt and no undo. The guides tell
 you to type these commands verbatim, so the flag state is the only thing standing between a read
 and a 10,000 sUSDS spend.
 
 **4. The freeze surface is 58 file paths.**
-The frozen scripts reference their inputs and resume logs by relative path. `tools/freeze-surface.json`
+The scripts reference their inputs and resume logs by relative path. `tools/freeze-surface.json`
 is the snapshot; `npm run audit:paths` checks every one still resolves. **Run it before and after
 moving any file.** Not every literal is an input — a `PROGRESS_FILE` is a write target and may
 legitimately not exist (e.g. `./resolve-l1-execution.json`).
