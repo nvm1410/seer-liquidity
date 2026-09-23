@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/seer-pm/liquidity/lifecycle/schema.json",
+  "title": "Seer campaign manifest v2",
+  "description": "One file per campaign. The CONTRACT half (chain, amm, addresses, files, markets, liquidity, settle, unwind, spendingCap, gate) is read by scripts before they act. The LEDGER half (stages, evidenceLog, results, wallet*, ui) is appended after the fact and must never drive a decision. See lifecycle/README.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "setSlug", "mode", "family", "status", "chain"],
+
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 2 },
+
+    "setSlug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Filename stem and the key every script passes as --slug."
+    },
+    "version": { "type": "string", "description": "Human label for the generation, e.g. 'v3 (short names)'." },
+    "mode": { "enum": ["launch", "reseed", "unwind", "settle"] },
+    "family": { "enum": ["originality", "poll", "deepfunding", "credit-pd", "other"] },
+    "status": { "enum": ["draft", "gated", "executing", "complete", "abandoned"] },
+
+    "source": {
+      "type": "object",
+      "description": "Provenance of the request and the prices. Free-form by design.",
+      "properties": {
+        "request": { "type": "string" },
+        "docs": { "type": "array", "items": { "type": "string" } },
+        "proposalText": { "type": "string" },
+        "priceSourceNote": { "type": "string" }
+      }
+    },
+    "supersedes": { "type": "object", "description": "What this generation replaced and why." },
+    "precedents": { "type": "object", "description": "Prior markets/scripts this was modelled on." },
+
+    "chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "collateral"],
+      "properties": {
+        "id": { "type": "integer", "enum": [10, 100] },
+        "name": { "enum": ["optimism", "gnosis"] },
+        "collateral": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "address", "decimals"],
+          "properties": {
+            "symbol": { "type": "string" },
+            "address": { "$ref": "#/$defs/address" },
+            "decimals": { "type": "integer", "minimum": 0, "maximum": 36 }
+          }
+        }
+      }
+    },
+
+    "amm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "feeTier", "tickSpacing"],
+      "properties": {
+        "kind": { "enum": ["uniswap-v3", "algebra-v1"] },
+        "feeTier": { "type": "integer", "description": "Fee tier sent on chain. Algebra has no fee tiers; this is the pool's actual fee." },
+        "tickSpacing": { "type": "integer", "minimum": 1 },
+        "mathFeeTier": {
+          "type": "integer",
+          "description": "Algebra only. Passed to @uniswap/v3-sdk purely so it derives the right tickSpacing (3000 -> 60). NEVER sent on chain. Never derive feeTier and tickSpacing from each other."
+        }
+      }
+    },
+
+    "addresses": {
+      "type": "object",
+      "description": "The chain address book this campaign ran against. READ by scripts; replaces the const literals that were re-typed in 22-29 files each.",
+      "additionalProperties": false,
+      "properties": {
+        "marketFactory": { "$ref": "#/$defs/address" },
+        "marketView": { "$ref": "#/$defs/address" },
+        "router": { "$ref": "#/$defs/address" },
+        "positionManager": { "$ref": "#/$defs/address" },
+        "poolFactory": { "$ref": "#/$defs/address" },
+        "realitio": { "$ref": "#/$defs/address" },
+        "arbitrator": { "$ref": "#/$defs/address" }
+      }
+    },
+
+    "files": {
+      "type": "object",
+      "description": "Input paths, relative to the repo root. Replaces SEED_FILE / MARKETS_FILE / QUESTIONS_FILE constants.",
+      "additionalProperties": { "type": "string" }
+    },
+
+    "markets": {
+      "type": "array",
+      "description": "The creation plan AND the verifier's expectations. One entry per market shape, not per market.",
+      "items": {
+        "type": "object",
+        "required": ["type", "count"],
+        "properties": {
+          "type": { "enum": ["categorical", "multiCategorical", "scalar", "multiScalar"] },
+          "role": { "enum": ["parent", "child", "standalone"] },
+          "count": { "type": "integer", "minimum": 1 },
+          "templateId": { "type": "integer", "enum": [1, 2], "description": "2 = question carries its outcomes (categorical). 1 = uint/scalar. Picks the Reality encoder." },
+          "marketName": { "type": "string" },
+          "marketNameTemplate": { "type": "string" },
+          "questionStart": { "type": "string" },
+          "questionEnd": { "type": "string" },
+          "outcomeType": { "type": "string" },
+          "outcomes": { "type": "array", "items": { "type": "string" } },
+          "tokenNames": { "type": "array", "items": { "type": "string" } },
+          "tokenNameScheme": { "type": "string" },
+          "parentMarket": { "oneOf": [{ "$ref": "#/$defs/address" }, { "type": "null" }] },
+          "parentOutcome": { "type": ["string", "integer", "null"] },
+          "lowerBound": { "type": "string" },
+          "upperBound": { "type": "string" },
+          "category": { "type": "string" },
+          "lang": { "type": "string" },
+          "minBondEth": { "type": "string" },
+          "questionTimeoutSeconds": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+
+    "liquidity": {
+      "type": "object",
+      "required": ["totalCollateral", "band"],
+      "properties": {
+        "totalCollateral": { "type": "number", "exclusiveMinimum": 0, "description": "Whole collateral units (not wei)." },
+        "band": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minPrice", "maxPrice"],
+          "properties": {
+            "minPrice": { "type": "number", "exclusiveMinimum": 0 },
+            "maxPrice": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "description": "Global price band for every pool. A per-outcome band (Gnosis PD) goes in bandPerOutcome instead."
+        },
+        "bandPerOutcome": { "type": "object", "description": "Gnosis PD: centerPrice x 0.8 .. x 1.4 per asset." },
+        "sizing": {
+          "enum": ["by-outcome", "by-collateral", "solved"],
+          "description": "by-outcome: fix outcome quantity Q, collateral falls out. by-collateral: fix the collateral leg (Gnosis, where a price near 1 ate 4.27 of a 5 sDAI budget). solved: X = B/(1+r_down+r_up)."
+        },
+        "pools": { "type": "integer", "minimum": 0 },
+        "priceSource": { "type": "string" },
+        "unpooledByDesign": { "type": "string", "description": "Invalid tokens etc. that are deliberately never pooled." }
+      }
+    },
+
+    "settle": {
+      "type": "object",
+      "description": "Required when mode = settle.",
+      "properties": {
+        "answerSource": { "type": "string" },
+        "unit": {
+          "type": "string",
+          "description": "The unit the Reality answer is expressed in. Getting this wrong is unrecoverable: Octant answered in [percent] while L1 answered as a fraction of 1."
+        },
+        "upperBound": { "type": "string" },
+        "answerScaleNote": { "type": "string" },
+        "questionTimeoutSeconds": { "type": "integer" },
+        "catchAllOutcome": { "type": "object" },
+        "redeem": {
+          "type": "object",
+          "properties": {
+            "order": { "type": "array", "items": { "enum": ["child", "parent"] } },
+            "expectedCollateral": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "unwind": {
+      "type": "object",
+      "description": "Required when mode = unwind.",
+      "properties": {
+        "order": { "type": "array", "items": { "enum": ["withdraw", "merge", "redeem"] } },
+        "orderNote": { "type": "string", "description": "e.g. merge the CHILD market first or lose ~17.7k." },
+        "burnNft": { "type": "boolean" },
+        "collectEmpty": { "type": "boolean" },
+        "strandedTokensExpected": { "type": "boolean" }
+      }
+    },
+
+    "spendingCap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collateral", "gasEth"],
+      "properties": {
+        "collateral": { "type": "number", "minimum": 0 },
+        "gasEth": { "type": "number", "minimum": 0 }
+      },
+      "description": "Hard ceiling enforced by the run harness. Must be >= liquidity.totalCollateral."
+    },
+
+    "gate": {
+      "type": "object",
+      "description": "The single human approval. --live is refused without it.",
+      "properties": {
+        "approvedAt": { "type": "string" },
+        "approvedBy": { "type": "string" },
+        "summaryHash": { "type": "string", "description": "Written at gate time and RE-READ before --live, to prove the seed file has not changed since approval. The one field that is both contract and ledger." },
+        "immutableTextRef": { "type": "string" }
+      }
+    },
+
+    "walletAtIntake": { "type": "object" },
+    "walletAfter": { "type": "object" },
+
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "enum": ["pending", "running", "done", "failed", "skipped"] },
+          "startedAt": { "type": "string" },
+          "finishedAt": { "type": "string" },
+          "artifacts": { "type": "array", "items": { "type": "string" } },
+          "txCount": { "type": "integer", "minimum": 0 },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+
+    "evidenceLog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage": { "type": "string" },
+          "model": { "type": "string" },
+          "checks": { "type": "array", "items": { "type": "string" } },
+          "result": { "type": "string" },
+          "learning": { "type": "string" }
+        }
+      }
+    },
+
+    "results": {
+      "type": "object",
+      "description": "Appended after execution. NOT the chain address book - that is `addresses`.",
+      "properties": {
+        "parent": { "$ref": "#/$defs/address" },
+        "parentWrappedTokens": { "type": "array", "items": { "$ref": "#/$defs/address" } },
+        "marketAddresses": { "type": "array", "items": { "$ref": "#/$defs/address" } },
+        "poolCount": { "type": "integer" },
+        "seer": { "type": "string" },
+        "collateralReturned": { "type": "string" }
+      }
+    },
+
+    "ui": { "type": "object" },
+    "grillAnswers": { "type": "object" },
+    "immutableText": { "type": "object" }
+  },
+
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "gated" } }, "required": ["status"] },
+      "then": { "required": ["gate"] }
+    },
+    {
+      "if": { "properties": { "mode": { "const": "settle" } }, "required": ["mode"] },
+      "then": { "required": ["settle"] }
+    },
+    {
+      "if": { "properties": { "mode": { "const": "unwind" } }, "required": ["mode"] },
+      "then": { "required": ["unwind"] }
+    }
+  ],
+
+  "$defs": {
+    "address": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{40}$"
+    }
+  }
+}

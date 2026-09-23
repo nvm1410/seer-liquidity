@@ -10,7 +10,8 @@
   "scripts": {
     "audit:dryrun": "node tools/audit-dry-run.js",
     "audit:paths": "node tools/audit-paths.js",
-    "test": "npm run audit:dryrun && npm run audit:paths",
+    "lint:manifest": "node tools/validate-manifest.js",
+    "test": "npm run audit:dryrun && npm run audit:paths && npm run lint:manifest",
     "hooks:install": "git config core.hooksPath .githooks && echo \"hooks installed (core.hooksPath=.githooks)\""
   },
   "author": "",
