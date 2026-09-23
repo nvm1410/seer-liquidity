@@ -28,6 +28,26 @@ which is the thing most likely to catch you out:
 A migrated script is dry by default and cannot be armed by accident. Never fork an old script to
 start a campaign — build on [`lib/`](lib/README.md).
 
+**Migrated so far** (9 of 53 — `grep -l 'lib/run.js' *.js` is the live answer):
+`add-zcash-liquidity` · `add-zcash-nu7-liquidity` · `check-zcash-pools` · `check-zcash-nu7-pools` ·
+`merge-zcash-positions` · `merge-zcash-nu7-positions` · `remove-liquidity-gnosis` ·
+`withdraw-zcash-liquidity` · `withdraw-zcash-nu7-liquidity`
+
+Next, in order of how likely they are to be re-run: `reseed-zcash-liquidity`,
+`add-pd-liquidity-gnosis-v2`, the two `create-*-markets`, `create-pd-market-gnosis`,
+`fetch-credora-pd`. The l1 / octant / originality scripts are last — those campaigns are closed
+out, so migrating them buys consistency and nothing else.
+
+Two improvements are deliberately **deferred** so that each migration could be proved identical
+first, and both are still outstanding:
+
+1. `withdraw-zcash-*` should sweep fees off zero-liquidity positions rather than warning about
+   them. `lib/positions.js` already classifies three ways; the L1 script does this and the zcash
+   lineage does not.
+2. `add-zcash-liquidity` should refuse to seed a pool that already exists. It prices from the seed
+   file unconditionally, and the q3 pools are live — the exact case `lib/uniswap.js` documents as
+   broken on a re-seed.
+
 **2. `*-execution.json` is a RESUME LOG, not a record of holdings.**
 Every mutating script skips work already listed in its progress file. Pointing a new round at a
 previous round's log makes it skip everything and do nothing — silently. Commit `95bdd69` is the
