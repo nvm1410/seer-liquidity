@@ -24,13 +24,12 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 // tools/refactor-diff.js writes the old copy of a script here while it runs.
 const TEMP_PREFIX = "_refactor_diff_old_";
 
-// Also scan the golden tests. They read the committed execution JSONs by
-// root-relative path (`path.join(ROOT, p)`), so they depend on the campaign data
-// exactly as a script does — and when that data moved under campaigns/, 11 of
-// them broke while this audit reported nothing, because it only ever looked at
-// root scripts. lib/ and tools/ are deliberately NOT scanned: their literals are
-// relative to their own directory, not to the root.
-const ALSO_SCAN = ["tests"];
+// Every directory holding code that depends on a path. Scripts moved under
+// campaigns/<slug>/ on 2026-09-23; the golden tests read the committed execution
+// JSONs and broke silently the first time that data moved, so they are in here
+// too. lib/ and tools/ reference only each other and are checked by Node at
+// import time.
+const SCAN_DIRS = ["campaigns", "archive", "tests"];
 
 // Explicit relative references: "./x", "../x", "./dir/x".
 const RELATIVE = /["'](\.\.?\/[^"'\n]+)["']/g;
@@ -42,17 +41,20 @@ const BARE = /["']([A-Za-z0-9._-]+\.(?:json|csv|xlsx|ts|log))["']/g;
 // prefix, so neither pattern above catches it.
 const CAMPAIGN = /["'](campaigns\/[^"'\n]+)["']/g;
 
-function frozenScripts() {
-  const out = fs
-    .readdirSync(ROOT, { withFileTypes: true })
-    .filter((e) => e.isFile() && e.name.endsWith(".js"))
-    .filter((e) => !e.name.startsWith(TEMP_PREFIX))
-    .map((e) => e.name);
-  for (const dir of ALSO_SCAN) {
-    const abs = path.join(ROOT, dir);
-    if (!fs.existsSync(abs)) continue;
-    for (const f of fs.readdirSync(abs)) if (f.endsWith(".js")) out.push(`${dir}/${f}`);
+function walkJs(dir, out = []) {
+  const abs = path.join(ROOT, dir);
+  if (!fs.existsSync(abs)) return out;
+  for (const e of fs.readdirSync(abs, { withFileTypes: true })) {
+    const rel = dir + "/" + e.name;
+    if (e.isDirectory()) walkJs(rel, out);
+    else if (e.name.endsWith(".js") && !e.name.startsWith(TEMP_PREFIX)) out.push(rel);
   }
+  return out;
+}
+
+function frozenScripts() {
+  const out = [];
+  for (const d of SCAN_DIRS) walkJs(d, out);
   return out.sort();
 }
 
@@ -64,7 +66,8 @@ function frozenScripts() {
 // import already fails the test immediately and loudly, so it needs no audit.
 function literalsIn(file) {
   const out = [];
-  const patterns = ALSO_SCAN.some((d) => file.startsWith(d + "/")) ? [CAMPAIGN] : [RELATIVE, BARE, CAMPAIGN];
+  const patterns = file.startsWith("tests/") ? [CAMPAIGN] : [RELATIVE, BARE, CAMPAIGN];
+  const fileDir = path.dirname(path.join(ROOT, file));
   const lines = fs.readFileSync(path.join(ROOT, file), "utf8").split(/\r?\n/);
   lines.forEach((line, i) => {
     // Skip pure comment lines: guides and filenames are cited constantly in the
@@ -75,7 +78,15 @@ function literalsIn(file) {
       re.lastIndex = 0;
       let m;
       while ((m = re.exec(line)) !== null) {
-        out.push({ literal: m[1], file, line: i + 1 });
+        // A "./x" or "../x" literal is relative to the SCRIPT, not the repo
+        // root. Once scripts moved into campaigns/<slug>/ their imports became
+        // "../../lib/run.js", which resolved against ROOT points outside the
+        // repo. Record the repo-relative RESOLVED path, so one dependency has
+        // one identity however deep the file that names it.
+        const lit = m[1];
+        const base = lit.startsWith(".") ? fileDir : ROOT;
+        const rel = path.relative(ROOT, path.resolve(base, lit)).split("\\").join("/");
+        out.push({ literal: lit, rel, file, line: i + 1 });
       }
     }
   });
@@ -87,12 +98,12 @@ for (const f of frozenScripts()) refs.push(...literalsIn(f));
 
 // De-duplicate by literal, keeping the first citation for the error message.
 const surface = new Map();
-for (const r of refs) if (!surface.has(r.literal)) surface.set(r.literal, r);
+for (const r of refs) if (!surface.has(r.rel)) surface.set(r.rel, r);
 
 if (process.argv.includes("--list")) {
   console.log(`Freeze surface: ${surface.size} distinct path literals across ${frozenScripts().length} frozen scripts.\n`);
-  for (const [lit, r] of [...surface].sort()) {
-    console.log(`  ${lit.padEnd(52)} ${r.file}:${r.line}`);
+  for (const [rel, r] of [...surface].sort()) {
+    console.log(`  ${rel.padEnd(52)} ${r.file}:${r.line}`);
   }
   process.exit(0);
 }

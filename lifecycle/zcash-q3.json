@@ -83,7 +83,7 @@
       "status": "done",
       "finishedAt": "2026-08-19",
       "artifacts": [
-        "create-zcash-markets.js",
+        "campaigns/zcash-q3/create-zcash-markets.js",
         "campaigns/zcash-q3/create-zcash-markets-execution.json"
       ],
       "txCount": 37,
@@ -94,7 +94,7 @@
       "status": "done",
       "finishedAt": "2026-08-22",
       "artifacts": [
-        "add-zcash-liquidity.js",
+        "campaigns/zcash-q3/add-zcash-liquidity.js",
         "campaigns/zcash-q3/add-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/add-zcash-liquidity-run.log"
       ],
@@ -105,7 +105,7 @@
       "status": "done",
       "finishedAt": "2026-08-24",
       "artifacts": [
-        "withdraw-zcash-liquidity.js",
+        "campaigns/zcash-q3/withdraw-zcash-liquidity.js",
         "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/withdraw-zcash-liquidity-run.log"
       ],
@@ -116,7 +116,7 @@
       "status": "done",
       "finishedAt": "2026-08-24",
       "artifacts": [
-        "merge-zcash-positions.js",
+        "campaigns/zcash-q3/merge-zcash-positions.js",
         "campaigns/zcash-q3/merge-zcash-positions-execution.json",
         "archive/runs/zcash-q3/merge-zcash-positions-run.log"
       ],
@@ -127,7 +127,7 @@
       "status": "done",
       "finishedAt": "2026-08-24",
       "artifacts": [
-        "reseed-zcash-liquidity.js",
+        "campaigns/zcash-q3/reseed-zcash-liquidity.js",
         "campaigns/zcash-q3/reseed-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/reseed-zcash-liquidity-run.log"
       ],

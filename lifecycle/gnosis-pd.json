@@ -96,7 +96,7 @@
       "status": "done",
       "finishedAt": "2026-08-12",
       "artifacts": [
-        "fetch-credora-pd.js",
+        "campaigns/gnosis-pd/fetch-credora-pd.js",
         "campaigns/gnosis-pd/assets_pd_v2.csv",
         "campaigns/gnosis-pd/assets_pd_v2.json"
       ],
@@ -107,7 +107,7 @@
       "status": "done",
       "finishedAt": "2026-08-12",
       "artifacts": [
-        "create-pd-market-gnosis.js",
+        "campaigns/gnosis-pd/create-pd-market-gnosis.js",
         "campaigns/gnosis-pd/create-pd-market-execution.json"
       ],
       "txCount": 1,
@@ -118,7 +118,7 @@
       "status": "done",
       "finishedAt": "2026-08-12",
       "artifacts": [
-        "remove-liquidity-gnosis.js",
+        "campaigns/gnosis-pd/remove-liquidity-gnosis.js",
         "campaigns/gnosis-pd-v1/remove-pd-gnosis-execution.json"
       ],
       "txCount": 75,
@@ -129,7 +129,7 @@
       "status": "done",
       "finishedAt": "2026-08-12",
       "artifacts": [
-        "add-pd-liquidity-gnosis-v2.js",
+        "campaigns/gnosis-pd/add-pd-liquidity-gnosis-v2.js",
         "campaigns/gnosis-pd/add-pd-gnosis-v2-execution.json"
       ],
       "notes": "34 pools, exactly 5.0 sDAI, blocks 47680659-47680803. Wallet 8.292 -> 3.292, funded by the v1 drain. No To All at 10.0% of spend against v1 round 1's 85%. Verified: all 34 pools' live globalState().tick price within 0.0086% of intended - pure tick granularity, irreducible."

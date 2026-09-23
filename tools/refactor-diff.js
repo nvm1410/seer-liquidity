@@ -33,10 +33,21 @@ if (!script) {
 }
 
 // A run killed by a broken pipe never reaches its finally block, so sweep any
-// leftovers from previous runs before starting. They are never wanted.
-for (const f of fs.readdirSync(ROOT)) {
-  if (f.startsWith("_refactor_diff_old_")) fs.rmSync(path.join(ROOT, f), { force: true });
-}
+// leftovers from previous runs before starting. They are never wanted. Scripts
+// live under campaigns/<slug>/ now, so the temp copy is written THERE and the
+// sweep has to recurse.
+const sweep = (dir) => {
+  if (!fs.existsSync(dir)) return;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const abs = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      if (e.name !== "node_modules" && e.name !== ".git") sweep(abs);
+    } else if (e.name.startsWith("_refactor_diff_old_")) {
+      fs.rmSync(abs, { force: true });
+    }
+  }
+};
+sweep(ROOT);
 
 const git = (a) => execFileSync("git", a, { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
 
@@ -90,8 +101,10 @@ function normalize(text) {
     .join("\n");
 }
 
+// The copy must sit BESIDE the original: a campaign script imports
+// "../../lib/run.js", which only resolves from its own directory.
 const tmpName = `_refactor_diff_old_${path.basename(script)}`;
-const tmpPath = path.join(ROOT, tmpName);
+const tmpPath = path.join(path.dirname(path.resolve(ROOT, script)), tmpName);
 fs.writeFileSync(tmpPath, oldSource);
 
 const runScript = (file, extra = []) => {
@@ -106,7 +119,7 @@ const runScript = (file, extra = []) => {
 
 try {
   console.log(`running ${script}@${ref} ...`);
-  const before = runScript(tmpName);
+  const before = runScript(path.relative(ROOT, tmpPath).split("\\").join("/"));
   console.log(`running ${script} (working tree)${newArgs.length ? " " + newArgs.join(" ") : ""} ...`);
   const after = runScript(script, newArgs);
 

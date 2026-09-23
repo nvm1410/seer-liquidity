@@ -214,21 +214,21 @@ by the `ZNU7V3` token prefix and by the addresses above.
 # 1. Edit zcash-nu7-questions-v3.json. Dry run prints every market name, all outcome
 #    labels, token names, the encoded Reality question, gas, and the question-id
 #    collision check. Sends nothing.
-node create-zcash-nu7-markets.js          # DRY_RUN = true
+node campaigns/zcash-nu7/create-zcash-nu7-markets.js          # DRY_RUN = true
 
 # 2. Flip DRY_RUN = false, re-run. Resumable — logged questions are skipped, so a
 #    re-run retries only failures and never creates a duplicate market.
-node create-zcash-nu7-markets.js
+node campaigns/zcash-nu7/create-zcash-nu7-markets.js
 
 # 3. Dry-run seeding. Resolves all markets on-chain against the questions file,
 #    sizes every position, prints the capital table. Confirm the GRAND TOTAL.
-node add-zcash-nu7-liquidity.js           # DRY_RUN = true
+node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js           # DRY_RUN = true
 
 # 4. Flip DRY_RUN = false, re-run. Resumable at both split and pool level.
-node add-zcash-nu7-liquidity.js
+node campaigns/zcash-nu7/add-zcash-nu7-liquidity.js
 
 # 5. Verify.
-node check-zcash-nu7-pools.js
+node campaigns/zcash-nu7/check-zcash-nu7-pools.js
 ```
 
 Both live steps are done for v3, which was unwound on 2026-09-12 and **re-seeded the same

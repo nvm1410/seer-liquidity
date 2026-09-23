@@ -86,7 +86,7 @@
       "status": "done",
       "finishedAt": "2026-06-23",
       "artifacts": [
-        "add-octant-liquidity.js",
+        "campaigns/octant/add-octant-liquidity.js",
         "campaigns/octant/add-octant-execution.json"
       ],
       "txCount": 25,
@@ -97,7 +97,7 @@
       "status": "done",
       "finishedAt": "2026-06-26",
       "artifacts": [
-        "add-octant-invalid-liquidity.js",
+        "campaigns/octant/add-octant-invalid-liquidity.js",
         "campaigns/octant/add-octant-invalid-execution.json"
       ],
       "txCount": 1,
@@ -108,7 +108,7 @@
       "status": "done",
       "finishedAt": "2026-06-29",
       "artifacts": [
-        "withdraw-octant-liquidity.js",
+        "campaigns/octant/withdraw-octant-liquidity.js",
         "campaigns/octant/withdraw-octant-execution.json"
       ],
       "txCount": 26,
@@ -119,7 +119,7 @@
       "status": "done",
       "finishedAt": "2026-07-24",
       "artifacts": [
-        "answer-octant-markets.js",
+        "campaigns/octant/answer-octant-markets.js",
         "campaigns/octant/answer-octant-execution.json",
         "campaigns/octant/resolution.xlsx"
       ],

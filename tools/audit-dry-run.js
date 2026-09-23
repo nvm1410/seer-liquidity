@@ -35,7 +35,10 @@ const ARMED = /^\s*const\s+DRY_RUN\s*=\s*false\s*;/;
 // A script is GATED if it either declares a DRY_RUN constant or runs under the
 // harness, which is dry unless --live. Anything else that can send is ungated.
 const HAS_DRY_RUN = /^\s*const\s+DRY_RUN\s*=/m;
-const USES_HARNESS = /from\s+"\.\/lib\/run\.js"/;
+// Depth-agnostic: a campaign script imports "../../lib/run.js", one under
+// superseded/ imports "../../../lib/run.js". Matching only "./lib/run.js" made
+// this audit report all 26 harness scripts as ungated the moment they moved.
+const USES_HARNESS = /from\s+"(?:\.\.?\/)+lib\/run\.js"/;
 
 // Call sites that move money or state. estimateGas and callStatic are excluded
 // on purpose: they simulate.
@@ -50,11 +53,27 @@ const SENDS = [
   /positionManager\.collect\s*\(/,
 ];
 
+// Scripts live under campaigns/<slug>/ (and archive/ for the orphans) since the
+// 2026-09-23 reorganisation. Walk those rather than the root, which now holds no
+// scripts at all -- and treat an EMPTY scan as a failure, because a safety audit
+// that silently checks nothing is worse than no audit.
+const SCRIPT_DIRS = ["campaigns", "archive"];
+
+function walk(dir, out = []) {
+  const abs = path.join(ROOT, dir);
+  if (!fs.existsSync(abs)) return out;
+  for (const e of fs.readdirSync(abs, { withFileTypes: true })) {
+    const rel = dir + "/" + e.name;
+    if (e.isDirectory()) walk(rel, out);
+    else if (e.name.endsWith(".js") && !e.name.startsWith(TEMP_PREFIX)) out.push(rel);
+  }
+  return out;
+}
+
 function rootScripts() {
-  return fs
-    .readdirSync(ROOT)
-    .filter((f) => f.endsWith(".js") && !f.startsWith(TEMP_PREFIX))
-    .sort();
+  const out = [];
+  for (const d of SCRIPT_DIRS) walk(d, out);
+  return out.sort();
 }
 
 function scan(file) {
@@ -79,9 +98,13 @@ function scan(file) {
 const args = process.argv.slice(2);
 // The hook passes staged paths, which may include files outside the root or
 // non-scripts; filter to root-level .js so the hook and a full run agree.
-const targets = args.length
-  ? args.filter((f) => f.endsWith(".js") && !f.includes("/") && !f.includes("\\"))
-  : rootScripts();
+const targets = args.length ? args.filter((f) => f.endsWith(".js")).map((f) => f.split("\\").join("/")) : rootScripts();
+
+if (!args.length && targets.length === 0) {
+  console.error("DRY_RUN audit: found NO scripts to check under " + SCRIPT_DIRS.join(", ") + ".");
+  console.error("That is a bug in this audit, not a clean repo -- fix SCRIPT_DIRS.");
+  process.exit(1);
+}
 
 const results = targets.map(scan);
 const armed = results.flatMap((r) => r.armed);

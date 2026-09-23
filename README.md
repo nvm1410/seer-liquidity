@@ -26,7 +26,7 @@ Scripts are ESM and take no arguments — run them as bare `node <script>.js` **
 cp .env.example .env    # then fill in PRIVATE_KEY and RPC_URL
 npm install
 npm test                # audits: nothing armed to send, no broken paths
-node check-originality-r3-pools.js --markets-only   # a safe read-only example
+node campaigns/originality-r3/check-originality-r3-pools.js --markets-only   # a safe read-only example
 ```
 
 > **Every mutating script gates transactions on a hand-edited `const DRY_RUN` near the top of the

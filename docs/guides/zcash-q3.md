@@ -128,7 +128,7 @@ total $9,014,383.20.
 ## Step 1 — create the markets
 
 ```bash
-node create-zcash-markets.js          # DRY_RUN = true
+node campaigns/zcash-q3/create-zcash-markets.js          # DRY_RUN = true
 ```
 
 The dry run does all of this before printing a table:
@@ -172,7 +172,7 @@ already in the log are skipped, so re-running retries only failures.
 ## Step 2 — seed the YES/NO pools
 
 ```bash
-node add-zcash-liquidity.js           # DRY_RUN = true
+node campaigns/zcash-q3/add-zcash-liquidity.js           # DRY_RUN = true
 ```
 
 Per market: split `Q` sUSDS on the market (yielding `Q` YES + `Q` NO + `Q` Invalid),
@@ -218,7 +218,7 @@ approvals + 74 mints. The live run matched that and cost **0.000409 ETH** all-in
 ## Step 3 — withdraw
 
 ```bash
-node withdraw-zcash-liquidity.js      # DRY_RUN = true
+node campaigns/zcash-q3/withdraw-zcash-liquidity.js      # DRY_RUN = true
 ```
 
 Derives scope from the creation log, resolves every wrapped token **from chain** (not
@@ -245,7 +245,7 @@ burned (no `burnToken: true`) — step 5 refunds those same tokenIds.
 ## Step 4 — merge the outcome tokens back to sUSDS
 
 ```bash
-node merge-zcash-positions.js         # DRY_RUN = true
+node campaigns/zcash-q3/merge-zcash-positions.js         # DRY_RUN = true
 ```
 
 Merging needs a **complete set — {YES, NO, Invalid}**. Invalid was never pooled, but
@@ -268,7 +268,7 @@ round-trip cost      0.58 sUSDS + gas
 ## Step 5 — re-seed at new prices
 
 ```bash
-node reseed-zcash-liquidity.js        # DRY_RUN = true
+node campaigns/zcash-q3/reseed-zcash-liquidity.js        # DRY_RUN = true
 ```
 
 **Re-running `add-zcash-liquidity.js` with different prices does not work.** All 74 pools
@@ -362,7 +362,7 @@ Two guards worth knowing:
   price holding only dust. The tick re-check plus the 0.5% `slippageTolerance` are the
   guards; if a pool aborts there, just re-run.
 
-Verify with `node check-zcash-pools.js`, which reads the re-seed log once it exists and
+Verify with `node campaigns/zcash-q3/check-zcash-pools.js`, which reads the re-seed log once it exists and
 falls back to the original add log otherwise.
 
 ## Hazards specific to this market set

@@ -59,7 +59,7 @@ the other outcomes stays in the wallet as dust. This is expected.
 #    caches it to originality-merge-cache.json, and PROJECTS recovery:
 #      - Phase 1 token returns, Phase 2 per-repo mergeable amount,
 #      - Phase 3 "would recover ≈ N sUSDS" and "outcomes at zero" count.
-node remove-merge-originality.js
+node campaigns/originality-r2/remove-merge-originality.js
 
 # 2. Review:
 #      - "positions: 196", "parent outcomes: 99"
@@ -68,7 +68,7 @@ node remove-merge-originality.js
 #        If > 0, those outcomes block the parent merge (see Issues below).
 
 # 3. Live run — edit line ~28: const DRY_RUN = false;  then:
-node remove-merge-originality.js
+node campaigns/originality-r2/remove-merge-originality.js
 
 # 4. (optional) verify wallet sUSDS went up and outcome-token balances went to ~dust.
 ```

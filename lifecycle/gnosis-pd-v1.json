@@ -94,7 +94,7 @@
       "status": "done",
       "finishedAt": "2026-07-04",
       "artifacts": [
-        "add-pd-liquidity-gnosis.js",
+        "campaigns/gnosis-pd-v1/add-pd-liquidity-gnosis.js",
         "campaigns/gnosis-pd-v1/add-pd-gnosis-execution.json"
       ],
       "notes": "Round 1: 25 pools, ~5 sDAI. Split (mint) 0.7137 + sDAI side 4.2863 = exactly 5.0. No To All took 4.269 of the 4.286 sDAI side."
@@ -104,7 +104,7 @@
       "status": "done",
       "finishedAt": "2026-07-04",
       "artifacts": [
-        "add-pd-liquidity-gnosis-round2.js",
+        "campaigns/gnosis-pd-v1/add-pd-liquidity-gnosis-round2.js",
         "campaigns/gnosis-pd-v1/add-pd-gnosis-round2-execution.json"
       ],
       "notes": "Round 2: a second ~5 sDAI over the 24 ASSET pools only, reusing round 1's pool geometry from its execution log rather than recomputing prices. Excluding No To All is what let the asset pools get real depth; it is a workaround, not a fix."
@@ -114,7 +114,7 @@
       "status": "done",
       "finishedAt": "2026-08-12",
       "artifacts": [
-        "remove-liquidity-gnosis.js",
+        "campaigns/gnosis-pd/remove-liquidity-gnosis.js",
         "campaigns/gnosis-pd-v1/remove-pd-gnosis-execution.json"
       ],
       "txCount": 75,

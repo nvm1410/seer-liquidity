@@ -135,16 +135,16 @@ correct against their own source — don't "fix" one to match the other.
 ```
 # 1. Edit assets_pd.ts (the asset list; duplicates are de-duplicated on read).
 # 2. Freeze the PD snapshot. Needs CREDORA_API in .env.
-node fetch-credora-pd.js
+node campaigns/gnosis-pd/fetch-credora-pd.js
 
 # 3. Create the market. DRY_RUN = true by default: prints outcomes, token names,
 #    the encoded Reality question, the predicted address and the gas estimate.
-node create-pd-market-gnosis.js
+node campaigns/gnosis-pd/create-pd-market-gnosis.js
 #    Review, then flip DRY_RUN = false and re-run. NOT idempotent — a second live
 #    run creates a second market. Writes create-pd-market-execution.json.
 
 # 4. Seed liquidity. Reads the market address from that file.
-node add-pd-liquidity-gnosis-v2.js
+node campaigns/gnosis-pd/add-pd-liquidity-gnosis-v2.js
 #    Check the dry run's GRAND TOTAL and the "No To All: N% of total" line, then
 #    flip DRY_RUN = false. ~70 transactions; resumable via its progress log.
 
@@ -326,7 +326,7 @@ address first and start from a fresh `PROGRESS_FILE`.
 ```
 # 1. Dry run (default DRY_RUN = true) — enumerates all NPM positions for this
 #    market, projects removal amounts + the final merge amount, no transactions.
-node remove-liquidity-gnosis.js
+node campaigns/gnosis-pd/remove-liquidity-gnosis.js
 
 # 2. Review: "Matched N positions... M have liquidity > 0", the min-outcome-balance
 #    merge preview, and "outcomes at zero: 0" (should be 0 for a full merge).

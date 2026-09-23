@@ -193,10 +193,10 @@
       "name": "phase0-scripts",
       "status": "done",
       "artifacts": [
-        "snapshot-originality-r2-prices.js",
-        "create-originality-r3-markets.js",
-        "add-originality-r3-liquidity.js",
-        "check-originality-r3-pools.js",
+        "campaigns/originality-r3/snapshot-originality-r2-prices.js",
+        "campaigns/originality-r3/create-originality-r3-markets.js",
+        "campaigns/originality-r3/add-originality-r3-liquidity.js",
+        "campaigns/originality-r3/check-originality-r3-pools.js",
         "archive/runs/originality-r3/create-originality-r3-v2-dryrun.log",
         "archive/runs/originality-r3/add-originality-r3-v2-preview.log"
       ],
@@ -232,7 +232,7 @@
       "name": "phase1-verify",
       "status": "done",
       "artifacts": [
-        "check-originality-r3-pools.js",
+        "campaigns/originality-r3/check-originality-r3-pools.js",
         "archive/runs/originality-r3/check-originality-r3-v2-verify.log"
       ],
       "notes": "Full verify OK from live chain: 101 markets, 196/196 pools live and within 0.001 of seed, 1000 parent Invalid held, idle bundle tokens ~1e-13. Failure tests: corrupted symbol/name/bundle -> 3 caught; corrupted price -> both legs caught."

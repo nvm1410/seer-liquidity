@@ -97,7 +97,7 @@
       "status": "done",
       "finishedAt": "2026-09-09",
       "artifacts": [
-        "create-zcash-nu7-markets.js",
+        "campaigns/zcash-nu7/create-zcash-nu7-markets.js",
         "campaigns/zcash-nu7/create-zcash-nu7-markets-v3-execution.json",
         "archive/runs/zcash-nu7/create-zcash-nu7-v3-run.log"
       ],
@@ -109,7 +109,7 @@
       "status": "done",
       "finishedAt": "2026-09-09",
       "artifacts": [
-        "add-zcash-nu7-liquidity.js",
+        "campaigns/zcash-nu7/add-zcash-nu7-liquidity.js",
         "campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-execution.json",
         "archive/runs/zcash-nu7/add-zcash-nu7-v3-run.log"
       ],

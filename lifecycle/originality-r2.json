@@ -37,10 +37,10 @@
     "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
   },
   "files": {
-    "markets": "markets.js",
-    "prices": "originality.js",
-    "pairs": "originality-pairs.js",
-    "tokens": "tokens.js",
+    "markets": "campaigns/originality-r2/markets.js",
+    "prices": "campaigns/originality-r2/originality.js",
+    "pairs": "campaigns/originality-r2/originality-pairs.js",
+    "tokens": "campaigns/originality-r2/tokens.js",
     "addBack": "campaigns/originality-r2/add-back-execution.json",
     "topUp": "campaigns/originality-r2/add-20k-originality-execution.json",
     "mapCache": "campaigns/originality-r2/originality-map-cache.json",
@@ -119,7 +119,7 @@
       "status": "done",
       "finishedAt": "2025-10-30",
       "artifacts": [
-        "markets.js"
+        "campaigns/originality-r2/markets.js"
       ],
       "notes": "Parent created 2025-10-30T02:34:22Z in a single 36,804,432-gas transaction; all 98 children at 11:47:17Z the same day. Not created by this repo — markets.js is the only local record, and it holds addresses only."
     },
@@ -128,9 +128,9 @@
       "status": "done",
       "finishedAt": "2025-11-11",
       "artifacts": [
-        "liquidity-originality.js",
-        "originality.js",
-        "markets.js"
+        "campaigns/originality-r2/superseded/liquidity-originality.js",
+        "campaigns/originality-r2/originality.js",
+        "campaigns/originality-r2/markets.js"
       ],
       "notes": "splitPosition(sUSDS, parent, 40,000) on 2025-11-04T12:31:05Z, then 196 position NFTs minted 2025-11-11 (ids 1034306-1034507). 13,333.33 of each parent outcome split into Up/Down, 26,666.67 kept as the collateral leg. No execution log was written — this predates the logging convention."
     },
@@ -138,7 +138,7 @@
       "name": "removal-50pct",
       "status": "done",
       "artifacts": [
-        "index.js"
+        "campaigns/l1-deepfunding/superseded/index.js"
       ],
       "notes": "index.js removed exactly 50% from every position. DATE UNKNOWN — no log, no execution JSON. That this was exactly half is an assumption add-back-liquidity.js had to make (delta = current), and the L1 successor was built specifically to stop assuming it."
     },
@@ -147,7 +147,7 @@
       "status": "done",
       "finishedAt": "2026-06-09",
       "artifacts": [
-        "add-back-liquidity.js",
+        "campaigns/originality-r2/add-back-liquidity.js",
         "campaigns/originality-r2/add-back-execution.json"
       ],
       "txCount": 196,
@@ -158,7 +158,7 @@
       "status": "done",
       "finishedAt": "2026-06-16",
       "artifacts": [
-        "add-20k-originality-liquidity.js",
+        "campaigns/originality-r2/add-20k-originality-liquidity.js",
         "campaigns/originality-r2/add-20k-originality-execution.json",
         "campaigns/originality-r2/originality-map-cache.json"
       ],
@@ -170,7 +170,7 @@
       "status": "done",
       "finishedAt": "2026-06-19",
       "artifacts": [
-        "remove-merge-originality.js",
+        "campaigns/originality-r2/remove-merge-originality.js",
         "campaigns/originality-r2/remove-merge-originality-execution.json",
         "campaigns/originality-r2/originality-merge-cache.json"
       ],
@@ -182,7 +182,7 @@
       "status": "done",
       "finishedAt": "2026-07-10",
       "artifacts": [
-        "resolve-originality-markets.js",
+        "campaigns/originality-r2/resolve-originality-markets.js",
         "campaigns/originality-r2/resolve-originality-execution.json"
       ],
       "txCount": 34,

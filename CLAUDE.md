@@ -34,22 +34,15 @@ Never fork an old script to start a campaign — build on [`lib/`](lib/README.md
 line sent real transactions the moment they ran. With no dry mode there is nothing for
 refactor-diff to compare, so rewriting them could not satisfy invariant 2. Each instead got a
 `parseArgs()` `--live` gate and a header naming its successor — additions only, zero lines deleted,
-so everything below each gate is byte-identical. Bare `node index.js` now exits 2 and sends nothing.
+so everything below each gate is byte-identical. Bare `node campaigns/l1-deepfunding/superseded/index.js` now exits 2 and sends nothing.
 
 `tools/audit-dry-run.js` was blind to exactly this class: it looked only for `const DRY_RUN = false`,
 so a script with no flag passed by omission. It now also fails any script that matches a sending
 call site while declaring neither a `DRY_RUN` nor an import of `lib/run.js`.
 
-**Status: 42 of 53 root `.js` import `lib/run.js`.** The other 11 are data or pure-function modules
-(`markets.js`, `elo.js`, `implied-prices.js`, `tokens.js`, …) plus two that touch no chain:
-`fetch-credora-pd.js` reads the manifest but skips the harness, because asserting a network for an
-HTTP fetch would be theatre, and `getParticipants.js` is a read-only orphan trade-executor tool.
-
-The live answer, since a comment can go stale:
-
-```bash
-grep -l 'from "./lib/run.js"' *.js | wc -l
-```
+**Status: the root holds no scripts and no campaign data.** Every `.js` lives with the campaign it
+belongs to; 52 of them are gated, and `lib/implied-prices.js` is the one piece of shared math that
+moved into the library. `grep -rl 'lib/run.js' campaigns` is the live answer.
 
 Four deferred improvements landed separately, each after the migration it belonged to had been
 proved identical:
@@ -113,26 +106,38 @@ longer exist, so grep lands here instead:
 | every campaign's `*-execution.json`, seed, CSV and cache | `campaigns/<slug>/` — see below |
 | `test.json`, `data.json`, `participants.json` | `archive/dead/` (unreferenced; `test.json` was a byte-identical copy of `execution.json`) |
 
-## Campaign data lives in `campaigns/<slug>/`
+## Layout
 
-63 data files moved out of the root on 2026-09-23, mirroring `lifecycle/<slug>.json`. Nothing reads
-them by a hardcoded path any more — a script gets its paths from its manifest, so **moving a data
-file is a manifest edit, not a code edit**. `campaigns/zcash-nu7/superseded/` holds the 12 v1/v2
-files of the campaign that was built three times; the whole version chain stays in one directory.
+```
+root        package.json, CLAUDE.md, README.md, .env*, .gitignore, .nvmrc   config only
+lib/        the harness and shared modules      <- build the next campaign on this
+lifecycle/  manifests + schema                  <- declare the next campaign here
+tools/      audits, refactor-diff               <- the guards
+tests/      golden tests
+docs/       guides + the campaign index
+campaigns/  every past campaign, self-contained: its scripts AND its data
+archive/    run transcripts, dead files, orphan tools
+src/ abis/  read-only contract reference
+runs/       harness output (dry transcripts, gitignored)
+```
 
-Exactly two data files remain at the root, both pinned by a literal in code:
+A campaign is one directory. `campaigns/zcash-q3/` holds the six scripts that ran it, its seed CSV,
+its proposals JSON and every execution log. A superseded generation goes one level down in
+`superseded/` — `campaigns/zcash-nu7/superseded/` has the twelve v1/v2 files, so the whole version
+chain stays in one place, and `campaigns/l1-deepfunding/superseded/` holds the two ungated scripts.
 
-| file | pinned by |
-|---|---|
-| `execution.json` | `index.js:277` — gated, superseded |
-| `l2-participants.json` | `getParticipants.js:108` — orphan tool's own output |
+**A new campaign is a new `campaigns/<slug>/` plus a new `lifecycle/<slug>.json`, written against
+`lib/`.** Nothing is added to the root, ever.
 
-`npm run audit:paths` proves it. Its freeze surface is now 36 paths, down from 58, and it **also
-scans `tests/`**: the golden tests read the committed execution JSONs by root-relative path, so they
-depend on campaign data exactly as a script does. When the data moved, 11 tests broke while the
-audit reported nothing — that gap is closed. It also distinguishes a path that moved *while a
-script still names it* (a real break) from one nothing references any more (re-snapshot with
-`node tools/audit-paths.js --snapshot`).
+Scripts are run **from the repo root** by their full path, because several read CWD-relative paths:
+
+```bash
+node campaigns/zcash-q3/add-zcash-liquidity.js          # dry
+node campaigns/zcash-q3/add-zcash-liquidity.js --live   # sends
+```
+
+Three cross-campaign imports are deliberate and correct — `originality-r3`'s snapshot script imports
+`../originality-r2/markets.js` because its entire job is reading round-2 data.
 
 ## Environment
 

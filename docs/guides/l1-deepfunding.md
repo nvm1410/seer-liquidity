@@ -77,7 +77,7 @@ This script is already written and ready. Key behaviours:
 
 ```
 # Step 1 — dry run (reads on-chain, no transactions)
-node add-back-l1-liquidity.js
+node campaigns/l1-deepfunding/add-back-l1-liquidity.js
 
 # Step 2 — review the output:
 #   - "To restore" count should be ~198 (or fewer if some were already restored)
@@ -86,10 +86,10 @@ node add-back-l1-liquidity.js
 
 # Step 3 — live run
 # Edit add-back-l1-liquidity.js line 11: const DRY_RUN = false;
-node add-back-l1-liquidity.js
+node campaigns/l1-deepfunding/add-back-l1-liquidity.js
 
 # Step 4 — verify idempotency (re-run, all should be skipped)
-node add-back-l1-liquidity.js
+node campaigns/l1-deepfunding/add-back-l1-liquidity.js
 ```
 
 ## Common issues and fixes
@@ -210,7 +210,7 @@ tokens have one tiny NFT each (`1055065`, `1055066`).
   falls short, writing `add-20k-l1-execution.json` after each success.
 
 Run it exactly like the add-back: dry run first, review, flip `DRY_RUN = false`, then
-`node verify-20k-l1.js`. If it dies mid-run set `SKIP_SPLITS = true` and re-run — the splits
+`node campaigns/l1-deepfunding/verify-20k-l1.js`. If it dies mid-run set `SKIP_SPLITS = true` and re-run — the splits
 already happened and only the missing `increaseLiquidity` calls are retried.
 
 ## Unwind: all L1 liquidity back to sUSDS (2026-08-25)
