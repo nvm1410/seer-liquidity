@@ -1,8 +1,9 @@
-import "dotenv/config";
 import { ethers } from "ethers";
 import fs from "fs";
 import zlib from "node:zlib";
-import { MarketViewAbi } from "./abis/MarketViewAbi.js";
+import { getMarketInfo, makeMarketView, normalizeIdentifier } from "./lib/market.js";
+import { run } from "./lib/run.js";
+import { retryTransaction, sleep } from "./lib/tx.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Submits the Reality.eth answers for the Octant epoch-12 multiscalar market.
@@ -28,27 +29,14 @@ import { MarketViewAbi } from "./abis/MarketViewAbi.js";
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = true; // ← set to false to send transactions
-
-const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
-const RPC_URL = process.env.RPC_URL;
-const CHAIN_ID = 10n;
-
-// Addresses (Optimism, chain 10)
-const OCTANT_MARKET = "0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE";
-const MARKET_FACTORY = "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6";
-const MARKET_VIEW = "0x336695ec9efbafd6322fb82eaadbcda02e38f348";
-const REALITY = "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"; // MarketFactory.realitio()
-
-const XLSX_FILE = "./resolution.xlsx";
 const PROJECT_COL = "B"; // "Project"
 const WEIGHT_COL = "C"; // "Actual Weight"
-const PROGRESS_FILE = "./answer-octant-execution.json"; // append-only submit log
 
 const ANSWER_DECIMALS = 18;
 const WEIGHT_PRECISION = 4; // decimals kept from the spreadsheet
 const EXPECTED_OUTCOMES = 25;
 const GAS_BUFFER = ethers.parseEther("0.002");
+const DELAY_MS = 2000;
 
 // Spreadsheet labels that don't match the on-chain outcome after normalization.
 // key: normalized on-chain outcome → value: normalized spreadsheet name
@@ -65,29 +53,8 @@ const ALIASES = {
 // ── ABIs ────────────────────────────────────────────────────────────────────
 const REALITY_ABI = ["function submitAnswer(bytes32,bytes32,uint256) external payable"];
 
-// ── Provider / wallet ───────────────────────────────────────────────────────
-const provider = new ethers.JsonRpcProvider(RPC_URL);
-const wallet = WALLET_PRIVATE_KEY ? new ethers.Wallet(WALLET_PRIVATE_KEY, provider) : undefined;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-async function retryTransaction(txFn, retries = 3, delayMs = 3000) {
-  let lastError;
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      console.log(`    Attempt ${attempt}/${retries}...`);
-      const tx = await txFn();
-      console.log(`    Tx sent: ${tx.hash}`);
-      const receipt = await tx.wait();
-      console.log(`    Confirmed in block ${receipt.blockNumber}`);
-      return receipt;
-    } catch (err) {
-      lastError = err;
-      console.warn(`    Attempt ${attempt} failed: ${err.message}`);
-      if (attempt < retries) await new Promise((r) => setTimeout(r, delayMs));
-    }
-  }
-  throw lastError;
-}
 
 // ── Zero-dependency .xlsx reader ─────────────────────────────────────────────
 // An .xlsx is a ZIP of XML parts. We only need xl/sharedStrings.xml (the string
@@ -174,20 +141,25 @@ function readXlsx(path) {
   return rows;
 }
 
-function normalize(s) {
-  return s.toLowerCase().replace(/[^a-z0-9]/g, "");
-}
 
 // ── Main ─────────────────────────────────────────────────────────────────────
-async function main() {
-  console.log(`\n📋 Wallet   : ${wallet ? wallet.address : "(none — read-only)"}`);
-  console.log(`📋 DRY_RUN  : ${DRY_RUN}`);
-  console.log(`📋 Market   : ${OCTANT_MARKET}\n`);
+await run(
+  {
+    name: "answer-octant-markets",
+    slug: "octant",
+    stage: "settle-answer",
+    mutating: true,
+    // The answer log IS the resume log: re-answering a question costs DOUBLE the
+    // standing bond, so skipping what is already submitted is the whole point.
+    progress: (m) => m.files.answerLog,
+  },
+  async (ctx) => {
+  const { manifest, provider, wallet, addr, log, progress, dry: DRY_RUN } = ctx;
+  const OCTANT_MARKET = manifest.results.parent;
+  const XLSX_FILE = manifest.files.answers;
 
-  const network = await provider.getNetwork();
-  if (network.chainId !== CHAIN_ID) {
-    throw new Error(`RPC_URL points at chain ${network.chainId}, expected ${CHAIN_ID} (Optimism)`);
-  }
+  console.log(`\n📋 Wallet   : ${wallet ? wallet.address : "(none — read-only)"}`);
+  console.log(`📋 Market   : ${OCTANT_MARKET}\n`);
 
   // ── Read the spreadsheet ────────────────────────────────────────────────
   const sheetRows = readXlsx(XLSX_FILE)
@@ -203,20 +175,20 @@ async function main() {
 
   const byName = new Map();
   for (const row of sheetRows) {
-    const key = normalize(row.project);
+    const key = normalizeIdentifier(row.project);
     if (byName.has(key)) throw new Error(`duplicate project in ${XLSX_FILE}: "${row.project}"`);
     byName.set(key, row);
   }
 
   // ── Read the market ─────────────────────────────────────────────────────
-  const marketView = new ethers.Contract(MARKET_VIEW, MarketViewAbi, provider);
-  const info = await marketView.getMarket(MARKET_FACTORY, OCTANT_MARKET);
+  const marketView = makeMarketView(addr.marketView, provider);
+  const info = await getMarketInfo(marketView, addr.marketFactory, OCTANT_MARKET);
 
-  console.log(`🔗 ${info.marketName}`);
+  console.log(`🔗 ${info.name}`);
   console.log(`   templateId ${info.templateId} | bounds ${info.lowerBound}..${info.upperBound}`);
   console.log(`   outcomes ${info.outcomes.length} | questions ${info.questionsIds.length}\n`);
 
-  if (info.templateId !== 1n) throw new Error(`expected templateId 1 (uint), got ${info.templateId}`);
+  if (info.templateId !== 1) throw new Error(`expected templateId 1 (uint), got ${info.templateId}`);
   if (info.questionsIds.length !== EXPECTED_OUTCOMES) {
     throw new Error(`expected ${EXPECTED_OUTCOMES} questions, got ${info.questionsIds.length}`);
   }
@@ -229,13 +201,13 @@ async function main() {
 
   for (let i = 0; i < EXPECTED_OUTCOMES; i++) {
     const outcome = info.outcomes[i];
-    const key = normalize(outcome);
+    const key = normalizeIdentifier(outcome);
     const row = byName.get(key) ?? byName.get(ALIASES[key]);
     if (!row) {
       unmatched.push(outcome);
       continue;
     }
-    const matchKey = normalize(row.project);
+    const matchKey = normalizeIdentifier(row.project);
     if (used.has(matchKey)) throw new Error(`spreadsheet row "${row.project}" matched by two outcomes`);
     used.add(matchKey);
 
@@ -251,7 +223,7 @@ async function main() {
     });
   }
 
-  const leftovers = sheetRows.filter((r) => !used.has(normalize(r.project)));
+  const leftovers = sheetRows.filter((r) => !used.has(normalizeIdentifier(r.project)));
 
   console.log("   #  outcome                          sheet row                        weight   answer (wei)");
   for (const p of plan) {
@@ -264,11 +236,11 @@ async function main() {
 
   if (unmatched.length) {
     console.error(`\n❌ ${unmatched.length} on-chain outcome(s) have no spreadsheet row:`);
-    unmatched.forEach((o) => console.error(`     "${o}" (normalized "${normalize(o)}")`));
+    unmatched.forEach((o) => console.error(`     "${o}" (normalized "${normalizeIdentifier(o)}")`));
   }
   if (leftovers.length) {
     console.error(`\n❌ ${leftovers.length} spreadsheet row(s) unused:`);
-    leftovers.forEach((r) => console.error(`     "${r.project}" (normalized "${normalize(r.project)}")`));
+    leftovers.forEach((r) => console.error(`     "${r.project}" (normalized "${normalizeIdentifier(r.project)}")`));
   }
   if (unmatched.length || leftovers.length) {
     throw new Error("outcome ↔ spreadsheet mapping is incomplete — aborting before any transaction");
@@ -287,16 +259,8 @@ async function main() {
     console.warn(`⚠️  Sum deviates from 100% by ${(total - 100).toFixed(4)} — double-check the spreadsheet.`);
   }
 
-  // ── Load progress log (resume after a crash) ────────────────────────────
-  let progressLog = [];
-  if (fs.existsSync(PROGRESS_FILE)) {
-    try {
-      progressLog = JSON.parse(fs.readFileSync(PROGRESS_FILE, "utf8"));
-    } catch {
-      progressLog = [];
-    }
-  }
-  const alreadyAnswered = new Set(progressLog.map((e) => e.questionId.toLowerCase()));
+  // ── Resume: which questions are already answered ────────────────────────
+  const alreadyAnswered = new Set(progress.entries.map((e) => e.questionId.toLowerCase()));
 
   // ── Bonds / balance ─────────────────────────────────────────────────────
   // Only count questions this run would actually bond — otherwise a resume after
@@ -326,7 +290,7 @@ async function main() {
   // ── Submit phase ────────────────────────────────────────────────────────
   console.log(`\n⚙️  Submit phase (${DRY_RUN ? "DRY RUN — no transactions" : "LIVE"})\n`);
 
-  const reality = wallet ? new ethers.Contract(REALITY, REALITY_ABI, wallet) : undefined;
+  const reality = wallet ? new ethers.Contract(addr.realitio, REALITY_ABI, wallet) : undefined;
   let submitted = 0;
   let skipped = 0;
   const errors = [];
@@ -382,7 +346,7 @@ async function main() {
       continue;
     }
 
-    if (!wallet) throw new Error("PRIVATE_KEY not set — cannot send transactions with DRY_RUN=false");
+    if (!wallet) throw new Error("PRIVATE_KEY not set — cannot send transactions.");
 
     console.log(`  ${label}: submitting ${p.weight}% (${p.answerWei})...`);
     try {
@@ -391,7 +355,9 @@ async function main() {
       const receipt = await retryTransaction(() =>
         reality.submitAnswer(p.questionId, p.answerHex, 0, { value: q.min_bond })
       );
-      progressLog.push({
+      progress.append({
+        kind: "answer",
+        key: p.questionId.toLowerCase(),
         outcome: p.outcome,
         sheetProject: p.sheetProject,
         questionId: p.questionId,
@@ -402,9 +368,8 @@ async function main() {
         blockNumber: receipt.blockNumber,
         timestamp: new Date().toISOString(),
       });
-      fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progressLog, null, 2));
       submitted++;
-      await new Promise((r) => setTimeout(r, 2000));
+      await sleep(DELAY_MS);
     } catch (err) {
       console.error(`  ${label}: submitAnswer() failed after retries: ${err.message}`);
       errors.push({ outcome: p.outcome, questionId: p.questionId, error: err.message });
@@ -416,10 +381,10 @@ async function main() {
   if (DRY_RUN) {
     console.log(
       `\n🎉 Dry run — ${pending} answer(s) would be submitted (${skipped} skipped), ` +
-        `bonding ${ethers.formatEther(totalBond)} ETH. Set DRY_RUN = false to execute.`
+        `bonding ${ethers.formatEther(totalBond)} ETH. Pass --live to execute.`
     );
   } else {
-    console.log(`\n🎉 Submitted ${submitted}/${pending} answer(s) (${skipped} skipped). Log → ${PROGRESS_FILE}.`);
+    console.log(`\n🎉 Submitted ${submitted}/${pending} answer(s) (${skipped} skipped). Log → ${progress.path}.`);
     if (submitted > 0) {
       const finalizeAt = new Date((now + timeout) * 1000).toISOString();
       console.log(
@@ -432,9 +397,6 @@ async function main() {
     console.log(`⚠️  ${errors.length} error(s):`);
     errors.forEach((e) => console.log(`     ${e.outcome}: ${e.error}`));
   }
-}
-
-main().catch((err) => {
-  console.error("Fatal error:", err.message ?? err);
-  process.exit(1);
-});
+  return { submitted, skipped, errors: errors.length };
+  }
+);

@@ -1,0 +1,133 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "octant",
+  "version": "epoch 12",
+  "mode": "settle",
+  "family": "other",
+  "status": "complete",
+  "source": {
+    "request": "Seed and settle the Octant epoch-12 multi-scalar market: 25 projects, each asking what share of total epoch funding (community contributions plus matching) that project receives.",
+    "proposalText": "What will be the total % breakdown of total funding received by [project], both community contributions and matching, in octants epoch 12? [percent]",
+    "priceSourceNote": "Seed prices from octant-initial-price.csv, column 'Rescaled', normalized as rescaled / sum(rescaled). The column sums to 100.00000000000001 across 25 rows, so a price is effectively rescaled/100. NOTE: the market was NOT created by this repo, so creation-side facts (market name as deployed, token naming, openingTime, lowerBound, category, lang) are not recorded anywhere here."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"
+  },
+  "files": {
+    "seed": "octant-initial-price.csv",
+    "liquidity": "add-octant-execution.json",
+    "invalidLiquidity": "add-octant-invalid-execution.json",
+    "withdraw": "withdraw-octant-execution.json",
+    "answers": "resolution.xlsx",
+    "answerLog": "answer-octant-execution.json"
+  },
+  "markets": [
+    {
+      "type": "multiScalar",
+      "role": "standalone",
+      "count": 1,
+      "templateId": 1,
+      "outcomes": ["25 Octant epoch-12 projects", "Invalid result (factory-added)"],
+      "parentMarket": null,
+      "parentOutcome": null,
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400,
+      "upperBound": "100000000000000000000"
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 20000,
+    "band": { "minPrice": 0.0001, "maxPrice": 1 },
+    "sizing": "by-outcome",
+    "pools": 26,
+    "priceSource": "octant-initial-price.csv 'Rescaled' column, normalized",
+    "unpooledByDesign": "Nothing, ultimately. The main seed deliberately drops the Invalid outcome (25 pools), leaving the split's Invalid tokens idle; add-octant-invalid-liquidity.js then deploys those idle tokens into a 26th pool at a near-zero band [0.00001, 0.00005] for 0.0085 sUSDS. Sizing detail: equal outcome quantity Q across all 25 named pools, with Q solved linearly against the budget from one trial pass at Q0 = 1000e18. Realized Q = 8,759.78262055176, total exactly 20,000.000000 sUSDS."
+  },
+  "settle": {
+    "answerSource": "resolution.xlsx, column B (Project) / column C (Actual Weight)",
+    "unit": "percent",
+    "upperBound": "100000000000000000000",
+    "answerScaleNote": "THE trap this repo records. Octant is a [percent] question against upperBound 100e18, so 11.5923% is submitted as 11592300000000000000. L1's juror weights are a FRACTION of 1 against 1e18. Copying either scale to the other is 100x wrong — always read upperBound off the market. Encoding is parseUnits(weight.toFixed(4), 18); weights submitted summed to 99.9997%.",
+    "questionTimeoutSeconds": 302400
+  },
+  "spendingCap": {
+    "collateral": 20100,
+    "gasEth": 0.05
+  },
+  "stages": [
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2026-06-23",
+      "artifacts": ["add-octant-liquidity.js", "add-octant-execution.json"],
+      "txCount": 25,
+      "notes": "25 pools, one per named project, blocks 153290819-153290983. Exactly 20,000.000000 sUSDS: split 8,759.78 + sUSDS side 11,240.22. Date from file mtime, corroborated by block numbers — this campaign kept no run logs."
+    },
+    {
+      "name": "seed-invalid",
+      "status": "done",
+      "finishedAt": "2026-06-26",
+      "artifacts": ["add-octant-invalid-liquidity.js", "add-octant-invalid-execution.json"],
+      "txCount": 1,
+      "notes": "A 26th pool for the Invalid outcome, block 153421820. Deploys the 8,759.78 idle Invalid tokens the split already produced for 0.0085 sUSDS — it never splits fresh collateral, and hard-fails if the balance is zero. Effectively free capital efficiency."
+    },
+    {
+      "name": "unwind-withdraw",
+      "status": "done",
+      "finishedAt": "2026-06-29",
+      "artifacts": ["withdraw-octant-liquidity.js", "withdraw-octant-execution.json"],
+      "txCount": 26,
+      "notes": "All 26 positions withdrawn at 100%, blocks 153568833-153568916. NFTs 1106305-1106329 plus 1107320."
+    },
+    {
+      "name": "settle-answer",
+      "status": "done",
+      "finishedAt": "2026-07-24",
+      "artifacts": ["answer-octant-markets.js", "answer-octant-execution.json", "resolution.xlsx"],
+      "txCount": 25,
+      "notes": "25/25 answers submitted 08:49:11Z-08:52:00Z, blocks 154642085-154642169, 0.0005 ETH bond each (0.0125 ETH total). Seven spreadsheet-to-chain name mismatches needed a hardcoded ALIASES table. Questions would finalize ~2026-07-27."
+    },
+    {
+      "name": "settle-resolve",
+      "status": "skipped",
+      "artifacts": [],
+      "notes": "No resolve script or artifact exists for octant in this repo. The campaign is described as resolved in prose only. There is also no redeem or merge script — and nothing to redeem, since all liquidity was withdrawn on 2026-06-29."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "settle",
+      "result": "accepted",
+      "learning": "Two things worth carrying forward. First, the resolution bore almost no relation to the seed prices: Protocol Guild seeded 13.27% and resolved 3.91%; Tor seeded 5.41% and resolved 11.59%; Rotki 2.55% -> 9.93%. No LP loss followed only because the liquidity had already been withdrawn 25 days before the answers went in. Second, the answer unit is the single most dangerous field in this repo — a [percent] question against 100e18 here, a fraction against 1e18 on L1."
+    }
+  ],
+  "results": {
+    "parent": "0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE",
+    "marketAddresses": ["0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE"],
+    "poolCount": 26,
+    "seer": "https://app.seer.pm/markets/10/0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE"
+  },
+  "immutableText": {
+    "note": "The market was created outside this repo, so its deployed name, token symbols, openingTime, lowerBound, category and lang are not recorded here. addresses.arbitrator is likewise unknown for octant specifically — the sibling campaigns on the same factory use 0x5AFa42b30955f137e10f89dfb5EF1542a186F90e, but that is inference rather than evidence, so it is omitted."
+  }
+}
