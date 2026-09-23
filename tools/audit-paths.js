@@ -24,8 +24,13 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 // tools/refactor-diff.js writes the old copy of a script here while it runs.
 const TEMP_PREFIX = "_refactor_diff_old_";
 
-// Directories that are NOT frozen — new code, free to reference anything.
-const NEW_CODE = new Set(["lib", "tools", "tests"]);
+// Also scan the golden tests. They read the committed execution JSONs by
+// root-relative path (`path.join(ROOT, p)`), so they depend on the campaign data
+// exactly as a script does — and when that data moved under campaigns/, 11 of
+// them broke while this audit reported nothing, because it only ever looked at
+// root scripts. lib/ and tools/ are deliberately NOT scanned: their literals are
+// relative to their own directory, not to the root.
+const ALSO_SCAN = ["tests"];
 
 // Explicit relative references: "./x", "../x", "./dir/x".
 const RELATIVE = /["'](\.\.?\/[^"'\n]+)["']/g;
@@ -33,26 +38,40 @@ const RELATIVE = /["'](\.\.?\/[^"'\n]+)["']/g;
 // with no leading "./". Restricted to data extensions so prose in the header
 // comments and ABI type strings don't match.
 const BARE = /["']([A-Za-z0-9._-]+\.(?:json|csv|xlsx|ts|log))["']/g;
+// Campaign data now lives under campaigns/<slug>/ and is named without a "./"
+// prefix, so neither pattern above catches it.
+const CAMPAIGN = /["'](campaigns\/[^"'\n]+)["']/g;
 
 function frozenScripts() {
-  return fs
+  const out = fs
     .readdirSync(ROOT, { withFileTypes: true })
     .filter((e) => e.isFile() && e.name.endsWith(".js"))
     .filter((e) => !e.name.startsWith(TEMP_PREFIX))
-    .map((e) => e.name)
-    .sort();
+    .map((e) => e.name);
+  for (const dir of ALSO_SCAN) {
+    const abs = path.join(ROOT, dir);
+    if (!fs.existsSync(abs)) continue;
+    for (const f of fs.readdirSync(abs)) if (f.endsWith(".js")) out.push(`${dir}/${f}`);
+  }
+  return out.sort();
 }
 
 // Collect {literal, file, line} for every path-looking string in a script.
+//
+// For the ALSO_SCAN dirs only the CAMPAIGN pattern applies. A test's other
+// literals are its own `../lib/x.js` imports and synthetic temp filenames
+// ("p.json", "progress.json"), none of which are root-relative — and a broken
+// import already fails the test immediately and loudly, so it needs no audit.
 function literalsIn(file) {
   const out = [];
+  const patterns = ALSO_SCAN.some((d) => file.startsWith(d + "/")) ? [CAMPAIGN] : [RELATIVE, BARE, CAMPAIGN];
   const lines = fs.readFileSync(path.join(ROOT, file), "utf8").split(/\r?\n/);
   lines.forEach((line, i) => {
     // Skip pure comment lines: guides and filenames are cited constantly in the
     // header blocks ("see CLAUDE_ZCASH_MARKETS_GUIDE.md step 5") and those are
     // documentation, not load-bearing reads.
     if (/^\s*(\/\/|\*|\/\*)/.test(line)) return;
-    for (const re of [RELATIVE, BARE]) {
+    for (const re of patterns) {
       re.lastIndex = 0;
       let m;
       while ((m = re.exec(line)) !== null) {
@@ -115,7 +134,15 @@ if (!fs.existsSync(BASELINE)) {
 }
 
 const baseline = JSON.parse(fs.readFileSync(BASELINE, "utf8")).paths;
-const broken = baseline.filter((lit) => !fs.existsSync(path.resolve(ROOT, lit)));
+const gone = baseline.filter((lit) => !fs.existsSync(path.resolve(ROOT, lit)));
+
+// A baselined path that has disappeared is only a FAILURE if a script still
+// names it. Once the campaign data moved behind the manifests, most of this
+// baseline stopped being referenced by any script at all — those entries are
+// RETIRED, not broken, and the fix is to re-snapshot rather than to move files
+// back. Conflating the two made this tool crash on the first real move.
+const broken = gone.filter((lit) => surface.has(lit));
+const retired = gone.filter((lit) => !surface.has(lit));
 
 // ── Markdown links ──────────────────────────────────────────────────────────
 // The docs are now the map of the repo, and a map with dead links is worse than
@@ -149,7 +176,7 @@ function checkDocLinks() {
 
 const deadLinks = checkDocLinks();
 
-if (broken.length === 0 && deadLinks.length === 0) {
+if (broken.length === 0 && retired.length === 0 && deadLinks.length === 0) {
   console.log(`Path audit: ${baseline.length} frozen path(s) all resolve.` + (absent.length ? ` (${absent.length} unwritten write target(s) ignored.)` : ""));
   console.log(`Link audit: all markdown links resolve.`);
   process.exit(0);
@@ -162,13 +189,21 @@ if (deadLinks.length) {
 }
 
 if (broken.length) {
-  console.error(`Path audit: ${broken.length} file(s) a frozen script depends on have MOVED or been deleted.\n`);
+  console.error(`Path audit: ${broken.length} file(s) a script STILL REFERENCES have MOVED or been deleted.\n`);
   for (const lit of broken) {
     const r = surface.get(lit);
     console.error(`  ${lit}`);
     console.error(`      referenced by ${r.file}:${r.line}`);
   }
-  console.error(`\nThese are part of the freeze surface and must stay at the repo root.`);
-  console.error(`Move them back — the script that needs them is now broken.`);
+  console.error(`\nThe script that needs them is now broken. Move them back, or update the script.`);
+}
+
+if (retired.length) {
+  if (broken.length) console.error("");
+  console.error(`Path audit: ${retired.length} baselined path(s) are gone and NO script references them.\n`);
+  for (const lit of retired.slice(0, 12)) console.error(`  ${lit}`);
+  if (retired.length > 12) console.error(`  ... and ${retired.length - 12} more`);
+  console.error(`\nNothing is broken — these moved behind the manifests. Re-baseline with:`);
+  console.error(`  node tools/audit-paths.js --snapshot`);
 }
 process.exit(1);

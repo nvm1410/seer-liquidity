@@ -42,11 +42,11 @@
     "arbitrator": "0x68154EA682f95BF582b80Dd6453FA401737491Dc"
   },
   "files": {
-    "seed": "assets_pd_v2.csv",
-    "assets": "assets_pd_v2.json",
-    "markets": "create-pd-market-execution.json",
-    "liquidity": "add-pd-gnosis-v2-execution.json",
-    "assetList": "assets_pd.ts"
+    "seed": "campaigns/gnosis-pd/assets_pd_v2.csv",
+    "assets": "campaigns/gnosis-pd/assets_pd_v2.json",
+    "markets": "campaigns/gnosis-pd/create-pd-market-execution.json",
+    "liquidity": "campaigns/gnosis-pd/add-pd-gnosis-v2-execution.json",
+    "assetList": "campaigns/gnosis-pd/assets_pd.ts"
   },
   "markets": [
     {
@@ -72,7 +72,7 @@
   "liquidity": {
     "totalCollateral": 5,
     "band": {
-      "minPrice": 1e-07,
+      "minPrice": 1e-7,
       "maxPrice": 0.999999
     },
     "bandPerOutcome": {
@@ -97,8 +97,8 @@
       "finishedAt": "2026-08-12",
       "artifacts": [
         "fetch-credora-pd.js",
-        "assets_pd_v2.csv",
-        "assets_pd_v2.json"
+        "campaigns/gnosis-pd/assets_pd_v2.csv",
+        "campaigns/gnosis-pd/assets_pd_v2.json"
       ],
       "notes": "33 assets frozen from Credora staging. assets_pd.ts lists solvBTC twice; de-duplicated on read (first kept), and create-pd-market-gnosis.js hard-fails on any duplicate. v2's first asset changed from v1's wbETH to weETH - a genuinely different Credora asset (psl 0.00096 vs 0.00778)."
     },
@@ -108,7 +108,7 @@
       "finishedAt": "2026-08-12",
       "artifacts": [
         "create-pd-market-gnosis.js",
-        "create-pd-market-execution.json"
+        "campaigns/gnosis-pd/create-pd-market-execution.json"
       ],
       "txCount": 1,
       "notes": "Market 0xc84786B06390F11dED0DD362E27Fc881B540e6F2, tx 0xae2f434a..., block 47679508, 12,829,147 gas against a 17.0M Gnosis block limit. Only 5% estimateGas padding: a 20% pad would request 92% of a whole block, which validators may not fill. Gas is ~759k + 344k per outcome slot, so above ~44 outcomes this no longer fits in one transaction."
@@ -119,7 +119,7 @@
       "finishedAt": "2026-08-12",
       "artifacts": [
         "remove-liquidity-gnosis.js",
-        "remove-pd-gnosis-execution.json"
+        "campaigns/gnosis-pd-v1/remove-pd-gnosis-execution.json"
       ],
       "txCount": 75,
       "notes": "49 v1 positions removed and NFTs burned, then the complete set merged to sDAI. Blocks 47679680-47679778. The merge is capped by the SMALLEST holding, and six weeks of trading had unbalanced the set (bsdETH 0.784 vs No To All 7.58), so mergePositions returned 0.784 sDAI rather than ~5.6. Recovery was 2.717 (pool sDAI sides) + 0.784 (merge); wallet 4.791 -> 8.292."
@@ -130,7 +130,7 @@
       "finishedAt": "2026-08-12",
       "artifacts": [
         "add-pd-liquidity-gnosis-v2.js",
-        "add-pd-gnosis-v2-execution.json"
+        "campaigns/gnosis-pd/add-pd-gnosis-v2-execution.json"
       ],
       "notes": "34 pools, exactly 5.0 sDAI, blocks 47680659-47680803. Wallet 8.292 -> 3.292, funded by the v1 drain. No To All at 10.0% of spend against v1 round 1's 85%. Verified: all 34 pools' live globalState().tick price within 0.0086% of intended - pure tick granularity, irreducible."
     }

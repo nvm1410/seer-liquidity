@@ -35,12 +35,12 @@
     "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
   },
   "files": {
-    "seed": "zcash-q3-proposals.json",
-    "markets": "create-zcash-markets-execution.json",
-    "csv": "zcash-q3-markets.csv",
-    "liquidity": "add-zcash-liquidity-execution.json",
-    "reseed": "reseed-zcash-liquidity-execution.json",
-    "withdraw": "withdraw-zcash-liquidity-execution.json"
+    "seed": "campaigns/zcash-q3/zcash-q3-proposals.json",
+    "markets": "campaigns/zcash-q3/create-zcash-markets-execution.json",
+    "csv": "campaigns/zcash-q3/zcash-q3-markets.csv",
+    "liquidity": "campaigns/zcash-q3/add-zcash-liquidity-execution.json",
+    "reseed": "campaigns/zcash-q3/reseed-zcash-liquidity-execution.json",
+    "withdraw": "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json"
   },
   "markets": [
     {
@@ -84,7 +84,7 @@
       "finishedAt": "2026-08-19",
       "artifacts": [
         "create-zcash-markets.js",
-        "create-zcash-markets-execution.json"
+        "campaigns/zcash-q3/create-zcash-markets-execution.json"
       ],
       "txCount": 37,
       "notes": "37/37 created and verified, 0 failures, 64,068,263 gas, 0.0000642 ETH. Reality question-id collision check clean on all 37."
@@ -95,7 +95,7 @@
       "finishedAt": "2026-08-22",
       "artifacts": [
         "add-zcash-liquidity.js",
-        "add-zcash-liquidity-execution.json",
+        "campaigns/zcash-q3/add-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/add-zcash-liquidity-run.log"
       ],
       "notes": "74/74 pools at the uniform 0.55. Exactly 20,000.000000 sUSDS; wallet 24,552.02 -> 4,552.02; 0.000409 ETH gas; 0 failures. Splits 5,159.61, sUSDS side 14,840.39."
@@ -106,7 +106,7 @@
       "finishedAt": "2026-08-24",
       "artifacts": [
         "withdraw-zcash-liquidity.js",
-        "withdraw-zcash-liquidity-execution.json",
+        "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/withdraw-zcash-liquidity-run.log"
       ],
       "notes": "74/74 withdrawn, ahead of the reprice. Only 4 of 37 markets had traded."
@@ -117,7 +117,7 @@
       "finishedAt": "2026-08-24",
       "artifacts": [
         "merge-zcash-positions.js",
-        "merge-zcash-positions-execution.json",
+        "campaigns/zcash-q3/merge-zcash-positions-execution.json",
         "archive/runs/zcash-q3/merge-zcash-positions-run.log"
       ],
       "notes": "37/37 merged, 5,159.44 sUSDS recovered, 1.354 outcome tokens stranded. Round-trip cost 0.58 sUSDS plus gas."
@@ -128,7 +128,7 @@
       "finishedAt": "2026-08-24",
       "artifacts": [
         "reseed-zcash-liquidity.js",
-        "reseed-zcash-liquidity-execution.json",
+        "campaigns/zcash-q3/reseed-zcash-liquidity-execution.json",
         "archive/runs/zcash-q3/reseed-zcash-liquidity-run.log"
       ],
       "notes": "74/74 re-seeded at per-proposal prices, 20,007.43 sUSDS (wallet 24,551.44 -> 4,544.01), ~0.00013 ETH over ~370 tx. 72/74 repriced; ZECMAP stayed at 0.55. Needed a 3-tx dust -> swap -> fund sequence per pool because a drained V3 pool keeps its price and createAndInitializePoolIfNecessary is a no-op on it."

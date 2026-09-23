@@ -34,12 +34,12 @@
     "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"
   },
   "files": {
-    "seed": "octant-initial-price.csv",
-    "liquidity": "add-octant-execution.json",
-    "invalidLiquidity": "add-octant-invalid-execution.json",
-    "withdraw": "withdraw-octant-execution.json",
-    "answers": "resolution.xlsx",
-    "answerLog": "answer-octant-execution.json"
+    "seed": "campaigns/octant/octant-initial-price.csv",
+    "liquidity": "campaigns/octant/add-octant-execution.json",
+    "invalidLiquidity": "campaigns/octant/add-octant-invalid-execution.json",
+    "withdraw": "campaigns/octant/withdraw-octant-execution.json",
+    "answers": "campaigns/octant/resolution.xlsx",
+    "answerLog": "campaigns/octant/answer-octant-execution.json"
   },
   "markets": [
     {
@@ -47,7 +47,10 @@
       "role": "standalone",
       "count": 1,
       "templateId": 1,
-      "outcomes": ["25 Octant epoch-12 projects", "Invalid result (factory-added)"],
+      "outcomes": [
+        "25 Octant epoch-12 projects",
+        "Invalid result (factory-added)"
+      ],
       "parentMarket": null,
       "parentOutcome": null,
       "minBondEth": "0.0005",
@@ -57,7 +60,10 @@
   ],
   "liquidity": {
     "totalCollateral": 20000,
-    "band": { "minPrice": 0.0001, "maxPrice": 1 },
+    "band": {
+      "minPrice": 0.0001,
+      "maxPrice": 1
+    },
     "sizing": "by-outcome",
     "pools": 26,
     "priceSource": "octant-initial-price.csv 'Rescaled' column, normalized",
@@ -79,7 +85,10 @@
       "name": "phase1-seed",
       "status": "done",
       "finishedAt": "2026-06-23",
-      "artifacts": ["add-octant-liquidity.js", "add-octant-execution.json"],
+      "artifacts": [
+        "add-octant-liquidity.js",
+        "campaigns/octant/add-octant-execution.json"
+      ],
       "txCount": 25,
       "notes": "25 pools, one per named project, blocks 153290819-153290983. Exactly 20,000.000000 sUSDS: split 8,759.78 + sUSDS side 11,240.22. Date from file mtime, corroborated by block numbers — this campaign kept no run logs."
     },
@@ -87,7 +96,10 @@
       "name": "seed-invalid",
       "status": "done",
       "finishedAt": "2026-06-26",
-      "artifacts": ["add-octant-invalid-liquidity.js", "add-octant-invalid-execution.json"],
+      "artifacts": [
+        "add-octant-invalid-liquidity.js",
+        "campaigns/octant/add-octant-invalid-execution.json"
+      ],
       "txCount": 1,
       "notes": "A 26th pool for the Invalid outcome, block 153421820. Deploys the 8,759.78 idle Invalid tokens the split already produced for 0.0085 sUSDS — it never splits fresh collateral, and hard-fails if the balance is zero. Effectively free capital efficiency."
     },
@@ -95,7 +107,10 @@
       "name": "unwind-withdraw",
       "status": "done",
       "finishedAt": "2026-06-29",
-      "artifacts": ["withdraw-octant-liquidity.js", "withdraw-octant-execution.json"],
+      "artifacts": [
+        "withdraw-octant-liquidity.js",
+        "campaigns/octant/withdraw-octant-execution.json"
+      ],
       "txCount": 26,
       "notes": "All 26 positions withdrawn at 100%, blocks 153568833-153568916. NFTs 1106305-1106329 plus 1107320."
     },
@@ -103,7 +118,11 @@
       "name": "settle-answer",
       "status": "done",
       "finishedAt": "2026-07-24",
-      "artifacts": ["answer-octant-markets.js", "answer-octant-execution.json", "resolution.xlsx"],
+      "artifacts": [
+        "answer-octant-markets.js",
+        "campaigns/octant/answer-octant-execution.json",
+        "campaigns/octant/resolution.xlsx"
+      ],
       "txCount": 25,
       "notes": "25/25 answers submitted 08:49:11Z-08:52:00Z, blocks 154642085-154642169, 0.0005 ETH bond each (0.0125 ETH total). Seven spreadsheet-to-chain name mismatches needed a hardcoded ALIASES table. Questions would finalize ~2026-07-27."
     },
@@ -123,7 +142,9 @@
   ],
   "results": {
     "parent": "0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE",
-    "marketAddresses": ["0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE"],
+    "marketAddresses": [
+      "0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE"
+    ],
     "poolCount": 26,
     "seer": "https://app.seer.pm/markets/10/0xE85aDa7CD6D33CB41Ac596FB4749e3F94d836EcE"
   },

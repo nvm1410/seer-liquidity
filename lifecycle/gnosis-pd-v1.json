@@ -43,9 +43,9 @@
     "arbitrator": "0x68154EA682f95BF582b80Dd6453FA401737491Dc"
   },
   "files": {
-    "seed": "assets_pd.csv",
-    "liquidity": "add-pd-gnosis-execution.json",
-    "round2Liquidity": "add-pd-gnosis-round2-execution.json"
+    "seed": "campaigns/gnosis-pd-v1/assets_pd.csv",
+    "liquidity": "campaigns/gnosis-pd-v1/add-pd-gnosis-execution.json",
+    "round2Liquidity": "campaigns/gnosis-pd-v1/add-pd-gnosis-round2-execution.json"
   },
   "markets": [
     {
@@ -95,7 +95,7 @@
       "finishedAt": "2026-07-04",
       "artifacts": [
         "add-pd-liquidity-gnosis.js",
-        "add-pd-gnosis-execution.json"
+        "campaigns/gnosis-pd-v1/add-pd-gnosis-execution.json"
       ],
       "notes": "Round 1: 25 pools, ~5 sDAI. Split (mint) 0.7137 + sDAI side 4.2863 = exactly 5.0. No To All took 4.269 of the 4.286 sDAI side."
     },
@@ -105,7 +105,7 @@
       "finishedAt": "2026-07-04",
       "artifacts": [
         "add-pd-liquidity-gnosis-round2.js",
-        "add-pd-gnosis-round2-execution.json"
+        "campaigns/gnosis-pd-v1/add-pd-gnosis-round2-execution.json"
       ],
       "notes": "Round 2: a second ~5 sDAI over the 24 ASSET pools only, reusing round 1's pool geometry from its execution log rather than recomputing prices. Excluding No To All is what let the asset pools get real depth; it is a workaround, not a fix."
     },
@@ -115,7 +115,7 @@
       "finishedAt": "2026-08-12",
       "artifacts": [
         "remove-liquidity-gnosis.js",
-        "remove-pd-gnosis-execution.json"
+        "campaigns/gnosis-pd-v1/remove-pd-gnosis-execution.json"
       ],
       "txCount": 75,
       "notes": "49 positions removed and NFTs burned, then the complete set merged to sDAI. Blocks 47679680-47679778. Recovered 2.717 + 0.784; wallet 4.791 -> 8.292, which funded v2's seeding."

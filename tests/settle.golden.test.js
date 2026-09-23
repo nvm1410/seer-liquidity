@@ -15,7 +15,7 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const read = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), "utf8"));
 
 describe("golden: the L1 merge (worth ~17.7k in ordering alone)", () => {
-  const rows = read("merge-l1-positions-execution.json");
+  const rows = read("campaigns/l1-deepfunding/merge-l1-positions-execution.json");
 
   it("has both phases recorded", () => {
     assert.equal(rows.length, 2);
@@ -57,7 +57,7 @@ describe("golden: the L1 merge (worth ~17.7k in ordering alone)", () => {
 });
 
 describe("golden: the L1 redemption chunk plan", () => {
-  const rows = read("redeem-l1-positions-execution.json");
+  const rows = read("campaigns/l1-deepfunding/redeem-l1-positions-execution.json");
 
   it("settled in 8 transactions across two phases", () => {
     assert.equal(rows.length, 8);

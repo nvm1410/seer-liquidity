@@ -42,10 +42,10 @@
     "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
   },
   "files": {
-    "seed": "zcash-nu7-questions-v3.json",
-    "markets": "create-zcash-nu7-markets-v3-execution.json",
-    "reference": "zcash-nu7-markets-v3.json",
-    "liquidity": "add-zcash-nu7-liquidity-v3-round2-execution.json"
+    "seed": "campaigns/zcash-nu7/zcash-nu7-questions-v3.json",
+    "markets": "campaigns/zcash-nu7/create-zcash-nu7-markets-v3-execution.json",
+    "reference": "campaigns/zcash-nu7/zcash-nu7-markets-v3.json",
+    "liquidity": "campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-round2-execution.json"
   },
   "markets": [
     {
@@ -98,7 +98,7 @@
       "finishedAt": "2026-09-09",
       "artifacts": [
         "create-zcash-nu7-markets.js",
-        "create-zcash-nu7-markets-v3-execution.json",
+        "campaigns/zcash-nu7/create-zcash-nu7-markets-v3-execution.json",
         "archive/runs/zcash-nu7/create-zcash-nu7-v3-run.log"
       ],
       "txCount": 5,
@@ -110,7 +110,7 @@
       "finishedAt": "2026-09-09",
       "artifacts": [
         "add-zcash-nu7-liquidity.js",
-        "add-zcash-nu7-liquidity-v3-execution.json",
+        "campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-execution.json",
         "archive/runs/zcash-nu7/add-zcash-nu7-v3-run.log"
       ],
       "notes": "Round 1: 14/14 pools, exactly 10,000.000000 sUSDS. Wallet 42,837.64 -> 32,837.64. Splits 2,030.07, sUSDS side 7,969.93."
@@ -120,8 +120,8 @@
       "status": "done",
       "finishedAt": "2026-09-12",
       "artifacts": [
-        "withdraw-zcash-nu7-liquidity-v3-execution.json",
-        "merge-zcash-nu7-positions-v3-execution.json",
+        "campaigns/zcash-nu7/withdraw-zcash-nu7-liquidity-v3-execution.json",
+        "campaigns/zcash-nu7/merge-zcash-nu7-positions-v3-execution.json",
         "archive/runs/zcash-nu7/withdraw-zcash-nu7-v3-run.log",
         "archive/runs/zcash-nu7/merge-zcash-nu7-v3-run.log"
       ],
@@ -132,7 +132,7 @@
       "status": "done",
       "finishedAt": "2026-09-12",
       "artifacts": [
-        "add-zcash-nu7-liquidity-v3-round2-execution.json",
+        "campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-round2-execution.json",
         "archive/runs/zcash-nu7/add-zcash-nu7-v3-round2-run.log"
       ],
       "notes": "Same day as the round-1 unwind. 10,000 sUSDS back over the same 14 pools, blocks 156814420-156814538, exactly 10,000.000000 for 0.0000105 ETH. Priced off live slot0, not the base rates. Q4's live prices now sum to 1.0019 - a ~0.19% arb against its own depth."
@@ -142,8 +142,8 @@
       "status": "done",
       "finishedAt": "2026-09-14",
       "artifacts": [
-        "withdraw-zcash-nu7-liquidity-v3-round2-execution.json",
-        "merge-zcash-nu7-positions-v3-round2-execution.json",
+        "campaigns/zcash-nu7/withdraw-zcash-nu7-liquidity-v3-round2-execution.json",
+        "campaigns/zcash-nu7/merge-zcash-nu7-positions-v3-round2-execution.json",
         "archive/runs/zcash-nu7/withdraw-zcash-nu7-v3-round2-run.log",
         "archive/runs/zcash-nu7/merge-zcash-nu7-v3-round2-run.log"
       ],

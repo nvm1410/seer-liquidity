@@ -48,10 +48,10 @@
     "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"
   },
   "files": {
-    "seed": "originality-r3-seed.json",
-    "markets": "create-originality-r3-v2-execution.json",
-    "mapCache": "originality-r3-v2-map-cache.json",
-    "liquidity": "add-originality-r3-v2-liquidity-execution.json"
+    "seed": "campaigns/originality-r3/originality-r3-seed.json",
+    "markets": "campaigns/originality-r3/create-originality-r3-v2-execution.json",
+    "mapCache": "campaigns/originality-r3/originality-r3-v2-map-cache.json",
+    "liquidity": "campaigns/originality-r3/add-originality-r3-v2-liquidity-execution.json"
   },
   "markets": [
     {
@@ -185,7 +185,7 @@
       "status": "done",
       "artifacts": [
         "lifecycle/originality-r3.json",
-        "originality-r3-seed.json"
+        "campaigns/originality-r3/originality-r3-seed.json"
       ],
       "notes": "Grill answered 2026-09-22. Seed re-snapshotted: 98 rows, 0 out of band, prices identical to v1 snapshot."
     },
@@ -212,7 +212,7 @@
       "name": "phase1-create",
       "status": "done",
       "artifacts": [
-        "create-originality-r3-v2-execution.json",
+        "campaigns/originality-r3/create-originality-r3-v2-execution.json",
         "archive/runs/originality-r3/create-originality-r3-v2-run.log",
         "archive/runs/originality-r3/create-originality-r3-v2-run2.log"
       ],
@@ -222,7 +222,7 @@
       "name": "phase1-seed",
       "status": "done",
       "artifacts": [
-        "add-originality-r3-v2-liquidity-execution.json",
+        "campaigns/originality-r3/add-originality-r3-v2-liquidity-execution.json",
         "archive/runs/originality-r3/add-originality-r3-v2-run.log",
         "archive/runs/originality-r3/add-originality-r3-v2-dryrun.log"
       ],

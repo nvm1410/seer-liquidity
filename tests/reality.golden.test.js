@@ -87,7 +87,7 @@ describe("golden: Reality question ids (the unrecoverable one)", () => {
     // The factory appends "Invalid result", but the ENCODED question carries only
     // the user outcomes. Take them from the log's own outcomes array minus the
     // factory's slot, which is also a check that the slot is where we think.
-    const n = replayCategorical("create-zcash-markets-execution.json", (row) => {
+    const n = replayCategorical("campaigns/zcash-q3/create-zcash-markets-execution.json", (row) => {
       assert.equal(row.outcomes[row.outcomes.length - 1], "Invalid result", "factory slot is last");
       return row.outcomes.slice(0, -1);
     });
@@ -96,7 +96,7 @@ describe("golden: Reality question ids (the unrecoverable one)", () => {
   });
 
   it("zcash-nu7 v3: 5 n-outcome categoricals reproduce exactly", () => {
-    const n = replayCategorical("create-zcash-nu7-markets-v3-execution.json", (row) => {
+    const n = replayCategorical("campaigns/zcash-nu7/create-zcash-nu7-markets-v3-execution.json", (row) => {
       assert.equal(row.outcomes[row.outcomes.length - 1], "Invalid result", "factory slot is last");
       return row.outcomes.slice(0, -1);
     });
@@ -109,7 +109,7 @@ describe("golden: Reality question ids (the unrecoverable one)", () => {
     // question has to be RECONSTRUCTED, which also checks the multi-scalar name
     // rule the manifest states: one question per outcome, built as
     // questionStart + outcome + questionEnd.
-    const doc = read("create-originality-r3-v2-execution.json");
+    const doc = read("campaigns/originality-r3/create-originality-r3-v2-execution.json");
     const m = read("lifecycle/originality-r3.json");
     const parentSpec = m.markets.find((x) => x.role === "parent");
     const minBond = ethersParse(parentSpec.minBondEth);
@@ -159,7 +159,7 @@ describe("golden: Reality question ids (the unrecoverable one)", () => {
 
   it("every encoded question round-trips its own recorded text", () => {
     // Guards the separator itself: U+241F, not a tab, not a pipe.
-    for (const log of ["create-zcash-markets-execution.json", "create-zcash-nu7-markets-v3-execution.json"]) {
+    for (const log of ["campaigns/zcash-q3/create-zcash-markets-execution.json", "campaigns/zcash-nu7/create-zcash-nu7-markets-v3-execution.json"]) {
       for (const row of read(log)) {
         const parts = row.encodedQuestion.split(SEP);
         assert.equal(parts.length, 4, `${log}: categorical question has 4 fields`);
@@ -218,7 +218,7 @@ describe("golden: the Gnosis multi-categorical (templateId 3, not 2)", () => {
   };
 
   it("reproduces the real market's Reality id with templateId 3", () => {
-    const d = read("create-pd-market-execution.json");
+    const d = read("campaigns/gnosis-pd/create-pd-market-execution.json");
     const id = computeQuestionId({
       templateId: TEMPLATE.MULTI_CATEGORICAL,
       openingTime: d.openingTime,
@@ -230,7 +230,7 @@ describe("golden: the Gnosis multi-categorical (templateId 3, not 2)", () => {
   });
 
   it("templateId 2 does NOT reproduce it — the bug this pins", () => {
-    const d = read("create-pd-market-execution.json");
+    const d = read("campaigns/gnosis-pd/create-pd-market-execution.json");
     const wrong = computeQuestionId({
       templateId: TEMPLATE.CATEGORICAL,
       openingTime: d.openingTime,
@@ -242,7 +242,7 @@ describe("golden: the Gnosis multi-categorical (templateId 3, not 2)", () => {
   });
 
   it("reproduces its CTF questionId too", () => {
-    const d = read("create-pd-market-execution.json");
+    const d = read("campaigns/gnosis-pd/create-pd-market-execution.json");
     assert.equal(
       computeMarketQuestionId({
         questionsIds: d.questionsIds,

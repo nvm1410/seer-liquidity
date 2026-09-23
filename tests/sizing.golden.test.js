@@ -87,7 +87,7 @@ describe("golden: originality-r3 sizing (196 pools, conditional collateral)", ()
   it("reproduces every fresh pool exactly", () => {
     const m = read("lifecycle/originality-r3.json");
     const { checked, skipped } = replay({
-      log: "add-originality-r3-v2-liquidity-execution.json",
+      log: "campaigns/originality-r3/add-originality-r3-v2-liquidity-execution.json",
       chainId: m.chain.id,
       feeTier: m.amm.feeTier,
       tickSpacing: m.amm.tickSpacing,
@@ -105,7 +105,7 @@ describe("golden: zcash-nu7 v3 round 1 sizing (n-outcome categorical, sUSDS)", (
   it("reproduces every fresh pool exactly", () => {
     const m = read("lifecycle/zcash-nu7.json");
     const { checked } = replay({
-      log: "add-zcash-nu7-liquidity-v3-execution.json",
+      log: "campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-execution.json",
       chainId: m.chain.id,
       feeTier: m.amm.feeTier,
       tickSpacing: m.amm.tickSpacing,
@@ -121,7 +121,7 @@ describe("golden: zcash-q3 sizing (74 binary pools, sUSDS)", () => {
   it("reproduces every fresh pool exactly", () => {
     const m = read("lifecycle/zcash-q3.json");
     const { checked } = replay({
-      log: "add-zcash-liquidity-execution.json",
+      log: "campaigns/zcash-q3/add-zcash-liquidity-execution.json",
       chainId: m.chain.id,
       feeTier: m.amm.feeTier,
       tickSpacing: m.amm.tickSpacing,
@@ -138,7 +138,7 @@ describe("golden: the round-2 re-seed is NOT reproducible from seed prices", () 
     // Round 2 re-seeded pools that already existed, so every row was priced off
     // live slot0. Nothing there can be reproduced from the seed price alone.
     // Asserted explicitly so this stays a documented gap rather than a silent one.
-    const rows = read("add-zcash-nu7-liquidity-v3-round2-execution.json").filter((e) => e.kind === "pool");
+    const rows = read("campaigns/zcash-nu7/add-zcash-nu7-liquidity-v3-round2-execution.json").filter((e) => e.kind === "pool");
     assert.equal(rows.length, 14);
     assert.equal(rows.filter((r) => !r.preExisting).length, 0);
   });

@@ -8,7 +8,9 @@
   "status": "complete",
   "source": {
     "request": "Operate liquidity for the two nested Deep Funding GG24 juror-weight markets on Optimism, then settle them: restore the liquidity a prior run had removed, top up, unwind, answer Reality, resolve, redeem.",
-    "docs": ["docs/guides/l1-deepfunding.md"],
+    "docs": [
+      "docs/guides/l1-deepfunding.md"
+    ],
     "priceSourceNote": "Seeding prices came from elo.js. That is the SEEDING data and explicitly NOT the resolution data - resolution used l1weightsForResolution.csv. Using elo.js to answer would have mispriced every outcome."
   },
   "precedents": {
@@ -39,14 +41,14 @@
     "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
   },
   "files": {
-    "answers": "l1weightsForResolution.csv",
+    "answers": "campaigns/l1-deepfunding/l1weightsForResolution.csv",
     "baseline": "execution.json",
-    "addBack": "add-back-l1-execution.json",
-    "topUp": "add-20k-l1-execution.json",
-    "withdraw": "withdraw-l1-liquidity-execution.json",
-    "merge": "merge-l1-positions-execution.json",
-    "answerLog": "answer-l1-execution.json",
-    "redeem": "redeem-l1-positions-execution.json"
+    "addBack": "campaigns/l1-deepfunding/add-back-l1-execution.json",
+    "topUp": "campaigns/l1-deepfunding/add-20k-l1-execution.json",
+    "withdraw": "campaigns/l1-deepfunding/withdraw-l1-liquidity-execution.json",
+    "merge": "campaigns/l1-deepfunding/merge-l1-positions-execution.json",
+    "answerLog": "campaigns/l1-deepfunding/answer-l1-execution.json",
+    "redeem": "campaigns/l1-deepfunding/redeem-l1-positions-execution.json"
   },
   "markets": [
     {
@@ -56,7 +58,11 @@
       "templateId": 1,
       "marketName": "What will be the juror weight (computed through Huber loss minimization in the log domain with delta = 1.345 sigma) of [repository] in the second round of the deepfunding experiment?",
       "outcomeType": "repository",
-      "outcomes": ["66 repositories (0-65)", "Other repositories not present on the market created on November 26, 2025 (66)", "Invalid result (67)"],
+      "outcomes": [
+        "66 repositories (0-65)",
+        "Other repositories not present on the market created on November 26, 2025 (66)",
+        "Invalid result (67)"
+      ],
       "parentMarket": null,
       "parentOutcome": null,
       "lowerBound": "0",
@@ -71,7 +77,10 @@
       "templateId": 1,
       "marketName": "same text as the parent",
       "outcomeType": "repository",
-      "outcomes": ["32 repositories (0-31)", "Invalid result (32)"],
+      "outcomes": [
+        "32 repositories (0-31)",
+        "Invalid result (32)"
+      ],
       "parentMarket": "0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6",
       "parentOutcome": 66,
       "lowerBound": "0",
@@ -82,7 +91,10 @@
   ],
   "liquidity": {
     "totalCollateral": 19980,
-    "band": { "minPrice": 0.0001, "maxPrice": 0.2 },
+    "band": {
+      "minPrice": 0.0001,
+      "maxPrice": 0.2
+    },
     "sizing": "solved",
     "pools": 100,
     "priceSource": "elo.js (go-ethereum 0.0623, A/B split 0.9313/0.0687)",
@@ -102,12 +114,19 @@
       "rule": "Exactly the sum of market B's 32 weights. That is what makes two-level redemption exact: a B token redeems to w_j/sum(B) of an OTHER token, which redeems to sum(B)/sum(A) sUSDS, and the product is w_j. Any other value silently over- or under-pays every B holder."
     },
     "redeem": {
-      "order": ["child", "parent"],
+      "order": [
+        "child",
+        "parent"
+      ],
       "expectedCollateral": "5533.465968565583817205"
     }
   },
   "unwind": {
-    "order": ["withdraw", "merge", "redeem"],
+    "order": [
+      "withdraw",
+      "merge",
+      "redeem"
+    ],
     "orderNote": "Merge the CHILD market first, worth ~17.7k sUSDS. mergePositions IS capped at min(balance) across the full partition including Invalid, and outcome #66 was the binding minimum at 20,476.01 against next-lowest #58 at 20,839.57 - merging the parent first would have capped the whole unwind at the ~2,749 OTHER tokens lying around. Redeem is child-first too but for a DIFFERENT reason: redeemPositions is NOT capped at min(balance), each outcome pays its own weight; the order matters because B redeems INTO parent outcome #66, whose standalone balance was zero.",
     "burnNft": false,
     "collectEmpty": true,
@@ -122,7 +141,10 @@
       "name": "add-back",
       "status": "done",
       "finishedAt": "2026-07-27",
-      "artifacts": ["add-back-l1-liquidity.js", "add-back-l1-execution.json"],
+      "artifacts": [
+        "add-back-l1-liquidity.js",
+        "campaigns/l1-deepfunding/add-back-l1-execution.json"
+      ],
       "txCount": 275,
       "notes": "No new collateral - re-deposits tokens already held to restore the 50% a prior index.js run had removed. 198/198 processed, 0 failed: 168 fully restored, 30 partial (shortfalls 0.3%-39%)."
     },
@@ -130,7 +152,11 @@
       "name": "topup-20k",
       "status": "done",
       "finishedAt": "2026-07-30",
-      "artifacts": ["add-20k-l1-liquidity.js", "add-20k-l1-execution.json", "verify-20k-l1.js"],
+      "artifacts": [
+        "add-20k-l1-liquidity.js",
+        "campaigns/l1-deepfunding/add-20k-l1-execution.json",
+        "verify-20k-l1.js"
+      ],
       "txCount": 205,
       "notes": "Exactly 19,980.00 sUSDS of a 20,000 budget. splitPosition on A 14,090.17; splitPosition on B 11,341.09 OTHER tokens; sUSDS into pools 5,889.83. Wallet 44,532.02 -> 24,552.02, gas 0.0000636 ETH. Solved multiplier f = 0.8993; all 100 pools ended at exactly 1.8993x their pre-run liquidity, verified on chain."
     },
@@ -140,7 +166,7 @@
       "finishedAt": "2026-08-25",
       "artifacts": [
         "withdraw-l1-liquidity.js",
-        "withdraw-l1-liquidity-execution.json",
+        "campaigns/l1-deepfunding/withdraw-l1-liquidity-execution.json",
         "archive/runs/l1/withdraw-l1-run.log"
       ],
       "txCount": 198,
@@ -152,7 +178,7 @@
       "finishedAt": "2026-08-25",
       "artifacts": [
         "merge-l1-positions.js",
-        "merge-l1-positions-execution.json",
+        "campaigns/l1-deepfunding/merge-l1-positions-execution.json",
         "archive/runs/l1/merge-l1-run.log",
         "archive/runs/l1/verify-l1-unwind.log"
       ],
@@ -164,7 +190,7 @@
       "finishedAt": "2026-08-28",
       "artifacts": [
         "answer-l1-markets.js",
-        "answer-l1-execution.json",
+        "campaigns/l1-deepfunding/answer-l1-execution.json",
         "archive/runs/l1/answer-l1-run.log",
         "archive/runs/l1/verify-answers.log"
       ],
@@ -184,7 +210,7 @@
       "finishedAt": "2026-09-01",
       "artifacts": [
         "redeem-l1-positions.js",
-        "redeem-l1-positions-execution.json",
+        "campaigns/l1-deepfunding/redeem-l1-positions-execution.json",
         "archive/runs/l1/redeem-l1-run.log"
       ],
       "txCount": 106,
