@@ -23,8 +23,14 @@ Then confirm the repo is sound before touching it:
 npm test
 ```
 
-Expect: **52 scripts gated · 36 freeze paths · 8 manifests · 67 tests**. Read the counts, not the
-exit code — see the first entry in LESSONS.md for why.
+Expect four counts, and expect them to **change only when you changed something**. If a
+count moved and you cannot say which file you added or removed, find out before going
+further — a guard that has quietly stopped covering anything still exits 0.
+
+As of 2026-09-23: **52 scripts gated · 35 freeze paths · 8 manifests · 67 tests.**
+These are a dated observation, not a target; adding a campaign moves the first two.
+
+Read the counts, not the exit code — see the first entry in LESSONS.md for why.
 
 ## 1. Find the precedent
 
