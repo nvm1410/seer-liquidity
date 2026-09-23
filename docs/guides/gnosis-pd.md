@@ -1,5 +1,10 @@
 # Guide: Gnosis PD (Probability-of-Default) Multi-Categorical Market
 
+> **Status: HISTORICAL.** v2 live and seeded since 2026-08-12; v1 drained and abandoned  
+> Machine-readable: [`lifecycle/gnosis-pd.json`](../../lifecycle/gnosis-pd.json)  
+> The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
+> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+
 Read this before touching liquidity on the Gnosis "Probability of Default" market or
 wiring the `risk-pricing-ui` frontend to it. Covers: market structure, the
 yearly↔quarterly pricing model, the Swapr/Algebra liquidity scripts (`add-pd-*`,

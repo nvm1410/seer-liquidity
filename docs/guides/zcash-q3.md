@@ -1,5 +1,11 @@
 # Guide: Zcash Q3 2026 CDRGP markets on Optimism
 
+> **Status: HISTORICAL.** live and seeded at per-proposal prices since 2026-08-24; unresolved  
+> Machine-readable: [`lifecycle/zcash-q3.json`](../../lifecycle/zcash-q3.json)  
+> Run logs: [`archive/runs/zcash-q3/`](../../archive/runs/zcash-q3/)  
+> The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
+> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+
 Read this before running anything in the `*-zcash-*` scripts. Covers why the markets
 are shaped the way they are, the create → seed → withdraw sequence, the numbers each
 dry run produced on 2026-08-18, and the hazards specific to this market set.

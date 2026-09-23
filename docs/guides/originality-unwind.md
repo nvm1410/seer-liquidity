@@ -1,5 +1,9 @@
 # Guide: Remove & Merge All Originality Liquidity
 
+> **Status: HISTORICAL.** round-2 originality was unwound 2026-06-19; see lifecycle/originality-r3.json for the round-3 set  
+> The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
+> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+
 Read this before helping unwind originality liquidity. Script: `remove-merge-originality.js`.
 
 ## Goal

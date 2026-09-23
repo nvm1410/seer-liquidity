@@ -1,5 +1,11 @@
 # Guide: Zcash NU7 coinholder-poll markets on Optimism
 
+> **Status: HISTORICAL.** v3 markets live but holding ZERO liquidity since the 2026-09-14 unwind; unresolved  
+> Machine-readable: [`lifecycle/zcash-nu7.json`](../../lifecycle/zcash-nu7.json)  
+> Run logs: [`archive/runs/zcash-nu7/`](../../archive/runs/zcash-nu7/)  
+> The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
+> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+
 Five single-select **categorical** Seer markets, one per question of the Zcash NU7
 coinholder poll.
 

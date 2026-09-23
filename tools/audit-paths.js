@@ -113,17 +113,58 @@ if (!fs.existsSync(BASELINE)) {
 const baseline = JSON.parse(fs.readFileSync(BASELINE, "utf8")).paths;
 const broken = baseline.filter((lit) => !fs.existsSync(path.resolve(ROOT, lit)));
 
-if (broken.length === 0) {
+// ── Markdown links ──────────────────────────────────────────────────────────
+// The docs are now the map of the repo, and a map with dead links is worse than
+// no map. Cheap to check, so it rides along with the freeze-surface audit.
+function checkDocLinks() {
+  const docs = [];
+  const add = (p) => { if (fs.existsSync(path.join(ROOT, p))) docs.push(p); };
+  add("README.md");
+  add("CLAUDE.md");
+  add("docs/README.md");
+  add("lifecycle/README.md");
+  for (const dir of ["docs/guides"]) {
+    const abs = path.join(ROOT, dir);
+    if (fs.existsSync(abs)) for (const f of fs.readdirSync(abs)) if (f.endsWith(".md")) docs.push(`${dir}/${f}`);
+  }
+
+  const dead = [];
+  for (const doc of docs) {
+    const text = fs.readFileSync(path.join(ROOT, doc), "utf8");
+    const dir = path.dirname(path.join(ROOT, doc));
+    const re = /\[[^\]]*\]\(([^)]+)\)/g;
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      const target = m[1].split("#")[0].trim();
+      if (!target || /^(https?:|mailto:)/.test(target)) continue;
+      if (!fs.existsSync(path.resolve(dir, target))) dead.push({ doc, target });
+    }
+  }
+  return dead;
+}
+
+const deadLinks = checkDocLinks();
+
+if (broken.length === 0 && deadLinks.length === 0) {
   console.log(`Path audit: ${baseline.length} frozen path(s) all resolve.` + (absent.length ? ` (${absent.length} unwritten write target(s) ignored.)` : ""));
+  console.log(`Link audit: all markdown links resolve.`);
   process.exit(0);
 }
 
-console.error(`Path audit: ${broken.length} file(s) a frozen script depends on have MOVED or been deleted.\n`);
-for (const lit of broken) {
-  const r = surface.get(lit);
-  console.error(`  ${lit}`);
-  console.error(`      referenced by ${r.file}:${r.line}`);
+if (deadLinks.length) {
+  console.error(`Link audit: ${deadLinks.length} dead markdown link(s).\n`);
+  for (const d of deadLinks) console.error(`  ${d.doc} -> ${d.target}`);
+  console.error("");
 }
-console.error(`\nThese are part of the freeze surface and must stay at the repo root.`);
-console.error(`Move them back — the script that needs them is now broken.`);
+
+if (broken.length) {
+  console.error(`Path audit: ${broken.length} file(s) a frozen script depends on have MOVED or been deleted.\n`);
+  for (const lit of broken) {
+    const r = surface.get(lit);
+    console.error(`  ${lit}`);
+    console.error(`      referenced by ${r.file}:${r.line}`);
+  }
+  console.error(`\nThese are part of the freeze surface and must stay at the repo root.`);
+  console.error(`Move them back — the script that needs them is now broken.`);
+}
 process.exit(1);

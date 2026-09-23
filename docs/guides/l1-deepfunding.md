@@ -1,5 +1,11 @@
 # Guide for Claude: L1 Liquidity Add-Back
 
+> **Status: HISTORICAL.** closed out 2026-09-01 - answered, resolved, redeemed  
+> Machine-readable: [`lifecycle/l1-deepfunding.json`](../../lifecycle/l1-deepfunding.json)  
+> Run logs: [`archive/runs/l1/`](../../archive/runs/l1/)  
+> The scripts named below are **frozen** - do not edit them; a new campaign gets a new script.  
+> Any claim in this guide about a script's `DRY_RUN` value is **not authoritative**: run `npm run audit:dryrun`.
+
 Read this file at the start of the session before helping with L1 liquidity restoration.
 
 ## Situation

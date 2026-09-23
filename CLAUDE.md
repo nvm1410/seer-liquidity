@@ -4,9 +4,6 @@ Scripts that run real Seer prediction markets on **Optimism (10)** and **Gnosis 
 markets, seeding Uniswap V3 / Swapr pools, unwinding, answering Reality.eth, redeeming. Every live
 run moves real capital.
 
-> This file is being built out as the repo is systemized. See
-> `~/.claude/plans/anyway-we-can-improve-transient-pearl.md` for the full plan and remaining steps.
-
 ## Invariants
 
 **1. The root `.js` scripts are frozen.**
@@ -41,8 +38,9 @@ Do not copy these into this file — point at them.
 |---|---|
 | How to run a campaign end to end | `~/.claude/skills/seer-market-lifecycle/SKILL.md` (+ `references/grill-checklist.md`, `references/repos.md`) |
 | What happened in each past campaign | project memory — `~/.claude/projects/D--Code-liquidity/memory/MEMORY.md` |
-| Why a campaign was built the way it was | `docs/guides/` |
-| What a campaign *is*, machine-readable | `lifecycle/<slug>.json` |
+| The campaign index (chain, structure, capital, dates, status) | [`docs/README.md`](docs/README.md) |
+| Why a campaign was built the way it was | [`docs/guides/`](docs/guides/) |
+| What a campaign *is*, machine-readable | `lifecycle/<slug>.json` ([schema](lifecycle/README.md)) |
 | On-chain contract reference | `src/*.sol` — a read-only copy of the Seer contracts, never compiled |
 
 ## Files that moved
@@ -72,7 +70,8 @@ ESM, run as bare `node <script>.js` **from the repo root**. Secrets in `.env`:
 ## Checks
 
 ```bash
-npm test              # audit:dryrun + audit:paths
+npm test              # all three audits below
 npm run audit:dryrun  # fails if any frozen script is armed to send transactions
-npm run audit:paths   # fails if a file a frozen script depends on has moved
+npm run audit:paths   # fails if a frozen script's file moved, or a doc link is dead
+npm run lint:manifest # validates lifecycle/*.json, structurally and semantically
 ```
