@@ -1,0 +1,144 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "zcash-q3",
+  "version": "v1 (37 binaries, re-priced 2026-08-24)",
+  "mode": "launch",
+  "family": "poll",
+  "status": "complete",
+  "source": {
+    "request": "One binary market per proposal in the Q3 2026 Zcash Coinholder-Directed Retroactive Grants poll (CDRGP). 37 proposals from the review-period list as published 2026-08-18.",
+    "proposalText": "Will <title> be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+    "priceSourceNote": "Created and first-seeded at a uniform yesPrice 0.55, which is what Seer's published pilot spec specifies. Re-priced 2026-08-24 to per-proposal forecasts (range 0.16-0.97, mean 0.62) from an externally supplied table. That reprice is a deliberate DEVIATION from the published spec: 0.55 is a uniform prior over a very non-uniform population (14 proposals under $25k are 1.7% of the dollars; 11 over $150k are 89.2%). The source table.tsv is not in this repo."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A",
+    "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
+  },
+  "files": {
+    "seed": "zcash-q3-proposals.json",
+    "markets": "create-zcash-markets-execution.json",
+    "csv": "zcash-q3-markets.csv"
+  },
+  "markets": [
+    {
+      "type": "categorical",
+      "role": "standalone",
+      "count": 37,
+      "templateId": 2,
+      "marketNameTemplate": "Will {title} be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
+      "outcomes": ["Yes", "No"],
+      "tokenNameScheme": "ZQ3<shortName>YES / ZQ3<shortName>NO",
+      "parentMarket": null,
+      "parentOutcome": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.005",
+      "questionTimeoutSeconds": 302400
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 20000,
+    "band": { "minPrice": 0.02, "maxPrice": 0.98 },
+    "sizing": "solved",
+    "pools": 74,
+    "priceSource": "zcash-q3-proposals.json yesPrice; noPrice = 1 - yesPrice",
+    "unpooledByDesign": "the Invalid result token from every split - one Q per market, 37 in total, never pooled"
+  },
+  "spendingCap": {
+    "collateral": 20100,
+    "gasEth": 0.01
+  },
+  "stages": [
+    {
+      "name": "phase1-create",
+      "status": "done",
+      "finishedAt": "2026-08-19",
+      "artifacts": ["create-zcash-markets.js", "create-zcash-markets-execution.json"],
+      "txCount": 37,
+      "notes": "37/37 created and verified, 0 failures, 64,068,263 gas, 0.0000642 ETH. Reality question-id collision check clean on all 37."
+    },
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2026-08-22",
+      "artifacts": [
+        "add-zcash-liquidity.js",
+        "add-zcash-liquidity-execution.json",
+        "archive/runs/zcash-q3/add-zcash-liquidity-run.log"
+      ],
+      "notes": "74/74 pools at the uniform 0.55. Exactly 20,000.000000 sUSDS; wallet 24,552.02 -> 4,552.02; 0.000409 ETH gas; 0 failures. Splits 5,159.61, sUSDS side 14,840.39."
+    },
+    {
+      "name": "unwind-withdraw",
+      "status": "done",
+      "finishedAt": "2026-08-24",
+      "artifacts": [
+        "withdraw-zcash-liquidity.js",
+        "withdraw-zcash-liquidity-execution.json",
+        "archive/runs/zcash-q3/withdraw-zcash-liquidity-run.log"
+      ],
+      "notes": "74/74 withdrawn, ahead of the reprice. Only 4 of 37 markets had traded."
+    },
+    {
+      "name": "unwind-merge",
+      "status": "done",
+      "finishedAt": "2026-08-24",
+      "artifacts": [
+        "merge-zcash-positions.js",
+        "merge-zcash-positions-execution.json",
+        "archive/runs/zcash-q3/merge-zcash-positions-run.log"
+      ],
+      "notes": "37/37 merged, 5,159.44 sUSDS recovered, 1.354 outcome tokens stranded. Round-trip cost 0.58 sUSDS plus gas."
+    },
+    {
+      "name": "reseed",
+      "status": "done",
+      "finishedAt": "2026-08-24",
+      "artifacts": [
+        "reseed-zcash-liquidity.js",
+        "reseed-zcash-liquidity-execution.json",
+        "archive/runs/zcash-q3/reseed-zcash-liquidity-run.log"
+      ],
+      "notes": "74/74 re-seeded at per-proposal prices, 20,007.43 sUSDS (wallet 24,551.44 -> 4,544.01), ~0.00013 ETH over ~370 tx. 72/74 repriced; ZECMAP stayed at 0.55. Needed a 3-tx dust -> swap -> fund sequence per pool because a drained V3 pool keeps its price and createAndInitializePoolIfNecessary is a no-op on it."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "reseed",
+      "result": "accepted",
+      "learning": "A drained Uniswap V3 pool is not a gone pool - only a swap moves price, so re-pricing costs a swap per pool. Sizing the swap from DUST_Q is wrong: the shortfall is set by the range traversed, not by a constant, and SHIELDEDSCAN needed 0.036 against DUST_Q = 0.02. Size headroom from SqrtPriceMath over the traversed range and re-read the live balance before the fund step."
+    }
+  ],
+  "results": {
+    "poolCount": 74,
+    "seer": "https://app.seer.pm/markets/10/<address> - all 37 listed in zcash-q3-markets.csv"
+  },
+  "immutableText": {
+    "tokenPrefix": "ZQ3",
+    "longestSymbol": "ZQ3ZEBRACONSENSUSYES",
+    "longestSymbolBytes": 20,
+    "maxSymbolBytes": 31,
+    "realityCollisionCheck": "clean: all 37 new",
+    "note": "MarketFactory.toString31 REVERTS above 31 bytes, it does not truncate. The comment at create-zcash-markets.js:61 says 'silently truncates' and is wrong."
+  }
+}

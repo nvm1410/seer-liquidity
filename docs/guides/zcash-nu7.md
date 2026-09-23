@@ -97,7 +97,7 @@ It sharpens hazard 1 below.
 
 ## Why single-select categorical — and why that is not the Q3 answer
 
-`CLAUDE_ZCASH_MARKETS_GUIDE.md` §"Why 37 markets and not one 37-outcome market" argues
+`zcash-q3.md` §"Why 37 markets and not one 37-outcome market" argues
 *against* folding many questions into one categorical market. That argument does not
 apply here, and the difference is worth stating precisely:
 
@@ -385,7 +385,7 @@ before a single tx is sent.
 | `merge-zcash-nu7-positions.js` | Converts a full outcome set per market back to sUSDS via `Router.mergePositions`. One approval per slot then one merge, so a 4-slot market is 5 tx. Resumable per market. |
 
 **The merge is capped by the smallest balance in the set**, so a market that has traded
-recovers less than was deployed — see the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md`, and
+recovers less than was deployed — see the PD v1 case in `gnosis-pd.md`, and
 Q1/Q4 in the v3 unwind above.
 
 ## Previous sets (dead)
@@ -434,5 +434,5 @@ and diff the live doc. The guard for the second is simpler: **market names are i
 show them before creating anything.** The v3 dry run prints every name; that output is the
 review step, not a formality.
 
-Related: `CLAUDE_ZCASH_MARKETS_GUIDE.md` (the Q3 grant markets these scripts fork from),
-`GNOSIS_PD_MARKET_GUIDE.md` (the other N-outcome categorical market).
+Related: `zcash-q3.md` (the Q3 grant markets these scripts fork from),
+`gnosis-pd.md` (the other N-outcome categorical market).

@@ -1,0 +1,215 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "l1-deepfunding",
+  "version": "Deep Funding GG24 round 2, nested A/B pair",
+  "mode": "settle",
+  "family": "deepfunding",
+  "status": "complete",
+  "source": {
+    "request": "Operate liquidity for the two nested Deep Funding GG24 juror-weight markets on Optimism, then settle them: restore the liquidity a prior run had removed, top up, unwind, answer Reality, resolve, redeem.",
+    "docs": ["docs/guides/l1-deepfunding.md"],
+    "priceSourceNote": "Seeding prices came from elo.js. That is the SEEDING data and explicitly NOT the resolution data - resolution used l1weightsForResolution.csv. Using elo.js to answer would have mispriced every outcome."
+  },
+  "precedents": {
+    "note": "These markets were NOT created by this repo, so creation-side facts (tokenNames, category, lang, openingTime, creation date) are unknown here.",
+    "structuralPrecedent": "docs/guides/originality-unwind.md - the originality round-2 two-level merge is where the 'collateralToken arg is always the BASE collateral' rule is written down."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A",
+    "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
+  },
+  "files": {
+    "answers": "l1weightsForResolution.csv",
+    "baseline": "execution.json",
+    "topUp": "add-20k-l1-execution.json",
+    "withdraw": "withdraw-l1-liquidity-execution.json",
+    "merge": "merge-l1-positions-execution.json",
+    "answerLog": "answer-l1-execution.json",
+    "redeem": "redeem-l1-positions-execution.json"
+  },
+  "markets": [
+    {
+      "type": "multiScalar",
+      "role": "parent",
+      "count": 1,
+      "templateId": 1,
+      "marketName": "What will be the juror weight (computed through Huber loss minimization in the log domain with delta = 1.345 sigma) of [repository] in the second round of the deepfunding experiment?",
+      "outcomeType": "repository",
+      "outcomes": ["66 repositories (0-65)", "Other repositories not present on the market created on November 26, 2025 (66)", "Invalid result (67)"],
+      "parentMarket": null,
+      "parentOutcome": null,
+      "lowerBound": "0",
+      "upperBound": "1000000000000000000",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400
+    },
+    {
+      "type": "multiScalar",
+      "role": "child",
+      "count": 1,
+      "templateId": 1,
+      "marketName": "same text as the parent",
+      "outcomeType": "repository",
+      "outcomes": ["32 repositories (0-31)", "Invalid result (32)"],
+      "parentMarket": "0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6",
+      "parentOutcome": 66,
+      "lowerBound": "0",
+      "upperBound": "1000000000000000000",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 19980,
+    "band": { "minPrice": 0.0001, "maxPrice": 0.2 },
+    "sizing": "solved",
+    "pools": 100,
+    "priceSource": "elo.js (go-ethereum 0.0623, A/B split 0.9313/0.0687)",
+    "unpooledByDesign": "Parent outcome #66 (OTHER_TOKEN 0x63a4F76ef5846F68D069054C271465B7118e8ed9) has no sUSDS pool - its whole supply was split into market B. Both Invalid tokens got only tiny NFTs. NOTE: the band above is DERIVED from the uniform tick range [-92109, -16096] at tickSpacing 1; it is not recorded as a constant anywhere, and the literals in liquidity-l1.js:248-251 belong to that script's Invalid-only final state and must not be used as the market-wide band. The round-1 seed amount is unknown - only 'the first 20k' by implication; totalCollateral here is the documented round-2 figure."
+  },
+  "settle": {
+    "answerSource": "l1weightsForResolution.csv (98 rows: repo, parent, weight)",
+    "unit": "fraction-of-1",
+    "upperBound": "1000000000000000000",
+    "answerScaleNote": "lowerBound 0, upperBound 1e18, so 0.0456649495 -> 45664949500000000. The Octant market was a [percent] question with upperBound 100e18 - copying that scale here would be 100x wrong. ALWAYS read upperBound off the market. Separately, RealityProxy.resolveMultiScalarMarket writes the raw answers as the payout vector and ConditionalTokens divides by their sum, so only RATIOS matter: market A's answers sum to 999999999800000000, and the 2e-10 shortfall is irrelevant.",
+    "questionTimeoutSeconds": 302400,
+    "catchAllOutcome": {
+      "index": 66,
+      "label": "Other repositories not present on the market created on November 26, 2025",
+      "token": "0x63a4F76ef5846F68D069054C271465B7118e8ed9",
+      "answeredWith": "168323080700000000",
+      "rule": "Exactly the sum of market B's 32 weights. That is what makes two-level redemption exact: a B token redeems to w_j/sum(B) of an OTHER token, which redeems to sum(B)/sum(A) sUSDS, and the product is w_j. Any other value silently over- or under-pays every B holder."
+    },
+    "redeem": {
+      "order": ["child", "parent"],
+      "expectedCollateral": "5533.465968565583817205"
+    }
+  },
+  "unwind": {
+    "order": ["withdraw", "merge", "redeem"],
+    "orderNote": "Merge the CHILD market first, worth ~17.7k sUSDS. mergePositions IS capped at min(balance) across the full partition including Invalid, and outcome #66 was the binding minimum at 20,476.01 against next-lowest #58 at 20,839.57 - merging the parent first would have capped the whole unwind at the ~2,749 OTHER tokens lying around. Redeem is child-first too but for a DIFFERENT reason: redeemPositions is NOT capped at min(balance), each outcome pays its own weight; the order matters because B redeems INTO parent outcome #66, whose standalone balance was zero.",
+    "burnNft": false,
+    "collectEmpty": true,
+    "strandedTokensExpected": true
+  },
+  "spendingCap": {
+    "collateral": 20000,
+    "gasEth": 0.01
+  },
+  "stages": [
+    {
+      "name": "add-back",
+      "status": "done",
+      "finishedAt": "2026-07-27",
+      "artifacts": ["add-back-l1-liquidity.js", "add-back-l1-execution.json"],
+      "txCount": 275,
+      "notes": "No new collateral - re-deposits tokens already held to restore the 50% a prior index.js run had removed. 198/198 processed, 0 failed: 168 fully restored, 30 partial (shortfalls 0.3%-39%)."
+    },
+    {
+      "name": "topup-20k",
+      "status": "done",
+      "finishedAt": "2026-07-30",
+      "artifacts": ["add-20k-l1-liquidity.js", "add-20k-l1-execution.json", "verify-20k-l1.js"],
+      "txCount": 205,
+      "notes": "Exactly 19,980.00 sUSDS of a 20,000 budget. splitPosition on A 14,090.17; splitPosition on B 11,341.09 OTHER tokens; sUSDS into pools 5,889.83. Wallet 44,532.02 -> 24,552.02, gas 0.0000636 ETH. Solved multiplier f = 0.8993; all 100 pools ended at exactly 1.8993x their pre-run liquidity, verified on chain."
+    },
+    {
+      "name": "unwind-withdraw",
+      "status": "done",
+      "finishedAt": "2026-08-25",
+      "artifacts": [
+        "withdraw-l1-liquidity.js",
+        "withdraw-l1-liquidity-execution.json",
+        "archive/runs/l1/withdraw-l1-run.log"
+      ],
+      "txCount": 198,
+      "notes": "Matched 198 L1 positions (A: 133, B: 65) across 100 distinct pools, scope discovered from chain rather than from execution.json. Liquidity removed 158,506.12; sUSDS returned directly by the pools 12,485.72."
+    },
+    {
+      "name": "unwind-merge",
+      "status": "done",
+      "finishedAt": "2026-08-25",
+      "artifacts": [
+        "merge-l1-positions.js",
+        "merge-l1-positions-execution.json",
+        "archive/runs/l1/merge-l1-run.log",
+        "archive/runs/l1/verify-l1-unwind.log"
+      ],
+      "notes": "B first, then A. 20,476.007615049539122226 sUSDS recovered from the merges; total unwind ~32,962, wallet 4,544.01 -> 37,505.74. Stranded 351,173.31 A-tokens across 67/68 outcomes and 135,954.36 B-tokens across 32/33 - not lost, redeemable at resolution."
+    },
+    {
+      "name": "settle-answer",
+      "status": "done",
+      "finishedAt": "2026-08-28",
+      "artifacts": [
+        "answer-l1-markets.js",
+        "answer-l1-execution.json",
+        "archive/runs/l1/answer-l1-run.log",
+        "archive/runs/l1/verify-answers.log"
+      ],
+      "txCount": 99,
+      "notes": "99/99 answers submitted, 0 retries, 0 failures. 0.0495 ETH in bonds (99 x 0.0005). Questions finalized ~2026-08-31T16:52 UTC after the 302400s timeout."
+    },
+    {
+      "name": "settle-resolve",
+      "status": "skipped",
+      "finishedAt": "2026-09-01",
+      "artifacts": [],
+      "notes": "Market.resolve() is permissionless and an unknown third party called it first. resolve-l1-markets.js had nothing to do, so ./resolve-l1-execution.json was never written. Expected, not a gap - it is the one path literal on the freeze surface that legitimately does not exist."
+    },
+    {
+      "name": "settle-redeem",
+      "status": "done",
+      "finishedAt": "2026-09-01",
+      "artifacts": [
+        "redeem-l1-positions.js",
+        "redeem-l1-positions-execution.json",
+        "archive/runs/l1/redeem-l1-run.log"
+      ],
+      "txCount": 106,
+      "notes": "Phase 1 market B -> 4,510.2845 OTHER tokens (3 tx). Phase 2 market A, 67 outcomes including the fresh OTHER -> 5,533.4660 sUSDS (5 tx). sUSDS 37,305.74 -> 42,839.2075. Delta vs projection = 0, exact to the wei. Outcomes with payoutNumerators == 0 (the two Invalid slots) skipped, read off ConditionalTokens rather than trusted by name."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "settle",
+      "result": "accepted",
+      "learning": "A confirmed approve receipt is not globally visible state: a first live redeem run approved 15 tokens and then estimateGas reverted with 'transfer amount exceeds allowance' off a lagging RPC backend. The fix is to poll the allowance back after approving and to put estimateGas inside the retry loop. Also: stranded tokens are not lost - 487k of them became ~5,533 sUSDS at resolution, because sum(balance x weight) tracks the MEAN per-outcome balance, not the total."
+    }
+  ],
+  "results": {
+    "parent": "0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6",
+    "marketAddresses": [
+      "0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6",
+      "0xfea47428981f70110c64dd678889826c3627245b"
+    ],
+    "poolCount": 100,
+    "collateralReturned": "5533.465968565583817205",
+    "seer": "https://app.seer.pm/markets/10/0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6"
+  },
+  "immutableText": {
+    "nameHazard": "Market B outcome #31's on-chain name is 'lambdaclass/lambda_ethereum_consensus\\t' with a literal backslash-t baked in at creation. It needs an explicit ALIASES entry; the name-matching assertions caught it before any transaction was sent.",
+    "conditionIdA": "0xb3cb5c0ebd553e415346ce2518574de785fedd2af4848dc3c6b9be79c803d788",
+    "conditionIdB": "0x9f64ef70af1d8f99a7da5d692bd18dc30fe207720c81c21dbaf931696a202f0e"
+  }
+}

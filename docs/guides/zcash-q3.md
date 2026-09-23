@@ -107,7 +107,7 @@ was read and accepted, not silenced. The tradeoff it describes is real:
 - The list in the JSON is the **review-period** list. Proposals can be withdrawn until
   the review period closes on 2026-09-16 20:00 UTC.
 - Seer markets are immutable. A withdrawn proposal cannot be removed from a created
-  market — the PD v1→v2 rebuild in `GNOSIS_PD_MARKET_GUIDE.md` is what fixing this
+  market — the PD v1→v2 rebuild in `gnosis-pd.md` is what fixing this
   looks like.
 
 A proposal withdrawn between now and the freeze therefore resolves **Invalid** — which
@@ -246,7 +246,7 @@ Merging needs a **complete set — {YES, NO, Invalid}**. Invalid was never poole
 every split minted it, so it is already in the wallet. The mergeable amount per market
 is `min(YES, NO, Invalid)`: if a market traded, the surplus side is stranded in the
 wallet until the market resolves. That shortfall is the whole reason to read the dry-run
-table before executing (the PD v1 case in `GNOSIS_PD_MARKET_GUIDE.md` recovered 0.784 of
+table before executing (the PD v1 case in `gnosis-pd.md` recovered 0.784 of
 an expected 5.6).
 
 **Executed 2026-08-24.** Only 4 of 37 markets had traded at all (GRANTSHUB, BONUSORCHARD,

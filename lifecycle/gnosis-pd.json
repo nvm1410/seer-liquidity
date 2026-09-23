@@ -1,0 +1,137 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "gnosis-pd",
+  "version": "v2 (33 assets)",
+  "mode": "launch",
+  "family": "credit-pd",
+  "status": "complete",
+  "source": {
+    "request": "One multi-categorical market pricing the probability of default of a basket of DeFi assets before 2027, seeded on Swapr. v2 rebuilds v1 with 33 Credora assets instead of 24.",
+    "docs": ["docs/guides/gnosis-pd.md"],
+    "proposalText": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
+    "priceSourceNote": "Live Credora Metrics.psl (yearly PD as a fraction), frozen by fetch-credora-pd.js to assets_pd_v2.csv/.json. Endpoint is api.staging.credora.io/graphql - STAGING. Join key is the lowercased asset name. Snapshot 2026-08-12T01:40:34.764Z, 33 assets. Model (implied-prices.js): quarterlyPD = 1 - (1 - yearlyPD)^(1/4); priceY = product(1 - qPD_i) for No To All; price_i = qPD_i * E[1/(1+k)]. Validated to sum to exactly 1.0000000000."
+  },
+  "supersedes": {
+    "v1": "Market 0x7d386b7c41b8dab6179fc79cf7986a795305b815, 24 assets / 26 outcome slots, created through the Seer web UI (date unknown). Seeded in two rounds on 2026-07-04 (~5 sDAI each). Fully drained 2026-08-12 - 49 positions removed and burned - to fund v2. The drain landed after v2's creation tx but before v2's seeding.",
+    "whyRebuild": "v1 round 1 gave No To All the same outcome quantity Q as the asset pools, and because its price is ~0.9654 that single pool took 85% of the budget (4.27 of 5 sDAI). Round 2 worked around it by excluding No To All; v2 fixes it properly with a fixed 0.5 sDAI cap."
+  },
+  "chain": {
+    "id": 100,
+    "name": "gnosis",
+    "collateral": {
+      "symbol": "sDAI",
+      "address": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "algebra-v1",
+    "tickSpacing": 60,
+    "mathFeeTier": 3000
+  },
+  "addresses": {
+    "marketFactory": "0x83183DA839Ce8228E31Ae41222EaD9EDBb5cDcf1",
+    "marketView": "0x95493F3e3F151eD9ee9338a4Fc1f49c00890F59C",
+    "router": "0xeC9048b59b3467415b1a38F63416407eA0c70fB8",
+    "positionManager": "0x91fD594c46D8B01E62dBDeBed2401dde01817834",
+    "poolFactory": "0xC1b576AC6Ec749d5Ace1787bF9Ec6340908ddB47"
+  },
+  "files": {
+    "seed": "assets_pd_v2.csv",
+    "assets": "assets_pd_v2.json",
+    "markets": "create-pd-market-execution.json",
+    "liquidity": "add-pd-gnosis-v2-execution.json",
+    "assetList": "assets_pd.ts"
+  },
+  "markets": [
+    {
+      "type": "multiCategorical",
+      "role": "standalone",
+      "count": 1,
+      "marketName": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
+      "outcomes": ["33 Credora assets", "No To All", "Invalid result"],
+      "tokenNameScheme": "uppercase, '+' -> PLUS, drop non-alphanumerics, suffix PD. ETH+ -> ETHPLUSPD, GACLO-1 -> GACLO1PD, No To All -> NOTOALLPD.",
+      "parentMarket": null,
+      "parentOutcome": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "10.0"
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 5,
+    "band": { "minPrice": 0.0000001, "maxPrice": 0.999999 },
+    "bandPerOutcome": {
+      "rule": "Safe preset around each outcome's OWN center price, not a global band: minPrice = max(1e-9, center * 0.8), maxPrice = min(0.999999, center * 1.4), then clamped to tickSpacing 60.",
+      "safeDown": 0.2,
+      "safeUp": 0.4,
+      "note": "The top-level band above is only the outer envelope of those per-outcome bands - it exists to satisfy the schema, and the per-outcome rule is what the script actually applies."
+    },
+    "sizing": "mixed",
+    "pools": 34,
+    "priceSource": "assets_pd_v2.csv, via the implied-probability model in implied-prices.js",
+    "unpooledByDesign": "The Invalid result token gets no pool, same as v1. Sizing detail: the 33 asset pools use an equal outcome quantity Q, but No To All is sized BY COLLATERAL at a fixed 0.5 sDAI (10% of budget) via sizePositionBySdai, which puts the HUGE sentinel on the outcome side so the sDAI side binds. A solved multiplier f sits on top, taking the tighter of two regimes because splitPosition mints every outcome and is driven by whichever pool wants the most tokens. Result: split 3.994 + sDAI side 1.006 = 4.99999999."
+  },
+  "spendingCap": {
+    "collateral": 5.5,
+    "gasEth": 0.05
+  },
+  "stages": [
+    {
+      "name": "phase0-snapshot",
+      "status": "done",
+      "finishedAt": "2026-08-12",
+      "artifacts": ["fetch-credora-pd.js", "assets_pd_v2.csv", "assets_pd_v2.json"],
+      "notes": "33 assets frozen from Credora staging. assets_pd.ts lists solvBTC twice; de-duplicated on read (first kept), and create-pd-market-gnosis.js hard-fails on any duplicate. v2's first asset changed from v1's wbETH to weETH - a genuinely different Credora asset (psl 0.00096 vs 0.00778)."
+    },
+    {
+      "name": "phase1-create",
+      "status": "done",
+      "finishedAt": "2026-08-12",
+      "artifacts": ["create-pd-market-gnosis.js", "create-pd-market-execution.json"],
+      "txCount": 1,
+      "notes": "Market 0xc84786B06390F11dED0DD362E27Fc881B540e6F2, tx 0xae2f434a..., block 47679508, 12,829,147 gas against a 17.0M Gnosis block limit. Only 5% estimateGas padding: a 20% pad would request 92% of a whole block, which validators may not fill. Gas is ~759k + 344k per outcome slot, so above ~44 outcomes this no longer fits in one transaction."
+    },
+    {
+      "name": "unwind-v1",
+      "status": "done",
+      "finishedAt": "2026-08-12",
+      "artifacts": ["remove-liquidity-gnosis.js", "remove-pd-gnosis-execution.json"],
+      "txCount": 75,
+      "notes": "49 v1 positions removed and NFTs burned, then the complete set merged to sDAI. Blocks 47679680-47679778. The merge is capped by the SMALLEST holding, and six weeks of trading had unbalanced the set (bsdETH 0.784 vs No To All 7.58), so mergePositions returned 0.784 sDAI rather than ~5.6. Recovery was 2.717 (pool sDAI sides) + 0.784 (merge); wallet 4.791 -> 8.292."
+    },
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2026-08-12",
+      "artifacts": ["add-pd-liquidity-gnosis-v2.js", "add-pd-gnosis-v2-execution.json"],
+      "notes": "34 pools, exactly 5.0 sDAI, blocks 47680659-47680803. Wallet 8.292 -> 3.292, funded by the v1 drain. No To All at 10.0% of spend against v1 round 1's 85%. Verified: all 34 pools' live globalState().tick price within 0.0086% of intended - pure tick granularity, irreducible."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "launch",
+      "result": "accepted",
+      "learning": "Algebra is not Uniswap V3 with different addresses. Its NPM ABI has no fee or deployer fields, its positions() returns eleven values not twelve, and the Uniswap SDK's calldata builders are unusable - only the Pool/Position MATH is reusable, and everything else is hand-encoded through multicall. MATH_FEE_TIER = 3000 exists solely to make the v3 SDK derive tickSpacing 60 and is never sent on chain. Also found on the first live remove: Position.burnAmountsWithSlippage() returns raw JSBI amounts like mintAmountsWithSlippage(), not CurrencyAmount, so .quotient.toString() throws. It threw while building calldata, so no transaction was sent."
+    }
+  ],
+  "results": {
+    "parent": "0xc84786B06390F11dED0DD362E27Fc881B540e6F2",
+    "marketAddresses": ["0xc84786B06390F11dED0DD362E27Fc881B540e6F2"],
+    "poolCount": 34,
+    "seer": "https://app.seer.pm/markets/100/0xc84786B06390F11dED0DD362E27Fc881B540e6F2"
+  },
+  "ui": {
+    "repo": "risk-pricing-ui",
+    "criticalConstraint": "A single constant, RISK_PRICING_MARKET_ID in src/consts/markets.ts, points at the v2 address. That is the only required edit.",
+    "scaleRisk": "At 33 assets rather than 24 the implied-probability solver is ~O(n^4) - each solve ~3.6x costlier, one per 4h grid point - and useTradeExecutorPredictRiskOutcomes.ts packs every outcome's approve+swap+merge into one batchValueExecute with no chunking. 34 outcomes in a single Gnosis transaction is the likely gas ceiling."
+  },
+  "immutableText": {
+    "conditionId": "0xa31b6bbacb577e249ff23d8ecd4a56d023a20bdc35086e2572a972200dc8a80c",
+    "questionId": "0x0b6cdbe4748878dbd82d7ec4da350b8cef50c1ccac84054396d11a4e873eac99",
+    "outcomeSlots": 35,
+    "factoryQuirks": "outcomes must NOT include 'Invalid result' - the factory appends it. tokenNames is one per USER outcome (34) and must NOT be padded: the Invalid slot is auto-named SER-INVALID and the factory short-circuits before reading tokenNames[invalidIndex]. The market address comes from the NewMarket event, not the receipt return value.",
+    "disambiguation": "Two Gnosis markets share this exact question text. Ours is the 33-asset one; a sibling at 0x0ccad5a986efd65e06fa64ac62764aa14555a0f0 has only 8 outcomes and is a different market. Confirm via MarketView or the subgraph - do not trust the URL slug."
+  }
+}

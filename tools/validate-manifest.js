@@ -135,19 +135,43 @@ function semantic(m, errs, warns) {
   const seedPath = m.files && m.files.seed;
   if (band && seedPath) {
     const abs = path.join(ROOT, seedPath);
-    if (fs.existsSync(abs)) {
-      let rows;
-      try { rows = JSON.parse(fs.readFileSync(abs, "utf8")); } catch { rows = null; }
-      const list = Array.isArray(rows) ? rows : rows && Array.isArray(rows.repos) ? rows.repos : null;
-      if (list) {
-        let bad = 0;
-        for (const r of list) {
-          for (const key of ["seedUp", "seedDown", "price", "seedPrice"]) {
-            const p = r && r[key];
-            if (typeof p === "number" && (p <= band.minPrice || p >= band.maxPrice)) bad++;
+    if (!seedPath.endsWith(".json")) {
+      // Gnosis PD seeds from a CSV of yearly PD figures, which are model INPUTS,
+      // not pool prices — the price comes out of implied-prices.js. There is
+      // nothing here a band check could meaningfully compare.
+      warns.push(`files.seed: ${seedPath} is not JSON — band check not applicable`);
+    } else if (fs.existsSync(abs)) {
+      let doc = null;
+      try { doc = JSON.parse(fs.readFileSync(abs, "utf8")); } catch { /* reported below */ }
+      if (doc === null) errs.push(`files.seed (${seedPath}): not valid JSON`);
+      else {
+        // Seed files nest prices differently per campaign: a flat array of repos
+        // with seedUp/seedDown, {proposals:[{yesPrice}]}, {questions:[{outcomes:
+        // [{price}]}]}. Walk for the price-shaped keys instead of assuming a shape,
+        // so a new campaign's file is covered without touching this.
+        const PRICE_KEYS = new Set(["price", "seedPrice", "seedUp", "seedDown", "yesPrice"]);
+        const bad = [];
+        const walk = (node, at) => {
+          if (Array.isArray(node)) return node.forEach((v, i) => walk(v, `${at}[${i}]`));
+          if (!node || typeof node !== "object") return;
+          for (const [k, v] of Object.entries(node)) {
+            if (PRICE_KEYS.has(k) && typeof v === "number") {
+              const check = [[k, v]];
+              // A binary market's other leg is 1 - p and is pooled too, so it must
+              // also clear the band: yesPrice 0.99 means a NO pool at 0.01.
+              if (k === "yesPrice") check.push(["noPrice(1-yesPrice)", 1 - v]);
+              for (const [label, p] of check) {
+                if (p <= band.minPrice || p >= band.maxPrice) bad.push(`${at}.${label}=${p}`);
+              }
+            } else walk(v, `${at}.${k}`);
           }
+        };
+        walk(doc, "");
+        if (bad.length) {
+          errs.push(`files.seed (${seedPath}): ${bad.length} price(s) outside band [${band.minPrice}, ${band.maxPrice}]`);
+          for (const b of bad.slice(0, 5)) errs.push(`    ${b}`);
+          if (bad.length > 5) errs.push(`    ...and ${bad.length - 5} more`);
         }
-        if (bad) errs.push(`files.seed (${seedPath}): ${bad} seed price(s) outside band [${band.minPrice}, ${band.maxPrice}]`);
       }
     } else warns.push(`files.seed: ${seedPath} not found — price/band check skipped`);
   }

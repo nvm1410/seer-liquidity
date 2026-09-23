@@ -1,0 +1,167 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "zcash-nu7",
+  "version": "v3 (short names)",
+  "mode": "launch",
+  "family": "poll",
+  "status": "complete",
+  "source": {
+    "request": "One single-select categorical market per question in the Zcash NU7 coinholder poll. Five questions: NSM issuance smoothing, NSM reissuance start date, Sprout deprecation, faster block times (ZIP-218), NU7 scope and readiness.",
+    "docs": ["https://docs.google.com/document/d/19u7aX2kWlycqIVjRa2lSHWzWUxdGwX8wZMf3SLIz1Ck"],
+    "priceSourceNote": "Seed prices are the source doc's 'Base Rate' column verbatim. Each question's prices sum to exactly 1.000. The doc is NOT frozen (ballotFrozenAt is null) and was silently revised once between v1 and v2 - it was re-read and diffed before v3."
+  },
+  "supersedes": {
+    "v1": "Created 2026-09-03 off a PRE-REVISION ballot - every question still carried an Abstain option and every base rate differed. 19 pools, 10,000 sUSDS. Unwound 2026-09-07: 1.57 sUSDS and ~0.0002 ETH cost, 6.99 outcome tokens stranded. Cause: stale input.",
+    "v2": "Created 2026-09-09 off the correct ballot, seeded 10,000 sUSDS over 14 pools, and fully unwound the SAME DAY. Nothing traded, so it was an exact round trip: wallet 40,807.61 -> 42,837.643357528231391641, net 0 sUSDS, 5 wei stranded. Cause: unreviewed output - the full resolution rules had been appended to every marketName, pushing each to 301-375 chars with the question buried in front of two sentences of rules. Market names are immutable, so the only fix was a rebuild.",
+    "whyV3": "A rename-only rebuild of v2. Outcomes, tags, seed prices, market type, openingTime and pool params are byte-identical to v2, verified programmatically before creation rather than by eye. Names went 316->88, 328->100, 301->73, 375->102, 333->105 chars."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A",
+    "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
+  },
+  "files": {
+    "seed": "zcash-nu7-questions-v3.json",
+    "markets": "create-zcash-nu7-markets-v3-execution.json",
+    "reference": "zcash-nu7-markets-v3.json"
+  },
+  "markets": [
+    {
+      "type": "categorical",
+      "role": "standalone",
+      "count": 5,
+      "templateId": 2,
+      "marketNameTemplate": "per question, see zcash-nu7-questions-v3.json",
+      "outcomes": ["per question: 2 or 3 ballot options, plus the factory-appended Invalid result"],
+      "tokenNameScheme": "ZNU7V3<shortName><tag>",
+      "parentMarket": null,
+      "parentOutcome": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.005",
+      "questionTimeoutSeconds": 302400
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 10000,
+    "band": { "minPrice": 0.02, "maxPrice": 0.98 },
+    "sizing": "solved",
+    "pools": 14,
+    "priceSource": "round 1: zcash-nu7-questions-v3.json base rates. Round 2: live pool slot0, on the user's explicit call.",
+    "unpooledByDesign": "the Invalid token from each of the 5 splits, never pooled"
+  },
+  "spendingCap": {
+    "collateral": 10100,
+    "gasEth": 0.01
+  },
+  "unwind": {
+    "order": ["withdraw", "merge"],
+    "orderNote": "No redeem: the markets are unresolved. Run check-zcash-nu7-pools.js first - it reports how many pools drifted (the merge will strand that much) and how many are already empty (the withdraw is partly done).",
+    "burnNft": false,
+    "collectEmpty": true,
+    "strandedTokensExpected": true
+  },
+  "stages": [
+    {
+      "name": "phase1-create",
+      "status": "done",
+      "finishedAt": "2026-09-09",
+      "artifacts": [
+        "create-zcash-nu7-markets.js",
+        "create-zcash-nu7-markets-v3-execution.json",
+        "archive/runs/zcash-nu7/create-zcash-nu7-v3-run.log"
+      ],
+      "txCount": 5,
+      "notes": "5/5 created and verified on the first live run. 10,687,314 gas over 5 tx, blocks 156661833-156661850."
+    },
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2026-09-09",
+      "artifacts": [
+        "add-zcash-nu7-liquidity.js",
+        "add-zcash-nu7-liquidity-v3-execution.json",
+        "archive/runs/zcash-nu7/add-zcash-nu7-v3-run.log"
+      ],
+      "notes": "Round 1: 14/14 pools, exactly 10,000.000000 sUSDS. Wallet 42,837.64 -> 32,837.64. Splits 2,030.07, sUSDS side 7,969.93."
+    },
+    {
+      "name": "unwind-round1",
+      "status": "done",
+      "finishedAt": "2026-09-12",
+      "artifacts": [
+        "withdraw-zcash-nu7-liquidity-v3-execution.json",
+        "merge-zcash-nu7-positions-v3-execution.json",
+        "archive/runs/zcash-nu7/withdraw-zcash-nu7-v3-run.log",
+        "archive/runs/zcash-nu7/merge-zcash-nu7-v3-run.log"
+      ],
+      "notes": "14/14 withdrawn (NFTs #1128687-#1128700), 5/5 merged recovering 2,027.833326 sUSDS. Wallet 40,807.478604 -> 42,835.311930. Round-trip cost 2.331427 sUSDS; 5.666643 tokens stranded. Only 1 of 14 pools had moved. This withdraw was premature."
+    },
+    {
+      "name": "reseed-round2",
+      "status": "done",
+      "finishedAt": "2026-09-12",
+      "artifacts": [
+        "add-zcash-nu7-liquidity-v3-round2-execution.json",
+        "archive/runs/zcash-nu7/add-zcash-nu7-v3-round2-run.log"
+      ],
+      "notes": "Same day as the round-1 unwind. 10,000 sUSDS back over the same 14 pools, blocks 156814420-156814538, exactly 10,000.000000 for 0.0000105 ETH. Priced off live slot0, not the base rates. Q4's live prices now sum to 1.0019 - a ~0.19% arb against its own depth."
+    },
+    {
+      "name": "unwind-round2",
+      "status": "done",
+      "finishedAt": "2026-09-14",
+      "artifacts": [
+        "withdraw-zcash-nu7-liquidity-v3-round2-execution.json",
+        "merge-zcash-nu7-positions-v3-round2-execution.json",
+        "archive/runs/zcash-nu7/withdraw-zcash-nu7-v3-round2-run.log",
+        "archive/runs/zcash-nu7/merge-zcash-nu7-v3-round2-run.log"
+      ],
+      "notes": "14/14 withdrawn, 5/5 merged. Wallet 32,835.311930 -> 40,651.584863 -> 42,243.026011. 10,000 in, 9,407.71 back: 592.29 sUSDS short, with 2,204.29 outcome tokens stranded because 13 of 14 pools had traded. Marked at last pool prices (Invalid at 0) the strand is worth ~539.13, so mark-to-market loss ~53 sUSDS. The real figure is set at resolution."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "launch",
+      "result": "accepted",
+      "learning": "Three builds of the same five markets in seven days, two thrown away. v1 died to a stale input - the source doc was revised after the snapshot - so the runbook now re-reads and diffs the live doc before creating. v2 died to an unreviewed output: market names are immutable, so the dry run that prints every name IS the review step, not a formality. Ask before deploying un-editable text."
+    }
+  ],
+  "results": {
+    "marketAddresses": [
+      "0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC",
+      "0xbfdF8eF15ab1ec4Bd44BeC7Ee904270e6AD7ec9C",
+      "0xd21eaDCf5C30475244aEa8a9Cf7cB6759F0BdAe6",
+      "0xC38Fa340cFdC9C758826DD4a8Dc15B58728d0418",
+      "0xC03Bf1725b72Ab5765b639c582853EDE9AfB26a6"
+    ],
+    "poolCount": 14,
+    "seer": "https://app.seer.pm/markets/10/0x29BCd2CEe8d413A2235f7970fCdDE432DCaf10fC"
+  },
+  "immutableText": {
+    "tokenPrefix": "ZNU7V3",
+    "prefixNote": "The V3 infix is load-bearing: v1 (ZNU7) and v2 (ZNU7V2) tokens are still in the wallet.",
+    "nameLengthsV3": [88, 100, 73, 102, 105],
+    "nameLengthsV2": [316, 328, 301, 375, 333],
+    "regression": "v3's shorter names dropped the resolution rules from the on-chain text. Reality resolves off the question text and nothing else, so the two non-obvious rules - an Abstain plurality promotes the runner-up, and a below-quorum question resolves Invalid - now live only in zcash-nu7-questions-v3.json and the source doc. Recorded as the user's explicit instruction; it is the one real regression from v2."
+  }
+}
