@@ -6,45 +6,53 @@ run moves real capital.
 
 ## Invariants
 
-**1. The root scripts are being migrated onto `lib/`, one at a time, with proof.**
-They are records of real on-chain runs, so a migration must be *shown* not to change behaviour:
+**1. Every operational script runs on the harness. There is no `DRY_RUN` constant left.**
+The hand-edited flag is gone from the repo — `grep '^const DRY_RUN' *.js` returns nothing. A script
+is dry by default and cannot be armed by accident:
+
+```bash
+node x.js          # dry run: prints the whole plan, sends nothing, exits 0
+node x.js --live   # the only way to send, after a confirmation
+```
+
+**2. A change to one of these scripts must be *shown* not to change behaviour.**
+They are records of real on-chain runs.
 
 ```bash
 node tools/refactor-diff.js <script.js>   # runs the old and new versions, diffs the output
 ```
 
 For a mutating script that compares **dry-run** output — the whole plan, every market resolved and
-every amount sized. Identical plan, sound refactor. The tool refuses to execute an old version
-whose `DRY_RUN` is not `true`.
+every amount sized. Identical plan, sound refactor. Some scripts need `--new-args=--resume` because
+their progress file is also their historical record; that is the reuse guard doing its job, not a
+problem to route around.
 
-Until a script is migrated it keeps its old shape. **The two generations are invoked differently**,
-which is the thing most likely to catch you out:
+Never fork an old script to start a campaign — build on [`lib/`](lib/README.md).
 
-| | invocation | to send |
-|---|---|---|
-| migrated | `node x.js` | `node x.js --live` |
-| not yet | `node x.js` | edit `const DRY_RUN` in the source |
+**3. Three scripts are GATED, not migrated, and the distinction matters.**
+`index.js`, `liquidity-l1.js` and `liquidity-originality.js` never had a `DRY_RUN` at all: every
+line sent real transactions the moment they ran. With no dry mode there is nothing for
+refactor-diff to compare, so rewriting them could not satisfy invariant 2. Each instead got a
+`parseArgs()` `--live` gate and a header naming its successor — additions only, zero lines deleted,
+so everything below each gate is byte-identical. Bare `node index.js` now exits 2 and sends nothing.
 
-A migrated script is dry by default and cannot be armed by accident. Never fork an old script to
-start a campaign — build on [`lib/`](lib/README.md).
+`tools/audit-dry-run.js` was blind to exactly this class: it looked only for `const DRY_RUN = false`,
+so a script with no flag passed by omission. It now also fails any script that matches a sending
+call site while declaring neither a `DRY_RUN` nor an import of `lib/run.js`.
 
-**Migrated: 14 of 53.** Every live-campaign script that touches chain is done —
-`zcash-q3`, `zcash-nu7` and `gnosis-pd` in full, across create, seed, reseed, withdraw, merge and
-check. `fetch-credora-pd` reads the manifest but deliberately skips the harness: it talks to no
-chain, so asserting a network would be theatre.
+**Status: 42 of 53 root `.js` import `lib/run.js`.** The other 11 are data or pure-function modules
+(`markets.js`, `elo.js`, `implied-prices.js`, `tokens.js`, …) plus two that touch no chain:
+`fetch-credora-pd.js` reads the manifest but skips the harness, because asserting a network for an
+HTTP fetch would be theatre, and `getParticipants.js` is a read-only orphan trade-executor tool.
 
 The live answer, since a comment can go stale:
 
 ```bash
-grep -l '^import { run } from "./lib/run.js"' *.js
+grep -l 'from "./lib/run.js"' *.js | wc -l
 ```
 
-Not migrated: the `l1`, `octant` and `originality` scripts, plus the one-off `add-back-*` and
-`add-20k-*` runs. Those campaigns are closed out — L1 redeemed, Octant resolved, originality r2
-unwound — so migrating them buys consistency and nothing else.
-
-All four deferred improvements are now **done**, each as its own visible change after the
-migration it belonged to had been proved identical:
+Four deferred improvements landed separately, each after the migration it belonged to had been
+proved identical:
 
 1. `withdraw-zcash-*` now classifies three ways and **sweeps** fees off zero-liquidity positions
    instead of warning about them. Note what this is worth *today*: on nu7 all 28 empty positions
@@ -59,6 +67,19 @@ migration it belonged to had been proved identical:
    had, and an **idempotency guard** — it refuses when its output file already records a market
    (`--force-new` overrides). Verified firing against the recorded v2 market.
 4. `toString31` is documented as **reverting**, not truncating, in `lib/reality.js`.
+
+**4. Two seeding scripts still price from a constant and never read the pool.**
+`add-octant-liquidity.js` and `add-octant-invalid-liquidity.js` pass `live: null`. That is right for
+a first seed and **wrong for a re-seed**: a drained pool keeps its `sqrtPriceX96` and
+`createAndInitializePoolIfNecessary` is a no-op on it, so the mint would execute at the pool's own
+price. `lib/uniswap.js` takes `live` precisely so this is fixable; it was left alone because
+changing it inside a migration would have been a behaviour change with nothing to diff against.
+
+**5. A progress log that predates the `kind`/`key` convention must not be read with `progress.has()`.**
+Most historical logs carry only `positionId`, `market` or `outcomeToken`. `progress.has(kind, key)`
+reads such a log as EMPTY — a *complete* log looks like a fresh one, so a resumed run redoes
+everything. Those scripts key off the original field instead, and say so in a comment at the point
+of use.
 
 ## Where the knowledge lives
 

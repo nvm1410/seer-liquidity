@@ -10,6 +10,7 @@ Every market set this repo has operated. The **guide** explains why it was built
 | [zcash-nu7](guides/zcash-nu7.md) | Optimism | poll | 5 single-select categoricals (v3) | 10,000 sUSDS | 2026-09-09 → 09-14 | live, **zero liquidity**, unresolved |
 | [l1-deepfunding](guides/l1-deepfunding.md) | Optimism | deepfunding | nested multiScalar pair (A + B on A#66) | 19,980 sUSDS | 2026-07-27 → 09-01 | **closed out**, redeemed |
 | [gnosis-pd](guides/gnosis-pd.md) | Gnosis | credit-pd | 1 multiCategorical, 35 slots | 5 sDAI | 2026-08-12 | live, seeded, unresolved |
+| [gnosis-pd-v1](guides/gnosis-pd.md) | Gnosis | credit-pd | 1 multiCategorical, 26 slots | 5 + 5 sDAI | 2026-07-04 → 08-12 | **superseded**, drained to fund v2 |
 | [originality-unwind](guides/originality-unwind.md) | Optimism | originality | round-2 parent + 98 scalar children | — | 2026-06-19 | unwound |
 
 | Campaign | Manifest | Run logs |
@@ -19,6 +20,7 @@ Every market set this repo has operated. The **guide** explains why it was built
 | zcash-nu7 | [`lifecycle/zcash-nu7.json`](../lifecycle/zcash-nu7.json) | [`archive/runs/zcash-nu7/`](../archive/runs/zcash-nu7/) |
 | l1-deepfunding | [`lifecycle/l1-deepfunding.json`](../lifecycle/l1-deepfunding.json) | [`archive/runs/l1/`](../archive/runs/l1/) |
 | gnosis-pd | [`lifecycle/gnosis-pd.json`](../lifecycle/gnosis-pd.json) | — |
+| gnosis-pd-v1 | [`lifecycle/gnosis-pd-v1.json`](../lifecycle/gnosis-pd-v1.json) | — |
 
 ## The two chains are not the same shape
 
@@ -39,8 +41,8 @@ The `mathFeeTier: 3000` in the Gnosis manifest exists **solely** so `@uniswap/v3
 
 ## Reading order for a new campaign
 
-1. [`../CLAUDE.md`](../CLAUDE.md) — the invariants. Start here; the frozen-scripts rule and the
-   `DRY_RUN` hazard both bite before you run anything.
+1. [`../CLAUDE.md`](../CLAUDE.md) — the invariants. Start here: every script is dry unless you
+   pass `--live`, but three are *gated* rather than migrated and behave differently.
 2. [`../lifecycle/README.md`](../lifecycle/README.md) — what a manifest holds and which half a
    script may read.
 3. The guide for the nearest precedent campaign, then its manifest side by side.
