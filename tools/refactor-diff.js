@@ -6,7 +6,7 @@
 // every market resolved, every position sized, every amount computed. If the
 // plan is identical, the refactor did not change what would be sent.
 //
-//   node tools/refactor-diff.js <script.js> [--ref=<git-ref>]
+//   node tools/refactor-diff.js <script.js> [--ref=<git-ref>] [--new-args="..."]
 //
 // Exit 0 = identical. Exit 1 = differs (the diff is printed). Exit 2 = refused.
 //
@@ -21,6 +21,11 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const args = process.argv.slice(2);
 const script = args.find((a) => !a.startsWith("--"));
 const ref = (args.find((a) => a.startsWith("--ref=")) ?? "--ref=HEAD").slice(6);
+// Some migrations deliberately change a DEFAULT (e.g. which market a script
+// targets). --new-args lets the new version be pointed back at the old default
+// so the LOGIC can still be proved identical, with the default change called out
+// separately rather than hidden inside a "differs".
+const newArgs = (args.find((a) => a.startsWith("--new-args=")) ?? "--new-args=").slice(11).split(" ").filter(Boolean);
 
 if (!script) {
   console.error("usage: node tools/refactor-diff.js <script.js> [--ref=<git-ref>]");
@@ -99,8 +104,8 @@ const runScript = (file, extra = []) => {
 try {
   console.log(`running ${script}@${ref} ...`);
   const before = runScript(tmpName);
-  console.log(`running ${script} (working tree) ...`);
-  const after = runScript(script);
+  console.log(`running ${script} (working tree)${newArgs.length ? " " + newArgs.join(" ") : ""} ...`);
+  const after = runScript(script, newArgs);
 
   const a = normalize(before.out);
   const b = normalize(after.out);
@@ -111,21 +116,43 @@ try {
     process.exit(before.code === after.code ? 0 : 1);
   }
 
-  // Print a compact line diff rather than pulling in a dependency.
+  // An LCS-aligned diff, not an index-by-index compare. A single inserted line
+  // (say a new banner) would otherwise shift everything after it and report the
+  // whole run as changed — which is exactly wrong when the question being asked
+  // is "did the PLAN change".
   const al = a.split("\n");
   const bl = b.split("\n");
-  console.error(`\nDIFFERS — ${script}`);
-  console.error(`  old: ${al.length} lines (exit ${before.code})   new: ${bl.length} lines (exit ${after.code})\n`);
-  let shown = 0;
-  for (let i = 0; i < Math.max(al.length, bl.length) && shown < 40; i++) {
-    if (al[i] !== bl[i]) {
-      console.error(`  line ${i + 1}`);
-      console.error(`    -  ${al[i] ?? "(absent)"}`);
-      console.error(`    +  ${bl[i] ?? "(absent)"}`);
-      shown++;
+
+  const n = al.length;
+  const m = bl.length;
+  const lcs = Array.from({ length: n + 1 }, () => new Uint32Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) {
+    for (let j = m - 1; j >= 0; j--) {
+      lcs[i][j] = al[i] === bl[j] ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1]);
     }
   }
-  if (shown === 40) console.error(`  ...further differences suppressed`);
+
+  const ops = [];
+  let i = 0;
+  let j = 0;
+  while (i < n && j < m) {
+    if (al[i] === bl[j]) {
+      i++;
+      j++;
+    } else if (lcs[i + 1][j] >= lcs[i][j + 1]) ops.push({ t: "-", line: al[i++], at: i });
+    else ops.push({ t: "+", line: bl[j++], at: j });
+  }
+  while (i < n) ops.push({ t: "-", line: al[i++], at: i });
+  while (j < m) ops.push({ t: "+", line: bl[j++], at: j });
+
+  const removed = ops.filter((o) => o.t === "-").length;
+  const added = ops.filter((o) => o.t === "+").length;
+
+  console.error(`\nDIFFERS — ${script}`);
+  console.error(`  old ${n} lines (exit ${before.code})  new ${m} lines (exit ${after.code})`);
+  console.error(`  ${removed} removed, ${added} added\n`);
+  for (const o of ops.slice(0, 60)) console.error(`  ${o.t}  ${o.line}`);
+  if (ops.length > 60) console.error(`  ...${ops.length - 60} further difference(s) suppressed`);
   process.exit(1);
 } finally {
   fs.rmSync(tmpPath, { force: true });
