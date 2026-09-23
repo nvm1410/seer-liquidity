@@ -37,7 +37,9 @@
     "marketView": "0x95493F3e3F151eD9ee9338a4Fc1f49c00890F59C",
     "router": "0xeC9048b59b3467415b1a38F63416407eA0c70fB8",
     "positionManager": "0x91fD594c46D8B01E62dBDeBed2401dde01817834",
-    "poolFactory": "0xC1b576AC6Ec749d5Ace1787bF9Ec6340908ddB47"
+    "poolFactory": "0xC1b576AC6Ec749d5Ace1787bF9Ec6340908ddB47",
+    "realitio": "0xE78996A233895bE74a66F451f1019cA9734205cc",
+    "arbitrator": "0x68154EA682f95BF582b80Dd6453FA401737491Dc"
   },
   "files": {
     "seed": "assets_pd_v2.csv",
@@ -62,7 +64,9 @@
       "parentOutcome": null,
       "category": "misc",
       "lang": "en_US",
-      "minBondEth": "10.0"
+      "minBondEth": "10.0",
+      "templateId": 3,
+      "questionTimeoutSeconds": 302400
     }
   ],
   "liquidity": {

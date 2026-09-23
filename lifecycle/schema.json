@@ -226,9 +226,10 @@
             "type": "integer",
             "enum": [
               1,
-              2
+              2,
+              3
             ],
-            "description": "2 = question carries its outcomes (categorical). 1 = uint/scalar. Picks the Reality encoder."
+            "description": "Reality template id (MarketFactory.sol:63-67). 1 = uint/scalar/multi-scalar, no outcome list. 2 = single-select categorical. 3 = multi-select (multi-categorical). 2 and 3 share an encoder but NOT an id, and the id is part of the content hash."
           },
           "marketName": {
             "type": "string"

@@ -35,6 +35,7 @@ import {
   checkTokenName,
   computeMarketQuestionId,
   computeQuestionId,
+  encodeQuestion,
   encodeQuestionWithOutcomes,
   encodeQuestionWithoutOutcomes,
 } from "../lib/reality.js";
@@ -194,5 +195,65 @@ describe("lib/reality.js guards", () => {
     const without = encodeQuestionWithoutOutcomes("Q?", "misc", "en_US");
     assert.equal(withOut, `Q?${SEP}"Yes","No"${SEP}misc${SEP}en_US`);
     assert.equal(without, `Q?${SEP}misc${SEP}en_US`);
+  });
+});
+
+describe("golden: the Gnosis multi-categorical (templateId 3, not 2)", () => {
+  // This case exists because the check I added to create-pd-market-gnosis.js was
+  // WRONG: it computed the collision id with templateId 2. createCategoricalMarket
+  // uses REALITY_SINGLE_SELECT_TEMPLATE (2) but createMultiCategoricalMarket uses
+  // REALITY_MULTI_SELECT_TEMPLATE (3) — MarketFactory.sol:153 vs :175. They share
+  // an encoder, so nothing looks wrong; the id just matches nothing, and a
+  // collision check that can never fire is worse than none.
+  const GNOSIS = {
+    arbitrator: "0x68154EA682f95BF582b80Dd6453FA401737491Dc",
+    realitio: "0xE78996A233895bE74a66F451f1019cA9734205cc",
+    factory: "0x83183DA839Ce8228E31Ae41222EaD9EDBb5cDcf1",
+    questionTimeout: 302400,
+  };
+
+  it("reproduces the real market's Reality id with templateId 3", () => {
+    const d = read("create-pd-market-execution.json");
+    const id = computeQuestionId({
+      templateId: TEMPLATE.MULTI_CATEGORICAL,
+      openingTime: d.openingTime,
+      encodedQuestion: d.encodedQuestion,
+      minBond: BigInt(d.minBond),
+      ...GNOSIS,
+    });
+    assert.equal(id, d.questionsIds[0]);
+  });
+
+  it("templateId 2 does NOT reproduce it — the bug this pins", () => {
+    const d = read("create-pd-market-execution.json");
+    const wrong = computeQuestionId({
+      templateId: TEMPLATE.CATEGORICAL,
+      openingTime: d.openingTime,
+      encodedQuestion: d.encodedQuestion,
+      minBond: BigInt(d.minBond),
+      ...GNOSIS,
+    });
+    assert.notEqual(wrong, d.questionsIds[0]);
+  });
+
+  it("reproduces its CTF questionId too", () => {
+    const d = read("create-pd-market-execution.json");
+    assert.equal(
+      computeMarketQuestionId({
+        questionsIds: d.questionsIds,
+        outcomeCount: d.outcomes.length - 1, // user outcomes, before the Invalid slot
+        templateId: TEMPLATE.MULTI_CATEGORICAL,
+      }),
+      d.questionId
+    );
+  });
+
+  it("both categorical templates share the encoder", () => {
+    for (const t of [TEMPLATE.CATEGORICAL, TEMPLATE.MULTI_CATEGORICAL]) {
+      assert.equal(
+        encodeQuestion({ templateId: t, question: "Q?", outcomes: ["A", "B"], category: "misc", lang: "en_US" }),
+        encodeQuestionWithOutcomes("Q?", ["A", "B"], "misc", "en_US")
+      );
+    }
   });
 });

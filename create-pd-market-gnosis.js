@@ -137,7 +137,7 @@ await run(
       provider
     );
     const questionId = computeQuestionId({
-      templateId: TEMPLATE.CATEGORICAL,
+      templateId: TEMPLATE.MULTI_CATEGORICAL, // 3 — createMultiCategoricalMarket
       openingTime,
       encodedQuestion,
       arbitrator,
