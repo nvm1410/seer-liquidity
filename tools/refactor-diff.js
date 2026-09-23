@@ -77,7 +77,7 @@ function normalize(text) {
         !/Dry run complete/.test(l) &&
         !/^Done\./.test(l) &&
         // The old scripts printed their own mode banner; the harness prints one.
-        !/^📋 DRY_RUN/.test(l)
+        !/^(📋 )?DRY_RUN\s*:/.test(l)
     )
     .join("\n");
 }
