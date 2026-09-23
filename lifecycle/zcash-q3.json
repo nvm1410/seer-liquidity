@@ -39,7 +39,8 @@
     "markets": "create-zcash-markets-execution.json",
     "csv": "zcash-q3-markets.csv",
     "liquidity": "add-zcash-liquidity-execution.json",
-    "reseed": "reseed-zcash-liquidity-execution.json"
+    "reseed": "reseed-zcash-liquidity-execution.json",
+    "withdraw": "withdraw-zcash-liquidity-execution.json"
   },
   "markets": [
     {
