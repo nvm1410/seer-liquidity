@@ -10,6 +10,32 @@ import { markets } from "./markets.js";
 import { ori } from "./originality.js";
 import { RouterAbi } from "./abis/RouterAbi.js";
 import { elo } from "./elo.js";
+
+// The FIRST-generation L1 seeder, superseded by add-back-l1-liquidity.js and
+// add-20k-l1-liquidity.js. Its final state is Invalid-only: the band literals
+// around line 248 belong to that last partial run and are NOT the market-wide
+// band, which lifecycle/l1-deepfunding.json records as derived from the uniform
+// tick range [-92109, -16096].
+
+import { parseArgs, REFUSED } from "./lib/run.js";
+
+// ── LIVE-FIRE GATE ──────────────────────────────────────────────────────────
+// This script is SUPERSEDED (see the note above) and, unlike every other script
+// here, it never had a DRY_RUN flag: every line below sends real transactions
+// the moment it runs. There is no dry mode to fall back to and no way to prove
+// a rewrite of it preserves behaviour, so it is not migrated to lib/run.js —
+// only gated. Everything below this block is unchanged.
+const _args = parseArgs();
+if (!_args.live) {
+  console.error(
+    `liquidity-l1.js is superseded and has no dry-run mode — it sends transactions immediately.
+` +
+      `  Refusing to run without --live. See add-back-l1-liquidity.js and add-20k-l1-liquidity.js
+` +
+      `  and lifecycle/l1-deepfunding.json for what replaced it.`
+  );
+  process.exit(REFUSED);
+}
 import { PoolAbi } from "./abis/PoolAbi.js";
 import fs from "fs";
 

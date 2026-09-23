@@ -1,3 +1,24 @@
+// Orphan analysis tool — NOT part of the liquidity lifecycle.
+//
+// For each account in an input list it predicts that account's TradeExecutorV1
+// address (CREATE2 from factory 0x6F653780, salt keccak("TradeExecutorV1" +
+// account)), checks whether the contract is actually deployed, reads its
+// balance, and writes l2-participants.json. It belongs to the Seer trade-executor
+// work, not to seeding or unwinding markets, and no other file in this repo
+// imports it or reads its output.
+//
+// Read-only: it sends nothing, which is why tools/audit-dry-run.js leaves it
+// alone while gating index.js, liquidity-l1.js and liquidity-originality.js.
+//
+// Two dependency hazards, both noted in the systemization plan:
+//   - it is the only file importing @wagmi/core, which resolves ONLY because it
+//     is hoisted out of `wagmi`. Do not remove the wagmi dependency.
+//   - "l2-participants.json" at the bottom is the one bare (non-"./") path
+//     literal in the repo, so tools/audit-paths.js special-cases it.
+//
+// The 4 KB hex literal below is the TradeExecutorV1 creation bytecode; it has to
+// be here because the predicted address depends on its exact keccak hash.
+
 import { JsonRpcProvider, Interface } from "ethers";
 import fs from "fs";
 import "dotenv/config";

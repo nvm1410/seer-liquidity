@@ -10,6 +10,32 @@ import { markets } from "./markets.js";
 import { ori } from "./originality.js";
 import { RouterAbi } from "./abis/RouterAbi.js";
 
+// The FIRST-generation originality round-2 seeder, superseded by
+// add-back-liquidity.js and add-20k-originality-liquidity.js. This is the script
+// that passed minPrice = 0, where priceToTick(0) = -Infinity clamped to MIN_TICK
+// and spread depth across a range nobody trades in; round 3 uses [0.02, 0.98]
+// and hard-fails outside it.
+
+import { parseArgs, REFUSED } from "./lib/run.js";
+
+// ── LIVE-FIRE GATE ──────────────────────────────────────────────────────────
+// This script is SUPERSEDED (see the note above) and, unlike every other script
+// here, it never had a DRY_RUN flag: every line below sends real transactions
+// the moment it runs. There is no dry mode to fall back to and no way to prove
+// a rewrite of it preserves behaviour, so it is not migrated to lib/run.js —
+// only gated. Everything below this block is unchanged.
+const _args = parseArgs();
+if (!_args.live) {
+  console.error(
+    `liquidity-originality.js is superseded and has no dry-run mode — it sends transactions immediately.
+` +
+      `  Refusing to run without --live. See add-back-liquidity.js and add-20k-originality-liquidity.js
+` +
+      `  and lifecycle/originality-r2.json for what replaced it.`
+  );
+  process.exit(REFUSED);
+}
+
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL;
 const CHAIN_ID = 10;

@@ -8,6 +8,31 @@ import fs from "fs";
 import { wrappedTokens } from "./wrappedTokens.js";
 import { originalityPairs } from "./originality-pairs.js";
 
+// Removes 50% of the liquidity from every position in tokens.js. This is what
+// wrote execution.json, the baseline that add-back-l1-liquidity.js reads to
+// restore the L1 positions — so the file is a record of one specific 2026 run,
+// not a reusable tool.
+
+import { parseArgs, REFUSED } from "./lib/run.js";
+
+// ── LIVE-FIRE GATE ──────────────────────────────────────────────────────────
+// This script is SUPERSEDED (see the note above) and, unlike every other script
+// here, it never had a DRY_RUN flag: every line below sends real transactions
+// the moment it runs. There is no dry mode to fall back to and no way to prove
+// a rewrite of it preserves behaviour, so it is not migrated to lib/run.js —
+// only gated. Everything below this block is unchanged.
+const _args = parseArgs();
+if (!_args.live) {
+  console.error(
+    `index.js is superseded and has no dry-run mode — it sends transactions immediately.
+` +
+      `  Refusing to run without --live. See add-back-l1-liquidity.js / add-back-liquidity.js, which restore what this removed,
+` +
+      `  and lifecycle/l1-deepfunding.json for what replaced it.`
+  );
+  process.exit(REFUSED);
+}
+
 // Configuration
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL;
