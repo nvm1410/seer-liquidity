@@ -30,7 +30,7 @@ import { MarketViewAbi } from "./abis/MarketViewAbi.js";
 // ── Config ──────────────────────────────────────────────────────────────────
 // Re-running live creates ADDITIONAL markets for any question not already in the
 // progress file. Questions already logged are skipped, so a resumed run is safe.
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL; // Optimism

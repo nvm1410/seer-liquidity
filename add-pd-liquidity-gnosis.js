@@ -33,7 +33,7 @@ import { RouterAbi } from "./abis/RouterAbi.js";
 import { computePrices, yearlyToQuarterly } from "./implied-prices.js";
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.GNOSIS_RPC_URL;

@@ -10,7 +10,7 @@ import { RouterAbi } from "./abis/RouterAbi.js";
 import { markets } from "./markets.js";
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 // Resume switch: if a live run already did the sUSDS + parent-outcome splits but
 // died partway through Phase 3, set this true and re-run. It skips Phases 1-2
 // (tokens are already in the wallet) and only finishes the increaseLiquidity

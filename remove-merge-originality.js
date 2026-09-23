@@ -23,7 +23,7 @@ import { markets } from "./markets.js";
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 const BURN_NFT = false; // ← set true to also burn each emptied position NFT in the remove tx
 
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;

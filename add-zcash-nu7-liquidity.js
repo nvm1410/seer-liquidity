@@ -35,7 +35,7 @@ import { MarketViewAbi } from "./abis/MarketViewAbi.js";
 import { RouterAbi } from "./abis/RouterAbi.js";
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 
 const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = process.env.RPC_URL; // Optimism

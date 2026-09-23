@@ -27,7 +27,7 @@ import { formatUnits } from "viem";
 import { MarketViewAbi } from "./abis/MarketViewAbi.js";
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = false; // ← set to false to send transactions
+const DRY_RUN = true; // ← set to false to send transactions
 const BURN_NFT = false; // keep the NFTs so a future round can increaseLiquidity them
 const COLLECT_EMPTY = true; // sweep fees off matched positions already at zero liquidity
 
