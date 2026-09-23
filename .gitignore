@@ -36,3 +36,11 @@ dist-ssr
 
 #codegen
 src/gql
+
+# refactor-diff writes the OLD version of a script here to execute it, and
+# removes it again. A killed run can leave one behind; it is never wanted.
+_refactor_diff_old_*
+
+# A dry run's transcript is a preview, not evidence — it is regenerated every
+# time and would otherwise pile up. Live transcripts and progress logs stay.
+runs/**/dry-*.log
