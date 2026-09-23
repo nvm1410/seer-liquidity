@@ -52,8 +52,10 @@
         "gated",
         "executing",
         "complete",
+        "superseded",
         "abandoned"
-      ]
+      ],
+      "description": "Where the campaign stands. 'superseded' is distinct from both 'complete' and 'abandoned': the campaign ran in full and was then deliberately replaced by a later generation, which is what gnosis-pd-v1 was. Pair it with supersededBy."
     },
     "source": {
       "type": "object",
@@ -79,6 +81,10 @@
     "supersedes": {
       "type": "object",
       "description": "What this generation replaced and why."
+    },
+    "supersededBy": {
+      "type": "object",
+      "description": "The later generation that replaced this one, and why. The mirror of `supersedes`."
     },
     "precedents": {
       "type": "object",

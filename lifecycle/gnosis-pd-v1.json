@@ -1,0 +1,139 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "gnosis-pd-v1",
+  "version": "v1 (24 assets)",
+  "mode": "launch",
+  "family": "credit-pd",
+  "status": "superseded",
+  "source": {
+    "request": "One multi-categorical market pricing the probability of default of a basket of DeFi assets before 2027, seeded on Swapr. This is the FIRST generation; lifecycle/gnosis-pd.json is the v2 rebuild that replaced it.",
+    "docs": [
+      "docs/guides/gnosis-pd.md"
+    ],
+    "proposalText": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
+    "priceSourceNote": "Yearly PD per asset, frozen to assets_pd.csv. Model (implied-prices.js, ported forward-only from useImpliedProbs.ts): quarterlyPD = 1 - (1 - yearlyPD)^(1/4); priceY = product(1 - qPD_i) for No To All; price_i = qPD_i * E[1/(1+k)], where k is the number of OTHER outcomes that also default, since defaults share a fixed payout pool."
+  },
+  "supersededBy": {
+    "manifest": "lifecycle/gnosis-pd.json",
+    "why": "Round 1 gave No To All the same outcome quantity Q as the asset pools, and because its price is ~0.9654 that single pool took 85% of the budget - 4.269 of 5 sDAI. Round 2 worked around it by excluding No To All entirely; v2 fixed it properly by sizing No To All BY COLLATERAL at a fixed 0.5 sDAI cap.",
+    "fate": "Fully drained 2026-08-12 to fund v2: 49 positions removed and burned, then the set merged. The merge is capped by the SMALLEST holding and six weeks of trading had unbalanced the set (bsdETH 0.784 vs No To All 7.58), so it returned 0.784 sDAI rather than ~5.6. Total recovery 2.717 (pool sDAI sides) + 0.784 (merge)."
+  },
+  "chain": {
+    "id": 100,
+    "name": "gnosis",
+    "collateral": {
+      "symbol": "sDAI",
+      "address": "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "algebra-v1",
+    "tickSpacing": 60,
+    "mathFeeTier": 3000
+  },
+  "addresses": {
+    "marketFactory": "0x83183DA839Ce8228E31Ae41222EaD9EDBb5cDcf1",
+    "marketView": "0x95493F3e3F151eD9ee9338a4Fc1f49c00890F59C",
+    "router": "0xeC9048b59b3467415b1a38F63416407eA0c70fB8",
+    "positionManager": "0x91fD594c46D8B01E62dBDeBed2401dde01817834",
+    "poolFactory": "0xC1b576AC6Ec749d5Ace1787bF9Ec6340908ddB47",
+    "realitio": "0xE78996A233895bE74a66F451f1019cA9734205cc",
+    "arbitrator": "0x68154EA682f95BF582b80Dd6453FA401737491Dc"
+  },
+  "files": {
+    "seed": "assets_pd.csv",
+    "liquidity": "add-pd-gnosis-execution.json",
+    "round2Liquidity": "add-pd-gnosis-round2-execution.json"
+  },
+  "markets": [
+    {
+      "type": "multiCategorical",
+      "role": "standalone",
+      "count": 1,
+      "marketName": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
+      "outcomes": [
+        "24 assets",
+        "No To All",
+        "Invalid result"
+      ],
+      "parentMarket": null,
+      "parentOutcome": null,
+      "category": "misc",
+      "lang": "en_US",
+      "templateId": 3,
+      "questionTimeoutSeconds": 302400,
+      "creationNote": "Created through the Seer web UI, not by this repo, so the creation date, tokenNames, minBond and openingTime are unknown here. create-pd-market-gnosis.js exists for v2 only."
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 5,
+    "band": {
+      "minPrice": 1e-9,
+      "maxPrice": 0.999999
+    },
+    "bandPerOutcome": {
+      "rule": "Safe preset around each outcome's OWN center price, not a global band: minPrice = max(1e-9, center * (1 - safeDown)), maxPrice = min(0.999999, center * (1 + safeUp)), then clamped to tickSpacing 60. Matches the frontend's web/src/lib/liquidity.ts PRESETS.Safe.",
+      "safeDown": 0.2,
+      "safeUp": 0.4,
+      "note": "The top-level band above is only the outer envelope of those per-outcome bands - it exists to satisfy the schema, and the per-outcome rule is what the script actually applies."
+    },
+    "sizing": "solved",
+    "pools": 25,
+    "priceSource": "assets_pd.csv, via the implied-probability model in implied-prices.js",
+    "unpooledByDesign": "The Invalid result token gets no pool. Sizing detail: round 1 used ONE equal outcome quantity Q across all 25 pools including No To All, solved linearly against the budget from a trial pass at Q0 = 0.1 outcome token. Because splitPosition mints Q of every outcome and No To All prices at ~0.9654, that pool alone absorbed 4.269 sDAI of the 5 - the defect that caused the v2 rebuild."
+  },
+  "spendingCap": {
+    "collateral": 10.5,
+    "gasEth": 0.05
+  },
+  "stages": [
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2026-07-04",
+      "artifacts": [
+        "add-pd-liquidity-gnosis.js",
+        "add-pd-gnosis-execution.json"
+      ],
+      "notes": "Round 1: 25 pools, ~5 sDAI. Split (mint) 0.7137 + sDAI side 4.2863 = exactly 5.0. No To All took 4.269 of the 4.286 sDAI side."
+    },
+    {
+      "name": "phase2-seed",
+      "status": "done",
+      "finishedAt": "2026-07-04",
+      "artifacts": [
+        "add-pd-liquidity-gnosis-round2.js",
+        "add-pd-gnosis-round2-execution.json"
+      ],
+      "notes": "Round 2: a second ~5 sDAI over the 24 ASSET pools only, reusing round 1's pool geometry from its execution log rather than recomputing prices. Excluding No To All is what let the asset pools get real depth; it is a workaround, not a fix."
+    },
+    {
+      "name": "unwind",
+      "status": "done",
+      "finishedAt": "2026-08-12",
+      "artifacts": [
+        "remove-liquidity-gnosis.js",
+        "remove-pd-gnosis-execution.json"
+      ],
+      "txCount": 75,
+      "notes": "49 positions removed and NFTs burned, then the complete set merged to sDAI. Blocks 47679680-47679778. Recovered 2.717 + 0.784; wallet 4.791 -> 8.292, which funded v2's seeding."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "launch",
+      "result": "superseded",
+      "learning": "Sizing every outcome by an equal token quantity Q is only budget-neutral when the outcomes are cheap. One outcome priced near 1 consumes collateral in proportion to its price, so it dominates the spend: No To All at 0.9654 took 85% of a 5 sDAI budget across 25 pools. Size a near-1 outcome BY COLLATERAL instead - lib/uniswap.js sizePositionByCollateral exists for exactly this."
+    }
+  ],
+  "results": {
+    "parent": "0x7D386b7c41b8dAB6179Fc79cf7986a795305B815",
+    "marketAddresses": [
+      "0x7D386b7c41b8dAB6179Fc79cf7986a795305B815"
+    ],
+    "poolCount": 25,
+    "seer": "https://app.seer.pm/markets/100/0x7d386b7c41b8dab6179fc79cf7986a795305b815"
+  }
+}
