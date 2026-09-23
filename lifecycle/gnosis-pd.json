@@ -8,7 +8,9 @@
   "status": "complete",
   "source": {
     "request": "One multi-categorical market pricing the probability of default of a basket of DeFi assets before 2027, seeded on Swapr. v2 rebuilds v1 with 33 Credora assets instead of 24.",
-    "docs": ["docs/guides/gnosis-pd.md"],
+    "docs": [
+      "docs/guides/gnosis-pd.md"
+    ],
     "proposalText": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
     "priceSourceNote": "Live Credora Metrics.psl (yearly PD as a fraction), frozen by fetch-credora-pd.js to assets_pd_v2.csv/.json. Endpoint is api.staging.credora.io/graphql - STAGING. Join key is the lowercased asset name. Snapshot 2026-08-12T01:40:34.764Z, 33 assets. Model (implied-prices.js): quarterlyPD = 1 - (1 - yearlyPD)^(1/4); priceY = product(1 - qPD_i) for No To All; price_i = qPD_i * E[1/(1+k)]. Validated to sum to exactly 1.0000000000."
   },
@@ -50,7 +52,11 @@
       "role": "standalone",
       "count": 1,
       "marketName": "What is the Probability of Default (PD) for the following DeFi assets before 2027?",
-      "outcomes": ["33 Credora assets", "No To All", "Invalid result"],
+      "outcomes": [
+        "33 Credora assets",
+        "No To All",
+        "Invalid result"
+      ],
       "tokenNameScheme": "uppercase, '+' -> PLUS, drop non-alphanumerics, suffix PD. ETH+ -> ETHPLUSPD, GACLO-1 -> GACLO1PD, No To All -> NOTOALLPD.",
       "parentMarket": null,
       "parentOutcome": null,
@@ -61,7 +67,10 @@
   ],
   "liquidity": {
     "totalCollateral": 5,
-    "band": { "minPrice": 0.0000001, "maxPrice": 0.999999 },
+    "band": {
+      "minPrice": 1e-07,
+      "maxPrice": 0.999999
+    },
     "bandPerOutcome": {
       "rule": "Safe preset around each outcome's OWN center price, not a global band: minPrice = max(1e-9, center * 0.8), maxPrice = min(0.999999, center * 1.4), then clamped to tickSpacing 60.",
       "safeDown": 0.2,
@@ -82,14 +91,21 @@
       "name": "phase0-snapshot",
       "status": "done",
       "finishedAt": "2026-08-12",
-      "artifacts": ["fetch-credora-pd.js", "assets_pd_v2.csv", "assets_pd_v2.json"],
+      "artifacts": [
+        "fetch-credora-pd.js",
+        "assets_pd_v2.csv",
+        "assets_pd_v2.json"
+      ],
       "notes": "33 assets frozen from Credora staging. assets_pd.ts lists solvBTC twice; de-duplicated on read (first kept), and create-pd-market-gnosis.js hard-fails on any duplicate. v2's first asset changed from v1's wbETH to weETH - a genuinely different Credora asset (psl 0.00096 vs 0.00778)."
     },
     {
       "name": "phase1-create",
       "status": "done",
       "finishedAt": "2026-08-12",
-      "artifacts": ["create-pd-market-gnosis.js", "create-pd-market-execution.json"],
+      "artifacts": [
+        "create-pd-market-gnosis.js",
+        "create-pd-market-execution.json"
+      ],
       "txCount": 1,
       "notes": "Market 0xc84786B06390F11dED0DD362E27Fc881B540e6F2, tx 0xae2f434a..., block 47679508, 12,829,147 gas against a 17.0M Gnosis block limit. Only 5% estimateGas padding: a 20% pad would request 92% of a whole block, which validators may not fill. Gas is ~759k + 344k per outcome slot, so above ~44 outcomes this no longer fits in one transaction."
     },
@@ -97,7 +113,10 @@
       "name": "unwind-v1",
       "status": "done",
       "finishedAt": "2026-08-12",
-      "artifacts": ["remove-liquidity-gnosis.js", "remove-pd-gnosis-execution.json"],
+      "artifacts": [
+        "remove-liquidity-gnosis.js",
+        "remove-pd-gnosis-execution.json"
+      ],
       "txCount": 75,
       "notes": "49 v1 positions removed and NFTs burned, then the complete set merged to sDAI. Blocks 47679680-47679778. The merge is capped by the SMALLEST holding, and six weeks of trading had unbalanced the set (bsdETH 0.784 vs No To All 7.58), so mergePositions returned 0.784 sDAI rather than ~5.6. Recovery was 2.717 (pool sDAI sides) + 0.784 (merge); wallet 4.791 -> 8.292."
     },
@@ -105,7 +124,10 @@
       "name": "phase1-seed",
       "status": "done",
       "finishedAt": "2026-08-12",
-      "artifacts": ["add-pd-liquidity-gnosis-v2.js", "add-pd-gnosis-v2-execution.json"],
+      "artifacts": [
+        "add-pd-liquidity-gnosis-v2.js",
+        "add-pd-gnosis-v2-execution.json"
+      ],
       "notes": "34 pools, exactly 5.0 sDAI, blocks 47680659-47680803. Wallet 8.292 -> 3.292, funded by the v1 drain. No To All at 10.0% of spend against v1 round 1's 85%. Verified: all 34 pools' live globalState().tick price within 0.0086% of intended - pure tick granularity, irreducible."
     }
   ],
@@ -118,7 +140,9 @@
   ],
   "results": {
     "parent": "0xc84786B06390F11dED0DD362E27Fc881B540e6F2",
-    "marketAddresses": ["0xc84786B06390F11dED0DD362E27Fc881B540e6F2"],
+    "marketAddresses": [
+      "0xc84786B06390F11dED0DD362E27Fc881B540e6F2"
+    ],
     "poolCount": 34,
     "seer": "https://app.seer.pm/markets/100/0xc84786B06390F11dED0DD362E27Fc881B540e6F2"
   },

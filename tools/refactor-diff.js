@@ -65,6 +65,9 @@ function normalize(text) {
         .replace(/\d{4}-\d{2}-\d{2}T[\d:.]+Z?/g, "<ts>")
         .replace(/0x[0-9a-fA-F]{64}/g, "<hash>")
         .replace(/block \d+/gi, "block <n>")
+        // openingTime is Date.now() in some creators, so it differs between two
+        // runs of the same script — that is not a behaviour change.
+        .replace(/openingTime=\d{9,11}/g, "openingTime=<ts>")
         .replace(/\s+$/, "")
         // "./x" and "x" are the same path: the frozen scripts wrote relative
         // literals with the prefix, the manifest stores them without.
