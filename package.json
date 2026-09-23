@@ -1,8 +1,12 @@
 {
   "name": "liquidity",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scripts that operate Seer prediction markets on Optimism and Gnosis",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "audit:dryrun": "node tools/audit-dry-run.js",
     "audit:paths": "node tools/audit-paths.js",
@@ -13,8 +17,10 @@
   "dependencies": {
     "@uniswap/sdk-core": "^7.9.0",
     "@uniswap/v3-sdk": "^3.26.0",
+    "@wagmi/core": "^2.22.1",
     "dotenv": "^17.2.3",
     "ethers": "^6.15.0",
+    "jsbi": "^3.2.5",
     "viem": "^2.38.6",
     "wagmi": "^2.16.9"
   }
