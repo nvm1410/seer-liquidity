@@ -50,7 +50,8 @@
   "files": {
     "seed": "originality-r3-seed.json",
     "markets": "create-originality-r3-v2-execution.json",
-    "mapCache": "originality-r3-v2-map-cache.json"
+    "mapCache": "originality-r3-v2-map-cache.json",
+    "liquidity": "add-originality-r3-v2-liquidity-execution.json"
   },
   "markets": [
     {
