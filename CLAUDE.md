@@ -28,15 +28,20 @@ which is the thing most likely to catch you out:
 A migrated script is dry by default and cannot be armed by accident. Never fork an old script to
 start a campaign — build on [`lib/`](lib/README.md).
 
-**Migrated so far** (9 of 53 — `grep -l 'lib/run.js' *.js` is the live answer):
-`add-zcash-liquidity` · `add-zcash-nu7-liquidity` · `check-zcash-pools` · `check-zcash-nu7-pools` ·
-`merge-zcash-positions` · `merge-zcash-nu7-positions` · `remove-liquidity-gnosis` ·
-`withdraw-zcash-liquidity` · `withdraw-zcash-nu7-liquidity`
+**Migrated: 14 of 53.** Every live-campaign script that touches chain is done —
+`zcash-q3`, `zcash-nu7` and `gnosis-pd` in full, across create, seed, reseed, withdraw, merge and
+check. `fetch-credora-pd` reads the manifest but deliberately skips the harness: it talks to no
+chain, so asserting a network would be theatre.
 
-Next, in order of how likely they are to be re-run: `reseed-zcash-liquidity`,
-`add-pd-liquidity-gnosis-v2`, the two `create-*-markets`, `create-pd-market-gnosis`,
-`fetch-credora-pd`. The l1 / octant / originality scripts are last — those campaigns are closed
-out, so migrating them buys consistency and nothing else.
+The live answer, since a comment can go stale:
+
+```bash
+grep -l '^import { run } from "./lib/run.js"' *.js
+```
+
+Not migrated: the `l1`, `octant` and `originality` scripts, plus the one-off `add-back-*` and
+`add-20k-*` runs. Those campaigns are closed out — L1 redeemed, Octant resolved, originality r2
+unwound — so migrating them buys consistency and nothing else.
 
 All four deferred improvements are now **done**, each as its own visible change after the
 migration it belonged to had been proved identical:
