@@ -110,9 +110,29 @@ longer exist, so grep lands here instead:
 | `REMOVE_MERGE_ORIGINALITY_GUIDE.md` | `docs/guides/originality-unwind.md` |
 | `useImpliedProbs.ts`, `get-originality-markets-data.ts` | `docs/reference/ui/` (UI-repo files, not runnable here) |
 | `*-run.log`, `*-dryrun.log` | `archive/runs/<campaign>/` |
+| every campaign's `*-execution.json`, seed, CSV and cache | `campaigns/<slug>/` — see below |
 | `test.json`, `data.json`, `participants.json` | `archive/dead/` (unreferenced; `test.json` was a byte-identical copy of `execution.json`) |
 
-Everything on the freeze surface stayed at the root. `npm run audit:paths` is what proves it.
+## Campaign data lives in `campaigns/<slug>/`
+
+63 data files moved out of the root on 2026-09-23, mirroring `lifecycle/<slug>.json`. Nothing reads
+them by a hardcoded path any more — a script gets its paths from its manifest, so **moving a data
+file is a manifest edit, not a code edit**. `campaigns/zcash-nu7/superseded/` holds the 12 v1/v2
+files of the campaign that was built three times; the whole version chain stays in one directory.
+
+Exactly two data files remain at the root, both pinned by a literal in code:
+
+| file | pinned by |
+|---|---|
+| `execution.json` | `index.js:277` — gated, superseded |
+| `l2-participants.json` | `getParticipants.js:108` — orphan tool's own output |
+
+`npm run audit:paths` proves it. Its freeze surface is now 36 paths, down from 58, and it **also
+scans `tests/`**: the golden tests read the committed execution JSONs by root-relative path, so they
+depend on campaign data exactly as a script does. When the data moved, 11 tests broke while the
+audit reported nothing — that gap is closed. It also distinguishes a path that moved *while a
+script still names it* (a real break) from one nothing references any more (re-snapshot with
+`node tools/audit-paths.js --snapshot`).
 
 ## Environment
 

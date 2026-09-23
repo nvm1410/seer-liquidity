@@ -1,7 +1,21 @@
 # Campaigns
 
 Every market set this repo has operated. The **guide** explains why it was built that way; the
-**manifest** is the same campaign as machine-readable data; **runs** holds the stdout transcripts.
+**manifest** is the same campaign as machine-readable data; **data** holds its seeds, CSVs and
+execution logs; **runs** holds the stdout transcripts.
+
+A campaign is four things in four places, all keyed by the same slug:
+
+```
+docs/guides/<slug>.md      why it was built that way          (prose)
+lifecycle/<slug>.json      what it is, and where its files are (data)
+campaigns/<slug>/          its seeds, CSVs and execution logs  (inputs + records)
+archive/runs/<campaign>/   the stdout of the live runs         (transcripts)
+```
+
+Nothing reads a campaign file by a hardcoded path: a script gets its paths from its manifest, so
+moving one is a manifest edit. The two exceptions, `execution.json` and `l2-participants.json`, are
+named by a literal in code and stay at the root — see `CLAUDE.md`.
 
 | Campaign | Chain | Family | Structure | Capital | Dates | Status |
 |---|---|---|---|---|---|---|
@@ -11,16 +25,19 @@ Every market set this repo has operated. The **guide** explains why it was built
 | [l1-deepfunding](guides/l1-deepfunding.md) | Optimism | deepfunding | nested multiScalar pair (A + B on A#66) | 19,980 sUSDS | 2026-07-27 → 09-01 | **closed out**, redeemed |
 | [gnosis-pd](guides/gnosis-pd.md) | Gnosis | credit-pd | 1 multiCategorical, 35 slots | 5 sDAI | 2026-08-12 | live, seeded, unresolved |
 | [gnosis-pd-v1](guides/gnosis-pd.md) | Gnosis | credit-pd | 1 multiCategorical, 26 slots | 5 + 5 sDAI | 2026-07-04 → 08-12 | **superseded**, drained to fund v2 |
-| [originality-unwind](guides/originality-unwind.md) | Optimism | originality | round-2 parent + 98 scalar children | — | 2026-06-19 | unwound |
+| [octant](guides/) *(no guide)* | Optimism | other | 1 multiScalar, 26 slots | 20,000 sUSDS | 2026-?? | **closed out**, answered + resolved |
+| [originality-r2](guides/originality-unwind.md) | Optimism | originality | round-2 parent + 98 scalar children | 60,000 sUSDS | 2026-06-19 | unwound; 8,300.58 sUSDS stranded behind one zero outcome |
 
-| Campaign | Manifest | Run logs |
-|---|---|---|
-| originality-r3 | [`lifecycle/originality-r3.json`](../lifecycle/originality-r3.json) | [`archive/runs/originality-r3/`](../archive/runs/originality-r3/) |
-| zcash-q3 | [`lifecycle/zcash-q3.json`](../lifecycle/zcash-q3.json) | [`archive/runs/zcash-q3/`](../archive/runs/zcash-q3/) |
-| zcash-nu7 | [`lifecycle/zcash-nu7.json`](../lifecycle/zcash-nu7.json) | [`archive/runs/zcash-nu7/`](../archive/runs/zcash-nu7/) |
-| l1-deepfunding | [`lifecycle/l1-deepfunding.json`](../lifecycle/l1-deepfunding.json) | [`archive/runs/l1/`](../archive/runs/l1/) |
-| gnosis-pd | [`lifecycle/gnosis-pd.json`](../lifecycle/gnosis-pd.json) | — |
-| gnosis-pd-v1 | [`lifecycle/gnosis-pd-v1.json`](../lifecycle/gnosis-pd-v1.json) | — |
+| Campaign | Manifest | Data | Run logs |
+|---|---|---|---|
+| originality-r3 | [`lifecycle/originality-r3.json`](../lifecycle/originality-r3.json) | [`campaigns/originality-r3/`](../campaigns/originality-r3/) | [`archive/runs/originality-r3/`](../archive/runs/originality-r3/) |
+| zcash-q3 | [`lifecycle/zcash-q3.json`](../lifecycle/zcash-q3.json) | [`campaigns/zcash-q3/`](../campaigns/zcash-q3/) | [`archive/runs/zcash-q3/`](../archive/runs/zcash-q3/) |
+| zcash-nu7 | [`lifecycle/zcash-nu7.json`](../lifecycle/zcash-nu7.json) | [`campaigns/zcash-nu7/`](../campaigns/zcash-nu7/) | [`archive/runs/zcash-nu7/`](../archive/runs/zcash-nu7/) |
+| l1-deepfunding | [`lifecycle/l1-deepfunding.json`](../lifecycle/l1-deepfunding.json) | [`campaigns/l1-deepfunding/`](../campaigns/l1-deepfunding/) | [`archive/runs/l1/`](../archive/runs/l1/) |
+| octant | [`lifecycle/octant.json`](../lifecycle/octant.json) | [`campaigns/octant/`](../campaigns/octant/) | — |
+| gnosis-pd | [`lifecycle/gnosis-pd.json`](../lifecycle/gnosis-pd.json) | [`campaigns/gnosis-pd/`](../campaigns/gnosis-pd/) | — |
+| gnosis-pd-v1 | [`lifecycle/gnosis-pd-v1.json`](../lifecycle/gnosis-pd-v1.json) | [`campaigns/gnosis-pd-v1/`](../campaigns/gnosis-pd-v1/) | — |
+| originality-r2 | [`lifecycle/originality-r2.json`](../lifecycle/originality-r2.json) | [`campaigns/originality-r2/`](../campaigns/originality-r2/) | — |
 
 ## The two chains are not the same shape
 
