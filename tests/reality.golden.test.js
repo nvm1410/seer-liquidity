@@ -29,6 +29,7 @@ import path from "node:path";
 import { describe, it } from "node:test";
 import { ethers } from "ethers";
 import {
+  ANSWERED_TOO_SOON,
   SEP,
   TEMPLATE,
   checkQuestionText,
@@ -38,6 +39,10 @@ import {
   encodeQuestion,
   encodeQuestionWithOutcomes,
   encodeQuestionWithoutOutcomes,
+  hasAnsweredTooSoon,
+  isQuestionFinalized,
+  isQuestionPending,
+  marketStatus,
 } from "../lib/reality.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -255,5 +260,51 @@ describe("golden: the Gnosis multi-categorical (templateId 3, not 2)", () => {
         encodeQuestionWithOutcomes("Q?", ["A", "B"], "misc", "en_US")
       );
     }
+  });
+});
+
+describe("lib/reality.js market status", () => {
+  const Q = (o) => ({ opening_ts: 0, finalize_ts: 0, is_pending_arbitration: false, best_answer: null, ...o });
+
+  it("a question under arbitration is not finalized, however old", () => {
+    // The condition easiest to drop when porting, and the one that decides
+    // whether Market.resolve() is even callable.
+    const q = Q({ finalize_ts: 100, is_pending_arbitration: true });
+    assert.equal(isQuestionFinalized(q, 1_000_000), false);
+    assert.equal(isQuestionPending(q, 1_000_000), true);
+  });
+
+  it("the finalize comparison is STRICT", () => {
+    const q = Q({ finalize_ts: 100 });
+    assert.equal(isQuestionFinalized(q, 100), false, "at exactly finalize_ts it is not yet final");
+    assert.equal(isQuestionFinalized(q, 101), true);
+  });
+
+  it("walks the status ladder in order", () => {
+    const now = 1000;
+    assert.equal(marketStatus({ questions: [] }, now), "NO_QUESTIONS");
+    assert.equal(marketStatus({ questions: [Q({ opening_ts: 2000 })] }, now), "NOT_OPEN");
+    assert.equal(marketStatus({ questions: [Q({ opening_ts: 1 })] }, now), "OPEN");
+    assert.equal(
+      marketStatus({ questions: [Q({ opening_ts: 1, finalize_ts: 5 }), Q({ opening_ts: 1, is_pending_arbitration: true })] }, now),
+      "IN_DISPUTE"
+    );
+    assert.equal(
+      marketStatus({ questions: [Q({ opening_ts: 1, finalize_ts: 5 }), Q({ opening_ts: 1, finalize_ts: 9999 })] }, now),
+      "ANSWER_NOT_FINAL"
+    );
+    assert.equal(
+      marketStatus({ questions: [Q({ opening_ts: 1, finalize_ts: 5 })], payoutReported: false }, now),
+      "PENDING_EXECUTION"
+    );
+    assert.equal(
+      marketStatus({ questions: [Q({ opening_ts: 1, finalize_ts: 5 })], payoutReported: true }, now),
+      "CLOSED"
+    );
+  });
+
+  it("flags an ANSWERED_TOO_SOON sentinel", () => {
+    assert.equal(hasAnsweredTooSoon({ questions: [Q({ best_answer: ANSWERED_TOO_SOON })] }), true);
+    assert.equal(hasAnsweredTooSoon({ questions: [Q({ best_answer: "0x" + "00".repeat(32) })] }), false);
   });
 });
