@@ -47,8 +47,11 @@ All four deferred improvements are now **done**, each as its own visible change 
 migration it belonged to had been proved identical:
 
 1. `withdraw-zcash-*` now classifies three ways and **sweeps** fees off zero-liquidity positions
-   instead of warning about them. (On the current nu7 set all 28 empty positions turn out to be
-   clean, so nothing is swept — but that is now *checked* rather than asserted.)
+   instead of warning about them. Note what this is worth *today*: on nu7 all 28 empty positions
+   turn out to be clean, and on q3 all 74 still hold liquidity, so neither set has anything to
+   sweep. The path is dormant. What changed is that the scripts now *check* instead of asserting
+   that fees "must be collected separately", and a wallet holding only fee-bearing empty positions
+   is no longer told "nothing to withdraw".
 2. `add-zcash-liquidity` **refuses** to run if any pool already exists, pointing at
    `reseed-zcash-liquidity`. It prices from the seed file, and a drained V3 pool keeps its last
    price. Verified firing against all 74 live q3 pools.
