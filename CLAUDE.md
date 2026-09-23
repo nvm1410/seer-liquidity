@@ -4,6 +4,20 @@ Scripts that run real Seer prediction markets on **Optimism (10)** and **Gnosis 
 markets, seeding Uniswap V3 / Swapr pools, unwinding, answering Reality.eth, redeeming. Every live
 run moves real capital.
 
+## Start here
+
+| I want to | Read |
+|---|---|
+| run a new campaign | [`docs/NEW-CAMPAIGN.md`](docs/NEW-CAMPAIGN.md) — the procedure, with the commands |
+| know what already exists | [`docs/README.md`](docs/README.md) — the campaign index |
+| avoid a known trap | [`docs/LESSONS.md`](docs/LESSONS.md) — what went wrong, and the check that catches it |
+| pick up unfinished work | [`docs/NEXT.md`](docs/NEXT.md) |
+| understand how this repo is worked on | [`docs/PROCESS.md`](docs/PROCESS.md) |
+| write a script | [`lib/README.md`](lib/README.md) — the harness, its flags and guards |
+| check a claim about the protocol | [`src/README.md`](src/README.md) — the nine contracts that matter |
+
+Then the invariants below. They are short on purpose; the reasoning is behind the links.
+
 ## Invariants
 
 **1. Every operational script runs on the harness. There is no `DRY_RUN` constant left.**

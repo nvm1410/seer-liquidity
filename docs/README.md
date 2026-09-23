@@ -63,9 +63,14 @@ The `mathFeeTier: 3000` in the Gnosis manifest exists **solely** so `@uniswap/v3
 
 1. [`../CLAUDE.md`](../CLAUDE.md) — the invariants. Start here: every script is dry unless you
    pass `--live`, but three are *gated* rather than migrated and behave differently.
-2. [`../lifecycle/README.md`](../lifecycle/README.md) — what a manifest holds and which half a
+2. [`NEW-CAMPAIGN.md`](NEW-CAMPAIGN.md) — the procedure for a campaign that has not happened yet.
+3. [`LESSONS.md`](LESSONS.md) — what has already gone wrong here. Read before writing anything.
+4. [`../lifecycle/README.md`](../lifecycle/README.md) — what a manifest holds and which half a
    script may read.
-3. The guide for the nearest precedent campaign, then its manifest side by side.
+5. The guide for the nearest precedent campaign, then its manifest side by side.
+
+[`NEXT.md`](NEXT.md) lists known-unfinished work; [`PROCESS.md`](PROCESS.md) records how this repo
+is worked on and where that process still has gaps.
 
 ## Reference
 
