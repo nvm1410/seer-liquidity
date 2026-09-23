@@ -68,7 +68,10 @@ function normalize(text) {
         !/^\s{2}chain \d+ ok/.test(l) &&
         !/^\s{2}gate: /.test(l) &&
         !/^\s{2}resuming: /.test(l) &&
-        !/^(Dry run complete|Done\.)/.test(l)
+        !/Dry run complete/.test(l) &&
+        !/^Done\./.test(l) &&
+        // The old scripts printed their own mode banner; the harness prints one.
+        !/^📋 DRY_RUN/.test(l)
     )
     .join("\n");
 }
