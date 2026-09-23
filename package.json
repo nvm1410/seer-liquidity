@@ -11,7 +11,8 @@
     "audit:dryrun": "node tools/audit-dry-run.js",
     "audit:paths": "node tools/audit-paths.js",
     "lint:manifest": "node tools/validate-manifest.js",
-    "test": "npm run audit:dryrun && npm run audit:paths && npm run lint:manifest",
+    "golden": "node --test",
+    "test": "npm run audit:dryrun && npm run audit:paths && npm run lint:manifest && npm run golden",
     "hooks:install": "git config core.hooksPath .githooks && echo \"hooks installed (core.hooksPath=.githooks)\""
   },
   "author": "",
