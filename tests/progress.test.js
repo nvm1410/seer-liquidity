@@ -112,3 +112,32 @@ describe("lib/run.js argument parsing — dry is the default", () => {
     assert.ok(a.flags.has("--markets-only"), "unknown flags stay available to the script");
   });
 });
+
+describe("lib/progress.js — append returns the stored object", () => {
+  it("lets a caller record first and fill in the rest afterwards", () => {
+    // The creators need this: a market address must be persisted the instant the
+    // transaction confirms, because creation is NOT idempotent and a transient
+    // failure before saving would make the next run create a duplicate market.
+    const dir = tmp();
+    const file = path.join(dir, "progress.json");
+    const p = openProgress(file);
+
+    const entry = p.append({ kind: "market", key: "Q1", market: "0xabc", verified: false });
+    entry.verified = true;
+    entry.wrappedTokens = ["0x1", "0x2"];
+    p.flush();
+
+    const onDisk = JSON.parse(fs.readFileSync(file, "utf8"));
+    assert.equal(onDisk.length, 1);
+    assert.equal(onDisk[0].market, "0xabc");
+    assert.equal(onDisk[0].verified, true, "later edits persist");
+    assert.deepEqual(onDisk[0].wrappedTokens, ["0x1", "0x2"]);
+  });
+
+  it("persists the irreversible part even if the caller never flushes", () => {
+    const dir = tmp();
+    const file = path.join(dir, "progress.json");
+    openProgress(file).append({ kind: "market", key: "Q1", market: "0xabc" });
+    assert.equal(JSON.parse(fs.readFileSync(file, "utf8"))[0].market, "0xabc");
+  });
+});
