@@ -7,15 +7,18 @@ execution logs; **runs** holds the stdout transcripts.
 A campaign is four things in four places, all keyed by the same slug:
 
 ```
-docs/guides/<slug>.md      why it was built that way          (prose)
-lifecycle/<slug>.json      what it is, and where its files are (data)
-campaigns/<slug>/          its seeds, CSVs and execution logs  (inputs + records)
-archive/runs/<campaign>/   the stdout of the live runs         (transcripts)
+docs/guides/<slug>.md      why it was built that way            (prose)
+lifecycle/<slug>.json      what it is, and where its files are  (data)
+campaigns/<slug>/          its scripts, seeds, CSVs and logs    (code + records)
+archive/runs/<campaign>/   the stdout of the live runs          (transcripts)
 ```
 
 Nothing reads a campaign file by a hardcoded path: a script gets its paths from its manifest, so
-moving one is a manifest edit. The two exceptions, `execution.json` and `l2-participants.json`, are
-named by a literal in code and stay at the root — see `CLAUDE.md`.
+moving one is a manifest edit. The root itself holds only configuration — no scripts, no data.
+
+Run a script from the repo root by its full path, e.g.
+`node campaigns/zcash-q3/add-zcash-liquidity.js --live`. Several read CWD-relative files, so the
+working directory matters.
 
 | Campaign | Chain | Family | Structure | Capital | Dates | Status |
 |---|---|---|---|---|---|---|

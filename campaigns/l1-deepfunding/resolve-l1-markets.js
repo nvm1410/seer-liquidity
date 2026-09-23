@@ -33,11 +33,12 @@ await run(
     slug: "l1-deepfunding",
     stage: "settle-resolve",
     mutating: true,
-    // resolve-l1-execution.json is the one freeze-surface literal that never
-    // existed: a third party resolved both markets first, so this script has
-    // never had anything to write. Keep pointing at it anyway — if it ever does
-    // run, that is where the record belongs.
-    progress: () => "resolve-l1-execution.json",
+    // This is the one progress literal that names a file which never existed: a
+    // third party resolved both markets first, so this script has never had
+    // anything to write. lib/run.js resolves a spec.progress path against the
+    // REPO ROOT, so it must name the campaign directory — left bare it would
+    // drop a stray file at the root the first time it ever ran.
+    progress: () => "campaigns/l1-deepfunding/resolve-l1-execution.json",
   },
   async (ctx) => {
     const { manifest, provider, wallet, addr, log, progress, dry: DRY_RUN } = ctx;

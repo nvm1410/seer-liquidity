@@ -104,7 +104,8 @@ longer exist, so grep lands here instead:
 | `useImpliedProbs.ts`, `get-originality-markets-data.ts` | `docs/reference/ui/` (UI-repo files, not runnable here) |
 | `*-run.log`, `*-dryrun.log` | `archive/runs/<campaign>/` |
 | every campaign's `*-execution.json`, seed, CSV and cache | `campaigns/<slug>/` — see below |
-| `test.json`, `data.json`, `participants.json` | `archive/dead/` (unreferenced; `test.json` was a byte-identical copy of `execution.json`) |
+| `test.json`, `data.json` | `archive/dead/` (unreferenced; `test.json` was a byte-identical copy of the L1 baseline) |
+| `getParticipants.js`, `participants.js`, `l2-participants.json` | `archive/orphan/` (trade-executor tool, unrelated to liquidity) |
 
 ## Layout
 
