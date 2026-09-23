@@ -18,6 +18,9 @@ import path from "path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
+// tools/refactor-diff.js writes the old copy of a script here while it runs.
+const TEMP_PREFIX = "_refactor_diff_old_";
+
 // `const DRY_RUN = false` with any spacing. Deliberately not a general
 // expression parser: the frozen scripts all use this one literal form, and a
 // looser pattern would start matching prose in the header comments.
@@ -26,7 +29,7 @@ const ARMED = /^\s*const\s+DRY_RUN\s*=\s*false\s*;/;
 function rootScripts() {
   return fs
     .readdirSync(ROOT)
-    .filter((f) => f.endsWith(".js"))
+    .filter((f) => f.endsWith(".js") && !f.startsWith(TEMP_PREFIX))
     .sort();
 }
 

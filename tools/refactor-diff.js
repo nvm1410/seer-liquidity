@@ -27,6 +27,12 @@ if (!script) {
   process.exit(2);
 }
 
+// A run killed by a broken pipe never reaches its finally block, so sweep any
+// leftovers from previous runs before starting. They are never wanted.
+for (const f of fs.readdirSync(ROOT)) {
+  if (f.startsWith("_refactor_diff_old_")) fs.rmSync(path.join(ROOT, f), { force: true });
+}
+
 const git = (a) => execFileSync("git", a, { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
 
 let oldSource;

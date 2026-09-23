@@ -21,6 +21,9 @@ import path from "path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
+// tools/refactor-diff.js writes the old copy of a script here while it runs.
+const TEMP_PREFIX = "_refactor_diff_old_";
+
 // Directories that are NOT frozen — new code, free to reference anything.
 const NEW_CODE = new Set(["lib", "tools", "tests"]);
 
@@ -35,6 +38,7 @@ function frozenScripts() {
   return fs
     .readdirSync(ROOT, { withFileTypes: true })
     .filter((e) => e.isFile() && e.name.endsWith(".js"))
+    .filter((e) => !e.name.startsWith(TEMP_PREFIX))
     .map((e) => e.name)
     .sort();
 }

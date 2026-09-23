@@ -37,7 +37,9 @@
   "files": {
     "seed": "zcash-q3-proposals.json",
     "markets": "create-zcash-markets-execution.json",
-    "csv": "zcash-q3-markets.csv"
+    "csv": "zcash-q3-markets.csv",
+    "liquidity": "add-zcash-liquidity-execution.json",
+    "reseed": "reseed-zcash-liquidity-execution.json"
   },
   "markets": [
     {
@@ -46,7 +48,10 @@
       "count": 37,
       "templateId": 2,
       "marketNameTemplate": "Will {title} be approved in the Q3 2026 Coinholder-Directed Retroactive Grants poll?",
-      "outcomes": ["Yes", "No"],
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
       "tokenNameScheme": "ZQ3<shortName>YES / ZQ3<shortName>NO",
       "parentMarket": null,
       "parentOutcome": null,
@@ -58,7 +63,10 @@
   ],
   "liquidity": {
     "totalCollateral": 20000,
-    "band": { "minPrice": 0.02, "maxPrice": 0.98 },
+    "band": {
+      "minPrice": 0.02,
+      "maxPrice": 0.98
+    },
     "sizing": "solved",
     "pools": 74,
     "priceSource": "zcash-q3-proposals.json yesPrice; noPrice = 1 - yesPrice",
@@ -73,7 +81,10 @@
       "name": "phase1-create",
       "status": "done",
       "finishedAt": "2026-08-19",
-      "artifacts": ["create-zcash-markets.js", "create-zcash-markets-execution.json"],
+      "artifacts": [
+        "create-zcash-markets.js",
+        "create-zcash-markets-execution.json"
+      ],
       "txCount": 37,
       "notes": "37/37 created and verified, 0 failures, 64,068,263 gas, 0.0000642 ETH. Reality question-id collision check clean on all 37."
     },

@@ -1,104 +1,90 @@
-// Read-only status report for the Zcash Q3 2026 pools on Optimism.
+// Read-only status report for the Zcash Q3 2026 CDRGP pools on Optimism.
 //
-// For every pool in add-zcash-liquidity-execution.json: the seeded price, the
-// live price from slot0, and the pool's total liquidity. Two things this is for:
+// For every pool: the seeded price, the live price from slot0, and the pool's
+// total liquidity. A price that has moved means the market traded, which is what
+// shrinks the mergePositions recovery — merge converts only the min of the full
+// {YES, NO, Invalid} set.
 //
-//   1. before a withdraw — a price that has moved means the market traded, which
-//      is what shrinks the mergePositions recovery (merge converts only the
-//      min of the full set).
-//   2. before/after a reprice — pool liquidity that is larger than what this
-//      wallet put in means a third party has LP'd, and a swap-to-price would
-//      trade against real depth instead of costing dust.
+// The reference for "what price was this pool seeded at" is whichever seeding ran
+// last: the re-seed log if there is one, otherwise the original add log. Those two
+// use different entry kinds ("fund" vs "pool"), because a re-seed is a three-step
+// dust -> swap -> fund sequence per pool.
 //
-// Sends nothing. Safe to run at any time.
+// Sends nothing: declared `mutating: false`. Needs only RPC_URL.
+//
+//   node check-zcash-pools.js
 
-import { Token } from "@uniswap/sdk-core";
-import { Pool } from "@uniswap/v3-sdk";
-import "dotenv/config";
 import { ethers } from "ethers";
 import fs from "fs";
+import { runBatched } from "./lib/batch.js";
+import { run } from "./lib/run.js";
+import { sortTokens, tickToPrice } from "./lib/ticks.js";
+import { POOL_MIN_ABI } from "./lib/uniswap.js";
+import { Token } from "@uniswap/sdk-core";
+import { Pool } from "@uniswap/v3-sdk";
 
-const RPC_URL = process.env.RPC_URL;
-const CHAIN_ID = 10;
-const SUSDS_ADDRESS = "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0";
-const FEE_TIER = 100;
-// The reference for "what price was this pool seeded at" is whichever seeding ran
-// last: the re-seed log if there is one, otherwise the original add log.
-const RESEED_FILE = "./reseed-zcash-liquidity-execution.json";
-const ADD_FILE = "./add-zcash-liquidity-execution.json";
+const MOVED_TOLERANCE = 0.0005;
 
-const LN_1_0001 = Math.log(1.0001);
+await run(
+  { name: "check-zcash-pools", slug: "zcash-q3", stage: "check", mutating: false },
+  async (ctx) => {
+    const { manifest, provider, chainId, log } = ctx;
+    const collateral = manifest.chain.collateral.address;
+    const { feeTier } = ctx.amm;
 
-const POOL_ABI = [
-  "function slot0() view returns (uint160 sqrtPriceX96, int24 tick, uint16 observationIndex, uint16 observationCardinality, uint16 observationCardinalityNext, uint8 feeProtocol, bool unlocked)",
-  "function liquidity() view returns (uint128)",
-];
+    const reseedFile = manifest.files.reseed;
+    const addFile = manifest.files.liquidity;
+    const useReseed = reseedFile && fs.existsSync(reseedFile);
+    const sourceFile = useReseed ? reseedFile : addFile;
+    const kind = useReseed ? "fund" : "pool";
+    if (!sourceFile || !fs.existsSync(sourceFile)) {
+      throw new Error(`no seeding log found (manifest files.reseed / files.liquidity) — nothing has been seeded.`);
+    }
 
-const provider = new ethers.JsonRpcProvider(RPC_URL);
+    const pools = JSON.parse(fs.readFileSync(sourceFile, "utf8")).filter((e) => e.kind === kind);
+    if (!pools.length) throw new Error(`${sourceFile} has no "${kind}" entries.`);
+    log.log(`\n🔍 ${pools.length} pools from ${sourceFile}\n`);
 
-async function main() {
-  const net = await provider.getNetwork();
-  if (Number(net.chainId) !== CHAIN_ID) {
-    throw new Error(`RPC_URL points at chain ${net.chainId}, expected ${CHAIN_ID} (Optimism).`);
-  }
-
-  const useReseed = fs.existsSync(RESEED_FILE);
-  const sourceFile = useReseed ? RESEED_FILE : ADD_FILE;
-  const kind = useReseed ? "fund" : "pool";
-  const pools = JSON.parse(fs.readFileSync(sourceFile, "utf8")).filter((e) => e.kind === kind);
-  if (!pools.length) throw new Error(`${sourceFile} has no "${kind}" entries.`);
-  console.log(`\n🔍 ${pools.length} pools from ${sourceFile}\n`);
-
-  const rows = [];
-  for (let i = 0; i < pools.length; i += 10) {
-    const batch = pools.slice(i, i + 10);
-    rows.push(
-      ...(await Promise.all(
-        batch.map(async (p) => {
-          const outcome = new Token(CHAIN_ID, p.outcomeToken, 18, "OUT");
-          const susds = new Token(CHAIN_ID, SUSDS_ADDRESS, 18, "SUSDS");
-          const address = Pool.getAddress(outcome, susds, FEE_TIER);
-          const pool = new ethers.Contract(address, POOL_ABI, provider);
-          const [slot0, liquidity] = await Promise.all([pool.slot0(), pool.liquidity()]);
-          const tick = Number(slot0.tick);
-          // slot0 price is token1/token0; invert when the outcome token is token1.
-          const isToken0Outcome = p.outcomeToken.toLowerCase() < SUSDS_ADDRESS.toLowerCase();
-          const oriented = Math.exp(tick * LN_1_0001);
-          return {
-            ...p,
-            address,
-            tick,
-            liquidity: liquidity,
-            livePrice: isToken0Outcome ? oriented : 1 / oriented,
-          };
-        })
-      ))
+    const rows = await runBatched(
+      pools,
+      async (p) => {
+        const address = Pool.getAddress(
+          new Token(chainId, p.outcomeToken, 18, "OUT"),
+          new Token(chainId, collateral, 18, "COL"),
+          feeTier
+        );
+        const pool = new ethers.Contract(address, POOL_MIN_ABI, provider);
+        const [slot0, liquidity] = await Promise.all([pool.slot0(), pool.liquidity()]);
+        const tick = Number(slot0.tick);
+        // slot0 prices token1/token0, so invert when the outcome is token1.
+        const [t0] = sortTokens(p.outcomeToken, collateral);
+        const isToken0Outcome = t0.toLowerCase() === p.outcomeToken.toLowerCase();
+        const oriented = tickToPrice(tick);
+        return { ...p, address, tick, liquidity, livePrice: isToken0Outcome ? oriented : 1 / oriented };
+      },
+      { batchSize: 10, pauseMs: 300 }
     );
-    await new Promise((r) => setTimeout(r, 300));
-  }
 
-  console.log("  #  shortName        side  seeded    live      tick  pool liquidity");
-  let moved = 0;
-  for (const r of rows) {
-    const diff = r.livePrice - r.price;
-    const hasMoved = Math.abs(diff) > 0.0005;
-    if (hasMoved) moved++;
-    console.log(
-      ` ${String(r.id).padStart(2)}  ${r.shortName.padEnd(15)} ${r.side.padEnd(4)} ` +
-        `${r.price.toFixed(4)}  ${r.livePrice.toFixed(4)}  ${String(r.tick).padStart(7)}  ${r.liquidity}` +
-        (hasMoved ? `   ← MOVED ${diff > 0 ? "+" : ""}${diff.toFixed(4)}` : "")
+    log.log("  #  shortName        side  seeded    live      tick  pool liquidity");
+    let moved = 0;
+    for (const r of rows) {
+      const seeded = r.seedPrice ?? r.price;
+      const diff = r.livePrice - seeded;
+      const hasMoved = Math.abs(diff) > MOVED_TOLERANCE;
+      if (hasMoved) moved++;
+      log.log(
+        ` ${String(r.id).padStart(2)}  ${String(r.shortName).padEnd(15)} ${String(r.side).padEnd(4)} ` +
+          `${seeded.toFixed(4)}  ${r.livePrice.toFixed(4)}  ${String(r.tick).padStart(7)}  ${r.liquidity}` +
+          (hasMoved ? `   ← MOVED ${diff > 0 ? "+" : ""}${diff.toFixed(4)}` : "")
+      );
+    }
+
+    log.log(`\n   Pools whose price moved off the seed: ${moved}/${rows.length}`);
+    log.log(
+      moved === 0
+        ? "   → nothing has traded; a full-set merge should recover the whole deployment."
+        : "   → those markets traded; merge recovers only min(YES, NO, Invalid) per market."
     );
+    return { pools: rows.length, moved };
   }
-
-  console.log(`\n   Pools whose price moved off the seed: ${moved}/${rows.length}`);
-  if (moved === 0) {
-    console.log("   → nothing has traded; a full-set merge should recover the whole deployment.");
-  } else {
-    console.log("   → those markets traded; merge recovers only min(YES, NO, Invalid) per market.");
-  }
-}
-
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+);
