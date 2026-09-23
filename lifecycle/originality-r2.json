@@ -1,0 +1,173 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "originality-r2",
+  "version": "round 2 (98 repos, one multi-categorical parent)",
+  "mode": "unwind",
+  "family": "originality",
+  "status": "complete",
+  "source": {
+    "request": "Round 2 of the Deep Funding originality experiment: one multi-categorical parent over 98 repositories, plus one conditional scalar score market per repo. mode is 'unwind' because that is the phase this repo's scripts actually cover and the one the guide documents — the campaign as a whole spans seed, restore, top-up, unwind and a partial settle, and the stages below record all of them.",
+    "docs": ["docs/guides/originality-unwind.md"],
+    "priceSourceNote": "Seed prices came from originality.js (98 rows of {Repo, Originality}) via markets.js, where prices[i] was exactly [1 - Originality, Originality] = [DOWN, UP]. Those numbers were never logged; the only surviving record of the round's final prices is the drained pools' own sqrtPriceX96, which snapshot-originality-r2-prices.js reads to seed round 3."
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A",
+    "arbitrator": "0x5AFa42b30955f137e10f89dfb5EF1542a186F90e"
+  },
+  "files": {
+    "markets": "markets.js",
+    "prices": "originality.js",
+    "pairs": "originality-pairs.js",
+    "tokens": "tokens.js",
+    "addBack": "add-back-execution.json",
+    "topUp": "add-20k-originality-execution.json",
+    "mapCache": "originality-map-cache.json",
+    "mergeCache": "originality-merge-cache.json",
+    "unwind": "remove-merge-originality-execution.json",
+    "resolve": "resolve-originality-execution.json"
+  },
+  "markets": [
+    {
+      "type": "multiCategorical",
+      "role": "parent",
+      "count": 1,
+      "templateId": 3,
+      "marketName": "Which of those repositories will be evaluated for originality during the second round of the deepfunding experiment?",
+      "outcomes": ["98 repositories as org/repo paths", "Invalid result (factory-added, slot 98)"],
+      "tokenNameScheme": "uppercased repo basename, e.g. PY_ECC; Invalid is SER-INVALID",
+      "parentMarket": null,
+      "parentOutcome": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400
+    },
+    {
+      "type": "scalar",
+      "role": "child",
+      "count": 98,
+      "templateId": 1,
+      "marketNameTemplate": "What will be the average originality score of {repo} in the second round of the deepfunding experiment?",
+      "outcomes": ["DOWN", "UP"],
+      "tokenNameScheme": "ALL 196 child tokens are literally named DOWN and UP — unreadable in a wallet, and the reason round 3 moved to <REPO>_D_R3 / <REPO>_U_R3",
+      "parentMarket": "0xdb3AaE8d1C964767eeAA17805bE25cdED7A17210",
+      "parentOutcome": "one per repo, 1:1 with the parent outcome index; read from the child's own parentOutcome field, which is the authority",
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000",
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 60000,
+    "band": { "minPrice": 1e-30, "maxPrice": 0.95 },
+    "sizing": "by-outcome",
+    "pools": 196,
+    "priceSource": "markets.js prices[i] = [1 - Originality, Originality]",
+    "unpooledByDesign": "The parent Invalid token and all 98 child Invalid tokens. BAND WARNING: round 2 actually passed minPrice = 0, and priceToTick(0) is -Infinity, which clamped to MIN_TICK — an accidental full-range-to-zero position spreading depth across a range nobody trades in. The minPrice recorded here is a placeholder standing in for that clamp, because the schema rightly forbids a zero band. Round 3 uses [0.02, 0.98] and hard-fails outside it."
+  },
+  "unwind": {
+    "order": ["withdraw", "merge"],
+    "orderNote": "Strictly bottom-up, and forced by the data rather than chosen: (1) remove 100% from all 196 positions, returning both the Up/Down tokens and the parent-outcome collateral; (2) per repo, merge the complete child set {DOWN, UP, Invalid} back into that repo's parent-outcome token; (3) one parent merge burning the complete 99-token parent set into sUSDS. Each step's input is the previous step's output, so no other order is possible. No redeem step — redemption for round 2 is a UI path, not a script here.",
+    "burnNft": false,
+    "collectEmpty": false,
+    "strandedTokensExpected": true
+  },
+  "spendingCap": {
+    "collateral": 60000,
+    "gasEth": 0.05
+  },
+  "stages": [
+    {
+      "name": "phase1-create",
+      "status": "done",
+      "finishedAt": "2025-10-30",
+      "artifacts": ["markets.js"],
+      "notes": "Parent created 2025-10-30T02:34:22Z in a single 36,804,432-gas transaction; all 98 children at 11:47:17Z the same day. Not created by this repo — markets.js is the only local record, and it holds addresses only."
+    },
+    {
+      "name": "phase1-seed",
+      "status": "done",
+      "finishedAt": "2025-11-11",
+      "artifacts": ["liquidity-originality.js", "originality.js", "markets.js"],
+      "notes": "splitPosition(sUSDS, parent, 40,000) on 2025-11-04T12:31:05Z, then 196 position NFTs minted 2025-11-11 (ids 1034306-1034507). 13,333.33 of each parent outcome split into Up/Down, 26,666.67 kept as the collateral leg. No execution log was written — this predates the logging convention."
+    },
+    {
+      "name": "removal-50pct",
+      "status": "done",
+      "artifacts": ["index.js"],
+      "notes": "index.js removed exactly 50% from every position. DATE UNKNOWN — no log, no execution JSON. That this was exactly half is an assumption add-back-liquidity.js had to make (delta = current), and the L1 successor was built specifically to stop assuming it."
+    },
+    {
+      "name": "add-back",
+      "status": "done",
+      "finishedAt": "2026-06-09",
+      "artifacts": ["add-back-liquidity.js", "add-back-execution.json"],
+      "txCount": 196,
+      "notes": "196 increaseLiquidity calls restoring the removed half, blocks 152700616-152702353. No new collateral — it redeploys tokens already in the wallet at each position's existing tick range."
+    },
+    {
+      "name": "topup-20k",
+      "status": "done",
+      "finishedAt": "2026-06-16",
+      "artifacts": ["add-20k-originality-liquidity.js", "add-20k-originality-execution.json", "originality-map-cache.json"],
+      "txCount": 196,
+      "notes": "splitPosition(sUSDS, parent, 20,000) at 04:26:47Z, then 196 increaseLiquidity calls, blocks 152996776-152997344. Per pool 6,666.67 = TOTAL/3, mirroring the original 13333-split vs 26666-collateral ratio."
+    },
+    {
+      "name": "unwind",
+      "status": "done",
+      "finishedAt": "2026-06-19",
+      "artifacts": ["remove-merge-originality.js", "remove-merge-originality-execution.json", "originality-merge-cache.json"],
+      "txCount": 196,
+      "notes": "Phase 1 (196 removals) blocks 153117894-153118526. Phase 2 (up to 98 child merges) is NOT LOGGED anywhere — only the ~59-minute gap before phase 3 bounds it. Phase 3: one mergePositions returning 51,699.418873634018014091 sUSDS at 03:23:35Z."
+    },
+    {
+      "name": "settle-resolve",
+      "status": "done",
+      "finishedAt": "2026-07-10",
+      "artifacts": ["resolve-originality-markets.js", "resolve-originality-execution.json"],
+      "txCount": 34,
+      "notes": "One run, 03:00:46Z-03:04:01Z: the parent plus 33 children. The parent's answer is a multi-select bitmask with popcount 33, so those 33 are exactly the repos it says were evaluated. The other 65 children have never been answered (finalize_ts == 0) and remain unresolved."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "unwind",
+      "result": "accepted",
+      "learning": "60,000 sUSDS went in and 51,699.42 came back: 8,300.58 stranded, which is to the wei the wallet's remaining parent Invalid balance. The parent merge is capped at min(balance) across all 99 outcomes, and exactly ONE outcome sits at zero — index 63, symbol EIPS — so no further parent merge is possible and the residue is permanent until resolution. A single zero outcome blocking a 99-token set is the whole hazard in one number."
+    }
+  ],
+  "results": {
+    "parent": "0xdb3AaE8d1C964767eeAA17805bE25cdED7A17210",
+    "poolCount": 196,
+    "collateralReturned": "51699.418873634018014091",
+    "seer": "https://app.seer.pm/markets/10/0xdb3aae8d1c964767eeaa17805be25cded7a17210"
+  },
+  "immutableText": {
+    "childTokenNames": "All 196 child tokens are literally DOWN and UP. Unreadable in any wallet, and they would have collided outright with round 3 — which is why round 3 introduced <REPO>_D_R3 / <REPO>_U_R3 with org-qualified overrides for basename collisions.",
+    "note": "The 98 child market addresses are not listed in any execution log; they live in markets.js and are duplicated in both caches. The 33 that were resolved are enumerated in resolve-originality-execution.json."
+  }
+}
