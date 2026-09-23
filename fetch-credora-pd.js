@@ -14,14 +14,21 @@
 
 import "dotenv/config";
 import fs from "fs";
+import { loadManifest } from "./lib/manifest.js";
 
 // ── Config ──────────────────────────────────────────────────────────────────
 const CREDORA_GRAPHQL_URL = "https://api.staging.credora.io/graphql";
 const CLIENT_SECRET = process.env.CREDORA_API;
+if (!CLIENT_SECRET) throw new Error("CREDORA_API is not set — see .env.example.");
 
-const ASSETS_FILE = "./assets_pd.ts";
-const OUT_CSV = "./assets_pd_v2.csv";
-const OUT_JSON = "./assets_pd_v2.json";
+// This script talks to no chain, so it deliberately does NOT use lib/run.js:
+// the harness asserts a network and builds a provider, neither of which means
+// anything here. It does take its file paths from the manifest, so they are not
+// a second copy of what lifecycle/gnosis-pd.json already states.
+const manifest = loadManifest("gnosis-pd");
+const ASSETS_FILE = manifest.files.assetList;
+const OUT_CSV = manifest.files.seed;
+const OUT_JSON = manifest.files.assets;
 
 // ── Asset list ──────────────────────────────────────────────────────────────
 // assets_pd.ts is a hand-maintained `export const assets_pd = [...]`. Parse the
