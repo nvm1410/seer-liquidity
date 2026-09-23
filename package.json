@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "audit:dryrun": "node tools/audit-dry-run.js",
+    "audit:paths": "node tools/audit-paths.js",
+    "test": "npm run audit:dryrun && npm run audit:paths"
   },
   "author": "",
   "license": "ISC",
