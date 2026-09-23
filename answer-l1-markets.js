@@ -1,7 +1,8 @@
-import "dotenv/config";
 import { ethers } from "ethers";
 import fs from "fs";
-import { MarketViewAbi } from "./abis/MarketViewAbi.js";
+import { getMarketInfo, makeMarketView, normalizeIdentifier } from "./lib/market.js";
+import { run } from "./lib/run.js";
+import { retryTransaction, sleep } from "./lib/tx.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Submits the Reality.eth answers for the two L1 (Deep Funding GG24) markets on
@@ -36,72 +37,29 @@ import { MarketViewAbi } from "./abis/MarketViewAbi.js";
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const DRY_RUN = true; // ← set to false to send transactions
-
-const WALLET_PRIVATE_KEY = process.env.PRIVATE_KEY;
-const RPC_URL = process.env.RPC_URL;
-const CHAIN_ID = 10n;
-
-// Addresses (Optimism, chain 10)
-const MARKET_A = "0x3220A208aAf4D2ceECDe5A2e21eC0C9145f40BA6";
-const MARKET_B = "0xfea47428981f70110c64dd678889826c3627245b";
-const MARKET_FACTORY = "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6";
-const MARKET_VIEW = "0x336695ec9efbafd6322fb82eaadbcda02e38f348";
-const REALITY = "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"; // MarketFactory.realitio()
-
-const CSV_FILE = "./l1weightsForResolution.csv";
-const PROGRESS_FILE = "./answer-l1-execution.json"; // append-only submit log
-
 const ANSWER_DECIMALS = 18;
 const GAS_BUFFER = ethers.parseEther("0.002");
+const DELAY_MS = 2000;
 
-// The catch-all outcome on market A that market B hangs off. Answered with ΣB.
+// The catch-all outcome on market A that market B hangs off. Answered with the
+// SUM of market B's weights — that is what makes two-level redemption exact.
 const OTHER_PREFIX = "Other repositories";
 const INVALID_LABEL = "Invalid result";
-
-const MARKETS = [
-  { label: "A", address: MARKET_A, expectedOutcomes: 68, expectedQuestions: 67, repoCount: 66 },
-  { label: "B", address: MARKET_B, expectedOutcomes: 33, expectedQuestions: 32, repoCount: 32 },
-];
 
 // ── ABIs ────────────────────────────────────────────────────────────────────
 const REALITY_ABI = ["function submitAnswer(bytes32,bytes32,uint256) external payable"];
 const ERC20_ABI = ["function balanceOf(address) view returns (uint256)"];
 
-// ── Provider / wallet ───────────────────────────────────────────────────────
-const provider = new ethers.JsonRpcProvider(RPC_URL);
-const wallet = WALLET_PRIVATE_KEY ? new ethers.Wallet(WALLET_PRIVATE_KEY, provider) : undefined;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-async function retryTransaction(txFn, retries = 3, delayMs = 3000) {
-  let lastError;
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      console.log(`    Attempt ${attempt}/${retries}...`);
-      const tx = await txFn();
-      console.log(`    Tx sent: ${tx.hash}`);
-      const receipt = await tx.wait();
-      console.log(`    Confirmed in block ${receipt.blockNumber}`);
-      return receipt;
-    } catch (err) {
-      lastError = err;
-      console.warn(`    Attempt ${attempt} failed: ${err.message}`);
-      if (attempt < retries) await new Promise((r) => setTimeout(r, delayMs));
-    }
-  }
-  throw lastError;
-}
 
-function normalize(s) {
-  return s.toLowerCase().replace(/[^a-z0-9]/g, "");
-}
 
 // On-chain outcome names that don't match the CSV after normalization.
 // key: normalized on-chain outcome → value: normalized CSV repo name
 const ALIASES = {
   // Market B#31 is stored on-chain as "lambdaclass/lambda_ethereum_consensus\t"
   // — a literal backslash + "t" (bytes 0x5c 0x74), a stray escape sequence baked
-  // in when the market was created. normalize() drops the backslash but keeps
+  // in when the market was created. normalizeIdentifier() drops the backslash but keeps
   // the "t", so it needs an explicit mapping.
   lambdaclasslambdaethereumconsensust: "lambdaclasslambdaethereumconsensus",
 };
@@ -128,7 +86,7 @@ function readCsv(path) {
     });
 }
 
-async function balancesOf(tokens, owner) {
+async function balancesOf(tokens, owner, provider) {
   const out = [];
   for (let i = 0; i < tokens.length; i += 20) {
     const chunk = tokens.slice(i, i + 20);
@@ -138,15 +96,27 @@ async function balancesOf(tokens, owner) {
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
-async function main() {
-  console.log(`\n📋 Wallet   : ${wallet ? wallet.address : "(none — read-only)"}`);
-  console.log(`📋 DRY_RUN  : ${DRY_RUN}`);
-  console.log(`📋 Markets  : A ${MARKET_A}\n              B ${MARKET_B}\n`);
+await run(
+  {
+    name: "answer-l1-markets",
+    slug: "l1-deepfunding",
+    stage: "settle-answer",
+    mutating: true,
+    // The answer log IS the resume log: re-answering costs DOUBLE the standing
+    // bond, so skipping what is already submitted is the point.
+    progress: (m) => m.files.answerLog,
+  },
+  async (ctx) => {
+  const { manifest, provider, wallet, addr, log, progress, dry: DRY_RUN } = ctx;
+  const [MARKET_A, MARKET_B] = manifest.results.marketAddresses;
+  const CSV_FILE = manifest.files.answers;
+  const MARKETS = [
+    { label: "A", address: MARKET_A, expectedOutcomes: 68, expectedQuestions: 67, repoCount: 66 },
+    { label: "B", address: MARKET_B, expectedOutcomes: 33, expectedQuestions: 32, repoCount: 32 },
+  ];
 
-  const network = await provider.getNetwork();
-  if (network.chainId !== CHAIN_ID) {
-    throw new Error(`RPC_URL points at chain ${network.chainId}, expected ${CHAIN_ID} (Optimism)`);
-  }
+  console.log(`\n📋 Wallet   : ${wallet ? wallet.address : "(none — read-only)"}`);
+  console.log(`📋 Markets  : A ${MARKET_A}\n              B ${MARKET_B}\n`);
 
   // ── Read the weights ────────────────────────────────────────────────────
   const csvRows = readCsv(CSV_FILE);
@@ -154,7 +124,7 @@ async function main() {
 
   const byName = new Map();
   for (const row of csvRows) {
-    const key = normalize(row.repo);
+    const key = normalizeIdentifier(row.repo);
     if (byName.has(key)) throw new Error(`duplicate repo in ${CSV_FILE}: "${row.repo}" (normalized "${key}")`);
     byName.set(key, row);
   }
@@ -168,22 +138,22 @@ async function main() {
   }
 
   // ── Read both markets and build the plan ────────────────────────────────
-  const marketView = new ethers.Contract(MARKET_VIEW, MarketViewAbi, provider);
+  const marketView = makeMarketView(addr.marketView, provider);
   const used = new Set();
   const unmatched = [];
   const state = {};
 
   for (const m of MARKETS) {
-    const info = await marketView.getMarket(MARKET_FACTORY, m.address);
+    const info = await getMarketInfo(marketView, addr.marketFactory, m.address);
     console.log(`\n🔗 Market ${m.label}  ${m.address}`);
-    console.log(`   ${info.marketName}`);
+    console.log(`   ${info.name}`);
     console.log(
       `   templateId ${info.templateId} | bounds ${info.lowerBound}..${info.upperBound} | ` +
         `outcomes ${info.outcomes.length} | questions ${info.questionsIds.length} | payoutReported ${info.payoutReported}`
     );
 
     // ── Structural assertions ───────────────────────────────────────────
-    if (info.templateId !== 1n) {
+    if (info.templateId !== 1) {
       throw new Error(`market ${m.label}: expected templateId 1 (uint), got ${info.templateId}`);
     }
     if (info.outcomes.length !== m.expectedOutcomes) {
@@ -213,13 +183,13 @@ async function main() {
         continue;
       }
 
-      const nk = normalize(outcome);
+      const nk = normalizeIdentifier(outcome);
       const row = byName.get(nk) ?? byName.get(ALIASES[nk]);
       if (!row) {
         unmatched.push(`${m.label}#${i} "${outcome}"`);
         continue;
       }
-      const key = normalize(row.repo);
+      const key = normalizeIdentifier(row.repo);
       if (used.has(key)) throw new Error(`CSV row "${row.repo}" matched by two outcomes`);
       used.add(key);
 
@@ -237,7 +207,7 @@ async function main() {
   }
 
   // ── Mapping must be exhaustive in both directions ───────────────────────
-  const leftovers = csvRows.filter((r) => !used.has(normalize(r.repo)));
+  const leftovers = csvRows.filter((r) => !used.has(normalizeIdentifier(r.repo)));
   if (unmatched.length) {
     console.error(`\n❌ ${unmatched.length} on-chain outcome(s) have no CSV row:`);
     unmatched.forEach((o) => console.error(`     ${o}`));
@@ -299,8 +269,8 @@ async function main() {
     const payoutsA = state.A.info.outcomes.map((_, i) => state.A.plan.find((p) => p.index === i)?.answerWei ?? 0n);
     const payoutsB = state.B.info.outcomes.map((_, i) => state.B.plan.find((p) => p.index === i)?.answerWei ?? 0n);
 
-    const balA = await balancesOf(state.A.info.wrappedTokens, wallet.address);
-    const balB = await balancesOf(state.B.info.wrappedTokens, wallet.address);
+    const balA = await balancesOf(state.A.info.wrappedTokens, wallet.address, provider);
+    const balB = await balancesOf(state.B.info.wrappedTokens, wallet.address, provider);
 
     // A tokens redeem straight to sUSDS at payout_i / ΣA.
     const fromA = balA.reduce((acc, b, i) => acc + (b * payoutsA[i]) / sumA, 0n);
@@ -322,15 +292,7 @@ async function main() {
   }
 
   // ── Load progress log (resume after a crash) ────────────────────────────
-  let progressLog = [];
-  if (fs.existsSync(PROGRESS_FILE)) {
-    try {
-      progressLog = JSON.parse(fs.readFileSync(PROGRESS_FILE, "utf8"));
-    } catch {
-      progressLog = [];
-    }
-  }
-  const alreadyAnswered = new Set(progressLog.map((e) => e.questionId.toLowerCase()));
+  const alreadyAnswered = new Set(progress.entries.map((e) => e.questionId.toLowerCase()));
 
   // ── Bonds / balance ─────────────────────────────────────────────────────
   // Only count questions this run would actually bond — otherwise a resume after
@@ -362,7 +324,7 @@ async function main() {
   // ── Submit phase ────────────────────────────────────────────────────────
   console.log(`\n⚙️  Submit phase (${DRY_RUN ? "DRY RUN — no transactions" : "LIVE"})\n`);
 
-  const reality = wallet ? new ethers.Contract(REALITY, REALITY_ABI, wallet) : undefined;
+  const reality = wallet ? new ethers.Contract(addr.realitio, REALITY_ABI, wallet) : undefined;
   let submitted = 0;
   let skipped = 0;
   let pending = 0;
@@ -423,7 +385,7 @@ async function main() {
         continue;
       }
 
-      if (!wallet) throw new Error("PRIVATE_KEY not set — cannot send transactions with DRY_RUN=false");
+      if (!wallet) throw new Error("PRIVATE_KEY not set — cannot send transactions.");
 
       console.log(`  ${label}: submitting ${p.weight} (${p.answerWei})...`);
       try {
@@ -432,7 +394,9 @@ async function main() {
         const receipt = await retryTransaction(() =>
           reality.submitAnswer(p.questionId, p.answerHex, 0, { value: q.min_bond })
         );
-        progressLog.push({
+        progress.append({
+        kind: "answer",
+        key: p.questionId.toLowerCase(),
           market: m.label,
           marketAddress: m.address,
           outcomeIndex: p.index,
@@ -446,9 +410,8 @@ async function main() {
           blockNumber: receipt.blockNumber,
           timestamp: new Date().toISOString(),
         });
-        fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progressLog, null, 2));
         submitted++;
-        await new Promise((r) => setTimeout(r, 2000));
+        await sleep(DELAY_MS);
       } catch (err) {
         console.error(`  ${label}: submitAnswer() failed after retries: ${err.message}`);
         errors.push({ market: m.label, outcome: p.outcome, questionId: p.questionId, error: err.message });
@@ -461,10 +424,10 @@ async function main() {
   if (DRY_RUN) {
     console.log(
       `\n🎉 Dry run — ${pending} answer(s) would be submitted (${skipped} skipped), ` +
-        `bonding ${ethers.formatEther(totalBond)} ETH. Set DRY_RUN = false to execute.`
+        `bonding ${ethers.formatEther(totalBond)} ETH. Pass --live to execute.`
     );
   } else {
-    console.log(`\n🎉 Submitted ${submitted}/${pending} answer(s) (${skipped} skipped). Log → ${PROGRESS_FILE}.`);
+    console.log(`\n🎉 Submitted ${submitted}/${pending} answer(s) (${skipped} skipped). Log → ${progress.path}.`);
     if (submitted > 0) {
       const finalizeAt = new Date((Math.floor(Date.now() / 1000) + timeout) * 1000).toISOString();
       console.log(`⏳ Questions finalize ~${finalizeAt} (timeout ${timeout}s). Then run resolve-l1-markets.js.`);
@@ -474,9 +437,6 @@ async function main() {
     console.log(`⚠️  ${errors.length} error(s):`);
     errors.forEach((e) => console.log(`     ${e.market} ${e.outcome}: ${e.error}`));
   }
-}
-
-main().catch((err) => {
-  console.error("Fatal error:", err.message ?? err);
-  process.exit(1);
-});
+  return { submitted, skipped };
+  }
+);
