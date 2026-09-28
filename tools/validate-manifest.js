@@ -14,6 +14,7 @@
 import fs from "fs";
 import path from "path";
 import { ethers } from "ethers";
+import { entryProblems } from "../lib/schedule.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const LIFECYCLE = path.join(ROOT, "lifecycle");
@@ -202,6 +203,18 @@ function semantic(m, errs, warns) {
       errs.push(`amm: mathFeeTier is an Algebra-only workaround, not valid for uniswap-v3`);
     }
   }
+
+  // 10. A scheduled run skips the y/N prompt, so what may be scheduled is
+  //     enforced here too, not only by the tool that writes entries: withdraw
+  //     or remove scripts on the harness, in an unwind stage, with a recorded
+  //     approval and plan hash. See lib/schedule.js.
+  const ids = new Set();
+  (m.schedule || []).forEach((e, i) => {
+    if (ids.has(e.id)) errs.push(`schedule[${i}]: duplicate id ${e.id}`);
+    ids.add(e.id);
+    if (e.script && !e.script.startsWith(`campaigns/${m.setSlug}/`)) errs.push(`schedule[${i}]: ${e.script} is not in campaigns/${m.setSlug}/`);
+    errs.push(...entryProblems(e, `schedule[${i}]`));
+  });
 }
 
 // ── Cross-manifest consistency ──────────────────────────────────────────────

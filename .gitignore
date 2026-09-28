@@ -48,3 +48,10 @@ runs/**/dry-*.log
 # Scratch scripts used while reorganising. Never wanted in a commit; one
 # _refactor_diff_old_ copy already slipped in once.
 _tmp_*
+
+# tools/schedule.js runtime state: the tick log, the lock, and the Windows task
+# definition `install` generates. Machine-local; the record of a scheduled run
+# is its entry in lifecycle/<slug>.json plus runs/<slug>/scheduled/*.log.
+runs/scheduler.log
+runs/scheduler.lock
+runs/scheduler-task.xml

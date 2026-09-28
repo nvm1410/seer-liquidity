@@ -84,7 +84,44 @@ is an error rather than a silent no-op). The semantic checks are the valuable pa
    catches a Gnosis address pasted into an Optimism manifest without anyone maintaining a second
    copy of the truth
 
-All nine are mutation-tested: corrupting each one makes `npm run lint:manifest` exit 1.
+10. every `schedule` entry names a withdraw/remove script in this campaign's directory, on
+    `lib/run.js`, in an unwind stage — and a pending one carries `approvedAt` and `planHash`
+
+The first nine are mutation-tested: corrupting each one makes `npm run lint:manifest` exit 1. The
+tenth is exercised by `tests/schedule.test.js`.
+
+## Scheduled runs
+
+A withdrawal can be approved now and fired unattended later. **Withdraw/unwind only** — Reality
+answers post a bond on a judgment, and resolve/redeem stay with a human too.
+
+```bash
+node tools/schedule.js add zcash-q3 campaigns/zcash-q3/withdraw-zcash-liquidity.js --at=2026-10-15T09:00:00Z [--window=48h] [--args="--resume"]
+node tools/schedule.js list
+node tools/schedule.js cancel <id>
+node tools/schedule.js tick --dry-fire   # every check, then stops before sending
+node tools/schedule.js install           # Windows task: every 15 min, wakes from sleep
+```
+
+A scheduled live run passes `--yes`, skipping the harness's y/N prompt. Two things stand in for it:
+
+- **`add` is the approval.** It runs the script dry, prints the whole plan, and on `y` records the
+  plan's *shape* hash (`lib/transcript.js` `planShape`: amounts and wei-sized integers masked;
+  position ids, addresses, counts and order kept) plus the transcript itself.
+- **`tick` re-runs the dry run at fire time** and refuses unless the shape still matches. Fees and
+  amounts may move with price; which positions, in which pools, may not. Note the zcash withdraw
+  scripts print the wallet's *total* NFT count, so minting for any other campaign in between makes
+  the entry refuse — safe, and the notification says why.
+
+Every other harness guard still runs on the live invocation. Past `notAfter` an entry is refused, not
+fired late. A `failed` run is never retried — partial on-chain state needs a human, and the
+notification gives the `--resume` command. Transcripts land in `runs/<slug>/scheduled/`, the tick log
+in `runs/scheduler.log`. Notifications go to ntfy.sh when `NTFY_TOPIC` is set in `.env`; one
+heartbeat is sent when an entry comes within 24h, so silence after its time means the machine was off.
+
+The Windows task wakes the PC from **sleep, not shutdown**; wake timers must be enabled in Power
+Options. Moving to an always-on box is `install` there (it prints the cron line) — but the key, and
+the LP positions it owns, then live on that box: use a dedicated campaign wallet.
 
 ## Adding a campaign
 

@@ -472,6 +472,33 @@
         }
       }
     },
+    "schedule": {
+      "type": "array",
+      "description": "Withdrawals approved in advance to fire unattended. Written by tools/schedule.js add (the approval), advanced by tools/schedule.js tick. Contract while pending, ledger after. See lifecycle/README.md 'Scheduled runs'.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "script", "notBefore", "notAfter", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "script": { "type": "string", "description": "campaigns/<slug>/<withdraw|remove script>.js, on lib/run.js, unwind stage." },
+          "args": { "type": "array", "items": { "type": "string" }, "description": "Passed to the script in both the dry and the live run. Never --live or --yes; the runner adds those." },
+          "notBefore": { "type": "string" },
+          "notAfter": { "type": "string", "description": "Past this the entry is refused, never fired late." },
+          "status": { "enum": ["pending", "running", "fired", "refused", "failed", "cancelled"] },
+          "approvedAt": { "type": "string" },
+          "approvedBy": { "type": "string" },
+          "planHash": { "type": "string", "pattern": "^sha256=[0-9a-f]{64}$", "description": "lib/transcript.js planHash of the approved dry run. The fire-time dry run must match it." },
+          "approvedLog": { "type": "string" },
+          "heartbeatAt": { "type": "string" },
+          "firedAt": { "type": "string" },
+          "finishedAt": { "type": "string" },
+          "exitCode": { "type": ["integer", "null"] },
+          "runLog": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
     "walletAtIntake": {
       "type": "object"
     },

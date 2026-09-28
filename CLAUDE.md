@@ -12,6 +12,7 @@ run moves real capital.
 | know what already exists | [`docs/README.md`](docs/README.md) — the campaign index |
 | avoid a known trap | [`docs/LESSONS.md`](docs/LESSONS.md) — what went wrong, and the check that catches it |
 | pick up unfinished work | [`docs/NEXT.md`](docs/NEXT.md) |
+| withdraw at a set time, unattended | [`lifecycle/README.md`](lifecycle/README.md#scheduled-runs) — `tools/schedule.js` |
 | understand how this repo is worked on | [`docs/PROCESS.md`](docs/PROCESS.md) |
 | write a script | [`lib/README.md`](lib/README.md) — the harness, its flags and guards |
 | check a claim about the protocol | [`src/README.md`](src/README.md) — the nine contracts that matter |

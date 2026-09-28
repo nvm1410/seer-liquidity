@@ -36,6 +36,9 @@ readable `shortMessage` error logging in exactly one other.
 | `manifest.js` | `loadManifest`, `resolveAddresses`, `resolveAmm`, `appendStage` |
 | `log.js` | a console that tees to a file |
 | `run.js` | the harness |
+| `transcript.js` | `normalize` (shared with `tools/refactor-diff.js`) and `planShape`/`planHash` for scheduled runs |
+| `schedule.js` | what may be scheduled — shared by `tools/schedule.js` and the manifest validator |
+| `notify.js` | ntfy.sh push; a no-op without `NTFY_TOPIC`, never throws |
 
 ## The harness
 
@@ -81,7 +84,8 @@ await run(
 2. the seed file still hashes to what was approved
 3. the progress file is fresh, or `--resume` was passed
 4. the env vars are present **and** the RPC is on the expected chain
-5. the wallet holds the collateral the plan needs — a hard abort, not a warning
+5. the wallet holds the collateral the plan needs — a hard abort, not a warning. Skipped for an
+   `unwind*` stage, which returns collateral rather than spending it
 6. a `y/N` confirmation — the first one anywhere in this repo
 
 Exit codes: `0` ok · `1` fatal · `2` refused by a guard. Distinct so a wrapper can tell "you invoked

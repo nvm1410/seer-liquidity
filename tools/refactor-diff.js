@@ -16,6 +16,7 @@
 import { execFileSync, spawnSync } from "child_process";
 import fs from "fs";
 import path from "path";
+import { normalize } from "../lib/transcript.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const args = process.argv.slice(2);
@@ -67,39 +68,6 @@ if (dryLine && !/=\s*true\s*;/.test(dryLine)) {
   process.exit(2);
 }
 
-// Normalize away what legitimately differs between two runs of anything.
-function normalize(text) {
-  return text
-    .split(/\r?\n/)
-    .map((l) =>
-      l
-        .replace(/\d{4}-\d{2}-\d{2}T[\d:.]+Z?/g, "<ts>")
-        .replace(/0x[0-9a-fA-F]{64}/g, "<hash>")
-        .replace(/block \d+/gi, "block <n>")
-        // openingTime is Date.now() in some creators, so it differs between two
-        // runs of the same script — that is not a behaviour change.
-        .replace(/openingTime=\d{9,11}/g, "openingTime=<ts>")
-        .replace(/\s+$/, "")
-        // "./x" and "x" are the same path: the frozen scripts wrote relative
-        // literals with the prefix, the manifest stores them without.
-        .replace(/(^|[\s(])\.\//g, "$1")
-    )
-    // Lines the harness adds that the old script never printed.
-    .filter(
-      (l) =>
-        l.trim() !== "" &&
-        !/^[\w-]+ — (DRY RUN|LIVE)/.test(l) &&
-        !/^\s{2}campaign /.test(l) &&
-        !/^\s{2}chain \d+ ok/.test(l) &&
-        !/^\s{2}gate: /.test(l) &&
-        !/^\s{2}resuming: /.test(l) &&
-        !/Dry run complete/.test(l) &&
-        !/^Done\./.test(l) &&
-        // The old scripts printed their own mode banner; the harness prints one.
-        !/^(📋 )?DRY_RUN\s*:/.test(l)
-    )
-    .join("\n");
-}
 
 // The copy must sit BESIDE the original: a campaign script imports
 // "../../lib/run.js", which only resolves from its own directory.
