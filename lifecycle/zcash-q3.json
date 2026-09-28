@@ -152,5 +152,19 @@
     "maxSymbolBytes": 31,
     "realityCollisionCheck": "clean: all 37 new",
     "note": "MarketFactory.toString31 REVERTS above 31 bytes, it does not truncate. The comment at create-zcash-markets.js:61 says 'silently truncates' and is wrong."
-  }
+  },
+  "schedule": [
+    {
+      "id": "zcash-q3-withdraw-zcash-liquidity-202609290900",
+      "script": "campaigns/zcash-q3/withdraw-zcash-liquidity.js",
+      "args": [],
+      "notBefore": "2026-09-29T09:00:00.000Z",
+      "notAfter": "2026-09-29T14:00:00.000Z",
+      "status": "pending",
+      "approvedAt": "2026-09-28T07:28:22.880Z",
+      "approvedBy": "nvm1410",
+      "planHash": "sha256=50ad2583da89a6d6eb421fa01981e7a3cdf4aa45201b068899c2f31cd060ac44",
+      "approvedLog": "runs/zcash-q3/scheduled/zcash-q3-withdraw-zcash-liquidity-202609290900.approved.log"
+    }
+  ]
 }
