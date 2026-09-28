@@ -100,7 +100,7 @@ node tools/schedule.js add zcash-q3 campaigns/zcash-q3/withdraw-zcash-liquidity.
 node tools/schedule.js list
 node tools/schedule.js cancel <id>
 node tools/schedule.js tick --dry-fire   # every check, then stops before sending
-node tools/schedule.js install           # Windows task: every 15 min, wakes from sleep
+node tools/schedule.js install           # Windows task, every 15 min; run from an ADMIN terminal for no-window background mode
 ```
 
 A scheduled live run passes `--yes`, skipping the harness's y/N prompt. Two things stand in for it:

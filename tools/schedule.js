@@ -5,7 +5,7 @@
 //   node tools/schedule.js list
 //   node tools/schedule.js cancel <id>
 //   node tools/schedule.js tick [--dry-fire]      # what Task Scheduler / cron calls
-//   node tools/schedule.js install | uninstall    # the Windows task; prints the cron line elsewhere
+//   node tools/schedule.js install [--interactive] | uninstall   # the Windows task (admin terminal for background mode); cron line elsewhere
 //
 // A live run from here skips the harness's y/N prompt (it passes --yes), so
 // the prompt is replaced by two things:
@@ -305,12 +305,23 @@ async function finish(slug, e, log, status, detail, extra = {}) {
 // ── install / uninstall ─────────────────────────────────────────────────────
 // Every 15 minutes, wakes the machine from sleep (not from shutdown), and runs
 // a missed start as soon as it can — the entry's notAfter window bounds how
-// late that may be. node.exe is launched directly: wrapping it in
-// `conhost --headless` to hide the console made the task report success while
-// node never started (2026-09-28). A briefly flashing console is the price.
-function taskXml() {
+// late that may be.
+//
+// Two ways to run it, tried in this order:
+//   background  S4U logon ("run whether user is logged on or not", no password
+//               stored). No window ever, and it runs after a reboot before
+//               anyone logs in. Registering it needs an elevated terminal.
+//   interactive Runs only while the user is logged on, and node's console
+//               flashes up every tick. Wrapping node in `conhost --headless` to
+//               hide it was tried and dropped: run by hand, it exited without
+//               starting node (2026-09-28). Used when background is refused,
+//               or with --interactive.
+function taskXml(background) {
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const start = new Date(Date.now() + 60_000).toISOString().slice(0, 19);
+  const principal = background
+    ? `<UserId>${esc(os.userInfo().username)}</UserId><LogonType>S4U</LogonType>`
+    : `<LogonType>InteractiveToken</LogonType>`;
   return `<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo><Description>Fires approved withdrawals recorded in lifecycle/*.json (tools/schedule.js).</Description></RegistrationInfo>
@@ -321,7 +332,7 @@ function taskXml() {
       <Enabled>true</Enabled>
     </TimeTrigger>
   </Triggers>
-  <Principals><Principal id="Author"><LogonType>InteractiveToken</LogonType><RunLevel>LeastPrivilege</RunLevel></Principal></Principals>
+  <Principals><Principal id="Author">${principal}<RunLevel>LeastPrivilege</RunLevel></Principal></Principals>
   <Settings>
     <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
@@ -335,12 +346,21 @@ function taskXml() {
   <Actions Context="Author">
     <Exec>
       <Command>${esc(process.execPath)}</Command>
-      <Arguments>tools\\schedule.js tick</Arguments>
+      <Arguments>tools\schedule.js tick</Arguments>
       <WorkingDirectory>${esc(ROOT)}</WorkingDirectory>
     </Exec>
   </Actions>
 </Task>
 `;
+}
+
+function registerTask(background) {
+  const xml = path.join(RUNS(), "scheduler-task.xml");
+  fs.mkdirSync(RUNS(), { recursive: true });
+  // schtasks reads the definition as UTF-16 LE; the BOM is what tells it so.
+  fs.writeFileSync(xml, Buffer.concat([Buffer.from([0xff, 0xfe]), Buffer.from(taskXml(background), "utf16le")]));
+  const r = spawnSync("schtasks", ["/Create", "/TN", TASK, "/XML", xml, "/F"], { encoding: "utf8" });
+  return { ok: r.status === 0, out: `${r.stdout ?? ""}${r.stderr ?? ""}`.trim() };
 }
 
 function install() {
@@ -349,12 +369,28 @@ function install() {
     console.log(`The key in .env, and the LP positions it owns, then live on this machine. Use a dedicated campaign wallet.`);
     return;
   }
-  const xml = path.join(RUNS(), "scheduler-task.xml");
-  fs.mkdirSync(RUNS(), { recursive: true });
-  // schtasks reads the definition as UTF-16 LE; the BOM is what tells it so.
-  fs.writeFileSync(xml, Buffer.concat([Buffer.from([0xff, 0xfe]), Buffer.from(taskXml(), "utf16le")]));
-  execFileSync("schtasks", ["/Create", "/TN", TASK, "/XML", xml, "/F"], { stdio: "inherit" });
-  console.log(`\nInstalled "${TASK}": every 15 min, wakes from sleep. Check it with: schtasks /Query /TN ${TASK} /V /FO LIST`);
+  let mode = "background";
+  let r = args.flags.has("--interactive") ? { ok: false, out: "--interactive" } : registerTask(true);
+  if (!r.ok) {
+    if (!args.flags.has("--interactive")) {
+      console.log(`Background mode refused (${r.out.split("\n").pop()}).`);
+      if (/access is denied/i.test(r.out)) {
+        console.log(`It needs an elevated terminal: open PowerShell as Administrator, cd ${ROOT}, and run this again.`);
+      }
+      console.log(`The existing task, if any, is unchanged. Pass --interactive to install the logged-on-only`);
+      console.log(`mode instead: it works, but a console flashes up every 15 minutes.`);
+      process.exit(2);
+    }
+    mode = "interactive";
+    r = registerTask(false);
+    if (!r.ok) throw new Error(r.out);
+  }
+  console.log(r.out);
+  console.log(`\nInstalled "${TASK}" (${mode}): every 15 min, wakes from sleep.`);
+  console.log(mode === "background"
+    ? `No window, and it runs after a reboot even before you log in.`
+    : `Runs only while you are logged in; a console flashes up each tick.`);
+  console.log(`Prove it runs: schtasks /Run /TN ${TASK}, then read runs\scheduler.log — every tick writes a line.`);
   console.log(`Wake timers must be allowed: Power Options → Sleep → Allow wake timers → Enable.`);
   if (!process.env.NTFY_TOPIC) console.log(`NTFY_TOPIC is not set in .env — runs will fire but nobody will be told.`);
 }
