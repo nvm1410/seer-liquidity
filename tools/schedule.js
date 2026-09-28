@@ -219,6 +219,11 @@ async function tick() {
 
   try {
     const now = Date.now();
+    // One line per tick even when nothing is due: a silent log cannot tell
+    // "ran, nothing to do" from "never ran" (2026-09-28, the first install).
+    const pending = allEntries().filter(({ e }) => e.status === "pending");
+    const next = pending.map(({ e }) => e.notBefore).sort()[0];
+    log.log(`${new Date().toISOString()} tick: ${pending.length} pending${next ? `, next due ${next}` : ""}${dryFire ? " (--dry-fire)" : ""}`);
     for (const { slug, e } of allEntries()) {
       if (e.status !== "pending") continue;
       const at = `${new Date().toISOString()} ${e.id}`;
@@ -300,7 +305,9 @@ async function finish(slug, e, log, status, detail, extra = {}) {
 // ── install / uninstall ─────────────────────────────────────────────────────
 // Every 15 minutes, wakes the machine from sleep (not from shutdown), and runs
 // a missed start as soon as it can — the entry's notAfter window bounds how
-// late that may be. conhost --headless keeps a console from flashing up.
+// late that may be. node.exe is launched directly: wrapping it in
+// `conhost --headless` to hide the console made the task report success while
+// node never started (2026-09-28). A briefly flashing console is the price.
 function taskXml() {
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const start = new Date(Date.now() + 60_000).toISOString().slice(0, 19);
@@ -327,8 +334,8 @@ function taskXml() {
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>conhost.exe</Command>
-      <Arguments>${esc(`--headless "${process.execPath}" tools\\schedule.js tick`)}</Arguments>
+      <Command>${esc(process.execPath)}</Command>
+      <Arguments>tools\\schedule.js tick</Arguments>
       <WorkingDirectory>${esc(ROOT)}</WorkingDirectory>
     </Exec>
   </Actions>
