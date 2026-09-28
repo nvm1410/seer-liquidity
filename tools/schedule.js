@@ -346,7 +346,7 @@ function taskXml(background) {
   <Actions Context="Author">
     <Exec>
       <Command>${esc(process.execPath)}</Command>
-      <Arguments>tools\schedule.js tick</Arguments>
+      <Arguments>tools/schedule.js tick</Arguments>
       <WorkingDirectory>${esc(ROOT)}</WorkingDirectory>
     </Exec>
   </Actions>
