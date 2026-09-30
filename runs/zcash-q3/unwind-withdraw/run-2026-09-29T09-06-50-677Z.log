@@ -1,0 +1,541 @@
+withdraw-zcash-liquidity — LIVE
+  campaign zcash-q3 (launch/poll), stage unwind-withdraw
+  chain 10 ok, wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+  balance 40743.02601109492 sUSDS, plan needs 0
+
+📋 Wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+
+🔍 Step 1: resolving outcome tokens for 37 markets...
+   111 candidate pools (YES + NO + Invalid across 37 markets)
+
+🔍 Step 2: scanning wallet positions...
+   Wallet holds 751 position NFTs.
+   Matched 74 Zcash positions — 74 with liquidity > 0.
+
+   #1125444 [ 1] GRANTSHUB       YES     liquidity 541087886088062115205
+   #1125445 [ 1] GRANTSHUB       NO      liquidity 144657625664087895718
+   #1125446 [ 2] SHIELDEDSCAN    YES     liquidity 615679152337955745234
+   #1125447 [ 2] SHIELDEDSCAN    NO      liquidity 43036384017185551362
+   #1125448 [ 3] ZECKIT          YES     liquidity 507167556399650274334
+   #1125449 [ 3] ZECKIT          NO      liquidity 185273213043112900141
+   #1125451 [ 4] ZCASHTOCASH     YES     liquidity 478140345741316130257
+   #1125452 [ 4] ZCASHTOCASH     NO      liquidity 218569277097619419490
+   #1125453 [ 5] RECONCILE       YES     liquidity 507167556399650274334
+   #1125455 [ 5] RECONCILE       NO      liquidity 185273213043112900141
+   #1125456 [ 6] GLEYO           YES     liquidity 524830828691818351890
+   #1125457 [ 6] GLEYO           NO      liquidity 164403578513063757236
+   #1125459 [ 7] FAUCET          YES     liquidity 541087877280479630474
+   #1125460 [ 7] FAUCET          NO      liquidity 144657700140803467383
+   #1125461 [ 8] CYPHZEC         YES     liquidity 618631672733349156027
+   #1125462 [ 8] CYPHZEC         NO      liquidity 38273735606834591477
+   #1125463 [ 9] ZECLEDGER       YES     liquidity 533159929173076767355
+   #1125464 [ 9] ZECLEDGER       NO      liquidity 154354249780771282623
+   #1125465 [10] LIGHTWALLETD    YES     liquidity 605121079285294450587
+   #1125466 [10] LIGHTWALLETD    NO      liquidity 59369713918748725942
+   #1125467 [11] BLINDVAULT      YES     liquidity 53626179725020059824
+   #1125469 [11] BLINDVAULT      NO      liquidity 608905753032174016284
+   #1125470 [12] ZALLETRPC       YES     liquidity 43084969984229666354
+   #1125471 [12] ZALLETRPC       NO      liquidity 615661637497243488579
+   #1125472 [13] ZECMAP          YES     liquidity 412309592211471551947
+   #1125473 [13] ZECMAP          NO      liquidity 290191973718824019421
+   #1125474 [14] CONNAUGH        YES     liquidity 100903483851773431178
+   #1125475 [14] CONNAUGH        NO      liquidity 575393687504056633655
+   #1125476 [15] ZAP1            YES     liquidity 144669623131423398418
+   #1125477 [15] ZAP1            NO      liquidity 541076504207700750471
+   #1125478 [16] ZECBOOKS        YES     liquidity 33799611783912277562
+   #1125479 [16] ZECBOOKS        NO      liquidity 621328389259146203691
+   #1125480 [17] CIPHERPAY       YES     liquidity 548680978742460920412
+   #1125481 [17] CIPHERPAY       NO      liquidity 135243616938441259555
+   #1125482 [18] ZAFU            YES     liquidity 277984928814164129271
+   #1125483 [18] ZAFU            NO      liquidity 423921881377085227045
+   #1125484 [19] ZAPP            YES     liquidity 314997646718472416039
+   #1125485 [19] ZAPP            NO      liquidity 388621910930220691420
+   #1125486 [20] HWSDK           YES     liquidity 533150986674714396464
+   #1125487 [20] HWSDK           NO      liquidity 154343945484545934624
+   #1125488 [21] NOZY            YES     liquidity 376607450275188366116
+   #1125489 [21] NOZY            NO      liquidity 327340295642436819322
+   #1125490 [22] THORSWAP        YES     liquidity 634544532880713260003
+   #1125491 [22] THORSWAP        NO      liquidity 8176355781093090934
+   #1125493 [23] UNSTOPPABLE     YES     liquidity 625933557517746569392
+   #1125495 [23] UNSTOPPABLE     NO      liquidity 25702599739781548896
+   #1125496 [24] ZCASHNAMES      YES     liquidity 207260112885558807907
+   #1125497 [24] ZCASHNAMES      NO      liquidity 488142174536118892865
+   #1125498 [25] FRONTIERSEC     YES     liquidity 135255773683839561890
+   #1125499 [25] FRONTIERSEC     NO      liquidity 548669164047719836491
+   #1125500 [26] ZEBRACVE        YES     liquidity 230123847782697834696
+   #1125501 [26] ZEBRACVE        NO      liquidity 467844747086877011943
+   #1125502 [27] BONUSIRONWOOD   YES     liquidity 621345903224182099913
+   #1125503 [27] BONUSIRONWOOD   NO      liquidity 33782097818876381340
+   #1125504 [28] CIPHERSCAN      YES     liquidity 253771240594302797785
+   #1125505 [28] CIPHERSCAN      NO      liquidity 446393787457528493156
+   #1125506 [29] MINTEXPLOIT     YES     liquidity 615679152337955745234
+   #1125508 [29] MINTEXPLOIT     NO      liquidity 43067456019193770132
+   #1125509 [30] ZEBRACONSENSUS  YES     liquidity 562752161985312854655
+   #1125510 [30] ZEBRACONSENSUS  NO      liquidity 117418978676971115954
+   #1125511 [31] ZECROCKS        YES     liquidity 435296804344708537194
+   #1125512 [31] ZECROCKS        NO      liquidity 265796040245986212615
+   #1125513 [32] VALARAUDIT      YES     liquidity 600997389348368356345
+   #1125514 [32] VALARAUDIT      NO      liquidity 65441441928938217503
+   #1125515 [33] TACHYON         YES     liquidity 636426578287808244397
+   #1125516 [33] TACHYON         NO      liquidity 2942259304990746605
+   #1125517 [34] ORCHARDBOUNTY   YES     liquidity 637000617472949174205
+   #1125518 [34] ORCHARDBOUNTY   NO      liquidity 732273905921593745
+   #1125519 [35] BONUSORCHARD    YES     liquidity 633593681322078372334
+   #1125520 [35] BONUSORCHARD    NO      liquidity 10439148473596129080
+   #1125521 [36] VALARIRONWOOD   YES     liquidity 625959801876805874746
+   #1125523 [36] VALARIRONWOOD   NO      liquidity 25703682604030757854
+   #1125524 [37] ZODL            YES     liquidity 629612484237696549035
+   #1125526 [37] ZODL            NO      liquidity 18771774144242248207
+
+📉 Step 3: withdrawing 74 positions
+
+
+--- #1125444 [1] GRANTSHUB YES ---
+    Attempt 1/3...
+    Tx sent: 0xa999ca5d0e5e2b50eb09b25247980e6cfb219690361735ef1f0c358abbdd62a3
+    Confirmed in block 157537063
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125445 [1] GRANTSHUB NO ---
+    Attempt 1/3...
+    Tx sent: 0x19e51d089325a09c73d99da6694ec2f520084a2d237496c82599fd28bc5a345b
+    Confirmed in block 157537066
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125446 [2] SHIELDEDSCAN YES ---
+    Attempt 1/3...
+    Tx sent: 0x5fb9dce87eb4c3b8ca1ff5ce5806b387ac00ffe81c5299e1e792ad366b585e33
+    Confirmed in block 157537069
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125447 [2] SHIELDEDSCAN NO ---
+    Attempt 1/3...
+    Tx sent: 0x52573ecbcf422da62e1884814dda7dd4598a1f5c265c735ca8fa53ae96d301d5
+    Confirmed in block 157537072
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125448 [3] ZECKIT YES ---
+    Attempt 1/3...
+    Tx sent: 0x56290fdc5c05f71ff69bcbc3c3b614d124208d18b4654d8d20fd483fd49ff39b
+    Confirmed in block 157537075
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125449 [3] ZECKIT NO ---
+    Attempt 1/3...
+    Tx sent: 0x6deb2bdbc12ac8a4c966ec537da95be074bde570cf99efa7e5ea12779f06029c
+    Confirmed in block 157537078
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125451 [4] ZCASHTOCASH YES ---
+    Attempt 1/3...
+    Tx sent: 0xc19224b6cc93d2ef787657640681b302053316d127589dcb957094c22673dd7c
+    Confirmed in block 157537081
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125452 [4] ZCASHTOCASH NO ---
+    Attempt 1/3...
+    Tx sent: 0x8feb312939ccbb4f303a9f2e1fdd103a2311f710f85f5765dd35490369278458
+    Confirmed in block 157537084
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125453 [5] RECONCILE YES ---
+    Attempt 1/3...
+    Tx sent: 0xfeabd211320eb0e22e6302801198942033eef019b4c8b744797a2bbc6d77b513
+    Confirmed in block 157537087
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125455 [5] RECONCILE NO ---
+    Attempt 1/3...
+    Tx sent: 0xcdfef3180e103c5351843595496622d9a55a4cf52693eb769273cba11e34707c
+    Confirmed in block 157537089
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125456 [6] GLEYO YES ---
+    Attempt 1/3...
+    Tx sent: 0xe67d66489d7841d80436c5e79915e376ffdbb745c9268b80a87a264dbe49ac84
+    Confirmed in block 157537092
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125457 [6] GLEYO NO ---
+    Attempt 1/3...
+    Tx sent: 0x4bf583b174ef4be4b927150483a1cdc79e912cd42e82f6db1f8aa2b0142bd7cb
+    Confirmed in block 157537095
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125459 [7] FAUCET YES ---
+    Attempt 1/3...
+    Tx sent: 0x0316f8b8c658468fe54766e54cec057669b871d367de982451c2344d6cf31efe
+    Confirmed in block 157537098
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125460 [7] FAUCET NO ---
+    Attempt 1/3...
+    Tx sent: 0x31b8465eb334672e505da96d53db3907efa5d2740774863a0bc4ce6bda10b811
+    Confirmed in block 157537101
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125461 [8] CYPHZEC YES ---
+    Attempt 1/3...
+    Tx sent: 0x3aa268091cf04298a65e911604b890323bb70ac6323b7f33b4d7047fe8a962f7
+    Confirmed in block 157537104
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125462 [8] CYPHZEC NO ---
+    Attempt 1/3...
+    Tx sent: 0xc1cf87944dc08e246091d26d0be231f428f23b3160b1dc25a8f8b8c6bd377bf0
+    Confirmed in block 157537109
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125463 [9] ZECLEDGER YES ---
+    Attempt 1/3...
+    Tx sent: 0x7b7d78883c9e100d3f9a32c9b8c9b7b196c92566ef67d4129da92abedfadd18f
+    Confirmed in block 157537111
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125464 [9] ZECLEDGER NO ---
+    Attempt 1/3...
+    Tx sent: 0xe93a5e6c38106767982ea768a02907d5c7e752c08b63b5c774d7eb857a5f26d5
+    Confirmed in block 157537114
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125465 [10] LIGHTWALLETD YES ---
+    Attempt 1/3...
+    Tx sent: 0x7f71b8927a73dc8c17a040b0f5a1d8b5370307b158321c8731d40daad75e9fac
+    Confirmed in block 157537117
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125466 [10] LIGHTWALLETD NO ---
+    Attempt 1/3...
+    Tx sent: 0x49644c2fd93690a92868bebe629c365af69e7f90d7c2988bcabe7fd3f3f92ab4
+    Confirmed in block 157537120
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125467 [11] BLINDVAULT YES ---
+    Attempt 1/3...
+    Tx sent: 0x9eb70daaaaaa148624d74ff56139435a930908754a82a13a1b95e5ded91143b4
+    Confirmed in block 157537124
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125469 [11] BLINDVAULT NO ---
+    Attempt 1/3...
+    Tx sent: 0x4be9e3af9a8a204ea71a5e67a8de0e63244891372b6a24c4431c503b83fe36f9
+    Confirmed in block 157537127
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125470 [12] ZALLETRPC YES ---
+    Attempt 1/3...
+    Tx sent: 0x6dd6ae31e5ea264d38e9d9cfa7371063e474e909960d1500ccfb981687b1213d
+    Confirmed in block 157537132
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125471 [12] ZALLETRPC NO ---
+    Attempt 1/3...
+    Tx sent: 0xf2fddb0c4aded4e341f4f1050a0be79425285120aff85314a1b75c5df0583f74
+    Confirmed in block 157537135
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125472 [13] ZECMAP YES ---
+    Attempt 1/3...
+    Tx sent: 0x2b0778c9db7e4af0a7660b56b6cecea30bce5033e01eb9dd1e968000acd8140c
+    Confirmed in block 157537138
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125473 [13] ZECMAP NO ---
+    Attempt 1/3...
+    Tx sent: 0xd7dc204e05eb6f3c8157b91577864e2615b1bc802044bbcddcdcf49f77cd5d38
+    Confirmed in block 157537141
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125474 [14] CONNAUGH YES ---
+    Attempt 1/3...
+    Tx sent: 0xc6c9bcbf12d044dad111785bcea3abdb49aa8da377300be0fc39f6809826c2e5
+    Confirmed in block 157537144
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125475 [14] CONNAUGH NO ---
+    Attempt 1/3...
+    Tx sent: 0xa62530ec678a53246a6b4c25a804f8ec8506114ad65e54b71e7412f323da4ebe
+    Confirmed in block 157537146
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125476 [15] ZAP1 YES ---
+    Attempt 1/3...
+    Tx sent: 0x58e68aee2586818f48b3267d3d5a2d417b803e3151814748bc9f55449de5a5bb
+    Confirmed in block 157537150
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125477 [15] ZAP1 NO ---
+    Attempt 1/3...
+    Tx sent: 0xab5465c1c2f05f14d9cfa6f07e0def64f4d11a8d881b4ce98b151c84571ab957
+    Confirmed in block 157537154
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125478 [16] ZECBOOKS YES ---
+    Attempt 1/3...
+    Tx sent: 0x0afa1d25e097146e7c21f3754a539bb2de544bd8157e6c74cf1284eaa82bc0c9
+    Confirmed in block 157537159
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125479 [16] ZECBOOKS NO ---
+    Attempt 1/3...
+    Tx sent: 0xfc1a45ffd0d5b996bb7984916e1513507e3d0ab21e8b05bfffee899dce3ec975
+    Confirmed in block 157537162
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125480 [17] CIPHERPAY YES ---
+    Attempt 1/3...
+    Tx sent: 0xbed3029f4622a038c1bda45468f4d7c5eed7a92b37d1cbcd9c49c203abe89238
+    Confirmed in block 157537165
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125481 [17] CIPHERPAY NO ---
+    Attempt 1/3...
+    Tx sent: 0x91188f2fabb74173166c8f852389bf7af6cb5835b43787511054d5f8c8ca3967
+    Confirmed in block 157537170
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125482 [18] ZAFU YES ---
+    Attempt 1/3...
+    Tx sent: 0x06a4831749a970214f3d75a4db3b631e23e3c31116c6aabfd05b0d7845a58a03
+    Confirmed in block 157537174
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125483 [18] ZAFU NO ---
+    Attempt 1/3...
+    Tx sent: 0x397dce08ed22ed47300f175993dd8afc1eb55f54aab7737cfd76243291abe9c7
+    Confirmed in block 157537176
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125484 [19] ZAPP YES ---
+    Attempt 1/3...
+    Tx sent: 0x10d8fa3751d5010cf35e3f081b83803a47b6aa41a0c4b96acc3e0bf7dd770a64
+    Confirmed in block 157537179
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125485 [19] ZAPP NO ---
+    Attempt 1/3...
+    Tx sent: 0x6063d6cb42c89fe52e4d5c75c90caa19318eaa560f6ef187eea7403972002b7e
+    Confirmed in block 157537182
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125486 [20] HWSDK YES ---
+    Attempt 1/3...
+    Tx sent: 0x4decb3a4740cd44d8cf72b423b4e68ee09413f5aedd6e65cb8dc11d5c6dded51
+    Confirmed in block 157537187
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125487 [20] HWSDK NO ---
+    Attempt 1/3...
+    Tx sent: 0x6ed68c4dc900913d9ff81709685e5e38d7ed71744c7b013ae6e1be8b320f5340
+    Confirmed in block 157537189
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125488 [21] NOZY YES ---
+    Attempt 1/3...
+    Tx sent: 0xdcbccdad137f11b45720b4ed1bc931323304e76473ad030374d21fb647875e77
+    Confirmed in block 157537192
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125489 [21] NOZY NO ---
+    Attempt 1/3...
+    Tx sent: 0x6721bfdc2b9049773f7db9bcfacb23a37c2b03d99e22c1cdd75cc4ede9ce9cfa
+    Confirmed in block 157537195
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125490 [22] THORSWAP YES ---
+    Attempt 1/3...
+    Tx sent: 0x9f3f34e6685b0ea4cb489b5fc481908868a38ef02d9ed2f2a35a3718e07e93aa
+    Confirmed in block 157537198
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125491 [22] THORSWAP NO ---
+    Attempt 1/3...
+    Tx sent: 0xa27bb626d9c83cda48239750776d29e006c0775619cc3d5cdc93af34db31d751
+    Confirmed in block 157537200
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125493 [23] UNSTOPPABLE YES ---
+    Attempt 1/3...
+    Tx sent: 0x0559d0c50a9f538ea730552cb7e5500a0fe3505b7b499bc9c8caa04017bd9cbb
+    Confirmed in block 157537203
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125495 [23] UNSTOPPABLE NO ---
+    Attempt 1/3...
+    Tx sent: 0x57212e81bf9e2a28230f24392389cb396970c2302ca50bb142891f2a3a6b90a7
+    Confirmed in block 157537205
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125496 [24] ZCASHNAMES YES ---
+    Attempt 1/3...
+    Tx sent: 0xdff956fe17466e474c23129e6d8f679ff7aa38a1b13a0e4a6f2caab785176a3f
+    Confirmed in block 157537207
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125497 [24] ZCASHNAMES NO ---
+    Attempt 1/3...
+    Tx sent: 0x51b9fe74f86a4cb0101fd8324c314531e29de2265f494a2ad55ed6b2663f7082
+    Confirmed in block 157537210
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125498 [25] FRONTIERSEC YES ---
+    Attempt 1/3...
+    Tx sent: 0x365cfb53f6fc784072d8f58beaf36d4ee136dd8d18107e824104f32bbf2c6b7c
+    Confirmed in block 157537213
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125499 [25] FRONTIERSEC NO ---
+    Attempt 1/3...
+    Tx sent: 0xc5707842a914ba6b79a9a4840a009ba28b9d31bce6e4dad2801c6c3f5ebb6688
+    Confirmed in block 157537218
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125500 [26] ZEBRACVE YES ---
+    Attempt 1/3...
+    Tx sent: 0x6a91366138b04de5cb8a389d4e60516fe31aea94f35839569bbd760a6527fcd0
+    Confirmed in block 157537221
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125501 [26] ZEBRACVE NO ---
+    Attempt 1/3...
+    Tx sent: 0x44493ffc32f17f6eccf98f89feaa21baa6cfebfc1eb72c5b50b11da4c70284cb
+    Confirmed in block 157537226
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125502 [27] BONUSIRONWOOD YES ---
+    Attempt 1/3...
+    Tx sent: 0xb3f6d703955d26d170d09ecab82beab017a5cd38b8cd39b940c6ad1f8bf39579
+    Confirmed in block 157537231
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125503 [27] BONUSIRONWOOD NO ---
+    Attempt 1/3...
+    Tx sent: 0x91e2bd28d5d041d3c9fa8ab0d7119adcbe692e3b930f787e9c53e6a35036112e
+    Confirmed in block 157537234
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125504 [28] CIPHERSCAN YES ---
+    Attempt 1/3...
+    Tx sent: 0x87f561febc72204cbe9ef411e96949808c647e29cce7b1a56237d78f8341e1c4
+    Confirmed in block 157537237
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125505 [28] CIPHERSCAN NO ---
+    Attempt 1/3...
+    Tx sent: 0x47a412e4c1af9548c83901732ae9b250e9c5d7bbeb49265a1bbb4008e057ede5
+    Confirmed in block 157537240
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125506 [29] MINTEXPLOIT YES ---
+    Attempt 1/3...
+    Tx sent: 0xf79ba411112af76dee7e535fc1e8fd540f2f946046bad2b725b06f79a1d073bd
+    Confirmed in block 157537243
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125508 [29] MINTEXPLOIT NO ---
+    Attempt 1/3...
+    Tx sent: 0x4dad96fb04064b60b8ede1463e3ea7376f7b4039b103a9ae9162caa5aaf90412
+    Confirmed in block 157537246
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125509 [30] ZEBRACONSENSUS YES ---
+    Attempt 1/3...
+    Tx sent: 0x71c48bce132f18e8cba4fdb995278ecb8f143bace99c8e4d274ff679c5cf422f
+    Confirmed in block 157537249
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125510 [30] ZEBRACONSENSUS NO ---
+    Attempt 1/3...
+    Tx sent: 0x4a8e563801281a4c6784ee4c23371d79cc33e84e49f2e3770cbf8ab8cc5cb0d8
+    Confirmed in block 157537252
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125511 [31] ZECROCKS YES ---
+    Attempt 1/3...
+    Tx sent: 0x366a841bcc9bccf17ae91cde538e532db9e934b1dae5fdd2b3ff9f6fa3c88677
+    Confirmed in block 157537255
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125512 [31] ZECROCKS NO ---
+    Attempt 1/3...
+    Tx sent: 0x2a56e646997f593cb0d0df8b5511f5aa2f8149012367f1444c06a2aa423c0518
+    Confirmed in block 157537258
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125513 [32] VALARAUDIT YES ---
+    Attempt 1/3...
+    Tx sent: 0xb504224c0106b80286b636332e14db89f7ace7dcd94292a453639d1773ca8c13
+    Confirmed in block 157537260
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125514 [32] VALARAUDIT NO ---
+    Attempt 1/3...
+    Tx sent: 0x9a9d953510b8c5b0f2a66ddc2dc19805c443bbfafde44214b784eb6b9ca3f8ee
+    Confirmed in block 157537263
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125515 [33] TACHYON YES ---
+    Attempt 1/3...
+    Tx sent: 0xf5d71086a7b9c28f9ff0f5c212178c2d2861cdff9c37c10d063275e6f24222f6
+    Confirmed in block 157537265
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125516 [33] TACHYON NO ---
+    Attempt 1/3...
+    Tx sent: 0x113c9bfb9686d592cb8f6aeab47f36b1d32674a2394adc52f3c620540244d6d1
+    Confirmed in block 157537268
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125517 [34] ORCHARDBOUNTY YES ---
+    Attempt 1/3...
+    Tx sent: 0x335c77e36632d5c403c296f0b09de58cc945ade09221f157b97481c8fb10a974
+    Confirmed in block 157537270
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125518 [34] ORCHARDBOUNTY NO ---
+    Attempt 1/3...
+    Tx sent: 0x15f6f97d2304833f63fe5b37c0729eb5d0ec856d914bdda9d0a3f0cb376eaeb9
+    Confirmed in block 157537272
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125519 [35] BONUSORCHARD YES ---
+    Attempt 1/3...
+    Tx sent: 0x40fc80f84a86560b5ff55118ac3d389b1b5de8a896bafdc1f699cda18e9ed74d
+    Confirmed in block 157537275
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125520 [35] BONUSORCHARD NO ---
+    Attempt 1/3...
+    Tx sent: 0xc3b18c8ffff53987f1a99afc52b4a8f8de5d7bd8f3360bcd0c85ba31bf1fb862
+    Confirmed in block 157537278
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125521 [36] VALARIRONWOOD YES ---
+    Attempt 1/3...
+    Tx sent: 0xa9a26aedff63a2db1f36a96f3e6377c6bcdc2a50c54f3fd3ddac37839b4d4bba
+    Confirmed in block 157537281
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125523 [36] VALARIRONWOOD NO ---
+    Attempt 1/3...
+    Tx sent: 0xe825cbac5a7582129b2bb5ec867d4c4c968caf54d8d6adbce3f0b9ac9cac9080
+    Confirmed in block 157537283
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125524 [37] ZODL YES ---
+    Attempt 1/3...
+    Tx sent: 0xb8931a6be471d00e6dd13f0ca06ab2e59e2270fdc18095d469351b00ddb531c7
+    Confirmed in block 157537286
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+--- #1125526 [37] ZODL NO ---
+    Attempt 1/3...
+    Tx sent: 0xcd38827967dc371ec1b6961908bcbad63f7f963f78d4fb101349c17d2fe03c05
+    Confirmed in block 157537289
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json
+
+🎉 Done! 74/74 positions withdrawn, 0 swept. See D:\Code\liquidity\runs\zcash-q3\unwind-withdraw\progress.json.
+   The wallet now holds the outcome tokens + sUSDS. To convert the outcome
+   tokens back to sUSDS, merge a full set per market (Router.mergePositions).
+
+Done.

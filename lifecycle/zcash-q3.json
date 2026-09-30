@@ -40,7 +40,9 @@
     "csv": "campaigns/zcash-q3/zcash-q3-markets.csv",
     "liquidity": "campaigns/zcash-q3/add-zcash-liquidity-execution.json",
     "reseed": "campaigns/zcash-q3/reseed-zcash-liquidity-execution.json",
-    "withdraw": "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json"
+    "withdraw": "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json",
+    "results": "campaigns/zcash-q3/zcash-q3-results.json",
+    "answerLog": "campaigns/zcash-q3/answer-zcash-execution.json"
   },
   "markets": [
     {
@@ -103,24 +105,26 @@
     {
       "name": "unwind-withdraw",
       "status": "done",
-      "finishedAt": "2026-08-24",
+      "finishedAt": "2026-09-29T09:15:57.552Z",
       "artifacts": [
-        "campaigns/zcash-q3/withdraw-zcash-liquidity.js",
-        "campaigns/zcash-q3/withdraw-zcash-liquidity-execution.json",
-        "archive/runs/zcash-q3/withdraw-zcash-liquidity-run.log"
+        "runs/zcash-q3/unwind-withdraw/progress.json",
+        "runs/zcash-q3/unwind-withdraw/run-2026-09-29T09-06-50-677Z.log"
       ],
-      "notes": "74/74 withdrawn, ahead of the reprice. Only 4 of 37 markets had traded."
+      "notes": "74/74 withdrawn, ahead of the reprice. Only 4 of 37 markets had traded.",
+      "startedAt": "2026-09-29T09:06:51.073Z",
+      "txCount": 74
     },
     {
       "name": "unwind-merge",
       "status": "done",
-      "finishedAt": "2026-08-24",
+      "finishedAt": "2026-09-29T12:47:06.470Z",
       "artifacts": [
-        "campaigns/zcash-q3/merge-zcash-positions.js",
-        "campaigns/zcash-q3/merge-zcash-positions-execution.json",
-        "archive/runs/zcash-q3/merge-zcash-positions-run.log"
+        "runs/zcash-q3/unwind-merge/progress.json",
+        "runs/zcash-q3/unwind-merge/run-2026-09-29T12-32-00-781Z.log"
       ],
-      "notes": "37/37 merged, 5,159.44 sUSDS recovered, 1.354 outcome tokens stranded. Round-trip cost 0.58 sUSDS plus gas."
+      "notes": "37/37 merged, 5,159.44 sUSDS recovered, 1.354 outcome tokens stranded. Round-trip cost 0.58 sUSDS plus gas.",
+      "startedAt": "2026-09-29T12:32:01.111Z",
+      "txCount": 37
     },
     {
       "name": "reseed",
@@ -160,11 +164,17 @@
       "args": [],
       "notBefore": "2026-09-29T09:00:00.000Z",
       "notAfter": "2026-09-29T14:00:00.000Z",
-      "status": "pending",
+      "status": "fired",
       "approvedAt": "2026-09-28T07:28:22.880Z",
       "approvedBy": "nvm1410",
       "planHash": "sha256=50ad2583da89a6d6eb421fa01981e7a3cdf4aa45201b068899c2f31cd060ac44",
-      "approvedLog": "runs/zcash-q3/scheduled/zcash-q3-withdraw-zcash-liquidity-202609290900.approved.log"
+      "approvedLog": "runs/zcash-q3/scheduled/zcash-q3-withdraw-zcash-liquidity-202609290900.approved.log",
+      "heartbeatAt": "2026-09-28T09:05:20.885Z",
+      "firedAt": "2026-09-29T09:06:50.330Z",
+      "finishedAt": "2026-09-29T09:15:57.569Z",
+      "notes": "live run exited 0.",
+      "exitCode": 0,
+      "runLog": "runs/zcash-q3/scheduled/zcash-q3-withdraw-zcash-liquidity-202609290900.log"
     }
   ]
 }

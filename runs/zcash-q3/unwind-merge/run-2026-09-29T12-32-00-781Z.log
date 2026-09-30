@@ -1,0 +1,615 @@
+merge-zcash-positions — LIVE
+  campaign zcash-q3 (launch/poll), stage unwind-merge
+  chain 10 ok, wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+  balance 56798.08331636627 sUSDS, plan needs 0
+
+📋 Wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+
+🔍 Step 1: resolving 37 markets and reading balances...
+
+    #  shortName                 YES            NO       Invalid         MERGE      leftover
+    1  GRANTSHUB           155.5674      90.9134     109.6223      90.9134      83.3629
+    2  SHIELDEDSCAN        107.4036      42.3874      57.9689      42.3874      80.5977
+    3  ZECKIT              177.5468     104.4749     121.6527     104.4749      90.2497
+    4  ZCASHTOCASH          78.2705     196.4787     129.2062      78.2705     169.1439
+    5  RECONCILE           172.9718      97.8705     121.6527      97.8705      98.8836
+    6  GLEYO               212.5998      75.1974     115.9023      75.1974     178.1074
+    7  FAUCET              184.8716      82.6381     109.6180      82.6381     129.2133
+    8  CYPHZEC             118.4233      34.1223      54.2825      34.1223     104.4612
+    9  ZECLEDGER           177.0385      84.3793     112.8097      84.3793     121.0896
+   10  LIGHTWALLETD        107.6058      58.1723      69.6711      58.1723      60.9323
+   11  BLINDVAULT           53.5562      89.5120      65.8976      53.5562      48.2973
+   12  ZALLETRPC            42.7106      89.5202      58.2075      42.7106      62.3065
+   13  ZECMAP              152.2957     143.1560     139.4517     139.4517      16.5483
+   14  CONNAUGH             52.3741     184.7350      92.3583      52.3741     172.3452
+   15  ZAP1                142.2547     100.7560     109.6723     100.7560      50.4149
+   16  ZECBOOKS             38.5306      74.9822      50.5601      38.5306      48.4810
+   17  CIPHERPAY            91.8937     133.4476     106.3214      91.8937      55.9816
+   18  ZAFU                243.1559      91.5753     138.3020      91.5753     198.3072
+   19  ZAPP                252.6076      87.8162     141.2819      87.8162     218.2571
+   20  HWSDK               216.6842      69.1707     112.8021      69.1707     191.1449
+   21  NOZY                227.8050      99.4847     141.8287      99.4847     170.6643
+   22  THORSWAP             41.8496      15.8702      20.9040      15.8702      31.0132
+   23  UNSTOPPABLE          53.7195      36.5236      42.8768      36.5236      23.5491
+   24  ZCASHNAMES          206.0669      94.7399     126.9058      94.7399     143.4930
+   25  FRONTIERSEC         101.8951     150.2280     106.3775     101.8951      52.8153
+   26  ZEBRACVE             61.4360     330.3739     131.4392      61.4360     338.9411
+   27  BONUSIRONWOOD        65.4687      42.2819      50.4557      42.2819      31.3605
+   28  CIPHERSCAN           81.5498     288.2150     135.2630      81.5498     260.3784
+   29  MINTEXPLOIT          64.9717      61.0517      58.1131      58.1131       9.7972
+   30  ZEBRACONSENSUS       94.0522     113.6900      99.4725      94.0522      25.0581
+   31  ZECROCKS            112.9619     187.7112     136.8498     112.9619      98.6372
+   32  VALARAUDIT           40.6493     131.6493      73.4957      40.6493     123.8465
+   33  TACHYON              33.2055       7.8953      10.5578       7.8953      27.9726
+   34  ORCHARDBOUNTY        25.7281       2.4242       4.0228       2.4242      24.9025
+   35  BONUSORCHARD         45.1999      18.5352      24.5203      18.5352      32.6497
+   36  VALARIRONWOOD        45.1696      47.4697      42.9188      42.9188       6.8018
+   37  ZODL                 59.7009      25.6972      35.4513      25.6972      43.7579
+
+   Recoverable  : 2453.289653521597214056 sUSDS over 37 markets
+   Stranded     : 3623.763814450081658846 outcome tokens (imbalance from trading)
+   sUSDS now    : 56798.083316366271054762
+   sUSDS after  : 59251.372969887868268818
+
+🔀 Step 3: merging 37 markets
+
+
+--- [1] GRANTSHUB — merging 90.913426086935293844 ---
+    Attempt 1/3...
+    Tx sent: 0xd24e539c58aa6017069db9b89bff2bd4f2bc589022fe73262eae9cbb3e916a20
+    Confirmed in block 157543175
+    Attempt 1/3...
+    Tx sent: 0x3dbd6f7482912626862a1d5b37c11ef41f26df0cf1ee0cad6065e632280812af
+    Confirmed in block 157543176
+    Attempt 1/3...
+    Tx sent: 0xb5f2d1dec6fa6549034a582b00a31dca6087bff9237e9b744e9ddee34ff5ac49
+    Confirmed in block 157543178
+    Attempt 1/3...
+    Tx sent: 0x656f616f573be86a5bbbeea3b32e43e1e8c860febc1f902d2ecf329adbcf2b61
+    Confirmed in block 157543181
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [2] SHIELDEDSCAN — merging 42.387417823448267553 ---
+    Attempt 1/3...
+    Tx sent: 0xf1b6f15c0b80c93a4c27bc071d59c9cc92a7d168dc2b60ce3bb6ca16a68b15ec
+    Confirmed in block 157543185
+    Attempt 1/3...
+    Tx sent: 0xff16e988a7136d22f51da34411e848d9f57ba3d1352bd22b3bd437e2fe5f1fa2
+    Confirmed in block 157543188
+    Attempt 1/3...
+    Tx sent: 0x4eb0a9c080424e7212073bf0ab6bd430aa9b882134e12caeff475a3211b18ac2
+    Confirmed in block 157543191
+    Attempt 1/3...
+    Tx sent: 0xdac7b5cf73a03e6acbd14c70ae41d5a5d21820a426754748025da034b36f7f1a
+    Confirmed in block 157543192
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [3] ZECKIT — merging 104.47491959594493496 ---
+    Attempt 1/3...
+    Tx sent: 0x36dc9c542002e799d8ae6665a1435a6a58a3f99f74f85a166a9a8ed93da839bf
+    Confirmed in block 157543194
+    Attempt 1/3...
+    Tx sent: 0x5847c22203e2b194573f161bf6df04b7d1a4f711cd944eb702e8b31646ba07f9
+    Confirmed in block 157543196
+    Attempt 1/3...
+    Tx sent: 0x77bfc55173a82144bd36b5732d92d4fcb9cc63baaa60e754a62dca4a15266ab9
+    Confirmed in block 157543199
+    Attempt 1/3...
+    Tx sent: 0xe73d1d7b7767ba2a3b42a4a71386cce3f1b9017edff51338c6884d961774fee4
+    Confirmed in block 157543200
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [4] ZCASHTOCASH — merging 78.270513090721456526 ---
+    Attempt 1/3...
+    Tx sent: 0x0ac62a945681e39d9b562ac946d216ca45a488a32f58dc49912ffb115de6b268
+    Confirmed in block 157543202
+    Attempt 1/3...
+    Tx sent: 0xd0f06271c7c734ef6ae40e01de8daf60a4db94b130793190b2ba9058e1af8628
+    Confirmed in block 157543204
+    Attempt 1/3...
+    Tx sent: 0xa19e2dfc88ea9687597c56340f38381ceaa81da16f868eaafd62610a8b7ea65d
+    Confirmed in block 157543207
+    Attempt 1/3...
+    Tx sent: 0xa68485c5d19569e6b029f10537f271ae4ca8dacc265f9ae4a9627e6afbace899
+    Confirmed in block 157543210
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [5] RECONCILE — merging 97.870459078366075037 ---
+    Attempt 1/3...
+    Tx sent: 0x1de925b76c7f7a85a8840e3ba0e8ca8bcf6cde7bdbdf76b614d2ac090e3a23c0
+    Confirmed in block 157543212
+    Attempt 1/3...
+    Tx sent: 0x3bda38718a052cace3ae07083ba7be069bcd5f2c3623eaa4284dfd8319d6ea97
+    Confirmed in block 157543213
+    Attempt 1/3...
+    Tx sent: 0x1323d7929086a87ea95aff2c6808520e64d709af06e864f03e9cec0c404d0147
+    Confirmed in block 157543214
+    Attempt 1/3...
+    Tx sent: 0xf2cf0bf9205ad243de3291aa1b70d6140df72e326a81a06803a8a583df8ad0e2
+    Confirmed in block 157543215
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [6] GLEYO — merging 75.197353745661600761 ---
+    Attempt 1/3...
+    Tx sent: 0x3356133ace8bc152422f38e51a8202b2a7046cdf597a4dbe59bde00ad859aed7
+    Confirmed in block 157543218
+    Attempt 1/3...
+    Tx sent: 0xb4ed56366271ab614ac865ae0222cadb70e316a03071d0c03dc2f55f4f711267
+    Confirmed in block 157543221
+    Attempt 1/3...
+    Tx sent: 0xbd4ed90bd2690de549e6e3adb1a4e42dedb8a6f4087c7d9817ff83c575ee0ede
+    Confirmed in block 157543224
+    Attempt 1/3...
+    Tx sent: 0xf1b238c09cc13a14595ca8257fa20efa36def739b323974f1da670c6e3713032
+    Confirmed in block 157543228
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [7] FAUCET — merging 82.63811744160066444 ---
+    Attempt 1/3...
+    Tx sent: 0xdbe4f0bbd644631860e65c2f7585a9a2c62a042884898b30e1a6fb85424b3138
+    Confirmed in block 157543232
+    Attempt 1/3...
+    Tx sent: 0x07d27b320026affde9c15f56b5522ea2c5dbb91c5fbb230369425a74f7c4bf29
+    Confirmed in block 157543235
+    Attempt 1/3...
+    Tx sent: 0x66604eff373f4f1165dc9fa0fb08bbea3d4be2d738fab426ca916148abd0310e
+    Confirmed in block 157543237
+    Attempt 1/3...
+    Tx sent: 0x8cdc5099fb65ba766ceb7a8ed5682678c97f53b44227b2e985ae4221bb998383
+    Confirmed in block 157543240
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [8] CYPHZEC — merging 34.12234874894116581 ---
+    Attempt 1/3...
+    Tx sent: 0x46d9d8b7214f6505d1a9d113357093a361af5cefb5c087a668a0fb78149627eb
+    Confirmed in block 157543243
+    Attempt 1/3...
+    Tx sent: 0x9fc94484dfbc2850cb80b04681cdaa96e81a7e28105b97b05d9d3ac4eff7904f
+    Confirmed in block 157543247
+    Attempt 1/3...
+    Tx sent: 0x39794f411374d5b9a846281017bcf9ae06b4be7bcccdf9bb5d15de11b5f009b7
+    Confirmed in block 157543251
+    Attempt 1/3...
+    Tx sent: 0xac3b3db2045c7f4ae54b25a73c63d8cb16b068e4b198c6185c3a4b5c9af50b59
+    Confirmed in block 157543253
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [9] ZECLEDGER — merging 84.37931173546129344 ---
+    Attempt 1/3...
+    Tx sent: 0xac40e464e4c09137308c9b574bac814d30f5bf34ca3b4e4ab3aa3840e8ce4af3
+    Confirmed in block 157543257
+    Attempt 1/3...
+    Tx sent: 0x1f42cecda8be04d801ca37f3a243701a6396cccc484230090498267ce3b7739f
+    Confirmed in block 157543259
+    Attempt 1/3...
+    Tx sent: 0x904d9344bd7d4b056cbcda2069df13b37166e9301d2d9da71c6bc9615980a670
+    Confirmed in block 157543263
+    Attempt 1/3...
+    Tx sent: 0x28336ad89f47d887eb3794f799c163c27eb793872902100f37dc23ba846937cb
+    Confirmed in block 157543267
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [10] LIGHTWALLETD — merging 58.172296624225474678 ---
+    Attempt 1/3...
+    Tx sent: 0xaf80b51fe89f349b61d1f55cd10537a64a83279bb5a1b7c10dc3491a250d6d3a
+    Confirmed in block 157543272
+    Attempt 1/3...
+    Tx sent: 0xbfb700ccef99b2ab6cd5bd8503d1a7e2363ed346faf42ad45c1cba92def0c887
+    Confirmed in block 157543276
+    Attempt 1/3...
+    Tx sent: 0x2177d6c90e38aefc9c2bcfbd7327115c0473113d50a121824c4f38e9eb487bb0
+    Confirmed in block 157543279
+    Attempt 1/3...
+    Tx sent: 0xd62c44b24c6fd12005f6945ea4f822af286cc4454d5a48384e7a799ef813003d
+    Confirmed in block 157543282
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [11] BLINDVAULT — merging 53.556169794849886143 ---
+    Attempt 1/3...
+    Tx sent: 0x5a11589a7c1b6b231ba407ef9da95a9db4ded30e997737b1703bf53677e66bcc
+    Confirmed in block 157543285
+    Attempt 1/3...
+    Tx sent: 0x82410988e42149f5c5279acd75a0749aa3a0fcf51d60167ad6c04a4efdb56218
+    Confirmed in block 157543289
+    Attempt 1/3...
+    Tx sent: 0xbf5855a81cd5155d3fb620756005615ca0bc5bf9d6f2b2a5ad719f8826368056
+    Confirmed in block 157543292
+    Attempt 1/3...
+    Tx sent: 0x714fceff473f961e83f22f451ee5bfe4d2e1ee99986d734674f9aed598c82cdb
+    Confirmed in block 157543296
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [12] ZALLETRPC — merging 42.710587950769264632 ---
+    Attempt 1/3...
+    Tx sent: 0xb19925311c0030fe5ce906d9c5f336442e6f8f7c7afb5939adbca7488ea9a4c7
+    Confirmed in block 157543301
+    Attempt 1/3...
+    Tx sent: 0x693492a316a08ac150f8d7266ff6f9fb516aad8381e38f022bf01effa93fd961
+    Confirmed in block 157543304
+    Attempt 1/3...
+    Tx sent: 0x465630623415fa143749809e3f67a5cf24709a54e60d4d733334983d40e36a8a
+    Confirmed in block 157543306
+    Attempt 1/3...
+    Tx sent: 0x18590c09ed272bceafa9f20ef3541a83e850808eb4977ebce9c819c779b69178
+    Confirmed in block 157543309
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [13] ZECMAP — merging 139.451709812550220548 ---
+    Attempt 1/3...
+    Tx sent: 0x7ae369f9b9abf0534e5d465cb33510a543f223aac61e4303e64263e7edad6cdc
+    Confirmed in block 157543313
+    Attempt 1/3...
+    Tx sent: 0x11bccf03098235661abc2fbd33ebe970c3fa60914b26b53f4ce620abcca0ee57
+    Confirmed in block 157543316
+    Attempt 1/3...
+    Tx sent: 0xb33b322bdc176bd2a9765c1dc239492c51d074f7ae482c0e26f788bd2a631ebc
+    Confirmed in block 157543320
+    Attempt 1/3...
+    Tx sent: 0x4fad942ef61691978395789358042a936af173ec401bf0af7aad821f4bd207a6
+    Confirmed in block 157543324
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [14] CONNAUGH — merging 52.374094010221866486 ---
+    Attempt 1/3...
+    Tx sent: 0xba516ab565068df627fb36c8aa918997aa02e17769c0ca4cb48823e3bfaa1e4f
+    Confirmed in block 157543328
+    Attempt 1/3...
+    Tx sent: 0x7d3d47ae73414eab782fdb6bd2b13548639c921750dbe21c3f1b1d38be77c484
+    Confirmed in block 157543330
+    Attempt 1/3...
+    Tx sent: 0x89071f3fb78c7478f305cf6d714e1263c25bc48b89e9901f18caf4a0799ebef0
+    Confirmed in block 157543333
+    Attempt 1/3...
+    Tx sent: 0xd884e25c8cab4b5861ff24bd79e45388afffed00821494172ea17e69219c6538
+    Confirmed in block 157543336
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [15] ZAP1 — merging 100.756029868007864315 ---
+    Attempt 1/3...
+    Tx sent: 0x246187e31231a08051b1d238c893763caf7c723efb7f56bb0f5e56b304cca1ba
+    Confirmed in block 157543340
+    Attempt 1/3...
+    Tx sent: 0xfaf954de790c6b2e1200f0fde1cd7f8b4844a8489858278be1279a4692123cd9
+    Confirmed in block 157543341
+    Attempt 1/3...
+    Tx sent: 0xa0b9e2e7d35d7cc0644452b8e4bc127d0f95779a7292c14920840f6c3265ac58
+    Confirmed in block 157543343
+    Attempt 1/3...
+    Tx sent: 0xea9bef6053b10a264f50e03a8db61f971fe7c1140feb7f22cdb88246fb26ab31
+    Confirmed in block 157543347
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [16] ZECBOOKS — merging 38.530641319038066707 ---
+    Attempt 1/3...
+    Tx sent: 0x2ee5fbb34d3e5dfd984575f858fc465cee0c318c2fabbba97b995c6bb90f59c2
+    Confirmed in block 157543351
+    Attempt 1/3...
+    Tx sent: 0x0c839ad16c891ee6df6a3ae31c50d52fec59bc3de60d7bd27d5f2f6e5c8027d5
+    Confirmed in block 157543353
+    Attempt 1/3...
+    Tx sent: 0x4da48353f07132696110d009d7092aae58248ac66b1ec88b4ad30604f96c24fc
+    Confirmed in block 157543355
+    Attempt 1/3...
+    Tx sent: 0x7ddca2cd4ff7f23b34e9ac3bd7235d3bb626d4fc00ba77ab254673e360d9ab09
+    Confirmed in block 157543359
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [17] CIPHERPAY — merging 91.893676995877282333 ---
+    Attempt 1/3...
+    Tx sent: 0xaecf64f09796f41654e914051f124c4f42dfc222877092223772cf4a88f1d525
+    Confirmed in block 157543364
+    Attempt 1/3...
+    Tx sent: 0x4f53046c1c12efe8e180ee832d2addbf43813fa628d09fb6deeb8ea74e6c0091
+    Confirmed in block 157543367
+    Attempt 1/3...
+    Tx sent: 0xcc55b98e232e4fa7a9b7f938358c700a4457c171935e9d20d5f29c7caa32f739
+    Confirmed in block 157543368
+    Attempt 1/3...
+    Tx sent: 0x20264599516fce732a6747a7c08362095db0c3ac14b81067fe71b6da61ebd952
+    Confirmed in block 157543369
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [18] ZAFU — merging 91.575331289482858372 ---
+    Attempt 1/3...
+    Tx sent: 0xad9c6551eab420f950a3f55c1974767eb28552f7678dd7d5db51b002cb616d0a
+    Confirmed in block 157543372
+    Attempt 1/3...
+    Tx sent: 0x0448933f5423e3a668b8917217d209bd02177b9c201ad4a7f4a9769e5642338a
+    Confirmed in block 157543376
+    Attempt 1/3...
+    Tx sent: 0xa6d6c89825a86e53db9ad72e923f93c03cbec5db9d024d5a71729c142807f328
+    Confirmed in block 157543379
+    Attempt 1/3...
+    Tx sent: 0x679691a86ea39596036adcf4e64592b7e35631a4926ff43f0746324347ff524a
+    Confirmed in block 157543382
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [19] ZAPP — merging 87.816219206047862529 ---
+    Attempt 1/3...
+    Tx sent: 0x41f7cc252ff7651dc66981d53f49cfeb5bfb4edd3699215eb49b405ad0985e65
+    Confirmed in block 157543385
+    Attempt 1/3...
+    Tx sent: 0x40f8e5825f605a90703ce4dfe6cabb795ce9fa361ba5f26b8086980de650d0d3
+    Confirmed in block 157543389
+    Attempt 1/3...
+    Tx sent: 0x1add8568c3c56205c71b6f3c515e395eced3eeca54e8dee8aad1a864a3b3f419
+    Confirmed in block 157543393
+    Attempt 1/3...
+    Tx sent: 0xfba2844e026b653b2aadf1548a114d3735dd5301ae862528aaa84650601b849c
+    Confirmed in block 157543396
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [20] HWSDK — merging 69.170697108148375795 ---
+    Attempt 1/3...
+    Tx sent: 0x64723b02cc34a25ab5d0a325ce942b3b1b7d3775e2e7403d43065d01aae91610
+    Confirmed in block 157543399
+    Attempt 1/3...
+    Tx sent: 0x8694230c95dbe1e5db8b1e1dd0c2aeb487119eb9d25b3d7546f203c9c508e63c
+    Confirmed in block 157543402
+    Attempt 1/3...
+    Tx sent: 0x841bee7b98dcd820cf7e501a9369b35ea1a37bf46c42b23860527d182e6d939f
+    Confirmed in block 157543406
+    Attempt 1/3...
+    Tx sent: 0x92f89f66cc58a0eb7851c7458d85b570af40b318bd8602b26e929420c907c4e6
+    Confirmed in block 157543410
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [21] NOZY — merging 99.484709723471865196 ---
+    Attempt 1/3...
+    Tx sent: 0xffd5c75088504bc6b47482d30e8ee1175ca4e7cf22958c61ceb8c8b3e157cd0e
+    Confirmed in block 157543414
+    Attempt 1/3...
+    Tx sent: 0x6f14a07ef816736f64e9a2f8c52887b36ac3a1a34909e479ba932e4a0151790d
+    Confirmed in block 157543418
+    Attempt 1/3...
+    Tx sent: 0x97647c2a46adff036e5cde3e4a4e229772a81351cc48a7445095d57e7c6eba3d
+    Confirmed in block 157543422
+    Attempt 1/3...
+    Tx sent: 0x383ca1d9cfdce84bbe8696d423e1251cd0141993e7624ff060b8091ef9995dc5
+    Confirmed in block 157543424
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [22] THORSWAP — merging 15.870236463530778769 ---
+    Attempt 1/3...
+    Tx sent: 0x133e2622c7de1acc8961d20cb17b10762b91dd793b757dd57a283d7d8358e7e6
+    Confirmed in block 157543429
+    Attempt 1/3...
+    Tx sent: 0x86571873ee6cb0c2ad62fd4990e42eba8b77b02454d8540ee7ff30f1789be444
+    Confirmed in block 157543433
+    Attempt 1/3...
+    Tx sent: 0x6950da62c778b8edc1a85d0c3abb76c8d7e83ef5fad8cfb0ef72dc0a26b0fabe
+    Confirmed in block 157543436
+    Attempt 1/3...
+    Tx sent: 0x50609f26be50177884071e3270b4f5d27c35d85e539c0a213e20e9ea8ebb1adc
+    Confirmed in block 157543437
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [23] UNSTOPPABLE — merging 36.52357532463918412 ---
+    Attempt 1/3...
+    Tx sent: 0x702d5af34b5854bf447b15bf0ca15fbf3fa6584ec6c7dffddf4e4e9e396c190f
+    Confirmed in block 157543442
+    Attempt 1/3...
+    Tx sent: 0x45dddcdc6330c3c39b2cc9e45268f2a7c6219351c34029243c69eb2256b73d03
+    Confirmed in block 157543444
+    Attempt 1/3...
+    Tx sent: 0x565daa14473bcc7f41fb7e352268d62e2ddd090f8e7af5a78f7793717ddc02df
+    Confirmed in block 157543447
+    Attempt 1/3...
+    Tx sent: 0x9e8f41e5bdbbcc4d1a37676447266dd7e9f78d0c30b4a6dca481ef6641a65224
+    Confirmed in block 157543451
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [24] ZCASHNAMES — merging 94.739883708166560097 ---
+    Attempt 1/3...
+    Tx sent: 0x45ca40e0460ba1a62aaffb5d22efa3e7c0e3185bf2abfbf9dcbcc7c915837168
+    Confirmed in block 157543456
+    Attempt 1/3...
+    Tx sent: 0x26fa9b9722bc49434f620d62021ac553857edfb8326edf0ea4f1fc1159dc7cf4
+    Confirmed in block 157543459
+    Attempt 1/3...
+    Tx sent: 0x5d2812370bcf08fe8c3b5c40ccc38164b8ea99b781b0cabb152bc71c645bd131
+    Confirmed in block 157543461
+    Attempt 1/3...
+    Tx sent: 0x887a1d17748fc04aed33bb592d3543ba54f2a580079ecb724a3c2cb7c7d9fd49
+    Confirmed in block 157543465
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [25] FRONTIERSEC — merging 101.89507094888063766 ---
+    Attempt 1/3...
+    Tx sent: 0x9b7e3df53f0a594e88d5928aee207f28d3be5a62e7ff46571e320768dd97deaf
+    Confirmed in block 157543469
+    Attempt 1/3...
+    Tx sent: 0x3a939f44b112903ef0d70903b840c957d8482888134e5359f882357727d43d6a
+    Confirmed in block 157543470
+    Attempt 1/3...
+    Tx sent: 0x74cda9a5efb793cdb3d4debb7e127f618de6bfba679285bdc54cf1bf2e8d10b7
+    Confirmed in block 157543472
+    Attempt 1/3...
+    Tx sent: 0xfd091be78c071ad2712b775bb168e813b26fb3c48c7e94f5a7aa11731dcc11d4
+    Confirmed in block 157543474
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [26] ZEBRACVE — merging 61.435976673667722953 ---
+    Attempt 1/3...
+    Tx sent: 0x45e30d29a698bb5d8c37959c196a5032b68b374e117b3936b05bd0c41a56b29e
+    Confirmed in block 157543478
+    Attempt 1/3...
+    Tx sent: 0xbdcc3462ba19a06e12495e85f48de0894a30cf412f682923baeda3c300cfec71
+    Confirmed in block 157543480
+    Attempt 1/3...
+    Tx sent: 0x4f1d34740395b1c7f17a288db613eb90f2840a308e802f808fd52a7fafe89b3a
+    Confirmed in block 157543481
+    Attempt 1/3...
+    Tx sent: 0xa597418e4598062d7631d777891d78efc1f044b9cb974ecf2b4eaa76a50fe7a5
+    Confirmed in block 157543482
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [27] BONUSIRONWOOD — merging 42.281939687113170441 ---
+    Attempt 1/3...
+    Tx sent: 0x2118f5ed4da35e1cca734cf28ff0f78fcc3032c661c0624cb15e8a460d3b85ff
+    Confirmed in block 157543487
+    Attempt 1/3...
+    Tx sent: 0x121961d0aa0ddc3cce6d0c79cb93dcabaaec7cbcf2c1a73c9071d87b95cd3082
+    Confirmed in block 157543490
+    Attempt 1/3...
+    Tx sent: 0x4d0b2292cc8ec460db7fe807888fcf1f1ddd4ad8bdff42bc0edb2a572bb22653
+    Confirmed in block 157543493
+    Attempt 1/3...
+    Tx sent: 0x9cc8ac643eb27e2020712e154203ffc32c0bfd48283c088c69dc1bf4254b01e3
+    Confirmed in block 157543496
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [28] CIPHERSCAN — merging 81.549785867968133238 ---
+    Attempt 1/3...
+    Tx sent: 0xb638f74b19a22612fb40f4fef2861bd7ec1e85924cc58c11340e201d576af906
+    Confirmed in block 157543500
+    Attempt 1/3...
+    Tx sent: 0x83c5bdee06c1e8fb3c4d9aa88a10bfb264ca2b4cef5e04dcf7330f5f9cb3eaa1
+    Confirmed in block 157543503
+    Attempt 1/3...
+    Tx sent: 0x7b96b15d1513719d4d1e6a6789e0f4e15306175b323a9154dfab4720a98b4525
+    Confirmed in block 157543506
+    Attempt 1/3...
+    Tx sent: 0xd58cabf9f8027394a39f2a08853aaa0930e97af4bb94486b55de42bb7d0435d3
+    Confirmed in block 157543507
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [29] MINTEXPLOIT — merging 58.11313870208218194 ---
+    Attempt 1/3...
+    Tx sent: 0x983495bdad3865977d183ce97030c33b54dd07a2259b80f0734e092ae6a4aec8
+    Confirmed in block 157543510
+    Attempt 1/3...
+    Tx sent: 0x402cd8bd149f00cc78df0d9d4247c00e50056f3b6eeb70179c725843d25f2264
+    Confirmed in block 157543513
+    Attempt 1/3...
+    Tx sent: 0x6bb39a8b2bc38a9705cdaa77db31fac243642c153c94d39c05804e48030da2d9
+    Confirmed in block 157543515
+    Attempt 1/3...
+    Tx sent: 0xf27e1316f95b24bf97741e312a027d75285b028d442546c9e720b4e30163f06d
+    Confirmed in block 157543518
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [30] ZEBRACONSENSUS — merging 94.052156672092779263 ---
+    Attempt 1/3...
+    Tx sent: 0x7bdb4c218f4c0a20dcec51dbe4d69b5ed842af96593627d194ba98d5e0e4ddbb
+    Confirmed in block 157543521
+    Attempt 1/3...
+    Tx sent: 0x04aefe1e486bc612ee04b725ea071770e5fe487bf4017b2abef4e7a6bb8d0af4
+    Confirmed in block 157543525
+    Attempt 1/3...
+    Tx sent: 0x09b61b8b8b0a7cb490bad1234ad9c28805f385d2bb4f4985fa7277ee34f08446
+    Confirmed in block 157543529
+    Attempt 1/3...
+    Tx sent: 0x7d31b39fca3d489cab6ceeaeeb528ffecb07b29bbe380a6df6ef61be68e6a9b3
+    Confirmed in block 157543533
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [31] ZECROCKS — merging 112.961855487011367548 ---
+    Attempt 1/3...
+    Tx sent: 0x093cb4dc0aaea833df76b839aaa696d57e6c50db94d59b3e69ac9d1cbce85b5b
+    Confirmed in block 157543538
+    Attempt 1/3...
+    Tx sent: 0x7dd111f64c48ceeadff208cd778b9804d7c20c9067225bc84cd36b33b23832d8
+    Confirmed in block 157543542
+    Attempt 1/3...
+    Tx sent: 0xd86557ac7ad30b83db7151984fd9d3f5d711634040adaf18957bcba80637a495
+    Confirmed in block 157543546
+    Attempt 1/3...
+    Tx sent: 0xe827c71f59c6f2cf407159bddc5857dc015374664d434f946e3d0b5b7554e95e
+    Confirmed in block 157543550
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [32] VALARAUDIT — merging 40.649262072886276 ---
+    Attempt 1/3...
+    Tx sent: 0xaa7c5ad210e982a742919d877294c6f6a74d1b8b670140aabb024e0a3014323b
+    Confirmed in block 157543555
+    Attempt 1/3...
+    Tx sent: 0x2327775c8ff7b2a40cc548894b29461e6bbb7c7ac46edbd2f1a4885e27bf2579
+    Confirmed in block 157543561
+    Attempt 1/3...
+    Tx sent: 0xe36f3ca1c7ff02296c80c86e8191450c38a1e1c9bf39507642dcd17ce32e3c67
+    Confirmed in block 157543563
+    Attempt 1/3...
+    Tx sent: 0xbd903eefbf7cab321860be44c3e579e26d968fea5588ff98a3d2ea5b79071fa3
+    Confirmed in block 157543565
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [33] TACHYON — merging 7.89534299335760355 ---
+    Attempt 1/3...
+    Tx sent: 0xd47c66621f66de9c7a02580eb0f4328fb1d26515f19973edb9a7f07adabddedd
+    Confirmed in block 157543568
+    Attempt 1/3...
+    Tx sent: 0x79773903e05e11ac618a9e6c5b9b2a1300012e962a15df19841695164b5c8356
+    Confirmed in block 157543572
+    Attempt 1/3...
+    Tx sent: 0x33bd5fd8e51cfd9e1146fc1349f59d10843ff0d5bd2ac7f5131438fb7b172e4d
+    Confirmed in block 157543574
+    Attempt 1/3...
+    Tx sent: 0x9d238e69384ee3cb2a094be98c893e9df16461e0615fc6437e7e9f16d3e1d482
+    Confirmed in block 157543576
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [34] ORCHARDBOUNTY — merging 2.42419881727307331 ---
+    Attempt 1/3...
+    Tx sent: 0x576b8e4520a021b60d1d7e74f58e433e72a9e7baac3ac907fe01e665c5f5a063
+    Confirmed in block 157543580
+    Attempt 1/3...
+    Tx sent: 0x92c6f9b13784e4839fc0311d0fe3ec2bd1873884680d6cfba7877132e1e86374
+    Confirmed in block 157543581
+    Attempt 1/3...
+    Tx sent: 0x8e870d2fef3e4923c00db7fec83040c1df41eb96798138501b3192b25381b08a
+    Confirmed in block 157543583
+    Attempt 1/3...
+    Tx sent: 0x012a7081ac675797720dd6b3571c82409828ba5a3d210e01e5a8b0a6c99b5efb
+    Confirmed in block 157543586
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [35] BONUSORCHARD — merging 18.535241896014695275 ---
+    Attempt 1/3...
+    Tx sent: 0x045a08a46cd05ed45fd341cf48a0cbb563fd71588a2eed1bef53e92e9d7d690b
+    Confirmed in block 157543589
+    Attempt 1/3...
+    Tx sent: 0xb853eb3abdb66426086eaa7e28c3676dad9c246a487ef316d435f3db5e0bb50d
+    Confirmed in block 157543593
+    Attempt 1/3...
+    Tx sent: 0x510cd4548019a4055c6173ae844ddcbbb21b4812829c59377ffb441f38a614b5
+    Confirmed in block 157543597
+    Attempt 1/3...
+    Tx sent: 0xa3f9d0de2c987619df5a8ec78c6af756d8c82c0edf94d25b265c302d34e70bd7
+    Confirmed in block 157543601
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [36] VALARIRONWOOD — merging 42.918789032539020417 ---
+    Attempt 1/3...
+    Tx sent: 0xe009adfaeaf599fd805620500aa222c163873592644b482f593c5260b31cec5c
+    Confirmed in block 157543604
+    Attempt 1/3...
+    Tx sent: 0x47c2165c5ad54dd7399d4fa1c160531d721e39243a31ca38737bc73ab58041a2
+    Confirmed in block 157543607
+    Attempt 1/3...
+    Tx sent: 0x3cdfae43c46326b93ea509f1ca4501cf7e9fc2c1e34e918fec9fa088e958cb84
+    Confirmed in block 157543609
+    Attempt 1/3...
+    Tx sent: 0x89ad890484b8188ec02976efcc7d183ab75f243380946d7e9aa0a24f952e6815
+    Confirmed in block 157543613
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+--- [37] ZODL — merging 25.69716812460238937 ---
+    Attempt 1/3...
+    Tx sent: 0x85849ca3f8f7eec5af2c81a84d04842abea30ce51761ab316e69118386e67a28
+    Confirmed in block 157543616
+    Attempt 1/3...
+    Tx sent: 0xced834653a53c85f61a61e0d1fc452ff5a0a41aed58bbf75a7a22a19e0570223
+    Confirmed in block 157543618
+    Attempt 1/3...
+    Tx sent: 0x22e51f3f25d6432ffefbc7a701734a3ad03d6897d38215c144c9bca0a57f879e
+    Confirmed in block 157543620
+    Attempt 1/3...
+    Tx sent: 0x37f8ea076660dc7836280598269b1bc1d4ee429cea40129907d536855d77b646
+    Confirmed in block 157543622
+  ✅ Saved to D:\Code\liquidity\runs\zcash-q3\unwind-merge\progress.json
+
+🎉 Done! 37/37 markets merged.
+   sUSDS 56798.083316366271054762 → 59251.372969887868268818 (+2453.289653521597214056)
+
+Done.

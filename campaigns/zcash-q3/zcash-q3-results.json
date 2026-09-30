@@ -1,0 +1,308 @@
+{
+  "source": "https://forum.zcashcommunity.com/t/q3-coinholder-directed-retroactive-grants-program-results/57909",
+  "sourcePost": "post #1 by FPF, 2026-09-29T20:14:29Z, revision v2 as read 2026-09-30",
+  "sourceNote": "Revision v1 listed Connaugh Zcash Videos under Abstain. Post #3 (str4d, 2026-09-30T00:54Z) showed it passes ZIP 1016 once abstentions are excluded (1,140,324.875 ZEC non-abstaining, 66.4% in favour); post #4 (FPF, 2026-09-30T02:09Z) accepted and moved it to Funded. Rejected - Would Reconsider and Abstain are both None, so no market resolves Invalid.",
+  "readAt": "2026-09-30",
+  "counts": {
+    "funded": 17,
+    "rejected": 20
+  },
+  "results": [
+    {
+      "id": 1,
+      "shortName": "GRANTSHUB",
+      "title": "Zcash Grants Hub",
+      "forumTitle": "Zcash Grants Hub",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 2,
+      "shortName": "SHIELDEDSCAN",
+      "title": "ShieldedScan",
+      "forumTitle": "ShieldedScan",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 3,
+      "shortName": "ZECKIT",
+      "title": "ZecKit Post-M3 Stabilization and Developer Adoption",
+      "forumTitle": "ZecKit Post-M3 Stabilization and Developer Adoption",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 4,
+      "shortName": "ZCASHTOCASH",
+      "title": "zcashtocash via ZcashLabs",
+      "forumTitle": "zcashtocash via ZcashLabs",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 5,
+      "shortName": "RECONCILE",
+      "title": "zec-ironwood-reconcile",
+      "forumTitle": "Zec-ironwood-reconcile",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 6,
+      "shortName": "GLEYO",
+      "title": "Gleyo",
+      "forumTitle": "Gleyo",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 7,
+      "shortName": "FAUCET",
+      "title": "Self-Sovereign Zcash Testnet Faucet",
+      "forumTitle": "Self-Sovereign Zcash Testnet Faucet",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 8,
+      "shortName": "CYPHZEC",
+      "title": "CyphZec.com",
+      "forumTitle": "CyphZec.com",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 9,
+      "shortName": "ZECLEDGER",
+      "title": "ZecLedger",
+      "forumTitle": "Zecledger",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 10,
+      "shortName": "LIGHTWALLETD",
+      "title": "lightwalletd-rs",
+      "forumTitle": "lightwalletd-rs",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 11,
+      "shortName": "BLINDVAULT",
+      "title": "Blindvault",
+      "forumTitle": "Blindvault",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 12,
+      "shortName": "ZALLETRPC",
+      "title": "Zallet RPC Parity Harness",
+      "forumTitle": "Zallet RPC Parity Harness",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 13,
+      "shortName": "ZECMAP",
+      "title": "Zecmap",
+      "forumTitle": "Zecmap",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 14,
+      "shortName": "CONNAUGH",
+      "title": "Connaugh Zcash Videos",
+      "forumTitle": "Connaugh Zcash Videos",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 15,
+      "shortName": "ZAP1",
+      "title": "ZAP1 Attestation Protocol and Verification Tooling",
+      "forumTitle": "ZAP1 Attestation Protocol and Verification Tooling",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 16,
+      "shortName": "ZECBOOKS",
+      "title": "ZecBooks",
+      "forumTitle": "ZecBooks",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 17,
+      "shortName": "CIPHERPAY",
+      "title": "CipherPay",
+      "forumTitle": "CipherPay",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 18,
+      "shortName": "ZAFU",
+      "title": "Zafu Browser Extension",
+      "forumTitle": "Zafu Wallet",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 19,
+      "shortName": "ZAPP",
+      "title": "Zapp",
+      "forumTitle": "Zapp",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 20,
+      "shortName": "HWSDK",
+      "title": "Open-Source Zcash Hardware-Wallet SDK",
+      "forumTitle": "Open-Source Zcash Hardware-Wallet SDK",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 21,
+      "shortName": "NOZY",
+      "title": "Nozy Wallet",
+      "forumTitle": "Nozy Wallet",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 22,
+      "shortName": "THORSWAP",
+      "title": "THORSwap / Metro",
+      "forumTitle": "THORSwap/Metro",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 23,
+      "shortName": "UNSTOPPABLE",
+      "title": "Expanding Zcash In Unstoppable Wallet",
+      "forumTitle": "Expanding Zcash In Unstoppable Wallet",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 24,
+      "shortName": "ZCASHNAMES",
+      "title": "ZcashNames",
+      "forumTitle": "Zcash Names",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 25,
+      "shortName": "FRONTIERSEC",
+      "title": "Frontier Compute Zcash Security Research and Remediation Pack",
+      "forumTitle": "Frontier Compute Zcash Security Research and Remediation Pack",
+      "section": "Rejected - Do Not Support",
+      "answer": "No"
+    },
+    {
+      "id": 26,
+      "shortName": "ZEBRACVE",
+      "title": "Zebra Critical Vulnerability Bug Bounty (CVE-2026-34202)",
+      "forumTitle": "Zebra Critical Vulnerability Bug Bounty (CVE-2026-34202)",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 27,
+      "shortName": "BONUSIRONWOOD",
+      "title": "Bonus Grant - Ironwood zk-SNARK Formal Verification",
+      "forumTitle": "Bonus Grant for Ironwood zk-SNARK Formal Verification",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 28,
+      "shortName": "CIPHERSCAN",
+      "title": "CipherScan",
+      "forumTitle": "CipherScan",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 29,
+      "shortName": "MINTEXPLOIT",
+      "title": "Temporary Detectable Unlimited Mint and Sell Exploit",
+      "forumTitle": "Temporary Detectable Unlimited mint and sell Exploit",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 30,
+      "shortName": "ZEBRACONSENSUS",
+      "title": "Five Critical Zebra Consensus Divergence Vulnerabilities",
+      "forumTitle": "Five Critical Zebra Consensus Divergence Vulnerabilities",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 31,
+      "shortName": "ZECROCKS",
+      "title": "Zec.rocks (16 months of uptime)",
+      "forumTitle": "Zec.rocks (16 months of uptime for Zcash wallets)",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 32,
+      "shortName": "VALARAUDIT",
+      "title": "Ironwood external audit reimbursement",
+      "forumTitle": "Ironwood external audit reimbursement",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 33,
+      "shortName": "TACHYON",
+      "title": "Ironwood zk-SNARK Formal Verification (Project Tachyon)",
+      "forumTitle": "Ironwood zk-SNARK Formal Verification (Project Tachyon)",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 34,
+      "shortName": "ORCHARDBOUNTY",
+      "title": "Orchard Counterfeiting Vulnerability Bug Bounty",
+      "forumTitle": "Orchard Counterfeiting Vulnerability Bug Bounty",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 35,
+      "shortName": "BONUSORCHARD",
+      "title": "Bonus Grant - Orchard Counterfeiting Bug Bounty",
+      "forumTitle": "Bonus Grant for Orchard Counterfeiting Vulnerability Bug Bounty",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 36,
+      "shortName": "VALARIRONWOOD",
+      "title": "ValarGroup Ironwood Work",
+      "forumTitle": "Valargroup Ironwood work",
+      "section": "Funded",
+      "answer": "Yes"
+    },
+    {
+      "id": 37,
+      "shortName": "ZODL",
+      "title": "ZODL Q1 2026 Core Protocol Development",
+      "forumTitle": "ZODL Q1 2026 Core Protocol Development",
+      "section": "Funded",
+      "answer": "Yes"
+    }
+  ]
+}
