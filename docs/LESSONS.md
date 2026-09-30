@@ -28,6 +28,21 @@ What happened. What the wrong assumption was.
 
 ---
 
+### A plan hash that leaked the wallet balance  2026-09-30 · cost: caught before it cost anything
+`planShape` masked wei-length integers (13+ digits) *before* decimals. An 18-decimal `formatUnits`
+fraction is itself 13+ digits, so `59251.372969887868268818` became `59251.<n>`, and the integer
+part of the balance ended up in the approval hash. The withdraw scripts print short decimals, so
+this never fired there. Found while building the first scheduled settle run, whose plan printed full
+18-decimal amounts. Two smaller traps turned up in the same work. A padded amount column moves
+whitespace in a hashed line whenever an amount's width changes. And a finalization check read
+`Date.now()`, while Reality compares against `block.timestamp`.
+**Caught by:** inspecting the `planShape` of a real dry run, and a fork rehearsal (hardhat fork of
+Optimism, time warped past finalization, live run against the fork) that compared the before/after
+hashes.
+**Now guarded by:** `tests/settle-schedule.test.js` "masks an 18-decimal amount whole". The script
+prints amounts unpadded and reads chain time. It is not a general check; a new schedulable script
+should be fork-rehearsed the same way.
+
 ### A green check that checked nothing — four times  2026-09-23 · cost: caught before it cost anything
 
 Every time files moved, a guard kept passing while silently covering nothing:

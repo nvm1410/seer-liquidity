@@ -481,7 +481,7 @@
         "required": ["id", "script", "notBefore", "notAfter", "status"],
         "properties": {
           "id": { "type": "string" },
-          "script": { "type": "string", "description": "campaigns/<slug>/<withdraw|remove script>.js, on lib/run.js, unwind stage." },
+          "script": { "type": "string", "description": "campaigns/<slug>/<script>.js on lib/run.js: withdraw/remove (unwind stage) or resolve/redeem (settle stage, importing finalAnswerProblems). Never an answer script." },
           "args": { "type": "array", "items": { "type": "string" }, "description": "Passed to the script in both the dry and the live run. Never --live or --yes; the runner adds those." },
           "notBefore": { "type": "string" },
           "notAfter": { "type": "string", "description": "Past this the entry is refused, never fired late." },

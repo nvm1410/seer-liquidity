@@ -80,7 +80,7 @@ describe("schedule add", () => {
     const dir = fixture();
     const r = tool(dir, ["add", "demo", "campaigns/demo/answer-demo.js", `--at=${new Date(Date.now() + 3600_000).toISOString()}`, "--yes"]);
     assert.equal(r.code, 2, r.out);
-    assert.match(r.out, /only withdraw\/remove scripts/);
+    assert.match(r.out, /only withdraw\/remove or resolve\/redeem scripts/);
     assert.equal(manifest(dir).schedule, undefined);
   });
 
@@ -181,5 +181,61 @@ describe("validate-manifest", () => {
     assert.equal(r.status, 1);
     assert.match(r.stderr, /superseded\/ is not schedulable/);
     assert.match(r.stderr, /needs approvedAt and planHash/);
+  });
+});
+
+// Settle scripts became schedulable on 2026-09-30 (zcash-q3), but only ones that
+// import finalAnswerProblems — the check that refuses to resolve on anything but
+// the approved, final answers. Answers themselves stay unschedulable.
+describe("schedule scope: settle", () => {
+  const settleStub = (importLine) => `// import { run } from "../../lib/run.js";
+${importLine}
+// stage: "settle-resolve-redeem"
+import fs from "fs";
+fs.appendFileSync("calls.txt", process.argv.slice(2).join(" ") + "\\n");
+console.log("Market 0x00000000000000000000000000000000000000bb redeem 12.5");
+console.log("~ " + (process.env.STUB_STATUS ?? "3 problem(s), not final until 2026-10-03T20:59:19Z"));
+`;
+  const GOOD = "campaigns/demo/resolve-redeem-demo.js";
+  const BAD = "campaigns/demo/redeem-unguarded-demo.js";
+
+  function settleFixture() {
+    const dir = fixture();
+    fs.writeFileSync(path.join(dir, GOOD), settleStub(`// import { finalAnswerProblems } from "../../lib/settle.js";`));
+    fs.writeFileSync(path.join(dir, BAD), settleStub(`// import { planRedemption } from "../../lib/settle.js";`));
+    return dir;
+  }
+  const at = () => `--at=${new Date(Date.now() + 3600_000).toISOString()}`;
+
+  it("accepts a resolve/redeem script that imports finalAnswerProblems", () => {
+    const dir = settleFixture();
+    const r = tool(dir, ["add", "demo", GOOD, at(), "--yes"]);
+    assert.equal(r.code, 0, r.out);
+    assert.equal(entry(dir).status, "pending");
+  });
+
+  it("refuses a redeem script without the final-answer check", () => {
+    const dir = settleFixture();
+    const r = tool(dir, ["add", "demo", BAD, at(), "--yes"]);
+    assert.equal(r.code, 2, r.out);
+    assert.match(r.out, /must import finalAnswerProblems/);
+  });
+
+  it("still refuses an answer script", () => {
+    const dir = settleFixture();
+    const r = tool(dir, ["add", "demo", "campaigns/demo/answer-demo.js", at(), "--yes"]);
+    assert.equal(r.code, 2, r.out);
+    assert.match(r.out, /Reality answers are never scheduled/);
+  });
+
+  it("fires when only the ~ status lines changed between approval and fire", () => {
+    const dir = settleFixture();
+    assert.equal(tool(dir, ["add", "demo", GOOD, at(), "--yes"]).code, 0);
+    const m = manifest(dir);
+    m.schedule[0].notBefore = new Date(Date.now() - 3600_000).toISOString();
+    m.schedule[0].notAfter = new Date(Date.now() + 47 * 3600_000).toISOString();
+    fs.writeFileSync(path.join(dir, "lifecycle", "demo.json"), JSON.stringify(m, null, 2));
+    tool(dir, ["tick"], { STUB_STATUS: "0 problem(s); every answer is final and matches" });
+    assert.equal(entry(dir).status, "fired", entry(dir).notes);
   });
 });

@@ -17,7 +17,8 @@
 //      which pools, in what order, may not.
 //
 // Every other harness guard still runs on the live invocation. Only
-// withdraw/remove scripts on the harness may be scheduled (lib/schedule.js).
+// withdraw/remove scripts, or resolve/redeem scripts that check the answers
+// against an approved results file, may be scheduled (lib/schedule.js).
 //
 // A failed run is never retried: partial on-chain state needs a human. A run
 // that crashes the runner itself stays "running" and is never re-fired either.

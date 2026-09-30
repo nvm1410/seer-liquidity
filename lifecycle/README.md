@@ -84,16 +84,24 @@ is an error rather than a silent no-op). The semantic checks are the valuable pa
    catches a Gnosis address pasted into an Optimism manifest without anyone maintaining a second
    copy of the truth
 
-10. every `schedule` entry names a withdraw/remove script in this campaign's directory, on
-    `lib/run.js`, in an unwind stage — and a pending one carries `approvedAt` and `planHash`
+10. every `schedule` entry names a withdraw/remove script (unwind stage) or a resolve/redeem script
+    (settle stage, importing `finalAnswerProblems`) in this campaign's directory, on `lib/run.js` —
+    never an answer script — and a pending one carries `approvedAt` and `planHash`
 
 The first nine are mutation-tested: corrupting each one makes `npm run lint:manifest` exit 1. The
 tenth is exercised by `tests/schedule.test.js`.
 
 ## Scheduled runs
 
-A withdrawal can be approved now and fired unattended later. **Withdraw/unwind only** — Reality
-answers post a bond on a judgment, and resolve/redeem stay with a human too.
+A withdrawal — or a resolve/redeem — can be approved now and fired unattended later. **Reality
+answers are never schedulable**: an answer is the judgment itself and posts a bond.
+
+A settle script (`resolve`/`redeem` in its name, `settle-*` stage) is schedulable only if it imports
+`finalAnswerProblems` from `lib/settle.js` and refuses to send unless every question is final with
+the answer pinned in the campaign's results file. That keeps the judgment at approval time, not at
+fire time. Such a script prints chain state (final or not, resolved or not) on `~ ` status lines,
+which `planShape` drops, so a plan approved before finalization hashes the same after it.
+Precedent: `campaigns/zcash-q3/resolve-redeem-zcash-markets.js` (added 2026-09-30).
 
 ```bash
 node tools/schedule.js add zcash-q3 campaigns/zcash-q3/withdraw-zcash-liquidity.js --at=2026-10-15T09:00:00Z [--window=48h] [--args="--resume"]
