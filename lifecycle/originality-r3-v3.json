@@ -194,6 +194,16 @@
         "archive/runs/originality-r3-v3/check-originality-r3-v3-verify.log"
       ],
       "notes": "Full verify OK from live chain: 102 markets, 196/196 pools within 0.001 of seed, 1000 parent Invalid and 1000 Invalid of each middle market held, no idle bundle or repo tokens. Failure tests: 6 corrupted structure fields -> all caught (on the fork); corrupted price -> both legs caught (mainnet)."
+    },
+    {
+      "name": "phase2-ui",
+      "status": "done",
+      "artifacts": [
+        "campaigns/originality-r3-v3/export-ui-markets.js",
+        "https://github.com/seer-pm/ai-prediction-markets/pull/18",
+        "https://github.com/seer-pm/demo/pull/505"
+      ],
+      "notes": "Round 3 tab and leaderboard entry point at this set; the first set is its own withdraw-only tab with a notice on both. Mint splits on each middle market in its own transaction; sell-all merges the middle markets before the parent. tsc -b, build and lint pass; Chromium at 1440px and 400px: 98 rows, 0 console errors; all 196 UI prices equal chain to 1e-16. NOT run with a wallet: trade and sell-all through the middle level. Redeem for three levels is not built."
     }
   ],
   "evidenceLog": [
@@ -253,5 +263,19 @@
     "maxSymbolBytes": 31,
     "realityCollisionCheck": "clean: 3 parent + 3 middle + 98 score questions all new",
     "dryRunLog": "archive/runs/originality-r3-v3/create-originality-r3-v3-dryrun.log"
+  },
+  "ui": {
+    "repo": "ai-prediction-markets",
+    "branch": "feat/originality-r3-v3",
+    "pr": "https://github.com/seer-pm/ai-prediction-markets/pull/18",
+    "seerSyncPr": "https://github.com/seer-pm/demo/pull/505",
+    "views": [
+      "Round 3 · Originality: the corrected set, flat list of 98 repos",
+      "Round 3 · Incorrect market: the first set, withdraw-only, hidden from the leaderboard"
+    ],
+    "openItems": [
+      "trade and sell-all not exercised with a real wallet",
+      "redeem after settlement not built for three levels"
+    ]
   }
 }
