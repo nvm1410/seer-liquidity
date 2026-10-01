@@ -17,6 +17,23 @@ sell back and merge out — 4 wallets had deposited 3,339.67 sUSDS as of 2026-10
 scripts, score markets merged BEFORE the parent, as with L1.
 **Do not unwind while users are still in:** our pools are their only exit.
 
+### originality-r3 (the incorrect set) MUST BE SETTLED when round 3 ends — decided 2026-10-01
+A sell-all does not get a user fully out. Measured on a real one (trade wallet `0xa7a92bd4…1ff1`,
+tx `0xea881c6f…908b`): 0.4228 sUSDS came back from a 0.50 deposit. The parent merge needs equal
+amounts of bundle A, B, C and Invalid, so it stops at the scarcest (A ran out); 0.0878 B, 0.0069 C,
+0.0772 Invalid and 11 score-market Invalid balances stayed behind. There is no pool for bundle
+tokens, so that remainder only pays out when the incorrect PARENT resolves. The supply check above
+therefore never falls back to exactly 1,000 — "users are out" means "have sold what can be sold".
+**So when round 3's results are known, settle BOTH sets, not just originality-r3-v3:**
+- answer the incorrect parent's 3 count questions with the same answers as the corrected parent's,
+  and its 98 score questions with the same scores (they are separate Reality questions: a different
+  openingTime, so 101 more bonds, refunded at finalization);
+- resolve all 99 markets; the UI's redeem for that set is the existing two-level one and works;
+- our own 1,000: withdraw the 196 positions and merge what merges BEFORE answering, then redeem the
+  rest after resolution — score markets first, then the parent.
+The user approved planning for this ("yes", 2026-10-01). It is a `settle` run under the
+seer-market-lifecycle skill, with its own gate.
+
 ### originality-r2: 8,300.58 sUSDS stranded
 One parent outcome (index 63, `EIPS`) sits at zero, and `mergePositions` is capped at
 `min(balance)` across the full partition, so phase 3 cannot run at all.
