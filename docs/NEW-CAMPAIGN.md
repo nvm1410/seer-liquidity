@@ -27,7 +27,7 @@ Expect four counts, and expect them to **change only when you changed something*
 count moved and you cannot say which file you added or removed, find out before going
 further — a guard that has quietly stopped covering anything still exits 0.
 
-As of 2026-09-23: **52 scripts gated · 35 freeze paths · 8 manifests · 67 tests.**
+As of 2026-10-01: **60 scripts gated · 38 freeze paths · 9 manifests · 96 tests.**
 These are a dated observation, not a target; adding a campaign moves the first two.
 
 Read the counts, not the exit code — see the first entry in LESSONS.md for why.
@@ -43,6 +43,7 @@ Never start from a blank file, and never fork a frozen script. Pick the closest 
 | multi-select categorical | gnosis-pd (v2) | `campaigns/gnosis-pd/` |
 | multi-scalar, one question per outcome | l1-deepfunding | `campaigns/l1-deepfunding/` |
 | a parent with conditional children | originality-r3 | `campaigns/originality-r3/` |
+| three levels: parent, a conditional market per group, children on its outcomes | originality-r3-v3 | `campaigns/originality-r3-v3/` |
 | anything on Gnosis / Swapr (Algebra) | gnosis-pd | `campaigns/gnosis-pd/` |
 
 Read that campaign's `lifecycle/<slug>.json` beside its guide in `docs/guides/`. The manifest tells

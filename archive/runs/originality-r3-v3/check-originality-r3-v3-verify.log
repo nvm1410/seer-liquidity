@@ -1,0 +1,16 @@
+check-originality-r3-v3-pools — DRY RUN (nothing will be sent)
+  campaign originality-r3-v3 (launch/originality), stage verify-pools
+  chain 10 ok (read-only)
+
+Verify corrected round-3 originality (markets + pools), seed campaigns/originality-r3-v3/originality-r3-v3-seed.json
+   parent 0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87: Bundle A / Bundle B / Bundle C / Invalid result, symbols ORIG_R3C_A / ORIG_R3C_B / ORIG_R3C_C / SER-INVALID
+   Bundle A middle 0xC217920a91F1B3D56276393AA5345f01a848eCF0: 33 repos + Invalid, on ORIG_R3C_A
+   Bundle B middle 0xf0638B8999AAa0de3F5D02048A385A64E7A63AEc: 33 repos + Invalid, on ORIG_R3C_B
+   Bundle C middle 0x99A941135226813037E15e34956FdD79761307d3: 32 repos + Invalid, on ORIG_R3C_C
+   score markets: 98/98 checked
+   pools: 196/196 live and on their seed price (±0.001)
+   wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0: sUSDS 58251.372969887868268818, parent Invalid 1000, middle Invalid 1000 / 1000 / 1000, idle bundle tokens 0 / 0 / 0, worst idle repo token 0.000000000000009333
+
+VERIFY OK: https://app.seer.pm/markets/10/0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87
+
+Dry run complete — nothing was sent.

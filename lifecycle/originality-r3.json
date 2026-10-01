@@ -5,7 +5,7 @@
   "version": "v2 (bundled multiscalar parent)",
   "mode": "launch",
   "family": "originality",
-  "status": "complete",
+  "status": "superseded",
   "source": {
     "request": "Round 3 originality, rebuilt: one multiscalar parent 'Round 3 - Originality: evaluated repositories by bundle' with outcomes Bundle A/B/C, one uint question per bundle ('How many repositories in Bundle X will be evaluated for originality during Round 3 of the Deep Funding experiment?'), plus one conditional scalar score market per repo (98), each conditional on its bundle's outcome token. Bundles = the first 33 / next 33 / last 32 repos in round-2 outcome order.",
     "docs": [],
@@ -307,5 +307,10 @@
     "maxSymbolBytes": 31,
     "realityCollisionCheck": "clean: 3 parent questions + 98 children all new",
     "dryRunLog": "create-originality-r3-v2-dryrun.log"
+  },
+  "supersededBy": {
+    "manifest": "lifecycle/originality-r3-v3.json",
+    "why": "Its 98 score markets are conditional directly on the bundle tokens. The level between — one multi-categorical market per bundle, which repositories were evaluated — is missing, so a score position pays on the bundle count rather than on whether its own repo was evaluated.",
+    "fate": "Left live and seeded on purpose: its pools are the only exit for the 4 wallets that had deposited 3,339.67 sUSDS by 2026-10-01. The UI shows it withdraw-only. Our 1,000 sUSDS is to be unwound once they are out (docs/NEXT.md)."
   }
 }

@@ -1,0 +1,377 @@
+create-originality-r3-v3-markets — DRY RUN (nothing will be sent)
+  campaign originality-r3-v3 (launch/originality), stage create-markets
+  chain 10 ok, wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+
+DRY RUN — corrected originality round 3 market creation (three levels)
+   wallet  : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+   seed    : campaigns/originality-r3-v3/originality-r3-v3-seed.json (prices from campaigns/originality-r3/originality-r3-seed.json, generated 2026-09-22T02:40:51.847Z)
+   bundles : Bundle A 33 / Bundle B 33 / Bundle C 32
+   children: 98
+
+Seed file validated: 1 parent, 3 middle markets, 98 score markets, 297 distinct ERC20 symbols.
+
+Factory config:
+   arbitrator      : 0x5AFa42b30955f137e10f89dfb5EF1542a186F90e
+   realitio        : 0x0eF940F7f053a2eF5D6578841072488aF0c7d89A
+   questionTimeout : 302400 s
+   collateralToken : 0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0
+   openingTime     : 1790822800 (2026-10-01T02:46:40.000Z) — answerable immediately, as in round 2
+
+Checking Reality for pre-existing question ids...
+   OK: no collisions — 104 questions (3 parent, 3 middle, 98 score) are all new
+
+====================================================================================================
+IMMUTABLE ON-CHAIN TEXT — cannot be edited after creation. Review before going live.
+====================================================================================================
+
+PARENT market name (114 chars):
+   How many repositories in [bundle] will be evaluated for originality during Round 3 of the Deep Funding experiment?
+   3 outcomes + "Invalid result" (factory-added, token SER-INVALID) = 4 slots
+      [0] Bundle A   ORIG_R3C_A
+      [1] Bundle B   ORIG_R3C_B
+      [2] Bundle C   ORIG_R3C_C
+
+Encoded Reality question — PARENT Bundle A (125 chars):
+   How many repositories in Bundle A will be evaluated for originality during Round 3 of the Deep Funding experiment?␟misc␟en_US
+
+Encoded Reality question — PARENT Bundle B (125 chars):
+   How many repositories in Bundle B will be evaluated for originality during Round 3 of the Deep Funding experiment?␟misc␟en_US
+
+Encoded Reality question — PARENT Bundle C (125 chars):
+   How many repositories in Bundle C will be evaluated for originality during Round 3 of the Deep Funding experiment?␟misc␟en_US
+
+MIDDLE market — Bundle A (111 chars), conditional on ORIG_R3C_A:
+   Which repositories in Bundle A will be evaluated for originality during Round 3 of the Deep Funding experiment?
+   33 outcomes + "Invalid result" = 34 slots — outcome label / ERC20 symbol:
+      [ 0] ethereum/py_ecc                          PY_ECC_R3C
+      [ 1] blockscout/blockscout                    BLOCKSCOUT_R3C
+      [ 2] LFDT-web3j/web3j                         LFDT_WEB3J_R3C
+      [ 3] herumi/mcl                               MCL_R3C
+      [ 4] paulmillr/noble-curves                   NOBLE_CURVES_R3C
+      [ 5] arkworks-rs/algebra                      ALGEBRA_R3C
+      [ 6] flashbots/rbuilder                       RBUILDER_R3C
+      [ 7] protofire/solhint                        SOLHINT_R3C
+      [ 8] l2beat/l2beat                            L2BEAT_R3C
+      [ 9] Consensys/gnark-crypto                   GNARK_CRYPTO_R3C
+      [10] Vectorized/solady                        SOLADY_R3C
+      [11] taikoxyz/taiko-mono                      TAIKO_MONO_R3C
+      [12] flashbots/mev-boost                      MEV_BOOST_R3C
+      [13] flashbots/mev-boost-relay                FLASHBOTS_MEV_BOOST_RELAY_R3C
+      [14] ethereum/js-ethereum-cryptography        JS_ETHEREUM_CRYPTOGRAPHY_R3C
+      [15] libp2p/libp2p                            LIBP2P_R3C
+      [16] supranational/blst                       BLST_R3C
+      [17] wighawag/hardhat-deploy                  HARDHAT_DEPLOY_R3C
+      [18] ethstaker/eth-docker                     ETH_DOCKER_R3C
+      [19] DefiLlama/DefiLlama-Adapters             DEFILLAMA_ADAPTERS_R3C
+      [20] DefiLlama/chainlist                      CHAINLIST_R3C
+      [21] Certora/CertoraProver                    CERTORAPROVER_R3C
+      [22] Plonky3/Plonky3                          PLONKY3_R3C
+      [23] ChainSafe/bls                            BLS_R3C
+      [24] intellij-solidity/intellij-solidity      INTELLIJ_SOLIDITY_R3C
+      [25] dappnode/DAppNode                        DAPPNODE_R3C
+      [26] wealdtech/ethdo                          ETHDO_R3C
+      [27] lambdaclass/lambdaworks                  LAMBDAWORKS_R3C
+      [28] smartcontracts/simple-optimism-node      SIMPLE_OPTIMISM_NODE_R3C
+      [29] skalenetwork/libBLS                      LIBBLS_R3C
+      [30] shazow/whatsabi                          WHATSABI_R3C
+      [31] TrueBlocks/trueblocks-core               TRUEBLOCKS_CORE_R3C
+      [32] EspressoSystems/jellyfish                JELLYFISH_R3C
+   Encoded Reality question (887 chars):
+   Which repositories in Bundle A will be evaluated for originality during Round 3 of the Deep Funding experiment?␟"ethereum/py_ecc","blockscout/blockscout","LFDT-web3j/web3j","herumi/mcl","paulmillr/noble-curves","arkworks-rs/algebra","flashbots/rbuilder","protofire/solhint","l2beat/l2beat","Consensys/gnark-crypto","Vectorized/solady","taikoxyz/taiko-mono","flashbots/mev-boost","flashbots/mev-boost-relay","ethereum/js-ethereum-cryptography","libp2p/libp2p","supranational/blst","wighawag/hardhat-deploy","ethstaker/eth-docker","DefiLlama/DefiLlama-Adapters","DefiLlama/chainlist","Certora/CertoraProver","Plonky3/Plonky3","ChainSafe/bls","intellij-solidity/intellij-solidity","dappnode/DAppNode","wealdtech/ethdo","lambdaclass/lambdaworks","smartcontracts/simple-optimism-node","skalenetwork/libBLS","shazow/whatsabi","TrueBlocks/trueblocks-core","EspressoSystems/jellyfish"␟misc␟en_US
+
+MIDDLE market — Bundle B (111 chars), conditional on ORIG_R3C_B:
+   Which repositories in Bundle B will be evaluated for originality during Round 3 of the Deep Funding experiment?
+   33 outcomes + "Invalid result" = 34 slots — outcome label / ERC20 symbol:
+      [ 0] a16z/halmos                              HALMOS_R3C
+      [ 1] succinctlabs/op-succinct                 OP_SUCCINCT_R3C
+      [ 2] succinctlabs/sp1                         SP1_R3C
+      [ 3] otterscan/otterscan                      OTTERSCAN_R3C
+      [ 4] lambdaclass/ethrex                       ETHREX_R3C
+      [ 5] NethermindEth/juno                       JUNO_R3C
+      [ 6] Commit-Boost/commit-boost-client         COMMIT_BOOST_CLIENT_R3C
+      [ 7] Cyfrin/aderyn                            ADERYN_R3C
+      [ 8] 0xMiden/miden-vm                         MIDEN_VM_R3C
+      [ 9] holiman/goevmlab                         GOEVMLAB_R3C
+      [10] edb-rs/edb                               EDB_R3C
+      [11] evmts/tevm-monorepo                      TEVM_MONOREPO_R3C
+      [12] succinctlabs/rsp                         RSP_R3C
+      [13] aestus-relay/mev-boost-relay             AESTUS_MEV_BOOST_RELAY_R3C
+      [14] OffchainLabs/stylus-sdk-rs               STYLUS_SDK_RS_R3C
+      [15] ethstaker/ethstaker-deposit-cli          ETHSTAKER_DEPOSIT_CLI_R3C
+      [16] dl-solarity/solidity-lib                 SOLIDITY_LIB_R3C
+      [17] risc0/risc0-ethereum                     RISC0_ETHEREUM_R3C
+      [18] powdr-labs/powdr                         POWDR_R3C
+      [19] axiom-crypto/snark-verifier              SNARK_VERIFIER_R3C
+      [20] swiss-knife-xyz/swiss-knife              SWISS_KNIFE_R3C
+      [21] a16z/helios                              HELIOS_R3C
+      [22] alloy-rs/alloy                           ALLOY_R3C
+      [23] apeworx/ape                              APE_R3C
+      [24] chainsafe/lodestar                       LODESTAR_R3C
+      [25] consensys/teku                           TEKU_R3C
+      [26] erigontech/erigon                        ERIGON_R3C
+      [27] eth-infinitism/account-abstraction       ACCOUNT_ABSTRACTION_R3C
+      [28] ethereum-lists/chains                    CHAINS_R3C
+      [29] ethereum/consensus-specs                 CONSENSUS_SPECS_R3C
+      [30] ethereum/eips                            EIPS_R3C
+      [31] ipsilon/evmone                           EVMONE_R3C
+      [32] ethereum/execution-apis                  EXECUTION_APIS_R3C
+   Encoded Reality question (862 chars):
+   Which repositories in Bundle B will be evaluated for originality during Round 3 of the Deep Funding experiment?␟"a16z/halmos","succinctlabs/op-succinct","succinctlabs/sp1","otterscan/otterscan","lambdaclass/ethrex","NethermindEth/juno","Commit-Boost/commit-boost-client","Cyfrin/aderyn","0xMiden/miden-vm","holiman/goevmlab","edb-rs/edb","evmts/tevm-monorepo","succinctlabs/rsp","aestus-relay/mev-boost-relay","OffchainLabs/stylus-sdk-rs","ethstaker/ethstaker-deposit-cli","dl-solarity/solidity-lib","risc0/risc0-ethereum","powdr-labs/powdr","axiom-crypto/snark-verifier","swiss-knife-xyz/swiss-knife","a16z/helios","alloy-rs/alloy","apeworx/ape","chainsafe/lodestar","consensys/teku","erigontech/erigon","eth-infinitism/account-abstraction","ethereum-lists/chains","ethereum/consensus-specs","ethereum/eips","ipsilon/evmone","ethereum/execution-apis"␟misc␟en_US
+
+MIDDLE market — Bundle C (111 chars), conditional on ORIG_R3C_C:
+   Which repositories in Bundle C will be evaluated for originality during Round 3 of the Deep Funding experiment?
+   32 outcomes + "Invalid result" = 33 slots — outcome label / ERC20 symbol:
+      [ 0] argotorg/fe                              FE_R3C
+      [ 1] ethereum/go-ethereum                     GO_ETHEREUM_R3C
+      [ 2] remix-project-org/remix-project          REMIX_PROJECT_R3C
+      [ 3] argotorg/solidity                        SOLIDITY_R3C
+      [ 4] argotorg/sourcify                        SOURCIFY_R3C
+      [ 5] ethereum/web3.py                         WEB3_PY_R3C
+      [ 6] ethers-io/ethers.js                      ETHERS_JS_R3C
+      [ 7] foundry-rs/foundry                       FOUNDRY_R3C
+      [ 8] grandinetech/grandine                    GRANDINE_R3C
+      [ 9] hyperledger-web3j/web3j                  HYPERLEDGER_WEB3J_R3C
+      [10] hyperledger/besu                         BESU_R3C
+      [11] nethereum/nethereum                      NETHEREUM_R3C
+      [12] nethermindeth/nethermind                 NETHERMIND_R3C
+      [13] nomicfoundation/hardhat                  HARDHAT_R3C
+      [14] openzeppelin/openzeppelin-contracts      OPENZEPPELIN_CONTRACTS_R3C
+      [15] paradigmxyz/reth                         RETH_R3C
+      [16] OffchainLabs/prysm                       PRYSM_R3C
+      [17] safe-global/safe-smart-account           SAFE_SMART_ACCOUNT_R3C
+      [18] scaffold-eth/scaffold-eth-2              SCAFFOLD_ETH_2_R3C
+      [19] sigp/lighthouse                          LIGHTHOUSE_R3C
+      [20] status-im/nimbus-eth2                    NIMBUS_ETH2_R3C
+      [21] vyperlang/titanoboa                      TITANOBOA_R3C
+      [22] vyperlang/vyper                          VYPER_R3C
+      [23] wevm/viem                                VIEM_R3C
+      [24] argotorg/hevm                            HEVM_R3C
+      [25] ethdebug/format                          FORMAT_R3C
+      [26] argotorg/act                             ACT_R3C
+      [27] ethpandaops/ethereum-package             ETHEREUM_PACKAGE_R3C
+      [28] ethpandaops/ethereum-helm-charts         ETHEREUM_HELM_CHARTS_R3C
+      [29] ethpandaops/checkpointz                  CHECKPOINTZ_R3C
+      [30] lambdaclass/lambda_ethereum_consensus    LAMBDA_ETHEREUM_CONSENSUS_R3C
+      [31] erigontech/silkworm                      SILKWORM_R3C
+   Encoded Reality question (877 chars):
+   Which repositories in Bundle C will be evaluated for originality during Round 3 of the Deep Funding experiment?␟"argotorg/fe","ethereum/go-ethereum","remix-project-org/remix-project","argotorg/solidity","argotorg/sourcify","ethereum/web3.py","ethers-io/ethers.js","foundry-rs/foundry","grandinetech/grandine","hyperledger-web3j/web3j","hyperledger/besu","nethereum/nethereum","nethermindeth/nethermind","nomicfoundation/hardhat","openzeppelin/openzeppelin-contracts","paradigmxyz/reth","OffchainLabs/prysm","safe-global/safe-smart-account","scaffold-eth/scaffold-eth-2","sigp/lighthouse","status-im/nimbus-eth2","vyperlang/titanoboa","vyperlang/vyper","wevm/viem","argotorg/hevm","ethdebug/format","argotorg/act","ethpandaops/ethereum-package","ethpandaops/ethereum-helm-charts","ethpandaops/checkpointz","lambdaclass/lambda_ethereum_consensus","erigontech/silkworm"␟misc␟en_US
+
+SCORE market names (98) with outcome labels and ERC20 symbols, each conditional on its repo token:
+   Bundle A[ 0] What will be the average originality score of ethereum/py_ecc in Round 3 of the Deep Funding experiment?
+        on PY_ECC_R3C  outcomes [DOWN, UP]  symbols [PY_ECC_D_R3C, PY_ECC_U_R3C]
+   Bundle A[ 1] What will be the average originality score of blockscout/blockscout in Round 3 of the Deep Funding experiment?
+        on BLOCKSCOUT_R3C  outcomes [DOWN, UP]  symbols [BLOCKSCOUT_D_R3C, BLOCKSCOUT_U_R3C]
+   Bundle A[ 2] What will be the average originality score of LFDT-web3j/web3j in Round 3 of the Deep Funding experiment?
+        on LFDT_WEB3J_R3C  outcomes [DOWN, UP]  symbols [LFDT_WEB3J_D_R3C, LFDT_WEB3J_U_R3C]
+   Bundle A[ 3] What will be the average originality score of herumi/mcl in Round 3 of the Deep Funding experiment?
+        on MCL_R3C  outcomes [DOWN, UP]  symbols [MCL_D_R3C, MCL_U_R3C]
+   Bundle A[ 4] What will be the average originality score of paulmillr/noble-curves in Round 3 of the Deep Funding experiment?
+        on NOBLE_CURVES_R3C  outcomes [DOWN, UP]  symbols [NOBLE_CURVES_D_R3C, NOBLE_CURVES_U_R3C]
+   Bundle A[ 5] What will be the average originality score of arkworks-rs/algebra in Round 3 of the Deep Funding experiment?
+        on ALGEBRA_R3C  outcomes [DOWN, UP]  symbols [ALGEBRA_D_R3C, ALGEBRA_U_R3C]
+   Bundle A[ 6] What will be the average originality score of flashbots/rbuilder in Round 3 of the Deep Funding experiment?
+        on RBUILDER_R3C  outcomes [DOWN, UP]  symbols [RBUILDER_D_R3C, RBUILDER_U_R3C]
+   Bundle A[ 7] What will be the average originality score of protofire/solhint in Round 3 of the Deep Funding experiment?
+        on SOLHINT_R3C  outcomes [DOWN, UP]  symbols [SOLHINT_D_R3C, SOLHINT_U_R3C]
+   Bundle A[ 8] What will be the average originality score of l2beat/l2beat in Round 3 of the Deep Funding experiment?
+        on L2BEAT_R3C  outcomes [DOWN, UP]  symbols [L2BEAT_D_R3C, L2BEAT_U_R3C]
+   Bundle A[ 9] What will be the average originality score of Consensys/gnark-crypto in Round 3 of the Deep Funding experiment?
+        on GNARK_CRYPTO_R3C  outcomes [DOWN, UP]  symbols [GNARK_CRYPTO_D_R3C, GNARK_CRYPTO_U_R3C]
+   Bundle A[10] What will be the average originality score of Vectorized/solady in Round 3 of the Deep Funding experiment?
+        on SOLADY_R3C  outcomes [DOWN, UP]  symbols [SOLADY_D_R3C, SOLADY_U_R3C]
+   Bundle A[11] What will be the average originality score of taikoxyz/taiko-mono in Round 3 of the Deep Funding experiment?
+        on TAIKO_MONO_R3C  outcomes [DOWN, UP]  symbols [TAIKO_MONO_D_R3C, TAIKO_MONO_U_R3C]
+   Bundle A[12] What will be the average originality score of flashbots/mev-boost in Round 3 of the Deep Funding experiment?
+        on MEV_BOOST_R3C  outcomes [DOWN, UP]  symbols [MEV_BOOST_D_R3C, MEV_BOOST_U_R3C]
+   Bundle A[13] What will be the average originality score of flashbots/mev-boost-relay in Round 3 of the Deep Funding experiment?
+        on FLASHBOTS_MEV_BOOST_RELAY_R3C  outcomes [DOWN, UP]  symbols [FLASHBOTS_MEV_BOOST_RELAY_D_R3C, FLASHBOTS_MEV_BOOST_RELAY_U_R3C]
+   Bundle A[14] What will be the average originality score of ethereum/js-ethereum-cryptography in Round 3 of the Deep Funding experiment?
+        on JS_ETHEREUM_CRYPTOGRAPHY_R3C  outcomes [DOWN, UP]  symbols [JS_ETHEREUM_CRYPTOGRAPHY_D_R3C, JS_ETHEREUM_CRYPTOGRAPHY_U_R3C]
+   Bundle A[15] What will be the average originality score of libp2p/libp2p in Round 3 of the Deep Funding experiment?
+        on LIBP2P_R3C  outcomes [DOWN, UP]  symbols [LIBP2P_D_R3C, LIBP2P_U_R3C]
+   Bundle A[16] What will be the average originality score of supranational/blst in Round 3 of the Deep Funding experiment?
+        on BLST_R3C  outcomes [DOWN, UP]  symbols [BLST_D_R3C, BLST_U_R3C]
+   Bundle A[17] What will be the average originality score of wighawag/hardhat-deploy in Round 3 of the Deep Funding experiment?
+        on HARDHAT_DEPLOY_R3C  outcomes [DOWN, UP]  symbols [HARDHAT_DEPLOY_D_R3C, HARDHAT_DEPLOY_U_R3C]
+   Bundle A[18] What will be the average originality score of ethstaker/eth-docker in Round 3 of the Deep Funding experiment?
+        on ETH_DOCKER_R3C  outcomes [DOWN, UP]  symbols [ETH_DOCKER_D_R3C, ETH_DOCKER_U_R3C]
+   Bundle A[19] What will be the average originality score of DefiLlama/DefiLlama-Adapters in Round 3 of the Deep Funding experiment?
+        on DEFILLAMA_ADAPTERS_R3C  outcomes [DOWN, UP]  symbols [DEFILLAMA_ADAPTERS_D_R3C, DEFILLAMA_ADAPTERS_U_R3C]
+   Bundle A[20] What will be the average originality score of DefiLlama/chainlist in Round 3 of the Deep Funding experiment?
+        on CHAINLIST_R3C  outcomes [DOWN, UP]  symbols [CHAINLIST_D_R3C, CHAINLIST_U_R3C]
+   Bundle A[21] What will be the average originality score of Certora/CertoraProver in Round 3 of the Deep Funding experiment?
+        on CERTORAPROVER_R3C  outcomes [DOWN, UP]  symbols [CERTORAPROVER_D_R3C, CERTORAPROVER_U_R3C]
+   Bundle A[22] What will be the average originality score of Plonky3/Plonky3 in Round 3 of the Deep Funding experiment?
+        on PLONKY3_R3C  outcomes [DOWN, UP]  symbols [PLONKY3_D_R3C, PLONKY3_U_R3C]
+   Bundle A[23] What will be the average originality score of ChainSafe/bls in Round 3 of the Deep Funding experiment?
+        on BLS_R3C  outcomes [DOWN, UP]  symbols [BLS_D_R3C, BLS_U_R3C]
+   Bundle A[24] What will be the average originality score of intellij-solidity/intellij-solidity in Round 3 of the Deep Funding experiment?
+        on INTELLIJ_SOLIDITY_R3C  outcomes [DOWN, UP]  symbols [INTELLIJ_SOLIDITY_D_R3C, INTELLIJ_SOLIDITY_U_R3C]
+   Bundle A[25] What will be the average originality score of dappnode/DAppNode in Round 3 of the Deep Funding experiment?
+        on DAPPNODE_R3C  outcomes [DOWN, UP]  symbols [DAPPNODE_D_R3C, DAPPNODE_U_R3C]
+   Bundle A[26] What will be the average originality score of wealdtech/ethdo in Round 3 of the Deep Funding experiment?
+        on ETHDO_R3C  outcomes [DOWN, UP]  symbols [ETHDO_D_R3C, ETHDO_U_R3C]
+   Bundle A[27] What will be the average originality score of lambdaclass/lambdaworks in Round 3 of the Deep Funding experiment?
+        on LAMBDAWORKS_R3C  outcomes [DOWN, UP]  symbols [LAMBDAWORKS_D_R3C, LAMBDAWORKS_U_R3C]
+   Bundle A[28] What will be the average originality score of smartcontracts/simple-optimism-node in Round 3 of the Deep Funding experiment?
+        on SIMPLE_OPTIMISM_NODE_R3C  outcomes [DOWN, UP]  symbols [SIMPLE_OPTIMISM_NODE_D_R3C, SIMPLE_OPTIMISM_NODE_U_R3C]
+   Bundle A[29] What will be the average originality score of skalenetwork/libBLS in Round 3 of the Deep Funding experiment?
+        on LIBBLS_R3C  outcomes [DOWN, UP]  symbols [LIBBLS_D_R3C, LIBBLS_U_R3C]
+   Bundle A[30] What will be the average originality score of shazow/whatsabi in Round 3 of the Deep Funding experiment?
+        on WHATSABI_R3C  outcomes [DOWN, UP]  symbols [WHATSABI_D_R3C, WHATSABI_U_R3C]
+   Bundle A[31] What will be the average originality score of TrueBlocks/trueblocks-core in Round 3 of the Deep Funding experiment?
+        on TRUEBLOCKS_CORE_R3C  outcomes [DOWN, UP]  symbols [TRUEBLOCKS_CORE_D_R3C, TRUEBLOCKS_CORE_U_R3C]
+   Bundle A[32] What will be the average originality score of EspressoSystems/jellyfish in Round 3 of the Deep Funding experiment?
+        on JELLYFISH_R3C  outcomes [DOWN, UP]  symbols [JELLYFISH_D_R3C, JELLYFISH_U_R3C]
+   Bundle B[ 0] What will be the average originality score of a16z/halmos in Round 3 of the Deep Funding experiment?
+        on HALMOS_R3C  outcomes [DOWN, UP]  symbols [HALMOS_D_R3C, HALMOS_U_R3C]
+   Bundle B[ 1] What will be the average originality score of succinctlabs/op-succinct in Round 3 of the Deep Funding experiment?
+        on OP_SUCCINCT_R3C  outcomes [DOWN, UP]  symbols [OP_SUCCINCT_D_R3C, OP_SUCCINCT_U_R3C]
+   Bundle B[ 2] What will be the average originality score of succinctlabs/sp1 in Round 3 of the Deep Funding experiment?
+        on SP1_R3C  outcomes [DOWN, UP]  symbols [SP1_D_R3C, SP1_U_R3C]
+   Bundle B[ 3] What will be the average originality score of otterscan/otterscan in Round 3 of the Deep Funding experiment?
+        on OTTERSCAN_R3C  outcomes [DOWN, UP]  symbols [OTTERSCAN_D_R3C, OTTERSCAN_U_R3C]
+   Bundle B[ 4] What will be the average originality score of lambdaclass/ethrex in Round 3 of the Deep Funding experiment?
+        on ETHREX_R3C  outcomes [DOWN, UP]  symbols [ETHREX_D_R3C, ETHREX_U_R3C]
+   Bundle B[ 5] What will be the average originality score of NethermindEth/juno in Round 3 of the Deep Funding experiment?
+        on JUNO_R3C  outcomes [DOWN, UP]  symbols [JUNO_D_R3C, JUNO_U_R3C]
+   Bundle B[ 6] What will be the average originality score of Commit-Boost/commit-boost-client in Round 3 of the Deep Funding experiment?
+        on COMMIT_BOOST_CLIENT_R3C  outcomes [DOWN, UP]  symbols [COMMIT_BOOST_CLIENT_D_R3C, COMMIT_BOOST_CLIENT_U_R3C]
+   Bundle B[ 7] What will be the average originality score of Cyfrin/aderyn in Round 3 of the Deep Funding experiment?
+        on ADERYN_R3C  outcomes [DOWN, UP]  symbols [ADERYN_D_R3C, ADERYN_U_R3C]
+   Bundle B[ 8] What will be the average originality score of 0xMiden/miden-vm in Round 3 of the Deep Funding experiment?
+        on MIDEN_VM_R3C  outcomes [DOWN, UP]  symbols [MIDEN_VM_D_R3C, MIDEN_VM_U_R3C]
+   Bundle B[ 9] What will be the average originality score of holiman/goevmlab in Round 3 of the Deep Funding experiment?
+        on GOEVMLAB_R3C  outcomes [DOWN, UP]  symbols [GOEVMLAB_D_R3C, GOEVMLAB_U_R3C]
+   Bundle B[10] What will be the average originality score of edb-rs/edb in Round 3 of the Deep Funding experiment?
+        on EDB_R3C  outcomes [DOWN, UP]  symbols [EDB_D_R3C, EDB_U_R3C]
+   Bundle B[11] What will be the average originality score of evmts/tevm-monorepo in Round 3 of the Deep Funding experiment?
+        on TEVM_MONOREPO_R3C  outcomes [DOWN, UP]  symbols [TEVM_MONOREPO_D_R3C, TEVM_MONOREPO_U_R3C]
+   Bundle B[12] What will be the average originality score of succinctlabs/rsp in Round 3 of the Deep Funding experiment?
+        on RSP_R3C  outcomes [DOWN, UP]  symbols [RSP_D_R3C, RSP_U_R3C]
+   Bundle B[13] What will be the average originality score of aestus-relay/mev-boost-relay in Round 3 of the Deep Funding experiment?
+        on AESTUS_MEV_BOOST_RELAY_R3C  outcomes [DOWN, UP]  symbols [AESTUS_MEV_BOOST_RELAY_D_R3C, AESTUS_MEV_BOOST_RELAY_U_R3C]
+   Bundle B[14] What will be the average originality score of OffchainLabs/stylus-sdk-rs in Round 3 of the Deep Funding experiment?
+        on STYLUS_SDK_RS_R3C  outcomes [DOWN, UP]  symbols [STYLUS_SDK_RS_D_R3C, STYLUS_SDK_RS_U_R3C]
+   Bundle B[15] What will be the average originality score of ethstaker/ethstaker-deposit-cli in Round 3 of the Deep Funding experiment?
+        on ETHSTAKER_DEPOSIT_CLI_R3C  outcomes [DOWN, UP]  symbols [ETHSTAKER_DEPOSIT_CLI_D_R3C, ETHSTAKER_DEPOSIT_CLI_U_R3C]
+   Bundle B[16] What will be the average originality score of dl-solarity/solidity-lib in Round 3 of the Deep Funding experiment?
+        on SOLIDITY_LIB_R3C  outcomes [DOWN, UP]  symbols [SOLIDITY_LIB_D_R3C, SOLIDITY_LIB_U_R3C]
+   Bundle B[17] What will be the average originality score of risc0/risc0-ethereum in Round 3 of the Deep Funding experiment?
+        on RISC0_ETHEREUM_R3C  outcomes [DOWN, UP]  symbols [RISC0_ETHEREUM_D_R3C, RISC0_ETHEREUM_U_R3C]
+   Bundle B[18] What will be the average originality score of powdr-labs/powdr in Round 3 of the Deep Funding experiment?
+        on POWDR_R3C  outcomes [DOWN, UP]  symbols [POWDR_D_R3C, POWDR_U_R3C]
+   Bundle B[19] What will be the average originality score of axiom-crypto/snark-verifier in Round 3 of the Deep Funding experiment?
+        on SNARK_VERIFIER_R3C  outcomes [DOWN, UP]  symbols [SNARK_VERIFIER_D_R3C, SNARK_VERIFIER_U_R3C]
+   Bundle B[20] What will be the average originality score of swiss-knife-xyz/swiss-knife in Round 3 of the Deep Funding experiment?
+        on SWISS_KNIFE_R3C  outcomes [DOWN, UP]  symbols [SWISS_KNIFE_D_R3C, SWISS_KNIFE_U_R3C]
+   Bundle B[21] What will be the average originality score of a16z/helios in Round 3 of the Deep Funding experiment?
+        on HELIOS_R3C  outcomes [DOWN, UP]  symbols [HELIOS_D_R3C, HELIOS_U_R3C]
+   Bundle B[22] What will be the average originality score of alloy-rs/alloy in Round 3 of the Deep Funding experiment?
+        on ALLOY_R3C  outcomes [DOWN, UP]  symbols [ALLOY_D_R3C, ALLOY_U_R3C]
+   Bundle B[23] What will be the average originality score of apeworx/ape in Round 3 of the Deep Funding experiment?
+        on APE_R3C  outcomes [DOWN, UP]  symbols [APE_D_R3C, APE_U_R3C]
+   Bundle B[24] What will be the average originality score of chainsafe/lodestar in Round 3 of the Deep Funding experiment?
+        on LODESTAR_R3C  outcomes [DOWN, UP]  symbols [LODESTAR_D_R3C, LODESTAR_U_R3C]
+   Bundle B[25] What will be the average originality score of consensys/teku in Round 3 of the Deep Funding experiment?
+        on TEKU_R3C  outcomes [DOWN, UP]  symbols [TEKU_D_R3C, TEKU_U_R3C]
+   Bundle B[26] What will be the average originality score of erigontech/erigon in Round 3 of the Deep Funding experiment?
+        on ERIGON_R3C  outcomes [DOWN, UP]  symbols [ERIGON_D_R3C, ERIGON_U_R3C]
+   Bundle B[27] What will be the average originality score of eth-infinitism/account-abstraction in Round 3 of the Deep Funding experiment?
+        on ACCOUNT_ABSTRACTION_R3C  outcomes [DOWN, UP]  symbols [ACCOUNT_ABSTRACTION_D_R3C, ACCOUNT_ABSTRACTION_U_R3C]
+   Bundle B[28] What will be the average originality score of ethereum-lists/chains in Round 3 of the Deep Funding experiment?
+        on CHAINS_R3C  outcomes [DOWN, UP]  symbols [CHAINS_D_R3C, CHAINS_U_R3C]
+   Bundle B[29] What will be the average originality score of ethereum/consensus-specs in Round 3 of the Deep Funding experiment?
+        on CONSENSUS_SPECS_R3C  outcomes [DOWN, UP]  symbols [CONSENSUS_SPECS_D_R3C, CONSENSUS_SPECS_U_R3C]
+   Bundle B[30] What will be the average originality score of ethereum/eips in Round 3 of the Deep Funding experiment?
+        on EIPS_R3C  outcomes [DOWN, UP]  symbols [EIPS_D_R3C, EIPS_U_R3C]
+   Bundle B[31] What will be the average originality score of ipsilon/evmone in Round 3 of the Deep Funding experiment?
+        on EVMONE_R3C  outcomes [DOWN, UP]  symbols [EVMONE_D_R3C, EVMONE_U_R3C]
+   Bundle B[32] What will be the average originality score of ethereum/execution-apis in Round 3 of the Deep Funding experiment?
+        on EXECUTION_APIS_R3C  outcomes [DOWN, UP]  symbols [EXECUTION_APIS_D_R3C, EXECUTION_APIS_U_R3C]
+   Bundle C[ 0] What will be the average originality score of argotorg/fe in Round 3 of the Deep Funding experiment?
+        on FE_R3C  outcomes [DOWN, UP]  symbols [FE_D_R3C, FE_U_R3C]
+   Bundle C[ 1] What will be the average originality score of ethereum/go-ethereum in Round 3 of the Deep Funding experiment?
+        on GO_ETHEREUM_R3C  outcomes [DOWN, UP]  symbols [GO_ETHEREUM_D_R3C, GO_ETHEREUM_U_R3C]
+   Bundle C[ 2] What will be the average originality score of remix-project-org/remix-project in Round 3 of the Deep Funding experiment?
+        on REMIX_PROJECT_R3C  outcomes [DOWN, UP]  symbols [REMIX_PROJECT_D_R3C, REMIX_PROJECT_U_R3C]
+   Bundle C[ 3] What will be the average originality score of argotorg/solidity in Round 3 of the Deep Funding experiment?
+        on SOLIDITY_R3C  outcomes [DOWN, UP]  symbols [SOLIDITY_D_R3C, SOLIDITY_U_R3C]
+   Bundle C[ 4] What will be the average originality score of argotorg/sourcify in Round 3 of the Deep Funding experiment?
+        on SOURCIFY_R3C  outcomes [DOWN, UP]  symbols [SOURCIFY_D_R3C, SOURCIFY_U_R3C]
+   Bundle C[ 5] What will be the average originality score of ethereum/web3.py in Round 3 of the Deep Funding experiment?
+        on WEB3_PY_R3C  outcomes [DOWN, UP]  symbols [WEB3_PY_D_R3C, WEB3_PY_U_R3C]
+   Bundle C[ 6] What will be the average originality score of ethers-io/ethers.js in Round 3 of the Deep Funding experiment?
+        on ETHERS_JS_R3C  outcomes [DOWN, UP]  symbols [ETHERS_JS_D_R3C, ETHERS_JS_U_R3C]
+   Bundle C[ 7] What will be the average originality score of foundry-rs/foundry in Round 3 of the Deep Funding experiment?
+        on FOUNDRY_R3C  outcomes [DOWN, UP]  symbols [FOUNDRY_D_R3C, FOUNDRY_U_R3C]
+   Bundle C[ 8] What will be the average originality score of grandinetech/grandine in Round 3 of the Deep Funding experiment?
+        on GRANDINE_R3C  outcomes [DOWN, UP]  symbols [GRANDINE_D_R3C, GRANDINE_U_R3C]
+   Bundle C[ 9] What will be the average originality score of hyperledger-web3j/web3j in Round 3 of the Deep Funding experiment?
+        on HYPERLEDGER_WEB3J_R3C  outcomes [DOWN, UP]  symbols [HYPERLEDGER_WEB3J_D_R3C, HYPERLEDGER_WEB3J_U_R3C]
+   Bundle C[10] What will be the average originality score of hyperledger/besu in Round 3 of the Deep Funding experiment?
+        on BESU_R3C  outcomes [DOWN, UP]  symbols [BESU_D_R3C, BESU_U_R3C]
+   Bundle C[11] What will be the average originality score of nethereum/nethereum in Round 3 of the Deep Funding experiment?
+        on NETHEREUM_R3C  outcomes [DOWN, UP]  symbols [NETHEREUM_D_R3C, NETHEREUM_U_R3C]
+   Bundle C[12] What will be the average originality score of nethermindeth/nethermind in Round 3 of the Deep Funding experiment?
+        on NETHERMIND_R3C  outcomes [DOWN, UP]  symbols [NETHERMIND_D_R3C, NETHERMIND_U_R3C]
+   Bundle C[13] What will be the average originality score of nomicfoundation/hardhat in Round 3 of the Deep Funding experiment?
+        on HARDHAT_R3C  outcomes [DOWN, UP]  symbols [HARDHAT_D_R3C, HARDHAT_U_R3C]
+   Bundle C[14] What will be the average originality score of openzeppelin/openzeppelin-contracts in Round 3 of the Deep Funding experiment?
+        on OPENZEPPELIN_CONTRACTS_R3C  outcomes [DOWN, UP]  symbols [OPENZEPPELIN_CONTRACTS_D_R3C, OPENZEPPELIN_CONTRACTS_U_R3C]
+   Bundle C[15] What will be the average originality score of paradigmxyz/reth in Round 3 of the Deep Funding experiment?
+        on RETH_R3C  outcomes [DOWN, UP]  symbols [RETH_D_R3C, RETH_U_R3C]
+   Bundle C[16] What will be the average originality score of OffchainLabs/prysm in Round 3 of the Deep Funding experiment?
+        on PRYSM_R3C  outcomes [DOWN, UP]  symbols [PRYSM_D_R3C, PRYSM_U_R3C]
+   Bundle C[17] What will be the average originality score of safe-global/safe-smart-account in Round 3 of the Deep Funding experiment?
+        on SAFE_SMART_ACCOUNT_R3C  outcomes [DOWN, UP]  symbols [SAFE_SMART_ACCOUNT_D_R3C, SAFE_SMART_ACCOUNT_U_R3C]
+   Bundle C[18] What will be the average originality score of scaffold-eth/scaffold-eth-2 in Round 3 of the Deep Funding experiment?
+        on SCAFFOLD_ETH_2_R3C  outcomes [DOWN, UP]  symbols [SCAFFOLD_ETH_2_D_R3C, SCAFFOLD_ETH_2_U_R3C]
+   Bundle C[19] What will be the average originality score of sigp/lighthouse in Round 3 of the Deep Funding experiment?
+        on LIGHTHOUSE_R3C  outcomes [DOWN, UP]  symbols [LIGHTHOUSE_D_R3C, LIGHTHOUSE_U_R3C]
+   Bundle C[20] What will be the average originality score of status-im/nimbus-eth2 in Round 3 of the Deep Funding experiment?
+        on NIMBUS_ETH2_R3C  outcomes [DOWN, UP]  symbols [NIMBUS_ETH2_D_R3C, NIMBUS_ETH2_U_R3C]
+   Bundle C[21] What will be the average originality score of vyperlang/titanoboa in Round 3 of the Deep Funding experiment?
+        on TITANOBOA_R3C  outcomes [DOWN, UP]  symbols [TITANOBOA_D_R3C, TITANOBOA_U_R3C]
+   Bundle C[22] What will be the average originality score of vyperlang/vyper in Round 3 of the Deep Funding experiment?
+        on VYPER_R3C  outcomes [DOWN, UP]  symbols [VYPER_D_R3C, VYPER_U_R3C]
+   Bundle C[23] What will be the average originality score of wevm/viem in Round 3 of the Deep Funding experiment?
+        on VIEM_R3C  outcomes [DOWN, UP]  symbols [VIEM_D_R3C, VIEM_U_R3C]
+   Bundle C[24] What will be the average originality score of argotorg/hevm in Round 3 of the Deep Funding experiment?
+        on HEVM_R3C  outcomes [DOWN, UP]  symbols [HEVM_D_R3C, HEVM_U_R3C]
+   Bundle C[25] What will be the average originality score of ethdebug/format in Round 3 of the Deep Funding experiment?
+        on FORMAT_R3C  outcomes [DOWN, UP]  symbols [FORMAT_D_R3C, FORMAT_U_R3C]
+   Bundle C[26] What will be the average originality score of argotorg/act in Round 3 of the Deep Funding experiment?
+        on ACT_R3C  outcomes [DOWN, UP]  symbols [ACT_D_R3C, ACT_U_R3C]
+   Bundle C[27] What will be the average originality score of ethpandaops/ethereum-package in Round 3 of the Deep Funding experiment?
+        on ETHEREUM_PACKAGE_R3C  outcomes [DOWN, UP]  symbols [ETHEREUM_PACKAGE_D_R3C, ETHEREUM_PACKAGE_U_R3C]
+   Bundle C[28] What will be the average originality score of ethpandaops/ethereum-helm-charts in Round 3 of the Deep Funding experiment?
+        on ETHEREUM_HELM_CHARTS_R3C  outcomes [DOWN, UP]  symbols [ETHEREUM_HELM_CHARTS_D_R3C, ETHEREUM_HELM_CHARTS_U_R3C]
+   Bundle C[29] What will be the average originality score of ethpandaops/checkpointz in Round 3 of the Deep Funding experiment?
+        on CHECKPOINTZ_R3C  outcomes [DOWN, UP]  symbols [CHECKPOINTZ_D_R3C, CHECKPOINTZ_U_R3C]
+   Bundle C[30] What will be the average originality score of lambdaclass/lambda_ethereum_consensus in Round 3 of the Deep Funding experiment?
+        on LAMBDA_ETHEREUM_CONSENSUS_R3C  outcomes [DOWN, UP]  symbols [LAMBDA_ETHEREUM_CONSENSUS_D_R3C, LAMBDA_ETHEREUM_CONSENSUS_U_R3C]
+   Bundle C[31] What will be the average originality score of erigontech/silkworm in Round 3 of the Deep Funding experiment?
+        on SILKWORM_R3C  outcomes [DOWN, UP]  symbols [SILKWORM_D_R3C, SILKWORM_U_R3C]
+
+   297 ERC20 symbols total, 297 unique, longest "FLASHBOTS_MEV_BOOST_RELAY_D_R3C" (31 of 31 bytes)
+   longest score market name: 126 chars (lambdaclass/lambda_ethereum_consensus)
+
+Encoded Reality question — first SCORE market:
+   What will be the average originality score of ethereum/py_ecc in Round 3 of the Deep Funding experiment?␟misc␟en_US
+
+====================================================================================================
+
+Simulating the PARENT market (createMultiScalarMarket)...
+   3 bundles -> 2565872 gas  (15.3% of the 16777216 cap)
+
+MIDDLE gas cannot be estimated until the parent exists; using the measured ~13,706,527 each (81.7% of the cap).
+
+SCORE gas cannot be estimated until the middle markets exist; using ~1,863,068 each.
+
+   Total L2 gas : 226266117
+   Gas price    : 0.00100293 gwei
+   L2 gas cost  : ~0.00022692907672281 ETH (EXCLUDES the Optimism L1 data fee)
+   ETH balance  : 0.03941830319860496 ETH
+
+Dry run complete — nothing was sent.

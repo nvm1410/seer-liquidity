@@ -22,7 +22,8 @@ working directory matters.
 
 | Campaign | Chain | Family | Structure | Capital | Dates | Status |
 |---|---|---|---|---|---|---|
-| [originality-r3](guides/) *(no guide)* | Optimism | originality | multiScalar parent + 98 conditional scalars | 1,000 sUSDS | 2026-09-22 | live, seeded |
+| [originality-r3-v3](guides/) *(no guide)* | Optimism | originality | multiScalar parent + 3 conditional multiCategoricals (one per bundle) + 98 conditional scalars, one per repo token | 1,000 sUSDS | 2026-10-01 | live, seeded |
+| [originality-r3](guides/) *(no guide)* | Optimism | originality | multiScalar parent + 98 conditional scalars | 1,000 sUSDS | 2026-09-22 | **incorrect** (middle level missing), replaced by r3-v3; left live and seeded so its users can exit |
 | [zcash-q3](guides/zcash-q3.md) | Optimism | poll | 37 binary categoricals | 20,000 sUSDS | 2026-08-19 → 08-24 | live, re-priced, unresolved |
 | [zcash-nu7](guides/zcash-nu7.md) | Optimism | poll | 5 single-select categoricals (v3) | 10,000 sUSDS | 2026-09-09 → 09-14 | live, **zero liquidity**, unresolved |
 | [l1-deepfunding](guides/l1-deepfunding.md) | Optimism | deepfunding | nested multiScalar pair (A + B on A#66) | 19,980 sUSDS | 2026-07-27 → 09-01 | **closed out**, redeemed |
@@ -33,6 +34,7 @@ working directory matters.
 
 | Campaign | Manifest | Data | Run logs |
 |---|---|---|---|
+| originality-r3-v3 | [`lifecycle/originality-r3-v3.json`](../lifecycle/originality-r3-v3.json) | [`campaigns/originality-r3-v3/`](../campaigns/originality-r3-v3/) | [`archive/runs/originality-r3-v3/`](../archive/runs/originality-r3-v3/) |
 | originality-r3 | [`lifecycle/originality-r3.json`](../lifecycle/originality-r3.json) | [`campaigns/originality-r3/`](../campaigns/originality-r3/) | [`archive/runs/originality-r3/`](../archive/runs/originality-r3/) |
 | zcash-q3 | [`lifecycle/zcash-q3.json`](../lifecycle/zcash-q3.json) | [`campaigns/zcash-q3/`](../campaigns/zcash-q3/) | [`archive/runs/zcash-q3/`](../archive/runs/zcash-q3/) |
 | zcash-nu7 | [`lifecycle/zcash-nu7.json`](../lifecycle/zcash-nu7.json) | [`campaigns/zcash-nu7/`](../campaigns/zcash-nu7/) | [`archive/runs/zcash-nu7/`](../archive/runs/zcash-nu7/) |

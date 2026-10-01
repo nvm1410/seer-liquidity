@@ -1,0 +1,128 @@
+add-originality-r3-v3-liquidity — DRY RUN (nothing will be sent)
+  campaign originality-r3-v3 (launch/originality), stage seed-pools
+  chain 10 ok, wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+
+PREVIEW (markets not created yet) — corrected originality round 3 liquidity
+   wallet : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+Phase 0: campaigns/originality-r3-v3/create-originality-r3-v3-execution.json absent — sizing against placeholder addresses.
+
+   parent : 0xa85F98952D88133E7d13B282C45D6F7A3eBd23F5  split 1000 sUSDS
+   Bundle A (ORIG_R3C_A) -> middle 0x8De54738F408107D2885A4602FcFCdb44465733B: split 1000 -> 33 repo tokens
+   Bundle B (ORIG_R3C_B) -> middle 0x730f3e31911C631a3ad38962803C9ACcb6fc650A: split 1000 -> 33 repo tokens
+   Bundle C (ORIG_R3C_C) -> middle 0x8Cc766465442872acC89c2Ea8277B0Ffa1359505: split 1000 -> 32 repo tokens
+   budget : 1000 of its own token per repo
+   band   : [0.02, 0.98]
+
+Phase 0b: reading pool state and sizing positions...
+
+ bundle #  repo                                      seedDOWN  seedUP     split   collDOWN    collUP     used / B
+  A   0  ethereum/py_ecc                           0.4515    0.5485   258.302   286.614   455.084  1000.0000 / 1000
+  A   1  blockscout/blockscout                     0.3770    0.6230   233.245   178.218   588.537  1000.0000 / 1000
+  A   2  LFDT-web3j/web3j                          0.4621    0.5379   260.146   303.863   435.991  1000.0000 / 1000
+  A   3  herumi/mcl                                0.3098    0.6902   196.423   103.687   699.891  1000.0000 / 1000
+  A   4  paulmillr/noble-curves                    0.4415    0.5585   256.068   270.666   473.265  1000.0000 / 1000
+  A   5  arkworks-rs/algebra                       0.3552    0.6448   222.494   151.426   626.080  1000.0000 / 1000
+  A   6  flashbots/rbuilder                        0.4200    0.5800   250.121   237.781   512.098  1000.0000 / 1000
+  A   7  protofire/solhint                         0.5029    0.4971   263.119   373.559   363.322  1000.0000 / 1000
+  A   8  l2beat/l2beat                             0.3883    0.6117   238.275   193.018   568.707  1000.0000 / 1000
+  A   9  Consensys/gnark-crypto                    0.1980    0.8020   120.055    29.461   850.484  1000.0000 / 1000
+  A  10  Vectorized/solady                         0.4986    0.5014   263.158   366.015   370.827  1000.0000 / 1000
+  A  11  taikoxyz/taiko-mono                       0.5055    0.4945   263.087   378.062   358.851  1000.0000 / 1000
+  A  12  flashbots/mev-boost                       0.3262    0.6738   206.327   119.673   674.000  1000.0000 / 1000
+  A  13  flashbots/mev-boost-relay                 0.3272    0.6728   206.933   120.724   672.344  1000.0000 / 1000
+  A  14  ethereum/js-ethereum-cryptography         0.3398    0.6602   214.147   134.018   651.835  1000.0000 / 1000
+  A  15  libp2p/libp2p                             0.2720    0.7280   171.890    72.006   756.104  1000.0000 / 1000
+  A  16  supranational/blst                        0.2593    0.7407   163.245    62.934   773.820  1000.0000 / 1000
+  A  17  wighawag/hardhat-deploy                   0.2066    0.7934   126.214    33.214   840.572  1000.0000 / 1000
+  A  18  ethstaker/eth-docker                      0.3313    0.6687   209.346   125.006   665.649  1000.0000 / 1000
+  A  19  DefiLlama/DefiLlama-Adapters              0.2888    0.7112   183.072    85.224   731.704  1000.0000 / 1000
+  A  20  DefiLlama/chainlist                       0.5939    0.4061   245.310   537.079   217.611  1000.0000 / 1000
+  A  21  Certora/CertoraProver                     0.2527    0.7473   158.729    58.578   782.693  1000.0000 / 1000
+  A  22  Plonky3/Plonky3                           0.2954    0.7046   187.354    90.793   721.853  1000.0000 / 1000
+  A  23  ChainSafe/bls                             0.3660    0.6340   227.976   164.380   607.644  1000.0000 / 1000
+  A  24  intellij-solidity/intellij-solidity       0.3274    0.6726   207.087   120.948   671.965  1000.0000 / 1000
+  A  25  dappnode/DAppNode                         0.5168    0.4832   262.555   398.190   339.255  1000.0000 / 1000
+  A  26  wealdtech/ethdo                           0.3405    0.6595   214.611   134.864   650.526  1000.0000 / 1000
+  A  27  lambdaclass/lambdaworks                   0.3528    0.6472   221.275   148.711   630.013  1000.0000 / 1000
+  A  28  smartcontracts/simple-optimism-node       0.2921    0.7079   185.206    87.980   726.815  1000.0000 / 1000
+  A  29  skalenetwork/libBLS                       0.2854    0.7146   180.830    82.420   736.751  1000.0000 / 1000
+  A  30  shazow/whatsabi                           0.4783    0.5217   262.154   331.003   406.843  1000.0000 / 1000
+  A  31  TrueBlocks/trueblocks-core                0.3494    0.6506   219.462   144.838   635.699  1000.0000 / 1000
+  A  32  EspressoSystems/jellyfish                 0.4899    0.5101   262.939   350.839   386.222  1000.0000 / 1000
+  B   0  a16z/halmos                               0.2875    0.7125   182.234    84.168   733.597  1000.0000 / 1000
+  B   1  succinctlabs/op-succinct                  0.5727    0.4273   252.325   498.956   248.719  1000.0000 / 1000
+  B   2  succinctlabs/sp1                          0.4644    0.5356   260.493   307.682   431.825  1000.0000 / 1000
+  B   3  otterscan/otterscan                       0.2921    0.7079   185.244    88.006   726.750  1000.0000 / 1000
+  B   4  lambdaclass/ethrex                        0.3927    0.6073   240.126   199.008   560.865  1000.0000 / 1000
+  B   5  NethermindEth/juno                        0.4445    0.5555   256.789   275.478   467.734  1000.0000 / 1000
+  B   6  Commit-Boost/commit-boost-client          0.2981    0.7019   189.115    93.166   717.719  1000.0000 / 1000
+  B   7  Cyfrin/aderyn                             0.2653    0.7347   167.393    67.171   765.437  1000.0000 / 1000
+  B   8  0xMiden/miden-vm                          0.3772    0.6228   233.310   178.408   588.281  1000.0000 / 1000
+  B   9  holiman/goevmlab                          0.4904    0.5096   262.946   351.715   385.339  1000.0000 / 1000
+  B  10  edb-rs/edb                                0.3682    0.6318   229.038   167.130   603.832  1000.0000 / 1000
+  B  11  evmts/tevm-monorepo                       0.4638    0.5362   260.411   306.693   432.896  1000.0000 / 1000
+  B  12  succinctlabs/rsp                          0.4744    0.5256   261.776   324.444   413.780  1000.0000 / 1000
+  B  13  aestus-relay/mev-boost-relay              0.5205    0.4795   262.249   404.727   333.024  1000.0000 / 1000
+  B  14  OffchainLabs/stylus-sdk-rs                0.4485    0.5515   257.671   281.911   460.418  1000.0000 / 1000
+  B  15  ethstaker/ethstaker-deposit-cli           0.3004    0.6996   190.496    95.099   714.404  1000.0000 / 1000
+  B  16  dl-solarity/solidity-lib                  0.2575    0.7425   162.019    61.741   776.240  1000.0000 / 1000
+  B  17  risc0/risc0-ethereum                      0.4744    0.5256   261.792   324.464   413.744  1000.0000 / 1000
+  B  18  powdr-labs/powdr                          0.3096    0.6904   196.355   103.546   700.099  1000.0000 / 1000
+  B  19  axiom-crypto/snark-verifier               0.3586    0.6414   224.275   155.517   620.208  1000.0000 / 1000
+  B  20  swiss-knife-xyz/swiss-knife               0.4212    0.5788   250.480   239.619   509.901  1000.0000 / 1000
+  B  21  a16z/helios                               0.4664    0.5336   260.814   311.011   428.174  1000.0000 / 1000
+  B  22  alloy-rs/alloy                            0.4391    0.5609   255.541   266.904   477.556  1000.0000 / 1000
+  B  23  apeworx/ape                               0.3183    0.6817   201.633   111.821   686.545  1000.0000 / 1000
+  B  24  chainsafe/lodestar                        0.3250    0.6750   205.663   118.520   675.817  1000.0000 / 1000
+  B  25  consensys/teku                            0.3427    0.6573   215.798   137.265   646.937  1000.0000 / 1000
+  B  26  erigontech/erigon                         0.2477    0.7523   155.244    55.349   789.407  1000.0000 / 1000
+  B  27  eth-infinitism/account-abstraction        0.2609    0.7391   164.318    64.039   771.643  1000.0000 / 1000
+  B  28  ethereum-lists/chains                     0.3728    0.6272   231.291   172.886   595.823  1000.0000 / 1000
+  B  29  ethereum/consensus-specs                  0.4891    0.5109   262.903   349.484   387.613  1000.0000 / 1000
+  B  30  ethereum/eips                             0.5038    0.4962   263.120   375.133   361.747  1000.0000 / 1000
+  B  31  ipsilon/evmone                            0.3194    0.6806   202.308   112.885   684.807  1000.0000 / 1000
+  B  32  ethereum/execution-apis                   0.4611    0.5389   259.988   302.166   437.846  1000.0000 / 1000
+  C   0  argotorg/fe                               0.3884    0.6116   238.297   193.113   568.590  1000.0000 / 1000
+  C   1  ethereum/go-ethereum                      0.1964    0.8036   118.977    28.819   852.203  1000.0000 / 1000
+  C   2  remix-project-org/remix-project           0.2867    0.7133   181.671    83.479   734.850  1000.0000 / 1000
+  C   3  argotorg/solidity                         0.2033    0.7967   123.832    31.724   844.444  1000.0000 / 1000
+  C   4  argotorg/sourcify                         0.2564    0.7436   161.251    60.996   777.753  1000.0000 / 1000
+  C   5  ethereum/web3.py                          0.1957    0.8043   118.461    28.522   853.017  1000.0000 / 1000
+  C   6  ethers-io/ethers.js                       0.3639    0.6361   226.953   161.895   611.152  1000.0000 / 1000
+  C   7  foundry-rs/foundry                        0.2595    0.7405   163.393    63.117   773.491  1000.0000 / 1000
+  C   8  grandinetech/grandine                     0.3376    0.6624   212.935   131.659   655.406  1000.0000 / 1000
+  C   9  hyperledger-web3j/web3j                   0.2934    0.7066   186.079    89.105   724.816  1000.0000 / 1000
+  C  10  hyperledger/besu                          0.4511    0.5489   258.210   286.039   455.751  1000.0000 / 1000
+  C  11  nethereum/nethereum                       0.3536    0.6464   221.706   149.671   628.623  1000.0000 / 1000
+  C  12  nethermindeth/nethermind                  0.3218    0.6782   203.771   115.330   680.899  1000.0000 / 1000
+  C  13  nomicfoundation/hardhat                   0.4240    0.5760   251.363   243.737   504.900  1000.0000 / 1000
+  C  14  openzeppelin/openzeppelin-contracts       0.2215    0.7785   136.783    40.397   822.820  1000.0000 / 1000
+  C  15  paradigmxyz/reth                          0.2768    0.7232   175.103    75.635   749.262  1000.0000 / 1000
+  C  16  OffchainLabs/prysm                        0.4485    0.5515   257.675   281.826   460.499  1000.0000 / 1000
+  C  17  safe-global/safe-smart-account            0.3839    0.6161   236.388   187.231   576.381  1000.0000 / 1000
+  C  18  scaffold-eth/scaffold-eth-2               0.3240    0.6760   205.057   117.454   677.489  1000.0000 / 1000
+  C  19  sigp/lighthouse                           0.2598    0.7402   163.558    63.272   773.170  1000.0000 / 1000
+  C  20  status-im/nimbus-eth2                     0.2716    0.7284   171.604    71.711   756.685  1000.0000 / 1000
+  C  21  vyperlang/titanoboa                       0.3108    0.6892   197.084   104.631   698.285  1000.0000 / 1000
+  C  22  vyperlang/vyper                           0.4897    0.5103   262.916   350.482   386.602  1000.0000 / 1000
+  C  23  wevm/viem                                 0.4211    0.5789   250.488   239.503   510.009  1000.0000 / 1000
+  C  24  argotorg/hevm                             0.3213    0.6787   203.478   114.827   681.695  1000.0000 / 1000
+  C  25  ethdebug/format                           0.2912    0.7088   184.641    87.254   728.105  1000.0000 / 1000
+  C  26  argotorg/act                              0.3297    0.6703   208.416   123.324   668.261  1000.0000 / 1000
+  C  27  ethpandaops/ethereum-package              0.3446    0.6554   216.809   139.305   643.885  1000.0000 / 1000
+  C  28  ethpandaops/ethereum-helm-charts          0.4987    0.5013   263.135   366.070   370.795  1000.0000 / 1000
+  C  29  ethpandaops/checkpointz                   0.2957    0.7043   187.581    91.092   721.327  1000.0000 / 1000
+  C  30  lambdaclass/lambda_ethereum_consensus     0.2826    0.7174   178.987    80.182   740.832  1000.0000 / 1000
+  C  31  erigontech/silkworm                       0.4217    0.5783   250.637   240.322   509.041  1000.0000 / 1000
+
+  GRAND TOTAL sUSDS committed (one parent split): 1000
+  middle splits              : 3 x 1000 bundle tokens (each bundle token used in full)
+  pools to seed              : 196
+  pools that already exist   : 0 (their live price is used, not the seed price)
+  worst per-repo idle tokens : 0.000000 (integer rounding)
+  unpooled by design         : 1000 parent Invalid + 1000 Invalid of each middle market + 21023.55 score-market Invalid tokens
+
+  wallet sUSDS : 59251.372969887868268818
+  wallet ETH   : 0.03941830319860496
+
+Dry run complete — nothing was sent.

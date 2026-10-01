@@ -8,6 +8,15 @@ dropping it.
 
 ## Open money
 
+### originality-r3 (the incorrect set): 1,000 sUSDS left in on purpose
+The first round-3 set was built without its middle level and replaced by originality-r3-v3 on
+2026-10-01. Its 196 pools still hold our 1,000 sUSDS seed so that the wallets that traded it can
+sell back and merge out — 4 wallets had deposited 3,339.67 sUSDS as of 2026-10-01, none withdrawn.
+**To recover:** once the parent's supply is back near our own 1,000 (read the parent Invalid token's
+`totalSupply`; anything above 1,000 is a user still in), unwind it — a new unwind manifest and
+scripts, score markets merged BEFORE the parent, as with L1.
+**Do not unwind while users are still in:** our pools are their only exit.
+
 ### originality-r2: 8,300.58 sUSDS stranded
 One parent outcome (index 63, `EIPS`) sits at zero, and `mergePositions` is capped at
 `min(balance)` across the full partition, so phase 3 cannot run at all.
@@ -34,6 +43,15 @@ nothing to diff against. It needs its own change, with its own proof.
 already exists. Prove with `tools/refactor-diff.js`; expect the diff to be non-empty, and justify
 every differing line.
 
+### MarketView reverts for originality-r3-v3's three middle markets
+A bug in Seer's deployed MarketView, still in seer-pm/demo: `getParentMarketInfo` passes the child's
+`conditionId` when listing the PARENT's outcomes (`src/MarketView.sol:216`). See LESSONS.md.
+Our scripts read those markets directly (`campaigns/originality-r3-v3/read-market.js`) and the UI
+never reads them. **What is still exposed:** anything of Seer's that falls back to MarketView for
+those three addresses, and any future script here that passes one to `marketView.getMarket` — a
+settle run for this set must use the direct reader for the middle level.
+**The fix is Seer's:** pass `parentMarket.conditionId()` on that line and redeploy MarketView.
+
 ### check-originality-r3-pools exits 1 on a live market
 Its ±0.001 price tolerance is sized for "verify immediately after seeding" — one tick of floor
 error. On a market that has traded it decays into a drift report: 11 of 98 repos are outside it as
@@ -54,6 +72,17 @@ is a guide for a campaign that has not happened yet — `docs/NEW-CAMPAIGN.md` i
 new and untested against a real request.
 
 ## Process gaps
+
+### An RPC timeout during receipt polling kills a live run
+On 2026-10-01 the originality-r3-v3 seeding run died at pool 71 of 196: dRPC answered
+`eth_getTransactionReceipt` with "Request failed with timeout", ethers raised it from its own
+polling loop, and nothing in `lib/tx.js` or `lib/run.js` catches a rejection that does not come
+through an awaited call. The process exited without a "failed" stage in the manifest.
+It cost nothing — the progress log was intact and `--resume` finished the run — but an unattended
+(scheduled) run would simply stop.
+**How to do it:** make `retryTransaction` wait for the receipt with its own retry around a timeout,
+or have the harness trap `unhandledRejection`, record the stage as failed and exit 1. Prove it on a
+fork with an RPC that drops a request.
 
 ### The skill's smoke test has never been run
 `SKILL.md` says to judge the skill by its replay cases, and the program says to test a skill with

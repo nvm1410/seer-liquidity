@@ -1,0 +1,257 @@
+{
+  "$schema": "./schema.json",
+  "schemaVersion": 2,
+  "setSlug": "originality-r3-v3",
+  "version": "v3 (three levels: multiscalar parent, multi-categorical per bundle, scalar per repo)",
+  "mode": "launch",
+  "family": "originality",
+  "status": "complete",
+  "source": {
+    "request": "2026-10-01: the round-3 set created 2026-09-22 (originality-r3) is missing its middle level. Build a new, complete set: parent 'evaluated repository counts' (multiscalar, Bundle A/B/C) -> one conditional multi-categorical market per bundle ('which repositories were evaluated?') -> one originality scalar per repo, conditional on that repo's outcome. Keep the incorrect set and its 1k liquidity so its users can exit; flag it as incorrect in the UI.",
+    "docs": [
+      "c:/Users/Admin/Downloads/image (8).png (structure diagram)"
+    ],
+    "priceSourceNote": "Same prices as originality-r3: the round-2 pools' last prices, copied unchanged from campaigns/originality-r3/originality-r3-seed.json by build-originality-r3-v3-seed.js."
+  },
+  "supersedes": {
+    "originality-r3": "Two levels only: 98 score markets conditional directly on the bundle tokens of parent 0x52f80FC4fa783AB5850d1658589284c47a21B3b7. Left live with its 1,000 sUSDS so the 4 wallets that deposited 3,339.67 sUSDS can sell back and merge out. Its files are untouched."
+  },
+  "precedents": {
+    "roundTwoParent": "0xdb3aae8d1c964767eeaa17805be25cded7a17210",
+    "scripts": [
+      "campaigns/originality-r3/create-originality-r3-markets.js (object-shaped resumable log, pinned openingTime)",
+      "campaigns/originality-r3/add-originality-r3-liquidity.js (X = B / (1 + r_down + r_up))",
+      "campaigns/originality-r3/check-originality-r3-pools.js"
+    ]
+  },
+  "chain": {
+    "id": 10,
+    "name": "optimism",
+    "collateral": {
+      "symbol": "sUSDS",
+      "address": "0xb5B2dc7fd34C249F4be7fB1fCea07950784229e0",
+      "decimals": 18
+    }
+  },
+  "amm": {
+    "kind": "uniswap-v3",
+    "feeTier": 100,
+    "tickSpacing": 1
+  },
+  "addresses": {
+    "marketFactory": "0x886Ef0A78faBbAE942F1dA1791A8ed02a5aF8BC6",
+    "marketView": "0x336695ec9efbafd6322fb82eaadbcda02e38f348",
+    "router": "0x179d8F8c811B8C759c33809dbc6c5ceDc62D05DD",
+    "positionManager": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
+    "poolFactory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "realitio": "0x0eF940F7f053a2eF5D6578841072488aF0c7d89A"
+  },
+  "files": {
+    "seed": "campaigns/originality-r3-v3/originality-r3-v3-seed.json",
+    "markets": "campaigns/originality-r3-v3/create-originality-r3-v3-execution.json",
+    "mapCache": "campaigns/originality-r3-v3/originality-r3-v3-map-cache.json",
+    "liquidity": "campaigns/originality-r3-v3/add-originality-r3-v3-liquidity-execution.json"
+  },
+  "markets": [
+    {
+      "type": "multiScalar",
+      "role": "parent",
+      "count": 1,
+      "templateId": 1,
+      "marketName": "How many repositories in [bundle] will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "questionStart": "How many repositories in ",
+      "questionEnd": " will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "outcomeType": "bundle",
+      "outcomes": [
+        "Bundle A",
+        "Bundle B",
+        "Bundle C"
+      ],
+      "tokenNames": [
+        "ORIG_R3C_A",
+        "ORIG_R3C_B",
+        "ORIG_R3C_C"
+      ],
+      "parentMarket": null,
+      "category": "misc",
+      "lang": "en_US",
+      "minBondEth": "0.0005",
+      "questionTimeoutSeconds": 302400
+    },
+    {
+      "type": "multiCategorical",
+      "role": "child",
+      "count": 3,
+      "templateId": 3,
+      "marketNameTemplate": "Which repositories in {bundle} will be evaluated for originality during Round 3 of the Deep Funding experiment?",
+      "tokenNameScheme": "<REPO>_R3C, one outcome per repo in the bundle (33 / 33 / 32) plus the factory's Invalid result",
+      "parentOutcome": "bundle index 0/1/2 of the parent"
+    },
+    {
+      "type": "scalar",
+      "role": "child",
+      "count": 98,
+      "templateId": 1,
+      "marketNameTemplate": "What will be the average originality score of {repo} in Round 3 of the Deep Funding experiment?",
+      "outcomes": [
+        "DOWN",
+        "UP"
+      ],
+      "tokenNameScheme": "<REPO>_D_R3C / <REPO>_U_R3C",
+      "parentOutcome": "the repo's outcome index in its bundle's multi-categorical market",
+      "lowerBound": "0",
+      "upperBound": "100000000000000000000"
+    }
+  ],
+  "liquidity": {
+    "totalCollateral": 1000,
+    "priceSource": "last pool prices",
+    "priceSourceDetail": "identical to originality-r3: round-2 UP pool last price per repo; seedDown = 1 - seedUp",
+    "seedConvention": "seedUp = round-2 last UP; seedDown = 1 - seedUp",
+    "band": {
+      "minPrice": 0.02,
+      "maxPrice": 0.98
+    },
+    "perPool": "one parent split of 1000 -> 1000 of each bundle token; one split of 1000 per middle market -> 1000 of each repo token; per repo B = 1000 of its own token, X = B/(1+r_down+r_up)",
+    "pools": 196,
+    "unpooledByDesign": "1000 parent Invalid + 1000 Invalid of each middle market + each score market's Invalid tokens",
+    "depthNote": "1000 repo tokens per repo. A repo token is worth about 1/98 sUSDS, so this is the same ~10 sUSDS per repo as originality-r3 and the original round-2 seed.",
+    "sizing": "solved"
+  },
+  "spendingCap": {
+    "collateral": 1020,
+    "gasEth": 0.01
+  },
+  "gate": {
+    "approvedAt": "2026-10-01T03:05:50.786Z",
+    "approvedBy": "user (\"go\")",
+    "summaryHash": "sha256(originality-r3-v3-seed.json)=ef2a6e96079e28bf605d10ed3be8d62e1ffe407e88e9e4c0bfe7d0b434918e06",
+    "immutableTextRef": "archive/runs/originality-r3-v3/create-originality-r3-v3-dryrun.log"
+  },
+  "stages": [
+    {
+      "name": "phase0-intake",
+      "status": "done",
+      "artifacts": [
+        "lifecycle/originality-r3-v3.json",
+        "campaigns/originality-r3-v3/originality-r3-v3-seed.json",
+        "campaigns/originality-r3-v3/build-originality-r3-v3-seed.js"
+      ],
+      "notes": "Grill answered 2026-10-01. Seed copied from originality-r3 by the builder script: same repos, bundles and prices; middle level and _R3C symbols added."
+    },
+    {
+      "name": "phase0-rehearsal",
+      "status": "done",
+      "artifacts": [
+        "campaigns/originality-r3-v3/read-market.js",
+        "archive/runs/originality-r3-v3/create-originality-r3-v3-dryrun.log",
+        "archive/runs/originality-r3-v3/add-originality-r3-v3-preview.log"
+      ],
+      "notes": "Hardhat fork of Optimism, live run against the fork. Found that MarketView.getMarket reverts for the middle markets; scripts switched to a direct reader. Creation rehearsed in full (102 markets). Seeding rehearsed through all splits and 28 pools, then stopped before the real run."
+    },
+    {
+      "name": "gate",
+      "status": "done",
+      "artifacts": [
+        "archive/runs/originality-r3-v3/create-originality-r3-v3-dryrun.log"
+      ],
+      "notes": "Approved. Pre-live dry run re-diffed against the approved log: immutable block identical, 0 Reality collisions."
+    },
+    {
+      "name": "create-markets",
+      "status": "done",
+      "startedAt": "2026-10-01T03:06:40.690Z",
+      "finishedAt": "2026-10-01T03:20:49.796Z",
+      "artifacts": [
+        "campaigns/originality-r3-v3/create-originality-r3-v3-execution.json",
+        "archive/runs/originality-r3-v3/create-originality-r3-v3-run.log",
+        "runs/originality-r3-v3/create-markets/run-2026-10-01T03-06-39-519Z.log"
+      ],
+      "txCount": 102,
+      "notes": "1 parent, 3 middle (13.3-13.5M gas each, about 80% of the 2^24 cap), 98 score markets. No retries, no failures. check --markets-only: VERIFY OK."
+    },
+    {
+      "name": "seed-pools",
+      "status": "done",
+      "startedAt": "2026-10-01T03:22:27.260Z",
+      "finishedAt": "2026-10-01T04:34:52.571Z",
+      "artifacts": [
+        "campaigns/originality-r3-v3/add-originality-r3-v3-liquidity-execution.json",
+        "archive/runs/originality-r3-v3/add-originality-r3-v3-dryrun.log",
+        "archive/runs/originality-r3-v3/add-originality-r3-v3-run.log",
+        "archive/runs/originality-r3-v3/add-originality-r3-v3-run2.log",
+        "runs/originality-r3-v3/seed-pools/run-2026-10-01T03-22-27-260Z.log",
+        "runs/originality-r3-v3/seed-pools/run-2026-10-01T04-06-24-988Z.log"
+      ],
+      "txCount": 298,
+      "notes": "1 parent split (1000 sUSDS), 3 middle splits (about 5.5M gas each), 98 score splits, 196 pools. Run 1 died at pool 71 on an RPC timeout inside ethers receipt polling (an approve was in flight, no mint); run 2 resumed and finished. Wallet sUSDS 59251.373 -> 58251.373."
+    },
+    {
+      "name": "phase1-verify",
+      "status": "done",
+      "artifacts": [
+        "campaigns/originality-r3-v3/check-originality-r3-v3-pools.js",
+        "archive/runs/originality-r3-v3/check-originality-r3-v3-verify.log"
+      ],
+      "notes": "Full verify OK from live chain: 102 markets, 196/196 pools within 0.001 of seed, 1000 parent Invalid and 1000 Invalid of each middle market held, no idle bundle or repo tokens. Failure tests: 6 corrupted structure fields -> all caught (on the fork); corrupted price -> both legs caught (mainnet)."
+    }
+  ],
+  "evidenceLog": [
+    {
+      "stage": "launch",
+      "model": "claude-opus-5-5",
+      "checks": [
+        "fork rehearsal of the live create run: found the MarketView revert before anything was sent",
+        "create dry run re-diffed vs gate: identical",
+        "markets-only verify OK; 6 corrupted seed fields caught",
+        "liquidity dry run vs preview: within 0.04 repo token of 1000 per repo",
+        "full verify OK: 196/196 pools on seed",
+        "corrupted price caught on both legs"
+      ],
+      "result": "accepted",
+      "learning": "A conditional market with more outcome slots than its parent has outcomes cannot be read through MarketView.getMarket (it lists the parent outcomes using the child condition). The write path is unaffected. A split on a 34-slot market costs about 5.5M gas, so splits on two levels must not share a transaction."
+    }
+  ],
+  "grillAnswers": {
+    "1_parent": "brand new parent; the incorrect set stays fully separate",
+    "2_liquidity": "1000 sUSDS, pools on the level-3 scalars only (DOWN/UP vs the repo token), as before",
+    "3_prices": "same seed as originality-r3",
+    "4_ui": "new set takes over the Round 3 tab and leaderboard entry; the incorrect set gets its own tab flagged incorrect, trading disabled, Sell all + withdraw kept",
+    "5_users": "banner is enough, with a link to the wrong market"
+  },
+  "walletAtIntake": {
+    "sUSDS": "59251.373",
+    "ETH": "0.039418",
+    "readAt": "2026-10-01"
+  },
+  "walletAfter": {
+    "sUSDS": "58251.373",
+    "ETH": "0.038079",
+    "readAt": "2026-10-01T04:36:00Z"
+  },
+  "results": {
+    "parent": "0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87",
+    "parentWrappedTokens": [
+      "0x8d883809dE718bAF9FCAd72133007B6115f77F6D",
+      "0x9F26c46B5d70E5d9ce2b499F7F3d520f34aDd353",
+      "0xa6Ebc6002ACB875A31922c37d2A9d5bb319d2b06",
+      "0xe0d849F471037A9bE5dB2bDf21f9abaaBaD9F25c"
+    ],
+    "middleMarkets": [
+      "0xC217920a91F1B3D56276393AA5345f01a848eCF0",
+      "0xf0638B8999AAa0de3F5D02048A385A64E7A63AEc",
+      "0x99A941135226813037E15e34956FdD79761307d3"
+    ],
+    "seer": "https://app.seer.pm/markets/10/0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87",
+    "poolCount": 196
+  },
+  "immutableText": {
+    "totalErc20Symbols": 297,
+    "uniqueErc20Symbols": 297,
+    "longestSymbol": "FLASHBOTS_MEV_BOOST_RELAY_D_R3C",
+    "longestSymbolBytes": 31,
+    "maxSymbolBytes": 31,
+    "realityCollisionCheck": "clean: 3 parent + 3 middle + 98 score questions all new",
+    "dryRunLog": "archive/runs/originality-r3-v3/create-originality-r3-v3-dryrun.log"
+  }
+}

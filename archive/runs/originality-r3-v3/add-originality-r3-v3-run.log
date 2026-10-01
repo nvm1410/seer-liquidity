@@ -1,0 +1,1651 @@
+add-originality-r3-v3-liquidity — LIVE
+  campaign originality-r3-v3 (launch/originality), stage seed-pools
+  gate: approved 2026-10-01T03:05:50.786Z by user ("go")
+  chain 10 ok, wallet 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+  balance 59251.37296988787 sUSDS, plan needs 1000
+
+LIVE RUN — corrected originality round 3 liquidity
+   wallet : 0x00DC3E0AcAdB8dBA21BB08fF30540222FF8836e0
+Phase 0: using cached map from campaigns/originality-r3-v3/originality-r3-v3-map-cache.json (98 repos)
+
+   parent : 0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87  split 1000 sUSDS
+   Bundle A (ORIG_R3C_A) -> middle 0xC217920a91F1B3D56276393AA5345f01a848eCF0: split 1000 -> 33 repo tokens
+   Bundle B (ORIG_R3C_B) -> middle 0xf0638B8999AAa0de3F5D02048A385A64E7A63AEc: split 1000 -> 33 repo tokens
+   Bundle C (ORIG_R3C_C) -> middle 0x99A941135226813037E15e34956FdD79761307d3: split 1000 -> 32 repo tokens
+   budget : 1000 of its own token per repo
+   band   : [0.02, 0.98]
+
+Phase 0b: reading pool state and sizing positions...
+
+ bundle #  repo                                      seedDOWN  seedUP     split   collDOWN    collUP     used / B
+  A   0  ethereum/py_ecc                           0.4515    0.5485   258.307   286.648   455.046  1000.0000 / 1000
+  A   1  blockscout/blockscout                     0.3770    0.6230   233.254   178.243   588.502  1000.0000 / 1000
+  A   2  LFDT-web3j/web3j                          0.4621    0.5379   260.165   303.855   435.980  1000.0000 / 1000
+  A   3  herumi/mcl                                0.3098    0.6902   196.436   103.694   699.870  1000.0000 / 1000
+  A   4  paulmillr/noble-curves                    0.4415    0.5585   256.075   270.646   473.278  1000.0000 / 1000
+  A   5  arkworks-rs/algebra                       0.3552    0.6448   222.480   151.417   626.103  1000.0000 / 1000
+  A   6  flashbots/rbuilder                        0.4200    0.5800   250.108   237.769   512.123  1000.0000 / 1000
+  A   7  protofire/solhint                         0.5029    0.4971   263.138   373.549   363.312  1000.0000 / 1000
+  A   8  l2beat/l2beat                             0.3883    0.6117   238.275   193.018   568.707  1000.0000 / 1000
+  A   9  Consensys/gnark-crypto                    0.1980    0.8020   120.065    29.464   850.471  1000.0000 / 1000
+  A  10  Vectorized/solady                         0.4986    0.5014   263.158   366.015   370.827  1000.0000 / 1000
+  A  11  taikoxyz/taiko-mono                       0.5055    0.4945   263.096   378.075   358.828  1000.0000 / 1000
+  A  12  flashbots/mev-boost                       0.3262    0.6738   206.327   119.673   674.000  1000.0000 / 1000
+  A  13  flashbots/mev-boost-relay                 0.3272    0.6728   206.930   120.734   672.336  1000.0000 / 1000
+  A  14  ethereum/js-ethereum-cryptography         0.3398    0.6602   214.158   134.038   651.803  1000.0000 / 1000
+  A  15  libp2p/libp2p                             0.2720    0.7280   171.890    72.006   756.104  1000.0000 / 1000
+  A  16  supranational/blst                        0.2593    0.7407   163.258    62.939   773.803  1000.0000 / 1000
+  A  17  wighawag/hardhat-deploy                   0.2066    0.7934   126.214    33.211   840.574  1000.0000 / 1000
+  A  18  ethstaker/eth-docker                      0.3313    0.6687   209.362   125.003   665.635  1000.0000 / 1000
+  A  19  DefiLlama/DefiLlama-Adapters              0.2888    0.7112   183.072    85.224   731.704  1000.0000 / 1000
+  A  20  DefiLlama/chainlist                       0.5939    0.4061   245.310   537.079   217.611  1000.0000 / 1000
+  A  21  Certora/CertoraProver                     0.2527    0.7473   158.742    58.577   782.681  1000.0000 / 1000
+  A  22  Plonky3/Plonky3                           0.2954    0.7046   187.352    90.802   721.846  1000.0000 / 1000
+  A  23  ChainSafe/bls                             0.3660    0.6340   227.962   164.370   607.668  1000.0000 / 1000
+  A  24  intellij-solidity/intellij-solidity       0.3274    0.6726   207.087   120.948   671.965  1000.0000 / 1000
+  A  25  dappnode/DAppNode                         0.5168    0.4832   262.546   398.177   339.278  1000.0000 / 1000
+  A  26  wealdtech/ethdo                           0.3405    0.6595   214.608   134.875   650.517  1000.0000 / 1000
+  A  27  lambdaclass/lambdaworks                   0.3528    0.6472   221.261   148.702   630.037  1000.0000 / 1000
+  A  28  smartcontracts/simple-optimism-node       0.2921    0.7079   185.192    87.973   726.835  1000.0000 / 1000
+  A  29  skalenetwork/libBLS                       0.2854    0.7146   180.830    82.420   736.751  1000.0000 / 1000
+  A  30  shazow/whatsabi                           0.4783    0.5217   262.152   330.968   406.880  1000.0000 / 1000
+  A  31  TrueBlocks/trueblocks-core                0.3494    0.6506   219.480   144.835   635.685  1000.0000 / 1000
+  A  32  EspressoSystems/jellyfish                 0.4899    0.5101   262.929   350.825   386.246  1000.0000 / 1000
+  B   0  a16z/halmos                               0.2875    0.7125   182.234    84.168   733.597  1000.0000 / 1000
+  B   1  succinctlabs/op-succinct                  0.5727    0.4273   252.306   498.969   248.725  1000.0000 / 1000
+  B   2  succinctlabs/sp1                          0.4644    0.5356   260.493   307.682   431.825  1000.0000 / 1000
+  B   3  otterscan/otterscan                       0.2921    0.7079   185.257    88.013   726.730  1000.0000 / 1000
+  B   4  lambdaclass/ethrex                        0.3927    0.6073   240.122   199.024   560.854  1000.0000 / 1000
+  B   5  NethermindEth/juno                        0.4445    0.5555   256.782   275.497   467.721  1000.0000 / 1000
+  B   6  Commit-Boost/commit-boost-client          0.2981    0.7019   189.100    93.168   717.732  1000.0000 / 1000
+  B   7  Cyfrin/aderyn                             0.2653    0.7347   167.379    67.172   765.450  1000.0000 / 1000
+  B   8  0xMiden/miden-vm                          0.3772    0.6228   233.292   178.412   588.295  1000.0000 / 1000
+  B   9  holiman/goevmlab                          0.4904    0.5096   262.937   351.738   385.325  1000.0000 / 1000
+  B  10  edb-rs/edb                                0.3682    0.6318   229.042   167.116   603.842  1000.0000 / 1000
+  B  11  evmts/tevm-monorepo                       0.4638    0.5362   260.411   306.693   432.896  1000.0000 / 1000
+  B  12  succinctlabs/rsp                          0.4744    0.5256   261.756   324.453   413.791  1000.0000 / 1000
+  B  13  aestus-relay/mev-boost-relay              0.5205    0.4795   262.258   404.740   333.002  1000.0000 / 1000
+  B  14  OffchainLabs/stylus-sdk-rs                0.4485    0.5515   257.690   281.904   460.406  1000.0000 / 1000
+  B  15  ethstaker/ethstaker-deposit-cli           0.3004    0.6996   190.481    95.101   714.418  1000.0000 / 1000
+  B  16  dl-solarity/solidity-lib                  0.2575    0.7425   162.019    61.741   776.240  1000.0000 / 1000
+  B  17  risc0/risc0-ethereum                      0.4744    0.5256   261.783   324.486   413.730  1000.0000 / 1000
+  B  18  powdr-labs/powdr                          0.3096    0.6904   196.339   103.549   700.113  1000.0000 / 1000
+  B  19  axiom-crypto/snark-verifier               0.3586    0.6414   224.292   155.514   620.194  1000.0000 / 1000
+  B  20  swiss-knife-xyz/swiss-knife               0.4212    0.5788   250.493   239.631   509.876  1000.0000 / 1000
+  B  21  a16z/helios                               0.4664    0.5336   260.806   311.033   428.161  1000.0000 / 1000
+  B  22  alloy-rs/alloy                            0.4391    0.5609   255.534   266.923   477.543  1000.0000 / 1000
+  B  23  apeworx/ape                               0.3183    0.6817   201.633   111.821   686.545  1000.0000 / 1000
+  B  24  chainsafe/lodestar                        0.3250    0.6750   205.652   118.502   675.846  1000.0000 / 1000
+  B  25  consensys/teku                            0.3427    0.6573   215.811   137.274   646.915  1000.0000 / 1000
+  B  26  erigontech/erigon                         0.2477    0.7523   155.257    55.349   789.394  1000.0000 / 1000
+  B  27  eth-infinitism/account-abstraction        0.2609    0.7391   164.318    64.039   771.643  1000.0000 / 1000
+  B  28  ethereum-lists/chains                     0.3728    0.6272   231.287   172.900   595.813  1000.0000 / 1000
+  B  29  ethereum/consensus-specs                  0.4891    0.5109   262.903   349.484   387.613  1000.0000 / 1000
+  B  30  ethereum/eips                             0.5038    0.4962   263.110   375.120   361.770  1000.0000 / 1000
+  B  31  ipsilon/evmone                            0.3194    0.6806   202.308   112.885   684.807  1000.0000 / 1000
+  B  32  ethereum/execution-apis                   0.4611    0.5389   259.992   302.200   437.808  1000.0000 / 1000
+  C   0  argotorg/fe                               0.3884    0.6116   238.279   193.118   568.603  1000.0000 / 1000
+  C   1  ethereum/go-ethereum                      0.1964    0.8036   118.978    28.816   852.206  1000.0000 / 1000
+  C   2  remix-project-org/remix-project           0.2867    0.7133   181.673    83.471   734.856  1000.0000 / 1000
+  C   3  argotorg/solidity                         0.2033    0.7967   123.832    31.724   844.444  1000.0000 / 1000
+  C   4  argotorg/sourcify                         0.2564    0.7436   161.251    60.996   777.753  1000.0000 / 1000
+  C   5  ethereum/web3.py                          0.1957    0.8043   118.460    28.525   853.015  1000.0000 / 1000
+  C   6  ethers-io/ethers.js                       0.3639    0.6361   226.953   161.895   611.152  1000.0000 / 1000
+  C   7  foundry-rs/foundry                        0.2595    0.7405   163.405    63.122   773.473  1000.0000 / 1000
+  C   8  grandinetech/grandine                     0.3376    0.6624   212.924   131.639   655.437  1000.0000 / 1000
+  C   9  hyperledger-web3j/web3j                   0.2934    0.7066   186.065    89.098   724.836  1000.0000 / 1000
+  C  10  hyperledger/besu                          0.4511    0.5489   258.222   286.052   455.726  1000.0000 / 1000
+  C  11  nethereum/nethereum                       0.3536    0.6464   221.706   149.671   628.623  1000.0000 / 1000
+  C  12  nethermindeth/nethermind                  0.3218    0.6782   203.773   115.320   680.907  1000.0000 / 1000
+  C  13  nomicfoundation/hardhat                   0.4240    0.5760   251.350   243.724   504.925  1000.0000 / 1000
+  C  14  openzeppelin/openzeppelin-contracts       0.2215    0.7785   136.783    40.401   822.817  1000.0000 / 1000
+  C  15  paradigmxyz/reth                          0.2768    0.7232   175.116    75.640   749.243  1000.0000 / 1000
+  C  16  OffchainLabs/prysm                        0.4485    0.5515   257.668   281.846   460.486  1000.0000 / 1000
+  C  17  safe-global/safe-smart-account            0.3839    0.6161   236.388   187.231   576.381  1000.0000 / 1000
+  C  18  scaffold-eth/scaffold-eth-2               0.3240    0.6760   205.059   117.444   677.497  1000.0000 / 1000
+  C  19  sigp/lighthouse                           0.2598    0.7402   163.557    63.278   773.165  1000.0000 / 1000
+  C  20  status-im/nimbus-eth2                     0.2716    0.7284   171.605    71.704   756.690  1000.0000 / 1000
+  C  21  vyperlang/titanoboa                       0.3108    0.6892   197.082   104.640   698.278  1000.0000 / 1000
+  C  22  vyperlang/vyper                           0.4897    0.5103   262.936   350.472   386.592  1000.0000 / 1000
+  C  23  wevm/viem                                 0.4211    0.5789   250.475   239.491   510.034  1000.0000 / 1000
+  C  24  argotorg/hevm                             0.3213    0.6787   203.494   114.824   681.681  1000.0000 / 1000
+  C  25  ethdebug/format                           0.2912    0.7088   184.643    87.246   728.111  1000.0000 / 1000
+  C  26  argotorg/act                              0.3297    0.6703   208.432   123.321   668.247  1000.0000 / 1000
+  C  27  ethpandaops/ethereum-package              0.3446    0.6554   216.823   139.314   643.862  1000.0000 / 1000
+  C  28  ethpandaops/ethereum-helm-charts          0.4987    0.5013   263.126   366.056   370.818  1000.0000 / 1000
+  C  29  ethpandaops/checkpointz                   0.2957    0.7043   187.581    91.092   721.327  1000.0000 / 1000
+  C  30  lambdaclass/lambda_ethereum_consensus     0.2826    0.7174   178.988    80.174   740.838  1000.0000 / 1000
+  C  31  erigontech/silkworm                       0.4217    0.5783   250.637   240.322   509.041  1000.0000 / 1000
+
+  GRAND TOTAL sUSDS committed (one parent split): 1000
+  middle splits              : 3 x 1000 bundle tokens (each bundle token used in full)
+  pools to seed              : 196
+  pools that already exist   : 0 (their live price is used, not the seed price)
+  worst per-repo idle tokens : 0.000000 (integer rounding)
+  unpooled by design         : 1000 parent Invalid + 1000 Invalid of each middle market + 21023.57 score-market Invalid tokens
+
+  wallet sUSDS : 59251.372969887868268818
+  wallet ETH   : 0.039192537924008992
+
+Phase 1: parent split...
+
+  splitting 1000 sUSDS on 0x37ab5CbEee3A32289430e5D38B914Ec7F580FD87
+    spent so far: 1000.000000 / 1020
+    Attempt 1/3...
+    Tx sent: 0x1024758171c252b71986027762343a5f5adcda83be416a8100022501e1a2280c
+    Confirmed in block 157613091
+    Attempt 1/3...
+    Tx sent: 0xbd61392535e8c077baa863fdc9f7eaba2bd48a36cac789fbbf262711138afe17
+    Confirmed in block 157613094
+     done — 1000 of each of the 4 parent outcome tokens minted.
+
+Phase 2: 3 middle splits...
+
+  Bundle A: splitting 1000 ORIG_R3C_A on 0xC217920a91F1B3D56276393AA5345f01a848eCF0
+    Attempt 1/3...
+    Tx sent: 0xd52f83401c9a7898144c0d0063d8ac06e4928250daa48313c0ff187bdadb0b5a
+    Confirmed in block 157613096
+    Attempt 1/3...
+    Tx sent: 0xcfe7586081496363e6ab5305c4ce2d4b46926e03981db3598b8c713f6f19c107
+    Confirmed in block 157613098
+
+  Bundle B: splitting 1000 ORIG_R3C_B on 0xf0638B8999AAa0de3F5D02048A385A64E7A63AEc
+    Attempt 1/3...
+    Tx sent: 0xd2253fb87fc93548ccb44592b854b80ba9ad02a0eab006838b99589ccdb719da
+    Confirmed in block 157613102
+    Attempt 1/3...
+    Tx sent: 0xf863f71484627d2cde9cfc8505a9da193fd83dcde6c7cad42dba5a78fa9440cb
+    Confirmed in block 157613105
+
+  Bundle C: splitting 1000 ORIG_R3C_C on 0x99A941135226813037E15e34956FdD79761307d3
+    Attempt 1/3...
+    Tx sent: 0x2df23f72eee79ee6dbb739c4474547fff257bdc25c1cf0dc539553f16cacc241
+    Confirmed in block 157613108
+    Attempt 1/3...
+    Tx sent: 0x4af4800181323f0110fe7dc065aa2abefb184caebf035a38f5ebcc99385fe961
+    Confirmed in block 157613109
+
+Phase 3: 98 score-market splits...
+
+  Bundle A[0] ethereum/py_ecc: split 258.306590657162853438
+    Attempt 1/3...
+    Tx sent: 0x95824578c43bd783b45c1a6cff2b8fa5b07cc284c499f3141f2b3a86650dd276
+    Confirmed in block 157613111
+    Attempt 1/3...
+    Tx sent: 0xd11591195c938bdb35a58be9b50798d0201f094f32cd1c9f92142c915ca212f6
+    Confirmed in block 157613116
+
+  Bundle A[1] blockscout/blockscout: split 233.254436878500216768
+    Attempt 1/3...
+    Tx sent: 0x07560e12dbad97aa0c2b3607fa3596e4b33ef4d3e5a8ec0e2adbace9b6d28e2e
+    Confirmed in block 157613118
+    Attempt 1/3...
+    Tx sent: 0x6612a2c4e1b9af815bddec7e9f28649c0bb1d2334ce2b12a595cc9d63fdde9f7
+    Confirmed in block 157613119
+
+  Bundle A[2] LFDT-web3j/web3j: split 260.164757791125045025
+    Attempt 1/3...
+    Tx sent: 0x7f3e9143781af002508a2992b74029e9f144272a52104ecd7986d9e08aa7f0f4
+    Confirmed in block 157613121
+    Attempt 1/3...
+    Tx sent: 0x75768dfc14a07966da01e9b47ca70119120b28b43c0a403ebc023ba5408c4dd5
+    Confirmed in block 157613124
+
+  Bundle A[3] herumi/mcl: split 196.43624852552080202
+    Attempt 1/3...
+    Tx sent: 0xb55bc2180528eff607a364caa404dc98ebddc99eea5a6b657aed1cda47a2bc68
+    Confirmed in block 157613128
+    Attempt 1/3...
+    Tx sent: 0x329c2fbfdda3fd7abad1036c40e12528a9fe22e0fd5b8b7de7ae40b8b3aa911c
+    Confirmed in block 157613131
+
+  Bundle A[4] paulmillr/noble-curves: split 256.075335298428556003
+    Attempt 1/3...
+    Tx sent: 0x4a134f5c91eb1537d30d3f07b2b5b9cc86005ee97ee23aa771b9b20f37714c0b
+    Confirmed in block 157613133
+    Attempt 1/3...
+    Tx sent: 0x9da07ee7388caada47dd8a97501be2f993ae189e2d0f7de557f12dacad6dd36d
+    Confirmed in block 157613135
+
+  Bundle A[5] arkworks-rs/algebra: split 222.47985974957743963
+    Attempt 1/3...
+    Tx sent: 0xd309ecd84f4477eb265ab545c1cf032d090d9c80ee14b3a5f4448fb2d3bcb10d
+    Confirmed in block 157613138
+    Attempt 1/3...
+    Tx sent: 0x338b2c0cdaea1e2385f4a63c41bcdbbea55a2dafa24890a486efe73c54ecf7f6
+    Confirmed in block 157613139
+
+  Bundle A[6] flashbots/rbuilder: split 250.108081336401771734
+    Attempt 1/3...
+    Tx sent: 0x1a67dd1ef621249e90602de4ecb34f10ffd9f828a858a7f79c0c38de6e3ac8a9
+    Confirmed in block 157613141
+    Attempt 1/3...
+    Tx sent: 0xc0208a914c5d899c10ac2a99bca6c60b8c60b12b92c5a292d2b3a6fd3a6d94e1
+    Confirmed in block 157613144
+
+  Bundle A[7] protofire/solhint: split 263.13826179682926512
+    Attempt 1/3...
+    Tx sent: 0xfc3ab3b48703585f89f63b38279ad7de8899e1ef36c0eb443a05d0a8d8b58bf7
+    Confirmed in block 157613147
+    Attempt 1/3...
+    Tx sent: 0x8205e8889e411a68dd5d74a804a7e1ad437571b63555d51e87618e78cc6c22b0
+    Confirmed in block 157613150
+
+  Bundle A[8] l2beat/l2beat: split 238.275043821462230793
+    Attempt 1/3...
+    Tx sent: 0xc60f90600664405b1b1d64ab8301a6058d9d15cf6b9cb202bc0945cb07d77281
+    Confirmed in block 157613166
+    Attempt 1/3...
+    Tx sent: 0xdefd45aa10cf3fe26d908a8b9a1e22301dbeb5121ba7eb327ab9757d7b0789a0
+    Confirmed in block 157613169
+
+  Bundle A[9] Consensys/gnark-crypto: split 120.065251844364458133
+    Attempt 1/3...
+    Tx sent: 0xafa87f9fd8795a3561e04955f9d189fcfa598540f8c4a9295dc902ea760017b1
+    Confirmed in block 157613173
+    Attempt 1/3...
+    Tx sent: 0xe94ce3f9eec18be91f74a55a3c525853d45ca6682d79a9d0ccc7ab7d22a2757c
+    Confirmed in block 157613177
+
+  Bundle A[10] Vectorized/solady: split 263.158292726085094525
+    Attempt 1/3...
+    Tx sent: 0x2db994bdcac792eea2431014dcb2a4a2381ae84b0b34ae80b050b4967a084204
+    Confirmed in block 157613180
+    Attempt 1/3...
+    Tx sent: 0x134b3ec646e06240a4d13bcff45b3592edce1275e715fb6cc208cf0fe1e7d563
+    Confirmed in block 157613184
+
+  Bundle A[11] taikoxyz/taiko-mono: split 263.096097120773481012
+    Attempt 1/3...
+    Tx sent: 0x69f8951a050e8f0facadc5c3e9562890177e4a43d7dd7d4fa993c742d17b2b2e
+    Confirmed in block 157613187
+    Attempt 1/3...
+    Tx sent: 0x285bd7fd2dc7c91a8de6b430804bbef0ab4b759ae4f2de00bdae1d7d5b2c936f
+    Confirmed in block 157613190
+
+  Bundle A[12] flashbots/mev-boost: split 206.327348764760488879
+    Attempt 1/3...
+    Tx sent: 0x22543bc92b161f2eb084694addcc25e5108f191d5cc95e62291f5d8e2286677b
+    Confirmed in block 157613194
+    Attempt 1/3...
+    Tx sent: 0xa4a2f2ee7e2dab30c50101051ee2cce1c8e47ccf1793bea3dc59033a55180d7d
+    Confirmed in block 157613197
+
+  Bundle A[13] flashbots/mev-boost-relay: split 206.930269653151075619
+    Attempt 1/3...
+    Tx sent: 0x47738ad2f393f7201f847d0680e8f9cc3a1bcd83a4ccc4ec22e604e96b33b5d4
+    Confirmed in block 157613199
+    Attempt 1/3...
+    Tx sent: 0xfb0e50acd5d5fc921858701b2c70c42c28014877cfff5cb86a144324f3b51823
+    Confirmed in block 157613200
+
+  Bundle A[14] ethereum/js-ethereum-cryptography: split 214.158436979111324315
+    Attempt 1/3...
+    Tx sent: 0x0d35eb2cb106bc5ecbefaa778f4198b4008a9244650484034366543a75d8f703
+    Confirmed in block 157613202
+    Attempt 1/3...
+    Tx sent: 0x18862b0f75ff8f000545623ce5ccdd03bc89d20ed3e43044ab5e37779efd1ac5
+    Confirmed in block 157613204
+
+  Bundle A[15] libp2p/libp2p: split 171.889955133749808035
+    Attempt 1/3...
+    Tx sent: 0x8a5a32ca77d2ee2b9f713b1d79c05416ed319cb6066e393a7a32608001240abc
+    Confirmed in block 157613207
+    Attempt 1/3...
+    Tx sent: 0x0201abf6401defa03f5b4f0284f77615e28ae1d3ba42fd135585fc9eb553ae44
+    Confirmed in block 157613209
+
+  Bundle A[16] supranational/blst: split 163.258040858785917793
+    Attempt 1/3...
+    Tx sent: 0xd2be2ccfac0b94c4cee545549bc57e0cd81cc31a17860efa37906b97d2718e29
+    Confirmed in block 157613212
+    Attempt 1/3...
+    Tx sent: 0x8516eb9a85fca1e8e8a0724ec573bb7f36c98da048dc708a06a9a266082f8643
+    Confirmed in block 157613214
+
+  Bundle A[17] wighawag/hardhat-deploy: split 126.214467295068701562
+    Attempt 1/3...
+    Tx sent: 0xb9eb64fff14236a99243b66c040adbb0ab1dc9728405e20d96538368bc0061c8
+    Confirmed in block 157613217
+    Attempt 1/3...
+    Tx sent: 0xc5366f6361df5985eacbdac334a43a7a31b1a7f06b22c37cd8d59113433de7fb
+    Confirmed in block 157613220
+
+  Bundle A[18] ethstaker/eth-docker: split 209.362271757288379712
+    Attempt 1/3...
+    Tx sent: 0x1eda5eb46a5ca9f1a0d3a9840c305d0d0aa2df3bc2713d4f2c7fd57c51dbf144
+    Confirmed in block 157613244
+    Attempt 1/3...
+    Tx sent: 0x99f33345f1faa1e32046397b4201a1ff765753e8eb7bc6d5e3ebc92dd3b4336e
+    Confirmed in block 157613250
+
+  Bundle A[19] DefiLlama/DefiLlama-Adapters: split 183.072280334410860379
+    Attempt 1/3...
+    Tx sent: 0x1b673cc377b91f1aa0abd92c121c82b7861551300ce1a070328ee4f3c1d6f965
+    Confirmed in block 157613254
+    Attempt 1/3...
+    Tx sent: 0xb6f804881cd81e07a12cd3efcde4b49034a8c446e7a8a553f8dd1212e66b49ba
+    Confirmed in block 157613257
+
+  Bundle A[20] DefiLlama/chainlist: split 245.310470225369066572
+    Attempt 1/3...
+    Tx sent: 0x8dfb1f02f1d415d6c44d9fb2f8e45caa23e21dd088eddc9d658557d83efae7b2
+    Confirmed in block 157613260
+    Attempt 1/3...
+    Tx sent: 0xda73b8b3d6f4fd963c6c08070012c54087db9a4df9329c195be15cd3b729b911
+    Confirmed in block 157613262
+
+  Bundle A[21] Certora/CertoraProver: split 158.742265382665447892
+    Attempt 1/3...
+    Tx sent: 0x120f1d05f141c0f1a2839f3bc085113c55fe29097068bf43371d99cb5c6e8e88
+    Confirmed in block 157613267
+    Attempt 1/3...
+    Tx sent: 0x6855f2442ea0ae70d625085ab7f6a1084ae2b25b277fc7aedde78f1a02b5d80e
+    Confirmed in block 157613269
+
+  Bundle A[22] Plonky3/Plonky3: split 187.35205179719161895
+    Attempt 1/3...
+    Tx sent: 0x7b1b5bc0231314388f4b2f0a5edbbd208c82ffe18568c2554f5139eaf65bfa9c
+    Confirmed in block 157613274
+    Attempt 1/3...
+    Tx sent: 0xe369a297f35cb4633ad1ab1090693132f781958b131e8360829b5dfdd9c0f437
+    Confirmed in block 157613277
+
+  Bundle A[23] ChainSafe/bls: split 227.961749352673081156
+    Attempt 1/3...
+    Tx sent: 0xc5e890e1bd31d0327418d911ce8d206098e1f3e5fec140f9a00510dc03b4c454
+    Confirmed in block 157613280
+    Attempt 1/3...
+    Tx sent: 0x13ca871b7ca2803b1941fffd265e59d08df1d3d37d028d00659c1283f2651fe7
+    Confirmed in block 157613284
+
+  Bundle A[24] intellij-solidity/intellij-solidity: split 207.087027732805155603
+    Attempt 1/3...
+    Tx sent: 0x55f47fc11c4a425c970fc21f313d4fbed325f4ccf8d7f5510fcb57a3d054967b
+    Confirmed in block 157613288
+    Attempt 1/3...
+    Tx sent: 0xe560d26f241e1a811fb5d5c197d3fa5ff2842bfe6d7e8309ea0cd47a02e2caef
+    Confirmed in block 157613291
+
+  Bundle A[25] dappnode/DAppNode: split 262.545668264712343813
+    Attempt 1/3...
+    Tx sent: 0xdf1208cd9717863f5be9973a7ea3bb36b5dc85fd8e93c27fd736253e4f8e7f9b
+    Confirmed in block 157613294
+    Attempt 1/3...
+    Tx sent: 0x7b802f7939cb86aa315857348f518a7841ce7169b2af4da3e2a1b19089d4ea6c
+    Confirmed in block 157613297
+
+  Bundle A[26] wealdtech/ethdo: split 214.607633435150820702
+    Attempt 1/3...
+    Tx sent: 0x852e86409683a4dcabc6c2f0c227776b9c09ee0f18fc67336e53fb6a4817784a
+    Confirmed in block 157613300
+    Attempt 1/3...
+    Tx sent: 0x5e4747e0980c6bba8d559ff9f45ef72559b57fde7249b2aecd47ae7fe4167b2b
+    Confirmed in block 157613304
+
+  Bundle A[27] lambdaclass/lambdaworks: split 221.261302561784752194
+    Attempt 1/3...
+    Tx sent: 0x2f5925a83848e13f6d62b8027eecf087ef8f2e519c2eb87d0678aa6c25d54b96
+    Confirmed in block 157613308
+    Attempt 1/3...
+    Tx sent: 0x7523989bb9fc1aa708bb4587860572d5b25b07891b3c9df54db60ebe37ce6714
+    Confirmed in block 157613310
+
+  Bundle A[28] smartcontracts/simple-optimism-node: split 185.192298384066804749
+    Attempt 1/3...
+    Tx sent: 0x77447129dc948f98b067756f8712d69ccf27bbea18cae7b6857b48982eee8d3d
+    Confirmed in block 157613314
+    Attempt 1/3...
+    Tx sent: 0x78129f30a842cf93bb0deb4d64035a9ed2063960353139ba8bef3aa2290165f6
+    Confirmed in block 157613316
+
+  Bundle A[29] skalenetwork/libBLS: split 180.829577821761581785
+    Attempt 1/3...
+    Tx sent: 0x49ebf001952c8fc185f1b227b21c15726462790c476999d77954cf29291473e2
+    Confirmed in block 157613319
+    Attempt 1/3...
+    Tx sent: 0x377725791818e0f68dbadcdabc15c33a9046125888cfd804788021f10759052f
+    Confirmed in block 157613320
+
+  Bundle A[30] shazow/whatsabi: split 262.152250638075338661
+    Attempt 1/3...
+    Tx sent: 0x4a689359ebdda04ddf73a3c982bc6570b915013be3aa0e2d1f2f55431306d8c2
+    Confirmed in block 157613323
+    Attempt 1/3...
+    Tx sent: 0xb2d6b32db9f079f8990654e61f03eed69285acfda72ed5ee5cdfb524859b9f72
+    Confirmed in block 157613327
+
+  Bundle A[31] TrueBlocks/trueblocks-core: split 219.479578102144486605
+    Attempt 1/3...
+    Tx sent: 0xae6ec5506f4a011616916f1dd22ec4317644d2ade5ba8f064c942f560d513535
+    Confirmed in block 157613331
+    Attempt 1/3...
+    Tx sent: 0xbc8fd4bd43e8df109d853eaf2246134dc6cd3fdc4d48f9453c696659e4f571ca
+    Confirmed in block 157613333
+
+  Bundle A[32] EspressoSystems/jellyfish: split 262.928735046876308835
+    Attempt 1/3...
+    Tx sent: 0xfc5898abadb2515813fd8ccef9f0e2708128629b2a9816fd07856d77d93f3472
+    Confirmed in block 157613338
+    Attempt 1/3...
+    Tx sent: 0x8eb5f9df899381602bb44327ddd2c19df9cf94f663c041c3ac8fc1d44a9150bd
+    Confirmed in block 157613342
+
+  Bundle B[0] a16z/halmos: split 182.234070790756268308
+    Attempt 1/3...
+    Tx sent: 0x70d382fe032ca527b91f0096c623b37f49bc4221f3bd3020b281a21f55eb1f59
+    Confirmed in block 157613347
+    Attempt 1/3...
+    Tx sent: 0x5d7de633bba576abf3f8ad6096d8fdbff4f9a1b0504b2d512a0a9b8c6cd1be47
+    Confirmed in block 157613351
+
+  Bundle B[1] succinctlabs/op-succinct: split 252.305643877120475474
+    Attempt 1/3...
+    Tx sent: 0xb9421613225a4eee3ad2b0977eded6add99056c618129b5c2fa3343b13d5973a
+    Confirmed in block 157613355
+    Attempt 1/3...
+    Tx sent: 0x5bf57cb14a26ca7a7e62a4d37ef481a807a99200cfad43c8d312a8570f34b8b2
+    Confirmed in block 157613359
+
+  Bundle B[2] succinctlabs/sp1: split 260.492811695066444865
+    Attempt 1/3...
+    Tx sent: 0x417a526b25c4187226e11c74b232e716a5e9b51c5f947b7430e4e2eb285d04ab
+    Confirmed in block 157613363
+    Attempt 1/3...
+    Tx sent: 0xd60928739d685f6599719da9e19c3fea5c57939b5160cd57471361a081d368e9
+    Confirmed in block 157613364
+
+  Bundle B[3] otterscan/otterscan: split 185.257065744853793311
+    Attempt 1/3...
+    Tx sent: 0xbaa3e6d1f5e33fad8481802f1c18ac9b3c53e891435c92afd2ec3302ffd1483a
+    Confirmed in block 157613366
+    Attempt 1/3...
+    Tx sent: 0x9dbbb23418dc031f367eeea3a80c345bc6f71ca066d6aa18eacc5940a6bc866a
+    Confirmed in block 157613368
+
+  Bundle B[4] lambdaclass/ethrex: split 240.12160627027690353
+    Attempt 1/3...
+    Tx sent: 0x790f3ee7cc34d31cae77010f91f8214b891ac0202888ad29aceb80ec0049bba3
+    Confirmed in block 157613372
+    Attempt 1/3...
+    Tx sent: 0xdc5874b070380bf86bf6cfed43210ff72a057caac00ceabacea2826bb93d51d3
+    Confirmed in block 157613376
+
+  Bundle B[5] NethermindEth/juno: split 256.78188684985854195
+    Attempt 1/3...
+    Tx sent: 0x8f5b4f96f174bbeaa3c707ab2cb1dbe7c369ef7457e4edb6236d7b8dccfac1c8
+    Confirmed in block 157613380
+    Attempt 1/3...
+    Tx sent: 0x043f0fe53fadb48e1f442e3d8a4e61e670ff327790017af08db5a90bd4bb77f4
+    Confirmed in block 157613384
+
+  Bundle B[6] Commit-Boost/commit-boost-client: split 189.099613429507140429
+    Attempt 1/3...
+    Tx sent: 0x8c087a5497e4fd51a78166706fa1de33889d467ee4517f758fa53a0acb120092
+    Confirmed in block 157613394
+    Attempt 1/3...
+    Tx sent: 0xc306dfd5418d2d9a3baf6d23598cb243d559878e3a65afce0ce952989f8c66d1
+    Confirmed in block 157613396
+
+  Bundle B[7] Cyfrin/aderyn: split 167.378821518935016403
+    Attempt 1/3...
+    Tx sent: 0xcaf3c2f39b155a533d8c9f3d4b0a18d6782fb2f9a2429707928769e77dfbe370
+    Confirmed in block 157613399
+    Attempt 1/3...
+    Tx sent: 0xf3eada4f884064362079893872146323f45d1ceb6ea09452134e56932aff4fa2
+    Confirmed in block 157613401
+
+  Bundle B[8] 0xMiden/miden-vm: split 233.292420488249076784
+    Attempt 1/3...
+    Tx sent: 0x1fe041a28c9f29b6505a894aa73aef3f650dbea98d1c865c3f1e020330dc582e
+    Confirmed in block 157613405
+    Attempt 1/3...
+    Tx sent: 0x661e4971b49d820fd02f36c239817658c3cff7057da8a352ea9620ed2b29a578
+    Confirmed in block 157613413
+
+  Bundle B[9] holiman/goevmlab: split 262.936795801795384921
+    Attempt 1/3...
+    Tx sent: 0xcb082bbda3d09c7d320fa194e169a5209188d7be5b0dc746a93f531b733f2ee6
+    Confirmed in block 157613418
+    Attempt 1/3...
+    Tx sent: 0x23e127eb25b25073d447a7c661f2c15c4e1188faf0614888d221436ac5557ea2
+    Confirmed in block 157613422
+
+  Bundle B[10] edb-rs/edb: split 229.041671908783653244
+    Attempt 1/3...
+    Tx sent: 0xfabb65f46b5fbb547864369d7d31b57bab242d1fc28f986d8ab4bb55c5512b02
+    Confirmed in block 157613426
+    Attempt 1/3...
+    Tx sent: 0xe60d55337dac8d8d79818e0579fb7b967f33b4ac33240851d458b0b5d04c68f4
+    Confirmed in block 157613428
+
+  Bundle B[11] evmts/tevm-monorepo: split 260.410689850568234423
+    Attempt 1/3...
+    Tx sent: 0xdc08dbb4d0eb0837f27be05a9a430e9ac7f026bcc94be395cb4984d879f393b6
+    Confirmed in block 157613435
+    Attempt 1/3...
+    Tx sent: 0x3510b54afd59f7f6c32bb1a686e958ae35cb23be457189779a1f7069419f4bf5
+    Confirmed in block 157613439
+
+  Bundle B[12] succinctlabs/rsp: split 261.756379737453888578
+    Attempt 1/3...
+    Tx sent: 0x02c8483209b3d639695662816545017385f86f0618977550fcce71bec75a0637
+    Confirmed in block 157613444
+    Attempt 1/3...
+    Tx sent: 0xba4ad0a1bae5aaf8a3385cd8f6795c8f677f7062ecd90b59e375549e0d1d163b
+    Confirmed in block 157613447
+
+  Bundle B[13] aestus-relay/mev-boost-relay: split 262.258017868582488935
+    Attempt 1/3...
+    Tx sent: 0x83e770d07d718617315cfc292aedfb5edcf7961fb265af0e72722ec05a0657fd
+    Confirmed in block 157613449
+    Attempt 1/3...
+    Tx sent: 0x2ff54e9d44bcb51d90b39f8f022accf330a8b79cea35d647a2bd37c3fc995985
+    Confirmed in block 157613451
+
+  Bundle B[14] OffchainLabs/stylus-sdk-rs: split 257.690475578402066973
+    Attempt 1/3...
+    Tx sent: 0x1c324f505d94073dadcba24618102e0cedecce1fda551f591d2b89bd05660c05
+    Confirmed in block 157613455
+    Attempt 1/3...
+    Tx sent: 0x6ca961148d977ff51879c76ea2684b451f57b4cbdf88b9e90146bcd7d4e2ffb4
+    Confirmed in block 157613458
+
+  Bundle B[15] ethstaker/ethstaker-deposit-cli: split 190.480767656000746401
+    Attempt 1/3...
+    Tx sent: 0x4bfe0593fa8e025b48da62562d2be19bb36482971dd1ff538c262f360757cbc3
+    Confirmed in block 157613463
+    Attempt 1/3...
+    Tx sent: 0xadfc050af43d8f645b785bf77c39f7fa55f686d730877a6c78fbd63a45945bb1
+    Confirmed in block 157613466
+
+  Bundle B[16] dl-solarity/solidity-lib: split 162.019218855619663895
+    Attempt 1/3...
+    Tx sent: 0x5cf7cea61742b675e9407bc14b81070f3d3732a093fbb6caf28cb217c8e6290f
+    Confirmed in block 157613469
+    Attempt 1/3...
+    Tx sent: 0xb1b20de4f1e7a00ddc18c51e182467f253918c16d6cdb09292ff41bdf0fa6feb
+    Confirmed in block 157613473
+
+  Bundle B[17] risc0/risc0-ethereum: split 261.783339132523706729
+    Attempt 1/3...
+    Tx sent: 0x36f264d276c63254154ff63af8fea037fd55844b27568a6a12f2f7c5a4cd7f18
+    Confirmed in block 157613476
+    Attempt 1/3...
+    Tx sent: 0xba908a03b5faafceb12d357514d4cb4e994b266a30b05c3285cf32db5c6a2c07
+    Confirmed in block 157613478
+
+  Bundle B[18] powdr-labs/powdr: split 196.338837824054792098
+    Attempt 1/3...
+    Tx sent: 0x2734ee375b7a5bbbaa12387f03044fb82ca8de75251be478b682dcd0017378f3
+    Confirmed in block 157613482
+    Attempt 1/3...
+    Tx sent: 0x508bd2ffa2d978c0afc839ff3ff6cfb6645cb6f914238e164cb6189da3a759bb
+    Confirmed in block 157613485
+
+  Bundle B[19] axiom-crypto/snark-verifier: split 224.292172028825682295
+    Attempt 1/3...
+    Tx sent: 0x22c12e2d2c6d26a3e9f8945deb2c8f64aa069bfc7b1dc724bbeb734184b8edfc
+    Confirmed in block 157613489
+    Attempt 1/3...
+    Tx sent: 0x7a7faec955343c59ef8a68493a3ba32ed808a9e907cc8f5a0d4b413b54a48688
+    Confirmed in block 157613491
+
+  Bundle B[20] swiss-knife-xyz/swiss-knife: split 250.49251295176032401
+    Attempt 1/3...
+    Tx sent: 0x58f3a54398b4b66dbd043e186a592e124bf722118cd40fa71156e29238677f34
+    Confirmed in block 157613494
+    Attempt 1/3...
+    Tx sent: 0x1d03a6cd23fd56983e7e477b77476178761eddc0d6a588497fb0a7570e4f1525
+    Confirmed in block 157613497
+
+  Bundle B[21] a16z/helios: split 260.80629920658123432
+    Attempt 1/3...
+    Tx sent: 0x9aa73e2669d7ca72e273cd45a086c2b0c962584c52d9c2d0060bd0e103ea1890
+    Confirmed in block 157613500
+    Attempt 1/3...
+    Tx sent: 0xeac9ace00aea495f360a3a522a970e3b534dba9e39c5004f04f6278e4262072b
+    Confirmed in block 157613503
+
+  Bundle B[22] alloy-rs/alloy: split 255.533862616329870232
+    Attempt 1/3...
+    Tx sent: 0x8b375a86747e62e69f60761bef07b1778b86a49a3a3dd730195efd1c6e70e071
+    Confirmed in block 157613506
+    Attempt 1/3...
+    Tx sent: 0x5c6e0ddccb43f66ac58b7922668322d308774180438fff335004433dd5dea5b6
+    Confirmed in block 157613510
+
+  Bundle B[23] apeworx/ape: split 201.633245524859429946
+    Attempt 1/3...
+    Tx sent: 0xdeb5ec51c35eb775ab47f21fc0fa20b0b57804ebb83dd2a08953d772587b2e43
+    Confirmed in block 157613513
+    Attempt 1/3...
+    Tx sent: 0xdf3d6dbf2284f640a178e41e2e6c4ceae6280c7f7dd2f3fc7fafae33c6122eb3
+    Confirmed in block 157613514
+
+  Bundle B[24] chainsafe/lodestar: split 205.652004693707012343
+    Attempt 1/3...
+    Tx sent: 0xa1761ee4e80942285cf96742199aa144179910db8cb9a02f173d202443981adb
+    Confirmed in block 157613518
+    Attempt 1/3...
+    Tx sent: 0x43cc6cac62945a28c78bffc7f242566cfe467a49e3585c972e94f2e977fb6f82
+    Confirmed in block 157613519
+
+  Bundle B[25] consensys/teku: split 215.811496653138099881
+    Attempt 1/3...
+    Tx sent: 0x28d979ae9b77ddd1bddc56c05bc47df2b4220419e6d22ca36a922107061d3ec1
+    Confirmed in block 157613521
+    Attempt 1/3...
+    Tx sent: 0xcd8640d917abfa5a8acb478d9cb02ba2ae9fef5f4456b8638c439795751d6b14
+    Confirmed in block 157613522
+
+  Bundle B[26] erigontech/erigon: split 155.257119218954659751
+    Attempt 1/3...
+    Tx sent: 0x459d6694e3b184958daa5a4bb3293b63e808a4f44e191e5fa33d9a3a17e521f5
+    Confirmed in block 157613524
+    Attempt 1/3...
+    Tx sent: 0x66ff0af9a3db8fce33168d026df86cabde6504c61295717ce3193f22e433aa07
+    Confirmed in block 157613525
+
+  Bundle B[27] eth-infinitism/account-abstraction: split 164.318204650882663295
+    Attempt 1/3...
+    Tx sent: 0x1adfac8c62f156955c723bff472c096f823fef9701564161fa347facfbf131d1
+    Confirmed in block 157613528
+    Attempt 1/3...
+    Tx sent: 0x896b30d95eafda4fe09145cbe55568d10c9c27e9c793b9e19e5f8df65c61d84f
+    Confirmed in block 157613532
+
+  Bundle B[28] ethereum-lists/chains: split 231.286614640611010224
+    Attempt 1/3...
+    Tx sent: 0xef5934ac6e8a7355612bccc6b754f2c6d9369500940c237b077640881c9fffa1
+    Confirmed in block 157613539
+    Attempt 1/3...
+    Tx sent: 0x9e8e326ec22bf922decaa6ee8640b93d4262e7ad09a80be53af14ef4ccf118ff
+    Confirmed in block 157613543
+
+  Bundle B[29] ethereum/consensus-specs: split 262.902846101656702002
+    Attempt 1/3...
+    Tx sent: 0xbd673265240156bd41b2f9ddb04e35ee84cec94283cecfb2ebc804fab5778843
+    Confirmed in block 157613547
+    Attempt 1/3...
+    Tx sent: 0xa13aef345011b816851f79dd382783dde8a9f7e75f964a85b8f20ba33c9d5ec3
+    Confirmed in block 157613551
+
+  Bundle B[30] ethereum/eips: split 263.110486684111527705
+    Attempt 1/3...
+    Tx sent: 0x21281f38a12b8acd2220a72e5774931b9ced943903736e2cecfa51c00f9a2133
+    Confirmed in block 157613555
+    Attempt 1/3...
+    Tx sent: 0xfa96c04e98a6cfe83eab0be21940d892ed9665d2745d3febb79a3a21f46d5bc5
+    Confirmed in block 157613558
+
+  Bundle B[31] ipsilon/evmone: split 202.308103965760592172
+    Attempt 1/3...
+    Tx sent: 0xe39f53252f727e2662be7cfbe339962ebccff5148c792c4ebccc588246e83eac
+    Confirmed in block 157613560
+    Attempt 1/3...
+    Tx sent: 0x53823934fb000f0a76dd79fbdb42dc57c80217eb9262bcccfd943b3d488a9aff
+    Confirmed in block 157613562
+
+  Bundle B[32] ethereum/execution-apis: split 259.991820765851048451
+    Attempt 1/3...
+    Tx sent: 0x2b8ba29d54ab5c60d734448470774a8b119e9c0fa504f39d3a4944f75e7713c3
+    Confirmed in block 157613566
+    Attempt 1/3...
+    Tx sent: 0xd9c72d0722dbbc667e2358ec3c4708978c7088c3ba1b156eb8c968255ab22555
+    Confirmed in block 157613568
+
+  Bundle C[0] argotorg/fe: split 238.279064821028168855
+    Attempt 1/3...
+    Tx sent: 0x5f1d10afdbe8a0140e0289077cce81d6fa4bd899cd0e15cf9b3b649eac8775de
+    Confirmed in block 157613572
+    Attempt 1/3...
+    Tx sent: 0x26d28ad68e77c6a2fb63a85ed7b9c1a6b198db19c6832ab985db8a716159d72b
+    Confirmed in block 157613575
+
+  Bundle C[1] ethereum/go-ethereum: split 118.977721344359109942
+    Attempt 1/3...
+    Tx sent: 0x136405c477a20250910385f30526e001503494fd962f50975325daaa2d970b26
+    Confirmed in block 157613577
+    Attempt 1/3...
+    Tx sent: 0xdd6ca167a4ae80d3d8da4a853207370db2019caa16ce59b288e8419f43471967
+    Confirmed in block 157613581
+
+  Bundle C[2] remix-project-org/remix-project: split 181.672609523644604149
+    Attempt 1/3...
+    Tx sent: 0xd92cbbae8364ce8f685820011f44136db44bfd8c0e1060765470f8cf9285e23f
+    Confirmed in block 157613586
+    Attempt 1/3...
+    Tx sent: 0xf153253b5ed010a68735f55de32730a51ca7decbc2670bdecbadd5ba9e057d4a
+    Confirmed in block 157613589
+
+  Bundle C[3] argotorg/solidity: split 123.831951484270450701
+    Attempt 1/3...
+    Tx sent: 0xe73c516c146bea6f3d47caed5db64877fdfbe1ebdffa79e45208f8719489c4b7
+    Confirmed in block 157613591
+    Attempt 1/3...
+    Tx sent: 0xef97803f420ae3dd3197377e10727eb95619d16fd9009c6e80f5d2695cef22dd
+    Confirmed in block 157613592
+
+  Bundle C[4] argotorg/sourcify: split 161.250942539295071841
+    Attempt 1/3...
+    Tx sent: 0x4cdabc29a78a65131177452ec2f1711d33a52a1fcabe4b175374f2defefcb7b5
+    Confirmed in block 157613595
+    Attempt 1/3...
+    Tx sent: 0x733d4b83a0ca3d25fd6009584c3f168532f560d174bfc1810e5085832efe8821
+    Confirmed in block 157613599
+
+  Bundle C[5] ethereum/web3.py: split 118.460261412692262796
+    Attempt 1/3...
+    Tx sent: 0xe82df05fccaa7a7fb8dc2a3558789e53f48d49118355ce220d121731163a7f7c
+    Confirmed in block 157613603
+    Attempt 1/3...
+    Tx sent: 0x8ba7bcf99a2d80c8e257716d343a4da52633c5f90eeabc7656471579a8c8d117
+    Confirmed in block 157613605
+
+  Bundle C[6] ethers-io/ethers.js: split 226.953207896994019476
+    Attempt 1/3...
+    Tx sent: 0xdeea889e25d159d20d08c26dfd1a9754f3404dca59f689f7478f8f2c7daecba3
+    Confirmed in block 157613609
+    Attempt 1/3...
+    Tx sent: 0xb50fc70384fd8bf141776f5579d4d719f859a7fd648464be532fb0db44ffb71a
+    Confirmed in block 157613613
+
+  Bundle C[7] foundry-rs/foundry: split 163.405250110656566117
+    Attempt 1/3...
+    Tx sent: 0x85d447293f250c853052d5e56c678d11e28159dbc8660227fbb569c1bb64505f
+    Confirmed in block 157613618
+    Attempt 1/3...
+    Tx sent: 0x5c24e77194967da20266d281c98446d36fb3dd7c76e10af777a56fedae8aeb0c
+    Confirmed in block 157613622
+
+  Bundle C[8] grandinetech/grandine: split 212.923832033918888673
+    Attempt 1/3...
+    Tx sent: 0x0794a70e14e6f64163dc1a0597c273830740f1f13f8251924c347fbf7c44a873
+    Confirmed in block 157613626
+    Attempt 1/3...
+    Tx sent: 0x27417c303325ed3b29b3b56795f691b6640f554a870139f39983a6f69771ee37
+    Confirmed in block 157613628
+
+  Bundle C[9] hyperledger-web3j/web3j: split 186.065200216730743001
+    Attempt 1/3...
+    Tx sent: 0x9a6bd94977da074947a50dee801e528bb2fb8c0ed61f5fe4f7ec3f9d6658b602
+    Confirmed in block 157613632
+    Attempt 1/3...
+    Tx sent: 0xa1bc4f32fcc9fc7a001e3d4d5b68d59a0da04c3d26e01c29bc8e7a2343958dc4
+    Confirmed in block 157613634
+
+  Bundle C[10] hyperledger/besu: split 258.221722183793542337
+    Attempt 1/3...
+    Tx sent: 0x54925db1a63fb2355b6a5edcbafa29eb515464339ea47046ccea54cc39f41082
+    Confirmed in block 157613637
+    Attempt 1/3...
+    Tx sent: 0xc3d1eabc9f3ef153ade7ad405966df39250955b0b796fc32eaff32d773f271bb
+    Confirmed in block 157613639
+
+  Bundle C[11] nethereum/nethereum: split 221.705903413435727945
+    Attempt 1/3...
+    Tx sent: 0x00d573656e6e799c0fd3028193690d4a805e33f531b0029cc709da3fc1b5a3f2
+    Confirmed in block 157613644
+    Attempt 1/3...
+    Tx sent: 0x65a5768315a552377b6af71ea10182bf09cc2a5270d50fb65bcbce1f48854bda
+    Confirmed in block 157613648
+
+  Bundle C[12] nethermindeth/nethermind: split 203.773314481986854669
+    Attempt 1/3...
+    Tx sent: 0x01d89d4a962b0c0e0b4661ae8d0b17615196f6f26f7d0a61bac0c5d6b3b77eed
+    Confirmed in block 157613653
+    Attempt 1/3...
+    Tx sent: 0x2cc9117597260b958bdb895d565dbd226908d737f7868dc41b43183bbb69d47c
+    Confirmed in block 157613657
+
+  Bundle C[13] nomicfoundation/hardhat: split 251.350118966089915747
+    Attempt 1/3...
+    Tx sent: 0x1b12a1f23f37315fa4baa6a0a71ef807d16196e2f27d47efcfe28f0f837790ae
+    Confirmed in block 157613661
+    Attempt 1/3...
+    Tx sent: 0x24c75598b673efb42a0b5cf6518d39c2c5d3e243d451106002b725096ff5c177
+    Confirmed in block 157613664
+
+  Bundle C[14] openzeppelin/openzeppelin-contracts: split 136.782712928084806112
+    Attempt 1/3...
+    Tx sent: 0x8fff3fe749b84ea402f22ebcc6af81b7157b817e3584cdf42fece3aba239de97
+    Confirmed in block 157613667
+    Attempt 1/3...
+    Tx sent: 0x9f755ac89eb37a2e941bef7d9465c079279e2848f85817faf45e4aaa1043db2d
+    Confirmed in block 157613670
+
+  Bundle C[15] paradigmxyz/reth: split 175.116488455652483865
+    Attempt 1/3...
+    Tx sent: 0xf7c1bdea1c881d8457aa8bae5992335dc5b1cf584a60423b397ea81b72e76e6c
+    Confirmed in block 157613674
+    Attempt 1/3...
+    Tx sent: 0x21faa56e02b0d1ab2ad518fd918c630035290aec649132c46d78f5c86a639111
+    Confirmed in block 157613676
+
+  Bundle C[16] OffchainLabs/prysm: split 257.667971816196936194
+    Attempt 1/3...
+    Tx sent: 0x8223dea04da696e53830e10e94961cc274ac9f2ddc6d16c46d6e4e7a6ee2d007
+    Confirmed in block 157613680
+    Attempt 1/3...
+    Tx sent: 0x46400e872e5d82378c20d462bba7c095f9e70b960ab5a7fb03b1338ca76d156f
+    Confirmed in block 157613681
+
+  Bundle C[17] safe-global/safe-smart-account: split 236.387972733653542334
+    Attempt 1/3...
+    Tx sent: 0xae2a6d1fdb0afd7726170abe50e5779fbe8e03a47e49286b8b716485a027db31
+    Confirmed in block 157613686
+    Attempt 1/3...
+    Tx sent: 0x887c6f407d80c51c6299e59aca48e3e756ec39b00b811593d370f556c7a4bcfb
+    Confirmed in block 157613689
+
+  Bundle C[18] scaffold-eth/scaffold-eth-2: split 205.059486274143577688
+    Attempt 1/3...
+    Tx sent: 0xc48e782bbc2cadb64a06fb213e8d9f1b2b9ce743643878ab54f213ff90b5bf27
+    Confirmed in block 157613691
+    Attempt 1/3...
+    Tx sent: 0xab6c6aca14ed9b7a53dd77881baa9d327faf96e81ca1b0584cfb0bd611a814f7
+    Confirmed in block 157613694
+
+  Bundle C[19] sigp/lighthouse: split 163.556913067883310694
+    Attempt 1/3...
+    Tx sent: 0xbd0c875e5dc2c316a1c98a0aa45d7d578a06bd338d93fa5a3d94debb5b2141d6
+    Confirmed in block 157613698
+    Attempt 1/3...
+    Tx sent: 0x3a18800d47802d26ac5effc7ed79217869e7e81638d98a65a70bf93067f538c1
+    Confirmed in block 157613700
+
+  Bundle C[20] status-im/nimbus-eth2: split 171.605070644932773027
+    Attempt 1/3...
+    Tx sent: 0xf69468ecbd3c476a2576bb14f072c8a7981190148d45ff08ac2e87357594beb8
+    Confirmed in block 157613704
+    Attempt 1/3...
+    Tx sent: 0x7cb2e938e3eca353c9ff773ff5803a83bc6489e795ae1ce602322db6e551b8c2
+    Confirmed in block 157613706
+
+  Bundle C[21] vyperlang/titanoboa: split 197.082128583512277377
+    Attempt 1/3...
+    Tx sent: 0x91038e24032f1782f53045faa7e4f2c4abd00e7ce80a44c9ccf19e12ce63d329
+    Confirmed in block 157613710
+    Attempt 1/3...
+    Tx sent: 0x9298dcdb34ace208eecea050228f82614e3d8c80faabe89d8cbdb02ff93ce4a9
+    Confirmed in block 157613713
+
+  Bundle C[22] vyperlang/vyper: split 262.935830691456181196
+    Attempt 1/3...
+    Tx sent: 0x45f7e4ce20274de9b814e194196fcdcb3bc614cedf16ae56ae514609a503505f
+    Confirmed in block 157613715
+    Attempt 1/3...
+    Tx sent: 0xdcef054eb684a5e5c001d009875adcef8a4a1aa6e4a52e655636c01fbc954225
+    Confirmed in block 157613717
+
+  Bundle C[23] wevm/viem: split 250.475397437208467598
+    Attempt 1/3...
+    Tx sent: 0xb0c23db5a89927e4077423de58b1ded872b6aefda334ba9ec6bc453b0e0c9817
+    Confirmed in block 157613721
+    Attempt 1/3...
+    Tx sent: 0x7551dc33ee08f0dd8f8b68b2c20e83d6e1694b9469a397c19e62959950a5426d
+    Confirmed in block 157613724
+
+  Bundle C[24] argotorg/hevm: split 203.494455250717240305
+    Attempt 1/3...
+    Tx sent: 0x047931cfefc06ba9f216a985dc68c8cccd48a28c12a949a3dac44e885f61b957
+    Confirmed in block 157613728
+    Attempt 1/3...
+    Tx sent: 0x483a5f83a1acc3b8c0495d9e5200321a0771193f6d5e743e951752e88bced84f
+    Confirmed in block 157613730
+
+  Bundle C[25] ethdebug/format: split 184.642923202915939978
+    Attempt 1/3...
+    Tx sent: 0x01e4a95eae87d9c60c065e563556533d3c458fd92bcdf06ff29e98dfe42837e4
+    Confirmed in block 157613732
+    Attempt 1/3...
+    Tx sent: 0xf2d464650561850eb34c1385710c92ca68078e6737b0c3cfc9676220e9d5843e
+    Confirmed in block 157613734
+
+  Bundle C[26] argotorg/act: split 208.432128522530947108
+    Attempt 1/3...
+    Tx sent: 0x654ca82e14da42ada4ce3a7b93f17925e539696afde692d1a1215fc5c1148c14
+    Confirmed in block 157613738
+    Attempt 1/3...
+    Tx sent: 0xdd46dff2720908b90bfdc17003870a95d6a88403e43b4a7b01e708b746970518
+    Confirmed in block 157613739
+
+  Bundle C[27] ethpandaops/ethereum-package: split 216.823075350669165703
+    Attempt 1/3...
+    Tx sent: 0x0a9b746f6c6e9640cdba1064bf0d52e13cd3ebd8b28b99cc66f17329d60467cc
+    Confirmed in block 157613741
+    Attempt 1/3...
+    Tx sent: 0x2030fa660343610d204d9bde032f0fd75951df8414acc7f50aa32c8c825ec853
+    Confirmed in block 157613743
+
+  Bundle C[28] ethpandaops/ethereum-helm-charts: split 263.125714668941471938
+    Attempt 1/3...
+    Tx sent: 0xf21862b8e780dcbcb142d149d2e5d06bfa6c070d85be374d8388d90ad8371254
+    Confirmed in block 157613747
+    Attempt 1/3...
+    Tx sent: 0xbb3275918e5bb5efbf5c78e068018a596b1dbb86487f422c7678fae105483279
+    Confirmed in block 157613751
+
+  Bundle C[29] ethpandaops/checkpointz: split 187.58148771397141818
+    Attempt 1/3...
+    Tx sent: 0xc893a537ce29c019da4a887c1d0a7809b3584addf0f7d42a5321ce8cf9a15d87
+    Confirmed in block 157613755
+    Attempt 1/3...
+    Tx sent: 0x9fac5ac492e4a3372d5e7645ae8064c007fd15e18c09e237602f5052fd2bae4c
+    Confirmed in block 157613758
+
+  Bundle C[30] lambdaclass/lambda_ethereum_consensus: split 178.987978886700088594
+    Attempt 1/3...
+    Tx sent: 0xeb9748af70d2b8f9a95ae35f8020b02555e59f029be743e5972f9dd0aa54b4b5
+    Confirmed in block 157613760
+    Attempt 1/3...
+    Tx sent: 0xb6b563c9103a001242f0f2f2be34110ecc713d9d6ae52d4afafc156d9c144e9d
+    Confirmed in block 157613762
+
+  Bundle C[31] erigontech/silkworm: split 250.637305254161311462
+    Attempt 1/3...
+    Tx sent: 0x4a5ba44912cdd24fdea9182ad20ee11da72eb5a3f1192050026183f34349f9b4
+    Confirmed in block 157613766
+    Attempt 1/3...
+    Tx sent: 0x833ac6d4a0b6deec163ab4944d1a5ac034aee6fd7281d4429dd7e09e555140a7
+    Confirmed in block 157613768
+
+   98/98 score-market splits done.
+
+Phase 4: minting 196 positions...
+    Attempt 1/3...
+    Tx sent: 0xb6c3aa8c47815696523873c15589cac26783564dea4da467f99b61dba7caa338
+    Confirmed in block 157613772
+
+  Bundle A[0] ethereum/py_ecc DOWN @ 0.4515  outcome 258.306590657162853438 / collateral 286.647671601018556688
+    Attempt 1/3...
+    Tx sent: 0xcd289d905f3b61598da01ed14deff8f2c150e1bf56e724070be4d1610f295ec4
+    Confirmed in block 157613774
+    Attempt 1/3...
+    Tx sent: 0xd03cd157658900fc5ace80dbcde9440758e58630e7b46a6e623311ad005e9e81
+    Confirmed in block 157613776
+
+  Bundle A[0] ethereum/py_ecc UP @ 0.5484  outcome 258.306590657162853438 / collateral 455.045737741818585113
+    Attempt 1/3...
+    Tx sent: 0x7e7547c04e5be8147a907196fb8a76611d2c696e03f0f2ede9f4831c01b8ec89
+    Confirmed in block 157613778
+    Attempt 1/3...
+    Tx sent: 0x5f78adc78e2f8bee273716596a30717d17bdfa73844451ed180e559d2ef27fe6
+    Confirmed in block 157613782
+    Attempt 1/3...
+    Tx sent: 0xa1d49886e9d5762e62684629370bb1dcf58321070e3b98a98643685fc1277374
+    Confirmed in block 157613785
+
+  Bundle A[1] blockscout/blockscout DOWN @ 0.3770  outcome 233.254436878500216768 / collateral 178.243092482030243717
+    Attempt 1/3...
+    Tx sent: 0x18c6bb95251ee3123b7a702c4011461b87530ef3db0df3caaf69e963cc317d04
+    Confirmed in block 157613789
+    Attempt 1/3...
+    Tx sent: 0x3f3a959152576fe515535e6a4be11483320deb793f9d9537f9d8f7ed50c95ba7
+    Confirmed in block 157613807
+
+  Bundle A[1] blockscout/blockscout UP @ 0.6230  outcome 233.254436878500216768 / collateral 588.502470639469534502
+    Attempt 1/3...
+    Tx sent: 0xa3aaf02d3eaf65ea58e2d59c0d6eeaaa89451474cef77fa2e0081822a56cd39d
+    Confirmed in block 157613810
+    Attempt 1/3...
+    Tx sent: 0xec5a10e678b47ac9b558be575f71922eb6af63bad334f9d4c717cec80a029c73
+    Confirmed in block 157613824
+    Attempt 1/3...
+    Tx sent: 0x0617492148474a5a998a5eb7b6338cfa19e88e6d5877165bdad6e7d0db34f813
+    Confirmed in block 157613830
+
+  Bundle A[2] LFDT-web3j/web3j DOWN @ 0.4621  outcome 260.164757791125045025 / collateral 303.855156037370041308
+    Attempt 1/3...
+    Tx sent: 0x1b5d27e45cd23fdff94368cecae8be24dd1e55b97d3c783b65a8a973801e3a85
+    Confirmed in block 157613841
+    Attempt 1/3...
+    Tx sent: 0x3417d456ae3b1f4edf2fa70bf9a15ea76e2cb4161f01aa3a9d67618dea122022
+    Confirmed in block 157613843
+
+  Bundle A[2] LFDT-web3j/web3j UP @ 0.5379  outcome 260.164757791125045025 / collateral 435.980086171504909254
+    Attempt 1/3...
+    Tx sent: 0xca5e93b1c0436e59af6c954ef922abea8f09e93ce08d06fbb47d5dadbd3289d0
+    Confirmed in block 157613846
+    Attempt 1/3...
+    Tx sent: 0xd09ef809fd9d26c4b108f2289172c558ffb32ed4b06e7076d7016562857bc953
+    Confirmed in block 157613849
+    Attempt 1/3...
+    Tx sent: 0xa8cf28504e422f25505a7920105085d66d7282d0ab839364bcf0604a03e808c8
+    Confirmed in block 157613851
+
+  Bundle A[3] herumi/mcl DOWN @ 0.3098  outcome 196.43624852552080202 / collateral 103.693813562320800902
+    Attempt 1/3...
+    Tx sent: 0xff4f5acfa9726ce2d538da930d7bdd76247c7d81b33e68fc83205512d24f9ade
+    Confirmed in block 157613853
+    Attempt 1/3...
+    Tx sent: 0x80bb465ab3393ae625adec66e245c48da00ebcde917b2a04eb6ead7cd00a9025
+    Confirmed in block 157613855
+
+  Bundle A[3] herumi/mcl UP @ 0.6902  outcome 196.43624852552080202 / collateral 699.869937912158391399
+    Attempt 1/3...
+    Tx sent: 0xfd8283df0e3d05538995584a1ad526faa6f3f45908c473cb7f9c09889bc40e06
+    Confirmed in block 157613857
+    Attempt 1/3...
+    Tx sent: 0x117ce695437170c90acedd1c29668ffae749de92fbc1bcaedf98e8da53a38cd4
+    Confirmed in block 157613859
+    Attempt 1/3...
+    Tx sent: 0x78472deeb9fb67a7e527368b2aa651cb4544dc95648239a5cfdafe695a414a67
+    Confirmed in block 157613863
+
+  Bundle A[4] paulmillr/noble-curves DOWN @ 0.4415  outcome 256.075335298428556003 / collateral 270.646369997539299609
+    Attempt 1/3...
+    Tx sent: 0x3e8be9091fa4d7303a4ae8f52682b73322ee83b1c41bf70aed52e01b26a0b732
+    Confirmed in block 157613864
+    Attempt 1/3...
+    Tx sent: 0xdf1b255bbd5a70b553f6b4d662e9352c64641631b2f2b555c8102f1e86d3bed0
+    Confirmed in block 157613866
+
+  Bundle A[4] paulmillr/noble-curves UP @ 0.5586  outcome 256.075335298428556003 / collateral 473.27829470403213971
+    Attempt 1/3...
+    Tx sent: 0x2ca888a8373355cb974716f6b52e263c9ea359a822450ed73e05343fd6d77e16
+    Confirmed in block 157613868
+    Attempt 1/3...
+    Tx sent: 0xe9b36d3d3f35f2d2fda7d0f021faa10c35357a5e8b5a5e7381ed85a38bfd2a65
+    Confirmed in block 157613871
+    Attempt 1/3...
+    Tx sent: 0x43210b37ce0d51af5568e36f58bb482d84c80302be6ea0aab8190c759d9560e5
+    Confirmed in block 157613873
+
+  Bundle A[5] arkworks-rs/algebra DOWN @ 0.3551  outcome 222.47985974957743963 / collateral 151.416690289529437312
+    Attempt 1/3...
+    Tx sent: 0xd91ac80eea488dee6406924492e48884a910908a02630edb09db94549cfc70be
+    Confirmed in block 157613875
+    Attempt 1/3...
+    Tx sent: 0x645f6db724ca6c3746cc54bd0cc7ec0c0331c0e481effa5d4f651ea5f5b2d42c
+    Confirmed in block 157613877
+
+  Bundle A[5] arkworks-rs/algebra UP @ 0.6449  outcome 222.47985974957743963 / collateral 626.103449960893117986
+    Attempt 1/3...
+    Tx sent: 0xa2797ddc0ea20580bed449d249121406f36f886ca2491f661ab9bd752b8439cf
+    Confirmed in block 157613879
+    Attempt 1/3...
+    Tx sent: 0x5d2e1ffe72637d8d488a41304fd4c161046286645ccc2a3a99eed7051ab4871e
+    Confirmed in block 157613882
+    Attempt 1/3...
+    Tx sent: 0xa81bf4a1f16724a49fd131e9a021d1772c7d9bec7586f32b45ea91133c142ec4
+    Confirmed in block 157613884
+
+  Bundle A[6] flashbots/rbuilder DOWN @ 0.4200  outcome 250.108081336401771734 / collateral 237.768558936829426809
+    Attempt 1/3...
+    Tx sent: 0xff80a56c6be51915b59855a508c9a5babcc6737a1b48cadfc66b56e1339b17ec
+    Confirmed in block 157613886
+    Attempt 1/3...
+    Tx sent: 0x06daddac9e00c57781e910052e111ebe182f038f0b7050279035ff01bb4c0e9e
+    Confirmed in block 157613889
+
+  Bundle A[6] flashbots/rbuilder UP @ 0.5800  outcome 250.108081336401771734 / collateral 512.12335972676879637
+    Attempt 1/3...
+    Tx sent: 0x427143a2c27b288ccd8076058075162da7a638c803f69f2b9cfb5b975567e81c
+    Confirmed in block 157613895
+    Attempt 1/3...
+    Tx sent: 0x9dc1ba1b163cfc3792bd678183c946f3552c60099a5ade26738b3094c923191e
+    Confirmed in block 157613898
+    Attempt 1/3...
+    Tx sent: 0x930decd8848ed59c2a3be792e48bb037ad1937012983510b639b6761735ae613
+    Confirmed in block 157613901
+
+  Bundle A[7] protofire/solhint DOWN @ 0.5029  outcome 263.13826179682926512 / collateral 373.549381959173752168
+    Attempt 1/3...
+    Tx sent: 0xd315c0232dc365988a919f0b9578431a4cca4db9b47259c3880680629c3c036d
+    Confirmed in block 157613905
+    Attempt 1/3...
+    Tx sent: 0xf5203b98e7bbd7904033f88a5102fb9bf74903ace03461e98907f5f443820b6d
+    Confirmed in block 157613908
+
+  Bundle A[7] protofire/solhint UP @ 0.4970  outcome 263.13826179682926512 / collateral 363.312356243996977729
+    Attempt 1/3...
+    Tx sent: 0x70d9a5ed861b6d6d2840436e2b2abf921c35e1902933ce52f9bb56ee8be223b8
+    Confirmed in block 157613910
+    Attempt 1/3...
+    Tx sent: 0x0b2f9a8451272a70de5ee4959f44fb24bba0e6db21a05244b1fa5c91d7996f56
+    Confirmed in block 157613912
+    Attempt 1/3...
+    Tx sent: 0x4834011e2a6d8663535632fa769d7a3b32376d9d3c6ce10172270f9aafcba306
+    Confirmed in block 157613915
+
+  Bundle A[8] l2beat/l2beat DOWN @ 0.3883  outcome 238.275043821462230793 / collateral 193.017864078769424659
+    Attempt 1/3...
+    Tx sent: 0xb3dfe37b77d3ea2c350f58cdef628ee1d0d1d8b5436fc1c695b4095b903c97ee
+    Confirmed in block 157613918
+    Attempt 1/3...
+    Tx sent: 0x72100d4882b40ad73bb218a86945f2e6b0b57b607f43a6ba54f9fdfb9c3f8fb8
+    Confirmed in block 157613920
+
+  Bundle A[8] l2beat/l2beat UP @ 0.6117  outcome 238.275043821462230793 / collateral 568.70709209976833941
+    Attempt 1/3...
+    Tx sent: 0xf0df409b4190220dd6999dd7cc2e39e2460f2ce09b4351bc41a154cab24d2498
+    Confirmed in block 157613923
+    Attempt 1/3...
+    Tx sent: 0x55c02286ca610dafab08c1a514ca12587a81f08eccde69452bf07e32acd6f852
+    Confirmed in block 157613926
+    Attempt 1/3...
+    Tx sent: 0xc47f9f150b7d36a3c2a0596019b5033a9cea86369b6800127f7ae1bd047cf7f8
+    Confirmed in block 157613929
+
+  Bundle A[9] Consensys/gnark-crypto DOWN @ 0.1980  outcome 120.065251844364458133 / collateral 29.463884226740784574
+    Attempt 1/3...
+    Tx sent: 0xb60fc880ce1c7a41b3b32dcff1af702d2c30209eb1559d8e8cf91fb342f98a05
+    Confirmed in block 157613932
+    Attempt 1/3...
+    Tx sent: 0xafe0fbf5ccb1d40466fdb328042ce5a53f2eab51d95c22c20cb504d07d4c605f
+    Confirmed in block 157613934
+
+  Bundle A[9] Consensys/gnark-crypto UP @ 0.8020  outcome 120.065251844364458133 / collateral 850.47086392889474796
+    Attempt 1/3...
+    Tx sent: 0xd50afcc5418466a907698956547424ef3c2d302cd85ba9f1a7a4b1e934ad5145
+    Confirmed in block 157613938
+    Attempt 1/3...
+    Tx sent: 0xb63d2d555ad8dd22b3b53ef77be2b3843616ac7c7a109e450509fa38de7977bf
+    Confirmed in block 157613944
+    Attempt 1/3...
+    Tx sent: 0xe6b8b68dad9ff9c4a161d37ca60ae30bfd54d11b2e40925fbae388c968b3d8f8
+    Confirmed in block 157613946
+
+  Bundle A[10] Vectorized/solady DOWN @ 0.4986  outcome 263.158292726085094525 / collateral 366.014689727314991974
+    Attempt 1/3...
+    Tx sent: 0xd66e0648e53ecd4d468e6a2a2c340bb878612d18f9f90b953448fc73e54f5554
+    Confirmed in block 157613948
+    Attempt 1/3...
+    Tx sent: 0x1af5f1bf694a5260cdb13acd5c33c9344e9ad1d6624572cf6872af1634e8bd67
+    Confirmed in block 157613951
+
+  Bundle A[10] Vectorized/solady UP @ 0.5013  outcome 263.158292726085094525 / collateral 370.827017546599909329
+    Attempt 1/3...
+    Tx sent: 0x7b1833d270a53f849e1f5ca8a1328f3fa5a121e03986218c4f9cbee8f914346a
+    Confirmed in block 157613953
+    Attempt 1/3...
+    Tx sent: 0x66242df395d1951ee7bde2fca3bc9e3b324fd3c56af0ed75b515556646ee2d72
+    Confirmed in block 157613955
+    Attempt 1/3...
+    Tx sent: 0x0f2a29e3bd8899616d4d59d7e169df9bf9decba089122bb77fc67eec2bee177a
+    Confirmed in block 157613960
+
+  Bundle A[11] taikoxyz/taiko-mono DOWN @ 0.5055  outcome 263.096097120773481012 / collateral 378.075446980042604478
+    Attempt 1/3...
+    Tx sent: 0xad241acb329741f2fa474307e5dd6e407fb7bd1fc40d4caa780529d1f3d977df
+    Confirmed in block 157613963
+    Attempt 1/3...
+    Tx sent: 0x704352c7d89c7e615734f0fb13884342b31592a150498df70181ca5b3c00bdab
+    Confirmed in block 157613965
+
+  Bundle A[11] taikoxyz/taiko-mono UP @ 0.4945  outcome 263.096097120773481012 / collateral 358.828455899183909857
+    Attempt 1/3...
+    Tx sent: 0x41098d199fa2d8e6c326bdf7f6dc4aec1921f83ec83d4b1c9ec5af745394b868
+    Confirmed in block 157613968
+    Attempt 1/3...
+    Tx sent: 0x5e8e82e59823a96c9d38f9a28e8208cb34bd75a5e345ddcba5cedd3a77425608
+    Confirmed in block 157613972
+    Attempt 1/3...
+    Tx sent: 0x33280f9520ee3fda0f51168ab23a2e2616c27e56b69b3ec44fe10516fe015d6c
+    Confirmed in block 157613974
+
+  Bundle A[12] flashbots/mev-boost DOWN @ 0.3262  outcome 206.327348764760488879 / collateral 119.672881405614466926
+    Attempt 1/3...
+    Tx sent: 0x9d3a926517e7726d66f8d1235c485d8677a955d3e89546f852828676f569a8be
+    Confirmed in block 157613976
+    Attempt 1/3...
+    Tx sent: 0x3a65ebe9f857eadf3875d1cc65db824bec5621817e3ab68775d03bec01660ab1
+    Confirmed in block 157613978
+
+  Bundle A[12] flashbots/mev-boost UP @ 0.6739  outcome 206.327348764760488879 / collateral 673.99976982962503859
+    Attempt 1/3...
+    Tx sent: 0x81326d2eaf1f00a9f6aeac5f6adffcc67c90f0dacb975a90fc3fd8abf2149901
+    Confirmed in block 157613982
+    Attempt 1/3...
+    Tx sent: 0xc7b2d0e1a990c347a1e749579fb5d524d2c5821d8bba10c0014d84fce3488d28
+    Confirmed in block 157613985
+    Attempt 1/3...
+    Tx sent: 0xd6c550a989739c1ac6c1f11c030691846ce3d05c672f18cb4c247673c15e352b
+    Confirmed in block 157613987
+
+  Bundle A[13] flashbots/mev-boost-relay DOWN @ 0.3272  outcome 206.930269653151075619 / collateral 120.734207260826060515
+    Attempt 1/3...
+    Tx sent: 0x1a0405082aa9906ab1ab990497c2bcf4f45740764d25efaa7814f04c8b6eaa69
+    Confirmed in block 157613990
+    Attempt 1/3...
+    Tx sent: 0xaa86f04d8005aa9cd06318823fc0c3d37384bb708b15c7b1ab749232aab2c5bf
+    Confirmed in block 157613993
+
+  Bundle A[13] flashbots/mev-boost-relay UP @ 0.6728  outcome 206.930269653151075619 / collateral 672.335523086022858429
+    Attempt 1/3...
+    Tx sent: 0xd5961cb3666b2337873e98283b83f4d9a83c50f2d48719880d7c0fa6a28fc9a2
+    Confirmed in block 157613995
+    Attempt 1/3...
+    Tx sent: 0x2c0cc514d50e02c92e58b865e4c697cff5c2f423c3d2285de3f6901857a254d9
+    Confirmed in block 157613996
+    Attempt 1/3...
+    Tx sent: 0xf8c2aee56809e386b74ca795cc2559b14c821eb7c4e6b239797c8146ac2c83c0
+    Confirmed in block 157613998
+
+  Bundle A[14] ethereum/js-ethereum-cryptography DOWN @ 0.3398  outcome 214.158436979111324315 / collateral 134.038449844687762832
+    Attempt 1/3...
+    Tx sent: 0x3e9ddf2ce4ba7074ec2e061dde600eac6aef657e3390f45fcbccd52130134d3a
+    Confirmed in block 157614000
+    Attempt 1/3...
+    Tx sent: 0x56e8e2591106ea5eace28befff59d82c5514b0ddef8ce9776ed4352ca8bf985d
+    Confirmed in block 157614003
+
+  Bundle A[14] ethereum/js-ethereum-cryptography UP @ 0.6602  outcome 214.158436979111324315 / collateral 651.803113176200907199
+    Attempt 1/3...
+    Tx sent: 0x99794c48d8b012065d0518cabe2d9b73b80e52f7d4d1e55c9c5f5d01c187fd31
+    Confirmed in block 157614005
+    Attempt 1/3...
+    Tx sent: 0x0f8824e2100fa8c00b541fae9278753856db86e1ffd0db55bd842bb9369914d7
+    Confirmed in block 157614007
+    Attempt 1/3...
+    Tx sent: 0xee86cba9656d5b51661735b70341df220113c1ea4e2a8cc6d269d91c5809390c
+    Confirmed in block 157614011
+
+  Bundle A[15] libp2p/libp2p DOWN @ 0.2720  outcome 171.889955133749808035 / collateral 72.00611235138974691
+    Attempt 1/3...
+    Tx sent: 0x94d04afab4882aecb27cbc75732736980f72e2d3909a35468cba3e1ae0ca4fcc
+    Confirmed in block 157614014
+    Attempt 1/3...
+    Tx sent: 0x1058dd1637e6a48f59f6e130f027982fcc7e6c22f914cd4517c889cb12e22e20
+    Confirmed in block 157614017
+
+  Bundle A[15] libp2p/libp2p UP @ 0.7281  outcome 171.889955133749808035 / collateral 756.103932514860438606
+    Attempt 1/3...
+    Tx sent: 0x4af7e432f5463c9fbf67259d799cc634eeb925afbd2f93b1d3939741e2a92e7c
+    Confirmed in block 157614019
+    Attempt 1/3...
+    Tx sent: 0x43c80e25cb662cb1bc5a134c144f31f15da00faad1147f7abd5a7a70cd76366f
+    Confirmed in block 157614023
+    Attempt 1/3...
+    Tx sent: 0xd5527e5171041223b7daccfd4b7c9a45a1e1211c39076f7a715840ece8c625cd
+    Confirmed in block 157614027
+
+  Bundle A[16] supranational/blst DOWN @ 0.2592  outcome 163.258040858785917793 / collateral 62.939069688615079222
+    Attempt 1/3...
+    Tx sent: 0xeb580e20564613130c2e80dd4bd60cdab82fda2338ecd6f4a596208eb5f974af
+    Confirmed in block 157614030
+    Attempt 1/3...
+    Tx sent: 0xc1ec3a97ba3d5e75315098b65e7149f4457cc17104e2e0990b5cd41dbdaaaf72
+    Confirmed in block 157614034
+
+  Bundle A[16] supranational/blst UP @ 0.7407  outcome 163.258040858785917793 / collateral 773.80288945259899565
+    Attempt 1/3...
+    Tx sent: 0x99a674612412e3c728832be055349e53e2bcc761c9db86285e853ea19dbca522
+    Confirmed in block 157614036
+    Attempt 1/3...
+    Tx sent: 0x043cbdd164568157785f68c04265d1a5d393bb7d4a724234d6f5ff60aee7658c
+    Confirmed in block 157614038
+    Attempt 1/3...
+    Tx sent: 0xbc0ca962d30d1b14f349ba206166805bdb99e84f9a756d4f3a56b226295d4538
+    Confirmed in block 157614040
+
+  Bundle A[17] wighawag/hardhat-deploy DOWN @ 0.2066  outcome 126.214467295068701561 / collateral 33.211140988693150263
+    Attempt 1/3...
+    Tx sent: 0xf2a021e49dedbf4fb400bc911902811b4548e98485d6cffe12bfe884660ed4b0
+    Confirmed in block 157614047
+    Attempt 1/3...
+    Tx sent: 0x30e56aff83f8285bf0f402af2e7bd91d0debcaa629647869c4dac4e3b7b57d42
+    Confirmed in block 157614049
+
+  Bundle A[17] wighawag/hardhat-deploy UP @ 0.7934  outcome 126.214467295068701562 / collateral 840.57439171623813947
+    Attempt 1/3...
+    Tx sent: 0x9433e4c18c30e7e6d4d44cd6ed2d9add83d4528632cdeec6c22a8a792962c16b
+    Confirmed in block 157614051
+    Attempt 1/3...
+    Tx sent: 0x955618094a125535b4e8aad64d8628d81da213c4614cddbdb8355e957914f534
+    Confirmed in block 157614053
+    Attempt 1/3...
+    Tx sent: 0xf278b1bc0feca6b90eb5591af327d17081857f86dfe08332d5ab0e94ec380d6d
+    Confirmed in block 157614057
+
+  Bundle A[18] ethstaker/eth-docker DOWN @ 0.3313  outcome 209.362271757288379712 / collateral 125.002921663492103248
+    Attempt 1/3...
+    Tx sent: 0xd36acfe86f2c81df3ff8dc6815cdcc90a31862d2870612c7a88b934675852ffa
+    Confirmed in block 157614059
+    Attempt 1/3...
+    Tx sent: 0x6850e83f02a6c71a49a976ba3178e9fdab954432afb708d9f907d4bf658a294d
+    Confirmed in block 157614062
+
+  Bundle A[18] ethstaker/eth-docker UP @ 0.6687  outcome 209.362271757288379712 / collateral 665.634806579219511659
+    Attempt 1/3...
+    Tx sent: 0xf345904eec94c0da9d5377b1368d8b5b99f126a2de3c76585432d804d7c72224
+    Confirmed in block 157614065
+    Attempt 1/3...
+    Tx sent: 0x1bbfe8424408d338f071ab276d6ef189f825c586eaa49ee0dbab93d31e849677
+    Confirmed in block 157614068
+    Attempt 1/3...
+    Tx sent: 0x4350c2efed55c8fc5f34e33a65f38e1d603267e75ccd86887907eee0bcccecd5
+    Confirmed in block 157614071
+
+  Bundle A[19] DefiLlama/DefiLlama-Adapters DOWN @ 0.2888  outcome 183.072280334410860379 / collateral 85.223685205138516703
+    Attempt 1/3...
+    Tx sent: 0x7b53bb474dcc2bc680153dbc047f28a1d80dcab28d68b4cba8d6efaf45b2cd81
+    Confirmed in block 157614075
+    Attempt 1/3...
+    Tx sent: 0xb74605b78958a0f052576cf69f960ec2ebf492c503912a7464fc8c2e2161d4d7
+    Confirmed in block 157614079
+
+  Bundle A[19] DefiLlama/DefiLlama-Adapters UP @ 0.7112  outcome 183.072280334410860379 / collateral 731.704034460450616189
+    Attempt 1/3...
+    Tx sent: 0x61b9bab886c1af6f719801cd16b0c184fa4fd88e6c78028c1a39155dda96040d
+    Confirmed in block 157614082
+    Attempt 1/3...
+    Tx sent: 0x81bfbe68b43c76bb52147274f46380052f76785c211a8a760d5462dac0c430e6
+    Confirmed in block 157614094
+    Attempt 1/3...
+    Tx sent: 0x1e8ee05f9f4b1b197d786d430a2509ab6ec64d57b536d38ca519a2bbdb87dd55
+    Confirmed in block 157614098
+
+  Bundle A[20] DefiLlama/chainlist DOWN @ 0.5939  outcome 245.310470225369066572 / collateral 537.078951058767190856
+    Attempt 1/3...
+    Tx sent: 0xac7d20ca1773fe5e258e2e633fd7b7745c47f5b21419b0b1fb691bd3d547a463
+    Confirmed in block 157614102
+    Attempt 1/3...
+    Tx sent: 0x20ea8cf35f5ac73688da50771de0a193f50b41f624648c0baaaf43ac380361ef
+    Confirmed in block 157614139
+
+  Bundle A[20] DefiLlama/chainlist UP @ 0.4061  outcome 245.310470225369066572 / collateral 217.610578715863737625
+    Attempt 1/3...
+    Tx sent: 0xa55618e557b4a1bd774a60faaba69789af29a4a86b58a49c922e3ad07f75f5e3
+    Confirmed in block 157614141
+    Attempt 1/3...
+    Tx sent: 0x5ed8e1e0e3d5c37f7e2adf0ed37edf8bd97a2a8aaeaf28b4d9a4efc455364663
+    Confirmed in block 157614145
+    Attempt 1/3...
+    Tx sent: 0x0d19331fe3e90aeacd23cde957de32de75816f447d88091f939b31e09ed3e8de
+    Confirmed in block 157614147
+
+  Bundle A[21] Certora/CertoraProver DOWN @ 0.2527  outcome 158.742265382665447892 / collateral 58.577128035840625231
+    Attempt 1/3...
+    Tx sent: 0xf28b95c4c18b0380765f717daf5b36d244884413ba844eccbb44e2b166576e94
+    Confirmed in block 157614151
+    Attempt 1/3...
+    Tx sent: 0xed8c85c1a4477c2e495879a0581b72d8b39a4a8629e0c69e5e315bc913048bd1
+    Confirmed in block 157614155
+
+  Bundle A[21] Certora/CertoraProver UP @ 0.7472  outcome 158.742265382665447892 / collateral 782.680606581493919746
+    Attempt 1/3...
+    Tx sent: 0x37a5f0f80483d8626db8d6e94c749300fac49bc4fe7839bdaf1c493d7b06ad7d
+    Confirmed in block 157614158
+    Attempt 1/3...
+    Tx sent: 0xd08c713cc139ec01e517ab272ee7470adec68bbbd75293f5606fef62ae0ba0eb
+    Confirmed in block 157614161
+    Attempt 1/3...
+    Tx sent: 0xb6ab701e91c15f68f184a5ac31dcd24d9904dca2e5496e452515821d5ee78e54
+    Confirmed in block 157614166
+
+  Bundle A[22] Plonky3/Plonky3 DOWN @ 0.2954  outcome 187.35205179719161895 / collateral 90.801745662805969984
+    Attempt 1/3...
+    Tx sent: 0x27a32c9c329139d1669cd73a5dd0b3fc089ce5c8906b4dd8ced18e75e83104ac
+    Confirmed in block 157614170
+    Attempt 1/3...
+    Tx sent: 0xbdcecfbd25e84d0a4b2a179a33c82815b7a424b4b5d8cd6a0a800154ee521f60
+    Confirmed in block 157614173
+
+  Bundle A[22] Plonky3/Plonky3 UP @ 0.7046  outcome 187.35205179719161895 / collateral 721.846202540002404766
+    Attempt 1/3...
+    Tx sent: 0x212fcd57a56da4cbd4370fb1634611343c113a8dce22d86d011313ff71eec65f
+    Confirmed in block 157614176
+    Attempt 1/3...
+    Tx sent: 0xdeda11b9ce6a9a3fa9d00cc7d3b75320664fb3dc743107cd2bd280cca19ae941
+    Confirmed in block 157614178
+    Attempt 1/3...
+    Tx sent: 0x0393ccc7a26eeeaceded1b68c12346b4536586e469f96198296aa8629305704c
+    Confirmed in block 157614180
+
+  Bundle A[23] ChainSafe/bls DOWN @ 0.3660  outcome 227.961749352673081156 / collateral 164.370257505515846049
+    Attempt 1/3...
+    Tx sent: 0x12fb30e2c0043c99cc5e20fdf35de630b82d8e31bc37f3df09983e2b453d2c0b
+    Confirmed in block 157614182
+    Attempt 1/3...
+    Tx sent: 0xaf32ab3ea33a888859034ec41d3b51d90a85835ce58089f9318fe8e13ad33c65
+    Confirmed in block 157614185
+
+  Bundle A[23] ChainSafe/bls UP @ 0.6341  outcome 227.961749352673081156 / collateral 607.66799314181106741
+    Attempt 1/3...
+    Tx sent: 0xd475ba606db7c62ebb576aadf4a70d817b2736f1034ebae707ab11c36d894ecd
+    Confirmed in block 157614187
+    Attempt 1/3...
+    Tx sent: 0x653ef0e657efb1c197c13fec5ec0739848c8c18e4fce38152506fd9920183798
+    Confirmed in block 157614189
+    Attempt 1/3...
+    Tx sent: 0xa5c7296ab51a4b97bf06e7428d12e97ae3917d4823b228a894aee72f3c1c5b6e
+    Confirmed in block 157614192
+
+  Bundle A[24] intellij-solidity/intellij-solidity DOWN @ 0.3274  outcome 207.087027732805155603 / collateral 120.947669784067870451
+    Attempt 1/3...
+    Tx sent: 0xd1b1238c5b3a9cd62c40d8a3e2853084c8574208d9efb894b25f57b0ca29d8f4
+    Confirmed in block 157614196
+    Attempt 1/3...
+    Tx sent: 0xbda9d97f1d665fd61b2aad9c38bea455fc3330c9a436bad2aa8c973577c46263
+    Confirmed in block 157614199
+
+  Bundle A[24] intellij-solidity/intellij-solidity UP @ 0.6726  outcome 207.087027732805155603 / collateral 671.965302483126968807
+    Attempt 1/3...
+    Tx sent: 0xc96a35e3e2ec46320ad9198da7788f66721a9795d8588afa5d3b69dc0b5424a6
+    Confirmed in block 157614202
+    Attempt 1/3...
+    Tx sent: 0xad22976f84b1cac5689151cf26f04d1863780a84fdf3c24b21f00b1cc2a9b598
+    Confirmed in block 157614204
+    Attempt 1/3...
+    Tx sent: 0x37c12614a1500e0da65b47ec4c6384f6587614300a0dd4849653e2a786275442
+    Confirmed in block 157614207
+
+  Bundle A[25] dappnode/DAppNode DOWN @ 0.5169  outcome 262.545668264712343813 / collateral 398.176737202263522025
+    Attempt 1/3...
+    Tx sent: 0x891a24042bc7cf03b1934efe2aa8024ca6cfd1b043e5733bdd43dc3f232e197d
+    Confirmed in block 157614209
+    Attempt 1/3...
+    Tx sent: 0x82a1592438cc19272b31bd4713d3d8efdf48bf17212a269d0d6d3c794ab24c80
+    Confirmed in block 157614211
+
+  Bundle A[25] dappnode/DAppNode UP @ 0.4832  outcome 262.545668264712343813 / collateral 339.277594533024129764
+    Attempt 1/3...
+    Tx sent: 0x71fcb8aa9d40740da700b82428756448cf76f138f56436a3419db0d2dcf109db
+    Confirmed in block 157614214
+    Attempt 1/3...
+    Tx sent: 0xadf9c6aa539a647238dc0fe10b6e4fb687e55a4394c2dd74e091190285722ea6
+    Confirmed in block 157614218
+    Attempt 1/3...
+    Tx sent: 0x260200a367cb1bbbce4c8e18eb6808ab635080f8aacf4e64388a09c4b57c24b2
+    Confirmed in block 157614238
+
+  Bundle A[26] wealdtech/ethdo DOWN @ 0.3405  outcome 214.607633435150820702 / collateral 134.875385434626182129
+    Attempt 1/3...
+    Tx sent: 0x700ac437dd60b3674e5ffa163398416d0d468287cbed9e6c5f40ed19c70e3065
+    Confirmed in block 157614240
+    Attempt 1/3...
+    Tx sent: 0x35e916098ec6ab1046fe0a78c259484f1e0028fa9e1a48a0f0198e7abb49365b
+    Confirmed in block 157614243
+
+  Bundle A[26] wealdtech/ethdo UP @ 0.6594  outcome 214.607633435150820702 / collateral 650.516981130222992169
+    Attempt 1/3...
+    Tx sent: 0x6e474ca826f63f921c159e8fc3cd69656626705c35efcfb0f3ce5f118072dc2f
+    Confirmed in block 157614245
+    Attempt 1/3...
+    Tx sent: 0x9bae7c3504710ec3b5d4fcb9c4e126f1808f61df0f838d9a946f3c8ac4026913
+    Confirmed in block 157614248
+    Attempt 1/3...
+    Tx sent: 0xbf9f042b4913a6c4856ab66356b59cc51f0fa019115227bcbd7c90daaf560ea3
+    Confirmed in block 157614251
+
+  Bundle A[27] lambdaclass/lambdaworks DOWN @ 0.3528  outcome 221.261302561784752194 / collateral 148.70193787301284954
+    Attempt 1/3...
+    Tx sent: 0x19dd20de6257ee178ab64831df5f23862a953193068de30f8903dfaa37482152
+    Confirmed in block 157614255
+    Attempt 1/3...
+    Tx sent: 0xb7ca106c0259fff43dcb22e2c7a065f3fa13cfdc5953b1e4a95ab8d97016c344
+    Confirmed in block 157614258
+
+  Bundle A[27] lambdaclass/lambdaworks UP @ 0.6472  outcome 221.261302561784752194 / collateral 630.036759565202392406
+    Attempt 1/3...
+    Tx sent: 0x65436ca27d8242047ccd07185f89567813f0b6320d498bca60ef6f0118c4753d
+    Confirmed in block 157614262
+    Attempt 1/3...
+    Tx sent: 0xbe287b70f214f5145c30eba36667d83beb3cc398f768cbede1d90918e529104a
+    Confirmed in block 157614263
+    Attempt 1/3...
+    Tx sent: 0x39c8d204a5a94fab6b252f97cb3aef15d3694999486e8fa7bfddf2fda5e1a6d6
+    Confirmed in block 157614266
+
+  Bundle A[28] smartcontracts/simple-optimism-node DOWN @ 0.2921  outcome 185.192298384066804749 / collateral 87.973150054164462895
+    Attempt 1/3...
+    Tx sent: 0x23336f40e6494677fee4583fd01a033508962e372949d81bbc06775189834098
+    Confirmed in block 157614267
+    Attempt 1/3...
+    Tx sent: 0xe061dea7e7334824e7eed58d0901e1a147eb48a230c1fa88c7bb36e912a1ee2c
+    Confirmed in block 157614271
+
+  Bundle A[28] smartcontracts/simple-optimism-node UP @ 0.7079  outcome 185.192298384066804749 / collateral 726.834551561768726155
+    Attempt 1/3...
+    Tx sent: 0x651d710fea7b08d65a190ea9dd36c23bd790d10053fb6bad099666dc0129011c
+    Confirmed in block 157614273
+    Attempt 1/3...
+    Tx sent: 0xdae37f3ecad6a22a4fb4df0cf11a07a6762795eb1f3a0350631ef42987ea4464
+    Confirmed in block 157614276
+    Attempt 1/3...
+    Tx sent: 0x1f15e5fee94e520c5b629466e9e0fa503ac71772f4f1dcedad068c0801f900cb
+    Confirmed in block 157614278
+
+  Bundle A[29] skalenetwork/libBLS DOWN @ 0.2854  outcome 180.829577821761581785 / collateral 82.419638514827442673
+    Attempt 1/3...
+    Tx sent: 0x5b7271f88a3e5fbf2e4dca09f41929142ac735cd1ff1481e9ca1c38a9c8a3b50
+    Confirmed in block 157614280
+    Attempt 1/3...
+    Tx sent: 0x0915e055a653e649b91ae764aafdd4ca20bb699eea2ff4cba0093d86a15a6388
+    Confirmed in block 157614283
+
+  Bundle A[29] skalenetwork/libBLS UP @ 0.7146  outcome 180.829577821761581785 / collateral 736.750783663410968631
+    Attempt 1/3...
+    Tx sent: 0xe80bd2f0e988105b8f0bc299bdb8462b3e6c29bd37d3039bfb39b24dd78dbfa3
+    Confirmed in block 157614285
+    Attempt 1/3...
+    Tx sent: 0xe087c1fc2e2a67a5385310ba421048d5888881ff642420eec23f075e059a6775
+    Confirmed in block 157614287
+    Attempt 1/3...
+    Tx sent: 0x8333d2e804b14cd2607ff28f1c359c99bf29e12971f38dc03a53debb7dc0e8bb
+    Confirmed in block 157614290
+
+  Bundle A[30] shazow/whatsabi DOWN @ 0.4783  outcome 262.152250638075338661 / collateral 330.967549611640837066
+    Attempt 1/3...
+    Tx sent: 0x8418029128daa1dbdfe88dace9d8a46da0b8f20636c5da781c7ecc9168503c49
+    Confirmed in block 157614293
+    Attempt 1/3...
+    Tx sent: 0xe59c625a61bcd9c83ab14e0eb8411c144fc0036daf236b58f27bbdb978434db9
+    Confirmed in block 157614297
+
+  Bundle A[30] shazow/whatsabi UP @ 0.5217  outcome 262.152250638075338661 / collateral 406.880199750283819844
+    Attempt 1/3...
+    Tx sent: 0xddd660d5eab9b1e535b8a86e04c151ae284a7b0d1fa24a683d269c8e379aaaed
+    Confirmed in block 157614300
+    Attempt 1/3...
+    Tx sent: 0xdc9b6f20554d9f7d7a4073cbcd3d3a81dd74275a38bfd963d2d4984ee5f7833f
+    Confirmed in block 157614303
+    Attempt 1/3...
+    Tx sent: 0xb1b77aa6762cd255bd04876b6e1ec73b4374e1c1a692c82a1f42ea9731c4c046
+    Confirmed in block 157614305
+
+  Bundle A[31] TrueBlocks/trueblocks-core DOWN @ 0.3494  outcome 219.479578102144486605 / collateral 144.835263283735258546
+    Attempt 1/3...
+    Tx sent: 0x825290b291109fc2929fc93f25bd34de440ebd706fb3f9110b085197e227ceb7
+    Confirmed in block 157614306
+    Attempt 1/3...
+    Tx sent: 0xea94d34127f9a2c6f09c3fa733a97929aac3f5adf65c3799d1990bcf816249d3
+    Confirmed in block 157614308
+
+  Bundle A[31] TrueBlocks/trueblocks-core UP @ 0.6505  outcome 219.479578102144486605 / collateral 635.6851586141202493
+    Attempt 1/3...
+    Tx sent: 0x5592c85c0e5ed105f94eb22111b8bd09a32bdf540d426279ec0e1ccc3d38c8c6
+    Confirmed in block 157614312
+    Attempt 1/3...
+    Tx sent: 0xca79efb50c0d72a27c206c9ba0681e4412182904c8ef63918b280f0e1ea518e5
+    Confirmed in block 157614315
+    Attempt 1/3...
+    Tx sent: 0xefb1d0a868d7dbf7beaf0ed01ae81b07c2ee9aa7a0a7085317fa67cac10b03a1
+    Confirmed in block 157614317
+
+  Bundle A[32] EspressoSystems/jellyfish DOWN @ 0.4899  outcome 262.928735046876308835 / collateral 350.825230682717253836
+    Attempt 1/3...
+    Tx sent: 0xa879da045690c4785272fe9cd6eca0f6cfed4d1edc2917d4a25a0d5e6356a039
+    Confirmed in block 157614318
+    Attempt 1/3...
+    Tx sent: 0xd8a22032cd748c6ad90ce1613427e17cea9c7f8c26007dcccb1c9bf28b8bc91b
+    Confirmed in block 157614321
+
+  Bundle A[32] EspressoSystems/jellyfish UP @ 0.5101  outcome 262.928735046876308835 / collateral 386.246034270406432846
+    Attempt 1/3...
+    Tx sent: 0x69173c2f6f0aa4453c0c59b2ac104a733e091a09db6b2e73e08d648ab1bd9933
+    Confirmed in block 157614323
+    Attempt 1/3...
+    Tx sent: 0x9bc31425a8f5e953f28517082fa4031be0ff7c3f3977f00be8d76ebecaf90ace
+    Confirmed in block 157614325
+    Attempt 1/3...
+    Tx sent: 0x90890d48d039d5fc9a88c7ec509cac1df2cdb1c7669eb4aff79e527349c68abe
+    Confirmed in block 157614327
+
+  Bundle B[0] a16z/halmos DOWN @ 0.2875  outcome 182.234070790756268308 / collateral 84.16847009446392518
+    Attempt 1/3...
+    Tx sent: 0x73a19c34d8068f845797881bd2761260c5b2f9454cab795d4416dd7f824e930c
+    Confirmed in block 157614329
+    Attempt 1/3...
+    Tx sent: 0xc8f9cff13625b1dbdd30382c5e345e3648aa00e6be0effd27fdeebb05d9cb834
+    Confirmed in block 157614330
+
+  Bundle B[0] a16z/halmos UP @ 0.7125  outcome 182.234070790756268308 / collateral 733.597459114779800419
+    Attempt 1/3...
+    Tx sent: 0x48c2c03c1e68ee5cea72aba2258f18d5529c12bb87c0f3c32d00cff721681bd5
+    Confirmed in block 157614332
+    Attempt 1/3...
+    Tx sent: 0xedd30d44148c9f56c148465f5697d95ca402cf155958f22f6169a677189bf137
+    Confirmed in block 157614335
+    Attempt 1/3...
+    Tx sent: 0x0d7f47c29bcdb8e7150509d69ea5e3e6a4f0d9ddde9f880931e08687826d3f00
+    Confirmed in block 157614337
+
+  Bundle B[1] succinctlabs/op-succinct DOWN @ 0.5728  outcome 252.305643877120475474 / collateral 498.96897597745387144
+    Attempt 1/3...
+    Tx sent: 0x30b92b36e4e19d23b4bba6ec7984d6b6d59ce5a915a5186ba176257c54dca1ed
+    Confirmed in block 157614339
+    Attempt 1/3...
+    Tx sent: 0x12f2f3b874649456a8d1b190c7d12906389591e03c2c2f457805fc93bead5a94
+    Confirmed in block 157614342
+
+  Bundle B[1] succinctlabs/op-succinct UP @ 0.4273  outcome 252.305643877120475474 / collateral 248.725380145425648375
+    Attempt 1/3...
+    Tx sent: 0x5e9ba15ee3d17385727b896555a72acafe0aa91300d98070b447f022ce937edb
+    Confirmed in block 157614345
+    Attempt 1/3...
+    Tx sent: 0xe895447c805757b2401598979218970598f092787c5d8818e30af44ab46583e9
+    Confirmed in block 157614347
+    Attempt 1/3...
+    Tx sent: 0xfb476c3db7d8cd42a0cfd00e06dc83cb3dddbeb723b04df6095eae62c102861f
+    Confirmed in block 157614350
+
+  Bundle B[2] succinctlabs/sp1 DOWN @ 0.4644  outcome 260.492811695066444865 / collateral 307.682229852372671101
+    Attempt 1/3...
+    Tx sent: 0xf906ea24874057288160d47c33a74138bd8bea4e094198f2a0a87b7d4230e0d9
+file:///D:/Code/liquidity/node_modules/ethers/lib.esm/utils/errors.js:132
+            error = new Error(message);
+                    ^
+
+Error: could not coalesce error (error={ "code": 24, "message": "Request failed with timeout" }, payload={ "id": 8398, "jsonrpc": "2.0", "method": "eth_getTransactionReceipt", "params": [ "0xf906ea24874057288160d47c33a74138bd8bea4e094198f2a0a87b7d4230e0d9" ] }, code=UNKNOWN_ERROR, version=6.15.0)
+    at makeError (file:///D:/Code/liquidity/node_modules/ethers/lib.esm/utils/errors.js:132:21)
+    at JsonRpcProvider.getRpcError (file:///D:/Code/liquidity/node_modules/ethers/lib.esm/providers/provider-jsonrpc.js:745:16)
+    at file:///D:/Code/liquidity/node_modules/ethers/lib.esm/providers/provider-jsonrpc.js:298:45
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'UNKNOWN_ERROR',
+  error: { message: 'Request failed with timeout', code: 24 },
+  payload: {
+    method: 'eth_getTransactionReceipt',
+    params: [
+      '0xf906ea24874057288160d47c33a74138bd8bea4e094198f2a0a87b7d4230e0d9'
+    ],
+    id: 8398,
+    jsonrpc: '2.0'
+  },
+  shortMessage: 'could not coalesce error'
+}
+
+Node.js v22.18.0

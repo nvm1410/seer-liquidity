@@ -28,6 +28,21 @@ What happened. What the wrong assumption was.
 
 ---
 
+### MarketView cannot read a child with more slots than its parent  2026-10-01 · cost: caught on a fork, before anything was sent
+`MarketView.getMarket` reverts for a conditional market that has more outcome slots than its parent
+has outcomes. `getParentMarketInfo` sizes the PARENT's outcome list by the CHILD's condition
+(`src/MarketView.sol:216` passes `market.conditionId()` with `parentMarket`), so it reads
+`parentMarket.outcomes(i)` past the end. Every earlier nested set had a small child under a large
+parent (3 slots under 4, or under 99), so it never fired. originality-r3-v3's middle markets are the
+first the other way round: 34 slots under a 3-outcome parent. The market itself is fine — create,
+split, merge and resolve never touch MarketView — but anything that READS it through MarketView
+fails, with no revert reason. The same line is still in seer-pm/demo.
+**Caught by:** a fork rehearsal of the live create run (hardhat fork of Optimism), at the verify step
+after the first middle market was created. A dry run cannot catch it: the market does not exist yet.
+**Now guarded by:** `campaigns/originality-r3-v3/read-market.js` reads a market off its own contract,
+and the three r3-v3 scripts use it for the middle markets. NOT a general check: a new nested set
+whose child is wider than its parent must be fork-rehearsed, or use that reader from the start.
+
 ### A plan hash that leaked the wallet balance  2026-09-30 · cost: caught before it cost anything
 `planShape` masked wei-length integers (13+ digits) *before* decimals. An 18-decimal `formatUnits`
 fraction is itself 13+ digits, so `59251.372969887868268818` became `59251.<n>`, and the integer
