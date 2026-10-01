@@ -14,6 +14,7 @@
 import fs from "fs";
 import path from "path";
 import { ethers } from "ethers";
+import { designReviewProblems } from "../lib/design-review.js";
 import { entryProblems } from "../lib/schedule.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -215,6 +216,14 @@ function semantic(m, errs, warns) {
     if (e.script && !e.script.startsWith(`campaigns/${m.setSlug}/`)) errs.push(`schedule[${i}]: ${e.script} is not in campaigns/${m.setSlug}/`);
     errs.push(...entryProblems(e, `schedule[${i}]`));
   });
+
+  // 11. A launch that is approved to go live must carry a passing design review
+  //     of its CURRENT markets[]. Manifests that ran before the review existed
+  //     have none and are left alone; one that does carry a review which no
+  //     longer matches is reported, since it would mislead a reader.
+  const review = designReviewProblems(m);
+  if (m.status === "gated" || m.status === "executing") errs.push(...review.map((p) => `gate.designReview: ${p}`));
+  else if (m.gate && m.gate.designReview) warns.push(...review.map((p) => `gate.designReview: ${p}`));
 }
 
 // ── Cross-manifest consistency ──────────────────────────────────────────────

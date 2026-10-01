@@ -27,7 +27,7 @@ Expect four counts, and expect them to **change only when you changed something*
 count moved and you cannot say which file you added or removed, find out before going
 further — a guard that has quietly stopped covering anything still exits 0.
 
-As of 2026-10-01: **60 scripts gated · 38 freeze paths · 9 manifests · 96 tests.**
+As of 2026-10-01: **60 scripts gated · 38 freeze paths · 9 manifests · 109 tests.**
 These are a dated observation, not a target; adding a campaign moves the first two.
 
 Read the counts, not the exit code — see the first entry in LESSONS.md for why.
@@ -63,7 +63,22 @@ Checks structure *and* semantics — addresses checksum and match the declared c
 cap covers the total, every seed price sits strictly inside the band, every artifact path exists.
 
 Two fields decide whether a live run is allowed: `spendingCap` (enforced) and `gate` (re-read
-before `--live`, including the sha256 of the seed file).
+before `--live`, including the sha256 of the seed file and, for a launch, `gate.designReview`).
+
+### Then have the structure cross-checked
+
+A launch creates markets whose structure can never be edited, and nothing else in this repo checks
+that the structure pays what the request means — only that the run matches the plan. Before the
+gate, an independent reviewer derives the payoffs from the contracts, scenario by scenario:
+[`DESIGN-REVIEW.md`](DESIGN-REVIEW.md).
+
+```bash
+node tools/design-review.js <slug> --record   # after saving its report to campaigns/<slug>/design-review.md
+node tools/design-review.js <slug>            # status
+```
+
+`--live` is refused on a launch without a passing review of the **current** `markets[]`; edit the
+structure afterwards and the review is stale.
 
 ## 3. Write the script
 

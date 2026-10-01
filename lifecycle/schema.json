@@ -469,6 +469,19 @@
         },
         "immutableTextRef": {
           "type": "string"
+        },
+        "designReview": {
+          "type": "object",
+          "description": "The independent cross-check that the market structure pays what the request means (docs/DESIGN-REVIEW.md). Written by tools/design-review.js --record and RE-READ before --live on a launch: marketsHash binds it to markets[], so editing the structure afterwards makes it stale.",
+          "additionalProperties": false,
+          "required": ["reviewedAt", "verdict", "artifact", "marketsHash"],
+          "properties": {
+            "reviewedAt": { "type": "string" },
+            "reviewer": { "type": "string" },
+            "verdict": { "enum": ["pass", "pass-with-notes"] },
+            "artifact": { "type": "string", "description": "The reviewer's report, unedited: campaigns/<slug>/design-review.md." },
+            "marketsHash": { "type": "string", "pattern": "^sha256=[0-9a-f]{64}$" }
+          }
         }
       }
     },

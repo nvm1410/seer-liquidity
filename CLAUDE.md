@@ -11,6 +11,7 @@ run moves real capital.
 | run a new campaign | [`docs/NEW-CAMPAIGN.md`](docs/NEW-CAMPAIGN.md) — the procedure, with the commands |
 | know what already exists | [`docs/README.md`](docs/README.md) — the campaign index |
 | avoid a known trap | [`docs/LESSONS.md`](docs/LESSONS.md) — what went wrong, and the check that catches it |
+| check that a market design pays what was meant | [`docs/DESIGN-REVIEW.md`](docs/DESIGN-REVIEW.md) — the independent review a launch needs before `--live` |
 | pick up unfinished work | [`docs/NEXT.md`](docs/NEXT.md) |
 | withdraw at a set time, unattended | [`lifecycle/README.md`](lifecycle/README.md#scheduled-runs) — `tools/schedule.js` |
 | understand how this repo is worked on | [`docs/PROCESS.md`](docs/PROCESS.md) |

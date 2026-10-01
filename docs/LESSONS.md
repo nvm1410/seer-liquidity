@@ -28,6 +28,27 @@ What happened. What the wrong assumption was.
 
 ---
 
+### A set built exactly as planned, on the wrong structure  2026-09-22 · cost: a second full build, and a withdraw-only set that must still be settled
+originality-r3 hung its 98 score markets directly on the bundle tokens. A repo that is never
+evaluated then resolves Invalid while its bundle token still pays, so DOWN and UP go to 0, the
+Invalid token takes the stake, and every unevaluated repo is counted in P/L. What was wanted: only
+evaluated repos count, which needs the repo's own token to pay 0 — a level in between. The wrong
+assumption was that "conditional on the bundle" and "conditional on this repo being evaluated" were
+close enough, and that the missing rule for unevaluated repos could be settled later. Every check
+passed: the dry run, the verifier and the immutable-text gate all compare the run to the plan, and
+the plan was the mistake.
+**Caught by:** nothing — the user saw the missing level in a diagram, after the set was live and traded.
+**Now guarded by:** an independent design review ([`DESIGN-REVIEW.md`](DESIGN-REVIEW.md)), recorded
+by `node tools/design-review.js <slug> --record`. `lib/run.js` refuses `--live` on a launch without
+a passing review of the current `markets[]`, and `npm run lint:manifest` fails a gated one
+(`tests/design-review.test.js`, plus a case in `tests/harness.e2e.test.js`). The review itself is a
+judgment, not a mechanical check, so it was made to fail on purpose: on 2026-10-01 it was run on
+this defect with the nouns changed (projects and groups for repos and bundles) and on a different
+one (independent approvals built as one multi-categorical, which pays 1/k). Both came back `FAIL`
+with the scenario named, and the correct three-level version of the first came back `PASS WITH
+NOTES`, so it does not fail everything. Re-run those replays (`evals/cases.md` 22-24 in the skill) whenever the
+brief changes.
+
 ### MarketView cannot read a child with more slots than its parent  2026-10-01 · cost: caught on a fork, before anything was sent
 `MarketView.getMarket` reverts for a conditional market that has more outcome slots than its parent
 has outcomes. `getParentMarketInfo` sizes the PARENT's outcome list by the CHILD's condition

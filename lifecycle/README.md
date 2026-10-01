@@ -49,7 +49,9 @@ misdirect a transaction.
 ### The one field that is both
 
 `gate.summaryHash` is written when approval is given and **re-read before `--live`** to prove the
-seed file has not changed since. It is the only place the two halves touch.
+seed file has not changed since. `gate.designReview` works the same way for the structure: written
+by `tools/design-review.js --record`, re-read before `--live` against the sha256 of `markets[]`.
+The gate is the only place the two halves touch.
 
 ## Modes
 
@@ -88,8 +90,13 @@ is an error rather than a silent no-op). The semantic checks are the valuable pa
     (settle stage, importing `finalAnswerProblems`) in this campaign's directory, on `lib/run.js` —
     never an answer script — and a pending one carries `approvedAt` and `planHash`
 
+11. a `launch` manifest that is `gated` or `executing` carries `gate.designReview`: a passing verdict,
+    a report that exists and says the same, and a `marketsHash` equal to the sha256 of the current
+    `markets[]` — see [`../docs/DESIGN-REVIEW.md`](../docs/DESIGN-REVIEW.md). Manifests that ran
+    before 2026-10-01 have none and are left alone
+
 The first nine are mutation-tested: corrupting each one makes `npm run lint:manifest` exit 1. The
-tenth is exercised by `tests/schedule.test.js`.
+tenth is exercised by `tests/schedule.test.js`, the eleventh by `tests/design-review.test.js`.
 
 ## Scheduled runs
 

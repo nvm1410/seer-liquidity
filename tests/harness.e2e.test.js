@@ -114,6 +114,18 @@ describe("lib/run.js guards", () => {
     assert.doesNotMatch(out, /MAIN RAN/);
   });
 
+  it("--live on an approved launch with no design review: REFUSED with exit 2", () => {
+    const dir = fixture({
+      status: "gated",
+      markets: [{ type: "scalar", count: 1 }],
+      gate: { approvedAt: "2026-01-01", approvedBy: "test" },
+    });
+    const { code, out } = invoke(["--live", "--yes", `--progress=${path.join(dir, "p.json").replace(/\\/g, "/")}`], { dir });
+    assert.equal(code, 2, out);
+    assert.match(out, /no design review recorded/);
+    assert.doesNotMatch(out, /MAIN RAN/);
+  });
+
   it("a non-empty progress file without --resume: REFUSED with exit 2", () => {
     const dir = fixture();
     const p = path.join(dir, "p.json");
