@@ -46,8 +46,10 @@ judgment, not a mechanical check, so it was made to fail on purpose: on 2026-10-
 this defect with the nouns changed (projects and groups for repos and bundles) and on a different
 one (independent approvals built as one multi-categorical, which pays 1/k). Both came back `FAIL`
 with the scenario named, and the correct three-level version of the first came back `PASS WITH
-NOTES`, so it does not fail everything. Re-run those replays (`evals/cases.md` 22-24 in the skill) whenever the
-brief changes.
+NOTES`, so it does not fail everything. The review is not only for nested sets: three flat ones were run the
+same day — a non-exhaustive single-select (`BLOCKED`), a multi-scalar asked to pay absolute values
+(`FAIL`) and three clean yes/no markets (`PASS WITH NOTES`). Re-run those replays (`evals/cases.md`
+22-24 and 26-28 in the skill) whenever the brief changes.
 
 ### MarketView cannot read a child with more slots than its parent  2026-10-01 · cost: caught on a fork, before anything was sent
 `MarketView.getMarket` reverts for a conditional market that has more outcome slots than its parent

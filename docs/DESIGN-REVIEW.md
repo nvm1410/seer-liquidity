@@ -9,7 +9,13 @@ It is done by a reviewer who did not design the set — a fresh agent given the 
 and none of the builder's reasoning. The harness refuses `--live` on a `launch` manifest until a
 passing review of the current `markets[]` is recorded (see [Recording it](#recording-it)).
 
-## The failure this exists for
+**It applies to every launch, whatever its shape** — one flat binary market as much as a three-level
+nested set. The example below is nested because that is the one that cost a rebuild; it is one
+instance, not the pattern to look for. Most sets are flat, and a flat set has its own ways of being
+logically wrong ([Errors by market type](#errors-by-market-type)). A reviewer who only looks for a
+missing level has not done the review.
+
+## One failure, as an example
 
 Originality round 3, first build (2026-09-22). Request: one scalar "average originality score of
 {repo}" per repo, 98 repos, grouped into three bundles only to fit the gas cap. Built as: a
@@ -62,6 +68,57 @@ Derive every payoff from these, not from a description in the manifest.
 - The denominator is the sum of the numerators (`ConditionalTokens.sol:94-103`), so only ratios
   matter.
 
+## Errors by market type
+
+What goes logically wrong, per type. Check the ones that apply to this set; none of them needs a
+nested structure. These are starting points, not the whole list — the question is always "in which
+real-world outcome does a token pay something other than what the request means?"
+
+**Any market**
+- The question does not ask the thing the request wants priced. A token's price will be read as a
+  probability or an expected value of *something*; say what, and whether that is what was asked for.
+- The question cannot be answered as worded by a stranger with a public source: an undefined term
+  ("Group 1", "approved", "launch"), no date or deadline, no named source, or a result that is not
+  known by the opening time.
+- The premise can fail and the request does not say what should happen: the event is cancelled or
+  postponed, the subject is renamed, merged or withdrawn. Under the literal text that is usually
+  Invalid, which pays the Invalid holder, not the traders.
+- The seed prices only make sense under a different structure (they sum to far more or less than
+  the structure can ever pay). Prices are not yours to review, but this is a symptom of the above.
+
+**Binary and single-select categorical**
+- Outcomes are not mutually exclusive: two can be true, and only one can be answered.
+- Outcomes are not exhaustive: a real result is not in the list, so it resolves Invalid. Is an
+  "Other" / "None" outcome needed?
+- For a yes/no: what "No" means when the thing does not happen at all, or happens late.
+
+**Multi-categorical (multi-select)**
+- The request wants each outcome to be worth 1 if true. It is worth 1/k when k are true, so each
+  token's value depends on all the others. Independent yes/no bets need one market each.
+- Nothing true resolves Invalid, not "all tokens 0 and everyone is whole".
+
+**Scalar**
+- The bounds do not cover the plausible range, so the answer clamps and the market stops pricing.
+- Unit or scale: the question says percent and the bounds are a fraction, or the reverse; the
+  answer is scaled by 1e18 against bounds that are not (`src/RealityProxy.sol:140-147`).
+- The quantity is undefined in some outcomes (an average of nothing, a price of a delisted asset).
+- DOWN/UP is read as a probability when it is a position between the bounds.
+
+**Multi-scalar**
+- It pays each outcome its **share of the sum**, never an absolute value. A request for separate
+  bets on separate quantities is not a multi-scalar.
+- The outcomes are not the whole total, so shares are distorted; is a catch-all outcome needed, and
+  how is it answered?
+- One answer is Invalid and silently counts as 0, shifting its share to the others; all zero
+  resolves Invalid.
+- The answers are not in the same unit, so their sum means nothing.
+
+**Conditional (nested) sets** — on top of the above
+- The collateral pays on a different condition from the one the question assumes (the example).
+- Linked questions must be answered consistently for the payoff to hold (a count and the list it
+  counts); say which, so settlement can respect it.
+- A reshaping for a technical limit does not pay what the original shape paid.
+
 ## The procedure
 
 **1. Intent, from the sources alone.** For each market people will actually trade, one sentence:
@@ -71,9 +128,11 @@ what the request leaves unsaid. Do this before reading the manifest.
 **2. The tree, from the plan.** For every market: type, outcomes, the token it uses as collateral,
 its Reality question text. Draw it, one line per level.
 
-**3. Two sentences per conditional market.** "Its collateral token pays when …" and "its question
-assumes …". They must be the same condition. If the question assumes something the collateral does
-not pay on, a level is missing.
+**3. Two sentences per market.** "A holder of this token is paid when …" (from the payout rules)
+and "the request wants them paid when …" (from step 1). They must be the same condition. For a
+conditional market add a third: "its collateral token pays when …", which must match what its
+question assumes — if it does not, a level is missing. Then go through
+[Errors by market type](#errors-by-market-type) for every type in the set.
 
 **4. Scenarios — the ones the request did not think about.** For every question, list the ways its
 premise can fail in the real world, not only the expected outcome:
@@ -91,8 +150,9 @@ split at the top is worth, per token, at the end. Use small concrete numbers.
 
 - Does a trader who was right about what the market *asks* get paid?
 - Does anything the request wants left out still move money? **Flag every scenario in which a
-  market resolves Invalid while its collateral token is still worth something.** That is the
-  round-3 defect in its general form.
+  market resolves Invalid while its collateral is still worth something.** For a flat market the
+  collateral is base money, so that is *every* Invalid resolution: list each scenario that leads to
+  one and say whether the request accepts it.
 - Who collects in the bad scenarios — and is it us, holding unpooled Invalid tokens?
 - Does a multi-categorical's 1/k dilution, or a multi-scalar's share-of-sum, match the intent?
 
